@@ -1,0 +1,110 @@
+\chapter{Algunos Teoremas}%
+\label{cap:ejemplos}
+
+\section{Teoremas y demostraciones}%
+\label{sec:etiquetas}
+
+Todos los ambientes que se desee referir por n\'umero m\'as adelante deben de
+tener una etiqueta.  Consideremos por ejemplo el siguiente lema.
+
+
+\begin{teorema}%
+\label{teo:primero}
+Sea $G$ una gr\'afica conexa con di\'ametro $\delta$. Entonces, $F_{k}(G)$ es 
+conexa con di\'ametro al menos $k(\delta -k+1)$ y a lo m\'as $\delta k$.
+\end{teorema}
+
+\begin{proof}
+Sean $A$ y $B$ v\'ertices de $F_{k}(G)$. Primero nos enfocamos en la cota
+superior.
+
+Por definici\'on tenemos que $|A \triangle B| \leq |A \cup B|$, con igualdad
+cuando $A \cap B = \varnothing$. Observamos que, al ser $A$ y $B$ v\'ertices de
+$F_{k}(G)$, tenemos que $|A|=k$ y $|B|=k$ por lo que $|A \cup B| \le 2k$.
+Entonces, tenemos que $|A \triangle B| \leq 2k$, por lo que $\frac{1}{2} |A
+\triangle B| \leq k$.
+
+Buscamos demostrar que el di\'ametro de $F_{k}(G)$ es a lo m\'as $\delta k$, por
+que basta demostrar por inducci\'on que para cualesquiera dos $A$ y $B$
+v\'ertices de $F_{k}(G)$ hay una $AB-trayectoria$ de a lo m\'as
+$\frac{\delta}{2}|A\triangle B|$. Observamos que esto tambi\'en implica que
+$F_{k}(G)$ es conexa.
+
+Si $A\triangle B=\varnothing$, entonces $A=B$ por lo que no hay nada que probar.
+Ahora consideramos $A$ y $B$ tales que $A\triangle B \neq \varnothing$. Tomamos
+como hip\'otesis que para cualesquiera dos v\'ertices de $F_{k}(G)$, $C$ y $D$,
+tales que $|C\triangle D|<|A \triangle B|$, existe una $CD-trayectoria$ con
+longitud a lo m\'as $\frac{\delta}{2}|C\triangle D|$.
+
+Al tomar $A\triangle B \neq \varnothing$ tenemos un v\'ertice de $G$ en
+$A\setminus B$ y un v\'ertice en $B\setminus A$, que denotamos $a$ y $b$
+respectivamente. Dado que el di\'ametro de $G$ ed $\delta$, entonces hay una
+$ab-trayectoria$ de a lo m\'as $\delta$. Nombramos $P$ a esta $ab-trayectoria$.
+
+Definimos $A':=(A\setminus \{a\})\cup \{b\}$ y la trayectoria
+$A\xrightarrow[P]{} A'$ en $F_{k}(G)$. Observamos que, por un lado tenemos que
+$b\in B\cap A'$ y $b\notin B\cap A$ pero $b\in A\cup B$. Por otro lado tenemos
+que $a\notin A'$ por lo que $a\notin A'\cup B$ y $a\notin A\cap B$, pero $a\in
+A\cup B$. Entonces, tenemos que $a,b \in A\triangle B$ y $a,b \notin A'\triangle
+B$. Ahora Tomamos $v\in A$ tal que $v\neq a$. Entonces, tenemos que $v \in
+A\triangle B$ si y s\'olo si $v\in A'\triangle B$. Por lo tanto tenemos que
+$|A'\triangle B|=|A \triangle B|- 2$.
+
+Por la observaci\'on anterior sabemos que hay una $A'B-trayectoria$ en
+$F_{k}(G)$ de longitud a lo m\'as $\frac{\delta}{2}|A'\triangle
+B|=\frac{\delta}{2}|A\triangle B| - \delta$.
+
+Sabemos que $A\xrightarrow[P]{} A'$ tiene la misma longitud que $P$, que es a lo
+m\'as $\delta$. Entonces, tenemos una $AB-trayectoria$ de la forma 
+$A\rightarrow A'\rightarrow B$ que tiene longitud a lo m\'as 
+$\frac{\delta}{2}|A\triangle B|-\delta +\delta =\frac{\delta}{2}|A\triangle B|$.
+
+Por lo tanto tenemos que $F_{k}(G)$ es conexa y tiene di\'ametro a lo m\'as 
+$\delta k$.
+
+Ahora demostraremos la cota inferior. Sabemos que $G$ es una gr\'afica conexa 
+con di\'ametro $\delta$, por lo que existen vertices que est\'an a distancia 
+$\delta$, los nombramos $x$ y $y$. Ahora construimos conjunto de v\'ertices de 
+$G$ de acuerdo a la distancia que tienen esos v\'ertices de $x$. Es decir, para
+cada $i\in [0,\delta]$, sea $V_{i}$ el conjunto de v\'ertices de $G$ a 
+distancia $i$ de $x$. Entonces, tenemos que $V_{0}=\{x\}$ y $y\in V_{\delta}$.
+Denotamos $d(v)$ a la distancia entre $x$ y el v\'ertice $v$.
+
+Sea $a$ el m\'inimo \'indice par el c\'ual se tiene 
+$k \leq |V_{0}\cup V_{1}\cup \dots \cup V_{a}|$ y sea $b$ el m\'aximo \'indice 
+para el cu\'al se tiene $k\leq |V_{b}\cup V_{b+1}\cup \dots \cup V_{\delta}|$.
+Tomamos $A$ un $k-subconjunto$ de $V_{0}\cup \dots \cup V_{a}$  tal que $A\subseteq V_{0}$
+o $V_{0}\cup \dots V_{a-1}\subseteq A$. Tomamos $B$ un $k$-\textit{subconjunto} de
+$V_{b}\cup \dots \cup V_{\delta}$ tale que $B\subseteq V_{\delta}$ o 
+$V_{b+1}\cup \dots \cup V_{\delta}$. 
+
+Consideramos cualquier trayectoria entre $A$ y $B$ en $F_{k}(G)$. Cualquier 
+ficha inicialmente en $A$, digamos en el v\'ertice $v$ de $G$, se mueve a
+alg\'un v\'ertice en $B$, digamos el v\'ertice $v'$ de $G$. Observamos que
+odas las aristas de $G$ est\'an dentro de alg\'un $V_{i}$ o a lo m\'as entre 
+alg\'un $V_{i}$ y $V_{i+1}$, con $i\in[0,\delta]$. Entonces, para la ficha en 
+$v$ se necesitan al menos $d(v')-d(v)$ movimientos para llegar a $v'$, 
+ocupando s\'olo las aristas entre $V_{i}$ y $V_{i+1}$, $i\in [0,\delta]$.
+Por lo tanto, el di\'ametro de $F_{k}(G)$ es al menos 
+    $\sum_{v\in A}(d(v')-d(v))= \sum_{w\in B}d(w)-\sum_{v\in A}d(v)$
+Observamos que al ser $G$ conexa toda $V_{i}$ tiene al menos un elemento 
+y por construcci\'on $V_{i} \cap V_{i+1}=\varnothing$, para toda $i\in [0,\delta]$. 
+Tomamos el caso en el que $V_{i}=1$ para toda $i\in [0,\delta]$. Entonces, 
+tenemos que 
+    $k\leq |V_{b}\cup\dots\cup V_{\delta}|=|V_{b}|+|V_{b+1}|+\dots +|V_\delta|$
+    $=\sum_{b}^{\delta}1 = \delta -b+1$
+An\'alogamente tenemos que 
+    $k\leq |V_{0}\cup V_{1}\cup \dots V_{a}|=|V_{0}|+|V_{1}|+\dots + |V_{a}|$
+    $=\sum_{0}^{a} 1 = a+1$
+En ambos casos la cota m\'inima se alcanza en la igualdad, por lo que tomamos 
+$a=k-1$ y $b=\delta-k+1$. Por lo tanto tenemos que el di\'ametro de $F_{k}(G)$
+es al menos
+    $\sum_{j=\delta -k+1}^{\delta}j - \sum_{i=0}^{k-1}i = k(\delta-k+1)$
+\end{proof}
+
+Y finalmente obtener el siguiente corolario.
+
+\begin{corolario}%
+\label{cor:ejemplo}
+Corolario de ejemplo.
+\end{corolario}

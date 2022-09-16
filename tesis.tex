@@ -1,4 +1,4 @@
-% !TEX TS-program = latexmk
+% !TeX root = /home/adrica/Documents/Graficas Tesis/tesis-graficas-fichas/tesis.tex
 
 \documentclass[12pt,twoside,spanish]{book}
 
@@ -67,7 +67,7 @@
 
 
 % Algoritmos
-\usepackage[ruled,lined,linesnumbered,commentsnumbered]{algorithm2e}
+%\usepackage[ruled,lined,linesnumbered,commentsnumbered]{algorithm2e}
 
 %\usepackage[all]{xy}
 
@@ -145,17 +145,18 @@
 
 % Redefinicion para que las demostraciones terminen con cuadrito negro
 \renewenvironment{proof}[1][\proofname.]{\par
-\ifnum \theproofcount>0 \pushQED{\whiteqed} \else \pushQED{\blackqed} \fi%
+\ifnum%
+\theproofcount>0 \pushQED{\whiteqed} \else \pushQED{\blackqed} \fi%
 \refstepcounter{proofcount}
 %
-\normalfont %\topsep6\p@\@plus6\p@\relax
-\trivlist
-\item[\hskip\labelsep
-\itshape
-\textbf{\textit{#1}}]\ignorespaces
+\normalfont%\topsep6\p@\@plus6\p@\relax
+\trivlist%
+\item[\hskip\labelsep%
+\itshape%
+\textbf{\textit{#1}}]\ignorespaces%
 }{%
 \addtocounter{proofcount}{-1}
-\popQED\endtrivlist
+\popQED\endtrivlist%
 }
 
 % Macros
@@ -182,13 +183,14 @@
 \tableofcontents
 
 
-\mainmatter
+\mainmatter%
 
-\include{introduccion}
-\include{capitulo1}
+%\include{introduccion}
+%\include{capitulo1}
+\include{capitulo-dems}
 
 
-\backmatter
+\backmatter%
 
 \printindex
 \include{bibliografia}
