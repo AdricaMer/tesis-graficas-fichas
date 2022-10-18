@@ -94,120 +94,110 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 
 \begin{lema}%
 \label{lem:primero}
-Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que
-$a \in A$ y $b \notin B$. Sean $P, Q$ $ab$-trayectorias internamente
-ajenas en $G$. Entonces $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{} A'$ son
-trayectorias internamente ajenas en $F_{k}(G)$.
+Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que $a \in
+A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$ y $Q$
+son $ab$-trayectorias internamente ajenas en $G$, entonces $A \xrightarrow[P]{}
+A'$ y $A \xrightarrow[Q]{} A'$ son trayectorias internamente ajenas en
+$F_{k}(G)$.
 \end{lema}
 
 \begin{proof}
-    Dado $A$ un $k$-conjunto en la gr\'afica $G$ y $P$ y $Q$
-    $ab$-trayectoria internamente ajenas en $G$ tales que $a \in A$ y $b
-    \notin A$, con $a, b \in V(G)$. Primero, supongamos que $|P \cap A| \geq 2$,
-    con $P \cap A = \{v_{1}, v_{2}, \dots , v_{p}\}$, con $v_{1} = a$. Ahora, 
-    consideremos $R$ un v\'ertice interno de $A \xrightarrow[P]{} A'$. Entonces,
-    tenemos que  $|R \cap P| = p$, las fichas de $A$ que se mueven por $P$
-    conforme avanzamos en la trayectoria. 
-
-    Observamos que, si $k>p$, entonces $k -p$ fichas no est\'an en la
-    intersecci\'on, es decir, no est\'an sobre $P$, por lo que est\'an
-    est\'aticas en todos los v\'ertices de $A \xrightarrow[P]{} A'$. 
-
-    Por construcci\'on de $A \xrightarrow[P]{} A'$, $R$ tiene una ficha en la
-    subtrayectoria %$\(v_{p},b\]$.
-    Entonces $R$ no contiene al conjunto $\{v_{2}, \dots, v_{p}\}$. Por otro
-    lado, como $\{v_{2}, \dots, v_{p}\}$ est\'a en $A \cap P$ y $Q$ y $P$ son
+    Primero, supongamos que $|V(P) \cap A| \geq 2$, con $V(P) \cap A = \{v_{1},
+    v_{2}, \dots , v_{p}\}$, con $v_{1} = a$. Notemos que, si $k > p$, entonces
+    $k-p$ fichas no est\'an sobre $P$, por lo que est\'an est\'aticas en todos
+    los v\'ertices de $A \xrightarrow[P]{} A'$. Ahora, consideremos $R$ un
+    v\'ertice interno de $A \xrightarrow[P]{} A'$. Por la observaci\'on anterior
+    tenemos que  $|R \cap V(P)| = p$. Por construcci\'on de $A \xrightarrow[P]{}
+    A'$, $R$ tiene una ficha en la trayectoria $(v_{p},b ]$. Entonces, $R$ no
+    contiene al conjunto $\{v_{2}, \dots, v_{p}\}$. Por otro lado, como
+    $\{v_{2}, \dots, v_{p}\}$ est\'a en $A \cap V(P)$, y $Q$ y $P$ son
     internamente ajenas, entonces $\{v_{2}, \dots, v_{p}\}$ est\'an est\'aticos
     en cada v\'ertice de $A \xrightarrow[Q]{} A'$. Por lo tanto tenemos que $A
     \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{}A'$ son trayectorias
+    internamente ajenas. Al suponer que $|A \cap Q| \geq 2$, tenemos un caso
+    an\'alogo al anterior.
+
+    Ahora, supongamos que $|A \cap V(P)| = 1$ y $|A \cap V(Q)| = 1$, es decir,
+    $A \cap V(P) = \{a\} = A \cap V(Q)$. Sin p\'erdida de generalidad suponemos
+    que $P$ no es la arista $ab$. Entonces, tenemos que $P \setminus \{a,b\}
+    \neq \varnothing$. Por lo tanto, tenemos que todo v\'ertice interno de $A
+    \xrightarrow[P]{} A'$ tiene alg\'un v\'ertice de $P \setminus \{a, b\}$. Por
+    otro lado, ya que $P$ y $Q$ son internamente ajenos y s\'olo comparten el
+    v\'ertice $a$ con $A$, ning\'un v\'ertice interno de $A \xrightarrow[Q]{}
+    A'$ tiene un v\'ertice de $P \setminus \{a, b\}$. Luego, cada v\'ertice
+    interno de ambas trayectorias tiene intersecci\'on vac\'\i{}a con $A$.
+    Concluimos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{} A'$ son
     internamente ajenas.
-
-    Al suponer que $|A \cap Q| \geq 2$, tenemos el caso an\'alogo al caso
-    anterior.
-
-    Ahora suponemos que $|A \cap P| = 1$ y $|A \cap Q| = 1$, es decir, $A \cap P
-    = \{a\} = A \cap Q$. Sin p\'erdida de generalidad suponemos que $P$ no es la
-    arista $ab$. Entonces, tenemos que $P \setminus \{a,b\} \neq \varnothing$.
-    Entonces, tenemos que todo v\'ertice interno de $A \xrightarrow[P]{} A'$
-    tiene alg\'un v\'ertice de $P \setminus \{a, b\}$. Por otro lado, ning\'un
-    v\'ertice interno de $A \xrightarrow[Q]{} A'$ tiene un v\'ertice de $P
-    \setminus \{a, b\}$, pues $P$ y $Q$ son internamente ajenos y s\'olo
-    comparten el v\'ertice $a$ con $A$. Entonces, cada v\'ertice interno de
-    ambas trayectorias tiene intersecci\'on vac\'\i{}a con $A$. Por lo tanto
-    tenemos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{} A'$ son
-    internamente ajenos.
 \end{proof}
 
 \begin{lema}%
 \label{lem:segundo}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$,
-    donde $|Y|<|Z|$. Supongamos que las aristas de $H$ est\'an coloreadas de
-    azul y rojo de manera que cada v\'ertice de $Y$ es incidente en a lo m\'as
-    una arista roja. Entonces $H$ tiene un conjunto $M$ de aristas azules tal
-    que cada v\'ertice en $Y$ incide en exactamente una arista de $M$ y la
-    uni\'on de aristas rojas y aristas de $M$ es ac\'\i{}clica.
+    donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo de
+    manera que cada v\'ertice de $Y$ es incidente en a lo m\'as una arista roja,
+    entonces $H$ tiene un conjunto $M$ de aristas azules tal que cada v\'ertice
+    en $Y$ incide en exactamente una arista de $M$. Adem\'as, la uni\'on de
+    aristas rojas y aristas de $M$ es ac\'\i{}clica.
 \end{lema}
 
 \begin{proof}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$ como
-    se especificaron. Demostramos el Lema por inducci\'on sobre $|Y|$. 
+    se especificaron. Demostramos el resultado por inducci\'on sobre $|Y|$. 
 
-    Primero, supongamos que $Y=\{y\}$. Por construcci\'on, existe una arista $e
-    \in M$ tal que $y$ es incidente en $e$. Por otro lado, a lo m\'as existe una
-    arista roja incidente en $y$, la nombramos $e'$. Entonces $\{e, e'\}$ no es
-    un ciclo.
+    Primero, supongamos que $Y=\{y\}$. Como $H$ es bipartita completa, existe
+    una arista azul $e$ tal que $y$ es incidente en $e$.   Sea $M = \{ e \}$.
+    Por otro lado, a lo m\'as existe una arista roja incidente en $y$, digamos
+    $e'$. Entonces la uni\'on de aristas rojas y aristas en $M$ es $\{e, e'\}$,
+    que no es un ciclo.
 
-    Ahora supongamos que $|Y|>1$. Como tenemos que $|Y|<|Z|$, entonces existe
-    alg\'un $x \in Z$ tal que no tiene aristas rojas incidentes. Sea $v \in Y$ y
-    sea $e$ la arista roja incidente en $v$, en caso de que exista. Tomamos $H'=
+    Ahora supongamos que $|Y|>1$. Como tenemos que $|Y|<|Z|$, y hay a lo m\'as
+    una arista roja incidente en cada v\'ertice de $Y$, entonces existe alg\'un
+    $x \in Z$ tal que no tiene aristas rojas incidentes. Sea $v \in Y$ y sea
+    $e$, en caso de existir, la arista roja incidente en $v$. Tomamos $H'=
     (H-v)-x$ con $R'$ el conjunto de aristas rojas de $H'$. Observamos que $Y' =
-    Y- v$ y $Z'= Z- x$ son las clases de color que $H'$. Por inducci\'on existe
-    un conjunto $M'$ de aristas azules incidentes en $H'$ tal que cada v\'ertice
-    de $Y'$ incide exactamente en una arista de $M'$ y adem\'as $R'\cup M'$ es
-    ac\'\i{}clico. Ahora nos fijamos en $H$. Definimo $M= M'\cup \{xv\}$.
-
-    Al tomar $x$ sin aristas rojas tenemos que $M$ cumple tener una arista azul
-    por v\'ertice en $Y$. Tambi\'en definimos $R= R'\cup e$, si es que existe
-    $e$.  Dado que  $M'\cup R'$ es ac\'\i{}clica y las aristas $\{vx\}$ y $e$,
-    en caso de que exista, no est\'an en $M'\cup R'$, entonces tenemos que $M
-    \cup R$ es ac\'\i{}clica.
+    Y- v$ y $Z'= Z- x$ son las clases de color de $H'$. Por hip\'otesis de
+    inducci\'on, existe un conjunto $M'$ de aristas azules incidentes en $H'$
+    tal que cada v\'ertice de $Y'$ incide exactamente en una arista de $M'$.
+    Adem\'as $R'\cup M'$ es ac\'\i{}clico.
+    
+    En $H$, definimos $M = M'\cup \{xv\}$. Al tomar $x$ sin aristas rojas
+    tenemos que $M$ cumple tener una arista azul por v\'ertice en $Y$. Tambi\'en
+    definimos $R= R'\cup \{ e \}$, si es que existe $e$.  Dado que  $M'\cup R'$
+    es ac\'\i{}clica y las aristas $\{vx\}$ y $e$, en caso de existir, no
+    est\'an en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'\i{}clica.
 \end{proof}
 
-%Cambiar P' por P cursiva
-%Terminar demostraci\'on
+%TODO: Terminar demostraci\'on
 \begin{lema}%
 \label{lem:tercero}
-    Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de
-    $F_{k}(G)$ tales que $|A \triangle B| = 2$. Entonces hay $t$
-    $AB$-trayectorias internamente ajenas en $F_{k}(G)$. Adem\'as, si
-    $t \geq k$, entonces hay $k(t- k + 1)$ $AB$-trayectorias
-    internamente ajenas en $F_{k}(G)$.
+    Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
+    tales que $|A \triangle B| = 2$. Entonces hay $t$ $AB$-trayectorias
+    internamente ajenas en $F_{k}(G)$. Adem\'as, si $t \geq k$, entonces hay
+    $k(t- k + 1)$ $AB$-trayectorias internamente ajenas en $F_{k}(G)$.
 \end{lema}
 
 \begin{proof}
-    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de
-    $F_{k}(G)$ tales que $|A \triangle B| = 2$. Primero buscamos probar que
-    hay $t$ cantidad de $AB$-trayectorias internamente ajenas en
-    $F_{k}(G)$. 
+    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de $F_{k}(G)$
+    tales que $|A \triangle B| = 2$. Primero buscamos probar que hay $t$
+    cantidad de $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
     
-    Sean $a \in A \setminus B$ y $b \in B \setminus A$ los
-    v\'ertices en la diferencia sim\'etrica. Al ser $G$ una gr\'afica
-    $t$-conexa, entonces por el Teorema General de Menger, existen
-    $P_{1} \dots P_{t}$ $ab$-trayectorias internamente ajenas en
-    $G$. Por lo tanto, por el Lema 1.1.2, existen $A \xrightarrow[P_1]{}  B,
-    \dots, A \xrightarrow[P_t]{}  B$ $AB$-trayectorias internamente
-    ajenas en $F_{k}(G)$. 
+    Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
+    diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
+    Teorema General de Menger, existen $P_{1} \dots P_{t}$ $ab$-trayectorias
+    internamente ajenas en $G$. Por lo tanto, por el Lema 1.1.2, existen $A
+    \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$ $AB$-trayectorias
+    internamente ajenas en $F_{k}(G)$. 
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces hay $k(t- k +1)$
-    cantidad de $AB$-trayectorias internamente ajenas en
-    $F_{k}(G)$. Asumimos que $t \geq k + 1$. Sea $P'$ un conjunto m\'aximo
-    de $ab$-trayectorias internamente ajenas. Por el Teorema
-    General de Menger sabemons que $|P'>t$. Elegimos un conjunto $P'$ que
-    tenga longitud total m\'inima, entonces $P'$ no teine cuerdas.
-    Denotamos $P_{1}, \dots, P_{l}$ a las trayectorias en $P'$ que no
-    intersectan $A \cap B$ y denotamos $Q_{1}, \dots, Q_{s}$ a las
-    trayectorias en $P'$ que intersectan a $A \cap B$. Entonces $l + s =
-    |P'| > t$.
+    cantidad de $AB$-trayectorias internamente ajenas en $F_{k}(G)$. Asumimos
+    que $t \geq k + 1$. Sea $\mathcal{P}$ un conjunto m\'aximo de
+    $ab$-trayectorias internamente ajenas. Por el Teorema General de Menger
+    sabemons que $|\mathcal{P}|>t$. Elegimos un conjunto $\mathcal{P}$ que tenga
+    longitud total m\'inima, entonces $\mathcal{P}$ no teine cuerdas. Denotamos
+    $P_{1}, \dots, P_{l}$ a las trayectorias en $\mathcal{P}$ que no intersectan
+    $A \cap B$ y denotamos $Q_{1}, \dots, Q_{s}$ a las trayectorias en
+    $\mathcal{P}$ que intersectan a $A \cap B$. Entonces $l + s = |\mathcal{P}|
+    > t$.
 
     Denotamos $C$ al conjunto de v\'ertices en $A \cup B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, l\}$. Observamos que, al ser $Q_1,
