@@ -41,7 +41,7 @@ Definimos $A'=(A\setminus \{a\})\cup \{b\}$ y la trayectoria $A\xrightarrow[P]{}
 A'$ en $F_{k}(G)$. Observamos que, por un lado $b\in B\cap A'$ y $b\notin B\cap
 A$, pero $b\in A\cup B$. Por otro lado tenemos que $a\notin A'$ por lo que
 $a\notin A'\cup B$ y $a\notin A\cap B$, pero $a\in A\cup B$. Entonces, tenemos
-que $a,b \in A\triangle B$ y $a,b \notin A'\triangle B$. Ahora Tomamos $v\in A$
+que $a,b \in A\triangle B$ y $a,b \notin A'\triangle B$. Ahora tomamos $v\in A$
 tal que $v \neq a$. Entonces, tenemos que $v \in A\triangle B$ si y s\'olo si
 $v\in A'\triangle B$. Por lo tanto tenemos que $|A'\triangle B|=|A \triangle B|-
 2$. Por hip\'otesis inductiva, sabemos que hay una $A'B$-trayectoria en
@@ -193,32 +193,33 @@ $F_{k}(G)$.
     que $t \geq k + 1$. Sea $\mathcal{P}$ un conjunto m\'aximo de
     $ab$-trayectorias internamente ajenas. Por el Teorema General de Menger
     sabemons que $|\mathcal{P}|>t$. Elegimos un conjunto $\mathcal{P}$ que tenga
-    longitud total m\'inima, entonces $\mathcal{P}$ no teine cuerdas. Denotamos
-    $P_{1}, \dots, P_{l}$ a las trayectorias en $\mathcal{P}$ que no intersectan
-    $A \cap B$ y denotamos $Q_{1}, \dots, Q_{s}$ a las trayectorias en
-    $\mathcal{P}$ que intersectan a $A \cap B$. Entonces $l + s = |\mathcal{P}|
-    > t$.
+    longitud total m\'inima, por lo que  $\mathcal{P}$ no teine cuerdas.
+    Definimos $P_{1}, \dots, P_{l}$ como las trayectorias en $\mathcal{P}$ que
+    no intersectan $A \cap B$ y $Q_{1}, \dots, Q_{s}$ las
+    trayectorias en $\mathcal{P}$ que intersectan a $A \cap B$. Entonces $l + s
+    = |\mathcal{P}| > t$.
 
-    Denotamos $C$ al conjunto de v\'ertices en $A \cup B$ que intersectan
+    Definimos como $C$ al conjunto de v\'ertices en $A \cap B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, l\}$. Observamos que, al ser $Q_1,
     \dots, Q_l$ internamente ajenos, entonces cada v\'ertice de $C$ esta en
     exactamente un $Q_i$, con $i \in \{1, \dots, l\}$. 
 
-    Denotamos $C$ al conjunto de v\'ertices en $A \cup B$ que no intersecta a
-    ning\'un $Q_i$, con $i \in \{1, \dots, l\}$. Observamos que $C$ y $D$
-    dividen a $A \cup B$. Entonces, tenemos que $|A\cup B| = |A| + |B| = k-1$.
-    Adem\'as, podemos ver que $l \leq |C| \leq k-1$ y como $ t - l \leq s$,
+    Definimos $D$ como el conjunto de v\'ertices en $A \cap B$ que no intersecta
+    a ning\'un $Q_i$, con $i \in \{1, \dots, l\}$. Observamos que $C$ y $D$
+    dividen a $A \cap B$. Entonces, tenemos que $|A\cap B| = |C| + |D| = k-1$.
+    Adem\'as podemos ver que $l \leq |C| \leq k-1$ y como $ t - l \leq s$,
     entonces $s \geq t -|C| = t- (k-1-|D|)$.
 
-    Las $AB$-trayectorias construidas en $F_{k}(G)$ son de tres tipos. Los
-    primeros dos tipos son las trayectorias obtenidas del Lema 1.1.2, es decir,
-    las trayectorias $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_s]{}  B$
-    y $A \xrightarrow[Q_1]{}  B, \dots, A \xrightarrow[Q_l]{}  B$. Las denotamos
-    $AB$-trayectorias de tipo P y de tipo Q respectivamente. Observamos que, por
-    construcci\'on, toda $AB$-trayectoria de tipo P no pasa por $A\cup B$, por
-    lo que cada trayectoria de este tipo corresponde a la sequencia de fichas
-    obtenidas al mover la ficha de $a$ a trav\'es de $P_i$ hacia b, con $i \in
-    \{1, \dots, s\}$.
+    Podemos separar las $AB$-trayectorias construidas en $F_{k}(G)$ en tres
+    tipos. Los primeros dos tipos son las trayectorias obtenidas del Lema 1.1.2,
+    es decir, las trayectorias $A \xrightarrow[P_1]{}  B, \dots, A
+    \xrightarrow[P_s]{}  B$ y $A \xrightarrow[Q_1]{}  B, \dots, A
+    \xrightarrow[Q_l]{}  B$. Denotamos a estos tipos de $AB$-trayectorias como
+    trayectorias de tipo P y de tipo Q respectivamente. Notamos que, por como se
+    defini\'o, toda $AB$-trayectoria de tipo P no pasa por $A\cap B$, por lo que
+    cada trayectoria de este tipo corresponde a la sequencia de fichas obtenidas
+    al mover la ficha de $a$ a trav\'es de $P_i$ hacia b, con $i \in \{1, \dots,
+    s\}$.
 
 \end{proof}
 
