@@ -230,5 +230,58 @@ $F_{k}(G)$.
 \end{teorema}
         
 \begin{proof}
+Primero, observamos que $A$ y $B$ son v\'ertices adyacentes en $F_k(G)$ si y
+s\'olo si $V(G) \setminus A$ y $V(G)\setminus B$ son adyacentes en $F_{n-k}(G)$.
+Entonces tenemos que $F_k(G) \simeq F_{n-k}(G)$. Por lo tanto asumimos sin
+p\'erdida de generalidad que $k \leq \frac{n}{2}$.
 
+Sea $\mathcal{C}$ el m\'i{}nimo corte por v\'ertices de $F_k(G)$. Basta
+demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
+distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
+m\'i{}nimo.
+
+Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que hay $t$
+$AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
+$|\mathcal{C}| \geq t$.
+
+Ahora consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
+=\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
+definimos $A_{i,x} = A\setminus \{a_i\} \cup \{x\}$ y $B_{j,x} = B\setminus
+\{b_j\} \cup \{x\}$ para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
+(A\cup B)$. Supongamos que para algunos $i. j$ y $x$ tenemos que $A_{i,x} \notin
+\mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} = \{a_i,
+x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$ por lo que
+$A$ y $A_{i,x}$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
+An\'alogamente tenemos que  $B$ y $B_{j,x}$ est\'an en la misma componente de
+$F_k(G)-\mathcal{C}$
+
+Ahora nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
+\{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i{}
+tenemos que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
+\mathcal{C}$. Pero tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente, de
+$F_K(G) - \mathcal{C}$, de igual manera que $B$ y $B_{j,x}$. Por lo tanto $A$ y
+$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. Pero esto es una
+cotradicci\'on pues tomamos a $A$ y $B$ en distintas componentes. Esto implica
+que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$ y $x$.
+
+Por lo anterior tenemos que para cada $x \in V(G)\setminus (A \cup B)$
+$\mathcal{C}$ tiene todos los $\{A_i,x | i \in \{1, \dots, r\}\}$ o todos los
+$\{B_j,x | j \in \{1, \dots, r\}\}$. ESto nos da $r(n-k-r)$ v\'ertices en
+$\mathcal{C}$, pues $|A\cup B|=k +r$.
+
+AHora definimos $A_i,j = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_i,j =
+(B\setminus \{b_i\}) \cup \{a_j\}$, para toda $ i, j \in \{1, \dots, r\}$.
+Notamos que hay $2r^2$ de estos conjuntos. Ahora supongamos que $A_i,j \notin
+\mathcal{C}$, para algunos $ i, j \in \{1, \dots, r\}$. Entonces tenemos que $A
+\triangle A_i,j = \{a_i, b_j\}$. Entonces $A$ y $A_i,j$ est\'an en la misma
+componente de $F_k(G)- \mathcal{C}$. Por otro lado, $|B \triangle A_i,j | = 2
+(r-1)$, por lo que $B$ y $A_i,j$ est\'an en la misma componente de $F_k(G) -
+\mathcal{C}$. Por lo tanto tenemos que $A$ y $B$ est\'an en la misma componente
+de $F_k(G)-\mathcal{C}$, lo cu\'al nos lleva a la misma contradicci\'on que el
+caso anterior. Por lo tanto tenemos que $A_i,j \in \mathcal{C}$. An\'alogamente
+tenemos que $B_i,j \in \mathcal{C}$. 
+
+As\'i tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r \geq
+2$ y $k \leq \frac{n}{2}$ por lo que tenemos que $|\mathcal{C}| \geq r(n-k)+r^2
+> r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|<t$.
 \end{proof} 
