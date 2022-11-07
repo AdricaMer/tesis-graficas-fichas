@@ -167,7 +167,6 @@ $F_{k}(G)$.
     est\'an en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'\i{}clica.
 \end{proof}
 
-%TODO: Terminar demostraci\'on
 \begin{lema}%
 \label{lem:tercero}
     Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
@@ -190,13 +189,15 @@ $F_{k}(G)$.
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces el n\'umero de
     $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es al menos $k(t- k
-    +1)$. Asumimos que $t \geq k + 1$. Sea $\mathcal{P}$ un conjunto m\'aximo de
-    $ab$-trayectorias internamente ajenas en $G$. Por el Teorema General de
-    Menger sabemos que $|\mathcal{P}| \ge t$. Elegimos un conjunto $\mathcal{P}$
-    para el que ninguna trayectoria tenga cuerdas. Definimos a las trayectorias
-    $P_{1}, \dots, P_{l}$ como aquellas en $\mathcal{P}$ que no intersectan a $A
-    \cap B$ y $Q_{1}, \dots, Q_{s}$ las trayectorias en $\mathcal{P}$ que
-    intersectan a $A \cap B$. Entonces $l + s = |\mathcal{P}| \ge t$.
+    +1)$. Si $t=k$, entonces tenemos que $k(t - k + 1) = t(t-t+1) = t$ por lo
+    que tenemos el caso anterior. Por lo tanto consideramos  $t \geq k + 1$. Sea
+    $\mathcal{P}$ un conjunto m\'aximo de $ab$-trayectorias internamente ajenas
+    en $G$. Por el Teorema General de Menger sabemos que $|\mathcal{P}| \ge t$.
+    Elegimos un conjunto $\mathcal{P}$ para el que ninguna trayectoria tenga
+    cuerdas. Definimos a las trayectorias $P_{1}, \dots, P_{l}$ como aquellas en
+    $\mathcal{P}$ que no intersectan a $A \cap B$ y $Q_{1}, \dots, Q_{s}$ las
+    trayectorias en $\mathcal{P}$ que intersectan a $A \cap B$. Entonces $l + s
+    = |\mathcal{P}| \ge t$.
 
     Definimos a $C$ como el conjunto de v\'ertices en $A \cap B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, s\}$. Observamos que, al ser $Q_1,
@@ -343,7 +344,7 @@ s\'olo si $V(G) \setminus A$ y $V(G)\setminus B$ son adyacentes en $F_{n-k}(G)$.
 Entonces tenemos que $F_k(G) \simeq F_{n-k}(G)$. Por lo tanto asumimos sin
 p\'erdida de generalidad que $k \leq \frac{n}{2}$.
 
-Sea $\mathcal{C}$ el m\'i{}nimo corte por v\'ertices de $F_k(G)$. Basta
+Sea $\mathcal{C}$ un m\'i{}nimo corte por v\'ertices de $F_k(G)$. Basta
 demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
 distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
 m\'i{}nimo.
@@ -395,3 +396,28 @@ As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
 \geq 2$ y $k \leq \frac{n}{2}$, por lo que tenemos que $|\mathcal{C}| \geq
 r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
+
+\begin{teorema}%
+    \label{teo:tercero}
+        Sea $G$ una gr\'afica $t$-conexa con $t \ge k$ y $n \ge \frac{1}{2} kt$.
+        Entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
+    \end{teorema}
+
+    \begin{proof}
+        Sea $\mathcal{C}$ un m\'i{}nimo corte por v\'ertices de $F_k(G)$.
+        Definimos $A$ y $B$ como los v\'ertices en distintas componentes de
+        $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es m\'i{}nimo.
+
+        Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que hay
+        $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
+        $|\mathcal{C}| \geq k (t- k+ 1)$.
+
+        Ahora veamos el caso en el que $|A \triangle B| = 2r \ge 4$. Utilizando
+        la desigualdad del Teorema 1.1.5 tenemos que $|\mathcal{C}| \ge
+        r(n-k-r)+2r^2$. Dado que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces
+        tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2 r(n- k- r) \ge 2(n- k -2)
+        \ge tk - 2k+ 4$. Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$.
+        Entonces tenemos que $-2k+4 \ge -k 2-k$, esto implica que $kt -2k +4 \ge
+        kt - k^2 + 1 = k (t - k +1)$. Entonces tenemos que $|\mathcal{C}|
+        \ge tk -2k +4 \ge k(t-k+1)$. Por lo tanto $F_k(G)$ es $k(t-k+1)$-conexa.
+    \end{proof}
