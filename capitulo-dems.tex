@@ -404,20 +404,21 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
     \end{teorema}
 
     \begin{proof}
-        Sea $\mathcal{C}$ un m\'i{}nimo corte por v\'ertices de $F_k(G)$.
-        Definimos $A$ y $B$ como los v\'ertices en distintas componentes de
-        $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es m\'i{}nimo.
+        Sea $\mathcal{C}$ un corte por v\'ertices m\'i{}nimo de $F_k(G)$. Sean
+        $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
+        tales que $|A \triangle B|$ es m\'i{}nima.
 
-        Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que hay
+        Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que
         $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
         $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora veamos el caso en el que $|A \triangle B| = 2r \ge 4$. Utilizando
-        la desigualdad del Teorema 1.1.5 tenemos que $|\mathcal{C}| \ge
-        r(n-k-r)+2r^2$. Dado que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces
-        tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2 r(n- k- r) \ge 2(n- k -2)
-        \ge tk - 2k+ 4$. Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$.
-        Entonces tenemos que $-2k+4 \ge -k 2-k$, esto implica que $kt -2k +4 \ge
-        kt - k^2 + 1 = k (t - k +1)$. Entonces tenemos que $|\mathcal{C}|
-        \ge tk -2k +4 \ge k(t-k+1)$. Por lo tanto $F_k(G)$ es $k(t-k+1)$-conexa.
+        la desigualdad que se utiliza al final de la demostraci\'on
+        d\cref{teo:segundo} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
+        que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
+        $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
+        Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$. Entonces tenemos
+        que $-2k+4 \ge -k^2 + k$, esto implica que $kt -2k +4 \ge kt - k^2 + k =
+        k (t - k +1)$. Entonces tenemos que $|\mathcal{C}| \ge tk -2k +4 \ge
+        k(t-k+1)$. Por lo tanto $F_k(G)$ es $k(t-k+1)$-conexa.
     \end{proof}
