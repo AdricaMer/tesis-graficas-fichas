@@ -343,6 +343,14 @@ $F_{k}(G)$.
     %uncomment if require: \path (0,705); %set diagram left start at 0, and has
     %height of 705
     
+    \begin{scope}[xshift=3cm,yshift=4.5cm,scale=1]
+    \foreach \i in {0,...,5}
+        \draw ({(360/6)*\i}:50) node(\i)[wvertex]{\pgfmathparse{int(\i+1)}
+        \pgfmathresult};
+    \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
+        \draw [edge] (\i) to (\j);
+    \end{scope}
+
     
     \draw    (481.08, 347.35) circle [x radius= 10.5, y radius= 10.5]   ; \draw
     (481.08,341.85) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
@@ -423,25 +431,7 @@ $F_{k}(G)$.
     \draw    (481.83, 18.38) circle [x radius= 10.5, y radius= 10.5]   ; \draw
     (481.83,12.88) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
     [align=left] {456};
-    
-    %\node (1) [vertex,label=90:$1$]    at (94:84){};
-    
-    \draw (94,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
-    
-    \draw (124,151) node [anchor=north west][inner sep=0.75pt]   [align=left]
-    {3};
-    
-    \draw (56,152) node [anchor=north west][inner sep=0.75pt]   [align=left]
-    {2};
-    
-    \draw (147,215) node [anchor=north west][inner sep=0.75pt]   [align=left]
-    {4};
-    
-    \draw (92,257) node [anchor=north west][inner sep=0.75pt]   [align=left]
-    {5};
-    
-    \draw (34,215) node [anchor=north west][inner sep=0.75pt]   [align=left]
-    {6};
+
     % Connection
     \draw    (475.11,333.91) -- (424,218.86) ;
     % Connection
@@ -594,33 +584,6 @@ $F_{k}(G)$.
     \draw    (412.49,28.26) -- (500.5,135.5) ;
     % Connection
     \draw    (506.7,132.5) -- (484.96,32.75) ;
-    % Connection
-    \draw    (105.1,105) -- (123.9,147) ;
-    % Connection
-    \draw    (92.51,105) -- (68.49,148) ;
-    % Connection
-    \draw    (108,98.26) .. controls (151.19,125.47) and (166.87,163.05) .. (155.03,211) ;
-    % Connection
-    \draw    (37.54,211) .. controls (27.66,161.38) and (45.48,123.61) .. (91,97.7) ;
-    % Connection
-    \draw    (70,160.38) -- (121,159.63) ;
-    % Connection
-    \draw    (133.99,172) -- (148.01,211) ;
-    % Connection
-    \draw    (144,229.99) -- (106,259.01) ;
-    % Connection
-    \draw    (89,259.34) -- (48,229.66) ;
-    % Connection
-    \draw    (43.87,211) -- (57.13,173) ;
-    % Connection
-    \draw    (65.79,173) -- (93.21,253) ;
-    % Connection
-    \draw    (125.73,172) -- (101.27,253) ;
-    % Connection
-    \draw    (121,165.54) -- (48,217.46) ;
-    % Connection
-    \draw    (144,223.5) -- (48,223.5) ;
-    
     \end{tikzpicture}
 \caption{El diagrama $F_3(G)$.}
 \label{fig:lema1.1.4}
