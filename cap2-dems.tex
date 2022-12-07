@@ -14,15 +14,15 @@
 
     
     \begin{proof}
-        Primero, supongamos que existen $A$, $B$, $C$ v\'ertices en $F_k(G)$ que
-        son adyacentes dos a dos y cumplen $B \cap C \not\subset A$ y $a
-        \not\subset B \cup C$. Entonces existen los v\'ertices $a \in (B \cap
-        C)\setminus A$ y $b \in A \setminus (B \cup C)$. Notamos que $x \in B
-        \setminus A$ y $x \in C \setminus A$. De manera an\'aloga tenemos que $b
-        \in A \setminus B$ y $b \in A \setminus C$. Por otro lado sabmeos que
-        $A$ y $B$ son adyacentes en $F_k(G)$, al igual que $A$ y $C$, por lo
+        Primero, supongamos que existen $A$, $B$, $C$ v\'ertices en $F_k(G)$
+        tales que son adyacentes dos a dos y cumplen $B \cap C \not\subset A$ y
+        $A \not\subset B \cup C$. Entonces existen los v\'ertices  $a \in A
+        \setminus (B \cup C)$ y $a \in (B \cap C)\setminus A$. Notamos que $b
+        \in B \setminus A$ y $b \in C \setminus A$. De manera an\'aloga tenemos
+        que $a \in A \setminus B$ y $a \in A \setminus C$. Por otro lado sabmeos
+        que $A$ y $B$ son adyacentes en $F_k(G)$, al igual que $A$ y $C$, por lo
         tanto tenemos que $A \triangle B = \{a,b\}$ y $A \triangle C = \{a,
-        b\}$. Entonces tenemos que $(B \cup C \cup \{b\})\setminus \{a\}
+        b\}$. Entonces tenemos que $(B \cup C \cup \{a\})\setminus \{b\}
         \subseteq A$. Pero $B$ y $C$ son adyacentes en $F_k(G)$ por lo que $|B
         \cup C| = k+1$, entonces tenemos que $|A| \geq k+1$, lo c\'ual es una
         contradicci\'on pues $A \in V (F_k(G))$. 
@@ -35,7 +35,24 @@
         C) \cup \{b,c\}$ Por otro lado, sabemos que $|A|=k$ y da que $B \cap C
         \subset A$, tenemos que $A = (B \cap C) \cup \{a\}$. Adicionalmente, $A
         \subset B \cup C$, por lo que $a \in \{b, c\}$. Entonces tenemos que $A
-        = (B \cap C) \cup \{B\}$ o $A = (B \cap C) \cup \{c\}$, es decir $A = B$
+        = (B \cap C) \cup \{b\}$ o $A = (B \cap C) \cup \{c\}$, es decir $A = B$
         o $A=C$, lo cu\'al es una contradicci\'on. Por lo tanto tenemos que $B
         \cap C \subset A$ o $A \subset B \cup C$.
+    \end{proof}
+
+    \begin{teorema}
+        \label{teo:primero}
+        Sea $X$ un conjunto de v\'ertices de $F_k(G)$. Entonces $X$ es un clan
+        de $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S
+        \subseteq V(G)$ tales que $K \cap S = \varnothing$ y pasa uno de los
+        siguientes casos:
+        \begin{enumerate}
+            \item $X = \{S \cup \{v\}| v \in K\}$ y $|S| = k-1$
+            \item $X = \{(S\cup K) \setminus \{v\}| v \in K \}$ y $|S| + |K| =
+            k+1$
+        \end{enumerate}
+    \end{teorema}
+
+    \begin{proof}
+        
     \end{proof}
