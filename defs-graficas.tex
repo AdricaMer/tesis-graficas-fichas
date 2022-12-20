@@ -1,0 +1,97 @@
+%sobre G simple
+\begin{definicion}
+    \begin{enumerate}
+        \item Una gr\'afica $G$ es una terna ordenada $(V(G), E(G),
+        \psi_G)$ tal que el conjunto $V(G)$ es no vac\'i{}o, $V(G) \cap
+        E(G) = \varnothing$ y es la funci\'on de incidencia de $G$, que
+        asocia cada elemento de $E(G)$ una pareja no ordenada de $V(G)$.
+        Nombramos al conjunto $V(G)$ el conjunto de v\'ertices de $G$ y al
+        conjunto $E(G)$ lo nombramos el conjunto de aristas de $G$.
+        \item Sea $G$ una gr\'afica y sean $e \in E(G)$ y $u,v \in V(G)$
+        tales que $\psi_G(e)= \{u, v\}$. Decimoes que $e$ es incidente en
+        $u$ y en $v$. An\'alogamente podemos decir $u$ y $v$ son adyacentes
+        o vecinos.
+        \item Sea $G$ una gr\'afica y $v\in V(G)$. Denotamos $N_G(v)$ como
+        el conjunto de vecinos de $v$ en $G$.
+        \item Dada una gr\'afica $G$, el grado de un v\'ertice $v \in V(G)$
+        es el n\'umero de aristas incidentes en el v\'ertice. Un v\'ertice
+        aislado, es decir un v\'ertice que no tiene aristas, tiene grado 0.
+        \item Sean $G$ una gr\'afica y $S \subset V(G)$. Decimos que $S$ es
+        independiente si cualesquiera dos v\'ertices de $S$ no son adyacentes.
+        \item Una gr\'afica $G$ es conexa si para cualquier partici\'on de
+        $V(G)$ en dos conjuntos $X$ y $Y$, existe al menos una arista con un
+        extremo en $X$ y el otro extremo en $Y$. Si una gr\'afica no es
+        conexa, decimos que es inconexa.
+        \item Sea $G$ una gr\'afica, decimos que $G$ es completa si su
+        conjunto de aristas es igual a $\binom{V(G)}{2}$.
+        \item Una gr\'afica $G$ es una gr\'afica bipartita si su conjunto de
+        v\'ertices admite una partici\'on en $X$ y $Y$ de tal manera que $X$
+        y $Y$ son conjuntos independientes. De igual manera, definimos una
+        gr\'afica $k-\textit{partita}$ como la gr\'afica cuyo conjunto de
+        v\'ertices admite a lo m\'as $k$-partici\'on de conjuntos
+        independientes.
+        \item Una gr\'afica es bipartita completa si, dada la partici\'on
+        $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a
+        cada v\'ertice de $Y$. 
+        
+        \item Sean $G$ y $H$ dos gr\'aficas. Decimos que $G$ y $H$ son
+         isomorfas si existen biyecciones $\theta: V(G) \rightarrow V(G)$ y
+         $\phi: E(G) \rightarrow E(H)$ tales que $\psi_G(e)=uv$ si y s\'olo
+         si $\psi_H(\phi(e))= \theta(u)\theta(v)$. Denotamos $G \simeq H$
+         cuando $G$ y $H$ son gr\'aficas isomorfas.
+        \item Sea $G$ una gr\'afica, un camino $W$ en $G$ es una sucesi\'on
+        alternante de v\'ertices y aristas de $G$ de la siguiente forma
+        $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i \in
+        V(G)$ y $v_{j-1}v_j = e_j \in E/G$, para $i \in \{0, \dots, k\}$ y
+        $j \in \{ 1, \dots, k\}$.
+        \item Una trayectoria es un camino que no repite v\'ertices.
+        Denotamos una $uv-texitit{trayectoria}$ a la trayectoria con
+        v\'ertice inicial $u$ y \'ultimo v\'ertices $v$.
+        \item Decimos que un camino es cerrado si su v\'ertice inicial y su
+        v\'ertice final son el mismo.
+        \item Un ciclo es un camino cerrado que no repite v\'ertices, salvo
+        el primer y \'ultimo v\'ertice.
+        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H)
+        \subseteq E(G)$. Entonces decimos que $H$ es una subrgr\'afica de
+        $G$ y $G$ es una supergr\'afica de $H$. Esta propiedad la denotamos
+        como $H \subseteq G$. 
+        \item Sea $G$ una gr\'afica, nombramos componentes conexas a las
+        subr\'aficas de $G$ que son m\'aximas con la propiedad de ser
+        conexas.
+        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
+        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$,
+        denotada $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices
+        es $V$ y cuyo conjunto de aristas son aquellas aristas de $G$ que
+        tienen ambos extremos en $V$.
+        \item Sea $G$ una gr\'afica, un corte por v\'ertices $V$ es un
+        subconjunto de $V(G)$ tal que $G[V(G)-V]$ es inconexa.
+        \item Sea $G$ una gr\'afica, una $k-\textit{coloraci\'on}$ o simplemente
+        una $\textit{coloraci\'on}$ es una funcion $c: E(G)\rightarrow S$, con
+        $S$ un conjunto de cardinalidad $k$.
+        \item Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no
+        tiene cuerdas si la subgr\'afica inducida por $V(P)$ tiene grado
+        m\'aximo 2.
+    \end{enumerate}
+
+    
+\end{definicion}
+
+\begin{definicion}
+    \begin{enumerate}
+        \item Sean $G$ una gr\'afica y $k \geq 1$ un entero. Definimos la
+        gr\'afica de $k$-fichas de $G$, denotada por $F_k(G)$ como la
+        gr\'afica con conjunto de v\'ertices $\binom{V(G)}{k}$ y donde dos
+        v\'ertices $A$ y $B$ en $F_k(G)$ son adyacentes si y s\'olo si $|A
+        \triangle B| ={a,b}$, con $a \in A$, $b \in B$ y $ab \in E(G)$.
+        \item Sea $A$ un $k$-comjunto en la gr\'afica $G$ tal que $a \in A$
+        y $b\notin A$. Definimos $A'= (A \setminus \{a\}) \cup \{b\}$.
+        \item Sea $P$ una trayectoria en la gr\'afica $G$. Tomamos $A$ un
+        $k$- conjunto en $G$ de tal manera que $a\in A$ y $b \notin A$. Si
+        $A\cap P =\{v_1, \dots, v_q\}$, con $v_1 = a$, definimos $A
+        \xrightarrow[P]{} A'$ como la trayectoria en $F_k(G)$ entre $A$ y
+        $A'$ que sigue la siguiente secuencia. Primero movemos la ficha de
+        $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$, v\'ertice de $G$,
+        por $P$. Luego, para los v\'ertices $v_i$ en $G$,con $i \in \{q-1,
+        q-2, \dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. 
+    \end{enumerate}
+\end{definicion}
