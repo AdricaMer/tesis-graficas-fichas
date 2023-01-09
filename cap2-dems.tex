@@ -41,7 +41,7 @@
     \end{proof}
 
     \begin{teorema}
-        \label{teo:segundo}
+        \label{teo:cuarto}
         Sea $X$ un conjunto de v\'ertices de $F_k(G)$. Entonces $X$ es un clan
         de $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S
         \subseteq V(G)$ tales que $K \cap S = \varnothing$ y pasa uno de los
@@ -132,4 +132,47 @@
         \{x_1, x_2\}$ y al ser $K$ un clan de $G$ tenemos que $x_1x_2 \in E(G)$,
         por lo que tenemos que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por
         tanto $X$ cumple ser un clan de $F_k(G)$.
+    \end{proof}
+
+    \begin{teorema}
+        \label{teo:quinto}
+        Sea $G$ una gr\'afica y $F_k(G)$ su $k$-gr\'afica de fichas, entonces
+        $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+    \end{teorema}
+
+    \begin{proof}
+        Sea $X$ un clan de $F_k(G)$ con $\omega(F_k(G))$ v\'ertices. Entonces
+        por el \cref{teo:cuarto} sabemos que $X$ satisface alguno de los incisos
+        del teorema. Si $X = \{S \cup \{v\}| v \in K\}$ y $|S| = k-1$, notamos
+        que $|X| = |K|$. Adem\'as tenemos que $n \geq |S| + |K|$. Por lo tanto
+        tenemos que $n \geq |S| + |K| = k-1 + |X|$, es decir $|X| \leq n-k+1$.
+        Ahora, si $X = \{(S\cup K) \setminus \{v\}| v \in K \}$ y $|S| + |K| =
+        k+1$, notamos que tenemos la misma cardinalidad que en caso anterior, es
+        decir $|X| =|K|$. Entonces $|X| = |K| \leq |S| + |K| = k+1$. Por lo
+        tanto, de los dos casos obtenemos que $|X| \leq max\{n-k+1, k+1\}$.
+        Adicionalmente tenemos que ambos casos cumpllen $|X| = |K| \leq
+        \omega(G)$. Por lo que $\omega(F_k(G)) = |X| \leq min \{\omega(G), max
+        \{n-k+1, k+1\}\}$. y de esta manera obtenemos la cota superior de la
+        ecuaci\'on deseada.
+
+        Tomemos ahora un clan $K$ de $G$ con $\omega(G)$ v\'ertices.
+        Consideramos las siguientes construcciones de clanes de $F_k(G)$.
+        Primero, sea $K'$ un subconjunto de $K$ con $min\{\omega(G),n-k+1\}$
+        v\'ertices. Entonces tenemos que $|V(G) \setminus K'| \geq k-1$. Luego,
+        sea $S$ un subconjunto de $V(G) \setminus K'$ con exactamente $k-1$
+        v\'ertices. Obtenemos un clan de $F_k(G)$ de la forma $\{ S \cup \{v\}|v
+        \in K'\}$. \'Este clan tiene $|K'|$ v\'ertices. Por lo tanto tenemos que
+        $\omega(F_k(G)) \geq min \{\omega(G), n-k+1\}$. Ahora tomamos el
+        subconjunto $K'$ de $K$ con $min \{ \omega(G), k+1\}$ v\'ertices. Como
+        $n \geq k+1$, entonces existe un subconjunto $S$ de $V(G) \setminus K'$
+        con $(k+1)-|K'|$ v\'ertices. Entonces tenemos un clan de $F_k(G)$ de la
+        forma $\{ (S \cup K') \setminus \{v\}|v \in K'\}$ que tiene $|K'|$
+        v\'ertices. Por lo tanto tenemos que $\omega(F_k(G)) \geq min
+        \{\omega(G), k+1\}$.
+
+        Por los dos casos anteriores obentemos que $\omega(F_k(G)) \geq max
+        \{min \{\omega(G), n-k+1\}, min \{\omega(G), k+1 \}\} = min \{\omega(G),
+        max \{n-k+1,k+1\}\}$. De essta manera obtenemos la cota inferior de la
+        ecuaci\'on deseda. Por lo tanto tenemos que se cumple la igualdad, es
+        decir  $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
     \end{proof}
