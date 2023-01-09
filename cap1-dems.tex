@@ -183,9 +183,9 @@ $F_{k}(G)$.
     Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
     diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
     Teorema General de Menger, existen $P_{1}, \dots, P_{t}$ $ab$-trayectorias
-    internamente ajenas en $G$. Por lo tanto, por el Lema 1.1.2, existen $A
-    \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$ $AB$-trayectorias
-    internamente ajenas en $F_{k}(G)$. 
+    internamente ajenas en $G$. Por lo tanto, por el \Cref{lem:primero}, existen
+    $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$
+    $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces el n\'umero de
     $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es al menos $k(t- k
@@ -201,67 +201,64 @@ $F_{k}(G)$.
 
     Definimos a $C$ como el conjunto de v\'ertices en $A \cap B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, s\}$. Observamos que, al ser $Q_1,
-    \dots, Q_s$ internamente ajenos, entonces cada v\'ertice de $C$ esta en
-    exactamente un $Q_i$, con $i \in \{1, \dots, s\}$. 
+    \dots, Q_s$ internamente ajenas, entonces cada v\'ertice de $C$ esta en
+    exactamente una $Q_i$, con $i \in \{1, \dots, s\}$. Definimos a $D$ como el
+    conjunto de v\'ertices en $A \cap B$ que no intersecta a $Q_i$ alguna, con
+    $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$ inducen una partici\'on
+    de $A \cap B$. Entonces, tenemos que $|A\cap B| = |C| + |D| = k-1$. Adem\'as
+    podemos ver que $s \leq |C| \leq k-1$ y como $ t - s \leq l$, entonces $l
+    \geq t -|C| = t- (k-1-|D|)$.
 
-    Definimos $D$ como el conjunto de v\'ertices en $A \cap B$ que no intersecta
-    a ning\'un $Q_i$, con $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$
-    dividen a $A \cap B$. Entonces, tenemos que $|A\cap B| = |C| + |D| = k-1$.
-    Adem\'as podemos ver que $s \leq |C| \leq k-1$ y como $ t - s \leq l$,
-    entonces $l \geq t -|C| = t- (k-1-|D|)$.
-
-    Podemos separar las $AB$-trayectorias construidas en $F_{k}(G)$ en tres
-    tipos. Los primeros dos tipos son las trayectorias obtenidas del Lema 1.1.2,
-    es decir, las trayectorias $A \xrightarrow[P_1]{}  B, \dots, A
-    \xrightarrow[P_l]{}  B$ y $A \xrightarrow[Q_1]{}  B, \dots, A
+    Podemos separar las $AB$-trayectorias que consideramos en $F_{k}(G)$ en tres
+    tipos. Los primeros dos tipos son las trayectorias obtenidas
+    d\cref{lem:primero}, es decir, las trayectorias $A \xrightarrow[P_1]{}  B,
+    \dots, A \xrightarrow[P_l]{}  B$ y $A \xrightarrow[Q_1]{}  B, \dots, A
     \xrightarrow[Q_s]{}  B$. Nombramos a estos tipos de $AB$-trayectorias
-    trayectorias de tipo $P$ y de tipo $Q$ respectivamente. Notamos que, por
+    trayectorias de tipo $P$ y de tipo $Q$, respectivamente. Notamos que, por
     como se defini\'o, toda $AB$-trayectoria de tipo $P$ no pasa por $A\cap B$,
-    por lo que cada trayectoria de este tipo corresponde a la sequencia de
+    por lo que cada trayectoria de este tipo corresponde a la sucesi\'on de
     fichas obtenidas al mover la ficha de $a$ a trav\'es de $P_i$ hacia $b$, con
     $i \in \{1, \dots, l\}$.
     
-    Ahora construimos las trayectorias de tipo $R$ utilizando los vecinos de $v
-    \in A \cap B$. Primero consideramos $v \in C$, por lo que $v \in Q_i$ para
-    un  $i \in \{1, \dots, s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B)
-    \cup Q_i)$. Dado que $G$ es una gr\'afica $t$-conexa, $|Y_v| = d_G(v) \geq
-    t$. A su vez, $|A \cup B| =k -1$ y $v \in (A \cap B) \setminus N_G(v)$. Por
-    \'ultimo, como $Q_i$ no tiene cuerdas, $v$ s\'olo tiene dos vecinos en
-    $Q_i$. Por lo tanto tenemos que $|Y_v| \geq t- (k-2)-2 = t-k$. 
+    Las \'ultimas trayectorias a considerar son las del tipo $R$, que ahora
+    construimos utilizando los vecinos de los v\'ertices en $A \cap B$. Primero
+    consideramos $v \in C$, por lo que $v \in Q_i$ para un  $i \in \{1, \dots,
+    s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B) \cup V(Q_i))$. Dado que
+    $G$ es una gr\'afica $t$-conexa, $d_G(v) \geq t$. A su vez, $|A \cap B| =k
+    -1$ y $v \in (A \cap B) \setminus N_G(v)$. Por \'ultimo, como $Q_i$ no tiene
+    cuerdas, $v$ s\'olo tiene dos vecinos en $Q_i$. Por lo tanto tenemos que
+    $|Y_v| \geq t- (k-2)-2 = t-k$. 
     
-    Consideramos $v \in D$ y definimos $Y_v = N_g(v) \setminus (A \cup
-    B)$. Al ser $G$ una gr\'afica $t$-conexa, se cumple $|N_G(v)| = d_G(v) \geq
-    t$. Adem\'as tenemos que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus
-    N_G(v)$. Ahora, notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto
-    pues de lo contrario tendr\'i{}amos una trayectoria cuyo \'unico v\'ertice
-    interno no est\'a en ning\'un $P_i$ y ning\'un $Q_j$, con $i \in \{1, \dots,
-    l\}$ y $j \in \{1, \dots, s\}$, por lo que la trayectoria no estar\'i{}a en
-    $\mathcal{P}$. Por lo que concluimos que $A \notin N_G(v)$ o $b \notin
-    N_G(v)$. Por lo tanto tenemos que $|Y_v| \geq t- (k-1) = t-k + 1$.
-
-    Nombramos $Y_v '$ al subconjunto de $Y_v$ con cardinalidad m\'i{}nima, es
-    decir, $|Y_v '| = t-k$ si $v \in C$ y $|Y_v '| = t- k+ 1$ si $v \in D$.
-    Notamos que $Y_v ' \neq \varnothing$ porque tomamos $t \geq k + 1$, adem\'as
-    tenemos que $a, b \notin Y_v '$ por definici\'on. 
+    Ahora, sea $v \in D$ y definimos $Y_v = N_G(v) \setminus (A \cup B)$. Al ser
+    $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as tenemos
+    que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
+    notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto pues de lo
+    contrario tendr\'i{}amos una trayectoria cuyo \'unico v\'ertice interno no
+    est\'a en $P_i$ alguna ni $Q_j$ alguna, con $i \in \{1, \dots, l\}$ y $j \in
+    \{1, \dots, s\}$, por lo que la trayectoria no estar\'i{}a en $\mathcal{P}$.
+    Por lo que concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo
+    tanto tenemos que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$,
+    alg\'un subconjunto de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$
+    si $v \in D$. Notamos que $Y_v ' \neq \varnothing$ porque tomamos $t \geq k
+    + 1$, adem\'as tenemos que $a, b \notin Y_v '$ por definici\'on. 
 
     Sea $H_v$ la gr\'afica bipartita completa con clases de colores $Y_v '$ y
     $\{1,\dots, l\}$. Definimos la siguiente coloraci\'on, si $y \in P_i$, para
-    alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la arista
-    $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de azul.
-    
-    Ahora veamos si la coloraci\'on definida cumple las hip\'otesis del
-    Lema1.1.3. Primero tenemos que por construcci\'on de los $P_i$, con $i \in
-    \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a en a lo m\'as un $P_i$,
-    por lo que cada v\'ertice de $Y_v '$ incide en a lo m\'as una arista roja.
-    Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k + |D|$. Si
-    $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq t- k+1 = |Y_v '|$. Si $v
-    \in C$, tenemos que $l \geq t-k = |Y_v '|$. Entonces podemos usar el Lema
-    1.1.3 en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por lo tanto hay un
-    conjunto $M_v$ de aristas azules tal que cada v\'ertice en $Y$ incide en
-    exactamente una arista de $M_v$ y la uni\'on de aristas rojas y aristas de
-    $M_v$ es ac\'\i{}clica. Notamos que $|M_v|=|Y_v '|$.
+    alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
+    arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
+    azul. Ahora veamos si la coloraci\'on definida cumple las hip\'otesis
+    d\cref{lem:segundo} Primero tenemos que por construcci\'on de los $P_i$, con
+    $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a en a lo m\'as un
+    $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo m\'as una arista
+    roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k +
+    |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq t- k+1 = |Y_v
+    '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$. Entonces podemos usar
+    \cref{lem:segundo} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por lo
+    tanto hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice en $Y$
+    incide en exactamente una arista de $M_v$ y la uni\'on de aristas rojas y
+    aristas de $M_v$ es ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
 
-    Usando la $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
+    Usando $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
     manera. Para cada $jx \in M_v$ defininimos $R\langle v, x \rangle$ como la
     trayectoria en $F_k(G)$ que corresponde a mover la ficha en $v$ hacia $x$,
     luego recorrer la trayectoria $A\setminus \{v\} \xrightarrow[P_j]{}
@@ -270,34 +267,33 @@ $F_{k}(G)$.
     cada v\'ertice en $R\langle v,x \rangle$ se conforma por $((A\cap
     B)\setminus \{v\}) \cup \{x\}$ y alg\'un v\'ertice $y \in P_i$.
 
-
     Falta ver que cada trayectoria de tipo $R$ es internamente ajena al resto de
     las trayectorias. Primero veamos que las trayectorias de tipo $R$ son
     internamente ajenas dos a dos. Supongamos que existen $R \langle v, x
     \rangle$ y $R\langle v',x' \rangle$ tales que $(v,x) \neq (v',x')$ pero
     comparten un v\'ertice interno. Entonces tenemos que $ix \in M_v$ y $i'x'\in
-    M_v'$, con $i, i' \in \{1, \dots, l\}$. Por construcci\'on de las
+    M_{v'}$, con $i, i' \in \{1, \dots, l\}$. Por construcci\'on de las
     trayectorias de tipo $R$ tenemos que $((A\cap B)\setminus \{v\}) \cup \{x,
     y\} =((A\cap B)\setminus \{v'\}) \cup \{x', y'\}$ para alg\'un $y \in P_i$ y
-    $y' \in P_{i'}$. Al tener $x'\in Y_{v'} '$ tenemos que $x'\in \{x,y\}$, pues
-    $((A \cap B )\setminus \{v\}) \cap Y_{v'}'= \varnothing$. An\'alogamente
-    tenemos que $y'\in \{x, y\}$ ya que $(A \cap B) \cap P_i = \varnothing$. Por
-    lo tanto tenemos $\{x,y\}= \{x',y'\}$, lo cual implica que $(A\cap
-    B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, entonces $v = v'$. \'Esto
-    implica que $ix, i'x' \in M_v$, pero por construcci\'on cada v\'ertice de
-    $Y_v '$ es incidente en s\'olo una arista de $M_v$, por lo que $x \neq x'$ y
-    $i \neq i'$. Como tenemos que $\{x, y\}=\{x', y'\}$, entonces $x=y'$ y
-    $y=x'$. Entonces tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo cual implica
-    que $xi'$ y $x'i$ son aristas rojas en $H_v$. Por lo tanto tenemos el ciclo
-    $(x, i, x', i)$ con aristas de color azul, rojo, azul, rojo respectivamente,
-    lo cual es una contradicci\'on. As\'i pues, las trayectorias de tipo $R$ son
-    internamenta ajenas dos a dos.
+    $y' \in P_{i'}$. Al tener $x'\in Y_{v'} '$, y ya que $((A \cap B )\setminus
+    \{v\}) \cap Y_{v'}'= \varnothing$, tenemos que $x' \in \{x,y\}$.
+    An\'alogamente, como $(A \cap B) \cap P_i = \varnothing$, tenemos que $y'\in
+    \{x, y\}$. Por lo tanto tenemos $\{x,y\}= \{x',y'\}$, lo cual implica que
+    $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, entonces $v = v'$.
+    \'Esto implica que $ix, i'x' \in M_v$, pero por construcci\'on cada
+    v\'ertice de $Y_v '$ es incidente en s\'olo una arista de $M_v$, por lo que
+    $x \neq x'$ y $i \neq i'$. Como tenemos que $\{x, y\}=\{x', y'\}$, entonces
+    $x=y'$ y $y=x'$. Entonces tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo cual
+    implica que $xi'$ y $x'i$ son aristas rojas en $H_v$. Por lo tanto tenemos
+    el ciclo $(x, i, x', i)$ con aristas de color azul, rojo, azul, rojo
+    respectivamente, lo cual es una contradicci\'on. As\'i pues, las
+    trayectorias de tipo $R$ son internamenta ajenas dos a dos.
 
     Ahora veamos que las trayectorias de tipo $R$ y las de tipo $P$ son
     internamente ajenas entre s\'i{}. Sean $R\langle v,x \rangle$ y $A
     \xrightarrow[P_i]{}  B$, para alg\'un $i \in \{1, \dots, l\}$, trayectorias
-    en $F_k(G)$ de tipo $R$ y $P$ respectivamente. Por construcci\'on, $v$ no
-    est\'a en ning\'un v\'ertice interno de $\langle v,x \rangle$. Por otro
+    en $F_k(G)$ de tipo $R$ y $P$, respectivamente. Por construcci\'on, $v$ no
+    est\'a en v\'ertice interno alguno de $R \langle v,x \rangle$. Por otro
     lado, como $ v \in A\cap B$, entonces $v$ est\'a est\'atico en $A
     \xrightarrow[P_i]{}  B$, es decir, $v$ est\'a en cada v\'ertice de la
     trayectoria. Por lo tanto tenemos que las trayectorias $R\langle v,x
@@ -307,20 +303,20 @@ $F_{k}(G)$.
     Por \'ultimo, veamos que las trayectorias de tipo $Q$ y las de tipo $R$ son
     internamente ajenas entre s\'i{}. Sean $R\langle v,x \rangle$ y $A
     \xrightarrow[Q_i]{}  B$, para alg\'un $i \in \{1, \dots, s\}$, trayectorias
-    en $F_k(G)$ de tipo $R$ y $Q$ respectivamente. Sea $jx$ arista en $M_v$, con
-    $j \in \{1, \dots. l\}$, entonces $x \notin P_j$. Si tomamos $v \notin Q_i$,
-    entonces $v$ est\'a est\'atico en $A \xrightarrow[Q_i]{} B$, es decir,
+    en $F_k(G)$ de tipo $R$ y $Q$, respectivamente. Sea $jx$ arista en $M_v$,
+    con $j \in \{1, \dots, l\}$, entonces $x \notin P_j$. Si tomamos $v \notin
+    Q_i$, entonces $v$ est\'a est\'atico en $A \xrightarrow[Q_i]{} B$, es decir,
     est\'a en cada v\'ertice de la trayectoria. Por otro lado, por
     construcci\'on tenemos que $v$ no est\'a en los v\'ertices internos de $R
     \langle v, x \rangle$. Por lo tanto las trayectorias son internamente
     ajenas. Ahora consideramos el caso en el que $v \in Q_i$, es decir $v \in
     C$. Por como definimos $R \langle v,x \rangle$, $x$ es est\'a en cada
-    v\'ertice interno de la trayectoria. Por otro lado, como $x \in Y_v'$ y por
-    construcci\'on tenemos que $Y_v ' \cap ((A\cap B) \cup Q_i) = \varnothing$,
+    v\'ertice interno de la trayectoria. Por otro lado, como $x \in Y_v'$, y por
+    construcci\'on, tenemos que $Y_v ' \cap ((A\cap B) \cup Q_i) = \varnothing$,
     entonces $x \notin ((A \cap B) \cup Q_i)$. Por definici\'on, cada v\'ertice
     de $A \xrightarrow[Q_i]{}  B$ est\'a contenido en $((A \cap B) \cup Q_i)$,
     entonces $x$ no esta en los v\'ertices internos de $A \xrightarrow[Q_i]{}
-    B$. Por lo tanto tenemos que las trayectorias $R\langle v,x \rangle$ y $A
+    B$. Por lo tanto tenemos que las trayectorias $R \langle v,x \rangle$ y $A
     \xrightarrow[Q_i]{}  B$ son internamente ajenas.
 
     Tenemos que hay $l$ y $s$ trayectorias de tipo $P$ y $Q$ respectivamente.
@@ -329,7 +325,7 @@ $F_{k}(G)$.
     s+ |C|(t-k)+ |D|(t-k +1) = l + s + (|C| + |D|)(t-k) + |D| = l + s +
     (|k-1)(t-k) + |D|$ trayectorias internamente ajenas. Despejando tenemos que
     $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k +1)$. Por lo tanto el
-    n\'umero de $AB$- trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
+    n\'umero de $AB$-trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
 \end {proof}
 
 
