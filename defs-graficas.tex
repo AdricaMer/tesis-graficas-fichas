@@ -105,12 +105,27 @@
     \end{enumerate}
 \end{definicion}
 
-\begin{definicion} Definici\'on de coloraci\'on:
+\begin{definicion} Conceptos de coloraci\'on:
     \label{def:coloracion}
     \begin{enumerate}
         \item Sea $G$ una gr\'afica, una $k-\textit{coloraci\'on}$ o simplemente
         una $\textit{coloraci\'on}$ es una funcion $c: E(G)\rightarrow S$, con
         $S$ un conjunto de cardinalidad $k$.
+        \item Sea $G$ una gr\'afica y $S$ un conjunto de cardinalidad $k$, con
+        $k$ entero positivo. La funci\'on $c: V \rightarrow S$ es una
+        $k-\textit{coloraci\'on por v\'ertices}$, o simplemente una
+        $k-\textit{coloraci\'on}$ ,de $G$. Los elementos de $S$ son llamados
+        $\textit{colores}$.
+        \item Una coloraci\'on es una coloraci\'on propia si todos los
+        v\'ertices adyacentes ocupan colores diferentes.
+        \item Sea $G$ una gr\'afica y $c$ una coloraci\'on con $S$ colores.Para
+        cada color $i \in S$,se define la clase crom\'atica de $i$ de la
+        coloraci\'on $c$, denotado $V_i$, como el conjunto de todos los
+        v\'ertices de $G$ a que ocupan el color $i$, en otras palabras $V_i =
+        c^{-1}[i]$.
+        \item  Sea $G$ una gr\'afica, el m\'inimo entero $k$ para el cu\'al $G$
+        es $k$-coloreable es el n\'umero crom\'atico de $G$, denotado por
+        $\chi(G)$.
     \end{enumerate}
 \end{definicion}
 
