@@ -582,32 +582,52 @@ $F_{k}(G)$.
 \end{figure}
 
 
-%\begin{figure}
-%    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-3,xscale=3]
+\begin{figure}[ht!]
+\centering
+   \begin{tikzpicture}
     
-%        \begin{scope}[xshift=3cm,yshift=7cm,scale=1]
-%        \foreach \i in {0,...,15} \draw ({(360/16)*\i}:50)
-%            node(\i)[wvertex]{\pgfmathparse{int(\i+1)} 
-%            \pgfmathresult};
-%            \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11,
-%            11/12,12/13,13/14, 14/15, 15/0} 
-%            \draw
-%            [edge] (\i) to (\j);
-%            \foreach\i/\j in{0/2,0/3,1/5,1/6,1/14,2/6,2/7,3/5,3/14,3/15,4/7,
-%            4/15,5/10,6/9,6/12,7/11,8/10,8/12,9/11,9/13,9/14,10/14,10/15,11/14,
-%            12/15} 
-%            \draw
-%            [edge] (\i) to (\j);
-%        \foreach \i in {0,...,3} \draw({(360/4)*\i}:18)
-%            node(\i)[wvertex]{\pgfmathparse{int(\i+17)} 
-%            \pgfmathresult};
-%            \foreach \i/\j in{0/1,2/3}
-%            \draw
-%            [edge] (\i) to (\j);
+    \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
+       \foreach \i in {0,...,15} \draw ({(360/16)*\i}:4)
+           node(\i)[wvertex]{};
 
-%    \end{scope}
-%\end{tikzpicture}
-%\end{figure}
+        \draw ({(360/16)*1}:4.5) node (e1) {{\footnotesize $236$}};
+        \draw ({(360/16)*2}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*3}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*4}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*5}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*6}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*7}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*8}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*9}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*10}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*11}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*12}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*13}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*14}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $2$}};
+        \draw ({(360/16)*16}:4.5) node (e1) {{\footnotesize $2$}};
+
+        \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11,
+           11/12,12/13,13/14, 14/15, 15/0} 
+           \draw [edge] (\i) to (\j);
+        
+        \foreach\i/\j in{0/2,0/3,1/5,1/6,1/14,2/6,2/7,3/5,3/14,3/15,4/7,
+           4/15,5/10,6/9,6/12,7/11,8/10,8/12,9/11,9/13,9/14,10/14,10/15,11/14,
+           12/15} 
+           \draw [edge] (\i) to (\j);
+       
+
+        \draw (-1,1) node (17) [vertex, label=90:{\tiny $17$}] {};
+        \draw (-1,-1) node (18) [vertex, label=180:$a$] {};
+        \draw (1,-1) node (19) [vertex, label=270:$a$] {};
+        \draw (1,1) node (20) [vertex, label=0:$a$] {};
+                    
+        \foreach \i/\j in{0/1,2/3}
+           \draw [edge] (\i) to (\j);
+   \end{scope}
+
+\end{tikzpicture}
+\end{figure}
 
 
 \begin{teorema}%
