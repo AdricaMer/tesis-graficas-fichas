@@ -8,7 +8,7 @@ Todos los ambientes que se desee referir por n\'umero m\'as adelante deben de
 tener una etiqueta.  Consideremos por ejemplo el siguiente lema.
 
 \begin{teorema}%
-\label{teo:primero}
+\label{teo:diametro F(G)}
 Sea $G$ una gr\'afica conexa con di\'ametro $d$. Entonces, $F_{k}(G)$ es 
 conexa con di\'ametro al menos $k(d -k+1)$ y a lo m\'as $d k$.
 \end{teorema}
@@ -93,7 +93,7 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 
 
 \begin{lema}%
-\label{lem:primero}
+\label{lem:relacion trayectorias int. ajenas de G y F(G)}
 Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que $a \in
 A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$ y $Q$
 son $ab$-trayectorias internamente ajenas en $G$, entonces $A \xrightarrow[P]{}
@@ -131,7 +131,7 @@ $F_{k}(G)$.
 \end{proof}
 
 \begin{lema}%
-\label{lem:segundo}
+\label{lem:azul-rojo graf. bipartita}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$,
     donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo de
     manera que cada v\'ertice de $Y$ es incidente en a lo m\'as una arista roja,
@@ -168,7 +168,7 @@ $F_{k}(G)$.
 \end{proof}
 
 \begin{lema}%
-\label{lem:tercero}
+\label{lem:trayectorias int. ajenas}
     Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
     tales que $|A \triangle B| = 2$. Entonces hay $t$ $AB$-trayectorias
     internamente ajenas en $F_{k}(G)$. Adem\'as, si $t \geq k$, entonces hay
@@ -183,9 +183,10 @@ $F_{k}(G)$.
     Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
     diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
     Teorema General de Menger, existen $P_{1}, \dots, P_{t}$ $ab$-trayectorias
-    internamente ajenas en $G$. Por lo tanto, por el \Cref{lem:primero}, existen
-    $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$
-    $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
+    internamente ajenas en $G$. Por lo tanto, por \cref{lem:relacion
+    trayectorias int. ajenas de G y F(G)}, existen $A \xrightarrow[P_1]{}  B,
+    \dots, A \xrightarrow[P_t]{}  B$ $AB$-trayectorias internamente ajenas en
+    $F_{k}(G)$. 
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces el n\'umero de
     $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es al menos $k(t- k
@@ -211,14 +212,14 @@ $F_{k}(G)$.
 
     Podemos separar las $AB$-trayectorias que consideramos en $F_{k}(G)$ en tres
     tipos. Los primeros dos tipos son las trayectorias obtenidas
-    d\cref{lem:primero}, es decir, las trayectorias $A \xrightarrow[P_1]{}  B,
-    \dots, A \xrightarrow[P_l]{}  B$ y $A \xrightarrow[Q_1]{}  B, \dots, A
-    \xrightarrow[Q_s]{}  B$. Nombramos a estos tipos de $AB$-trayectorias
-    trayectorias de tipo $P$ y de tipo $Q$, respectivamente. Notamos que, por
-    como se defini\'o, toda $AB$-trayectoria de tipo $P$ no pasa por $A\cap B$,
-    por lo que cada trayectoria de este tipo corresponde a la sucesi\'on de
-    fichas obtenidas al mover la ficha de $a$ a trav\'es de $P_i$ hacia $b$, con
-    $i \in \{1, \dots, l\}$.
+    d\cref{lem:relacion trayectorias int. ajenas de G y F(G)}, es decir, las
+    trayectorias $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_l]{}  B$ y
+    $A \xrightarrow[Q_1]{}  B, \dots, A \xrightarrow[Q_s]{}  B$. Nombramos a
+    estos tipos de $AB$-trayectorias trayectorias de tipo $P$ y de tipo $Q$,
+    respectivamente. Notamos que, por como se defini\'o, toda $AB$-trayectoria
+    de tipo $P$ no pasa por $A\cap B$, por lo que cada trayectoria de este tipo
+    corresponde a la sucesi\'on de fichas obtenidas al mover la ficha de $a$ a
+    trav\'es de $P_i$ hacia $b$, con $i \in \{1, \dots, l\}$.
     
     Las \'ultimas trayectorias a considerar son las del tipo $R$, que ahora
     construimos utilizando los vecinos de los v\'ertices en $A \cap B$. Primero
@@ -247,16 +248,17 @@ $F_{k}(G)$.
     alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
     arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
     azul. Ahora veamos si la coloraci\'on definida cumple las hip\'otesis
-    d\cref{lem:segundo} Primero tenemos que por construcci\'on de los $P_i$, con
-    $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a en a lo m\'as un
-    $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo m\'as una arista
-    roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k +
-    |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq t- k+1 = |Y_v
-    '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$. Entonces podemos usar
-    \cref{lem:segundo} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por lo
-    tanto hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice en $Y$
-    incide en exactamente una arista de $M_v$ y la uni\'on de aristas rojas y
-    aristas de $M_v$ es ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
+    d\cref{lem:azul-rojo graf. bipartita} Primero tenemos que por construcci\'on
+    de los $P_i$, con $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a
+    en a lo m\'as un $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo
+    m\'as una arista roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+
+    1+ |D| > t-k + |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq
+    t- k+1 = |Y_v '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$.
+    Entonces podemos usar \cref{lem:azul-rojo graf. bipartita} en $H_v$ con $Z=
+    \{1, \dots, l\}$ y $Y = Y_v '$. Por lo tanto hay un conjunto $M_v$ de
+    aristas azules tal que cada v\'ertice en $Y$ incide en exactamente una
+    arista de $M_v$ y la uni\'on de aristas rojas y aristas de $M_v$ es
+    ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
 
     Usando $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
     manera. Para cada $jx \in M_v$ defininimos $R\langle v, x \rangle$ como la
@@ -631,7 +633,7 @@ $F_{k}(G)$.
 
 
 \begin{teorema}%
-\label{teo:segundo}
+\label{teo:F(G) t-conexa}
     Sea $G$ una gr\'afica $t$-conexa. Entonces $F_{k}(G)$ es $t$-conexa para
     todo $k>1$
 \end{teorema}
@@ -647,9 +649,9 @@ demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
 distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
 m\'i{}nimo.
 
-Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que hay $t$
-$AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
-$|\mathcal{C}| \geq t$.
+Si $|A \triangle B| = 2$, entonces por \cref{lem:trayectorias int. ajenas}
+tenemos que hay $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo
+que tenemos que $|\mathcal{C}| \geq t$.
 
 Ahora consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
 =\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
@@ -696,7 +698,7 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
 \begin{teorema}%
-    \label{teo:tercero}
+    \label{teo:F(G) k (t- k+ 1)-conexa}
         Sea $G$ una gr\'afica $t$-conexa con $t \ge k$ y $n \ge \frac{1}{2} kt$.
         Entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
     \end{teorema}
@@ -706,13 +708,13 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
         $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
         tales que $|A \triangle B|$ es m\'i{}nima.
 
-        Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que
+        Si $|A \triangle B| = 2$, entonces por \cref{lem:trayectorias int. ajenas} tenemos que
         $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
         $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora veamos el caso en el que $|A \triangle B| = 2r \ge 4$. Utilizando
         la desigualdad que se utiliza al final de la demostraci\'on
-        d\cref{teo:segundo} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
+        d\cref{teo:F(G) t-conexa} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
         que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
         $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
         Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$. Entonces tenemos
