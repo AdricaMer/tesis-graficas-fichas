@@ -1,4 +1,4 @@
-\chapter{Cap\'i{}tulo 2}%
+\chapter{Clanes}%
 \label{cap:ejemplos}
 
 \section{Teoremas y demostraciones de clanes}%
@@ -175,4 +175,16 @@
         max \{n-k+1,k+1\}\}$. De essta manera obtenemos la cota inferior de la
         ecuaci\'on deseda. Por lo tanto tenemos que se cumple la igualdad, es
         decir  $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+    \end{proof}
+
+    \begin{corolario}
+        Si asumimos $k \leq \frac{n}{2}$, entonces $\omega(F_k(G))= min
+        \{\omega(G), n-k+1\}$.
+    \end{corolario}
+
+    \begin{proof}
+        Por \cref*{teo:quinto} sabemos que $\omega(F_k(G))= min \{\omega(G), max
+        \{n-k+1,k+1\}\}$. Basta demostrar que $max \{n-k+1, k+1\} = n-k+1$. En
+        otras palabras $n-k+1 \geq k+1$, esto pasa si y s\'olo si $n \geq 2k$.
+        Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
     \end{proof}
