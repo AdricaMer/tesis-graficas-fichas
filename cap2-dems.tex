@@ -1,8 +1,8 @@
 \chapter{Clanes}%
-\label{cap:ejemplos}
+\label{cap:clanes}
 
 \section{Teoremas y demostraciones de clanes}%
-\label{sec:etiquetas}
+\%label{sec:etiquetas}
 
 
 \begin{lema}%
@@ -41,7 +41,7 @@
     \end{proof}
 
     \begin{teorema}
-        \label{teo:relacion clan en G y F(G)}
+    \label{teo:relacion clan en G y F(G)}
         Sea $X$ un conjunto de v\'ertices de $F_k(G)$. Entonces $X$ es un clan
         de $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S
         \subseteq V(G)$ tales que $K \cap S = \varnothing$ y pasa uno de los
@@ -63,7 +63,7 @@
         manera $X$ satisface ambos \'indices.
 
         Ahora veamos el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1, A_2,
-        \dots, A_p\}$ donde $A_iA_j \in E(F_k(G))$, para cualesquiera $i\neq j$,
+        \dots, A_p\}$ donde $A_i{A_j} \in E(F_k(G))$, para cualesquiera $i\neq j$,
         $i,j \in \{1, \dots, p\}$. Por \cref{lem:adyacencia de tres vertices}
         tenemos que $A_1\cap A_2 \subset A_i$ o $A_i \subset A_1 \cup A_2$ para
         todo $i \in \{3 \dots,p \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$
@@ -89,7 +89,7 @@
         de $S$ y un elemento que llamamos $v_i$. Notamos que para cualesquiera
         dos elementos distintos $i, j \in \{1, \dots, p\}$ tenemos que $A_i
         \triangle A_j = \{v_i, v_j\}$. Como $X$ es un clan en $F_k(G)$, entonces
-        tenemos que $v_iv_j \in E(G)$ por lo que nombramos $K= \{v_i|i \in \{1
+        tenemos que $v_i{v_j} \in E(G)$ por lo que nombramos $K= \{v_i|i \in \{1
         \dots, p\}\}$,un clan en $G$. Notamos que  $K \cap S = \varnothing$ y
         adem\'as $X= \{S \cup \{v\}| v \in K\}$, por lo que tenemos el caso del
         inciso $(a)$. 
@@ -135,9 +135,9 @@
     \end{proof}
 
     \begin{teorema}
-        \label{teo:clan maximo}
+    \label{teo:clan maximo}
         Sea $G$ una gr\'afica y $F_k(G)$ su $k$-gr\'afica de fichas, entonces
-        $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+        $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
     \end{teorema}
 
     \begin{proof}
@@ -149,42 +149,43 @@
         Ahora, si $X = \{(S\cup K) \setminus \{v\}| v \in K \}$ y $|S| + |K| =
         k+1$, notamos que tenemos la misma cardinalidad que en caso anterior, es
         decir $|X| =|K|$. Entonces $|X| = |K| \leq |S| + |K| = k+1$. Por lo
-        tanto, de los dos casos obtenemos que $|X| \leq max\{n-k+1, k+1\}$.
+        tanto, de los dos casos obtenemos que $|X| \leq \max\{n-k+1, k+1\}$.
         Adicionalmente tenemos que ambos casos cumpllen $|X| = |K| \leq
-        \omega(G)$. Por lo que $\omega(F_k(G)) = |X| \leq min \{\omega(G), max
-        \{n-k+1, k+1\}\}$. y de esta manera obtenemos la cota superior de la
+        \omega(G)$. Por lo que $\omega(F_k(G)) = |X| \leq \min \{\omega(G), \max
+        \{n-k+1, k+1\}\}$ y de esta manera obtenemos la cota superior de la
         ecuaci\'on deseada.
 
         Tomemos ahora un clan $K$ de $G$ con $\omega(G)$ v\'ertices.
         Consideramos las siguientes construcciones de clanes de $F_k(G)$.
-        Primero, sea $K'$ un subconjunto de $K$ con $min\{\omega(G),n-k+1\}$
+        Primero, sea $K'$ un subconjunto de $K$ con $\min\{\omega(G),n-k+1\}$
         v\'ertices. Entonces tenemos que $|V(G) \setminus K'| \geq k-1$. Luego,
         sea $S$ un subconjunto de $V(G) \setminus K'$ con exactamente $k-1$
         v\'ertices. Obtenemos un clan de $F_k(G)$ de la forma $\{ S \cup \{v\}|v
         \in K'\}$. \'Este clan tiene $|K'|$ v\'ertices. Por lo tanto tenemos que
-        $\omega(F_k(G)) \geq min \{\omega(G), n-k+1\}$. Ahora tomamos el
-        subconjunto $K'$ de $K$ con $min \{ \omega(G), k+1\}$ v\'ertices. Como
+        $\omega(F_k(G)) \geq \min \{\omega(G), n-k+1\}$. Ahora tomamos el
+        subconjunto $K'$ de $K$ con $\min \{ \omega(G), k+1\}$ v\'ertices. Como
         $n \geq k+1$, entonces existe un subconjunto $S$ de $V(G) \setminus K'$
         con $(k+1)-|K'|$ v\'ertices. Entonces tenemos un clan de $F_k(G)$ de la
         forma $\{ (S \cup K') \setminus \{v\}|v \in K'\}$ que tiene $|K'|$
-        v\'ertices. Por lo tanto tenemos que $\omega(F_k(G)) \geq min
+        v\'ertices. Por lo tanto tenemos que $\omega(F_k(G)) \geq \min
         \{\omega(G), k+1\}$.
 
-        Por los dos casos anteriores obentemos que $\omega(F_k(G)) \geq max
-        \{min \{\omega(G), n-k+1\}, min \{\omega(G), k+1 \}\} = min \{\omega(G),
-        max \{n-k+1,k+1\}\}$. De essta manera obtenemos la cota inferior de la
+        Por los dos casos anteriores obentemos que $\omega(F_k(G)) \geq \max
+        \{\min \{\omega(G), n-k+1\}, \min \{\omega(G), k+1 \}\} = min \{\omega(G),
+        \max \{n-k+1,k+1\}\}$. De essta manera obtenemos la cota inferior de la
         ecuaci\'on deseda. Por lo tanto tenemos que se cumple la igualdad, es
-        decir  $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+        decir  $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
     \end{proof}
 
     \begin{corolario}
-        Si asumimos $k \leq \frac{n}{2}$, entonces $\omega(F_k(G))= min
+        Si asumimos $k \leq \frac{n}{2}$, entonces $\omega(F_k(G))= \min
         \{\omega(G), n-k+1\}$.
     \end{corolario}
 
     \begin{proof}
-        Por \cref{teo:clan maximo} sabemos que $\omega(F_k(G))= min \{\omega(G), max
-        \{n-k+1,k+1\}\}$. Basta demostrar que $max \{n-k+1, k+1\} = n-k+1$. En
-        otras palabras $n-k+1 \geq k+1$, esto pasa si y s\'olo si $n \geq 2k$.
-        Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
+        Por \cref{teo:clan maximo} sabemos que $\omega(F_k(G))= \min
+        \{\omega(G), \max \{n-k+1,k+1\}\}$. Basta demostrar que $\max \{n-k+1,
+        k+1\} = n-k+1$. En otras palabras $n-k+1 \geq k+1$, esto pasa si y
+        s\'olo si $n \geq 2k$. Por lo tanto, si $\frac{n}{2} \geq k$, se cumple
+        la igualdad deseada.
     \end{proof}
