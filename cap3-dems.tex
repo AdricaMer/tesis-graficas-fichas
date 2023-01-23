@@ -73,35 +73,35 @@
     \end{teorema}
     
     
-    %definici\ón de grafica inducida
-    %dem n\'umero crom\'atico de subgr\'afica menor a n\'umero cr\'omatioc de gr\'afica
-    % \begin{proof}
-    %     Primero consideramos $k=1$. Sabemos que $n \geq \chi(G)$, por lo que tenemos
-    %     que $n\chi(G) \geq n\chi(G) + \chi(G) -n$. Entonces obtenemos $\chi (G) \geq
-    %     \frac{(n+1)\chi(G)-n}{n} = \frac{n+1}{n}\chi (G) -1$. Por otra parte,
-    %     $F_1(G) \simeq (G)$. Por lo tanto tenemos que $\chi(F_1(G)) \geq
-    %     \frac{n-1+2}{n} \chi(G) -1$.
+    %definici\ón de grafica inducida dem n\'umero crom\'atico de subgr\'afica
+    %menor a n\'umero cr\'omatioc de gr\'afica \begin{proof} Primero
+    %consideramos $k=1$. Sabemos que $n \geq \chi(G)$, por lo que tenemos que
+    %$n\chi(G) \geq n\chi(G) + \chi(G) -n$. Entonces obtenemos $\chi (G) \geq
+    %\frac{(n+1)\chi(G)-n}{n} = \frac{n+1}{n}\chi (G) -1$. Por otra parte,
+    %$F_1(G) \simeq (G)$. Por lo tanto tenemos que $\chi(F_1(G)) \geq
+    %\frac{n-1+2}{n} \chi(G) -1$.
     
-    %     Ahora sumongamos $k \geq 2$ y una coloraci\'on de $\chi(G)$ colores en $G$.
-    %     Nombramos $V_1 V_2, \dots, V_{\chi(G)}$ a las clases de colores de $G$. Sin
-    %     p\'erdida de generalidad, consideramos que $|V_1|\geq |V_2|\geq \cdots \geq
-    %     |V_{\chi(G)}|$. 
-    %     %Entonces tenemso que para todo $m \in \{1, \dots, \chi(G)\}$ se cumple que
-    %     %$\Sigma_{i=1}^{m}|V_i| \geq \frac{mn}{\chi(G)}$.
-    %     Denotamos $m'$ el menor \'indice tal que $\Sigma_{i=1}^{m'}|V_i| \geq k-1$.
-    %     Notamos que $\Sigma_{i=1}^{m'-1}|V_i| \leq k-2$, pues de lo contrario
-    %     tendr\'iamos que $k-2<\Sigma_{i=1}^{m'-1}|V_i| < k-1$, es decir
+    %     Ahora sumongamos $k \geq 2$ y una coloraci\'on de $\chi(G)$ colores en
+    %     $G$. Nombramos $V_1 V_2, \dots, V_{\chi(G)}$ a las clases de colores
+    %     de $G$. Sin p\'erdida de generalidad, consideramos que $|V_1|\geq
+    %     |V_2|\geq \cdots \geq |V_{\chi(G)}|$. %Entonces tenemso que para todo
+    %     $m \in \{1, \dots, \chi(G)\}$ se cumple que %$\Sigma_{i=1}^{m}|V_i|
+    %     \geq \frac{mn}{\chi(G)}$. Denotamos $m'$ el menor \'indice tal que
+    %     $\Sigma_{i=1}^{m'}|V_i| \geq k-1$. Notamos que
+    %     $\Sigma_{i=1}^{m'-1}|V_i| \leq k-2$, pues de lo contrario tendr\'iamos
+    %     que $k-2<\Sigma_{i=1}^{m'-1}|V_i| < k-1$, es decir
     %     $\Sigma_{i=1}^{m'-1}|V_i|<1$. Entonces tenemos que
-    %     $\frac{(m-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m}|V_i| \leq k-2$. Ahora, tomamos
-    %     $X \subseteq \bigcup_{i=1}^{m'} V_i$ con cardinalidad $k-1$. Por como se
-    %      defini\'o el conjunto, $G[X]$ es $m$-coloreable.% Entonces tenemos que
-    %     % $\chi(G) \leq \chi(G[X])+\chi(G-X) \leq m + \chi(G-X)$.
+    %     $\frac{(m-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m}|V_i| \leq k-2$. Ahora,
+    %     tomamos $X \subseteq \bigcup_{i=1}^{m'} V_i$ con cardinalidad $k-1$.
+    %     Por como se defini\'o el conjunto, $G[X]$ es $m$-coloreable.% Entonces
+    %     tenemos que % $\chi(G) \leq \chi(G[X])+\chi(G-X) \leq m + \chi(G-X)$.
     
-    %     Ahora, sabemos que $F_{k-r}(G-H) \simeq F_k(G,H)$, donde $r = |X|$. En este
-    %     caso $|X| = k-1$, por lo que tenemos que $F_1(G-X) \simeq F_k(G,X)$.
-    %     Adem\'as, sabemos que $F_1(G) \simeq G$. Por lo que tenemos que $G-X \simeq
-    %     F_k(G,X)$, que es una subr\'afica de $F_k(G)$. Por lo tanto tenemos que
-    %     $\chi(G) \leq m + \chi(G-X) = m + \chi(F_k(G,X)) \leq m + \chi(F_k(G))$. 
+    %     Ahora, sabemos que $F_{k-r}(G-H) \simeq F_k(G,H)$, donde $r = |X|$. En
+    %     este caso $|X| = k-1$, por lo que tenemos que $F_1(G-X) \simeq
+    %     F_k(G,X)$. Adem\'as, sabemos que $F_1(G) \simeq G$. Por lo que tenemos
+    %     que $G-X \simeq F_k(G,X)$, que es una subr\'afica de $F_k(G)$. Por lo
+    %     tanto tenemos que $\chi(G) \leq m + \chi(G-X) = m + \chi(F_k(G,X))
+    %     \leq m + \chi(F_k(G))$. 
         
     %     Por otro lado, tenemos $\frac{(m-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m'-1}|V_i|
     %     \leq k-2$. Entonces $m-1 \leq \frac{(k-2)}{n}\chi(G)$, de donde se sigue que
