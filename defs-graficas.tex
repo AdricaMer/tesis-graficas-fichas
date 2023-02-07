@@ -9,21 +9,20 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
 \begin{definicion} Conceptos sobre lo que es una gr\'afica:
     \label{def:grafica}
     \begin{enumerate}
-        \item Una gr\'afica $G$ es una terna ordenada $(V(G), E(G),
-        \psi_G)$ tal que el conjunto $V(G)$ es no vac\'i{}o, $V(G) \cap
-        E(G) = \varnothing$ y es la funci\'on de incidencia de $G$, que
-        asocia cada elemento de $E(G)$ una pareja no ordenada de $V(G)$.
-        Nombramos al conjunto $V(G)$ el conjunto de v\'ertices de $G$ y al
-        conjunto $E(G)$ lo nombramos el conjunto de aristas de $G$.
-        \item Sea $G$ una gr\'afica y sean $e \in E(G)$ y $u,v \in V(G)$
-        tales que $\psi_G(e)= \{u, v\}$. Decimoes que $e$ es incidente en
-        $u$ y en $v$. An\'alogamente podemos decir $u$ y $v$ son adyacentes
-        o vecinos.
-        \item Sea $G$ una gr\'afica y $v\in V(G)$. Denotamos $N_G(v)$ como
-        el conjunto de vecinos de $v$ en $G$.
-        \item Dada una gr\'afica $G$, el grado de un v\'ertice $v \in V(G)$
-        es el n\'umero de aristas incidentes en el v\'ertice. Un v\'ertice
-        aislado, es decir un v\'ertice que no tiene aristas, tiene grado 0.
+        \item Una gr\'afica $G$ es una terna ordenada $(V(G), E(G), \psi_G)$ tal
+        $V(G)$ y $E(G)$ son conjuntos finitos, $V(G) \cap E(G) = \varnothing$, y
+        $\psi_G$ es la funci\'on de incidencia de $G$, que asocia cada elemento
+        de $E(G)$ una pareja no ordenada de $V(G)$. Nombramos al conjunto $V(G)$
+        el conjunto de v\'ertices de $G$ y al conjunto $E(G)$ lo nombramos el
+        conjunto de aristas de $G$.
+        \item Sea $G$ una gr\'afica y sean $e \in E(G)$ y $u,v \in V(G)$ tales
+        que $\psi_G(e)= \{u, v\}$. Decimos que $e$ es incidente en $u$ y en $v$.
+        An\'alogamente podemos decir $u$ y $v$ son adyacentes o vecinos.
+        \item Sea $G$ una gr\'afica y $v\in V(G)$. Denotamos por $N_G(v)$ al
+        conjunto de vecinos de $v$ en $G$.
+        \item Dada una gr\'afica $G$, el grado de un v\'ertice $v \in V(G)$ es
+        el n\'umero de aristas incidentes en el v\'ertice. Un v\'ertice aislado,
+        es decir un v\'ertice que no tiene aristas, tiene grado 0.
     \end{enumerate}
 \end{definicion}
 
@@ -36,6 +35,7 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         clan si cualesquiera dos v\'ertices en $S$ son adyacentes.
         \item El n\'umero de clan de una gr\'afica $G$, denotado por $\omega_G$,
         es la cardinalidad del clan con mayor n\'umero de elementos en $G$.
+        \item Agregar n\'umero de independencia $\alpha$.
     \end{enumerate}
 \end{definicion}
 
@@ -45,34 +45,33 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         \item Sea $G$ una gr\'afica, decimos que $G$ es completa si su
         conjunto de aristas es igual a $\binom{V(G)}{2}$.
         \item Una gr\'afica $G$ es una gr\'afica bipartita si su conjunto de
-        v\'ertices admite una partici\'on en $X$ y $Y$ de tal manera que $X$
-        y $Y$ son conjuntos independientes. De igual manera, definimos una
-        gr\'afica $k-\textit{partita}$ como la gr\'afica cuyo conjunto de
-        v\'ertices admite a lo m\'as $k$-partici\'on de conjuntos
+        v\'ertices admite una partici\'on en $X$ y $Y$ de tal manera que $X$ y
+        $Y$ son conjuntos independientes. De igual manera, definimos una
+        gr\'afica $k$-\textit{partita} como la gr\'afica cuyo conjunto de
+        v\'ertices admite una partici\'on en a lo m\'as $k$ conjuntos
         independientes.
-        \item Una gr\'afica es bipartita completa si, dada la partici\'on
-        $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a
-        cada v\'ertice de $Y$.   
+        \item Una gr\'afica es bipartita completa si es bipartita y dada la
+        partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es
+        adyacente a cada v\'ertice de $Y$.   
     \end{enumerate}
 \end{definicion}
 
 \begin{definicion} Algunas propiedades de gr\'aficas:
     \label{def:propiedades}
     \begin{enumerate}
-        \item Sean $G$ y $H$ dos gr\'aficas. Decimos que $G$ y $H$ son
-         isomorfas si existen biyecciones $\theta: V(G) \rightarrow V(G)$ y
-         $\phi: E(G) \rightarrow E(H)$ tales que $\psi_G(e)=uv$ si y s\'olo
-         si $\psi_H(\phi(e))= \theta(u)\theta(v)$. Denotamos $G \simeq H$
-         cuando $G$ y $H$ son gr\'aficas isomorfas.
-        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H)
-        \subseteq E(G)$. Entonces decimos que $H$ es una subrgr\'afica de
-        $G$ y $G$ es una supergr\'afica de $H$. Esta propiedad la denotamos
-        como $H \subseteq G$. 
+        \item Sean $G$ y $H$ dos gr\'aficas. Decimos que $G$ y $H$ son isomorfas
+         si existen biyecciones $\theta: V(G) \to V(G)$ y $\phi: E(G) \to E(H)$
+         tales que $\psi_G(e)=uv$ si y s\'olo si $\psi_H(\phi(e))=
+         \theta(u)\theta(v)$. Denotamos $G \cong H$ cuando $G$ y $H$ son
+         gr\'aficas isomorfas.
+        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
+        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
+        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
         \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
-        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$,
-        denotada $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices
-        es $V$ y cuyo conjunto de aristas son aquellas aristas de $G$ que
-        tienen ambos extremos en $V$.
+        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
+        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
+        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
+        extremos en $V$.
     \end{enumerate}
 \end{definicion}
 
@@ -80,20 +79,19 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
     \label{def:tipos de recorridos}
     \begin{enumerate}
         \item Sea $G$ una gr\'afica, un camino $W$ en $G$ es una sucesi\'on
-        alternante de v\'ertices y aristas de $G$ de la siguiente forma
-        $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i \in
-        V(G)$ y $v_{j-1}v_j = e_j \in E/G$, para $i \in \{0, \dots, k\}$ y
-        $j \in \{ 1, \dots, k\}$.
-        \item Una trayectoria es un camino que no repite v\'ertices.
-        Denotamos una $uv-\textit{trayectoria}$ a la trayectoria con
-        v\'ertice inicial $u$ y \'ultimo v\'ertices $v$.
+        alternante de v\'ertices y aristas de $G$ de la siguiente forma $W=(v_0,
+        e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i \in V(G)$ y
+        $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0, \dots, k\}$ y $j \in \{ 1,
+        \dots, k\}$.
+        \item Una trayectoria es un camino que no repite v\'ertices. Llamamos
+        $uv$-\textit{trayectoria} a una trayectoria con v\'ertice inicial $u$ y
+        \'ultimo v\'ertice $v$.
         \item Decimos que un camino es cerrado si su v\'ertice inicial y su
         v\'ertice final son el mismo.
-        \item Un ciclo es un camino cerrado que no repite v\'ertices, salvo
-        el primer y \'ultimo v\'ertice.
-        \item Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no
-        tiene cuerdas si la subgr\'afica inducida por $V(P)$ tiene grado
-        m\'aximo 2.
+        \item Un ciclo es un camino cerrado de longitud al menos $3$ que no
+        repite v\'ertices, salvo el primer y \'ultimo v\'ertice.
+        \item Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no tiene
+        cuerdas si la subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2.
     \end{enumerate}
 \end{definicion}
 
@@ -102,11 +100,10 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
     \begin{enumerate}    
         \item Una gr\'afica $G$ es conexa si para cualquier partici\'on de
         $V(G)$ en dos conjuntos $X$ y $Y$, existe al menos una arista con un
-        extremo en $X$ y el otro extremo en $Y$. Si una gr\'afica no es
-        conexa, decimos que es inconexa.
+        extremo en $X$ y el otro extremo en $Y$. Si una gr\'afica no es conexa,
+        decimos que es inconexa.
         \item Sea $G$ una gr\'afica, nombramos componentes conexas a las
-        subr\'aficas de $G$ que son m\'aximas con la propiedad de ser
-        conexas.
+        subr\'aficas de $G$ que son m\'aximas con la propiedad de ser conexas.
         \item Sea $G$ una gr\'afica, un corte por v\'ertices $V$ es un
         subconjunto de $V(G)$ tal que $G[V(G)-V]$ es inconexa.
     \end{enumerate}
@@ -115,18 +112,18 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
 \begin{definicion} Conceptos de coloraci\'on:
     \label{def:coloracion}
     \begin{enumerate}
-        \item Sea $G$ una gr\'afica, una $k-\textit{coloraci\'on}$ o simplemente
-        una $\textit{coloraci\'on}$ es una funcion $c: E(G)\rightarrow S$, con
-        $S$ un conjunto de cardinalidad $k$.
+        \item Sea $G$ una gr\'afica, una $k$-\textit{coloraci\'on}, o
+        simplemente una $\textit{coloraci\'on}$, es una funcion $c \colon
+        E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
         \item Sea $G$ una gr\'afica y $S$ un conjunto de cardinalidad $k$, con
-        $k$ entero positivo. La funci\'on $c: V \rightarrow S$ es una
-        $k-\textit{coloraci\'on por v\'ertices}$, o simplemente una
-        $k-\textit{coloraci\'on}$ ,de $G$. Los elementos de $S$ son llamados
+        $k$ entero positivo. La funci\'on $c: V \to S$ es una
+        $k$-\textit{coloraci\'on por v\'ertices}, o simplemente una
+        $k$-\textit{coloraci\'on}, de $G$. Los elementos de $S$ son llamados
         $\textit{colores}$.
-        \item Una coloraci\'on es una coloraci\'on propia si todos los
+        \item Una coloraci\'on es una \textit{coloraci\'on propia} si todos los
         v\'ertices adyacentes ocupan colores diferentes.
-        \item Sea $G$ una gr\'afica y $c$ una coloraci\'on con $S$ colores.Para
-        cada color $i \in S$,se define la clase crom\'atica de $i$ de la
+        \item Sea $G$ una gr\'afica y $c$ una coloraci\'on con $S$ colores. Para
+        cada color $i \in S$, se define la clase crom\'atica de $i$ de la
         coloraci\'on $c$, denotado $V_i$, como el conjunto de todos los
         v\'ertices de $G$ a que ocupan el color $i$, en otras palabras $V_i =
         c^{-1}[i]$.
@@ -157,40 +154,38 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
     \end{enumerate}
 \end{definicion}
 
-% \begin{figure}[ht!]
-%     \centering
-%        \begin{tikzpicture}
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
     
-%         \begin{scope}[xshift=-8.5cm]
-%             \foreach \i in {0,...,4}
-%                 \draw ({(360/5)*\i}:2) node(\i)[wvertex]{\pgfmathparse{int(\i+1)}
-%                 \pgfmathresult};
-%             \foreach \i/\j in {0/1,0/2,0/3,0/4,1/2,2/3,3/4}
-%                 \draw [edge] (\i) to (\j);
-%             \end{scope}
+        \begin{scope}[xshift=-8.5cm]
+            \foreach \i in {0,...,4}
+                \draw ({(360/5)*\i}:2) node(\i)[vertex]{\pgfmathparse{int(\i+1)}
+                \pgfmathresult};
+            \foreach \i/\j in {0/1,0/2,0/3,0/4,1/2,2/3,3/4}
+                \draw [edge] (\i) to (\j);
+            \end{scope}
         
-%         \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
-%             \draw (0,1.5) node (1) [vertex, label=90:{\scriptsize $134$}] {};
-%             \draw (-2,2) node (2) [vertex, label=90:{\scriptsize $234$}] {};
-%             \draw (2,2) node (3) [vertex, label=90:{\scriptsize $345$}] {};
-%             \draw (-3,1) node (4) [vertex, label=180:{\scriptsize $123$}] {};
-%             \draw (3,1) node (5) [vertex, label=0:{\scriptsize $145$}] {}; 
-%             \draw (-1,0.7) node (6) [vertex, label=87:{\scriptsize $235$}] {};
-%             \draw (1,0.7) node (7) [vertex, label=93:{\scriptsize $245$}] {};
-%             \draw (-1.1,-1) node (8) [vertex, label=240:{\scriptsize $124$}] {};
-%             \draw (1.1,-1) node (9) [vertex, label=330:{\scriptsize $135$}] {};
-%             \draw (0,-2.3) node (10) [vertex, label=270:{\scriptsize $125$}] {};
+        \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
+            \draw (0,1.5) node (1) [vertex, label=90:{\scriptsize $134$}] {};
+            \draw (-2,2) node (2) [vertex, label=90:{\scriptsize $234$}] {};
+            \draw (2,2) node (3) [vertex, label=90:{\scriptsize $345$}] {};
+            \draw (-3,1) node (4) [vertex, label=180:{\scriptsize $123$}] {};
+            \draw (3,1) node (5) [vertex, label=0:{\scriptsize $145$}] {}; 
+            \draw (-1,0.7) node (6) [vertex, label=87:{\scriptsize $235$}] {};
+            \draw (1,0.7) node (7) [vertex, label=93:{\scriptsize $245$}] {};
+            \draw (-1.1,-1) node (8) [vertex, label=240:{\scriptsize $124$}] {};
+            \draw (1.1,-1) node (9) [vertex, label=330:{\scriptsize $135$}] {};
+            \draw (0,-2.3) node (10) [vertex, label=270:{\scriptsize $125$}] {};
            
-%             \foreach \i/\j in{1/2, 1/3, 1/8, 1/9, 2/4, 2/6, 2/8, 3/5, 3/7, 3/9,
-%             4/6, 4/8, 5/7, 5/9, 6/7, 6/9, 6/10, 7/8, 7/10, 8/10, 9/10} 
-%             \draw [edge] (\i) to (\j);
-%        \end{scope}
+            \foreach \i/\j in{1/2, 1/3, 1/8, 1/9, 2/4, 2/6, 2/8, 3/5, 3/7, 3/9,
+            4/6, 4/8, 5/7, 5/9, 6/7, 6/9, 6/10, 7/8, 7/10, 8/10, 9/10} 
+            \draw [edge] (\i) to (\j);
+       \end{scope}
     
             
     
-%     \end{tikzpicture}
-%     \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
-%     \label{fig:ex-tok-path}
-%     \end{figure}
-
-%     \end{document}
+    \end{tikzpicture}
+    \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
+    \label{fig:ex-tok-path}
+\end{figure}
