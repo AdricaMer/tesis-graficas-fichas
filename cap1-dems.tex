@@ -8,7 +8,7 @@ Todos los ambientes que se desee referir por n\'umero m\'as adelante deben de
 tener una etiqueta.  Consideremos por ejemplo el siguiente lema.
 
 \begin{teorema}%
-\label{teo:diametro F(G)}
+\label{teo:diamFG}
 Sea $G$ una gr\'afica conexa con di\'ametro $d$. Entonces, $F_{k}(G)$ es 
 conexa con di\'ametro al menos $k(d -k+1)$ y a lo m\'as $d k$.
 \end{teorema}
@@ -93,7 +93,7 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 
 
 \begin{lema}%
-\label{lem:relacion trayectorias int. ajenas de G y F(G)}
+\label{lem:TrayIntAj-G-FG}
 Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que $a \in
 A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$ y $Q$
 son $ab$-trayectorias internamente ajenas en $G$, entonces $A \xrightarrow[P]{}
@@ -168,7 +168,7 @@ $F_{k}(G)$.
 \end{proof}
 
 \begin{lema}%
-\label{lem:trayectorias int. ajenas}
+\label{lem:TrayIntAj}
     Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
     tales que $|A \triangle B| = 2$. Entonces hay $t$ $AB$-trayectorias
     internamente ajenas en $F_{k}(G)$. Adem\'as, si $t \geq k$, entonces hay
@@ -183,8 +183,7 @@ $F_{k}(G)$.
     Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
     diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
     Teorema General de Menger, existen $P_{1}, \dots, P_{t}$ $ab$-trayectorias
-    internamente ajenas en $G$. Por lo tanto, por \cref{lem:relacion
-    trayectorias int. ajenas de G y F(G)}, existen $A \xrightarrow[P_1]{}  B,
+    internamente ajenas en $G$. Por lo tanto, por \cref{lem:TrayIntAj-G-FG}, existen $A \xrightarrow[P_1]{}  B,
     \dots, A \xrightarrow[P_t]{}  B$ $AB$-trayectorias internamente ajenas en
     $F_{k}(G)$. 
 
@@ -212,7 +211,7 @@ $F_{k}(G)$.
 
     Podemos separar las $AB$-trayectorias que consideramos en $F_{k}(G)$ en tres
     tipos. Los primeros dos tipos son las trayectorias obtenidas
-    d\cref{lem:relacion trayectorias int. ajenas de G y F(G)}, es decir, las
+    d\cref{lem:TrayIntAj-G-FG}, es decir, las
     trayectorias $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_l]{}  B$ y
     $A \xrightarrow[Q_1]{}  B, \dots, A \xrightarrow[Q_s]{}  B$. Nombramos a
     estos tipos de $AB$-trayectorias trayectorias de tipo $P$ y de tipo $Q$,
@@ -392,7 +391,7 @@ $F_{k}(G)$.
 
 
 \begin{teorema}%
-\label{teo:F(G) t-conexa}
+\label{teo:FG-t-conexa}
     Sea $G$ una gr\'afica $t$-conexa. Entonces $F_{k}(G)$ es $t$-conexa para
     todo $k>1$
 \end{teorema}
@@ -408,7 +407,7 @@ demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
 distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
 m\'inimo.
 
-Si $|A \triangle B| = 2$, entonces por \cref{lem:trayectorias int. ajenas}
+Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj}
 tenemos que hay $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo
 que tenemos que $|\mathcal{C}| \geq t$.
 
@@ -433,8 +432,8 @@ cotradicci\'on pues tomamos a $A$ y $B$ en distintas componentes, lo que implica
 que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$ y $x$.
 
 Por lo anterior tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
-$\mathcal{C}$ tiene todos los $\{A_i,x | i \in \{1, \dots, r\}\}$ o todos los
-$\{B_j,x | j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
+$\mathcal{C}$ tiene todos los $\{A_i,x colon\ i \in \{1, \dots, r\}\}$ o todos los
+$\{B_j,x colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
 $\mathcal{C}$ tiene al menos $r(n-k-r)$ v\'ertices.
 
 Ahora definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} =
@@ -457,7 +456,7 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
 \begin{teorema}%
-    \label{teo:F(G) k (t- k+ 1)-conexa}
+    \label{teo:FG_k(t- k+ 1)-conexa}
         Sea $G$ una gr\'afica $t$-conexa con $t \ge k$ y $n \ge \frac{1}{2} kt$.
         Entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
     \end{teorema}
@@ -467,13 +466,13 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
         $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
         tales que $|A \triangle B|$ es m\'inima.
 
-        Si $|A \triangle B| = 2$, entonces por \cref{lem:trayectorias int. ajenas} tenemos que
+        Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj} tenemos que
         $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
         $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora veamos el caso en el que $|A \triangle B| = 2r \ge 4$. Utilizando
         la desigualdad que se utiliza al final de la demostraci\'on
-        d\cref{teo:F(G) t-conexa} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
+        d\cref{teo:FG-t-conexa} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
         que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
         $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
         Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$. Entonces tenemos
