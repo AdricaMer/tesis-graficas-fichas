@@ -12,20 +12,23 @@
 \end{teorema}
 
 \begin{proof}
-    Sea $c: V(G) \rightarrow \{0,1, \dots \chi(G)-1\}$ una coloraci\'on propia
-    de $G$. Ahora, a cada v\'ertice $A$ de $F_k(G)$ le asignamos el color $
-    c'(A)= \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una
-    coloraci\'on propia. Supongamos lo contrario, existen $A$ y $B$ v\'ertices
-    adyacentes en $F_k(G)$ tales que $c'(A) = c'(B)$. Como $A$ y $B$ son
-    adyacentes, entonces $A \triangle B = \{a,b\}$ para algunos v\'ertices $a$ y
-    $b$ de $G$ tales que $ab \in E(G)$. Al tomar $c'(A) = c'(B)$ tenemos que
-    $\Sigma_{x \in A}c(x) \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin
-    p\'erdida de generalidad consideramos $a \in A$ y $b \in B$, entonces
-    tenemos que $c(a) \equiv c(b) \mod \chi(G)$. Entonces llegamos a la
-    contradicci\'on de que $c$ no es una coloraci\'on propia pues $c(a) = c(b)$
-    y $ab \in E(G)$. Por lo que tenemos que $c'$ es una coloraci\'on propia de
-    $F_k(G)$ con a lo m\'as $\chi (G)$ colores. Por lo tanto $\chi(F_k(G)) \leq
-    \chi (G)$.
+    Sea $c: V(G) \to \{0,1, \dots \chi(G)-1\}$ una coloraci\'on propia de $G$.
+    Ahora, a cada v\'ertice $A$ de $F_k(G)$ le asignamos el color $ c'(A)=
+    \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una coloraci\'on
+    propia. Supongamos lo contrario, existen $A$ y $B$ v\'ertices adyacentes en
+    $F_k(G)$ tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes, entonces
+    $A \triangle B = \{a,b\}$ para algunos v\'ertices $a$ y $b$ de $G$ tales que
+    $ab \in E(G)$. Al tomar $c'(A) = c'(B)$ tenemos que $\Sigma_{x \in A}c(x)
+    \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin p\'erdida de generalidad
+    consideramos $a \in A$ y $b \in B$, entonces podemos ver la congruencia de
+    la siguiente manera: $c(a) + \Sigma_{x \in A\setminus\{a\}}c(x) \equiv c(b) +
+    \Sigma_{y \in B\setminus\{b\}}c(y) \mod \chi(G)$. Pero $A \triangle B =
+    \{a,b\}$, por lo que $\Sigma_{x \in A\setminus\{a\}}c(x)=\Sigma_{y \in
+    B\setminus\{b\}}c(y)$. Entonces tenemos que $c(a) \equiv c(b) \mod
+    \chi(G)$ y de este modo llegamos a la contradicci\'on de que $c$ no es una
+    coloraci\'on propia pues $c(a) = c(b)$ y $ab \in E(G)$. Por lo que tenemos
+    que $c'$ es una coloraci\'on propia de $F_k(G)$ con a lo m\'as $\chi (G)$
+    colores. Por lo tanto $\chi(F_k(G)) \leq \chi (G)$.
     %TODO explicar mejor cómo llegas a la congruencia de los colores de a y b
 \end{proof}
 
@@ -39,30 +42,42 @@
 %si es vacı́a, y es 2-cromática si
 %y sólo si es bipartita y no vacı́a
 \begin{proof}
-    Una gr\'afica es $2$-crom\'atica si y s\'olo si es bipartita y no vac\'ia.
-    Por lo que basta demostrar que si $F_k(G)$ es una gr\'afica bipartita,
+    Inicialmente/Primero veamos que si $F_k(G)$ es una gr\'afica bipartita,
     entonces $G$ es una gr\'afica bipartita. Lo probaremos por contrapositiva,
-    es decir si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es
+    es decir, si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es
     una gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces
-    $G$ contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p = v_1)$. Si $p \geq
-    k+1$, entonces tenemos un $p$-ciclo en $F_k(G)$ de la siguiente manera:
-    $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\}$ $\{v_1, v_2, \dots, v_{k-2},
-    v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+2}\}$ \dots
-    $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_p\}$ $\{v_1, v_2, \dots, v_{k-2},
-    v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-1}, v_k, v_p\}$ \dots $\{v_1 v_3,
-    \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3, \dots, v_{k-1}, v_k, v_p\}$.
-    Entonces $F_k(G)$ no es bipartita. Ahora consideramos $p \leq k$. Como $n
-    \geq k+1$, entonces existe un conjunto $A$ de $k-p+1$ v\'ertices en
-    $V(G)\setminus C$. Dado que $C$ est\'a en $G -A$, usamos la construcci\'on
-    anterior y obtenemos un ciclo impar en $F_j(G)$. Como $F_k(G,A) \cong
-    F_{p-1}(G-A)$ entonces existe un ciclo impar en $F_k(G,A)$ que es
-    subgr\'afica de $F_k(G)$. Por lo tanto $F_k(G)$ no es bipartita.
+    $G$ contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p)$. Primero veamos
+    el caso en el que $p \geq k+1$. En este caso tenemos un $p$-ciclo en
+    $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
+    v_k\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots,
+    v_{k-2}, v_{k-1}, v_{k+2}\}$ \dots $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
+    v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-1},
+    v_k, v_p\}$ \dots $\{v_1 v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
+    \dots, v_{k-1}, v_k, v_p\}$. Notamos que el hay $p-k+1$ v\'ertices al mover
+    la ficha de $v_k$ a $p$. Adem\'as tenemos $k-1$ v\'ertices en el resto del
+    ciclo. Por lo tanto $F_k(G)$ tiene un $p$-ciclo por lo que no es bipartita.
+    
+    Ahora consideramos el caso en el que $p \leq k$. Notamos que el conjunto
+    $V(G)\setminus C$ tiene cardinalidad $n-p$, donde $C$ es el ciclo impar
+    antes mencionado. Como $n \geq k+1$, entonces $n-p \geq k+1-p$, por lo que
+    existe un conjunto $A$ de $k-p+1$ v\'ertices en $V(G)\setminus C$. Ahora
+    consideremos la gr\'afica de fichas $F_{p-1}(G-A)$. Entonces tenemos el caso
+    anterior en el que $k \leq p$, por lo que $F_{p-1}(G-A)$ no es una gr\'afica
+    bipartita. Pero $F_{p-1}(G-A)=F{k-(k+1-p)}(G-A)$ que es congruente con $
+    F_k(G,A)$, la subgr\'afica inducida de $F_k(G)$ por los v\'ertices de
+    $F_k(G)$ que contienen a $A$. Por lo tanto existe un ciclo impar en una
+    gr\'afica inducida de $F_k(G)$, de manera que $F_k(G)$ no es bipartita. Por
+    lo tanto tenemos que si $F_k(G)$ es una gr\'afica bipartita, entonces $G$
+    tamb\'en lo es.
+    
     %TODO revisar ciclo
     %TODO revisar caso p \le k
 
-    Tenemos que, si $F_k(G)$ es una gr\'afica bipartita, entonces $G$ tamb\'en
-    es una gr\'afica bipartita. Entonces $G$ es $2$-crom\'atica y por
-    \cref{teo:num cromatico de G y F(G)} tenemos que para cualquier $l\geq 1$,
+    Ahora pasamos a demostrar la proposici\'on. Sea $F_k(G)$ una gr\'afica
+    bipartita, por lo demostrado anteriormente, tenemos que $G$ tambi\'en es una
+    gr\'afica bipartita. Sabemos que una gr\'afica es $2$-crom\'atica si y
+    s\'olo si es bipartita y no vac\'ia, por lo que $\chi(G)=2$.Pero, por
+    \cref{teo:num cromatico de G y F(G)}, tenemos para cualquier $l\geq 1$,
     $\chi (F_l(G)) \le \chi (G)=2$. Por lo tanto tenemos que $F_l(G)$ es
     $2$-crom\'atica, es decir es una gr\'afica bipartita.
 \end{proof}
