@@ -1,0 +1,178 @@
+\chapter{Cap\'i{}tulo 2}%
+\label{cap:ejemplos}
+
+\section{Teoremas y demostraciones de clanes}%
+\label{sec:etiquetas}
+
+
+\begin{lema}%
+        \label{lem:primero}
+        Sean $A$, $B$ y $C$ v\'ertices en $F_k(G)$ tales que son adyacentes
+        dos a dos. Entonces pasa s\'olo una de las siguientes
+        opciones/relaciones $B \cap C \subset A$ o $A \subset B \cup C$
+        \end{lema}
+
+    
+    \begin{proof}
+        Primero, supongamos que existen $A$, $B$, $C$ v\'ertices en $F_k(G)$
+        tales que son adyacentes dos a dos y cumplen $B \cap C \not\subset A$ y
+        $A \not\subset B \cup C$. Entonces existen los v\'ertices  $a \in A
+        \setminus (B \cup C)$ y $a \in (B \cap C)\setminus A$. Notamos que $b
+        \in B \setminus A$ y $b \in C \setminus A$. De manera an\'aloga tenemos
+        que $a \in A \setminus B$ y $a \in A \setminus C$. Por otro lado sabmeos
+        que $A$ y $B$ son adyacentes en $F_k(G)$, al igual que $A$ y $C$, por lo
+        tanto tenemos que $A \triangle B = \{a,b\}$ y $A \triangle C = \{a,
+        b\}$. Entonces tenemos que $(B \cup C \cup \{a\})\setminus \{b\}
+        \subseteq A$. Pero $B$ y $C$ son adyacentes en $F_k(G)$ por lo que $|B
+        \cup C| = k+1$, entonces tenemos que $|A| \geq k+1$, lo c\'ual es una
+        contradicci\'on pues $A \in V (F_k(G))$. 
+
+        Ahora supongamos que existen $A$, $B$ y $C$ v\'ertices en $F_k(G)$ que
+        son adyacentes dos a dos y cumplen $A \subset B \cup C$ y $B \cap C
+        \subset A$. Como $B$ y $C$ son adyacentes, entonces tenemos que $B
+        \triangle C = \{b,c\}$ con $b \in B$ y $c \in C$. Adem\'as tenemos que
+        $|B \cap C| = k-1$ y $|B \cup C| = k +1$. Notamos que $B \cup C = (B\cap
+        C) \cup \{b,c\}$ Por otro lado, sabemos que $|A|=k$ y da que $B \cap C
+        \subset A$, tenemos que $A = (B \cap C) \cup \{a\}$. Adicionalmente, $A
+        \subset B \cup C$, por lo que $a \in \{b, c\}$. Entonces tenemos que $A
+        = (B \cap C) \cup \{b\}$ o $A = (B \cap C) \cup \{c\}$, es decir $A = B$
+        o $A=C$, lo cu\'al es una contradicci\'on. Por lo tanto tenemos que $B
+        \cap C \subset A$ o $A \subset B \cup C$.
+    \end{proof}
+
+    \begin{teorema}
+        \label{teo:cuarto}
+        Sea $X$ un conjunto de v\'ertices de $F_k(G)$. Entonces $X$ es un clan
+        de $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S
+        \subseteq V(G)$ tales que $K \cap S = \varnothing$ y pasa uno de los
+        siguientes casos:
+        \begin{enumerate}
+            \item $X = \{S \cup \{v\}| v \in K\}$ y $|S| = k-1$
+            \item $X = \{(S\cup K) \setminus \{v\}| v \in K \}$ y $|S| + |K| =
+            k+1$
+        \end{enumerate}
+    \end{teorema}
+
+    \begin{proof}
+        Primero nos enfocamos en la primera implicaci\'on, es decir, sea $X$ un
+        clan de $F_k(G)$, entonces existe un clan $K$ de $G$ y un conjunto $V
+        \subseteq V(G)$ tales que $K \cap S = \varnothing$ y ocurre alguno de
+        los incisos del teorema. Si $|X|=2$, entonces $X= \{A, B\}$ para
+        alg\'unos v\'ertices $A, B$ de $F_K(G)$ tales que $Ab \in E(F_k(G))$.
+        Definimos $K = A \triangle B$ y $S=A \cap B$ y notamos que de esta
+        manera $X$ satisface ambos \'indices.
+
+        Ahora veamos el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1, A_2,
+        \dots, A_p\}$ donde $A_iA_j \in E(F_k(G))$, para cualesquiera $i\neq j$,
+        $i,j \in \{1, \dots, p\}$. Por \cref*{lem:primero} tenemos que $A_1\cap
+        A_2 \subset A_i$ o $A_i \subset A_1 \cup A_2$ para todo $i \in \{3
+        \dots,p \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3,
+        \dots, p\}$. Supongamos que tenemos el caso en el que $A_1\cap A_2
+        \subset A_i$ y $A_j \subset A_1 \cup A_2$. Denotamos $a_1$ y $a_2$ a los
+        v\'ertices en $G$ que forman la diferencia sim\'etrica de $A_1$ y $A_2$.
+        Por un lado tenemos que $A_i \not\subset A_1\cup A_2$, por
+        \cref*{lem:primero}, entonces $A_i = (A_1\cap A_2) \cup \{b\}$ con $b
+        \notin A_1\cup A_2$. Por otro lado tenemos que $A_1 \cap A_2 \not\subset
+        A_j$, tambi\'en por \cref*{lem:primero}. En otras palabras, existe $c
+        \in A_1 \cap A_2$ tal que $c \notin A_j$. Sin embargo, $A_j \subset A_1
+        \cup A_2$ y $|A_1 \cup A_2| =k+1$, por lo que $A_j = (A_1 \cup
+        A_2)\setminus \{c\}$. Entonces $a_1, a_2 \in A_j$ y $a_1, a_2 \notin
+        A_j$, adem\'as que $b, c \in A_i$ pero $b, c \notin A_j$. As\'i tenemos
+        que $|A_i \triangle A_j| \geq 4$, lo cu\'al es una contradicci\'on pues
+        $A_i$ y $A_j$ son elementos de un clan. Por lo tanto para todo $i\in
+        \{3, \dots, p\}$ se tiene que $A_i \subset A_1\cup A_2$ o $A_1 \cap A_2
+        \subset A_i$.
+
+        Si elegimos el caso en el que $A_i \subset A_1\cup A_2$, para todo $i\in
+        \{3, \dots, p\}$. Denotamos $S= A_1 \cap A_2$, entonces tenemos que $|S|
+        =k-1$ por lo que, para cada $i \in \{3, \dots, p\}$, $A_i$ es la uni\'on
+        de $S$ y un elemento que llamamos $v_i$. Notamos que para cualesquiera
+        dos elementos distintos $i, j \in \{1, \dots, p\}$ tenemos que $A_i
+        \triangle A_j = \{v_i, v_j\}$. Como $X$ es un clan en $F_k(G)$, entonces
+        tenemos que $v_iv_j \in E(G)$ por lo que nombramos $K= \{v_i|i \in \{1
+        \dots, p\}\}$,un clan en $G$. Notamos que  $K \cap S = \varnothing$ y
+        adem\'as $X= \{S \cup \{v\}| v \in K\}$, por lo que tenemos el caso del
+        inciso $(a)$. 
+
+        Ahora elegimos el caso en el que $A_1\cup A_2 \subset A_i$, para todo
+        $i\in \{3, \dots, p\}$. Sabemos que $|A_1 \cup A_2| = k+1$, por lo que
+        existe un elemento de $A_1 \cup A_2$ que no est\'a en $A_i$, llamamos
+        $v_i$ a este elemento. Entonces tenemos que para cualesquiera dos
+        \'indices distintos $i, j \in \{1, \dots, p\}$, los v\'ertices $v_i, v_2
+        \in V(G)$ son adyacentes. Por lo tanto $K= \{v_i| i \in \{1, \dots,
+        p\}\}$ es un clan en $G$. Si tomamos $S= (A_1 \cup A_2)\setminus K$,
+        tenemos que $K \cap S = \varnothing$ y se cumple $|S| + |K|= |(A_1 \cup
+        A_2)\setminus K| + |K| = k+1$. Adem\'as notamos que $X = \{(S \cup
+        K)\setminus \{v\}|v\in K\}$ por lo que obtenemos el caso del inciso
+        $(b)$.
+
+        Por lo tanto se satisface la implicaci\'on. Observemos que en ambos
+        casos $S = \bigcap\limits_{i} A_i$ y $K = \bigcup\limits_{i=1} A_i
+        \setminus S$.
+        
+        A continuaci\'on nos centramos en la segunda implicaci\'on, en ontras
+        palabras, si existen un clan $K$ de $G$ y un conjunto $S \subset V(G)$
+        tales que $K \cap S = \varnothing$ y pasa alguno de los incisos del
+        teorema, entonces $X$ es un clan de $F_k(G)$. Basta demostrar que en
+        ambos casos obtenemos $X$ un clan de $F_k(G)$. Si $|K| =1$, entonces
+        para ambos incisos obtenemos $|X| =1$, es decir un clan de un
+        elemento.Por lo tanto vamos a tomar $|K| \geq 2$. Para el inciso $(a)$
+        tenemos $X = \{S \cup \{v\}| v \in K\}$ y $|S| = k-1$. Tomamos
+        cualesquiera dos $X_1, X_2 \in X$ v\'ertices distintos tenemos que $X_1
+        \triangle X_2 =\{x_1, x_2\}$, con $x_1, x_2 \in K$. Como $K$ es un clan
+        en $G$, entonces $x_1x_2 \in E(G)$ y obtenemos que $X_1$ y $X_2$ son
+        adyacentes en $F_k(G)$. Por lo tanto $X$ es un clan de $F_k(G)$.
+
+        Enfocandonos en el inciso $(b)$ tomamos $X = \{(S\cup K) \setminus
+        \{v\}| v \in K \}$ y $|S| + |K| = k+1$. Al igual que para el inciso
+        anterior, tomamos $X_1$ y $X_2$ v\'ertices distintos de $X$. Por
+        construcci\'on de $X$ existen $x_1, x_2 \in K$ tale que $x_1 \notin X_1$
+        y $x_2 \notin X_2$. Adem\'as, como tomamos $|K| \geq 2$, podemos
+        garantizamr que $x_1 \neq x_2$. Ahora notamos que $X_1 \triangle X_2 =
+        \{x_1, x_2\}$ y al ser $K$ un clan de $G$ tenemos que $x_1x_2 \in E(G)$,
+        por lo que tenemos que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por
+        tanto $X$ cumple ser un clan de $F_k(G)$.
+    \end{proof}
+
+    \begin{teorema}
+        \label{teo:quinto}
+        Sea $G$ una gr\'afica y $F_k(G)$ su $k$-gr\'afica de fichas, entonces
+        $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+    \end{teorema}
+
+    \begin{proof}
+        Sea $X$ un clan de $F_k(G)$ con $\omega(F_k(G))$ v\'ertices. Entonces
+        por el \cref{teo:cuarto} sabemos que $X$ satisface alguno de los incisos
+        del teorema. Si $X = \{S \cup \{v\}| v \in K\}$ y $|S| = k-1$, notamos
+        que $|X| = |K|$. Adem\'as tenemos que $n \geq |S| + |K|$. Por lo tanto
+        tenemos que $n \geq |S| + |K| = k-1 + |X|$, es decir $|X| \leq n-k+1$.
+        Ahora, si $X = \{(S\cup K) \setminus \{v\}| v \in K \}$ y $|S| + |K| =
+        k+1$, notamos que tenemos la misma cardinalidad que en caso anterior, es
+        decir $|X| =|K|$. Entonces $|X| = |K| \leq |S| + |K| = k+1$. Por lo
+        tanto, de los dos casos obtenemos que $|X| \leq max\{n-k+1, k+1\}$.
+        Adicionalmente tenemos que ambos casos cumpllen $|X| = |K| \leq
+        \omega(G)$. Por lo que $\omega(F_k(G)) = |X| \leq min \{\omega(G), max
+        \{n-k+1, k+1\}\}$. y de esta manera obtenemos la cota superior de la
+        ecuaci\'on deseada.
+
+        Tomemos ahora un clan $K$ de $G$ con $\omega(G)$ v\'ertices.
+        Consideramos las siguientes construcciones de clanes de $F_k(G)$.
+        Primero, sea $K'$ un subconjunto de $K$ con $min\{\omega(G),n-k+1\}$
+        v\'ertices. Entonces tenemos que $|V(G) \setminus K'| \geq k-1$. Luego,
+        sea $S$ un subconjunto de $V(G) \setminus K'$ con exactamente $k-1$
+        v\'ertices. Obtenemos un clan de $F_k(G)$ de la forma $\{ S \cup \{v\}|v
+        \in K'\}$. \'Este clan tiene $|K'|$ v\'ertices. Por lo tanto tenemos que
+        $\omega(F_k(G)) \geq min \{\omega(G), n-k+1\}$. Ahora tomamos el
+        subconjunto $K'$ de $K$ con $min \{ \omega(G), k+1\}$ v\'ertices. Como
+        $n \geq k+1$, entonces existe un subconjunto $S$ de $V(G) \setminus K'$
+        con $(k+1)-|K'|$ v\'ertices. Entonces tenemos un clan de $F_k(G)$ de la
+        forma $\{ (S \cup K') \setminus \{v\}|v \in K'\}$ que tiene $|K'|$
+        v\'ertices. Por lo tanto tenemos que $\omega(F_k(G)) \geq min
+        \{\omega(G), k+1\}$.
+
+        Por los dos casos anteriores obentemos que $\omega(F_k(G)) \geq max
+        \{min \{\omega(G), n-k+1\}, min \{\omega(G), k+1 \}\} = min \{\omega(G),
+        max \{n-k+1,k+1\}\}$. De essta manera obtenemos la cota inferior de la
+        ecuaci\'on deseda. Por lo tanto tenemos que se cumple la igualdad, es
+        decir  $\omega(F_k(G))= min \{\omega(G), max \{n-k+1,k+1\}\}$.
+    \end{proof}
