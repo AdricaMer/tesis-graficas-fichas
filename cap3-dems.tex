@@ -21,15 +21,14 @@
     $ab \in E(G)$. Al tomar $c'(A) = c'(B)$ tenemos que $\Sigma_{x \in A}c(x)
     \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin p\'erdida de generalidad
     consideramos $a \in A$ y $b \in B$, entonces podemos ver la congruencia de
-    la siguiente manera: $c(a) + \Sigma_{x \in A\setminus\{a\}}c(x) \equiv c(b) +
-    \Sigma_{y \in B\setminus\{b\}}c(y) \mod \chi(G)$. Pero $A \triangle B =
+    la siguiente manera: $c(a) + \Sigma_{x \in A \setminus\{a\}}c(x) \equiv c(b)
+    + \Sigma_{y \in B\setminus\{b\}}c(y) \mod \chi(G)$. Pero $A \triangle B =
     \{a,b\}$, por lo que $\Sigma_{x \in A\setminus\{a\}}c(x)=\Sigma_{y \in
-    B\setminus\{b\}}c(y)$. Entonces tenemos que $c(a) \equiv c(b) \mod
-    \chi(G)$ y de este modo llegamos a la contradicci\'on de que $c$ no es una
+    B\setminus\{b\}}c(y)$. Entonces tenemos que $c(a) \equiv c(b) \mod \chi(G)$
+    y de este modo llegamos a la contradicci\'on de que $c$ no es una
     coloraci\'on propia pues $c(a) = c(b)$ y $ab \in E(G)$. Por lo que tenemos
     que $c'$ es una coloraci\'on propia de $F_k(G)$ con a lo m\'as $\chi (G)$
     colores. Por lo tanto $\chi(F_k(G)) \leq \chi (G)$.
-    %TODO explicar mejor cómo llegas a la congruencia de los colores de a y b
 \end{proof}
 
 \begin{proposicion}
@@ -42,43 +41,43 @@
 %si es vacı́a, y es 2-cromática si
 %y sólo si es bipartita y no vacı́a
 \begin{proof}
-    Inicialmente/Primero veamos que si $F_k(G)$ es una gr\'afica bipartita,
-    entonces $G$ es una gr\'afica bipartita. Lo probaremos por contrapositiva,
-    es decir, si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es
-    una gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces
-    $G$ contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p)$. Primero veamos
+    Para empezar, veamos que si $F_k(G)$ es una gr\'afica bipartita, entonces
+    $G$ es una gr\'afica bipartita. Lo probaremos por contrapositiva, es decir,
+    si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es una
+    gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces $G$
+    contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p, v_1)$. Primero veamos
     el caso en el que $p \geq k+1$. En este caso tenemos un $p$-ciclo en
     $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
     v_k\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots,
-    v_{k-2}, v_{k-1}, v_{k+2}\}$ \dots $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
+    v_{k-2}, v_{k-1}, v_{k+2}\} \cdots \{v_1, v_2, \dots, v_{k-2}, v_{k-1},
     v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-1},
-    v_k, v_p\}$ \dots $\{v_1 v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
-    \dots, v_{k-1}, v_k, v_p\}$. Notamos que el hay $p-k+1$ v\'ertices al mover
-    la ficha de $v_k$ a $p$. Adem\'as tenemos $k-1$ v\'ertices en el resto del
-    ciclo. Por lo tanto $F_k(G)$ tiene un $p$-ciclo por lo que no es bipartita.
+    v_k, v_p\} \cdots \{v_1, v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
+    \dots, v_{k-1}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\}$.
+    Notamos que el hay $p-k+1$ v\'ertices al mover la ficha de $v_k$ a $p$.
+    Adem\'as tenemos $k-1$ v\'ertices en el resto del ciclo. Por lo tanto
+    $F_k(G)$ tiene un $p$-ciclo por lo que no es bipartita.
     
     Ahora consideramos el caso en el que $p \leq k$. Notamos que el conjunto
     $V(G)\setminus C$ tiene cardinalidad $n-p$, donde $C$ es el ciclo impar
     antes mencionado. Como $n \geq k+1$, entonces $n-p \geq k+1-p$, por lo que
-    existe un conjunto $A$ de $k-p+1$ v\'ertices en $V(G)\setminus C$. Ahora
-    consideremos la gr\'afica de fichas $F_{p-1}(G-A)$. Entonces tenemos el caso
-    anterior en el que $k \leq p$, por lo que $F_{p-1}(G-A)$ no es una gr\'afica
-    bipartita. Pero $F_{p-1}(G-A)=F{k-(k+1-p)}(G-A)$ que es congruente con $
-    F_k(G,A)$, la subgr\'afica inducida de $F_k(G)$ por los v\'ertices de
-    $F_k(G)$ que contienen a $A$. Por lo tanto existe un ciclo impar en una
-    gr\'afica inducida de $F_k(G)$, de manera que $F_k(G)$ no es bipartita. Por
-    lo tanto tenemos que si $F_k(G)$ es una gr\'afica bipartita, entonces $G$
-    tamb\'en lo es.
-    
-    %TODO revisar ciclo
-    %TODO revisar caso p \le k
+    existe un conjunto $A$ de $k-p+1$ v\'ertices en $V(G)\setminus C$. Notemos
+    que al colocar una ficha en cada v\'ertice de $A$, y mantenerlas fijas, o
+    equivalentemente s\'olo mover las $p-1$ fichas restantes, se obtiene una
+    gr\'afica isomorfa a la gr\'afica de fichas $F_{p-1}(G-A)$. Entonces tenemos
+    del caso anterior, en el que $k \leq p$, que $F_{p-1}(G-A)$ no es una
+    gr\'afica bipartita. Pero como ya notamos, $F_{p-1}(G-A) = F_{k-(k+1-p)}
+    (G-A)$ es isomorfa a la subgr\'afica de $F_k(G)$ inducida por los v\'ertices
+    de $F_k(G)$ que contienen a $A$, $F_k(G,A)$. Por lo tanto existe un ciclo
+    impar en una gr\'afica inducida de $F_k(G)$, de manera que $F_k(G)$ no es
+    bipartita. Por lo tanto tenemos que si $F_k(G)$ es una gr\'afica bipartita,
+    entonces $G$ tambi\'en lo es.
 
     Ahora pasamos a demostrar la proposici\'on. Sea $F_k(G)$ una gr\'afica
     bipartita, por lo demostrado anteriormente, tenemos que $G$ tambi\'en es una
     gr\'afica bipartita. Sabemos que una gr\'afica es $2$-crom\'atica si y
-    s\'olo si es bipartita y no vac\'ia, por lo que $\chi(G)=2$.Pero, por
+    s\'olo si es bipartita y no vac\'ia, por lo que $\chi(G)=2$. Pero, por
     \cref{teo:num cromatico de G y F(G)}, tenemos para cualquier $l\geq 1$,
-    $\chi (F_l(G)) \le \chi (G)=2$. Por lo tanto tenemos que $F_l(G)$ es
+    $\chi (F_l(G)) \le \chi (G) = 2$. Por lo tanto tenemos que $F_l(G)$ es
     $2$-crom\'atica, es decir es una gr\'afica bipartita.
 \end{proof}
 
@@ -87,7 +86,6 @@
             Sea $G$ una gr\'afica y $F_k(G)$ su $k$-gr\'afica de fichas.
             Entonces $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$.
         \end{teorema}
-        
         
         %definici\ón de grafica inducida dem n\'umero crom\'atico de
         %subgr\'afica menor a n\'umero cr\'omatioc de gr\'afica 
