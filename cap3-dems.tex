@@ -81,6 +81,62 @@
     $2$-crom\'atica, es decir es una gr\'afica bipartita.
 \end{proof}
 
+
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-5.5cm]
+            \draw (0,1.5) node (1) [vertex,fill=verdeAzulado ,label=90:{\scriptsize $1$}] {};
+            \draw (-1,0) node (2) [vertex,fill=malva ,label=115:{\scriptsize $2$}] {};
+            \draw (1,0) node (3) [vertex,fill=malva ,label=80:{\scriptsize $3$}] {};
+            \draw (-1,-1.5) node (4) [vertex,fill=verdeAzulado ,label=240:{\scriptsize $4$}] {};
+            \draw (1,-1.5) node (5) [vertex,fill=verdeAzulado ,label=330:{\scriptsize $5$}] {};
+
+            \foreach \i/\j in{1/2,1/3,4/2,4/3,5/2,5/3} 
+            \draw [edge] (\i) to (\j);
+            \end{scope}
+        
+        \begin{scope}[xshift=-1cm,yshift=0cm,scale=1]
+            \draw (2,1.4) node (1) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $12$}] {};
+            \draw (-2,1.4) node (2) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $13$}] {};
+            \draw (0,0.7) node (3) [vertex,fill=malva ,label=90:{\scriptsize $14$}] {}; 
+            \draw (0,2) node (4) [vertex,fill=malva ,label=90:{\scriptsize $15$}] {};
+            \draw (0,-0.7) node (5) [vertex,fill=malva ,label=270:{\scriptsize $23$}] {};
+            \draw (-2,-1.4) node (6) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $24$}] {};
+            \draw (2,0) node (7) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $25$}] {};
+            \draw (2,-1.4) node (8) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $34$}] {};
+            \draw (-2,0) node (9) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $35$}] {};
+            \draw (0,-2) node (10) [vertex,fill=malva ,label=270:{\scriptsize $45$}] {};
+           
+            \foreach \i/\j in{1/5,1/3,1/4,6/5,6/3,6/10,7/5,7/4,7/10,5/2,5/8,5/9,
+            2/3,2/4,8/3,8/10,9/4,9/10} 
+            \draw [edge] (\i) to (\j);
+       \end{scope}
+    
+       \begin{scope}[xshift=5cm,yshift=0cm,scale=1]
+            \draw (0,-0.7) node (1) [vertex,fill=malva ,label=270:{\scriptsize $123$}] {};
+            \draw (-2,-1.4) node (2) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $124$}] {};
+            \draw (-2,1.4) node (3) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $125$}] {};
+            \draw (2,-1.4) node (4) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $134$}] {};
+            \draw (2,1.4) node (5) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $135$}] {};
+            \draw (0,0.7) node (6) [vertex,fill=malva ,label=90:{\scriptsize $145$}] {}; 
+            \draw (0,-2) node (7) [vertex,fill=malva ,label=270:{\scriptsize $234$}] {};
+            \draw (0,2) node (8) [vertex,fill=malva ,label=90:{\scriptsize $235$}] {};
+            \draw (-2,0) node (9) [vertex,fill=verdeAzulado ,label=180:{\scriptsize $245$}] {};
+            \draw (2,0) node (10) [vertex,fill=verdeAzulado ,label=0:{\scriptsize $345$}] {};
+            
+        \foreach \i/\j in{5/1,5/6,5/8,2/1,2/6,2/7,10/1,10/8,10/7,1/3,1/4,1/9,
+            3/6,3/8,4/6,4/7,9/8,9/7} 
+            \draw [edge] (\i) to (\j);
+   \end{scope}
+            
+    
+    \end{tikzpicture}
+    \caption{Gr\'afica bipartita, su 2-gr\'afica de fichas y su 3-gr\'afica de fichas.}
+    \label{fig:ex-tok-path}
+\end{figure}
     \begin{teorema}
         \label{relacion num cromatico G y F(G) con k}
             Sea $G$ una gr\'afica y $F_k(G)$ su $k$-gr\'afica de fichas.
