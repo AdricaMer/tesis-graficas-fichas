@@ -12,7 +12,7 @@
 \end{teorema}
 
 \begin{proof}
-    Sea $c: V(G) \to \{0,1, \dots \chi(G)-1\}$ una coloraci\'on propia de $G$.
+    Sea $c: V(G) \to \{0,1, \cdots \chi(G)-1\}$ una coloraci\'on propia de $G$.
     Ahora, a cada v\'ertice $A$ de $F_k(G)$ le asignamos el color $ c'(A)=
     \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una coloraci\'on
     propia. Supongamos lo contrario, existen $A$ y $B$ v\'ertices adyacentes en
@@ -45,14 +45,14 @@
     $G$ es una gr\'afica bipartita. Lo probaremos por contrapositiva, es decir,
     si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es una
     gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces $G$
-    contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p, v_1)$. Primero veamos
+    contiene un ciclo impar $C=(v_1, \cdots, v_{p-1}, v_p, v_1)$. Primero veamos
     el caso en el que $p \geq k+1$. En este caso tenemos un $p$-ciclo en
-    $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
-    v_k\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots,
-    v_{k-2}, v_{k-1}, v_{k+2}\} \cdots \{v_1, v_2, \dots, v_{k-2}, v_{k-1},
-    v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-1},
-    v_k, v_p\} \cdots \{v_1, v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
-    \dots, v_{k-1}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\}$.
+    $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \cdots, v_{k-2}, v_{k-1},
+    v_k\}$ $\{v_1, v_2, \cdots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \cdots,
+    v_{k-2}, v_{k-1}, v_{k+2}\} \cdots \{v_1, v_2, \cdots, v_{k-2}, v_{k-1},
+    v_p\}$ $\{v_1, v_2, \cdots, v_{k-2}, v_k, v_p\}$ $\{v_1, v_2, \cdots, v_{k-1},
+    v_k, v_p\} \cdots \{v_1, v_3, \cdots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
+    \cdots, v_{k-1}, v_k, v_p\}$ $\{v_1, v_2, \cdots, v_{k-2}, v_{k-1}, v_k\}$.
     Notamos que el hay $p-k+1$ v\'ertices al mover la ficha de $v_k$ a $p$.
     Adem\'as tenemos $k-1$ v\'ertices en el resto del ciclo. Por lo tanto
     $F_k(G)$ tiene un $p$-ciclo por lo que no es bipartita.
@@ -97,12 +97,12 @@
         $\chi(F_1(G)) \geq \frac{n-1+2}{n} \chi(G) -1$.
         
             Ahora supongamos $k \geq 2$ y una coloraci\'on de $\chi(G)$ colores
-            en $G$. Nombramos $V_1 V_2, \dots, V_{\chi(G)}$ a las clases
+            en $G$. Nombramos $V_1 V_2, \cdots, V_{\chi(G)}$ a las clases
             crom\'aticas de $G$. Sin p\'erdida de generalidad, consideramos que
             $|V_1|\geq |V_2|\geq \cdots \geq |V_{\chi(G)}|$. Al tomar este
             orden, todo \'indice $m$ cumple que $\Sigma_{i=1}^{m}|V_i| \geq
             \frac{mn}{\chi(G)}$, con la igualdad en el caso en el que $|V_i| =
-            |V_j| = \frac{n}{\chi(G)}$, para todo $i,j \in \{1, \dots,
+            |V_j| = \frac{n}{\chi(G)}$, para todo $i,j \in \{1, \cdots,
             \chi(G)\}$. Denotamos con $m'$ el menor \'indice tal que
             $\Sigma_{i=1}^{m'}|V_i| \geq k-1$. Notamos que
             $\Sigma_{i=1}^{m'-1}|V_i| \leq k-2$, pues de lo contrario
