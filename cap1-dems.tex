@@ -334,14 +334,19 @@ $F_{k}(G)$.
    \begin{tikzpicture}
 
     \begin{scope}[xshift=-8.5cm]
+        
         \foreach \i in {0,...,5}
-            \draw ({(360/6)*\i}:2) node(\i)[wvertex]{\pgfmathparse{int(\i+1)}
-            \pgfmathresult};
+            \draw ({(360/6)*\i}:2) node(\i)[wvertex]{};
+        \foreach \i in {0,...,5}
+            \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
+           \pgfmathresult};
         \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
             \draw [edge] (\i) to (\j);
         \end{scope}
     
     \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
+
+
        \foreach \i in {0,...,15} \draw ({(360/16)*\i}:4)
            node(\i)[wvertex]{};
 
