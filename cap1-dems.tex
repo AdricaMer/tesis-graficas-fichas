@@ -167,6 +167,46 @@ $F_{k}(G)$.
     est\'an en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'\i{}clica.
 \end{proof}
 
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-5.5cm]
+            \draw (0,2) node (1) [vertex,fill=baige ,label=90:{\scriptsize $1$}] {};
+            \draw (0,1) node (2) [vertex,fill=baige ,label=270:{\scriptsize $2$}] {};
+            \draw (0,-1) node (3) [vertex,fill=baige ,label=90:{\scriptsize $3$}] {};
+            \draw (0,-2) node (4) [vertex,fill=baige ,label=270:{\scriptsize $4$}] {};
+            \draw (1,0) node (5) [vertex,fill=crema ,label=0:{\scriptsize $5$}] {};
+            \draw (-1,0) node (6) [vertex,fill=crema ,label=180:{\scriptsize $6$}] {};
+            \draw (2,0) node (7) [vertex,fill=crema ,label=0:{\scriptsize $7$}] {};
+            \draw (-2,0) node (8) [vertex,fill=crema ,label=180:{\scriptsize $8$}] {};
+            \draw (3,0) node (9) [vertex,fill=crema ,label=0:{\scriptsize $9$}] {};
+            \draw (-3,0) node (10) [vertex,fill=crema ,label=180:{\scriptsize $10$}] {};
+
+            \foreach \i/\j in{1/5,1/6,1/7,1/10,2/5,2/6,2/8,2/10,
+            3/5,3/6,3/8,3/9,3/10,4/5,4/6,4/7,4/9} 
+                \draw [nedge,azulMetal] (\i) to (\j);
+            
+            \foreach \i/\j in{1/9,2/7,4/8} 
+                \draw [wedge,fushia] (\i) to (\j);
+            
+            \foreach \i/\j in{1/8,2/9,3/7,4/10} 
+                \draw [wedge,azulMetal] (\i) to (\j);
+        \end{scope}
+        
+    \end{tikzpicture}
+
+\caption{Ejemplo de una bigr\'afica completa resaltando la uni\'on de aristas
+${\color{fushia}rojas}$ y ${\color{azulMetal}azules}$ mencionadas en
+\cref{lem:rb-bipGraph}.}
+\label{fig:ex-rb-bioGraph}       
+\end{figure}
+
+Sea ${\color{azulMetal}M}$ el conjunto de aristas azules resaltadas en la
+\cref{fig:ex-rb-bioGraph}, es decir ${\color{azulMetal}M=\{a, b, c, d\}}$.
+Notemos que a pesar de que ${\color{baige}3 \in Y}$ no tiene aristas rojas, todo
+v\'ertice en ${\color{baige}Y}$ tiene una arista en ${\color{azulMetal}M}$.
+
 \begin{lema}%
 \label{lem:TrayIntAj}
     Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
@@ -329,15 +369,16 @@ $F_{k}(G)$.
     n\'umero de $AB$-trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
 \end{proof}
 
-Consideramos ${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los v\'ertices en $F_3(G)$ sobre los
-que veremos los distintos tipos de trayectorias internamente en $F_3(G)$ que
-encontramos en \cref{lem:TrayIntAj}. Tenemos que ${\color{baige}A\triangle
-B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que usamos $15$-trayectorias para
-encontrar las trayectorias de tipo $P$ y las de tipo $Q$, de manera que las de
-tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice interno y las de tipo $Q$ tienen
-a ambos como v\'ertices internos. Tomamos ${\color{naranja}P_1=(1,4,5)}$ y
-${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos ${\color{fushia}2} \in C$ y su vecino
-${\color{menta}x\notin P_1}$. De esta manera tenemos la tryectoria
+Consideramos ${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los
+v\'ertices en $F_3(G)$ sobre los que veremos los distintos tipos de trayectorias
+internamente en $F_3(G)$ que encontramos en \cref{lem:TrayIntAj}. Tenemos que
+${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que usamos
+$15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de tipo $Q$,
+de manera que las de tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice interno y
+las de tipo $Q$ tienen a ambos como v\'ertices internos. Tomamos
+${\color{naranja}P_1=(1,4,5)}$ y ${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos
+${\color{fushia}2} \in C$ y su vecino ${\color{menta}x\notin P_1}$. De esta
+manera tenemos la tryectoria
 ${\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}\{3,5,6\}\{2,3,5\})}$.
 
 
@@ -493,6 +534,73 @@ As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
 \geq 2$ y $k \leq \frac{n}{2}$, por lo que tenemos que $|\mathcal{C}| \geq
 r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
+
+
+Utilizando $G$ de \cref{fig:ex-tConect} nos fijamos en que es una gr\'afica
+$4$-conexa. Adem\'as, tenemos $F_2(G)$ que es $6$-conexa y, utilizando
+\cref{fig:ex-tok-path},sabemos que $F_3(G)$ es $7$-conexa. Por lo tanto tenemos
+que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
+
+
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm]
+            \foreach \i in {0,...,5}
+                \draw ({(360/6)*\i}:2) node(\i)[vertex]{};
+
+                
+            \foreach \i in {0,...,5}
+                \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
+               \pgfmathresult};
+
+            \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+        
+        \begin{scope}[xshift=-1cm,yshift=0cm,scale=1]
+        
+            \foreach \i in{0,1,2,3,4,5,6,7,8,9,10,11} \draw ({(360/12)*\i}:3.5)
+            node(\i)[wvertex]{};
+    
+            \draw ({(360/12)*1}:4) node (e1) {{\footnotesize $13$}};
+            \draw ({(360/12)*2}:4) node (e1) {{\footnotesize $12$}};
+            \draw ({(360/12)*3}:4) node (e1) {{\footnotesize $26$}};
+            \draw ({(360/12)*4}:4) node (e1) {{\footnotesize $16$}};
+            \draw ({(360/12)*5}:4) node (e1) {{\footnotesize $15$}};
+            \draw ({(360/12)*6}:4) node (e1) {{\footnotesize $56$}};
+            \draw ({(360/12)*7}:4) node (e1) {{\footnotesize $46$}};
+            \draw ({(360/12)*8}:4) node (e1) {{\footnotesize $45$}};
+            \draw ({(360/12)*9}:4) node (e1) {{\footnotesize $35$}};
+            \draw ({(360/12)*10}:4) node (e1) {{\footnotesize $34$}};
+            \draw ({(360/12)*11}:4) node (e1) {{\footnotesize $24$}};
+            \draw ({(360/12)*12}:4) node (e1) {{\footnotesize $23$}};
+            \draw (0.3,1) node (13) [vertex, label=10:{\tiny $25$}] {};
+            \draw (0.9,-1) node (14) [vertex, label=10:{\tiny $14$}] {};
+            \draw (-0.8,-0.6) node (15) [vertex, label=190:{\tiny $36$}] {};
+            
+    
+            \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11} 
+               \draw [edge] (\i) to (\j);
+            
+            \foreach\i/\j in{0/2,0/3,0/9,0/11,0/13,0/15,1/4,1/5,1/10,1/14,
+            1/15,2/4,2/5,2/11,3/6,3/11,3/13,3/15,4/7,4/14,4/15,5/8,5/9,5/13,
+            5/14,6/8,6/9,6/13,6/15,7/10,7/11,7/14,8/10,8/11,8/15,9/13,9/15,
+            10/14,10/15,11/13,11/14} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+           
+            \end{scope}
+
+
+            
+    
+    \end{tikzpicture}
+    \caption{G y su $2$-gr\'afica de fichas}
+    \label{fig:ex-tConect}
+    \end{figure}
+
 
 \begin{teorema}%
     \label{teo:FG_k(t- k+ 1)-conexa}
