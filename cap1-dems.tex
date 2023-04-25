@@ -1,14 +1,14 @@
 \chapter{Algunos Teoremas}%
-\label{cap:ejemplos}
+\label{cap:conexidad}
 
 \section{Teoremas y demostraciones de conexidad}%
-\label{sec:etiquetas}
+%\label{sec:etiquetas}
 
 Todos los ambientes que se desee referir por n\'umero m\'as adelante deben de
 tener una etiqueta.  Consideremos por ejemplo el siguiente lema.
 
 \begin{teorema}%
-\label{teo:primero}
+\label{teo:diamFG}
 Sea $G$ una gr\'afica conexa con di\'ametro $d$. Entonces, $F_{k}(G)$ es 
 conexa con di\'ametro al menos $k(d -k+1)$ y a lo m\'as $d k$.
 \end{teorema}
@@ -63,12 +63,12 @@ tenemos que $V_{0}=\{x\}$ y $y\in V_{d}$. Denotamos $d_x(v)$ a la distancia
 entre $x$ y el v\'ertice $v$.
 
 Sea $a$ el m\'\i{}nimo \'\i{}ndice para el cu\'al se tiene $k \leq |V_{0}\cup
-V_{1}\cup \dots \cup V_{a}|$ y sea $b$ el m\'aximo \'\i{}ndice para el cu\'al se
-tiene $k\leq |V_{b}\cup V_{b+1}\cup \dots \cup V_{d}|$. Tomamos $A$ un
-$k$-subconjunto de $V_{0}\cup \dots \cup V_{a}$  tal que $A\subseteq
-V_{0}$ o $V_{0}\cup \dots V_{a-1}\subseteq A$. Tomamos $B$ un
-$k$-subconjunto de $V_{b}\cup \dots \cup V_{d}$ tale que
-$B\subseteq V_{d}$ o $V_{b+1}\cup \dots \cup V_{d}$. 
+V_{1}\cup \cdots \cup V_{a}|$ y sea $b$ el m\'aximo \'\i{}ndice para el cu\'al se
+tiene $k\leq |V_{b}\cup V_{b+1}\cup \cdots \cup V_{d}|$. Tomamos $A$ un
+$k$-subconjunto de $V_{0}\cup \cdots \cup V_{a}$  tal que $A\subseteq
+V_{0}$ o $V_{0}\cup \cdots \cup V_{a-1}\subseteq A$. Tomamos $B$ un
+$k$-subconjunto de $V_{b}\cup \cdots \cup V_{d}$ tale que
+$B\subseteq V_{d}$ o $V_{b+1}\cup \cdots \cup V_{d}$. 
 
 Consideramos cualquier trayectoria entre $A$ y $B$ en $F_{k}(G)$. Cualquier
 ficha inicialmente en $A$, digamos en el v\'ertice $v$ de $G$, se mueve a
@@ -82,9 +82,9 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{v\in A}(d_x(v')-d_x(v))=
 toda $V_{i}$ tiene al menos un elemento y por construcci\'on $V_{i} \cap
 V_{i+1}=\varnothing$, para toda $i\in [0,d]$. Tomamos el caso en el que
 $|V_{i}|=1$ para toda $i\in [0,d]$. Entonces, tenemos que $k\leq
-|V_{b}\cup\dots\cup V_{d}|=|V_{b}|+|V_{b+1}|+\cdots +|V_d|$
+|V_{b}\cup\cdots\cup V_{d}|=|V_{b}|+|V_{b+1}|+\cdots +|V_d|$
 $=\sum_{b}^{d}1 = d -b+1$. An\'alogamente tenemos que $k\leq
-|V_{0}\cup V_{1}\cup \dots V_{a}|=|V_{0}|+|V_{1}|+\cdots + |V_{a}|$
+|V_{0}\cup V_{1}\cup \cdots \cup V_{a}|=|V_{0}|+|V_{1}|+\cdots + |V_{a}|$
 $=\sum_{0}^{a} 1 = a+1$ En ambos casos la cota m\'\i{}nima se alcanza en la
 igualdad, por lo que tomamos $a=k-1$ y $b=d-k+1$. Por lo tanto tenemos que
 el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
@@ -93,7 +93,7 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 
 
 \begin{lema}%
-\label{lem:primero}
+\label{lem:TrayIntAj-G-FG}
 Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que $a \in
 A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$ y $Q$
 son $ab$-trayectorias internamente ajenas en $G$, entonces $A \xrightarrow[P]{}
@@ -103,7 +103,7 @@ $F_{k}(G)$.
 
 \begin{proof}
     Primero, supongamos que $|V(P) \cap A| \geq 2$, con $V(P) \cap A = \{v_{1},
-    v_{2}, \dots , v_{p}\}$, con $v_{1} = a$. Notemos que, si $k > p$, entonces
+    v_{2}, \dots, v_{p}\}$, con $v_{1} = a$. Notemos que, si $k > p$, entonces
     $k-p$ fichas no est\'an sobre $P$, por lo que est\'an est\'aticas en todos
     los v\'ertices de $A \xrightarrow[P]{} A'$. Ahora, consideremos $R$ un
     v\'ertice interno de $A \xrightarrow[P]{} A'$. Por la observaci\'on anterior
@@ -131,7 +131,7 @@ $F_{k}(G)$.
 \end{proof}
 
 \begin{lema}%
-\label{lem:segundo}
+\label{lem:rb-bipGraph}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$,
     donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo de
     manera que cada v\'ertice de $Y$ es incidente en a lo m\'as una arista roja,
@@ -167,8 +167,48 @@ $F_{k}(G)$.
     est\'an en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'\i{}clica.
 \end{proof}
 
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-5.5cm]
+            \draw (0,2) node (1) [vertex,fill=baige ,label=90:{\scriptsize $1$}] {};
+            \draw (0,1) node (2) [vertex,fill=baige ,label=270:{\scriptsize $2$}] {};
+            \draw (0,-1) node (3) [vertex,fill=baige ,label=90:{\scriptsize $3$}] {};
+            \draw (0,-2) node (4) [vertex,fill=baige ,label=270:{\scriptsize $4$}] {};
+            \draw (1,0) node (5) [vertex,fill=crema ,label=0:{\scriptsize $5$}] {};
+            \draw (-1,0) node (6) [vertex,fill=crema ,label=180:{\scriptsize $6$}] {};
+            \draw (2,0) node (7) [vertex,fill=crema ,label=0:{\scriptsize $7$}] {};
+            \draw (-2,0) node (8) [vertex,fill=crema ,label=180:{\scriptsize $8$}] {};
+            \draw (3,0) node (9) [vertex,fill=crema ,label=0:{\scriptsize $9$}] {};
+            \draw (-3,0) node (10) [vertex,fill=crema ,label=180:{\scriptsize $10$}] {};
+
+            \foreach \i/\j in{1/5,1/6,1/7,1/10,2/5,2/6,2/8,2/10,
+            3/5,3/6,3/8,3/9,3/10,4/5,4/6,4/7,4/9} 
+                \draw [nedge,azulMetal!60] (\i) to (\j);
+            
+            \foreach \i/\j in{1/9,2/7,4/8} 
+                \draw [wedge,fushia] (\i) to (\j);
+            
+            \foreach \i/\j in{1/8,2/9,3/7,4/10} 
+                \draw [wedge,azulMetal] (\i) to (\j);
+        \end{scope}
+        
+    \end{tikzpicture}
+
+\caption{Ejemplo de una bigr\'afica completa resaltando la uni\'on de aristas
+${\color{fushia}rojas}$ y ${\color{azulMetal}azules}$ mencionadas en
+\cref{lem:rb-bipGraph}.}
+\label{fig:ex-rb-bioGraph}       
+\end{figure}
+
+Sea ${\color{azulMetal}M}$ el conjunto de aristas azules resaltadas en la
+\cref{fig:ex-rb-bioGraph}, es decir ${\color{azulMetal}M=\{a, b, c, d\}}$.
+Notemos que a pesar de que ${\color{baige}3 \in Y}$ no tiene aristas rojas, todo
+v\'ertice en ${\color{baige}Y}$ tiene una arista en ${\color{azulMetal}M}$.
+
 \begin{lema}%
-\label{lem:tercero}
+\label{lem:TrayIntAj}
     Sea $G$ una gr\'afica $t$-conexa. Sean $A$ y $B$ v\'ertices de $F_{k}(G)$
     tales que $|A \triangle B| = 2$. Entonces hay $t$ $AB$-trayectorias
     internamente ajenas en $F_{k}(G)$. Adem\'as, si $t \geq k$, entonces hay
@@ -183,8 +223,8 @@ $F_{k}(G)$.
     Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
     diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
     Teorema General de Menger, existen $P_{1}, \dots, P_{t}$ $ab$-trayectorias
-    internamente ajenas en $G$. Por lo tanto, por el \Cref{lem:primero}, existen
-    $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$
+    internamente ajenas en $G$. Por lo tanto, por \cref{lem:TrayIntAj-G-FG},
+    existen $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$
     $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces el n\'umero de
@@ -211,14 +251,14 @@ $F_{k}(G)$.
 
     Podemos separar las $AB$-trayectorias que consideramos en $F_{k}(G)$ en tres
     tipos. Los primeros dos tipos son las trayectorias obtenidas
-    d\cref{lem:primero}, es decir, las trayectorias $A \xrightarrow[P_1]{}  B,
-    \dots, A \xrightarrow[P_l]{}  B$ y $A \xrightarrow[Q_1]{}  B, \dots, A
-    \xrightarrow[Q_s]{}  B$. Nombramos a estos tipos de $AB$-trayectorias
-    trayectorias de tipo $P$ y de tipo $Q$, respectivamente. Notamos que, por
-    como se defini\'o, toda $AB$-trayectoria de tipo $P$ no pasa por $A\cap B$,
-    por lo que cada trayectoria de este tipo corresponde a la sucesi\'on de
-    fichas obtenidas al mover la ficha de $a$ a trav\'es de $P_i$ hacia $b$, con
-    $i \in \{1, \dots, l\}$.
+    d\cref{lem:TrayIntAj-G-FG}, es decir, las trayectorias $A
+    \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_l]{}  B$ y $A
+    \xrightarrow[Q_1]{}  B, \dots, A \xrightarrow[Q_s]{}  B$. Nombramos a estos
+    tipos de $AB$-trayectorias trayectorias de tipo $P$ y de tipo $Q$,
+    respectivamente. Notamos que, por como se defini\'o, toda $AB$-trayectoria
+    de tipo $P$ no pasa por $A\cap B$, por lo que cada trayectoria de este tipo
+    corresponde a la sucesi\'on de fichas obtenidas al mover la ficha de $a$ a
+    trav\'es de $P_i$ hacia $b$, con $i \in \{1, \dots, l\}$.
     
     Las \'ultimas trayectorias a considerar son las del tipo $R$, que ahora
     construimos utilizando los vecinos de los v\'ertices en $A \cap B$. Primero
@@ -233,9 +273,9 @@ $F_{k}(G)$.
     $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as tenemos
     que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
     notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto pues de lo
-    contrario tendr\'i{}amos una trayectoria cuyo \'unico v\'ertice interno no
+    contrario tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no
     est\'a en $P_i$ alguna ni $Q_j$ alguna, con $i \in \{1, \dots, l\}$ y $j \in
-    \{1, \dots, s\}$, por lo que la trayectoria no estar\'i{}a en $\mathcal{P}$.
+    \{1, \dots, s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$.
     Por lo que concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo
     tanto tenemos que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$,
     alg\'un subconjunto de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$
@@ -247,16 +287,17 @@ $F_{k}(G)$.
     alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
     arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
     azul. Ahora veamos si la coloraci\'on definida cumple las hip\'otesis
-    d\cref{lem:segundo} Primero tenemos que por construcci\'on de los $P_i$, con
-    $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a en a lo m\'as un
-    $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo m\'as una arista
-    roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k +
-    |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq t- k+1 = |Y_v
-    '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$. Entonces podemos usar
-    \cref{lem:segundo} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por lo
-    tanto hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice en $Y$
-    incide en exactamente una arista de $M_v$ y la uni\'on de aristas rojas y
-    aristas de $M_v$ es ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
+    d\cref{lem:rb-bipGraph} Primero tenemos que por construcci\'on
+    de los $P_i$, con $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a
+    en a lo m\'as un $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo
+    m\'as una arista roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+
+    1+ |D| > t-k + |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq
+    t- k+1 = |Y_v '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$.
+    Entonces podemos usar \cref{lem:rb-bipGraph} en $H_v$ con $Z=
+    \{1, \dots, l\}$ y $Y = Y_v '$. Por lo tanto hay un conjunto $M_v$ de
+    aristas azules tal que cada v\'ertice en $Y$ incide en exactamente una
+    arista de $M_v$ y la uni\'on de aristas rojas y aristas de $M_v$ es
+    ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
 
     Usando $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
     manera. Para cada $jx \in M_v$ defininimos $R\langle v, x \rangle$ como la
@@ -287,10 +328,10 @@ $F_{k}(G)$.
     implica que $xi'$ y $x'i$ son aristas rojas en $H_v$. Por lo tanto tenemos
     el ciclo $(x, i, x', i)$ con aristas de color azul, rojo, azul, rojo
     respectivamente, lo cual es una contradicci\'on. As\'i pues, las
-    trayectorias de tipo $R$ son internamenta ajenas dos a dos.
+    trayectorias de tipo $R$ son internamente ajenas dos a dos.
 
     Ahora veamos que las trayectorias de tipo $R$ y las de tipo $P$ son
-    internamente ajenas entre s\'i{}. Sean $R\langle v,x \rangle$ y $A
+    internamente ajenas entre s\'i. Sean $R\langle v,x \rangle$ y $A
     \xrightarrow[P_i]{}  B$, para alg\'un $i \in \{1, \dots, l\}$, trayectorias
     en $F_k(G)$ de tipo $R$ y $P$, respectivamente. Por construcci\'on, $v$ no
     est\'a en v\'ertice interno alguno de $R \langle v,x \rangle$. Por otro
@@ -301,7 +342,7 @@ $F_{k}(G)$.
     son internamente ajenas.
 
     Por \'ultimo, veamos que las trayectorias de tipo $Q$ y las de tipo $R$ son
-    internamente ajenas entre s\'i{}. Sean $R\langle v,x \rangle$ y $A
+    internamente ajenas entre s\'i. Sean $R\langle v,x \rangle$ y $A
     \xrightarrow[Q_i]{}  B$, para alg\'un $i \in \{1, \dots, s\}$, trayectorias
     en $F_k(G)$ de tipo $R$ y $Q$, respectivamente. Sea $jx$ arista en $M_v$,
     con $j \in \{1, \dots, l\}$, entonces $x \notin P_j$. Si tomamos $v \notin
@@ -326,292 +367,111 @@ $F_{k}(G)$.
     (|k-1)(t-k) + |D|$ trayectorias internamente ajenas. Despejando tenemos que
     $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k +1)$. Por lo tanto el
     n\'umero de $AB$-trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
-\end {proof}
+\end{proof}
+
+Consideramos ${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los
+v\'ertices en $F_3(G)$ sobre los que veremos los distintos tipos de trayectorias
+internamente en $F_3(G)$ que encontramos en \cref{lem:TrayIntAj}. Tenemos que
+${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que usamos
+$15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de tipo $Q$,
+de manera que las de tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice interno y
+las de tipo $Q$ tienen a ambos como v\'ertices internos. Tomamos
+${\color{naranja}P_1=(1,4,5)}$ y ${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos
+${\color{fushia}2} \in C$ y su vecino ${\color{menta}x\notin P_1}$. De esta
+manera tenemos la tryectoria
+${\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}\{3,5,6\}\{2,3,5\})}$.
+
 
 \begin{figure}[ht!]
-    \centering
+\centering
+   \begin{tikzpicture}
 
-    \tikzset{every picture/.style={line width=0.75pt}} 
+    \begin{scope}[xshift=-8.5cm]
+        
+       
+        \foreach \i in {0,4}
+            \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=baige]{};
+        \foreach \i in {1,2}
+            \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=fushia]{};
+        \draw ({(360/6)*3}:2) node(3)[wvertex,fill=naranja]{};
+        \draw ({(360/6)*5}:2) node(5)[wvertex,fill=menta]{}; 
+        \foreach \i in {0,...,5}
+            \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
+           \pgfmathresult};
+        \foreach \i/\j in {0/2,0/5,1/4,1/5,2/3,2/5,3/5,4/5}
+            \draw [edge,grisOscuro!60] (\i) to (\j);
+        \foreach \i/\j in {0/1,1/2,2/4}
+            \draw [wedge,fushia] (\i) to (\j);
+        \foreach \i/\j in {0/3,3/4}
+            \draw [wedge,naranja] (\i) to (\j);
+        
+        \end{scope}
+    
+    \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
 
-    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-    
-    \begin{scope}[xshift=3cm,yshift=4.5cm,scale=1]
-    \foreach \i in {0,...,5}
-        \draw ({(360/6)*\i}:50) node(\i)[wvertex]{\pgfmathparse{int(\i+1)}
-        \pgfmathresult};
-    \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
-        \draw [edge] (\i) to (\j);
-    \end{scope}
+        \foreach \i in {6,11} 
+            \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=fushia]{}; 
+        \foreach \i in {0,2,15} 
+            \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=verdeAzulado]{}; 
+        
+        \draw ({(360/16)*5}:4) node(5)[wvertex,fill=baige]{};
+        \draw ({(360/16)*8}:4) node(8)[wvertex,fill=naranja]{};     
+        \foreach \i in {1,3,4,7,9,10,12,13,14} 
+            \draw({(360/16)*\i}:4) node(\i)[wvertex]{};
 
+        \draw ({(360/16)*1}:4.5) node (e1) {{\footnotesize $236$}};
+        \draw ({(360/16)*2}:4.5) node (e1) {{\footnotesize $256$}};
+        \draw ({(360/16)*3}:4.5) node (e1) {{\footnotesize $246$}};
+        \draw ({(360/16)*4}:4.5) node (e1) {{\footnotesize $126$}};
+        \draw ({(360/16)*5}:4.5) node (e1) {{\footnotesize $123$}};
+        \draw ({(360/16)*6}:4.5) node (e1) {{\footnotesize $125$}};
+        \draw ({(360/16)*7}:4.5) node (e1) {{\footnotesize $245$}};
+        \draw ({(360/16)*8}:4.5) node (e1) {{\footnotesize $234$}};
+        \draw ({(360/16)*9}:4.5) node (e1) {{\footnotesize $134$}};
+        \draw ({(360/16)*10}:4.5) node (e1) {{\footnotesize $145$}};
+        \draw ({(360/16)*11}:4.5) node (e1) {{\footnotesize $135$}};
+        \draw ({(360/16)*12}:4.5) node (e1) {{\footnotesize $345$}};
+        \draw ({(360/16)*13}:4.5) node (e1) {{\footnotesize $346$}};
+        \draw ({(360/16)*14}:4.5) node (e1) {{\footnotesize $456$}};
+        \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $156$}};
+        \draw ({(360/16)*16}:4.5) node (e1) {{\footnotesize $136$}};
 
-    \draw    (481.08, 347.35) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (481.08,341.85) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {123};
-    
-    \draw    (418.03, 205.42) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (418.03,199.92) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {124};
-    
-    \draw    (306.57, 281.07) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (306.57,275.57) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {234};
-    
-    \draw    (401.14, 347.91) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (401.14,342.41) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {125};
-    
-    \draw    (299.31, 84.77) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (299.31,79.27) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {135};
-    
-    \draw    (492.42, 220.97) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (492.42,215.47) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {235};
-    
-    \draw    (577.93, 89.36) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (577.93,83.86) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {136};
-    
-    \draw    (538.83, 323) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (538.83,317.5) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {126};
-    
-    \draw    (278.83, 218.89) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (278.83,213.39) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {134};
-    
-    \draw    (275.59, 146.39) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (275.59,140.89) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {145};
-    
-    \draw    (407.18, 131.33) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (407.18,125.83) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {146};
-    
-    \draw    (538.83, 43.25) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (538.83,37.75) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {156};
-    
-    \draw    (604.47, 146.35) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (604.47,140.85) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {236};
-    
-    \draw    (345.16, 324.59) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (345.16,319.09) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {245};
-    
-    \draw    (577.42, 281.66) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (577.42,276.16) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {246};
-    
-    \draw    (605.66, 209.01) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (605.66,203.51) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {256};
-    
-    \draw    (343.39, 45.32) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (343.39,39.82) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {345};
-    
-    \draw    (403.16, 16.89) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (403.16,11.39) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {346};
-    
-    \draw    (509.83, 146.87) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (509.83,141.37) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {356};
-    
-    \draw    (481.83, 18.38) circle [x radius= 10.5, y radius= 10.5]   ; \draw
-    (481.83,12.88) node [anchor=north] [inner sep=0.75pt]  [font=\scriptsize]
-    [align=left] {456};
+        \draw (-1.1,0.2) node (17) [vertex,label=10:{\tiny $124$}] {};
+        \draw (0.1,-0.3) node (18) [vertex,fill=verdeAzulado ,label=70:{\tiny $146$}] {};
+        \draw (1.2,0.7) node (19) [vertex,fill=verdeAzulado ,label=180:{\tiny $356$}] {};
+        \draw (0.3,1.4) node (20) [vertex,fill=baige ,label=88:{\tiny $235$}] {};
+        
+        \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,6/7,7/8,8/9,9/10,10/11,
+           11/12,12/13,13/14, 14/15, 15/0} 
+           \draw [edge,grisOscuro!60] (\i) to (\j);
+        \foreach\i/\j in{0/4,0/11,0/13,1/3,1/4,1/5,2/6,2/7,3/7,3/8,
+        4/6,4/15,6/15,7/10,7/12,8/12,8/13,9/11,9/13,10/12,10/14,10/15,
+        11/15,12/14} 
+           \draw [edge,grisOscuro!60] (\i) to (\j);
+        \foreach \i/\j in{1/8,3/13,3/14,5/11,7/14,9/0,9/18,17/3,17/4,17/5,17/6,
+        17/8,17/9,17/10,17/18,3/18,18/10,18/13,19/1,19/11,19/12,
+        19/13,19/14,19/15,20/1,20/2,20/6,20/7}
+          \draw [edge,grisOscuro!60] (\i) to (\j);
+        \foreach\i/\j in{5/6,6/11,11/20} 
+           \draw [wedge,fushia] (\i) to (\j);
+        \foreach\i/\j in{5/8,8/20} 
+           \draw [wedge,naranja] (\i) to (\j);
+        \foreach\i/\j in{5/0,0/18,18/15,15/2,2/19,19/20} 
+          \draw [wedge,verdeAzulado] (\i) to (\j);
+        
+   \end{scope}
 
-    % Connection
-    \draw    (475.11,333.91) -- (424,218.86) ;
-    % Connection
-    \draw    (467.33,342.13) -- (320.32,286.29) ;
-    % Connection
-    \draw    (466.38,347.46) -- (415.85,347.81) ;
-    % Connection
-    \draw    (472.71,335.26) -- (307.68,96.86) ;
-    % Connection
-    \draw    (482.39,332.71) -- (491.11,235.61) ;
-    % Connection
-    \draw    (486.25,333.58) -- (572.76,103.13) ;
-    % Connection
-    \draw    (494.63,341.64) -- (525.27,328.72) ;
-    % Connection
-    \draw    (403.4,206.84) -- (293.46,217.48) ;
-    % Connection
-    \draw    (404.44,199.79) -- (289.18,152.02) ;
-    % Connection
-    \draw    (405.86,213.68) -- (318.74,272.81) ;
-    % Connection
-    \draw    (416.3,220.03) -- (402.87,333.3) ;
-    % Connection
-    \draw    (428.57,215.68) -- (528.29,312.74) ;
-    % Connection
-    \draw    (431.3,211.77) -- (564.15,275.31) ;
-    % Connection
-    \draw    (387.56,342.25) -- (358.73,330.25) ;
-    % Connection
-    \draw    (395.83,334.19) -- (304.62,98.49) ;
-    % Connection
-    \draw    (409.73,335.97) -- (483.84,232.91) ;
-    % Connection
-    \draw    (413.31,339.65) -- (593.49,217.27) ;
-    % Connection
-    \draw    (415.61,345.29) -- (524.35,325.62) ;
-    % Connection
-    \draw    (548.86,312.25) -- (567.38,292.41) ;
-    % Connection
-    \draw    (538.83,308.3) -- (538.83,57.95) ;
-    % Connection
-    \draw    (541.25,308.5) -- (575.5,103.87) ;
-    % Connection
-    \draw    (543.95,309.21) -- (599.35,160.14) ;
-    % Connection
-    \draw    (284.82,232.33) -- (300.57,267.64) ;
-    % Connection
-    \draw    (278.17,204.2) -- (276.24,161.08) ;
-    % Connection
-    \draw    (286.53,206.37) -- (395.45,29.42) ;
-    % Connection
-    \draw    (290.97,210.61) -- (395.04,139.62) ;
-    % Connection
-    \draw    (292.32,213.05) -- (564.43,95.2) ;
-    % Connection
-    \draw    (281.05,204.35) -- (297.09,99.31) ;
-    % Connection
-    \draw    (294.02,98.5) -- (280.87,132.66) ;
-    % Connection
-    \draw    (311.33,93.24) -- (480.41,212.49) ;
-    % Connection
-    \draw    (313.42,88.93) -- (495.72,142.71) ;
-    % Connection
-    \draw    (314.01,85.01) -- (563.23,89.12) ;
-    % Connection
-    \draw    (313.8,82.26) -- (524.34,45.76) ;
-    % Connection
-    \draw    (310.27,74.96) -- (332.44,55.12) ;
-    % Connection
-    \draw    (584.14,102.69) -- (598.26,133.02) ;
-    % Connection
-    \draw    (568.42,78.14) -- (548.34,54.46) ;
-    % Connection
-    \draw    (564.34,83.73) -- (416.75,22.53) ;
-    % Connection
-    \draw    (563.65,92.87) -- (421.47,127.82) ;
-    % Connection
-    \draw    (283.78,134.18) -- (335.2,57.53) ;
-    % Connection
-    \draw    (288.08,138.63) -- (469.34,26.13) ;
-    % Connection
-    \draw    (289.28,141.02) -- (525.13,48.61) ;
-    % Connection
-    \draw    (290.2,144.72) -- (392.57,133) ;
-    % Connection
-    \draw    (409.32,145.88) -- (415.9,190.87) ;
-    % Connection
-    \draw    (418.21,141.06) -- (566.39,271.93) ;
-    % Connection
-    \draw    (406.67,116.63) -- (403.68,31.59) ;
-    % Connection
-    \draw    (419.41,123.15) -- (526.6,51.42) ;
-    % Connection
-    \draw    (525.35,37.36) -- (495.31,24.26) ;
-    % Connection
-    \draw    (534.86,57.41) -- (513.79,132.71) ;
-    % Connection
-    \draw    (544.33,56.89) -- (600.16,195.37) ;
-    % Connection
-    \draw    (316.32,292.07) -- (335.4,313.59) ;
-    % Connection
-    \draw    (280.94,160.09) -- (339.81,310.89) ;
-    % Connection
-    \draw    (308.84,266.54) -- (341.12,59.85) ;
-    % Connection
-    \draw    (311.62,267.25) -- (398.11,30.71) ;
-    % Connection
-    \draw    (320.56,276.54) -- (478.43,225.49) ;
-    % Connection
-    \draw    (319.97,275.01) -- (591.07,152.41) ;
-    % Connection
-    \draw    (321.27,281.1) -- (562.71,281.63) ;
-    % Connection
-    \draw    (495.79,206.65) -- (506.47,161.19) ;
-    % Connection
-    \draw    (480.4,229.43) -- (357.18,316.13) ;
-    % Connection
-    \draw    (504.67,212.81) -- (592.23,154.51) ;
-    % Connection
-    \draw    (604.75,161.06) -- (605.38,194.31) ;
-    % Connection
-    \draw    (601.59,160.78) -- (580.3,267.24) ;
-    % Connection
-    \draw    (589.76,146.43) -- (524.53,146.79) ;
-    % Connection
-    \draw    (359.62,321.92) -- (562.95,284.33) ;
-    % Connection
-    \draw    (358.6,318.63) -- (592.22,214.98) ;
-    % Connection
-    \draw    (351.15,311.16) -- (475.84,31.81) ;
-    % Connection
-    \draw    (347.88,310.14) -- (400.43,31.35) ;
-    % Connection
-    \draw    (582.75,267.95) -- (600.33,222.72) ;
-    % Connection
-    \draw    (572.4,267.83) -- (486.85,32.2) ;
-    % Connection
-    \draw    (569.33,269.37) -- (411.24,29.18) ;
-    % Connection
-    \draw    (593.32,201.01) -- (522.17,154.87) ;
-    % Connection
-    \draw    (356.68,39) -- (389.88,23.21) ;
-    % Connection
-    \draw    (357.83,42.51) -- (467.39,21.18) ;
-    % Connection
-    \draw    (355.95,52.98) -- (497.27,139.21) ;
-    % Connection
-    \draw    (417.86,17.17) -- (467.13,18.1) ;
-    % Connection
-    \draw    (412.49,28.26) -- (500.5,135.5) ;
-    % Connection
-    \draw    (506.7,132.5) -- (484.96,32.75) ;
-    \end{tikzpicture}
-\caption{El diagrama $F_3(G)$.}
-\label{fig:lema1.1.4}
+        
+
+\end{tikzpicture}
+\caption{Ejemplo de una gr\'afica $G$ y su $3$-gr\'afica de fichas resaltando
+las trayectorias internamente ajenas de ${\color{baige}A}$ y ${\color{baige}B}$.}
+\label{fig:ex-tok-path}
 \end{figure}
 
 
-%\begin{figure}
-%    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-3,xscale=3]
-    
-%        \begin{scope}[xshift=3cm,yshift=7cm,scale=1]
-%        \foreach \i in {0,...,15} \draw ({(360/16)*\i}:50)
-%            node(\i)[wvertex]{\pgfmathparse{int(\i+1)} 
-%            \pgfmathresult};
-%            \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11,
-%            11/12,12/13,13/14, 14/15, 15/0} 
-%            \draw
-%            [edge] (\i) to (\j);
-%            \foreach\i/\j in{0/2,0/3,1/5,1/6,1/14,2/6,2/7,3/5,3/14,3/15,4/7,
-%            4/15,5/10,6/9,6/12,7/11,8/10,8/12,9/11,9/13,9/14,10/14,10/15,11/14,
-%            12/15} 
-%            \draw
-%            [edge] (\i) to (\j);
-%        \foreach \i in {0,...,3} \draw({(360/4)*\i}:18)
-%            node(\i)[wvertex]{\pgfmathparse{int(\i+17)} 
-%            \pgfmathresult};
-%            \foreach \i/\j in{0/1,2/3}
-%            \draw
-%            [edge] (\i) to (\j);
-
-%    \end{scope}
-%\end{tikzpicture}
-%\end{figure}
-
-
 \begin{teorema}%
-\label{teo:segundo}
+\label{teo:FG-t-conexa}
     Sea $G$ una gr\'afica $t$-conexa. Entonces $F_{k}(G)$ es $t$-conexa para
     todo $k>1$
 \end{teorema}
@@ -619,17 +479,17 @@ $F_{k}(G)$.
 \begin{proof}
 Primero, observamos que $A$ y $B$ son v\'ertices adyacentes en $F_k(G)$ si y
 s\'olo si $V(G) \setminus A$ y $V(G)\setminus B$ son adyacentes en $F_{n-k}(G)$.
-Entonces tenemos que $F_k(G) \simeq F_{n-k}(G)$. Por lo tanto asumimos sin
+Entonces tenemos que $F_k(G) \cong F_{n-k}(G)$. Por lo tanto asumimos sin
 p\'erdida de generalidad que $k \leq \frac{n}{2}$.
 
-Sea $\mathcal{C}$ un m\'i{}nimo corte por v\'ertices de $F_k(G)$. Basta
+Sea $\mathcal{C}$ un m\'inimo corte por v\'ertices de $F_k(G)$. Basta
 demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
 distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
-m\'i{}nimo.
+m\'inimo.
 
-Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que hay $t$
-$AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
-$|\mathcal{C}| \geq t$.
+Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj}
+tenemos que hay $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo
+que tenemos que $|\mathcal{C}| \geq t$.
 
 Ahora consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
 =\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
@@ -643,7 +503,7 @@ An\'alogamente tenemos que  $B$ y $B_{j,x}$ est\'an en la misma componente de
 $F_k(G)-\mathcal{C}$
 
 Luego nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
-\{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i{}
+\{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i
 tenemos que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
 \mathcal{C}$. Pero tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente, de
 $F_K(G) - \mathcal{C}$, de igual manera que $B$ y $B_{j,x}$. Por lo tanto $A$ y
@@ -652,8 +512,8 @@ cotradicci\'on pues tomamos a $A$ y $B$ en distintas componentes, lo que implica
 que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$ y $x$.
 
 Por lo anterior tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
-$\mathcal{C}$ tiene todos los $\{A_i,x | i \in \{1, \dots, r\}\}$ o todos los
-$\{B_j,x | j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
+$\mathcal{C}$ tiene todos los $\{A_i,x colon\ i \in \{1, \dots, r\}\}$ o todos los
+$\{B_j,x colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
 $\mathcal{C}$ tiene al menos $r(n-k-r)$ v\'ertices.
 
 Ahora definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} =
@@ -675,24 +535,91 @@ As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
 r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
+
+Utilizando $G$ de \cref{fig:ex-tConect} nos fijamos en que es una gr\'afica
+$4$-conexa. Adem\'as, tenemos $F_2(G)$ que es $6$-conexa y, utilizando
+\cref{fig:ex-tok-path},sabemos que $F_3(G)$ es $7$-conexa. Por lo tanto tenemos
+que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
+
+
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm]
+            \foreach \i in {0,...,5}
+                \draw ({(360/6)*\i}:2) node(\i)[vertex]{};
+
+                
+            \foreach \i in {0,...,5}
+                \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
+               \pgfmathresult};
+
+            \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+        
+        \begin{scope}[xshift=-1cm,yshift=0cm,scale=1]
+        
+            \foreach \i in{0,1,2,3,4,5,6,7,8,9,10,11} \draw ({(360/12)*\i}:3.5)
+            node(\i)[wvertex]{};
+    
+            \draw ({(360/12)*1}:4) node (e1) {{\footnotesize $13$}};
+            \draw ({(360/12)*2}:4) node (e1) {{\footnotesize $12$}};
+            \draw ({(360/12)*3}:4) node (e1) {{\footnotesize $26$}};
+            \draw ({(360/12)*4}:4) node (e1) {{\footnotesize $16$}};
+            \draw ({(360/12)*5}:4) node (e1) {{\footnotesize $15$}};
+            \draw ({(360/12)*6}:4) node (e1) {{\footnotesize $56$}};
+            \draw ({(360/12)*7}:4) node (e1) {{\footnotesize $46$}};
+            \draw ({(360/12)*8}:4) node (e1) {{\footnotesize $45$}};
+            \draw ({(360/12)*9}:4) node (e1) {{\footnotesize $35$}};
+            \draw ({(360/12)*10}:4) node (e1) {{\footnotesize $34$}};
+            \draw ({(360/12)*11}:4) node (e1) {{\footnotesize $24$}};
+            \draw ({(360/12)*12}:4) node (e1) {{\footnotesize $23$}};
+            \draw (0.3,1) node (13) [vertex, label=10:{\tiny $25$}] {};
+            \draw (0.9,-1) node (14) [vertex, label=10:{\tiny $14$}] {};
+            \draw (-0.8,-0.6) node (15) [vertex, label=190:{\tiny $36$}] {};
+            
+    
+            \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11} 
+               \draw [edge] (\i) to (\j);
+            
+            \foreach\i/\j in{0/2,0/3,0/9,0/11,0/13,0/15,1/4,1/5,1/10,1/14,
+            1/15,2/4,2/5,2/11,3/6,3/11,3/13,3/15,4/7,4/14,4/15,5/8,5/9,5/13,
+            5/14,6/8,6/9,6/13,6/15,7/10,7/11,7/14,8/10,8/11,8/15,9/13,9/15,
+            10/14,10/15,11/13,11/14} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+           
+            \end{scope}
+
+
+            
+    
+    \end{tikzpicture}
+    \caption{$G$ y su $2$-gr\'afica de fichas}
+    \label{fig:ex-tConect}
+    \end{figure}
+
+
 \begin{teorema}%
-    \label{teo:tercero}
+    \label{teo:FG_k(t- k+ 1)-conexa}
         Sea $G$ una gr\'afica $t$-conexa con $t \ge k$ y $n \ge \frac{1}{2} kt$.
         Entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
     \end{teorema}
 
     \begin{proof}
-        Sea $\mathcal{C}$ un corte por v\'ertices m\'i{}nimo de $F_k(G)$. Sean
+        Sea $\mathcal{C}$ un corte por v\'ertices m\'inimo de $F_k(G)$. Sean
         $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
-        tales que $|A \triangle B|$ es m\'i{}nima.
+        tales que $|A \triangle B|$ es m\'inima.
 
-        Si $|A \triangle B| = 2$, entonces por el Lema 1.1.4 tenemos que
+        Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj} tenemos que
         $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
         $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora veamos el caso en el que $|A \triangle B| = 2r \ge 4$. Utilizando
         la desigualdad que se utiliza al final de la demostraci\'on
-        d\cref{teo:segundo} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
+        d\cref{teo:FG-t-conexa} tenemos que $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
         que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
         $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
         Observamos que $k^2 -3k + 4 \ge 0$ para toda $k \ge 1$. Entonces tenemos
