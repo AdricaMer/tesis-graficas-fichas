@@ -91,6 +91,60 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 \sum_{i=0}^{k-1}i = k(d-k+1)$.
 \end{proof}
 
+\begin{teorema}
+    \label{teo:Pcartes}
+    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica
+    $G$ tales que son ajenas dos a dos. Entonces para todos los enteros
+    $s_1, \dots, s_m$ tales que $1 \leq s_i \leq |V(H_i)|$ y
+    $\Sigma s_i = k$, se tiene que $F_{s_1}(H_1) \square \cdots
+    \square F_{s_m}(H_m)$ es una subgr\'afica inducida de $F_k(G)$.
+\end{teorema}
+
+\begin{proof}
+    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y sean $s_1,
+    \dots, s_m \in \mathbb{Z}$ como en el enunciado. Definimos el
+    conjunto $L$ de los $k$-subconjuntos de $G$ que cumplen tener
+    exactamente $s_i$ elementos de $H_i$, para $i \in \{1, \dots, m\}$,
+    es decir $L = \{A \subseteq G \colon\ |A\cap H_1|=s_1 , |A \cap
+    H_2|=s_2, \dots, |A \cap H_m|=m \}$. Observamos que, debido a  que
+    $\Sigma s_i = k$, todo elemento de $L$ tiene cardinalidad $k$.
+    Veamos que la subgr\'afica inducida de $F_k(G)$ por $L$, $F_k(G,L)$,
+    es isomorfa a $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$.
+    Primero, veamos analizamos el conjunto de v\'ertices de ambas
+    gr\'afcias de fichas. Sea $A \in V(F_k(G,L))$, de tal manera que $A=\{a_1,
+    \dots, a_{s_1}, b_1,\dots, b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$.
+    Por definici\'on tenemos que $|A \cap V(H_i)|= s_i$, para $i \in
+    \{1, \dots, m\}$. Adem\'as sabemos que cada v\'ertice de
+    $F_{s_i}(H_i)$ tiene cardinalidad $s_i$, para $i \in \{1, \dots,
+    m\}$, por lo que tenemos que $A \in V(H_1) \times \cdots \times
+    V(H_m)$. De manera an\'aloga, si tomamos $A \in V(H_1) \times \cdots
+    \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i \in
+    F_{s_i}(H_i)$. Entonces tenemos que $A \cap V(H_i) = A'_i$, por lo
+    que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
+    Adicionalmente, tenemos que $|A|= k$ puesto que $\Sigma s_i = k$.
+    Por lo tanto tenemos que $A \in V(F_k(G,L))$.
+
+    Ahora nos enfocamos en la relaci\'on entre las aristas de ambas
+    gr\'aficas de fichas. Sean $B, C \in A \in V(F_k(G,L))$ tales que
+    $BC \in E(F_k(G,L))$, en otras palabras, existen $b \in B$ y $c \in
+    C$ tales que $B \triangle C = \{b, c\}$ y $bc \in E(G,L)$. Por
+    definici\'on tenemos que $H_i \cap H_j = \varnothing$, con $i \neq
+    j$, por lo que $b, c \in H_i$. Lo que significa que las fichas en
+    $H_j$ estan est\'aticas, para todo $j \in \{1, \dots, m\} \setminus
+    \{i\}$. Esto pasa si y s\'olo s\'i $BC$ es una arista en la
+    subgr\'afica de fichas inducida por $H_i$. Como $H_i \cap H_j =
+    \varnothing$, para $i \neq j$, entonces la subfr\'afica de fichas
+    inducida por $H_i$ es isomora a $F_{s_i}(H_i)$. Al tener el resto de
+    las fichas estaticas, tenemos que $BC \in E(F_{s_1}(H_1) \square
+    \cdots \square F_{s_m}(H_m))$.
+
+    Por lo tanto tenemos un isomorfismo entre $F_{s_1}(H_1) \square
+    \cdots \square F_{s_m}(H_m)$ y $F_k(G,L)$ que es una subgr\'afica
+    inducida de $F_k(G)$, por lo que tenemos que $F_{s_1}(H_1) \square
+    \cdots \square F_{s_m}(H_m)$ es una subgr\'afica inducida de
+    $F_k(G)$.
+\end{proof}
+
 
 \begin{lema}%
 \label{lem:TrayIntAj-G-FG}
