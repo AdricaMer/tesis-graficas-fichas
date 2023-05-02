@@ -1,30 +1,38 @@
 \chapter{Definiciones de Teor\'ia de Gr\'aficas}%
 \label{cap:defs grafs}
 
-%\section{Teoremas y demostraciones}%
-%\label{sec:etiquetas}
+\section{Definiciones b\'asicas}%
+\label{sec:def-basicas}
 
-Siempre se considerar\'a $G$ como una gr\'afica simple.
+Una gr\'afica $G$ es una terna ordenada $(V(G), E(G), \psi_G)$ donde $V(G)$ y
+$E(G)$ son conjuntos finitos. Los elementos de $V(G)$ son llamados v\'ertices y
+los elementos de $E(G)$ son aristas. Adem\'as cumplen $V(G) \cap E(G) =
+\varnothing$. La funci\'on $\psi_G: E(G) \rightarrow \{(u,v) \colon u, v \in
+V\}$ es la funci\'on de incidencia de $G$, que asocia cada elemento de $E(G)$
+una pareja no ordenada de $V(G)$. Para un $e \in E(G)$ y $u,v \in V(G)$, tales
+que $\psi_G(e)= \{u, v\}$, decimos que $e$ es incidente en $u$ y en $v$. A su
+vez, los v\'ertices $u$ y $v$ son extremos de la arista $e$. De igual manera
+podemos decir que $u$ y $v$ son v\'ertices adyacentes o vecinos. Al conjunto de
+vecinos de un v\'ertice $v$ se le llama vecindad y se denota $N_G(v)$. y al
+n\'umero de aristas incidentes en $v$ se le llama grado de $v$. Un v\'ertice
+aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene grado $0$.
 
-\begin{definicion} Conceptos sobre lo que es una gr\'afica:
-    \label{def:grafica}
-    \begin{enumerate}
-        \item Una gr\'afica $G$ es una terna ordenada $(V(G), E(G), \psi_G)$ tal
-        $V(G)$ y $E(G)$ son conjuntos finitos, $V(G) \cap E(G) = \varnothing$, y
-        $\psi_G$ es la funci\'on de incidencia de $G$, que asocia cada elemento
-        de $E(G)$ una pareja no ordenada de $V(G)$. Nombramos al conjunto $V(G)$
-        el conjunto de v\'ertices de $G$ y al conjunto $E(G)$ lo nombramos el
-        conjunto de aristas de $G$.
-        \item Sea $G$ una gr\'afica y sean $e \in E(G)$ y $u,v \in V(G)$ tales
-        que $\psi_G(e)= \{u, v\}$. Decimos que $e$ es incidente en $u$ y en $v$.
-        An\'alogamente podemos decir $u$ y $v$ son adyacentes o vecinos.
-        \item Sea $G$ una gr\'afica y $v\in V(G)$. Denotamos por $N_G(v)$ al
-        conjunto de vecinos de $v$ en $G$.
-        \item Dada una gr\'afica $G$, el grado de un v\'ertice $v \in V(G)$ es
-        el n\'umero de aristas incidentes en el v\'ertice. Un v\'ertice aislado,
-        es decir un v\'ertice que no tiene aristas, tiene grado 0.
-    \end{enumerate}
-\end{definicion}
+Cuando una arista incide en un solo v\'ertice, es decir, ambos extremos son el
+mismo v\'ertice, se le llama un lazo. Por otro lado, podemos tener varias
+aristas con los mismos extremos, en este caso decimos que los v\'ertices tienen
+aristas multiples. Una gr\'afica simple es una gr\'afica $G$ que no tiene lazos
+ni aristas m\'ultiples, en otras palabras, entre dos v\'ertices incide a lo
+m\'as una arista. .... nos enfocaremos en gr\'aficas simples, por lo que seran
+referidas simplemente como gr\'aficas.
+
+Las gr\'aficas pueden ser representadas por diagramas en los que cada v\'ertice
+es representado como un c\'irculo y cada arista es representada como una l\'inea
+con extremos en sus v\'ertices incidentes. Cabe recalcar que una gr\'afica $G$
+puede tener  m\'ultiples diagramas (EJEMPLO).
+
+
+\section{Clanes y conjuntos independientes}
+\label{sec:clanes-CIndep}
 
 \begin{definicion} Clanes y conjuntos independientes:
     \label{def:clanes y conjunto independiente}
@@ -39,6 +47,8 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
     \end{enumerate}
 \end{definicion}
 
+\section{Algunas familias relevantes}
+\label{sec:famGraf}
 \begin{definicion} Tipos de familias de gr\'aficas:
     \label{def:familias}
     \begin{enumerate}
@@ -55,6 +65,9 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         adyacente a cada v\'ertice de $Y$.   
     \end{enumerate}
 \end{definicion}
+
+\section{Algunas propiedades de gr\'aficas}
+\label{sec:propGrapf}
 
 \begin{definicion} Algunas propiedades de gr\'aficas:
     \label{def:propiedades}
@@ -74,6 +87,10 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         extremos en $V$.
     \end{enumerate}
 \end{definicion}
+
+\section{Tipos de recorridos}
+\label{sec:recorridos}
+
 
 \begin{definicion} Tipos de recorridos de una gr\'afica:
     \label{def:tipos de recorridos}
@@ -95,6 +112,9 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
     \end{enumerate}
 \end{definicion}
 
+\section{Conceptos de conexidad}
+\label{sec:conexidad}
+
 \begin{definicion} Conceptos de conexidad:
     \label{def:conexidad}
     \begin{enumerate}    
@@ -108,6 +128,9 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         subconjunto de $V(G)$ tal que $G[V(G)-V]$ es inconexa.
     \end{enumerate}
 \end{definicion}
+
+\section{Conptos de coloraci\'on}
+\label{sec:coloracion}
 
 \begin{definicion} Conceptos de coloraci\'on:
     \label{def:coloracion}
@@ -131,7 +154,7 @@ Siempre se considerar\'a $G$ como una gr\'afica simple.
         es $k$-coloreable es el n\'umero crom\'atico de $G$, denotado por
         $\chi(G)$.
     \end{enumerate}
-\end{definicion}
+\end{definicion}d
 
 \begin{definicion} Gr\'afica de fichas:
     \label{def:fichas}
