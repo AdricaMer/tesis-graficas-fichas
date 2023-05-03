@@ -4,31 +4,108 @@
 \section{Definiciones b\'asicas}%
 \label{sec:def-basicas}
 
-Una gr\'afica $G$ es una terna ordenada $(V(G), E(G), \psi_G)$ donde $V(G)$ y
-$E(G)$ son conjuntos finitos. Los elementos de $V(G)$ son llamados v\'ertices y
-los elementos de $E(G)$ son aristas. Adem\'as cumplen $V(G) \cap E(G) =
-\varnothing$. La funci\'on $\psi_G: E(G) \rightarrow \{(u,v) \colon u, v \in
-V\}$ es la funci\'on de incidencia de $G$, que asocia cada elemento de $E(G)$
-una pareja no ordenada de $V(G)$. Para un $e \in E(G)$ y $u,v \in V(G)$, tales
-que $\psi_G(e)= \{u, v\}$, decimos que $e$ es incidente en $u$ y en $v$. A su
-vez, los v\'ertices $u$ y $v$ son extremos de la arista $e$. De igual manera
-podemos decir que $u$ y $v$ son v\'ertices adyacentes o vecinos. Al conjunto de
-vecinos de un v\'ertice $v$ se le llama vecindad y se denota $N_G(v)$. y al
-n\'umero de aristas incidentes en $v$ se le llama grado de $v$. Un v\'ertice
-aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene grado $0$.
+Una gr\'afica $G$ es una pareja ordenada de conjuntos finitos $(V(G), E(G))$,
+donde $V(G)$ es no vac\'io y $E(G) \subseteq \binom{V(G)}{2}$. Los elementos de
+$V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son aristas. Para un $e
+\in E(G)$ y $u,v \in V(G)$, decimos que $e$ es incidente en $u$ y en $v$ si $e=
+\{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son extremos de la arista $e$. De
+igual manera podemos decir que $u$ y $v$ son v\'ertices adyacentes o vecinos. Al
+conjunto de vecinos de un v\'ertice $v$ se le llama vecindad, se denota
+$N_G(v)$, mientras que n\'umero de aristas incidentes en $v$ se le llama grado
+de $v$. Un v\'ertice aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene
+grado $0$.
 
-Cuando una arista incide en un solo v\'ertice, es decir, ambos extremos son el
-mismo v\'ertice, se le llama un lazo. Por otro lado, podemos tener varias
-aristas con los mismos extremos, en este caso decimos que los v\'ertices tienen
-aristas multiples. Una gr\'afica simple es una gr\'afica $G$ que no tiene lazos
-ni aristas m\'ultiples, en otras palabras, entre dos v\'ertices incide a lo
-m\'as una arista. .... nos enfocaremos en gr\'aficas simples, por lo que seran
-referidas simplemente como gr\'aficas.
+Las gr\'aficas pueden ser representadas por diagramas en los que los v\'ertices
+son c\'irculos y las arista son l\'inea cuyos extremos los v\'ertices
+incidentes. Cabe recalcar que una gr\'afica puede tener  m\'ultiples diagramas,
+como se muestra en \cref{fig:diagGraf}. Es f\'acil observar que en ambos
+diagr\'amas de $G$ los v\'ertices tienen las mismas propiedades, por ejemplo
+que $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.
 
-Las gr\'aficas pueden ser representadas por diagramas en los que cada v\'ertice
-es representado como un c\'irculo y cada arista es representada como una l\'inea
-con extremos en sus v\'ertices incidentes. Cabe recalcar que una gr\'afica $G$
-puede tener  m\'ultiples diagramas (EJEMPLO).
+De igual manera que una gr\'afica puede tener varios diagramas, a un diagr\'ama
+se le pueden asociar distintas gr\'aficas \cref{fig:isoGraf}. A pesar de que
+estas gr\'aficas son distintas, comparten muchas propiedades como el n\'umero de
+v\'ertices, las adyacencias o el grado de los v\'ertices. Estas g\'aficas se
+dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y $H$ son
+isomorfas si exite una biyecci\'on $\theta: V(G) \rightarrow V(H)$ tal que para
+cualesquiera dos v\'ertices $u, v \in V(G)$, se cumple que $uv \in E(G)$ si y
+s\'olo si $\theta(u)\theta(v) \in E(H)$. Es decir, la biyecci\'on $\theta$
+preserva adyacencias y no adyacencias. Cuando $G$ es ismorfa a $H$ lo denotamos
+$G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
+
+\begin{definicion}
+    \label{def:propiedades}
+    \begin{enumerate}
+        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
+        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
+        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
+        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
+        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
+        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
+        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
+        extremos en $V$.
+    \end{enumerate}
+\end{definicion}
+
+\begin{figure}[ht]
+    \centering
+       \begin{tikzpicture}
+    
+            \begin{scope}[xshift=6cm,scale=0.8]
+                \draw (0.5,-1.5) node (1) [vertex, label=270:{\large $v_1$}] {};
+                \draw (-1.9,-1.6) node (2) [vertex, label=270:{\large $v_2$}] {};
+                \draw (1.2,1.5) node (3) [vertex, label=90:{\large $v_3$}] {};
+                \draw (-2,0.5) node (4) [vertex, label=90:{\large $v_4$}] {};
+                \draw (2.5,-0.6) node (5) [vertex, label=270:{\large $v_5$}] {};
+                \draw (0,0) node (6) [vertex, label=90:{\large $v_6$}] {};
+                
+                \foreach \i/\j in {1/3,1/4,1/6,2/6,3/4,3/5,5/6}
+                \draw [edge] (\i) to (\j);
+            \end{scope}
+    
+        \begin{scope}[xshift=0cm,scale=0.6]
+            \draw ({(360/4)*3}:2) node(1)[vertex, label=270:{\large $v_1$}]{};
+            \draw (0,0) node (2) [vertex, label=90:{\large $v_2$}] {};
+            \draw ({(360/4)*2}:2) node(3)[vertex, label=180:{\large $v_3$}]{};
+            \draw (-2.5,-2) node (4) [vertex, label=270:{\large $v_4$}] {};
+            \draw ({(360/4)*1}:2) node(5)[vertex, label=90:{\large $v_5$}]{};
+            \draw ({(360/4)*0}:2) node(6)[vertex, label=0:{\large $v_6$}]{};
+
+            \foreach \i/\j in {1/3,1/4,1/6,2/6,3/4,3/5,5/6}
+                \draw [edge] (\i) to (\j);  
+            \end{scope}
+                
+    \end{tikzpicture}
+    \caption{Diferentes diagramas de una gr\'afica $G$}
+    \label{fig:diagGraf}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+       \begin{tikzpicture}
+    
+            \begin{scope}[xshift=0cm,scale=0.8]
+                \foreach \i in {1,...,5} 
+                    \draw ({(360/5)*\i}:2) node(\i)[vertex,
+                    label=(360/5)*\i:{\large $v_{\i}$}]{};
+
+            \foreach \i/\j in {5/1,1/2,2/3,3/4,4/5}
+                \draw [edge] (\i) to (\j);
+            \end{scope}
+    
+        \begin{scope}[xshift=6cm,scale=0.8]
+                \foreach \i in {1,...,5} 
+                    \draw ({(360/5)*\i}:2) node(\i)[vertex,
+                    label=(360/5)*\i:{\large $v_{\i}$}]{};
+
+            \foreach \i/\j in {5/2,2/4,4/1,1/3,3/5}
+                \draw [edge] (\i) to (\j);
+            \end{scope}
+                
+    \end{tikzpicture}
+    \caption{Dos gr\'aficas isomorfas}
+    \label{fig:isoGraf}
+\end{figure}
 
 
 \section{Clanes y conjuntos independientes}
@@ -63,28 +140,6 @@ puede tener  m\'ultiples diagramas (EJEMPLO).
         \item Una gr\'afica es bipartita completa si es bipartita y dada la
         partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es
         adyacente a cada v\'ertice de $Y$.   
-    \end{enumerate}
-\end{definicion}
-
-\section{Algunas propiedades de gr\'aficas}
-\label{sec:propGrapf}
-
-\begin{definicion} Algunas propiedades de gr\'aficas:
-    \label{def:propiedades}
-    \begin{enumerate}
-        \item Sean $G$ y $H$ dos gr\'aficas. Decimos que $G$ y $H$ son isomorfas
-         si existen biyecciones $\theta: V(G) \to V(G)$ y $\phi: E(G) \to E(H)$
-         tales que $\psi_G(e)=uv$ si y s\'olo si $\psi_H(\phi(e))=
-         \theta(u)\theta(v)$. Denotamos $G \cong H$ cuando $G$ y $H$ son
-         gr\'aficas isomorfas.
-        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
-        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
-        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
-        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
-        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
-        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
-        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
-        extremos en $V$.
     \end{enumerate}
 \end{definicion}
 
@@ -129,7 +184,7 @@ puede tener  m\'ultiples diagramas (EJEMPLO).
     \end{enumerate}
 \end{definicion}
 
-\section{Conptos de coloraci\'on}
+\section{Conceptos de coloraci\'on}
 \label{sec:coloracion}
 
 \begin{definicion} Conceptos de coloraci\'on:
