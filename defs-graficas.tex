@@ -6,51 +6,19 @@
 
 Una gr\'afica $G$ es una pareja ordenada de conjuntos finitos $(V(G), E(G))$,
 donde $V(G)$ es no vac\'io y $E(G) \subseteq \binom{V(G)}{2}$. Los elementos de
-$V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son aristas. Para un $e
-\in E(G)$ y $u,v \in V(G)$, decimos que $e$ es incidente en $u$ y en $v$ si $e=
-\{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son extremos de la arista $e$. De
-igual manera podemos decir que $u$ y $v$ son v\'ertices adyacentes o vecinos. Al
-conjunto de vecinos de un v\'ertice $v$ se le llama vecindad, se denota
-$N_G(v)$, mientras que n\'umero de aristas incidentes en $v$ se le llama grado
-de $v$. Un v\'ertice aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene
-grado $0$.
+$V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son aristas. Para una
+arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es incidente en $u$ y en
+$v$ si $e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son extremos de la
+arista $e$. De igual manera, podemos decir que $u$ y $v$ son v\'ertices
+adyacentes o vecinos. Al conjunto de vecinos de un v\'ertice $v$ se le llama
+vecindad, denotada $N_G(v)$, mientras que al n\'umero de aristas incidentes en
+$v$ se le llama grado de $v$. Un v\'ertice aisaldo, es decir, un v\'ertice que
+no tiene vecinos, tiene grado $0$.
 
-Las gr\'aficas pueden ser representadas por diagramas en los que los v\'ertices
-son c\'irculos y las arista son l\'inea cuyos extremos los v\'ertices
-incidentes. Cabe recalcar que una gr\'afica puede tener  m\'ultiples diagramas,
-como se muestra en \cref{fig:diagGraf}. Es f\'acil observar que en ambos
-diagr\'amas de $G$ los v\'ertices tienen las mismas propiedades, por ejemplo
-que $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.
-
-De igual manera que una gr\'afica puede tener varios diagramas, a un diagr\'ama
-se le pueden asociar distintas gr\'aficas \cref{fig:isoGraf}. A pesar de que
-estas gr\'aficas son distintas, comparten muchas propiedades como el n\'umero de
-v\'ertices, las adyacencias o el grado de los v\'ertices. Estas g\'aficas se
-dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y $H$ son
-isomorfas si exite una biyecci\'on $\theta: V(G) \rightarrow V(H)$ tal que para
-cualesquiera dos v\'ertices $u, v \in V(G)$, se cumple que $uv \in E(G)$ si y
-s\'olo si $\theta(u)\theta(v) \in E(H)$. Es decir, la biyecci\'on $\theta$
-preserva adyacencias y no adyacencias. Cuando $G$ es ismorfa a $H$ lo denotamos
-$G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
-
-\begin{definicion}
-    \label{def:propiedades}
-    \begin{enumerate}
-        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
-        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
-        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
-        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
-        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
-        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
-        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
-        extremos en $V$.
-    \end{enumerate}
-\end{definicion}
-
-\begin{figure}[ht]
+\begin{figure}[ht!]
     \centering
        \begin{tikzpicture}
-    
+        
             \begin{scope}[xshift=6cm,scale=0.8]
                 \draw (0.5,-1.5) node (1) [vertex, label=270:{\large $v_1$}] {};
                 \draw (-1.9,-1.6) node (2) [vertex, label=270:{\large $v_2$}] {};
@@ -80,7 +48,26 @@ $G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
     \label{fig:diagGraf}
 \end{figure}
 
-\begin{figure}[ht]
+Las gr\'aficas pueden ser representadas por diagramas en los que los v\'ertices
+son c\'irculos y las arista son l\'ineas cuyos extremos son sus v\'ertices
+incidentes. Cabe recalcar que una gr\'afica puede tener  m\'ultiples diagramas,
+como se muestra en \cref{fig:diagGraf}. Es f\'acil observar que en ambos
+diagr\'amas de $G$ los v\'ertices tienen las mismas propiedades, por ejemplo que
+$N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.
+
+
+De igual manera que una gr\'afica puede tener varios diagramas, a un diagr\'ama
+se le pueden asociar distintas gr\'aficas \cref{fig:isoGraf}. A pesar de que
+estas gr\'aficas son distintas, comparten muchas propiedades como el n\'umero de
+v\'ertices, las adyacencias o el grado de los v\'ertices. Estas g\'aficas se
+dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y $H$ son
+isomorfas si exite una biyecci\'on $\theta: V(G) \rightarrow V(H)$ tal que para
+cualesquiera dos v\'ertices $u, v \in V(G)$, se cumple que $uv \in E(G)$ si y
+s\'olo si $\theta(u)\theta(v) \in E(H)$. Es decir, la biyecci\'on $\theta$
+preserva adyacencias y no adyacencias. Cuando $G$ es ismorfa a $H$ lo denotamos
+$G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
+
+\begin{figure}[ht!]
     \centering
        \begin{tikzpicture}
     
@@ -106,6 +93,20 @@ $G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
     \caption{Dos gr\'aficas isomorfas}
     \label{fig:isoGraf}
 \end{figure}
+
+\begin{definicion}
+    \label{def:propiedades}
+    \begin{enumerate}
+        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
+        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
+        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
+        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
+        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
+        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
+        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
+        extremos en $V$.
+    \end{enumerate}
+\end{definicion}
 
 
 \section{Clanes y conjuntos independientes}
