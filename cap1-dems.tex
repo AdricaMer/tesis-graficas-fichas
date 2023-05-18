@@ -590,20 +590,27 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
 
-Utilizando $G$ de \cref{fig:ex-tConect} nos fijamos en que es una gr\'afica
-$4$-conexa. Adem\'as, tenemos $F_2(G)$ que es $6$-conexa y, utilizando
-\cref{fig:ex-tok-path},sabemos que $F_3(G)$ es $7$-conexa. Por lo tanto tenemos
+Para ejemplicar \cref{teo:FG-t-conexa} utilizaremos las gr\'aficas de
+\cref{fig:ex-tConect}. Nos fijamos en que $G$ es una gr\'afica $4$-conexa y su
+gr\'afica de $2$-fichas es $8$-conexa. En la figura se muestra los conjuntos
+de corte ${\color{naranja}\{1,3,5,6\}}$ y
+${\color{fushia}\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}$
+para $G$ y $F_2(G)$ respectivamente. Adem\'as, utilizando
+\cref{fig:ex-tok-path}, sabemos que $F_3(G)$ es $9$-conexa. Por lo tanto tenemos
 que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
 
 
-
+%vertices de corte: 12, 13,15,16,24,35,36,56
 \begin{figure}[ht!]
     \centering
        \begin{tikzpicture}
     
         \begin{scope}[xshift=-8.5cm]
-            \foreach \i in {0,...,5}
-                \draw ({(360/6)*\i}:2) node(\i)[vertex]{};
+            \foreach \i in {1,3}
+                \draw ({(360/6)*\i}:2) node(\i)[vertex,fill=azulMetal]{};
+
+            \foreach \i in {0,2,4,5}
+                \draw ({(360/6)*\i}:2) node(\i)[vertex,fill=naranja!60]{};
 
                 
             \foreach \i in {0,...,5}
@@ -611,13 +618,17 @@ que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
                \pgfmathresult};
 
             \foreach \i/\j in {0/1,0/2,0/3,0/5,1/2,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
-                \draw [edge,grisOscuro] (\i) to (\j);
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+            
             \end{scope}
         
         \begin{scope}[xshift=-1cm,yshift=0cm,scale=1]
         
-            \foreach \i in{0,1,2,3,4,5,6,7,8,9,10,11} \draw ({(360/12)*\i}:3.5)
-            node(\i)[wvertex]{};
+            \foreach \i in{0,3,7,8,10} \draw ({(360/12)*\i}:3.5)
+            node(\i)[wvertex,,fill=azulMetal]{};
+
+            \foreach \i in{1,2,4,5,6,9,11} \draw ({(360/12)*\i}:3.5)
+            node(\i)[wvertex,fill=fushia!60]{};
     
             \draw ({(360/12)*1}:4) node (e1) {{\footnotesize $13$}};
             \draw ({(360/12)*2}:4) node (e1) {{\footnotesize $12$}};
@@ -631,19 +642,19 @@ que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
             \draw ({(360/12)*10}:4) node (e1) {{\footnotesize $34$}};
             \draw ({(360/12)*11}:4) node (e1) {{\footnotesize $24$}};
             \draw ({(360/12)*12}:4) node (e1) {{\footnotesize $23$}};
-            \draw (0.3,1) node (13) [vertex, label=10:{\tiny $25$}] {};
-            \draw (0.9,-1) node (14) [vertex, label=10:{\tiny $14$}] {};
-            \draw (-0.8,-0.6) node (15) [vertex, label=190:{\tiny $36$}] {};
+            \draw (0.3,1) node (13) [vertex,,fill=azulMetal, label=10:{\scriptsize $25$}] {};
+            \draw (0.9,-1) node (14) [vertex,fill=azulMetal, label=10:{\scriptsize $14$}] {};
+            \draw (-0.8,-0.6) node (15) [vertex,fill=fushia!60, label=120:{\scriptsize $36$}] {};
+          
             
-    
-            \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10,10/11} 
-               \draw [edge] (\i) to (\j);
-            
-            \foreach\i/\j in{0/2,0/3,0/9,0/11,0/13,0/15,1/4,1/5,1/10,1/14,
-            1/15,2/4,2/5,2/11,3/6,3/11,3/13,3/15,4/7,4/14,4/15,5/8,5/9,5/13,
-            5/14,6/8,6/9,6/13,6/15,7/10,7/11,7/14,8/10,8/11,8/15,9/13,9/15,
-            10/14,10/15,11/13,11/14} 
-            \draw [edge,grisOscuro] (\i) to (\j);
+            \foreach\i/\j in{0/3,0/13,3/13,7/10,7/14,8/10,7/8,10/14} 
+            \draw [wedge,azulMetal] (\i) to (\j);
+
+            \foreach\i/\j in{0/1,1/2,1/4,1/5,1/10,1/14,
+            1/15,2/3,0/2,2/4,2/5,2/11,4/5,4/7,4/14,4/15,3/4,5/6,6/7,3/6,5/8,5/9,5/13,
+            5/14,6/8,6/9,6/13,6/15,8/9,9/10,10/11,0/9,9/13,9/15,0/11,3/11,7/11,8/11,
+            11/13,11/14,0/15,3/15,7/15,10/15} 
+               \draw [edge,grisOscuro!50] (\i) to (\j);
            
             \end{scope}
 
