@@ -271,4 +271,30 @@
     Por lo tanto, por la (Proposicion que falta) tenemos que $F_2(F_{m,n})$ no
     es hamiltoniana.
 
+    \begin{figure}[ht!]
+        \centering
+           \begin{tikzpicture}
+
+            \begin{scope}[xshift=5cm,yshift=0cm,scale=1]
+                \draw (-1.3,0) node (v1) [vertex,fill=salmon ,label=240:{\small $v_1$}] {};
+                \draw (0,0) node (v2) [vertex,fill=salmon ,label=355:{\small $v_2$}] {};
+                \draw (1.3,-0) node (v3) [vertex,fill=salmon ,label=300:{\small $v_3$}] {}; 
+                \draw (-1.6,2.3) node (w1) [vertex,fill=verde ,label=90:{\small $w_1$}] {}; 
+                \draw (0,2.3) node (w2) [vertex,fill=verde ,label=90:{\small $w_2$}] {};
+                \draw (1.6,2.3) node (w3) [vertex,fill=verde ,label=90:{\small $w_3$}] {};
+                \draw (-1.6,-2.3) node (w4) [vertex,fill=verde ,label=270:{\small $w_4$}] {};
+                \draw (0,-2.3) node (w5) [vertex,fill=verde ,label=270:{\small $w_5$}] {};
+                \draw (1.6,-2.3) node (w6) [vertex,fill=verde ,label=670:{\small $w_6$}] {};
+                
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+                \draw [edge,grisOscuro] (\i) to (\j);
+       \end{scope}
+                
+        
+        \end{tikzpicture}
+        \caption{Gr\'afica bipartita, su gr\'afica de $2$-fichas y su gr\'afica de $3$-fichas.}
+        \label{fig:ex-bip}
+    \end{figure}    
+
 \end{proof}
