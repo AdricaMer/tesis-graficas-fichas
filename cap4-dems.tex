@@ -190,7 +190,9 @@
     $F_2(F_{m,n})$. Por lo tanto tenemos que $C$ es un ciclo en ambos casos.
     Adicionalmente tenemos que los los v\'ertices de las trayectorias son una
     partici\'on de los v\'ertices de $F_2(F_{m,n})$, por lo que $C$ es un ciclo
-    hamiltoniano.
+    hamiltoniano. Como nota adicional, notemos que los v\'ertices
+    $\{v_{n-2},w_1\}$ y $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria
+    $T_{n-2}$. Esto nos servir\'a en el siguiente teorema.
 
     Para el segundo caso consideramos $m=2n$. Definimos la siguiente familia de
     trayectorias. A $P_1$ la definimos como la subtrayectoria hamiltoniana de
@@ -635,3 +637,61 @@
     %     \label{fig:exe-tray-n-m}     
     % \end{figure}
 \end{proof}
+
+
+    \begin{teorema}
+        Sean $k, n, m$ enteros positivos tales que $2 \leq k \leq n$ y $1 \leq m
+        \leq 2n$, entonces la gr\'afica $F_k(F_{m,n})$ es hamiltoniana.
+    \end{teorema}
+
+    \begin{proof}
+        Usando doble inducci\'on sobre $m$ y $k$, demostraremos que
+        $F_k(F_{m,n})$ tiene un ciclo hamiltoniano donde los v\'ertices $\{w_1,
+        v_{n-k}, v_{n-k+1}, \dots, v_{n-2}\}$ y $\{v_{n-k}, v_{n-k+1}, \dots,
+        v_{n-2}, v_{n-1}\}$ son adyacentes. Notamos que el caso en el que $m =1$
+        equivale al Teorema \ref{teo:hamilt-SFan}, haciedo un cambio de
+        notaci\'on de $w_1$ a $v_n$. Por lo tanto tenemos que la gr\'afica de
+        $k$-fichas es hamiltoniana. Ahora veamos el caso en el que $m>1$,
+        supongamos que la gr\'afica $F_{k'}(F_{m-1,n}$) cumple la hip\'otesis de
+        inducci\'on, con $2\leq k'\leq n$ y $1 \leq m-1 \leq 2n$. El subcaso de
+        $k=2$, para esto usaremos \cref{teo:2-TokGenerFan}. Basta el ciclo
+        obtenido en el teorema cumple tener la adyacencia deseada, es decir
+        $\{w_1, v_{n-2}\}\sim\{v_{n-2}, v_{n-1}\}$. Recordando la observaci\'on
+        de la demostraci\'on de dicho teorema, tenemos que $\{v_{n-2},w_1\}$ y
+        $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria $T_{n-2}$. Esta
+        trayectoria es parte de la trayectoria $P_1$, usada para obtener un
+        ciclo hamiltoniano en todos los casos del Teorema
+        \ref{teo:2-TokGenerFan}. Por lo tanto, para $k=2$ se obtiene un ciclo
+        hamiltoniano deseado.
+
+        Por \'ultimo, nos fijamos en el subcaso donde $k>2$. Sean los conjuntos
+        $S_1=\{A \in F_k(F_{m,n}) \colon\ w_1 \in A\}$ y $S_2=\{A \in
+        F_k(F_{m,n}) \colon\ w_1 \notin A\}$. Estos conjuntos generan una
+        partici\'on de $(F_k(F_{m,n}))$, pues todo v\'ertice de la gr\'afica de
+        $k$-fichas esta, por definici\'on, exactamente en alg\'un conjunto.
+        Ahora, nombramos $H_1$ y $H_2$ a las subgr\'aficas de $F_k(F_{m,n})$
+        inducidas por $S_1$ y $S_2$, respectivamente. Por un lado, $H_1$ es la
+        gr\'afica de fichas donde todo v\'ertice contiene $w_1$, en otras
+        palabras $H_1= F_k(F_{m,n},\{w_1\})$. Sabemos que $F_k(F_{m,n},\{w_1\})
+        \cong F_{k-1}(F_{m,n}-\{w_1\})$, por lo tanto $H_1 \cong
+        F_{k-1}(F_{m-1,n})$. Por otro lado, observamos que, al ser $H_2$ la
+        gr\'afica de fichas donde ning\'un v\'ertice tiene a $w_1$, tenemos que
+        $H_2 \cong F_k(F_{m-1,n})$. Por lo tanto $H_1$ y $H_2$ cumplen la
+        hip\'otesis de induci\'on, es decir, ambos tienen un ciclo hamiltoniano
+        que llamamos $C_1$ y $C_2$, respectivamente. Adem\'as, $C_1$ cumple ser
+        un ciclo donde los v\'ertices $X_1 = \{w_1, w_2,v_{n-k},v_{n-k+1},
+        \dots, v_{n-3}\}$ y $Y_1 = \{w_1,v_{n-k},v_{n-k+1}, \dots,
+        v_{n-3},v_{n-2}\}$ son adyacentes. De manera an\'aloga, $C_2$ es un
+        ciclo hamiltoniano donde los v\'ertices $X_2 = \{ w_2,v_{n-k},v_{n-k+1},
+        \dots, v_{n-2}\}$ y $Y_2 = \{v_{n-k},v_{n-k+1}, \dots,
+        v_{n-2},v_{n-1}\}$. Definimos $P_i$ como la subtrayectoria hamiltoniana
+        de $X_i$ a $Y_i$, con $i =1,2$. Observamos que $X_1 \triangle X_2 =
+        \{w_1,v_{n-3}\}$ y $Y_1 \triangle Y_2 = \{w_1, v_{n-1}\}$, por lo que
+        $X_1 \sim X_2$ y $Y_1 \sim Y_2$. Ahora definimos el ciclo $C = (X_1
+        \xrightarrow[P_1]{}Y_1,Y_2 \xrightarrow[P_2^{-1}]{}X_2,X_1)$. Afirmamos
+        que $C$ es el ciclo buscado. Dado que $\{S_1,S_2\}$ es una partici\'on
+        de $V(F_k(F_{m,n}))$, entonces $C$ es un ciclo hamiltoniano. Adem\'as
+        tenemos que $Y_1$ y $Y_2$ son adyacente, por lo que $C$ cumple las
+        condiciones deseadas. Por lo tanto $F_k(F_{m,n})$ es una gr\'afica
+        hamiltoniana.
+        \end{proof}
