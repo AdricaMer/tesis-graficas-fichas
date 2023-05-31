@@ -229,6 +229,110 @@
     $\{v_n,w_1\}$, el primer elemento de $P_1$. Por lo tanto $C_1 = (P_1,P_2,
     \dots, P_{2n},\{v_n,w_1\})$ es un ciclo en $F_2(F_{m,n})$. 
   
+    \begin{figure}[ht!]
+        \centering
+           \begin{tikzpicture}
+
+            \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
+            \draw (-1.3,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (0,0) node (v2) [vertex,label=355:{\small $v_2$}] {};
+            \draw (1.3,-0) node (v3) [bvertex,fill=lila ,label=300:{\small $v_3$}] {}; 
+            \draw (-1.6,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+            \draw (-1.6,-2.3) node (w4) [vertex,label=270:{\small $w_4$}] {};
+            \draw (0,-2.3) node (w5) [vertex,label=270:{\small $w_5$}] {};
+            \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+                
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+                \draw [edge,grisOscuro] (\i) to (\j);
+       \end{scope}
+
+       \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
+        \draw (-1.3,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+        \draw (0,0) node (v2) [vertex,label=355:{\small $v_2$}] {};
+        \draw (1.3,-0) node (v3) [vertex,label=300:{\small $v_3$}] {}; 
+        \draw (-1.6,2.3) node (w1) [bvertex,fill=lila ,label=90:{\small $w_1$}] {}; 
+        \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+        \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+        \draw (-1.6,-2.3) node (w4) [vertex,label=270:{\small $w_4$}] {};
+        \draw (0,-2.3) node (w5) [vertex,label=270:{\small $w_5$}] {};
+        \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+        
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+        \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+        
+        \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
+            \draw (-1.3,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (0,0) node (v2) [bvertex,fill=lila ,label=355:{\small $v_2$}] {};
+            \draw (1.3,-0) node (v3) [vertex,label=300:{\small $v_3$}] {}; 
+            \draw (-1.6,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+            \draw (-1.6,-2.3) node (w4) [vertex,label=270:{\small $w_4$}] {};
+            \draw (0,-2.3) node (w5) [vertex,label=270:{\small $w_5$}] {};
+            \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+            
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.3,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (0,0) node (v2) [vertex,label=355:{\small $v_2$}] {};
+            \draw (1.3,-0) node (v3) [vertex,label=300:{\small $v_3$}] {}; 
+            \draw (-1.6,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+            \draw (-1.6,-2.3) node (w4) [vertex,label=270:{\small $w_4$}] {};
+            \draw (0,-2.3) node (w5) [bvertex,fill=lila ,label=270:{\small $w_5$}] {};
+            \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+                
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+                \draw [edge,grisOscuro] (\i) to (\j);
+       \end{scope}
+
+       \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+        \draw (-1.3,0) node (v1) [bvertex,fill=lila ,label=240:{\small $v_1$}] {};
+        \draw (0,0) node (v2) [vertex,label=355:{\small $v_2$}] {};
+        \draw (1.3,-0) node (v3) [vertex,label=300:{\small $v_3$}] {}; 
+        \draw (-1.6,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+        \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+        \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+        \draw (-1.6,-2.3) node (w4) [vertex,label=270:{\small $w_4$}] {};
+        \draw (0,-2.3) node (w5) [vertex,label=270:{\small $w_5$}] {};
+        \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+        
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+        \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+        
+        \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.3,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (0,0) node (v2) [vertex,label=355:{\small $v_2$}] {};
+            \draw (1.3,-0) node (v3) [vertex,label=300:{\small $v_3$}] {}; 
+            \draw (-1.6,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (0,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (1.6,2.3) node (w3) [bvertex,fill=coral ,label=90:{\small $w_3$}] {};
+            \draw (-1.6,-2.3) node (w4) [bvertex,fill=lila ,label=270:{\small $w_4$}] {};
+            \draw (0,-2.3) node (w5) [vertex,label=270:{\small $w_5$}] {};
+            \draw (1.6,-2.3) node (w6) [vertex,label=670:{\small $w_6$}] {};
+            
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w2/v1,w2/v2,w2/v3,w3/v1,w3/v2,w3/v3,
+            w4/v1,w4/v2,w4/v3,w5/v1,w5/v2,w5/v3,w6/v1,w6/v2,w6/v3,v1/v2,v2/v3} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+        \end{tikzpicture}
+        \caption{La gr\'afica $F_2(F_{6,3})$, mostrando el movimiento de fichas
+        a trav\'es de $P_3$ }
+        \label{fig:exe-tray-n-2n}
+    \end{figure}
     
     Ahora determinamos si $C_1$ es un ciclo hamiltoniano de la gr\'afica de
     $2$-fichas. Al igual que en el caso anterior, veamos que las trayectorias de
@@ -279,4 +383,255 @@
     $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
     mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
     $F_2(F_{m,n})$ no es hamiltoniana.
+
+
+    % \begin{figure}[ht!]
+    %     \centering
+    %        \begin{tikzpicture}
+        
+    %         \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [bvertex,fill=amarillo ,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+                
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+        
+    %         \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [bvertex,fill=amarillo ,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+                            
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+                    
+    %         \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [bvertex,fill=amarillo ,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0,-2.3) node (w3) [bvertex,fill=amarillo ,label=270:{\small $w_3$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+    %         \end{scope}
+
+    %     \end{tikzpicture}
+    
+    %     \caption{La gr\'afica $F_2(F_{3,4})$, mostrando el movimiento de fichas
+    %     a trav\'es de $P_2$ }
+    %     \label{fig:exe-tray-n-m}     
+    %\end{figure}  
+
+    % \begin{figure}[ht!]
+    %     \centering
+    %        \begin{tikzpicture}
+        
+    %         \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [bvertex,fill=amarillo ,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [vertex,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+        
+    %         \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [bvertex,fill=amarillo ,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [vertex,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+             
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [vertex,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                            
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+             
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+                    
+    %         \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [vertex,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+             
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [bvertex,fill=amarillo ,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [vertex,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+             
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+
+    %         \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+    %             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+    %             \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+    %             \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+    %             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+    %             \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+    %             \draw (-0.75,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+    %             \draw (0.75,2.3) node (w3) [bvertex,fill=amarillo ,label=90:{\small $w_3$}] {};
+    %             \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+    %             \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+    %             \draw (-0.75,-2.3) node (w6) [cvertex,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+    %             \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+    %             \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                    
+    %             \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
+    %                 w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+    %             \draw [edge,grisOscuro] (\i) to (\j);
+             
+    %             \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
+    %                 w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
+    %                 w8/v2,w8/v3,w8/v4} 
+    %             \draw [edge,grisOscuro!50] (\i) to (\j);
+    %         \end{scope}
+
+    %     \end{tikzpicture}
+    
+    %     \caption{La gr\'afica $F_2(F_{3,4})$, mostrando el movimiento de fichas
+    %     a trav\'es de $P_2$ }
+    %     \label{fig:exe-tray-n-m}     
+    % \end{figure}
 \end{proof}
