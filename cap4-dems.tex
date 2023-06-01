@@ -231,6 +231,25 @@
     $\{v_n,w_1\}$, el primer elemento de $P_1$. Por lo tanto $C_1 = (P_1,P_2,
     \dots, P_{2n},\{v_n,w_1\})$ es un ciclo en $F_2(F_{m,n})$. 
 
+    Ahora determinamos si $C_1$ es un ciclo hamiltoniano de la gr\'afica de
+    $2$-fichas. Al igual que en el caso anterior, veamos que las trayectorias de
+    $P_i$ generan una partici\'on de $F_2(F_{m,n})$. Primero tenemos que los
+    v\'ertices de la forma $\{v_i,v_j\}$ est\'an en $P_1$, con $i,j \in \{1,
+    \dots, n\}$ y $i \neq j$. Adem\'as, los v\'ertices $\{w_i,w_1\}$
+    est\'an en $P_1$, con $i \in \{1, \dots, m\}$ y $1 \neq i$. Luego,
+    fijemosnos que los v\'ertices $\{w_i,v_j\}$ est\'an en $P_i$, para $i\in
+    \{1, \dots, m\}$ y $j \in \{1, \dots, n\}$. Por \'ultimo, veamos los
+    v\'ertices $\{w_i,w_j\}$, tomando $i < j$. Si $1 < i \leq n$ y $i <
+    j \leq i+n-1$, entonces tenemos que $\{w_i,w_j\} \in P_i$, mientras que, si
+    tomamos $1 < i \leq n$ y $i+n-1 < j \leq 2n$, tenemos que $\{w_i,w_j\} \in
+    P_j$. Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$.
+    Por lo tanto $\{V(P_1),V(P_2), \dots, V(P_{2n})\}$ es una partici\'on de
+    $V(F_2(F_{m,n}))$. Por lo tanto $C_1$ es un ciclo hamiltoniano. La Figura
+    \ref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la gr\'afica
+    $F_{8,4}$ para generar la trayectoria $P_6$ en $F_2(F_{8,4})$, donde la
+    ficha en ${\color{coral}w_6}$ est\'a est\'atica.
+
+
     \begin{figure}[ht!]
         \centering
            \begin{tikzpicture}
@@ -435,21 +454,6 @@
         \label{fig:exe-tray-n-2n}
     \end{figure}
     
-    Ahora determinamos si $C_1$ es un ciclo hamiltoniano de la gr\'afica de
-    $2$-fichas. Al igual que en el caso anterior, veamos que las trayectorias de
-    $P_i$ generan una partici\'on de $F_2(F_{m,n})$. Primero tenemos que los
-    v\'ertices de la forma $\{v_i,v_j\}$ est\'an en $P_1$, con $i,j \in \{1,
-    \dots, n\}$ y $i \neq j$. Tambi\'en tenemos que los v\'ertices $\{w_i,w_1\}$
-    est\'an en $P_1$, con $i \in \{1, \dots, m\}$ y $1 \neq i$. Luego nos
-    fijamos en los v\'ertices $\{w_i,v_j\}$ que est\'an en $P_i$, para $i\in
-    \{1, \dots, m\}$ y $j \in \{1, \dots, n\}$. Por \'ultimo, veamos los
-    v\'ertices del tipo $\{w_i,w_j\}$, tomando $i < j$. Si $1 < i \leq n$ y $i <
-    j \leq i+n-1$, entonces tenemos que $\{w_i,w_j\} \in P_i$, mientras que, si
-    tomamos $1 < i \leq n$ y $i+n-1 < j \leq 2n$, tenemos que $\{w_i,w_j\} \in
-    P_j$. Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$.
-    Por lo tanto $\{V(P_1),V(P_2), \dots, V(P_{2n})\}$ es una partici\'on de
-    $V(F_2(F_{m,n}))$. Por lo tanto $C_1$ es un ciclo hamiltoniano.
-
     Por \'ultimo, veamos el caso en el que $1<m<2n$ y del mismo modo que en los
     casos anteriores, definiremos una familia de trayectorias en $F_2(F_{m,n})$.
     Primero definimos $Q_1 =P_1$. Ahora nos fijamos en $1<i<m$ para definir
@@ -470,20 +474,10 @@
     iniciales y finales, adicionalmente, el \'ultimo v\'ertice de $Q_i$, es
     decir $\{w_m,w_1\}$, es adyacente al primer v\'ertice de $P_1$, que es
     $\{v_n,w_1\}$. Por lo tanto el ciclo $C_2=(Q_1,Q_2, \dots, Q_m,
-    \{v_n,w_1\})$ es el ciclo hamiltoniano buscado.
-
-    Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(F_{m,n}))$, con
-    $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
-    observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$
-    por lo que es un v\'ertice aislado en $F_2(F_{m,n})-S$, donde $i,j \in
-    \{1,\dots,m\}$ tal que $i \neq j$. Entonces tenemos $\binom{m}{2}$
-    v\'ertices aislados en $F_2(F_{m,n})-S$. Adem\'as, la subgr\'afica inducida
-    por los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
-    $F_2(F_{m,n})-S$. Por lo tanto tenemos que $F_2(F_{m,n})-S$ tiene al menos
-    $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene que
-    $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
-    mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
-    $F_2(F_{m,n})$ no es hamiltoniana.
+    \{v_n,w_1\})$ es el ciclo hamiltoniano buscado. La
+    Figura\ref{fig:exe-tray-n-m} muestra el movimiento de las fichas en la
+    gr\'afica $F_{3,4}$ para generar la trayectoria $P_2$ en la gr\'afica de
+    $2$-fichas, donde la ficha en ${\color{azulClaro}w_2}$ est\'a fija.
 
 
     \begin{figure}[ht!]
@@ -580,6 +574,20 @@
         a trav\'es de $P_2$ }
         \label{fig:exe-tray-n-m}     
     \end{figure}
+
+    Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(F_{m,n}))$, con
+    $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
+    observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$
+    por lo que es un v\'ertice aislado en $F_2(F_{m,n})-S$, donde $i,j \in
+    \{1,\dots,m\}$ tal que $i \neq j$. Entonces tenemos $\binom{m}{2}$
+    v\'ertices aislados en $F_2(F_{m,n})-S$. Adem\'as, la subgr\'afica inducida
+    por los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
+    $F_2(F_{m,n})-S$. Por lo tanto tenemos que $F_2(F_{m,n})-S$ tiene al menos
+    $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene que
+    $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
+    mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
+    $F_2(F_{m,n})$ no es hamiltoniana.
+
 \end{proof}
 
 
