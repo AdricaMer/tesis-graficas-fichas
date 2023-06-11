@@ -49,7 +49,15 @@
 \definecolor{cereza}{RGB}{181, 10, 42}
 \definecolor{GverdePasto}{RGB}{	115, 143, 55}
 \definecolor{crema}{RGB}{238,216,194}
-
+\definecolor{oro}{RGB}{216, 175, 57}
+\definecolor{crema}{RGB}{238,216,194}
+\definecolor{amarillo}{RGB}{230,194,41}
+\definecolor{azulClaro}{RGB}{127,209,185}
+\definecolor{lila}{RGB}{163,121,201}
+\definecolor{coral}{RGB}{247,142,105}
+%\definecolor{verde}{RGB}{104,163,87}
+\definecolor{azulCielo}{RGB}{0,178,202}
+\definecolor{morado}{RGB}{152,95,153}
 
 
 % Vinculos
@@ -93,7 +101,7 @@
 \tikzstyle{arc}   =[->,shorten <=3pt, shorten >=3pt,
                    >=stealth, line width=1.1pt]
 \tikzstyle{edge}  =[shorten <=2pt, shorten >=2pt,
-                    >=stealth, line width=0.9pt]
+                    >=stealth, line width=1.1pt]
 \tikzstyle{wedge}  =[shorten <=2pt, shorten >=2pt,
                     >=stealth, line width=1.3pt]
 \tikzstyle{nedge}  =[shorten <=2pt, shorten >=2pt,
@@ -103,12 +111,15 @@
 \tikzstyle{vertex}=[circle, draw, minimum size=6pt,
                     line width=0.75pt, inner sep=0pt,
                     outer sep=0pt]
-\tikzstyle{wvertex}=[circle, draw, minimum size=6pt,
-                     line width=0.75pt, inner sep=0.5pt,
-                     outer sep=0pt]
-\tikzstyle{bvertex}=[circle, draw, minimum size=9pt,
-                     line width=0.75pt, inner sep=0pt,
-                     outer sep=0pt]
+ \tikzstyle{wvertex}=[circle, draw, minimum size=6pt,
+                    line width=0.75pt, inner sep=0.5pt,
+                    outer sep=0pt]
+\tikzstyle{bvertex}=[circle, draw, minimum size=7pt,
+                    line width=0.75pt, inner sep=0pt,
+                    outer sep=0pt]
+\tikzstyle{cvertex}=[circle, draw=grisOscuro!75, minimum size=6pt,
+                    line width=0.75pt, inner sep=0pt,
+                    outer sep=0pt]
 
 
 % Ajuste de parametros en la pagina
@@ -211,16 +222,12 @@
 
 \mainmatter%
 
-
-%Quitar el capitulo-dems al momento de hacer merge con la rama 1-teorema-3
-
 %\include{introduccion}
 %\include{capitulo1}
 \include{defs-graficas}
 \include{cap1-dems}
 \include{cap2-dems}
 \include{cap3-dems}
-%\include{capitulo-dems}
 
 
 \backmatter%

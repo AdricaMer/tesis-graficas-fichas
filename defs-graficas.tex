@@ -4,16 +4,17 @@
 \section{Definiciones b\'asicas}%
 \label{sec:def-basicas}
 
-Una gr\'afica $G$ es una pareja ordenada de conjuntos finitos $(V(G), E(G))$,
-donde $V(G)$ es no vac\'io y $E(G) \subseteq \binom{V(G)}{2}$. Los elementos de
-$V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son aristas. Para una
-arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es incidente en $u$ y en
-$v$ si $e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son extremos de la
-arista $e$. De igual manera, podemos decir que $u$ y $v$ son v\'ertices
-adyacentes o vecinos. Al conjunto de vecinos de un v\'ertice $v$ se le llama
-vecindad, denotada $N_G(v)$, mientras que al n\'umero de aristas incidentes en
-$v$ se le llama grado de $v$. Un v\'ertice aisaldo, es decir, un v\'ertice que
-no tiene vecinos, tiene grado $0$.
+El objeto a estudiar en el \'area de Teor\'ia de Gr\'aficas es, naturalmente,
+una gr\'afica. Una gr\'afica $G$ es una pareja ordenada de conjuntos finitos
+$(V(G), E(G))$, donde $V(G)$ es no vac\'io y $E(G) \subseteq \binom{V(G)}{2}$.
+Los elementos de $V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son
+aristas. Para una arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es
+incidente en $u$ y en $v$ si $e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$
+son extremos de la arista $e$. De igual manera, podemos decir que $u$ y $v$ son
+v\'ertices adyacentes o vecinos y lo denotamos $u \sim v$. Al conjunto de
+vecinos de un v\'ertice $v$ se le llama vecindad, denotada $N_G(v)$, mientras
+que al n\'umero de aristas incidentes en $v$ se le llama grado de $v$. Un
+v\'ertice aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene grado $0$.
 
 \begin{figure}[ht!]
     \centering
@@ -48,17 +49,26 @@ no tiene vecinos, tiene grado $0$.
     \label{fig:diagGraf}
 \end{figure}
 
-Las gr\'aficas pueden ser representadas por diagramas en los que los v\'ertices
+Las gr\'aficas pueden ser representadas por diagramas donde los v\'ertices
 son c\'irculos y las arista son l\'ineas cuyos extremos son sus v\'ertices
-incidentes. Cabe recalcar que una gr\'afica puede tener  m\'ultiples diagramas,
+incidentes. Cabe recalcar que una gr\'afica puede tener m\'ultiples diagramas,
 como se muestra en \cref{fig:diagGraf}. Es f\'acil observar que en ambos
 diagr\'amas de $G$ los v\'ertices tienen las mismas propiedades, por ejemplo que
 $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.
 
 
-De igual manera que una gr\'afica puede tener varios diagramas, a un diagr\'ama
-se le pueden asociar distintas gr\'aficas \cref{fig:isoGraf}. A pesar de que
-estas gr\'aficas son distintas, comparten muchas propiedades como el n\'umero de
+Al momento de estudiar objetos matem\'aticos, siempre es importante analizar
+como se relacionan dichos objetos entre s\'i. Ya teniendo la noci\'on de una
+gr\'afica, ahora nos enfocamos en como se ven las relaciones entre gr\'aficas.
+Primero veamos que necesitar\'ian dos gr\'aficas para ser "iguales". Observamos
+que, de igual manera que una gr\'afica puede tener varios diagramas, a un
+diagr\'ama se le pueden asociar distintas gr\'aficas, renombrando v\'ertices y
+aristas para obtener distintos conjuntos de v\'ertices y aristas. Un ejemplo de
+esto es \cref{fig:isoGraf}. Al renombrar las aristas de la gr\'afica $G$ como se
+muestra en la figura con los colores, podemos dibujar a $G$ como la gr\'afica
+$H$ y viseversa. De manera intuitiva, las dos gr\'aficas que comparten un mismo
+diagrama podr\'iamos decir que son "iguales" hasta donde nos interesa, pues, al
+compartir un diagrama, cumplen muchas propiedades como el n\'umero de
 v\'ertices, las adyacencias o el grado de los v\'ertices. Estas g\'aficas se
 dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y $H$ son
 isomorfas si exite una biyecci\'on $\theta: V(G) \rightarrow V(H)$ tal que para
@@ -72,59 +82,178 @@ $G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
        \begin{tikzpicture}
     
             \begin{scope}[xshift=0cm,scale=0.8]
-                \foreach \i in {1,...,5} 
-                    \draw ({(360/5)*\i}:2) node(\i)[vertex,
-                    label=(360/5)*\i:{\large $v_{\i}$}]{};
+             \draw ({(360/5)*1}:2) node(1)[vertex,fill=morado, label=(360/5)*1:{\large
+                    $v_{1}$}]{};
+            \draw ({(360/5)*2}:2) node(2)[vertex,fill=amarillo, label=(360/5)*2:{\large
+                    $v_{2}$}]{};
+           \draw ({(360/5)*3}:2) node(3)[vertex,fill=azulCielo, label=(360/5)*3:{\large
+                    $v_{3}$}]{};
+            \draw ({(360/5)*4}:2) node(4)[vertex,fill=coral, label=(360/5)*4:{\large
+                    $v_{4}$}]{};
+            \draw ({(360/5)*5}:2) node(5)[vertex,fill=verde, label=(360/5)*5:{\large
+                    $v_{5}$}]{};
 
             \foreach \i/\j in {5/1,1/2,2/3,3/4,4/5}
                 \draw [edge] (\i) to (\j);
             \end{scope}
     
         \begin{scope}[xshift=6cm,scale=0.8]
-                \foreach \i in {1,...,5} 
-                    \draw ({(360/5)*\i}:2) node(\i)[vertex,
-                    label=(360/5)*\i:{\large $v_{\i}$}]{};
+            \draw ({(360/5)*1}:2) node(1)[vertex,fill=morado, label=(360/5)*1:{\large
+            $v_{1}$}]{};
+    \draw ({(360/5)*2}:2) node(2)[vertex,fill=coral, label=(360/5)*2:{\large
+            $v_{2}$}]{};
+   \draw ({(360/5)*3}:2) node(3)[vertex,fill=amarillo, label=(360/5)*3:{\large
+            $v_{3}$}]{};
+    \draw ({(360/5)*4}:2) node(4)[vertex,fill=verde, label=(360/5)*4:{\large
+            $v_{4}$}]{};
+    \draw ({(360/5)*5}:2) node(5)[vertex,fill=azulCielo, label=(360/5)*5:{\large
+            $v_{5}$}]{};
 
             \foreach \i/\j in {5/2,2/4,4/1,1/3,3/5}
                 \draw [edge] (\i) to (\j);
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Dos gr\'aficas isomorfas}
+    \caption{Dos gr\'aficas isomorfas, la gr\'afica $G$ y la gr\'afica $H$.}
     \label{fig:isoGraf}
 \end{figure}
 
-\begin{definicion}
-    \label{def:propiedades}
-    \begin{enumerate}
-        \item Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y $E(H) \subseteq
-        E(G)$. Entonces decimos que $H$ es una subrgr\'afica de $G$ y $G$ es una
-        supergr\'afica de $H$. Esta relaci\'on la denotamos por $H \subseteq G$.
-        \item Sea $G$ una gr\'afica y $V \subseteq V(G)$ con $V \neq
-        \varnothing$. Llamamos subgr\'afica inducida de $G$ por $V$, denotada
-        $G[V]$ a la subgr\'afica de $G$ cuyo conjunto de v\'ertices es $V$ y
-        cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos
-        extremos en $V$.
-    \end{enumerate}
-\end{definicion}
+Al momento de ver las relaciones entre dos gr\'aficas, tambi\'en es importante
+analizar el caso en el que una gr\'afica sea parte de la otra / "este contenida
+en la otra". En el caso de conjuntos nos referir\'iamos a subconjunto y en el
+caso de gr\'aficas nos vamos a referir a subgr\'aficas. Sean $G$ y $H$ tales que
+$V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$. Entonces decimos que $H$ es una
+subrgr\'afica de $G$. Por otra parte, decimos que $G$ es una supergr\'afica de
+$H$. Esta relaci\'on la denotamos con la misma notaci\'on que para subconjuntos,
+es decir $H \subseteq G$. Un concepto que se deriva de las subgr\'aficas parte
+de fijarnos en la subgr\'afica que tiene la mayor cantidad de aristas posibles.
+Formalmente hablando, nos referimos a $H$ la subgr\'afica de $G$ cuyo conjunto
+de v\'ertices es $V$ y cuyo conjunto de aristas son aquellas aristas de $G$ que
+tienen ambos extremos en $V$, es decir $E(H) = \{uv \in E(G) \colon\ u,v \in
+V(H)\}$. A esta subgr\'afica la llamamos la subgr\'afica inducidad de $G$ por
+$V$ y la denotamos $G[V]$. Notemos que esta gr\'afica $G[V]$ es la subgr\'afica
+de $G$ con conjunto de v\'ertices $V$ que m\'as se parece a $G$. Otro ejemplo
+importante de subgr\'aficas es la subgr\'afica inducida obtenida al quitarle
+v\'ertices a una gr\'afica. En otras palabras, sea $S \subset V(G)$, nombramos
+$H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus S$ y $E(H) =
+E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$.Tenemos que $H$ es la
+subg\'afica de $G$ obtenida al quitarle el conjunto $S$, esta subgr\'afica la
+dentotamos $G-S$. Un caso a se\~{n}alar es cuando $S$ es un conjunto unitario,
+es decir, el caso en el que le quitamos un solo v\'ertices $v$ a $G$. En este
+caso escribiremos $G-v$ en vez de $G-\{v\}$. A continuaci\'on se muestra un
+ejemplo de subgr\'aficas en \cref{fig:subgraf} donde ${\color{morado}H}$ es una
+subgr\'afica inducida con $V(G) = \{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}H'}$
+es una subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$.
+Notamos a $H'$ le faltar\'ia la arista ${\color{grisOscuro!80}\bf v_5v_7}$,
+resaltada en la figura, para ser una subgr\'afica inducida.
+
+
+%Como hacer que aparezcan letras con acento usando \color
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+            \begin{scope}[xshift=0cm,scale=1]
+                \foreach \i in {1,...,4} 
+                    \draw ({(360/7)*\i}:2) node(\i)[vertex, fill=morado,
+                    label=(360/7)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i in {5,...,7} 
+                    \draw ({(360/7)*\i}:2) node(\i)[vertex,fill=azulCielo,
+                    label=(360/7)*\i:{\large $v_{\i}$}]{};
+
+            \foreach \i/\j in
+                {1/5,1/6,1/7,2/5,2/6,2/7,3/5,3/6,3/7,4/5,
+            4/6,4/7}
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+            
+            \foreach \i/\j in
+                {1/2,1/3,1/4,2/3,2/4,3/4}
+                \draw [wedge,morado] (\i) to (\j);
+            
+            \foreach \i/\j in
+                {5/6,6/7}
+                \draw [wedge,azulCielo] (\i) to (\j);
+            
+            \draw [wedge,grisOscuro!80] (5) to (7);
+            \end{scope}
+                
+    \end{tikzpicture}
+    \caption{Una gr\'afica resaltando una ${\color{azulCielo}\bf subgr\'afica}$
+    y una ${\color{morado}\bf subgr\'afica inducida}$.}
+    \label{fig:subgraf}
+\end{figure}
 
 
 \section{Clanes y conjuntos independientes}
 \label{sec:clanes-CIndep}
 
-\begin{definicion} Clanes y conjuntos independientes:
-    \label{def:clanes y conjunto independiente}
-    \begin{enumerate}
-        \item Sean $G$ una gr\'afica y $S \subset V(G)$. Decimos que $S$ es
-        independiente si cualesquiera dos v\'ertices de $S$ no son adyacentes.
-        \item Sean $G$ una gr\'afica y $S \subset V(G)$. Decimos que $S$ es un
-        clan si cualesquiera dos v\'ertices en $S$ son adyacentes.
-        \item El n\'umero de clan de una gr\'afica $G$, denotado por $\omega_G$,
-        es la cardinalidad del clan con mayor n\'umero de elementos en $G$.
-        \item Agregar n\'umero de independencia $\alpha$.
-    \end{enumerate}
-\end{definicion}
+    Algo que es relevante a trav\'es de varios temas de la Teor\'ia de
+     Gr\'aficas es encontrar conjuntos de v\'ertices que sean adyacentes dos a
+     dos o conjuntos de v\'ertices que, al contrario, no sean adyacentes a
+     ning\'un v\'ertice. Teniendo una gr\'afica $G$ y un conjunto $S \subset
+     V(G)$. Decimos que $S$ es independiente si cualesquiera dos v\'ertices de
+     $S$ no son adyacentes. Esto quiere decir que todos los elementos de $S$
+     tienen grado $0$. La cardinalidad del conjunto independiente m\'as grande
+     de una gr\'afica se llama n\'umero de independencia y se denota $\alpha$.
+     Por otro lado, decimos que $S$ es un clan si cualesquiera dos v\'ertices en
+     $S$ son adyacentes. En este caso, el grado de todo v\'ertice de $S$ es
+     $|S-1|$. El n\'umero de clan es la cardinaliad del clan con mayor n\'umero
+     de elementos de una gr\'afica, se denota $\omega$. En \cref{fig:ClanInd} se
+     muestra un ejemplo de un ${\color{amarillo}\bf clan}$ y un
+     ${\color{verde}\bf conjunto independiente}$ de una gr\'afica. Notemos que
+     existe un con clan cardinalidad mayor al ${\color{amarillo}\bf clan}$ mostrado.
+     \'Este clan, llamemoslo $K$, est\'a mostrado con el per\'imetro de los
+     v\'ertices de color ${\color{morado}morado}$. Es f\'acil ver que $|K| =
+     \omega$.
 
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+            \begin{scope}[xshift=0cm,scale=0.8]
+                \foreach \i in {5,7} 
+                    \draw ({(360/4)*\i}:3) node(\i)[vertex, fill=verde,
+                    label=(360/4)*\i:{\large $v_{\i}$}]{};
+                
+                \draw ({(360/4)*6}:3) node(6)[vertex, label=(360/4)*6:{\large
+                    $v_{6}$}]{}; 
+                \draw ({(360/4)*8}:3)node(8)[vertex,label=(360/4)*8:{\large
+                 $v_{8}$}]{};
+                
+                \foreach \i in {1,...,3} 
+                    \draw ({(360/8)*(\i*2-1)}:2) node(\i)[vertex,fill=amarillo,
+                    label=(360/8)*(\i*2-1):{\large $v_{\i}$}]{};
+                \draw ({(360/8)*(7)}:2) node(4)[vertex,label=(360/8)*(7):{\large
+                 $v_{4}$}]{};
+
+
+            % \foreach \i/\j in
+            %     {1/5,1/6,1/7,2/5,2/6,2/7,3/5,3/6,3/7,4/5,
+            % 4/6,4/7}
+            %     \draw [edge,grisOscuro!50] (\i) to (\j);
+            
+            % \foreach \i/\j in
+            %     {1/2,1/3,1/4,2/3,2/4,3/4}
+            %     \draw [wedge,morado] (\i) to (\j);
+            
+            % \foreach \i/\j in
+            %     {5/6,6/7}
+            %     \draw [wedge,azulCielo] (\i) to (\j);
+            
+            % \draw [wedge,grisOscuro!80] (5) to (7);
+            \end{scope}
+                
+    \end{tikzpicture}
+    \caption{Una gr\'afica resaltando una ${\color{azulCielo}\bf subgr\'afica}$
+    y una ${\color{morado}\bf subgr\'afica inducida}$.}
+    \label{fig:ClanInd}
+\end{figure}
+
+
+%notacion de complemento de grafica y el ejemplo de K complemento, que es una
+%gr\'afica vacia, es decir su numero de independencia es igual al numero de vertices
 \section{Algunas familias relevantes}
 \label{sec:famGraf}
 \begin{definicion} Tipos de familias de gr\'aficas:
