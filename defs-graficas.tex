@@ -200,11 +200,11 @@ resaltada en la figura, para ser una subgr\'afica inducida.
      $S$ son adyacentes. En este caso, el grado de todo v\'ertice de $S$ es
      $|S-1|$. El n\'umero de clan es la cardinaliad del clan con mayor n\'umero
      de elementos de una gr\'afica, se denota $\omega$. En \cref{fig:ClanInd} se
-     muestra un ejemplo de un ${\color{amarillo}\bf clan}$ y un
+     muestra un ejemplo de un ${\color{coral}\bf clan}$ y un
      ${\color{verde}\bf conjunto independiente}$ de una gr\'afica. Notemos que
-     existe un con clan cardinalidad mayor al ${\color{amarillo}\bf clan}$ mostrado.
+     existe un con clan cardinalidad mayor al ${\color{coral}\bf clan}$ mostrado.
      \'Este clan, llamemoslo $K$, est\'a mostrado con el per\'imetro de los
-     v\'ertices de color ${\color{morado}morado}$. Es f\'acil ver que $|K| =
+     v\'ertices de color ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| =
      \omega$.
 
 
@@ -212,42 +212,36 @@ resaltada en la figura, para ser una subgr\'afica inducida.
     \centering
        \begin{tikzpicture}
     
-            \begin{scope}[xshift=0cm,scale=0.8]
-                \foreach \i in {5,7} 
-                    \draw ({(360/4)*\i}:3) node(\i)[vertex, fill=verde,
+            \begin{scope}[xshift=0cm,scale=1]
+                \foreach \i in {5,...,7} 
+                    \draw ({(360/4)*\i}:1.3) node(\i)[avertex, fill=coral,
                     label=(360/4)*\i:{\large $v_{\i}$}]{};
+                \draw ({(360/4)*8}:1.3)node(8)[avertex,label=(360/4)*8:{\large
+                    $v_{8}$}]{};
                 
-                \draw ({(360/4)*6}:3) node(6)[vertex, label=(360/4)*6:{\large
-                    $v_{6}$}]{}; 
-                \draw ({(360/4)*8}:3)node(8)[vertex,label=(360/4)*8:{\large
-                 $v_{8}$}]{};
-                
-                \foreach \i in {1,...,3} 
-                    \draw ({(360/8)*(\i*2-1)}:2) node(\i)[vertex,fill=amarillo,
+                \foreach \i in {1,3} 
+                    \draw ({(360/8)*(\i*2-1)}:3) node(\i)[bvertex,fill=verde,
                     label=(360/8)*(\i*2-1):{\large $v_{\i}$}]{};
-                \draw ({(360/8)*(7)}:2) node(4)[vertex,label=(360/8)*(7):{\large
-                 $v_{4}$}]{};
+                
+                \foreach \i in {2,4}
+                    \draw ({(360/8)*(\i*2-1)}:3)
+                   node(\i)[bvertex,label=(360/8)*(\i*2-1):{\large $v_{\i}$}]{};
 
 
-            % \foreach \i/\j in
-            %     {1/5,1/6,1/7,2/5,2/6,2/7,3/5,3/6,3/7,4/5,
-            % 4/6,4/7}
-            %     \draw [edge,grisOscuro!50] (\i) to (\j);
+            \foreach \i/\j in
+                {1/5,1/8,2/5,2/6,2/4,3/6,3/7,3/4,4/7,4/8}
+                \draw [edge,grisOscuro!50] (\i) to (\j);
             
-            % \foreach \i/\j in
-            %     {1/2,1/3,1/4,2/3,2/4,3/4}
-            %     \draw [wedge,morado] (\i) to (\j);
+            \foreach \i/\j in
+                {5/6,5/7,6/7}
+                \draw [wedge,coral] (\i) to (\j);
             
-            % \foreach \i/\j in
-            %     {5/6,6/7}
-            %     \draw [wedge,azulCielo] (\i) to (\j);
-            
-            % \draw [wedge,grisOscuro!80] (5) to (7);
+            \foreach \i/\j in {8/5,8/6,8/7} 
+                \draw [wedge,azulCielo!60] (\i) to (\j);
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Una gr\'afica resaltando una ${\color{azulCielo}\bf subgr\'afica}$
-    y una ${\color{morado}\bf subgr\'afica inducida}$.}
+    \caption{Una gr\'afica, resaltando un dos clanes y un conjunto independiente.}
     \label{fig:ClanInd}
 \end{figure}
 
