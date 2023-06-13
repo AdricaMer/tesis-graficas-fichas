@@ -11,10 +11,11 @@ Los elementos de $V(G)$ son llamados v\'ertices y los elementos de $E(G)$ son
 aristas. Para una arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es
 incidente en $u$ y en $v$ si $e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$
 son extremos de la arista $e$. De igual manera, podemos decir que $u$ y $v$ son
-v\'ertices adyacentes o vecinos y lo denotamos $u \sim v$. Al conjunto de
-vecinos de un v\'ertice $v$ se le llama vecindad, denotada $N_G(v)$, mientras
-que al n\'umero de aristas incidentes en $v$ se le llama grado de $v$. Un
-v\'ertice aisaldo, es decir, un v\'ertice que no tiene vecinos, tiene grado $0$.
+v\'ertices adyacentes o vecinos y lo denotamos $u \sim v$. Esta relaci\'on entre
+v\'ertices la llamamos adyacencia. Al conjunto de vecinos de un v\'ertice $v$ se
+le llama vecindad, denotada $N_G(v)$, mientras que al n\'umero de aristas
+incidentes en $v$ se le llama grado de $v$. Un v\'ertice aisaldo, es decir, un
+v\'ertice que no tiene vecinos, tiene grado $0$.
 
 \begin{figure}[ht!]
     \centering
@@ -60,12 +61,12 @@ $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.
 Al momento de estudiar objetos matem\'aticos, siempre es importante analizar
 como se relacionan dichos objetos entre s\'i. Ya teniendo la noci\'on de una
 gr\'afica, ahora nos enfocamos en como se ven las relaciones entre gr\'aficas.
-Primero veamos que necesitar\'ian dos gr\'aficas para ser "iguales". Observamos
+Veamos que necesitar\'ian dos gr\'aficas para ser "iguales". Observamos
 que, de igual manera que una gr\'afica puede tener varios diagramas, a un
 diagr\'ama se le pueden asociar distintas gr\'aficas, renombrando v\'ertices y
 aristas para obtener distintos conjuntos de v\'ertices y aristas. Un ejemplo de
 esto es \cref{fig:isoGraf}. Al renombrar las aristas de la gr\'afica $G$ como se
-muestra en la figura con los colores, podemos dibujar a $G$ como la gr\'afica
+con los colores,como se muestra en la figura, podemos dibujar a $G$ como la gr\'afica
 $H$ y viseversa. De manera intuitiva, las dos gr\'aficas que comparten un mismo
 diagrama podr\'iamos decir que son "iguales" hasta donde nos interesa, pues, al
 compartir un diagrama, cumplen muchas propiedades como el n\'umero de
@@ -114,7 +115,7 @@ $G \cong H$ y la biyecci\'on entre las gr\'aficas es llamada isomorfismo.
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Dos gr\'aficas isomorfas, la gr\'afica $G$ y la gr\'afica $H$.}
+    \caption{Dos gr\'aficas isomorfas, $G$ y $H$.}
     \label{fig:isoGraf}
 \end{figure}
 
@@ -127,25 +128,26 @@ subrgr\'afica de $G$. Por otra parte, decimos que $G$ es una supergr\'afica de
 $H$. Esta relaci\'on la denotamos con la misma notaci\'on que para subconjuntos,
 es decir $H \subseteq G$. Un concepto que se deriva de las subgr\'aficas parte
 de fijarnos en la subgr\'afica que tiene la mayor cantidad de aristas posibles.
-Formalmente hablando, nos referimos a $H$ la subgr\'afica de $G$ cuyo conjunto
+Formalmente hablando, nos referimos a $H$, la subgr\'afica de $G$, cuyo conjunto
 de v\'ertices es $V$ y cuyo conjunto de aristas son aquellas aristas de $G$ que
-tienen ambos extremos en $V$, es decir $E(H) = \{uv \in E(G) \colon\ u,v \in
-V(H)\}$. A esta subgr\'afica la llamamos la subgr\'afica inducidad de $G$ por
+tienen ambos extremos en $V$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in
+V(H)\}$. A esta subgr\'afica la llamamos la subgr\'afica inducida de $G$ por
 $V$ y la denotamos $G[V]$. Notemos que esta gr\'afica $G[V]$ es la subgr\'afica
 de $G$ con conjunto de v\'ertices $V$ que m\'as se parece a $G$. Otro ejemplo
-importante de subgr\'aficas es la subgr\'afica inducida obtenida al quitarle
-v\'ertices a una gr\'afica. En otras palabras, sea $S \subset V(G)$, nombramos
-$H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus S$ y $E(H) =
-E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$.Tenemos que $H$ es la
-subg\'afica de $G$ obtenida al quitarle el conjunto $S$, esta subgr\'afica la
+importante de subgr\'aficas es la subgr\'afica inducida obtenida al quitarle uno
+o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S \subset V(G)$,
+nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus S$ y $E(H) =
+E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Tenemos que $H$ es
+la subg\'afica de $G$ obtenida al quitarle el conjunto $S$, esta subgr\'afica la
 dentotamos $G-S$. Un caso a se\~{n}alar es cuando $S$ es un conjunto unitario,
 es decir, el caso en el que le quitamos un solo v\'ertices $v$ a $G$. En este
 caso escribiremos $G-v$ en vez de $G-\{v\}$. A continuaci\'on se muestra un
 ejemplo de subgr\'aficas en \cref{fig:subgraf} donde ${\color{morado}H}$ es una
 subgr\'afica inducida con $V(G) = \{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}H'}$
 es una subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$.
-Notamos a $H'$ le faltar\'ia la arista ${\color{grisOscuro!80}\bf v_5v_7}$,
-resaltada en la figura, para ser una subgr\'afica inducida.
+Notamos a ${\color{azulCielo}H'}$ le faltar\'ia la arista
+${\color{grisOscuro!80}\bf v_5v_7}$, resaltada en la figura, para ser una
+subgr\'afica inducida. 
 
 
 %Como hacer que aparezcan letras con acento usando \color
@@ -179,8 +181,8 @@ resaltada en la figura, para ser una subgr\'afica inducida.
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Una gr\'afica resaltando una ${\color{azulCielo}\bf subgr\'afica}$
-    y una ${\color{morado}\bf subgr\'afica inducida}$.}
+    \caption{Una gr\'afica en la que se resalta una subgr\'afica inducida,
+    ${\color{morado}\bf H}$, y una subgr\'afica, ${\color{azulCielo}\bf H'}$.}
     \label{fig:subgraf}
 \end{figure}
 
@@ -200,12 +202,15 @@ resaltada en la figura, para ser una subgr\'afica inducida.
      $S$ son adyacentes. En este caso, el grado de todo v\'ertice de $S$ es
      $|S-1|$. El n\'umero de clan es la cardinaliad del clan con mayor n\'umero
      de elementos de una gr\'afica, se denota $\omega$. En \cref{fig:ClanInd} se
-     muestra un ejemplo de un ${\color{coral}\bf clan}$ y un
-     ${\color{verde}\bf conjunto independiente}$ de una gr\'afica. Notemos que
-     existe un con clan cardinalidad mayor al ${\color{coral}\bf clan}$ mostrado.
-     \'Este clan, llamemoslo $K$, est\'a mostrado con el per\'imetro de los
-     v\'ertices de color ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| =
-     \omega$.
+     muestra un ejemplo de un ${\color{coral}\bf clan}$ y un ${\color{verde}\bf
+     independiente}$ ${\color{verde}\bf conjunto }$ de una gr\'afica. Es f\'acil
+     observar que el ${\color{verde}\bf independiente}$ ${\color{verde}\bf
+     conjunto }$ no es el conjunto independiente m\'as grande que podemos
+     obtener, pues podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un
+     conjunto independiente. De igual manera, podemos notar que existe un clan con
+     cardinalidad mayor al ${\color{coral}\bf clan}$ mostrado. Este clan,
+     llam\'emoslo $K$, est\'a mostrado con el per\'imetro de los v\'ertices de
+     color ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| = \omega$.
 
 
 \begin{figure}[ht!]
@@ -241,7 +246,7 @@ resaltada en la figura, para ser una subgr\'afica inducida.
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Una gr\'afica, resaltando un dos clanes y un conjunto independiente.}
+    \caption{Una gr\'afica, resaltando dos clanes y un conjunto independiente.}
     \label{fig:ClanInd}
 \end{figure}
 
@@ -259,7 +264,7 @@ resaltada en la figura, para ser una subgr\'afica inducida.
         v\'ertices admite una partici\'on en $X$ y $Y$ de tal manera que $X$ y
         $Y$ son conjuntos independientes. De igual manera, definimos una
         gr\'afica $k$-\textit{partita} como la gr\'afica cuyo conjunto de
-        v\'ertices admite una partici\'on en a lo m\'as $k$ conjuntos
+        v\'ertices admite una partici\'on en, a lo m\'as, $k$ conjuntos
         independientes.
         \item Una gr\'afica es bipartita completa si es bipartita y dada la
         partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es
@@ -285,7 +290,7 @@ resaltada en la figura, para ser una subgr\'afica inducida.
         \item Decimos que un camino es cerrado si su v\'ertice inicial y su
         v\'ertice final son el mismo.
         \item Un ciclo es un camino cerrado de longitud al menos $3$ que no
-        repite v\'ertices, salvo el primer y \'ultimo v\'ertice.
+        repite v\'ertices, salvo el primero y el \'ultimo.
         \item Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no tiene
         cuerdas si la subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2.
     \end{enumerate}
@@ -327,7 +332,7 @@ resaltada en la figura, para ser una subgr\'afica inducida.
         \item Sea $G$ una gr\'afica y $c$ una coloraci\'on con $S$ colores. Para
         cada color $i \in S$, se define la clase crom\'atica de $i$ de la
         coloraci\'on $c$, denotado $V_i$, como el conjunto de todos los
-        v\'ertices de $G$ a que ocupan el color $i$, en otras palabras $V_i =
+        v\'ertices de $G$ que ocupan el color $i$, en otras palabras $V_i =
         c^{-1}[i]$.
         \item  Sea $G$ una gr\'afica, el m\'inimo entero $k$ para el cu\'al $G$
         es $k$-coloreable es el n\'umero crom\'atico de $G$, denotado por
@@ -339,14 +344,14 @@ resaltada en la figura, para ser una subgr\'afica inducida.
     \label{def:fichas}
     \begin{enumerate}
         \item Sean $G$ una gr\'afica y $k \geq 1$ un entero. Definimos la
-        gr\'afica de $k$-fichas de $G$, denotada por $F_k(G)$ como la
+        gr\'afica de $k$-fichas de $G$, denotada por $F_k(G)$, como la
         gr\'afica con conjunto de v\'ertices $\binom{V(G)}{k}$ y donde dos
         v\'ertices $A$ y $B$ en $F_k(G)$ son adyacentes si y s\'olo si $|A
         \triangle B| ={a,b}$, con $a \in A$, $b \in B$ y $ab \in E(G)$.
         \item Sea $A$ un $k$-comjunto en la gr\'afica $G$ tal que $a \in A$
         y $b\notin A$. Definimos $A'= (A \setminus \{a\}) \cup \{b\}$.
         \item Sea $P$ una trayectoria en la gr\'afica $G$. Tomamos $A$ un
-        $k$- conjunto en $G$ de tal manera que $a\in A$ y $b \notin A$. Si
+        $k$-conjunto en $G$ de tal manera que $a\in A$ y $b \notin A$. Si
         $A\cap P =\{v_1, \dots, v_q\}$, con $v_1 = a$, definimos $A
         \xrightarrow[P]{} A'$ como la trayectoria en $F_k(G)$ entre $A$ y
         $A'$ que sigue la siguiente secuencia. Primero movemos la ficha de
