@@ -1,6 +1,7 @@
 \chapter{Conexidad}%
 \label{cap:conexidad}
 
+
 %No se como llamar a esta seccion
 \section{Algunas propiedades interesantes}%
 \label{sec:etiquetas}
@@ -232,16 +233,16 @@ $F_{k}(G)$.
        \begin{tikzpicture}
     
         \begin{scope}[xshift=-5.5cm]
-            \draw (0,2) node (1) [vertex,fill=baige ,label=90:{\scriptsize $1$}] {};
-            \draw (0,1) node (2) [vertex,fill=baige ,label=270:{\scriptsize $2$}] {};
-            \draw (0,-1) node (3) [vertex,fill=baige ,label=90:{\scriptsize $3$}] {};
-            \draw (0,-2) node (4) [vertex,fill=baige ,label=270:{\scriptsize $4$}] {};
-            \draw (1,0) node (5) [vertex,fill=crema ,label=0:{\scriptsize $5$}] {};
-            \draw (-1,0) node (6) [vertex,fill=crema ,label=180:{\scriptsize $6$}] {};
-            \draw (2,0) node (7) [vertex,fill=crema ,label=0:{\scriptsize $7$}] {};
-            \draw (-2,0) node (8) [vertex,fill=crema ,label=180:{\scriptsize $8$}] {};
-            \draw (3,0) node (9) [vertex,fill=crema ,label=0:{\scriptsize $9$}] {};
-            \draw (-3,0) node (10) [vertex,fill=crema ,label=180:{\scriptsize $10$}] {};
+            \draw (0,2) node (1) [vertex,fill=baige ,label=90:{\footnotesize $v_1$}] {};
+            \draw (0,1) node (2) [vertex,fill=baige ,label=270:{\footnotesize $v_2$}] {};
+            \draw (0,-1) node (3) [vertex,fill=baige ,label=90:{\footnotesize $v_3$}] {};
+            \draw (0,-2) node (4) [vertex,fill=baige ,label=270:{\footnotesize $v_4$}] {};
+            \draw (1,0) node (5) [vertex,fill=crema ,label=0:{\footnotesize $v_5$}] {};
+            \draw (-1,0) node (6) [vertex,fill=crema ,label=180:{\footnotesize $v_6$}] {};
+            \draw (2,0) node (7) [vertex,fill=crema ,label=0:{\footnotesize $v_7$}] {};
+            \draw (-2,0) node (8) [vertex,fill=crema ,label=180:{\footnotesize $v_8$}] {};
+            \draw (3,0) node (9) [vertex,fill=crema ,label=0:{\footnotesize $v_9$}] {};
+            \draw (-3,0) node (10) [vertex,fill=crema ,label=180:{\footnotesize $v_{10}$}] {};
 
             \foreach \i/\j in{1/5,1/6,1/7,1/10,2/5,2/6,2/8,2/10,
             3/5,3/6,3/8,3/9,3/10,4/5,4/6,4/7,4/9} 
@@ -263,9 +264,15 @@ ${\color{fushia}rojas}$ y ${\color{azulMetal}azules}$ mencionadas en
 \end{figure}
 
 Sea ${\color{azulMetal}M}$ el conjunto de aristas azules resaltadas en la
-\cref{fig:ex-rb-bioGraph}, es decir ${\color{azulMetal}M=\{a, b, c, d\}}$.
-Notemos que a pesar de que ${\color{baige}3 \in Y}$ no tiene aristas rojas, todo
-v\'ertice en ${\color{baige}Y}$ tiene una arista en ${\color{azulMetal}M}$.
+\cref{fig:ex-rb-bioGraph}, es decir ${\color{azulMetal}M=\{v_1v_8,
+v_2v_9,v_3v_7,v_4v_{10}\}}$. Notemos que a pesar de que ${\color{baige}v_3 \in Y}$ no tiene
+aristas rojas, todo v\'ertice en ${\color{baige}Y}$ tiene una arista en
+${\color{azulMetal}M}$.
+
+
+%Falta nota sobre cambio de notacion para vertices en las figuras debido a que 
+%luego hay muchos vertices. Desde el inicio ddel capitulo??
+
 
 \begin{lema}%
 \label{lem:TrayIntAj}
@@ -574,8 +581,8 @@ cotradicci\'on pues tomamos a $A$ y $B$ en distintas componentes, lo que implica
 que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$ y $x$.
 
 Por lo anterior tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
-$\mathcal{C}$ tiene todos los $\{A_i,x colon\ i \in \{1, \dots, r\}\}$ o todos los
-$\{B_j,x colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
+$\mathcal{C}$ tiene todos los $\{A_i,x \colon\  i \in \{1, \dots, r\}\}$ o todos los
+$\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
 $\mathcal{C}$ tiene al menos $r(n-k-r)$ v\'ertices.
 
 Ahora definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} =
