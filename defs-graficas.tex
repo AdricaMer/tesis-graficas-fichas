@@ -252,11 +252,160 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 \end{figure}
 
 
-\section{Tipos de recorridos}
-\label{sec:recorridos}
+\section{Caminos y trayectorias}
+\label{sec:Caminos}
 
+%camino/trayectoria/ciclo generador
+%primera instancia
+%comunmente
 
-\begin{definicion} Definiciones que faltan
+    Algo de interes en Teor\'ia de Gr\'aficas es si, en una gr\'afica, hay algun
+    vinculo entre dos v\'ertices. Si estos dos v\'ertices son adyacentes, es
+    claro que ese v\'inculo existe a trav\'es de la arista que comparten. Un
+    $uv$-camino entre los v\'ertices $u$ y $v$ de una gr\'afica $G$ es una
+    sucesi\'on alternada de v\'ertices y aristas de $G$ de la siguiente forma,
+    $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i \in V(G)$ y
+    $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0, \dots, k\}$ y $j \in \{ 1,
+    \dots, k\}$. Este $uv$- camino es una forma de vincular el v\'ertice $u$ con
+    el v\'ertice $v$. En caso de que no sea necesario especificar de qu\'e
+    v\'ertice a qu\'e v\'ertice va la suceci\'on, nos referiremos simplemente a
+    un camino. Al ser una sucesi\'on, a un camino $W$ se le puede asociar una
+    longitudcomo el n\'umero de aristas en $W$, se denota $l(W)$ . 
+    
+    Al poderle asignar una longitud a un camino, ser\'ia natural utilizarla para
+    ver que tan "cercano" esta un v\'ertice de otro. Pero, observamos que, un
+    camino puede pasar m\'ultiples veces por el mismo v\'ertice o la misma
+    arista. En otras palabras, el concepto de longitud no ayuda mucho para
+    encontrar que tan "cerca" esta un v\'ertice de otro, puesto que puede
+    existir otro camino que ocupe los mismos v\'ertices y aristas multiples
+    veces. Por lo tanto, introducimos el concepto de trayectoria. Una
+    trayectoria es un camino que no repite v\'ertices, m\'as a\'un, una
+    $uv$-trayectoria es una trayectoria que tiene v\'ertice inicial $u$ y
+    v\'ertice final $v$. En una $uv$-trayectoria, los v\'ertices $u$ y $v$ son
+    llamados extremos y cualquier otro v\'ertice de la trayectoria es llamado
+    v\'ertice interno. Notemos que, al no repetir v\'ertices, este camino
+    tampoco repite aristas, pues, si lo hiciera, necesitar\'ia volver a pasar
+    por los extremos de dicha arista. Lo cu\'al quiere decir que todas las
+    trayectorias que tengan los mismos v\'ertices y aristas tambi\'en tienen la
+    misma longitud. Esto es un mejor acercamiento al concepto de "cercan\'ia"
+    entre v\'ertices, pero se puede tener el caso que haya m\'ultiples
+    trayectorias de distintas longitudes entre dos v\'ertices. Entonces,
+    definimos la distancia entre dos v\'ertices $u$ y $v$ de una gr\'afica,
+    denotada $d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. Sea
+    $P$ una trayectoria en una gr\'afica, decimos que $P$ no tiene cuerdas si la
+    subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2. Observamos que la
+    trayectoria mas corta entre dos v\'ertices no tiene cuerdas. Adicionalmente,
+    podemos darle un tama\~{n}o a una gr\'afica $G$ al definir su di\'ametro
+    como $max_{v\in G}\{max_{u\in G}\{d(u,v)\}\}$. En\cref{fig:ex-caminos} se
+    observan dos ${\color{coral}\bf v_3 v_5}$-trayectoria internamente ajenas.
+    Ambas est\'an representadas con sus v\'ertices internos coloreados del mismo
+    color, una de ${\color{morado}\bf morado}$ y la otra de ${\color{verde}\bf
+    verde}$. Notamos que la ${\color{morado}\bf trayectoria}$ tiene cuerdas,
+    entre ellas la arista $v_8v_5$. Por otro lado, la ${\color{verde}\bf
+    trayectoria}$ no tiene cuerdas y es la trayectoria m\'as corta entre $v_3$ y
+    $v_5$, por lo que la distancia entre $v_3$ y $v_5$ es $2$.
+   
+    %Checar si esa notacion ya se uso
+    
+    
+    La siguiente proposici\'on nos muestra una relaci\'on entre caminos y
+    trayectorias. Posteriormente, podemos ver un ejemplo en
+    \cref{fig:ex-caminos}, donde se resaltan las ${\color{morado}\bf aristas}$
+    de un camino y donde, para mostrar la trayectoria contenida, se resaltan los
+    ${\color{morado}\bf v\'ertices}$. 
+    
+    %checar como poner acento
+
+    \begin{proposicion}
+        En una gr\'afica $G$ con $u, v \in V(G)$, todo $uv$-camino contiene una
+        $uv$-trayectoria.
+    \end{proposicion}
+    \label{prop:CamTray}
+
+    \begin{proof}
+        Sea $W$ un $uv$-camino en una gr\'afica $G$, con $u,v \in V(G)$.
+        Demostraremos, por inducci\'on sobre la longitud de $W$, que $W$
+        contiene una $uv$-trayectoria. Primero, supongamos que $l(W)=1$, esto
+        quiere decir que $W$ solo contiene una arista, por lo tanto $W$ es una
+        trayectoria. Ahora, supongamos que todo $uv$-camino con longitud menor a
+        $k$ contiene una $uv$-trayectoria. Tomamos $W$, tal que $l(W) = k$ y
+        veamos que contiene una $uv$-trayectoria. Adem\'as, supongamos que $W$
+        no es una trayectoria, pues en el caso contrario, $W$ ser\'ia la
+        trayectoria buscada. Tomamos $W= (w_0,e_1,w_1,e_2, \dots, e_n,w_n)$, con
+        $w_0=u$, $w_n=v$, $e_i \in E(G)$ y $w_j \in V(G)$, donde $i \in \{1,
+        \dots, n\}$ y $j \in \{0, \dots, n\}$. Sea $m \in \{0, \dots, n\}$ el
+        \'indice del primer v\'ertice de $W$ que se repite y sea $l \in \{m+1,
+        \dots, n\}$ tal que $w_m = w_l$. Entonces, formamos el camino $W'=
+        (w_0,e_1,w_1,\dots w_m, e_{l+1}, w_{l+1} \dots, e_n,w_n)$. Observamos
+        que $l(W')<l(W)$, por lo que, por hip\'otesis de inducci\'on, $W'$
+        contiene una $uv$-trayectoria. Por lo tanto $W$ tambi\'en contiene una
+        $uv$-trayectoria.
+    \end{proof}
+    
+    Por la Proposici\'on anterior, cada que hablemos de caminos, siempre hay una
+   trayectoria contenida... Ahora nos enfocaremos en trayectorias. Como se
+   mencion\'o anteriormente, entre dos v\'ertices $u$ y $v$ pueden existir
+   m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos $uv$-trayectorias
+   internamente ajenas si $V(X)\cap V(Y)=\{u,v\}$. Este concepto nos sevir\'a
+   m\'as adelante en la secci\'on de conexidad. Adicionalemtne, podemos ver que
+   al recorrer una trayectoria de manera inversa obtenemos otra trayectoria.
+   Formalmente hablando, teniendo una $uv$-trayectoria $X$, su trayectoria
+   inversa, a la cu\'al denotamos $X^{-1}$, es una $vu$-trayectoria que tiene
+   los mismos v\'ertices y aristas que $X$.
+
+    Cuando un camino tiene los mismos extremos, se llama un camino cerrado.
+    Notamos que, por \cref{prop:CamTray}, todo camino cerrado contiene una
+    trayectoria a la que se le agrega el primer indice al final. Este camino se
+    le llama ciclo. Formalmente hablando, un ciclo es un camino cerrado de
+    longitud al menos $3$ que no repite v\'ertices, salvo el primero y el
+    \'ultimo.
+    
+    Al igual que en el caso de las trayectorias, vale la pena resaltar el caso
+    en el que un camino cerrado no repite v\'ertices. Un ciclo es un camino
+    cerrado de longitud al menos $3$ que, adem\'as, no repite v\'ertices, salvo
+    los extremos. 
+
+    \begin{figure}[ht!]
+        \centering
+           \begin{tikzpicture}
+        
+                \begin{scope}[xshift=0cm,scale=1]
+                    \foreach \i in {1,2} \draw ({(360/6)*\i}:2.5)
+                        node(\i)[vertex, label=(360/6)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i in {3,5} \draw ({(360/6)*\i}:2.5)
+                        node(\i)[vertex, fill =coral, label=(360/6)*\i:{\large $v_{\i}$}]{};
+                
+                \draw ({(360/6)*6}:2.5) node(6)[vertex, fill=morado, label=(360/6)*6:{\large $v_{6}$}]{};
+                \draw ({(360/6)*4}:2.5) node(4)[vertex, fill=verde, label=(360/6)*4:{\large $v_{4}$}]{};
+                \draw (1,0) node (7) [vertex,fill=morado, label=300:{\large $v_7$}] {};
+                \draw (-1,0) node (8) [vertex,fill=morado, label=150:{\large $v_8$}] {};
+                    
+                \foreach \i/\j in
+                    {1/6,2/3,2/8,4/8,5/7,5/8}
+                    \draw [edge,grisOscuro!50] (\i) to (\j);
+                
+                    \foreach \i/\j in
+                    {3/8,7/8,2/7,1/2,1/7,6/7,5/6}
+                    \draw [wedge,morado] (\i) to (\j);
+                
+                \foreach \i/\j in
+                    {3/4,4/5}
+                    \draw [wedge,verde] (\i) to (\j);
+
+                \end{scope}
+                    
+        \end{tikzpicture}
+        \caption{Una gr\'afica en la que se resaltan las ${\color{morado}\bf
+        aristas}$ de un ${\color{coral}\bf v_3 v_5}$-camino con su
+        ${\color{coral}\bf v_3 v_5}$-trayectoria contenida, resaltando sus
+        ${\color{morado}\bf vertices}$.  Tambi\'en se resalta una
+        ${\color{coral}\bf v_3 v_5}$-trayectoria sin cuerdas de color
+        ${\color{verde}\bf verde}$.}
+        \label{fig:ex-caminos}
+    \end{figure}
+
+    \begin{definicion} Definiciones que faltan (Operaciones):
     \begin{enumerate}
         \item Dadas las gr\'aficas $G$ y $H$, el producto carteciano de ambas
         gr\'aficas, denotado $G \square H$, es la gr\'afica cuyo conjunto de
@@ -271,74 +420,6 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
         \item La uni\'on agena de gr\'aficas $G$ y $H$ es la uni\'on de $G$ y
         $H$, donde $v(G) \bigcap V(H) = \varnothing$. A esta funci\'on la
         denotamos $G + H$. 
-     \end{enumerate}
-\end{definicion}
-
-
-%camino/trayectoria/ciclo generador
-%primera instancia
-%comunmente
-
-    Una idea que surge al trabajar con gr\'aficas es si existe una
-    manera de "llegar" de un v\'ertice a otro dentro de la gr\'afica. En
-    Teor\'ia de Gr\'aficas, diremos que se puede "llegar" de un v\'ertice $u$ a
-    un v\'ertice $v$ en una gr\'afica $G$ si existe una sucesi\'on alternada de
-    v\'ertices y aristas de $G$ de la siguiente forma, $W=(v_0, e_1,v_1, \dots,
-    e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i \in V(G)$ y $v_{j-1}v_j = e_j \in E(G)$,
-    para $i \in \{0, \dots, k\}$ y $j \in \{ 1, \dots, k\}$. A la suciesi\'on
-    $W$ se llama camino de  $u$ a $v$ o $uv$-camino. De manera naturarl, a un
-    camino le podemos asignar una longitud, denotada $l(W)$, al considerarla
-    como el n\'umero de aristas $W$. 
-
-    Ya que podemos saber si hay manera de "llegar" de un v\'ertice a otro, lo
-    natural es preguntarse, qu\'e tan f\'acil es "llegar de un v\'ertice a otro,
-    es decir, que tan "cerca" est\'an. Para esto ser\'ia natural utilizar el
-    concepto de longitud que ya tenemos, pero observamos que un camino puede pasar
-    m\'ultiples veces por el mismo v\'ertice o la misma arista. Esto quiere
-    decir que nuestro concepto de longitud no nos ayuda mucho para encontrar que
-    tan "cerca" esta un v\'ertice de otro, puesto que puede existir otro camino
-    que utilice los mismos v\'ertices y aristas pero tenga longitud menor. Para
-    no tener este problema, introducimos el concepto de trayectoria. Una
-    trayectoria es un camino que no repite v\'ertices y, de igual manera, una
-    trayectoria que tiene v\'ertice inicial $u$ y v\'ertice final $v$ se le
-    puede llamar $uv$-trayectoria. Notemos que al no repetir v\'ertices, este
-    camino tampoco repite aristas, pues si lo hiciera necesitar\'ia volver a
-    pasar por los extremos de dicha arista. Esto quiere decir que todas las
-    trayectorias que tengan los mismos v\'ertices y aristas tambi\'en tienen la
-    misma longitud. 
-
-    \begin{proposicion}
-        En una gr\'afica $G$ con $u, v \in V(G)$, todo $uv$-camino contiene una
-        $uv$-trayectoria.
-    \end{proposicion}
-    
-    
-    \begin{definicion} Tipos de recorridos de una gr\'afica:
-    \label{def:tipos de recorridos}
-    \begin{enumerate}
-        \item Una trayectoria es un camino que no repite v\'ertices. Llamamos
-        $uv$-\textit{trayectoria} a una trayectoria con v\'ertice inicial $u$ y
-        \'ultimo v\'ertice $v$.
-        \item Una trayectoria inversa es una trayectoria recorrida de manera
-        contraria, es decir, si $X$ es una $uv$-trayectoria, entonces la
-        trayectoria inversa de $X$ es una $vu$-trayectoria que tiene los mismos
-        v\'ertices que $X$. Usamos $X^{-1}$ para denotar la trayectoria inversa
-        de $X$.
-        \item Un v\'ertice interno $x$ de una $uv$-trayectoria es un v\'ertice
-        tal que $x \neq u$ y $x \neq v$.
-        \item Sean $X$ y $Y$ dos $uv$-trayectorias. Decimos que $X$ y $Y$ son
-        internamente ajenas si $V(X) \cap V(Y)=\{u,v\}$.
-        \item Decimos que un camino es cerrado si su v\'ertice inicial y su
-        v\'ertice final son el mismo.
-        \item Un ciclo es un camino cerrado de longitud al menos $3$ que no
-        repite v\'ertices, salvo el primero y el \'ultimo.
-        \item Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no tiene
-        cuerdas si la subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2.
-        \item La distancia entre los v\'ertices $u$ y $v$ se define como la
-        $uv$-trayectoria m\'as corta, se denota $d(u,v)$
-        %Checar si esa notacion ya se uso
-        \item El di\'ametro de una gr\'afica $G$ se define como $max_{v\in
-        G}\{max_{u\in G}\{d(u,v)\}\}$.
     \end{enumerate}
 \end{definicion}
 
@@ -370,6 +451,10 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 \label{sec:famGraf}
 \begin{definicion} Tipos de familias de gr\'aficas:
     \label{def:familias}
+
+    Hay varias familias relevantes en la Teor\'ia de Gr\'aficas, en esta
+    secci\'on hablaremos de las familias que son relevantes para este trabajo y
+    sus propiedades. 
     \begin{enumerate}
         \item Sea $G$ una gr\'afica, decimos que $G$ es completa si su conjunto
         de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de
