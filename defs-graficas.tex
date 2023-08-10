@@ -702,6 +702,38 @@ denotiado $\mathcal{F}_{m.n}$, se define como
 $\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En la Figura.... se puede ver un ejemplo
 de un abanico y un abanico generalizado.....
 
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+
+        \begin{scope}[xshift=0cm,scale=1]
+            \foreach \i in {1,...,5} \draw ({(360/6)*\i}:1.8)
+                    node(\i)[vertex, label=(360/6)*\i:{\large $v_{\i}$}]{};
+
+            \draw (0,0) node (6) [vertex,label=0:{\small $v_6$}] {};
+
+            \foreach \i/\j in{1/2,2/3,3/4,4/5,1/6,2/6,3/6,4/6,5/6} 
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+            
+        \begin{scope}[xshift=7cm,scale=1]
+            \draw (-2.4,1.4) node (v1) [vertex,label=180:{\small $v_1$}] {};
+            \draw (-1.2,1.8) node (v2) [vertex,label=135:{\small $v_2$}] {};
+            \draw (0,2) node (v3) [vertex,label=90:{\small $v_3$}] {}; 
+            \draw (1.2,1.8) node (v4) [bvertex,label=45:{\small $v_4$}] {}; 
+            \draw (2.4,1.4) node (v5) [vertex,label=0:{\small $v_5$}] {}; 
+            \draw (-1.2,-1.5) node (w1) [vertex,label=270:{\small $w_1$}] {}; 
+            \draw (1.2,-1.5) node (w2) [bvertex, label=270:{\small $w_2$}] {};
+
+            
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w1/v5,w2/v1,w2/v2,w2/v3,
+                w2/v4,w2/v5,v1/v2,v2/v3,v3/v4,v4/v5} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+\end{tikzpicture}
+\caption{A}
+\label{fig:ex-abanico}
+\end{figure}
 
 
 \section{Conceptos de coloraci\'on}
