@@ -458,6 +458,63 @@ cantidad de trayectorias ajenas por aristas
 que existan entre dichos
 v\'ertices.
 
+
+\begin{figure}[htb!]
+    \centering
+    \begin{tikzpicture}
+    
+        \begin{scope}[xshift=0cm,scale=1]
+            \foreach \i in {2,3} \draw ({(360/6)*\i}:2.5)
+                node(\i)[vertex, label=(360/6)*\i:{\large $v_{\i}$}]{};
+            
+            \foreach \i in {1,5} \draw ({(360/6)*\i}:2.5)
+                node(\i)[wvertex, fill=verde, label=(360/6)*\i:{\large $v_{\i}$}]{};
+            
+            \draw ({(360/6)*6}:2.5) node(6)[vertex, label=(360/6)*6:{\large $v_{6}$}]{};
+            \draw ({(360/6)*4}:2.5) node(4)[vertex, label=(360/6)*4:{\large $v_{4}$}]{};
+            \draw (1,0) node (7) [vertex, label=300:{\large $v_7$}] {};
+            \draw (-1,0) node (8) [vertex, label=150:{\large $v_8$}] {};
+                
+            \foreach \i/\j in
+                {2/3,5/8,3/8,7/8,2/7,6/7,3/4}
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+            
+            \foreach \i/\j in
+                {1/2,2/8,4/8,4/5}
+                \draw [wedge,coral] (\i) to (\j);
+            
+            \foreach \i/\j in
+                {1/7,5/7}
+                \draw [wedge,azulCielo] (\i) to (\j);
+            
+            \foreach \i/\j in
+                {1/6,5/6}
+                \draw [wedge,amarillo] (\i) to (\j);
+
+        \end{scope}
+
+        \begin{scope}[xshift=8cm,scale=1]
+            \foreach \i in {1,5} \draw ({(360/6)*\i}:2.5)
+                node(\i)[wvertex, fill=verde, label=(360/6)*\i:{\large $v_{\i}$}]{};
+            
+            \draw ({(360/6)*2}:2.5) node(2)[coralvertex, fill=morado, label=(360/6)*2:{\large $v_{2}$}]{};
+            \draw ({(360/6)*3}:2.5) node(3)[vertex, label=(360/6)*3:{\large $v_{3}$}]{};
+            \draw ({(360/6)*4}:2.5) node(4)[vertex, label=(360/6)*4:{\large $v_{4}$}]{};
+            \draw ({(360/6)*6}:2.5) node(6)[amarvertex, fill=morado, label=(360/6)*6:{\large $v_{6}$}]{};
+            \draw (1,0) node (7) [avertex, fill=morado, label=300:{\large $v_7$}] {};
+            \draw (-1,0) node (8) [vertex, label=150:{\large $v_8$}] {};
+                
+            \foreach \i/\j in
+                {1/6,1/2,1/7,2/3,2/7,2/8,3/4,3/8,4/5,4/8,5/6,5/7,5/8,6/7,7/8}
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+            
+        \end{scope}
+                
+    \end{tikzpicture}
+    \caption{A}
+    \label{fig:ex-caminos}
+\end{figure}
+
 \section{Operaciones}
 \label{sec:operaciones}
 
@@ -494,54 +551,140 @@ Hay varias familias relevantes en la Teor\'ia de Gr\'aficas, en esta
     secci\'on hablaremos de las familias que son relevantes para este trabajo y
     sus propiedades.
 
-    Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su
-    conjunto de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de
-    orden $n$ se le denota $K_n$. Cuando una gr\'afica est\'a conformada
-    \'unicamente por v\'ertices aislados la denotamos $\overline{K_n}$, donde
-    $n$ es el n\'umero de v\'ertices de la gr\'afica. A $K_1$ tambi\'en se le
-    conoce como la gr\'afica  \indice{trivial}.
+Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
+de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
+le denota $K_n$. Cuando una gr\'afica est\'a conformada \'unicamente por
+v\'ertices aislados decimos que es una gr\'afica \indiceSub{gr\'afica}{vac\'ia}
+y la denotamos $\overline{K_n}$, donde $n$ es el n\'umero de v\'ertices de la
+gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
 
-    %definimos particion?
-    Una familia de gr\'aficas que es muy estudiada en Teor\'ia de Gr\'aficas es
-    la familia de las gr\'aficas \indiceSub{gr\'afica}{$k$-partitas}. Una
-    gr\'afica es $k$-\textit{partita} si su conjunto de v\'ertices admite una
-    partici\'on en a lo m\'as $k$ conjuntos independientes. Un caso muy
-    relevante, y que nos ser\'a particularmente \'util en este trabajo, es el
-    caso en el que $k=2$. En este caso se dice que es una gr\'afica
-    \indiceSub{gr\'afica}{bipartita}. Una gr\'afica bipartita $G$ con
-    partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
-    \indice{bipartici\'on}.
-    %% TODO: conectar la siguiente idea
-    ... una gr\'afica $k$-partita puede ser completa y, por cuestion de utilidad
-    para el trabajo, lo definiremos formalmente para una gr\'afica bipartita.
-    Una gr\'afica es \indiceSub{gr\'afica}{bipartita completa} si es bipartita y
-    dada la partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es
-    adyacente a cada v\'ertice de $Y$. 
 
-    Otra  familia de gr\'aficas que se estudiar\'a este trabajo es la familia de
-    las gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir
-    algunos conceptos necesarios. El primer concepto es el de trayectoria
-    hamiltoniniana. Una trayectoria \indiceSub{trayectoria}{hamiltoniana} es una
-    trayectoria generadora, es decir, una trayectoria cuyo conjunto de
-    v\'ertices es el conjunto de v\'ertices de la gr\'afica. Asimismo, un ciclo
-    \indiceSub{ciclo}{hamiltoniano} es un ciclo generador. Ahora, pasamos a
-    definir una gr\'afica \indiceSub{gr\'afica}{hamiltoniana}, que es una
-    gr\'afica que contiene un ciclo hamiltoniano. En la Figura... se muestra un
-    ejemplo .... Una definici\'on que nos ser\'a de utilidad a lo largo de este
-    trabajo es la de subtrayectoria hamiltoniana. Definimos una
-    \indice{subtrayectoria hamiltoniana} como la trayectoria hamiltoniana
-    resultante de quitarle una arista a un ciclo hamiltoniano. 
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=0.8]
 
-    La \'ultima familia de gr\'aficas que veremos en esta secci\'on son los
-    abanicos. Un \indice{abanico} $\mathcal{F}_n$ es la gr\'afica obtenida de la
-    uni\'on de $K_1$ y $P_{n-1}$, donde los primeros $n-1$ v\'ertices de
-    $\mathcal{F}_n$ son los v\'ertices pertenecientes a $P_{n-1}$ y el
-    $n$-\'esimo v\'ertice de la gr\'afica es que le corresponde a $K_1$. Al
-    igual que en varios casos, existe una generalizaci\'on de esta estructura de
-    gr\'afica al sustituir $K_1$ por $\overline{K_n}$. Un abanico
-    \indiceSub{abanico}{generalizado}, denotiado $\mathcal{F}_{m.n}$, se define
-    como $\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En la Figura.... se puede ver
-    un ejemplo de un abanico y un abanico generalizado.....
+                \foreach \i in {1,2,3} \draw ({(360/3)*\i}:1.8)
+                    node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
+                \end{scope}
+        
+            \begin{scope}[xshift=7cm,scale=0.8]
+
+                \foreach \i in {1,...,5} \draw ({(360/5)*\i}:2.5)
+                    node(\i)[vertex, label=(360/5)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
+                    \draw [edge] (\i) to (\j);
+                \end{scope}
+                    
+        \end{tikzpicture}
+        \caption{A}
+        \label{fig:ex-completa}
+    \end{figure}
+
+%definimos particion?
+Una familia de gr\'aficas que es muy estudiada en Teor\'ia de Gr\'aficas es la
+familia de las gr\'aficas \indiceSub{gr\'afica}{$k$-partitas}. Una gr\'afica es
+$k$-\textit{partita} si su conjunto de v\'ertices admite una partici\'on en a lo
+m\'as $k$ conjuntos independientes. Un caso muy relevante, y que nos ser\'a
+particularmente \'util en este trabajo, es el caso en el que $k=2$. En este caso
+se dice que es una gr\'afica \indiceSub{gr\'afica}{bipartita}. Una gr\'afica
+bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
+\indice{bipartici\'on}.
+%% TODO: conectar la siguiente idea
+... una gr\'afica $k$-partita puede ser completa y, por cuestion de utilidad
+para el trabajo, lo definiremos formalmente para una gr\'afica bipartita. Una
+gr\'afica es \indiceSub{gr\'afica}{bipartita completa} si es bipartita y dada la
+partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a
+cada v\'ertice de $Y$. 
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=0.8]
+
+                \foreach \i in {1,3,5} \draw ({(360/6)*\i}:2)
+                    node(\i)[vertex, fill=coral, label=(360/6)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i in {2,4,6} \draw ({(360/6)*\i}:2)
+                    node(\i)[vertex, fill=azulCielo, label=(360/6)*\i:{\large $v_{\i}$}]{};
+    
+                \foreach \i/\j in {1/2,2/3,3/4,4/5,5/6,6/1}
+                    \draw [edge] (\i) to (\j);
+                \end{scope}
+        
+            \begin{scope}[xshift=6cm,scale=0.8]
+
+                \foreach \i in {1,3} \draw ({(360/4)*\i}:2.3)
+                    node(\i)[vertex, fill=morado, label=(360/4)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i in {2,4} \draw ({(360/4)*\i}:2.3)
+                    node(\i)[vertex, fill=verde, label=(360/4)*\i:{\large $v_{\i}$}]{};
+               
+                \draw (0,0) node (5) [vertex, fill=verde, label=300:{\large $v_5$}] {};
+
+                \foreach \i/\j in {1/4,1/5,1/2,2/3,3/4,3/5}
+                    \draw [edge] (\i) to (\j);
+                \end{scope}
+                    
+        \end{tikzpicture}
+        \caption{A}
+        \label{fig:ex-bip}
+    \end{figure}
+    
+Otra  familia de gr\'aficas que se estudiar\'a este trabajo es la familia de las
+gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir algunos
+conceptos necesarios. El primer concepto es el de trayectoria hamiltoniniana.
+Una trayectoria \indiceSub{trayectoria}{hamiltoniana} es una trayectoria
+generadora, es decir, una trayectoria cuyo conjunto de v\'ertices es el conjunto
+de v\'ertices de la gr\'afica. Asimismo, un ciclo
+\indiceSub{ciclo}{hamiltoniano} es un ciclo generador. Ahora, pasamos a definir
+una gr\'afica \indiceSub{gr\'afica}{hamiltoniana}, que es una gr\'afica que
+contiene un ciclo hamiltoniano. En la Figura... se muestra un ejemplo .... Una
+definici\'on que nos ser\'a de utilidad a lo largo de este trabajo es la de
+subtrayectoria hamiltoniana. Definimos una \indice{subtrayectoria hamiltoniana}
+como la trayectoria hamiltoniana resultante de quitarle una arista a un ciclo
+hamiltoniano. 
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=0.8]
+
+                \foreach \i in {1,2,3} \draw ({(360/3)*\i}:1.8)
+                    node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
+                \end{scope}
+        
+            \begin{scope}[xshift=7cm,scale=0.8]
+
+                \foreach \i in {1,...,4} \draw ({(360/4)*\i}:2.8)
+                    node(\i)[vertex, label=(360/4)*\i:{\large $v_{\i}$}]{};
+                
+                \foreach \i in {1,...,4} \draw ({(360/4)*\i}:1)
+                    node(\i)[vertex, label=(360/4+23)*\i:{\large $v_{\i}$}]{};
+                
+                % \foreach \i/\j in {1/2,1/3,1/4,2/3,2/4,3/4}
+                %     \draw [edge] (\i) to (\j);
+                \end{scope}
+                    
+    \end{tikzpicture}
+    \caption{A}
+    \label{fig:ex-hamilt}
+\end{figure}
+
+La \'ultima familia de gr\'aficas que veremos en esta secci\'on son los
+abanicos. Un \indice{abanico} $\mathcal{F}_n$ es la gr\'afica obtenida de la
+uni\'on de $K_1$ y $P_{n-1}$, donde los primeros $n-1$ v\'ertices de
+$\mathcal{F}_n$ son los v\'ertices pertenecientes a $P_{n-1}$ y el $n$-\'esimo
+v\'ertice de la gr\'afica es que le corresponde a $K_1$. Al igual que en varios
+casos, existe una generalizaci\'on de esta estructura de gr\'afica al sustituir
+$K_1$ por $\overline{K_n}$. Un abanico \indiceSub{abanico}{generalizado},
+denotiado $\mathcal{F}_{m.n}$, se define como
+$\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En la Figura.... se puede ver un ejemplo
+de un abanico y un abanico generalizado.....
 
 
 
