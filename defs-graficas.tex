@@ -511,30 +511,29 @@ v\'ertices.
         \end{scope}
                 
     \end{tikzpicture}
-    \caption{A}
-    \label{fig:ex-caminos}
+    \caption{Tres trayectorias internamente ajenas entre $v_1$ y $v_5$ (izquierda), y un conjunto de tres v\'ertices que separa a $v_1$ de $v_5$ (derecha).}
+    \label{fig:ex-menger}
 \end{figure}
 
 \section{Operaciones}
 \label{sec:operaciones}
 
-Al igual que en muchas \'areas de las matem\'aticas, al buscar manerar maneras
-de generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas.
-A continuaci\'on hablaremos de las operaciones de gr\'aficas que son pertinentes
+Al igual que en muchas \'areas de las matem\'aticas, al buscar maneras de
+generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas. A
+continuaci\'on hablaremos de las operaciones de gr\'aficas que son pertinentes
 para este trabajo. La primera operaci\'on que se va a definir es la uni\'on de
 gr\'aficas. La \indice{uni\'on} de dos gr\'aficas $G$ y $H$ es la gr\'afica cuyo
 conjunto de v\'ertices es la uni\'on de los conjuntos de v\'ertices de ambas
-gr\'aficas y su conjunto de aristas es $E(G) \bigcup E(H)$. Se utiliza la misma
-notaci\'on que para la uni\'on conjuntos, es decir $G \bigcup H$. Igual que en
+gr\'aficas y su conjunto de aristas es $E(G) \cup E(H)$. Se utiliza la misma
+notaci\'on que para la uni\'on conjuntos, es decir $G \cup H$. Igual que en
 Teor\'ia de Conjuntos, existe un caso especial de la uni\'on. La uni\'on
 \indiceSub{uni\'on}{ajena} de las gr\'aficas $G$ y $H$ es la uni\'on de $G$ y
-$H$, donde $v(G) \bigcap V(H) = \varnothing$. La uni\'on agena la denotamos $G +
-H$. 
+$H$, donde $V(G) \cap V(H) = \varnothing$. La uni\'on ajena se denota $G + H$. 
 
-Otra operaci\'on que se utilizar\'a en este trabajo es el producto carteciano de
-gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el \indice{producto carteciano} de
+Otra operaci\'on que se utilizar\'a en este trabajo es el producto cartesiano de
+gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el \indice{producto cartesiano} de
 $G$ y $H$, denotado $G \square H$, es la gr\'afica cuyo conjunto de v\'ertices
-es el producto carteciano de $V(G)$ y $V(H)$, es decir $V(G \square H) = V(G)
+es el producto cartesiano de $V(G)$ y $V(H)$, es decir $V(G \square H) = V(G)
 \times V(H)$. Adem\'as, $(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y
 s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. 
 
@@ -564,7 +563,7 @@ s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$.
                     
         \end{tikzpicture}
         \caption{A}
-        \label{fig:ex-completa}
+        \label{fig:ex-cartesiano}
     \end{figure}
 
 Por \'ultimo, definimos el \indice{complemento} de una gr\'afica $G$ como la
@@ -581,14 +580,6 @@ aristas es $\binom{V(G)}{2} - E(G)$, a esta gr\'afica la denotamos $\overline{G}
 familias de gr\'aficas al momento de abordrar varios problemas. Hay varias
 familias relevantes en la Teor\'ia de Gr\'aficas, en esta secci\'on hablaremos
 de las familias que son relevantes para este trabajo y sus propiedades.
-
-Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
-de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
-le denota $K_n$. Cuando una gr\'afica est\'a conformada \'unicamente por
-v\'ertices aislados decimos que es una gr\'afica \indiceSub{gr\'afica}{vac\'ia}
-y la denotamos $\overline{K_n}$, donde $n$ es el n\'umero de v\'ertices de la
-gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
-
 
 \begin{figure}[ht!]
     \centering
@@ -610,9 +601,17 @@ gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
                 \end{scope}
                     
         \end{tikzpicture}
-        \caption{A}
-        \label{fig:ex-ProdCart}
+        \caption{La gr\'afica vac\'ia de 3 v\'ertices (izquierda) y la
+        gr\'afica completa de 5 v\'ertices (derecha).}
+        \label{fig:ex-vacomp}
     \end{figure}
+
+Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
+de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
+le denota $K_n$. Cuando una gr\'afica est\'a conformada \'unicamente por
+v\'ertices aislados decimos que es una gr\'afica \indiceSub{gr\'afica}{vac\'ia}
+y la denotamos $\overline{K_n}$, donde $n$ es el n\'umero de v\'ertices de la
+gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
 
 %definimos particion?
 Una familia de gr\'aficas que es muy estudiada en Teor\'ia de Gr\'aficas es la
@@ -622,12 +621,12 @@ m\'as $k$ conjuntos independientes. Un caso muy relevante, y que nos ser\'a
 particularmente \'util en este trabajo, es el caso en el que $k=2$. En este caso
 se dice que es una gr\'afica \indiceSub{gr\'afica}{bipartita}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
-\indice{bipartici\'on}. Adem\'as de tener la propiedad de ser $k$-partita, una
-gr\'afica tambi\'en puede ser completa y, por cuestion de utilidad para el
-trabajo, lo definiremos formalmente para una gr\'afica bipartita. Una gr\'afica
-es \indiceSub{gr\'afica}{bipartita completa} si es bipartita y dada la
-partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a
-cada v\'ertice de $Y$. 
+\indice{bipartici\'on}. Un caso especial de las gr\'aficas $k$-partitas, es
+cuando todas las aristas posibles est\'an presentes, por cuestion de utilidad
+para el trabajo, definiremos formalmente este comportamiento \'unicamente para
+las gr\'aficas bipartitas. Una gr\'afica es \indiceSub{gr\'afica}{bipartita
+completa} si es bipartita y dada la partici\'on $X$ y $Y$ de sus v\'ertices,
+cada v\'ertice de $X$ es adyacente a cada v\'ertice de $Y$. 
 
 \begin{figure}[ht!]
     \centering
@@ -660,26 +659,25 @@ cada v\'ertice de $Y$.
                 \end{scope}
                     
         \end{tikzpicture}
-        \caption{A}
+        \caption{El $6$-ciclo como ejemplo de una gr\'afica bipartita (izquierda), y una gr\'afica bipartita completa (derecha).}
         \label{fig:ex-bip}
     \end{figure}
     
 Otra  familia de gr\'aficas que se estudiar\'a este trabajo es la familia de las
 gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir algunos
-conceptos necesarios. El primer concepto es el de trayectoria hamiltoniniana.
-Una trayectoria \indiceSub{trayectoria}{hamiltoniana} es una trayectoria
-generadora, es decir, una trayectoria cuyo conjunto de v\'ertices es el conjunto
-de v\'ertices de la gr\'afica. Asimismo, un ciclo
-\indiceSub{ciclo}{hamiltoniano} es un ciclo generador. Ahora, pasamos a definir
-una gr\'afica \indiceSub{gr\'afica}{hamiltoniana}, que es una gr\'afica que
-contiene un ciclo hamiltoniano. En \cref{fig:ex-hamilt} se muestra un ejemplo de
-una gr\'afica que contiene una trayectoria hamiltoniana del lado izquierdo y de
-una gr\'afica hamiltoniana del lado izquierdo, resaltando con colores la
-trayectoria y el ciclo hamiltoniano respectivamente. Una definici\'on que nos
-ser\'a de utilidad a lo largo de este trabajo es la de subtrayectoria
-hamiltoniana. Definimos una \indice{subtrayectoria hamiltoniana} como la
-trayectoria hamiltoniana resultante de quitarle una arista a un ciclo
-hamiltoniano. 
+conceptos necesarios. El primer concepto es el de trayectoria hamiltoniana. Una
+trayectoria \indiceSub{trayectoria}{hamiltoniana} es una trayectoria generadora,
+es decir, una trayectoria cuyo conjunto de v\'ertices es el conjunto de
+v\'ertices de la gr\'afica. Asimismo, un ciclo \indiceSub{ciclo}{hamiltoniano}
+es un ciclo generador. Ahora, pasamos a definir una gr\'afica
+\indiceSub{gr\'afica}{hamiltoniana}, que es una gr\'afica que contiene un ciclo
+hamiltoniano. En \cref{fig:ex-hamilt} se muestra un ejemplo de una gr\'afica que
+contiene una trayectoria hamiltoniana del lado izquierdo y de una gr\'afica
+hamiltoniana del lado izquierdo, resaltando con colores la trayectoria y el
+ciclo hamiltoniano respectivamente. Una definici\'on que nos ser\'a de utilidad
+a lo largo de este trabajo es la de subtrayectoria hamiltoniana. Definimos una
+\indice{subtrayectoria hamiltoniana} como la trayectoria hamiltoniana resultante
+de quitarle una arista a un ciclo hamiltoniano. 
 
 \begin{figure}[ht!]
     \centering
@@ -720,7 +718,8 @@ hamiltoniano.
                 \end{scope}
                     
     \end{tikzpicture}
-    \caption{A}
+    \caption{Una trayectoria hamiltoniana (izquierda) y un ciclo hamiltoniano
+    (derecha).}
     \label{fig:ex-hamilt}
 \end{figure}
 
@@ -728,12 +727,13 @@ La \'ultima familia de gr\'aficas que veremos en esta secci\'on son los
 abanicos. Un \indice{abanico} $\mathcal{F}_n$ es la gr\'afica obtenida de la
 uni\'on de $K_1$ y $P_{n-1}$, donde los primeros $n-1$ v\'ertices de
 $\mathcal{F}_n$ son los v\'ertices pertenecientes a $P_{n-1}$ y el $n$-\'esimo
-v\'ertice de la gr\'afica es que le corresponde a $K_1$. Al igual que en varios
-casos, existe una generalizaci\'on de esta estructura de gr\'afica al sustituir
-$K_1$ por $\overline{K_n}$. Un abanico \indiceSub{abanico}{generalizado},
-denotiado $\mathcal{F}_{m.n}$, se define como
-$\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En \cref{fig:ex-abanico} se puede ver un
-ejemplo de un abanico del lado izquierdo y un abanico generalizado del lado derecho.
+v\'ertice de la gr\'afica es el que le corresponde a $K_1$. Al igual que en
+varios casos, existe una generalizaci\'on de esta estructura de gr\'afica al
+sustituir $K_1$ por $\overline{K_n}$. Un abanico
+\indiceSub{abanico}{generalizado}, denotiado $\mathcal{F}_{m.n}$, se define como
+$\mathcal{F}_{m,n}=\overline{K_m} \oplus P_n$. En \cref{fig:ex-abanico} se puede
+ver un ejemplo de un abanico del lado izquierdo y un abanico generalizado del
+lado derecho.
 
 \begin{figure}[ht!]
     \centering
