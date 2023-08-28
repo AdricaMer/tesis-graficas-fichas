@@ -338,17 +338,17 @@ trayectorias.
     lo tanto $W$ tambi\'en contiene una $uv$-trayectoria.
 \end{proof}
 
-Por \cref{prop:CamTray}, cada que hablemos de caminos, siempre hay una
-trayectoria contenida... Ahora nos enfocaremos en trayectorias. Como se
-mencion\'o anteriormente, entre dos v\'ertices $u$ y $v$ pueden existir
+Por \cref{prop:CamTray}, sabemos que, cada que hablemos de caminos, siempre hay
+una trayectoria contenida por lo que ahora nos enfocaremos en trayectorias. Como
+se mencion\'o anteriormente, entre dos v\'ertices $u$ y $v$ pueden existir
 m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos $uv$-trayectorias
-\indiceSub{$uv$-trayectoria}{internamente ajenas} si $V(X)\cap
-V(Y)=\{u,v\}$. Este concepto nos sevir\'a m\'as adelante en la secci\'on de
-conexidad. Adicionalemtne, podemos ver que al recorrer una trayectoria de
-manera inversa obtenemos otra trayectoria. Formalmente hablando, teniendo
-una $uv$-trayectoria $X$, su trayectoria \indiceSub{trayectoria}{inversa}, a
-la cu\'al denotamos $X^{-1}$, es una $vu$-trayectoria que tiene los mismos
-v\'ertices y aristas que $X$.
+\indiceSub{$uv$-trayectoria}{internamente ajenas} si $V(X)\cap V(Y)=\{u,v\}$.
+Este concepto nos sevir\'a m\'as adelante en la secci\'on de conexidad.
+Adicionalemtne, podemos ver que al recorrer una trayectoria de manera inversa
+obtenemos otra trayectoria. Formalmente hablando, teniendo una $uv$-trayectoria
+$X$, su trayectoria \indiceSub{trayectoria}{inversa}, a la cu\'al denotamos
+$X^{-1}$, es una $vu$-trayectoria que tiene los mismos v\'ertices y aristas que
+$X$.
 
 \begin{figure}[htb!]
     \centering
@@ -518,23 +518,58 @@ v\'ertices.
 \section{Operaciones}
 \label{sec:operaciones}
 
-\begin{definicion} Definiciones que faltan (Operaciones):
-\begin{enumerate}
-    \item Dadas las gr\'aficas $G$ y $H$, el producto carteciano de ambas
-    gr\'aficas, denotado $G \square H$, es la gr\'afica cuyo conjunto de
-    v\'ertices es el producto carteciano de $V(G)$ y $V(H)$, es decir $V(G
-    \square H) = V(G) \times V(H)$. Adem\'as, $(g_1,g_2)(h_1,h_2)$ es arista
-    de $G \square H$ si y s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1
-    = h_2$ y $g_1g_2 \in E(G)$.
-    \item Dadas dos gr\'aficas $G$ y $H$, la uni\'on de ambas gr\'aficas,
-    denotada $G \bigcup H$ es la gr\'afica cuyo conjunto de v\'ertices es la
-    uni\'on de los conjuntos de v\'ertices de ambas gr\'aficas y su conjunto
-    de aristas es $E(G) \bigcup E(H)$. 
-    \item La uni\'on ajena de gr\'aficas $G$ y $H$ es la uni\'on de $G$ y
-    $H$, donde $v(G) \bigcap V(H) = \varnothing$. A esta funci\'on la
-    denotamos $G + H$. 
-\end{enumerate}
-\end{definicion}
+Al igual que en muchas \'areas de las matem\'aticas, al buscar manerar maneras
+de generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas.
+A continuaci\'on hablaremos de las operaciones de gr\'aficas que son pertinentes
+para este trabajo. La primera operaci\'on que se va a definir es la uni\'on de
+gr\'aficas. La \indice{uni\'on} de dos gr\'aficas $G$ y $H$ es la gr\'afica cuyo
+conjunto de v\'ertices es la uni\'on de los conjuntos de v\'ertices de ambas
+gr\'aficas y su conjunto de aristas es $E(G) \bigcup E(H)$. Se utiliza la misma
+notaci\'on que para la uni\'on conjuntos, es decir $G \bigcup H$. Igual que en
+Teor\'ia de Conjuntos, existe un caso especial de la uni\'on. La uni\'on
+\indiceSub{uni\'on}{ajena} de las gr\'aficas $G$ y $H$ es la uni\'on de $G$ y
+$H$, donde $v(G) \bigcap V(H) = \varnothing$. La uni\'on agena la denotamos $G +
+H$. 
+
+Otra operaci\'on que se utilizar\'a en este trabajo es el producto carteciano de
+gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el \indice{producto carteciano} de
+$G$ y $H$, denotado $G \square H$, es la gr\'afica cuyo conjunto de v\'ertices
+es el producto carteciano de $V(G)$ y $V(H)$, es decir $V(G \square H) = V(G)
+\times V(H)$. Adem\'as, $(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y
+s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. 
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=1]
+
+                \draw ({(360/4) - 45}:2) node(1)[avertex, fill=coral, label=(360/4) -
+                    45:{\large $k_{1}$}]{};
+                \draw ({(360/4)*2 - 45}:2) node(2)[avertex,fill=amarillo, label=(360/4)*2 -
+                    45:{\large $k_{2}$}]{};
+                \draw ({(360/4)*3 - 45}:2) node(3)[mvertex,,fill= amarillo, label=(360/4)*3 - 
+                45:{\large $k_{3}$}]{};
+                \draw ({(360/4)*4 - 45}:2) node(4)[mvertex, fill= coral, label=(360/4)*4 - 
+                45:{\large $k_{4}$}]{};
+                \draw (-4,1.4) node (5) [avertex, label=180:{\large $v_1$}] {};
+                \draw (-4,-1.4) node (6) [mvertex, label=180:{\large $v_2$}] {}; 
+                \draw (-1.4,-4) node (7) [bvertex, fill= amarillo, label=270:{\large $h_1$}] {};
+                \draw (1.4,-4) node (8) [bvertex, fill= coral, label=270:{\large $h_2$}] {};
+
+                \foreach \i/\j in {1/2,2/3,3/4,4/1,5/6,7/8}
+                    \draw [edge] (\i) to (\j);
+                \end{scope}
+
+                    
+        \end{tikzpicture}
+        \caption{A}
+        \label{fig:ex-completa}
+    \end{figure}
+
+Por \'ultimo, definimos el \indice{complemento} de una gr\'afica $G$ como la
+gr\'afica que tiene el mismo conjunto de v\'ertices que $G$ y cuyo conjunto de
+aristas es $\binom{V(G)}{2} - E(G)$, a esta gr\'afica la denotamos $\overline{G}$.
 
 
 %notacion de complemento de grafica y el ejemplo de K complemento, que es una
@@ -542,14 +577,10 @@ v\'ertices.
 \section{Algunas familias relevantes}
 \label{sec:famGraf}
     
- es de ayuda
-separarlas en familias... Muchas veces, en Teor\'ia de Gr\'aficas, es de utilidad
-el enfocarnos en familias de gr\'aficas .... En
-Teor\'ia de Gr\'aficas, muchas veces se estudian las gr\'aficas que comparten
-cierta propiedad, por eso son importantes las familias de gr\'aficas     
-Hay varias familias relevantes en la Teor\'ia de Gr\'aficas, en esta
-    secci\'on hablaremos de las familias que son relevantes para este trabajo y
-    sus propiedades.
+ Muchas veces, en Teor\'ia de Gr\'aficas, es de utilidad el enfocarnos en
+familias de gr\'aficas al momento de abordrar varios problemas. Hay varias
+familias relevantes en la Teor\'ia de Gr\'aficas, en esta secci\'on hablaremos
+de las familias que son relevantes para este trabajo y sus propiedades.
 
 Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
 de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
@@ -580,7 +611,7 @@ gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
                     
         \end{tikzpicture}
         \caption{A}
-        \label{fig:ex-completa}
+        \label{fig:ex-ProdCart}
     \end{figure}
 
 %definimos particion?
@@ -591,11 +622,10 @@ m\'as $k$ conjuntos independientes. Un caso muy relevante, y que nos ser\'a
 particularmente \'util en este trabajo, es el caso en el que $k=2$. En este caso
 se dice que es una gr\'afica \indiceSub{gr\'afica}{bipartita}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
-\indice{bipartici\'on}.
-%% TODO: conectar la siguiente idea
-... una gr\'afica $k$-partita puede ser completa y, por cuestion de utilidad
-para el trabajo, lo definiremos formalmente para una gr\'afica bipartita. Una
-gr\'afica es \indiceSub{gr\'afica}{bipartita completa} si es bipartita y dada la
+\indice{bipartici\'on}. Adem\'as de tener la propiedad de ser $k$-partita, una
+gr\'afica tambi\'en puede ser completa y, por cuestion de utilidad para el
+trabajo, lo definiremos formalmente para una gr\'afica bipartita. Una gr\'afica
+es \indiceSub{gr\'afica}{bipartita completa} si es bipartita y dada la
 partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a
 cada v\'ertice de $Y$. 
 
@@ -642,10 +672,13 @@ generadora, es decir, una trayectoria cuyo conjunto de v\'ertices es el conjunto
 de v\'ertices de la gr\'afica. Asimismo, un ciclo
 \indiceSub{ciclo}{hamiltoniano} es un ciclo generador. Ahora, pasamos a definir
 una gr\'afica \indiceSub{gr\'afica}{hamiltoniana}, que es una gr\'afica que
-contiene un ciclo hamiltoniano. En la Figura... se muestra un ejemplo .... Una
-definici\'on que nos ser\'a de utilidad a lo largo de este trabajo es la de
-subtrayectoria hamiltoniana. Definimos una \indice{subtrayectoria hamiltoniana}
-como la trayectoria hamiltoniana resultante de quitarle una arista a un ciclo
+contiene un ciclo hamiltoniano. En \cref{fig:ex-hamilt} se muestra un ejemplo de
+una gr\'afica que contiene una trayectoria hamiltoniana del lado izquierdo y de
+una gr\'afica hamiltoniana del lado izquierdo, resaltando con colores la
+trayectoria y el ciclo hamiltoniano respectivamente. Una definici\'on que nos
+ser\'a de utilidad a lo largo de este trabajo es la de subtrayectoria
+hamiltoniana. Definimos una \indice{subtrayectoria hamiltoniana} como la
+trayectoria hamiltoniana resultante de quitarle una arista a un ciclo
 hamiltoniano. 
 
 \begin{figure}[ht!]
@@ -699,8 +732,8 @@ v\'ertice de la gr\'afica es que le corresponde a $K_1$. Al igual que en varios
 casos, existe una generalizaci\'on de esta estructura de gr\'afica al sustituir
 $K_1$ por $\overline{K_n}$. Un abanico \indiceSub{abanico}{generalizado},
 denotiado $\mathcal{F}_{m.n}$, se define como
-$\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En la Figura.... se puede ver un ejemplo
-de un abanico y un abanico generalizado.....
+$\mathcal{F}_{m,n}=\overline{K_m}+P_n$. En \cref{fig:ex-abanico} se puede ver un
+ejemplo de un abanico del lado izquierdo y un abanico generalizado del lado derecho.
 
 \begin{figure}[ht!]
     \centering
@@ -717,11 +750,11 @@ de un abanico y un abanico generalizado.....
         \end{scope}
             
         \begin{scope}[xshift=7cm,scale=1]
-            \draw (-2.4,1.4) node (v1) [vertex,label=180:{\small $v_1$}] {};
-            \draw (-1.2,1.8) node (v2) [vertex,label=135:{\small $v_2$}] {};
+            \draw (-2.6,1) node (v1) [vertex,label=180:{\small $v_1$}] {};
+            \draw (-1.3,1.6) node (v2) [vertex,label=135:{\small $v_2$}] {};
             \draw (0,2) node (v3) [vertex,label=90:{\small $v_3$}] {}; 
-            \draw (1.2,1.8) node (v4) [bvertex,label=45:{\small $v_4$}] {}; 
-            \draw (2.4,1.4) node (v5) [vertex,label=0:{\small $v_5$}] {}; 
+            \draw (1.3,1.6) node (v4) [bvertex,label=45:{\small $v_4$}] {}; 
+            \draw (2.6,1) node (v5) [vertex,label=0:{\small $v_5$}] {}; 
             \draw (-1.2,-1.5) node (w1) [vertex,label=270:{\small $w_1$}] {}; 
             \draw (1.2,-1.5) node (w2) [bvertex, label=270:{\small $w_2$}] {};
 
