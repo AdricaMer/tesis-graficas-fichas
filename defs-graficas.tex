@@ -12,11 +12,16 @@ elementos de $E(G)$ son \indice{aristas}. Para una arista $e$ y v\'ertices $u,
 v$ de $G$, decimos que $e$ es \indiceSub{aristas}{incidente} en $u$ y en $v$ si
 $e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son
 \indiceSub{v\'ertices}{extremos} de la arista $e$. De igual manera, podemos
-decir que $u$ y $v$ son \textbf{v\'ertices} \indiceSub{v\'ertices}{adyacentes} o
-\indiceSub{v\'ertices}{vecinos} y lo denotamos $u \sim v$. Esta relaci\'on entre
-v\'ertices la llamamos adyacencia. Al conjunto de vecinos de un v\'ertice $v$ se
-le llama \indice{vecindad}, y se denota $N_G(v)$, mientras que al n\'umero de
-aristas incidentes en $v$ se le llama \indice{grado} de $v$, $d(v)$. Un
+decir que $u$ y $v$ son \textbf{v\'ertices}
+\indiceSub{v\'ertices}{adyacentes}\index{adyacentes!v\'ertices} o
+\indiceSub{v\'ertices}{vecinos} y lo denotamos $u \sim v$. Por otro lado,
+decimos que son \textbf{aristas}
+\indiceSub{aristas}{adyacentes}\index{adyacentes!aristas} cuando dos aristas
+comparten un extremo. 
+
+Al conjunto de vecinos de un v\'ertice $v$ se le llama
+\indice{vecindad}, y se denota $N_G(v)$, mientras que al n\'umero de aristas
+incidentes en $v$ se le llama \indice{grado} de $v$, $d(v)$. Un
 \textbf{v\'ertice} \indiceSub{v\'ertices}{aislado}, es decir, un v\'ertice que
 no tiene vecinos, tiene grado $0$.
 
@@ -517,6 +522,10 @@ v\'ertices.
     \label{fig:ex-menger}
 \end{figure}
 
+\begin{teorema}
+
+\end{teorema}
+
 \section{Operaciones}
 \label{sec:operaciones}
 
@@ -536,7 +545,11 @@ concepto de uni\'on de conjuntos y que va a ser de utilidad en este trabajo es
 la uni\'on completa (o amalgamiento). La \textbf{uni\'on}
 \indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$ es la gr\'afica con
 conjunto de v\'ertices $V(G) \cup V(H)$ y cuyo conjunto de aristas es $E(G) \cup
-E(H) \cup \{uv \colon u \in V(G), v \in V(H) \}$. 
+E(H) \cup \{uv \colon u \in V(G), v \in V(H) \}$. En \cref{fig:ex-unionCompleta}
+se muestra, del lado izquierdo, un ejemplo de dos gr\'aficas, la primera con
+v\'ertices $v_i$ y la segunda con v\'ertices $w_i$, ambas con $i \in
+\{1,...,3\}$. Del lado izquierdo de la figura se muestra la uni\'on completa de
+dichas gr\'aficas.
 
 \begin{figure}[htb!]
     \centering
@@ -582,17 +595,22 @@ gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el \indice{producto cartesiano} de
 $G$ y $H$, denotado $G \square H$, es la gr\'afica cuyo conjunto de v\'ertices
 es el producto cartesiano de $V(G)$ y $V(H)$, es decir $V(G \square H) = V(G)
 \times V(H)$. Adem\'as, $(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y
-s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. 
+s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A
+continuaci\'on, en \cref{fig:ex-cartesiano}, se muestran dos gr\'aficas, la
+primera del lado izquierdo y con conjunto de v\'ertices $\{v_1, v_2\}$ y la
+segunda en la parte inferior y con conjunto de v\'ertices $\{w_1,w_2\}$. En
+medio de estas gr\'aficas se muestra el producto cartesiano de ambas, resaltando
+de donde vienen los v\'ertices de esta \'ultima gr\'afica.
 
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
         
-            \begin{scope}[xshift=0cm,scale=1]
+            \begin{scope}[xshift=0cm,scale=0.9]
 
-                \draw ({(360/4) - 45}:2) node(1)[avertex, fill=morado, label=(360/4) -
+                \draw ({(360/4)*2 - 45}:2) node(1)[avertex,fill=amarillo, label=(360/4)*2 -
                     45:{\large $k_{1}$}]{};
-                \draw ({(360/4)*2 - 45}:2) node(2)[avertex,fill=amarillo, label=(360/4)*2 -
+                \draw ({(360/4) - 45}:2) node(2)[avertex, fill=morado, label=(360/4) -
                     45:{\large $k_{2}$}]{};
                 \draw ({(360/4)*3 - 45}:2) node(3)[coralvertex,,fill= amarillo, label=(360/4)*3 - 
                 45:{\large $k_{3}$}]{};
@@ -603,7 +621,7 @@ s\'olo si $g_1 = g_2$ y $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$.
                 \draw (-1.4,-3) node (7) [bvertex, fill= amarillo, label=270:{\large $w_1$}] {};
                 \draw (1.4,-3) node (8) [bvertex, fill= morado, label=270:{\large $w_2$}] {};
 
-                \foreach \i/\j in {1/2,2/3,3/4,4/1,5/6,7/8}
+                \foreach \i/\j in {1/2,1/3,3/4,2/4,5/6,7/8}
                     \draw [edge,grisOscuro] (\i) to (\j);
                 \end{scope}
 
@@ -622,11 +640,12 @@ aristas es $\binom{V(G)}{2} - E(G)$, a esta gr\'afica la denotamos $\overline{G}
 %gr\'afica vacia, es decir su numero de independencia es igual al numero de vertices
 \section{Algunas familias relevantes}
 \label{sec:famGraf}
-    
- Muchas veces, en Teor\'ia de Gr\'aficas, es de utilidad el enfocarnos en
-familias de gr\'aficas al momento de abordrar varios problemas. Hay varias
-familias relevantes en la Teor\'ia de Gr\'aficas, en esta secci\'on hablaremos
-de las familias que son relevantes para este trabajo y sus propiedades.
+   
+ Muchas veces, en Teor\'ia de Gr\'aficas, al momento de abordrar varios
+problemas, es de utilidad separar las gr\'aficas en familias donde se compartan
+caracteristcas. Hay varias familias relevantes en la Teor\'ia de Gr\'aficas, en
+esta secci\'on hablaremos de las familias que son relevantes para este trabajo y
+sus propiedades.
 
 \begin{figure}[ht!]
     \centering
@@ -822,58 +841,112 @@ hamiltoniana resultante de quitarle una arista a un ciclo hamiltoniano.
     \label{fig:ex-hamilt}
 \end{figure}
 
-\section{Conceptos de coloraci\'on}
+\section{Coloraci\'on}
 \label{sec:coloracion}
 
-\begin{definicion} Conceptos de coloraci\'on:
-    \label{def:coloracion}
-    \begin{enumerate}
-        \item Sea $G$ una gr\'afica, una $k$-\textit{coloraci\'on}, o
-        simplemente una $\textit{coloraci\'on}$, es una funcion $c \colon
-        E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
-        \item Sea $G$ una gr\'afica y $S$ un conjunto de cardinalidad $k$, con
-        $k$ entero positivo. La funci\'on $c: V \to S$ es una
-        $k$-\textit{coloraci\'on por v\'ertices}, o simplemente una
-        $k$-\textit{coloraci\'on}, de $G$. Los elementos de $S$ son llamados
-        $\textit{colores}$.
-        \item Una coloraci\'on es una \textit{coloraci\'on propia} si todos los
-        v\'ertices adyacentes ocupan colores diferentes.
-        \item Al subconjunto de v\'ertices que comparten un color en una
-        coloraci\'on se le llama una clase de color.
-        \item Sea $G$ una gr\'afica y $c$ una coloraci\'on con $S$ colores. Para
-        cada color $i \in S$, se define la clase crom\'atica de $i$ de la
-        coloraci\'on $c$, denotado $V_i$, como el conjunto de todos los
-        v\'ertices de $G$ que ocupan el color $i$, en otras palabras $V_i =
-        c^{-1}[i]$.
-        \item  Sea $G$ una gr\'afica, el m\'inimo entero $k$ para el cu\'al $G$
-        es $k$-coloreable es el n\'umero crom\'atico de $G$, denotado por
-        $\chi(G)$. En este caso decimos que $G$ es $k$-crom\'atica.
-    \end{enumerate}
-\end{definicion}d
+En Teor\'ia de Gr\'aficas, hablamos de colorear una gr\'afica como manera de
+etiquetar a los elementos de una gr\'afica, ya sean a los v\'ertices o a las
+aristas. Primero nos enfocaremos en la coloraci\'on por aristas. Formalmente,
+una \textbf{$k$-coloraci\'on} \indiceSub{$k$-coloraci\'on}{por
+aristas}\index{aristas!coloraci\'on} de una gr\'afica $G$, para un entero $k$,
+es una funci\'on $c' \colon E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
+% La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
+% $c'$ es el conjunto de todas las aristas de la gr\'afica que estan coloreadas
+% del color $i$, es decir $c'^{-1}[i]$. Notemos que las clases crom\'aticas
+% pueden ser vac\'ias. Una \textbf{coloraci\'on} \indiceSub{$k$-coloraci\'on}{propia por
+% aristas}\index{aristas!$k$-coloraci\'on propia} es una coloraci\'on por
+% aristas donde se le asignan colores diferentes a todas las aristas adyacentes.
 
-\begin{definicion} Gr\'afica de fichas:
-    \label{def:fichas}
+Por otro lado, una una \textbf{$k$-coloraci\'on}
+\indiceSub{$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
+una gr\'afica $G$, para un entero $k$, es una funci\'on $c \colon V(G)\to T$,
+donde $T$ es un conjunto de cardinalidad $k$. En ambos casos, ya sea
+coloraci\'on por v\'ertices o por aristas, a los elemento del codominio de la
+funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
+\indiceSub{$-$coloraci\'on}{propia por
+v\'ertices}\index{v\'ertices!$k$-coloraci\'on propia} es una coloraci\'on por
+v\'ertices donde se le asignan colores diferentes a todas las v\'ertices
+adyacentes. Decimos que una gr\'afica $G$ es
+\indiceSub{gr\'afica}{$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite una
+$k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
+\cref{fig:ex-color-prop}, se muestra una gr\'afica $G$ donde se resalta una
+coloraci\'on propia por v\'ertices, del lado izquierdo, y una coloraci\'on
+propia por aristas, del lado derecho. 
+
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8cm]
+            \foreach \i in {2,5} 
+                \draw ({(360/5)*\i}:2.5) node(\i)[vertex, fill=coral,
+                label=(360/5)*\i:{\large
+                $v_{\i}$}]{};
+
+            \foreach \i in {1,3,4}
+                \draw ({(360/5)*\i}:2.5) node(\i)[vertex, fill=azulCielo,
+                label=(360/5)*\i:{\large $v_{\i}$}]{};
+            
+            \draw (0,0) node (6) [vertex, fill=amarillo, label=35:{\large $v_6$}] {};
+           
+            \foreach \i/\j in {1/6,2/6,3/6,4/6,5/6}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+
+        \begin{scope}[xshift=0cm]
+            \foreach \i in {1,...,5}
+                \draw ({(360/5)*\i}:2.5) node(\i)[vertex,
+                label=(360/5)*\i:{\large $v_{\i}$}]{};
+    
+            \draw (0,0) node (6) [vertex, label=35:{\large $v_6$}] {};
+               
+            \draw[ edge] [wedge,coral] (1) to (6);
+            \draw[ edge] [wedge,azulCielo] (2) to (6);
+            \draw[ edge] [wedge,amarillo] (3) to (6);
+            \draw[ edge] [wedge,morado] (4) to (6);
+            \draw[ edge] [wedge,verde] (5) to (6);
+        \end{scope}
+
+    \end{tikzpicture}
+    \caption{uns $3$-coloraci\'on propia por v\'ertices (izquierda) y una 
+        $5$-coloraci\'on propia por aristas (derecha).}
+        \label{fig:ex-color-prop}
+\end{figure}
+
+La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por v\'ertices
+$c$ es el conjunto de todas las v\'ertices de la gr\'afica que estan coloreadas
+del color $i$, es decir $c^{-1}[i]$. Notemos que las clases crom\'aticas pueden
+ser vac\'ias, adem\'as, en una coloraci\'on propia, cada clase crom\'atica es un
+conjunto independiente. El m\'inimo entero $k$ para el cu\'al una gr\'afica $G$
+es $k$-coloreable es el \indice{n\'umero crom\'atico} de $G$, denotado por
+$\chi(G)$. En este caso decimos que $G$ es
+\indiceSub{gr\'afica}{$k$-crom\'atica}. Observamos que si $H$ es una
+subgr\'afica de $G$, entonces $\chi(H) \leq \chi(G)$, m\'as a\'un, si si $H$ es
+una gr\'afica completa de $n$ v\'ertices, entonces $n \leq \chi(G)$. Observemos
+que, en \cref{fig:ex-color-prop}, se muestra una $3$-coloraci\'on propia por
+v\'ertices, sin embargo el n\'umero crom\'atico de la gr\'afica es $2$.
 
 
     %F_k(G,L)
-    \begin{enumerate}
-        \item Sean $G$ una gr\'afica y $k \geq 1$ un entero. Definimos la
-        gr\'afica de $k$-fichas de $G$, denotada por $F_k(G)$, como la
-        gr\'afica con conjunto de v\'ertices $\binom{V(G)}{k}$ y donde dos
-        v\'ertices $A$ y $B$ en $F_k(G)$ son adyacentes si y s\'olo si $|A
-        \triangle B| ={a,b}$, con $a \in A$, $b \in B$ y $ab \in E(G)$.
-        \item Sea $A$ un $k$-comjunto en la gr\'afica $G$ tal que $a \in A$
-        y $b\notin A$. Definimos $A'= (A \setminus \{a\}) \cup \{b\}$.
-        \item Sea $P$ una trayectoria en la gr\'afica $G$. Tomamos $A$ un
-        $k$-conjunto en $G$ de tal manera que $a\in A$ y $b \notin A$. Si
-        $A\cap P =\{v_1, \dots, v_q\}$, con $v_1 = a$, definimos $A
-        \xrightarrow[P]{} A'$ como la trayectoria en $F_k(G)$ entre $A$ y
-        $A'$ que sigue la siguiente secuencia. Primero movemos la ficha de
-        $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$, v\'ertice de $G$,
-        por $P$. Luego, para los v\'ertices $v_i$ en $G$,con $i \in \{q-1,
-        q-2, \dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. 
-    \end{enumerate}
-\end{definicion}
+\section{Gr\'aficas de Fichas}
+\label{def:fichas}
+%El objetivo de este trabajo es estudiar ... En esta secci\'on 
+
+El concepto de Gr\'aficas de Fichas se plantea en (...) y nace de considerar una
+gr\'afica $G$ y querer colocar $k$ fichas indistinguible sobre los v\'ertices de
+esta gr\'afica, a lo m\'as una ficha por v\'ertice. Una ficha se puede "mover"
+de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre ellos y
+no haya una ficha en el segundo v\'ertice. Cada configuraci\'on de $k$ fichas
+ser\'a un v\'ertice en nuestra nueva gr\'afica donde dos v\'ertices ser\'an
+adyacentes siempre que si se puede llegar de una configuraci\'on a otra al mover
+una ficha atrav\'es de una arista. A esta nueva gr\'afica la nombramos la
+gr\'afica de $k$-fichas de $G$ y la denotamos $F_k(G)$. Formalizando este
+concepto tenemos que, dada una gr\'afica $G$ y $k \geq 1$ un entero, la
+gr\'afica cuyo conjunto de v\'ertices es $\binom{V(G)}{k}$ y donde dos
+v\'ertices $A$ y $B$ en son adyacentes si y s\'olo si $|A \triangle B| ={a,b}$,
+con $a \in A$, $b \in B$ y $ab \in E(G)$ es la \textbf{gr\'afica de}
+\indiceSub{gr\'afica}{$k$-fichas} \textbf{de $G$} \index{fichas!gr\'afica}. En \cref{fig:ex-tok-path} se muestra
+un ejemplo de una gr\'afica $G$ y su gr\'afica de $3$-fichas.
 
 \begin{figure}[ht!]
     \centering
@@ -902,11 +975,30 @@ hamiltoniana resultante de quitarle una arista a un ciclo hamiltoniano.
             \foreach \i/\j in{1/2, 1/3, 1/8, 1/9, 2/4, 2/6, 2/8, 3/5, 3/7, 3/9,
             4/6, 4/8, 5/7, 5/9, 6/7, 6/9, 6/10, 7/8, 7/10, 8/10, 9/10} 
             \draw [edge,grisOscuro] (\i) to (\j);
-       \end{scope}
-    
-            
+       \end{scope}       
     
     \end{tikzpicture}
     \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
     \label{fig:ex-tok-path}
 \end{figure}
+
+Algo interesante a considerar es el caso en el que cierta cantidad de fichas
+estan fijas en la gr\'afica de fichas. En este caso, dado un conjunto $X
+\subseteq V(G)$ con $|X|=r<k$, definimos a $F_k(G,X)$ como la
+\textbf{subgr\'afica de $F_k(G)$ inducida}\index{subgr\'afica!inducida de
+fichas}\index{fichas!subgr\'afica inducida} por los v\'ertices de $F_k(G)$ que
+contienen al subconjunto $X$.
+
+
+%El objetivo de este trabajo es estudiar las gr\'aficas de fichas y como se
+%relacionan con las gr\'aficas "originales".
+Teniendo eso en mente, definimos el siguiente concepto. Sea $P$ una trayectoria
+en la gr\'afica $G$,omamos $A$ un $k$-conjunto en $G$ de tal manera que $a\in A$
+y $b \notin A$ y definimos \indiceSub{fichas}{$A'$} como $A'= (A \setminus
+\{a\}) \cup \{b\}$. Si $A\cap P =\{v_1, \dots, v_q\}$, con $v_1 = a$, definimos
+\indiceSub{fichas}{$A \xrightarrow[P]{} A'$} como la trayectoria en $F_k(G)$ entre $A$ y $A'$ que
+sigue la siguiente secuencia. Primero movemos la ficha de $v_q$, v\'ertice de
+$G$, hacia el v\'ertice $b$, v\'ertice de $G$, por $P$. Luego, para los
+v\'ertices $v_i$ en $G$,con $i \in \{q-1, q-2, \dots 1\}$, movemos la ficha de
+$v_i$ a $v_{i+1}$. A lo largo de este trabajo nos ser\'a de utilidad $A'$ por lo
+que .....
