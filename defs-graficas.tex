@@ -443,19 +443,20 @@ tienen corte por v\'ertices, a saber, las gr\'aficas completas (introducidas en
 la siguiente secci\'on) no tienen corte por v\'ertices y son las \'unicas con
 esta propiedad.
 %% TODO: conectar estos dos párrafos
-La \textbf{conexidad} \indiceSub{conexidad}{local} entre dos v\'ertices distintos $u$ y $v$ se define
-como el m\'aximo n\'umero de $uv$-trayectorias internamente ajenas. Este
-n\'umero se denota por $p(u,v)$. Decimos que una gr\'afica no trivial es
-\indiceSub{gr\'afica}{$t$-conexa} si, para cualesquiera dos v\'ertices $u,v \in
-V(G)$, se tiene que $p(u,v) \geq t$. Por convenci\'on, decimos que la gr\'afica
-trivial es $0$-conexa y no es $k$-conexa par ning\'un $k > 0$. Adicionalmente,
-definimos la \indice{conexidad} de una gr\'afica como el m\'aximo n\'umero $t$
-para el cu\'al la gr\'afica es $t$-conexa. Un ejemplo de conexidad es considerar
-las gr\'aficas en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son
-conexas, sin embargo, necesitar\'iamos ``borrar'' m\'as aristas para
-``desvincular'' v\'ertices en la gr\'afica de \cref{fig:subgraf} que en las
-gr\'aficas de \cref{fig:isoGraf}, a saber, las gr\'aficas de \cref*{fig:isoGraf}
-son $2$-conexas y la gr\'afica de \cref{fig:subgraf} es $6$-conexa.
+La \textbf{conexidad} \indiceSub{conexidad}{local} entre dos v\'ertices
+distintos $u$ y $v$ se define como el m\'aximo n\'umero de $uv$-trayectorias
+internamente ajenas. Este n\'umero se denota por $p(u,v)$. Decimos que una
+gr\'afica no trivial es \indiceSub{gr\'afica}{$t$-conexa} si, para cualesquiera
+dos v\'ertices $u,v \in V(G)$, se tiene que $p(u,v) \geq t$. Por convenci\'on,
+decimos que la gr\'afica trivial es $0$-conexa y no es $k$-conexa para ning\'un
+$k > 0$. Adicionalmente, definimos la \indice{conexidad} de una gr\'afica como
+el m\'aximo n\'umero $t$ para el cu\'al la gr\'afica es $t$-conexa. Un ejemplo
+de conexidad es considerar las gr\'aficas en \cref{fig:isoGraf} y
+\cref{fig:subgraf}. Notamos que ambas son conexas, sin embargo, necesitar\'iamos
+``borrar'' m\'as aristas para ``desvincular'' v\'ertices en la gr\'afica de
+\cref{fig:subgraf} que en las gr\'aficas de \cref{fig:isoGraf}, a saber, las
+gr\'aficas de \cref*{fig:isoGraf} son $2$-conexas y la gr\'afica de
+\cref{fig:subgraf} es $6$-conexa.
 
 Otra forma de determinar como ``desvincular'' dos v\'ertices es preguntarse
 cuantas aristas se necesitar\'ian ``borrar'' para que no hubiera trayectorias
@@ -542,14 +543,13 @@ gr\'aficas. La \textbf{uni\'on} \indiceSub{uni\'on}{ajena} de las gr\'aficas $G$
 y $H$ es la uni\'on de $G$ y $H$, donde $V(G) \cap V(H) = \varnothing$. La
 uni\'on ajena se denota $G + H$. Por \'ultimo, otra operaci\'on que surge del
 concepto de uni\'on de conjuntos y que va a ser de utilidad en este trabajo es
-la uni\'on completa (o amalgamiento). La \textbf{uni\'on}
-\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$ es la gr\'afica con
-conjunto de v\'ertices $V(G) \cup V(H)$ y cuyo conjunto de aristas es $E(G) \cup
-E(H) \cup \{uv \colon u \in V(G), v \in V(H) \}$. En \cref{fig:ex-unionCompleta}
-se muestra, del lado izquierdo, un ejemplo de dos gr\'aficas, la primera con
-v\'ertices $v_i$ y la segunda con v\'ertices $w_i$, ambas con $i \in
-\{1,...,3\}$. Del lado izquierdo de la figura se muestra la uni\'on completa de
-dichas gr\'aficas.
+la uni\'on completa. La \textbf{uni\'on} \indiceSub{uni\'on}{completa} de dos
+gr\'aficas $G$ y $H$ es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$
+y cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
+V(H) \}$. En \cref{fig:ex-unionCompleta} se muestra, del lado izquierdo, un
+ejemplo de dos gr\'aficas, la primera con v\'ertices $v_i$ y la segunda con
+v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado izquierdo de la figura
+se muestra la uni\'on completa de dichas gr\'aficas.
 
 \begin{figure}[htb!]
     \centering
@@ -850,18 +850,18 @@ aristas. Primero nos enfocaremos en la coloraci\'on por aristas. Formalmente,
 una \textbf{$k$-coloraci\'on} \indiceSub{$k$-coloraci\'on}{por
 aristas}\index{aristas!coloraci\'on} de una gr\'afica $G$, para un entero $k$,
 es una funci\'on $c' \colon E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
-% La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
-% $c'$ es el conjunto de todas las aristas de la gr\'afica que estan coloreadas
-% del color $i$, es decir $c'^{-1}[i]$. Notemos que las clases crom\'aticas
-% pueden ser vac\'ias. Una \textbf{coloraci\'on} \indiceSub{$k$-coloraci\'on}{propia por
-% aristas}\index{aristas!$k$-coloraci\'on propia} es una coloraci\'on por
-% aristas donde se le asignan colores diferentes a todas las aristas adyacentes.
+La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
+$c'$ es el conjunto de todas las aristas de la gr\'afica que estan coloreadas
+del color $i$, es decir $c'^{-1}[i]$. Notemos que las clases crom\'aticas pueden
+ser vac\'ias. Una \textbf{coloraci\'on} \indiceSub{$k$-coloraci\'on}{propia por
+aristas}\index{aristas!$k$-coloraci\'on propia} es una coloraci\'on por aristas
+donde se le asignan colores diferentes a todas las aristas adyacentes.
 
 Por otro lado, una una \textbf{$k$-coloraci\'on}
 \indiceSub{$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
 una gr\'afica $G$, para un entero $k$, es una funci\'on $c \colon V(G)\to T$,
 donde $T$ es un conjunto de cardinalidad $k$. En ambos casos, ya sea
-coloraci\'on por v\'ertices o por aristas, a los elemento del codominio de la
+coloraci\'on por v\'ertices o por aristas, a los elementos del codominio de la
 funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
 \indiceSub{$-$coloraci\'on}{propia por
 v\'ertices}\index{v\'ertices!$k$-coloraci\'on propia} es una coloraci\'on por
@@ -933,20 +933,21 @@ v\'ertices, sin embargo el n\'umero crom\'atico de la gr\'afica es $2$.
 %El objetivo de este trabajo es estudiar ... En esta secci\'on 
 
 El concepto de Gr\'aficas de Fichas se plantea en (...) y nace de considerar una
-gr\'afica $G$ y querer colocar $k$ fichas indistinguible sobre los v\'ertices de
-esta gr\'afica, a lo m\'as una ficha por v\'ertice. Una ficha se puede "mover"
-de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre ellos y
-no haya una ficha en el segundo v\'ertice. Cada configuraci\'on de $k$ fichas
-ser\'a un v\'ertice en nuestra nueva gr\'afica donde dos v\'ertices ser\'an
-adyacentes siempre que si se puede llegar de una configuraci\'on a otra al mover
-una ficha atrav\'es de una arista. A esta nueva gr\'afica la nombramos la
+gr\'afica $G$ y querer colocar $k$ fichas indistinguibles sobre los v\'ertices
+de esta gr\'afica, a lo m\'as una ficha por v\'ertice. Una ficha se puede
+"mover" de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre
+ellos y no haya una ficha en el segundo v\'ertice. Cada configuraci\'on de $k$
+fichas ser\'a un v\'ertice en nuestra nueva gr\'afica donde dos v\'ertices
+ser\'an adyacentes siempre que se puedea llegar de una configuraci\'on a otra al
+mover una ficha atrav\'es de una arista. A esta nueva gr\'afica la nombramos la
 gr\'afica de $k$-fichas de $G$ y la denotamos $F_k(G)$. Formalizando este
-concepto tenemos que, dada una gr\'afica $G$ y $k \geq 1$ un entero, la
+concepto tenemos que, dada una gr\'afica $G$ y $k$ un entero positivo, la
 gr\'afica cuyo conjunto de v\'ertices es $\binom{V(G)}{k}$ y donde dos
-v\'ertices $A$ y $B$ en son adyacentes si y s\'olo si $|A \triangle B| ={a,b}$,
-con $a \in A$, $b \in B$ y $ab \in E(G)$ es la \textbf{gr\'afica de}
-\indiceSub{gr\'afica}{$k$-fichas} \textbf{de $G$} \index{fichas!gr\'afica}. En \cref{fig:ex-tok-path} se muestra
-un ejemplo de una gr\'afica $G$ y su gr\'afica de $3$-fichas.
+v\'ertices $A$ y $B$ en son adyacentes si y s\'olo si $|A \triangle B| =
+\{a,b\}$, con $a \in A$, $b \in B$ y $ab \in E(G)$, es la \textbf{gr\'afica de}
+\indiceSub{gr\'afica}{$k$-fichas} \textbf{de $G$} \index{fichas!gr\'afica}. En
+\cref{fig:ex-tok-path} se muestra un ejemplo de una gr\'afica $G$ y su gr\'afica
+de $3$-fichas.
 
 \begin{figure}[ht!]
     \centering
@@ -992,13 +993,13 @@ contienen al subconjunto $X$.
 
 %El objetivo de este trabajo es estudiar las gr\'aficas de fichas y como se
 %relacionan con las gr\'aficas "originales".
-Teniendo eso en mente, definimos el siguiente concepto. Sea $P$ una trayectoria
-en la gr\'afica $G$,omamos $A$ un $k$-conjunto en $G$ de tal manera que $a\in A$
-y $b \notin A$ y definimos \indiceSub{fichas}{$A'$} como $A'= (A \setminus
-\{a\}) \cup \{b\}$. Si $A\cap P =\{v_1, \dots, v_q\}$, con $v_1 = a$, definimos
-\indiceSub{fichas}{$A \xrightarrow[P]{} A'$} como la trayectoria en $F_k(G)$ entre $A$ y $A'$ que
-sigue la siguiente secuencia. Primero movemos la ficha de $v_q$, v\'ertice de
-$G$, hacia el v\'ertice $b$, v\'ertice de $G$, por $P$. Luego, para los
-v\'ertices $v_i$ en $G$,con $i \in \{q-1, q-2, \dots 1\}$, movemos la ficha de
-$v_i$ a $v_{i+1}$. A lo largo de este trabajo nos ser\'a de utilidad $A'$ por lo
-que .....
+Teniendo eso en mente, definimos el siguiente concepto. Sea $P$ una
+$ab$-trayectoria en la gr\'afica $G$, tomamos $A$ un $k$-conjunto en $G$ de tal
+manera que $a\in A$ y $b \notin A$ y definimos \indiceSub{fichas}{$A'$} como
+$A'= (A \setminus \{a\}) \cup \{b\}$. Si $A\cap P =\{v_1, \dots, v_q\}$, con
+$v_1 = a$, definimos \indiceSub{fichas}{$A \xrightarrow[P]{} A'$} como la
+trayectoria en $F_k(G)$ entre $A$ y $A'$ que sigue la siguiente secuencia.
+Primero movemos la ficha de $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$,
+v\'ertice de $G$, por $P$. Luego, para los v\'ertices $v_i$ en $G$,con $i \in
+\{q-1, q-2, \dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. A lo largo de
+este trabajo nos ser\'a de utilidad $A'$ por lo que .....
