@@ -348,14 +348,19 @@ trayectorias.
 Por \cref{prop:CamTray}, sabemos que, cada que hablemos de caminos, siempre hay
 una trayectoria contenida por lo que ahora nos enfocaremos en trayectorias. Como
 se mencion\'o anteriormente, entre dos v\'ertices $u$ y $v$ pueden existir
-m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos \textbf{$uv$-trayectorias}
-\indiceSub{$uv$-trayectoria}{internamente ajenas} si $V(X)\cap V(Y)=\{u,v\}$.
-Este concepto nos sevir\'a m\'as adelante cuando hablemos de conexidad.
-Adicionalemtne, podemos ver que al recorrer una trayectoria de manera inversa
-obtenemos otra trayectoria. Formalmente hablando, teniendo una $uv$-trayectoria
-$X$, su \textbf{trayectoria} \indiceSub{trayectoria}{inversa}, a la cu\'al denotamos
-$X^{-1}$, es una $vu$-trayectoria que tiene los mismos v\'ertices y aristas que
-$X$.
+m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
+\textbf{$uv$-trayectorias} \indiceSub{$uv$-trayectoria}{internamente ajenas} si
+$V(X)\cap V(Y)=\{u,v\}$. Tambi\'en podemos definir un concepto similar
+enfocandonos en aristas, es decir, dos $uv$-trayectorias que no tengan aristas
+en com\'un. A estas trayectorias las llamamoas \textbf{$uv$-trayectorias}
+\indiceSub{$uv$-trayectoria}{ajenas por aristas}. Estos conceptos nos sevir\'ann
+m\'as adelante cuando hablemos de conexidad. Adicionalemtne, podemos ver siempre
+podemos recorrer una trayectoria en de manera opuesta, es decir, empezando por
+el \'ultimo v\'ertice y terminando por el primero. Al recorrer la trayectoria de
+esta manera obtenemos otra trayectoria. Formalmente hablando, teniendo una
+$uv$-trayectoria $X$, su \textbf{trayectoria} \indiceSub{trayectoria}{inversa},
+a la cu\'al denotamos $X^{-1}$, es una $vu$-trayectoria que tiene los mismos
+v\'ertices y aristas que $X$.
 
 \begin{figure}[htb!]
     \centering
@@ -433,21 +438,18 @@ propiedad de ser conexas son llamadas \indice{componentes
 conexas}\index{conexa!componente}. Notamos que si una gr\'afica es conexa,
 contiene s\'olo una componente conexa, ella misma. 
 
-Algo que tambi\'en puede ser de inter\'es en este tema es, que tan dif\'icil es
-``desvincular'' dos v\'ertices. Una manera de verlo es cuestionarse si existe
-alg\'un v\'ertice o conjunto de v\'ertices que, al quitarlo, ``desvincule'' a
-los v\'ertices. A este conjunto lo llamamos corte por v\'ertices. Formalmente,
-un \indice{corte por v\'ertices} $S$ de una gr\'afica $G$ es un subconjunto de
-$V(G)$ tal que $G[V(G)-S]$ es inconexa. Cabe notar que no todas las gr\'aficas
-tienen corte por v\'ertices, a saber, las gr\'aficas completas (introducidas en
-la siguiente secci\'on) no tienen corte por v\'ertices y son las \'unicas con
-esta propiedad.
-%% TODO: conectar estos dos párrafos
-La \textbf{conexidad} \indiceSub{conexidad}{local} entre dos v\'ertices
-distintos $u$ y $v$ se define como el m\'aximo n\'umero de $uv$-trayectorias
-internamente ajenas. Este n\'umero se denota por $p(u,v)$. Decimos que una
-gr\'afica no trivial es \indiceSub{gr\'afica}{$t$-conexa} si, para cualesquiera
-dos v\'ertices $u,v \in V(G)$, se tiene que $p(u,v) \geq t$. Por convenci\'on,
+Algo que es de inter\'es en este tema es, que tan dif\'icil es ``desconectar''
+una gr\'afica. Primero veamos un caso m\'as espec\'ifico, qu\'e tan dif\'icil es
+``desconectar'' a dos v\'ertices espec\'ificos en una gr\'afica. Para esto puede
+resultar natural pensar en las trayectorias internamente ajenas, pues la
+cantidad de trayectorias internamente ajenas entre dos v\'ertices nos habla de
+cuantas maneras diferentes hay de vincular un ``vincular'' un v\'ertice con
+otro. Definimos la \textbf{conexidad} \indiceSub{conexidad}{local} entre dos
+v\'ertices distintos $u$ y $v$ como el m\'aximo n\'umero de $uv$-trayectorias
+internamente ajenas. Este n\'umero se denota por $p(u,v)$. Ahora, para el caso
+global de una gr\'afica no trivial $G$, decimos que $G$ es
+\indiceSub{gr\'afica}{$t$-conexa} si, para cualesquiera dos v\'ertices $u,v \in
+V(G)$, se tiene que $p(u,v) \geq t$. Por convenci\'on,
 decimos que la gr\'afica trivial es $0$-conexa y no es $k$-conexa para ning\'un
 $k > 0$. Adicionalmente, definimos la \indice{conexidad} de una gr\'afica como
 el m\'aximo n\'umero $t$ para el cu\'al la gr\'afica es $t$-conexa. Un ejemplo
@@ -458,14 +460,14 @@ de conexidad es considerar las gr\'aficas en \cref{fig:isoGraf} y
 gr\'aficas de \cref*{fig:isoGraf} son $2$-conexas y la gr\'afica de
 \cref{fig:subgraf} es $6$-conexa.
 
-Otra forma de determinar como ``desvincular'' dos v\'ertices es preguntarse
-cuantas aristas se necesitar\'ian ``borrar'' para que no hubiera trayectorias
-entre dichos v\'ertices. Es f\'acil observar que esto est\'a relacionado con la
-cantidad de trayectorias ajenas por aristas
-%% TODO: agregar definición trayectorias ajenas por aristas
-que existan entre dichos
-v\'ertices.
-
+Otra manera de abordar el ``desconectar'' una gr\'afica es cuestionarse si
+existe alg\'un v\'ertice o conjunto de v\'ertices que, al quitarlo,
+``desconecte'' a la gr\'afica. A este conjunto lo llamamos corte por
+v\'ertices. Formalmente, un \indice{corte por v\'ertices} $S$ de una gr\'afica
+$G$ es un subconjunto de $V(G)$ tal que $G[V(G)-S]$ es inconexa. Cabe notar que
+no todas las gr\'aficas tienen corte por v\'ertices, a saber, las gr\'aficas
+completas (introducidas en la siguiente secci\'on) no tienen corte por
+v\'ertices y son las \'unicas con esta propiedad.
 
 \begin{figure}[htb!]
     \centering
@@ -523,9 +525,36 @@ v\'ertices.
     \label{fig:ex-menger}
 \end{figure}
 
-\begin{teorema}
+En \cref{fig:ex-menger} se muestran las dos maneras de ``desconectar'' los
+v\'ertices $v_1$ y $v_5$ de una gr\'afica conexa. Del lado izquierdo se muestran
+tres $v_1v_5$-trayectorias internamente ajenas, cada una resaltada de un color
+diferente. Del lado derecho se muestra el corte por v\'ertices
+${\color{morado}\bf \{2,6,7\} }$, donde cada v\'ertice est\'a relleno de
+morado. Observemos que cada v\'ertice del corte por v\'ertice se encuentra en
+una $v_1v_5$-trayectoria internamente ajena diferente. Para facilitar esta
+visualizaci\'on, cada v\'ertice del corte por v\'ertice tiene el per\'imetro del
+mismo color que la $v_1v_5$-trayectoria internamente ajena a la que nos
+referimos. La relaci\'on entre ambos conceptos fue demostrada por Menger y es
+un teorema de mucha relevancia en Teor\'ia de gr\'aficas. En \cref*{teo:menger}
+se demuestra una versi\'on global de este teorema.
 
+% Otra forma de determinar como ``desvincular'' dos v\'ertices es preguntarse
+% cuantas aristas se necesitar\'ian ``borrar'' para que no hubiera trayectorias
+% entre dichos v\'ertices. Es f\'acil observar que esto est\'a relacionado con la
+% cantidad de trayectorias ajenas por aristas
+% %% TODO: agregar definición trayectorias ajenas por aristas
+% que existan entre dichos
+% v\'ertices.
+
+\begin{teorema}
+    \label{teo:menger}
+Sea $G$ una gr\'afica, $G$ es $k$-conex si y s\'olo si contiene $k$ trayectorias
+internamente ajenas entre cualesquiera dos v\'ertices de $G$.
 \end{teorema}
+
+\begin{proof}
+    
+\end{proof}
 
 \section{Operaciones}
 \label{sec:operaciones}
@@ -546,7 +575,7 @@ concepto de uni\'on de conjuntos y que va a ser de utilidad en este trabajo es
 la uni\'on completa. La \textbf{uni\'on} \indiceSub{uni\'on}{completa} de dos
 gr\'aficas $G$ y $H$ es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$
 y cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
-V(H) \}$. En \cref{fig:ex-unionCompleta} se muestra, del lado izquierdo, un
+V(H) \}$. La uni\'on completa la denotamos $G \oplus H$. En \cref{fig:ex-unionCompleta} se muestra, del lado izquierdo, un
 ejemplo de dos gr\'aficas, la primera con v\'ertices $v_i$ y la segunda con
 v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado izquierdo de la figura
 se muestra la uni\'on completa de dichas gr\'aficas.
@@ -681,18 +710,20 @@ gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}.
 
 %definimos particion?
 Una familia de gr\'aficas que es muy estudiada en Teor\'ia de Gr\'aficas es la
-familia de las \textbf{gr\'aficas }\indiceSub{gr\'afica}{$k$-partitas}. Una gr\'afica es
-$k$-\textit{partita} si su conjunto de v\'ertices admite una partici\'on en a lo
-m\'as $k$ conjuntos independientes. Un caso muy relevante, y que nos ser\'a
-particularmente \'util en este trabajo, es el caso en el que $k=2$. En este caso
-se dice que es una \textbf{gr\'afica} \indiceSub{gr\'afica}{bipartita}\index{bipartita!gr\'afica}. Una gr\'afica
+familia de las \textbf{gr\'aficas }\indiceSub{gr\'afica}{$k$-partitas}. Una
+gr\'afica es $k$-\textit{partita} si su conjunto de v\'ertices admite una
+partici\'on en a lo m\'as $k$ conjuntos independientes. Un caso muy relevante, y
+que nos ser\'a particularmente \'util en este trabajo, es el caso en el que
+$k=2$. En este caso se dice que es una \textbf{gr\'afica}
+\indiceSub{gr\'afica}{bipartita}\index{bipartita!gr\'afica}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
-\indice{bipartici\'on}. Un caso especial de las gr\'aficas $k$-partitas, es
-cuando todas las aristas posibles est\'an presentes, por cuestion de utilidad
-para el trabajo, definiremos formalmente este comportamiento \'unicamente para
-las gr\'aficas bipartitas. Una gr\'afica es \indiceSub{gr\'afica}{bipartita
-completa}\index{bipartita!completa} si es bipartita y dada la partici\'on $X$ y $Y$ de sus v\'ertices,
-cada v\'ertice de $X$ es adyacente a cada v\'ertice de $Y$. 
+\indice{bipartici\'on}. Adem\'as, existe un caso especial de las gr\'aficas
+$k$-partitas, es cuando todas las aristas posibles est\'an presentes, por
+cuestion de utilidad para el trabajo, definiremos formalmente este
+comportamiento \'unicamente para las gr\'aficas bipartitas. Una gr\'afica es
+\indiceSub{gr\'afica}{bipartita completa}\index{bipartita!completa} si es
+bipartita y dada la partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de
+$X$ es adyacente a cada v\'ertice de $Y$. 
 
 \begin{figure}[ht!]
     \centering
@@ -728,6 +759,22 @@ cada v\'ertice de $X$ es adyacente a cada v\'ertice de $Y$.
         \caption{El $6$-ciclo como ejemplo de una gr\'afica bipartita (izquierda), y una gr\'afica bipartita completa (derecha).}
         \label{fig:ex-bip}
     \end{figure}
+
+
+Un teorema muy importante al hablar de gr\'aficas bipartitas es
+\cref{teo:bip-CImpar} y sirve como caracterizaci\'on para esta familia de
+gr\'aficas. Esto tambi\'en se puede observar en eljemplo de \cref{fig:ex-bip}.
+
+
+\begin{teorema}
+    \label{teo:bip-CImpar}
+    Una gr\'afica $G$ es bipartita si y s\'olo si no contiene ciclos de longitud impar.
+\end{teorema}
+
+
+\begin{proof}
+    
+\end{proof}
     
 Otra  familia de gr\'aficas que se estudiar\'a este trabajo son los abanicos.Un
 \indice{abanico} $\mathcal{F}_n$ es la gr\'afica obtenida de la uni\'on de $K_1$
@@ -927,55 +974,311 @@ que, en \cref{fig:ex-color-prop}, se muestra una $3$-coloraci\'on propia por
 v\'ertices, sin embargo el n\'umero crom\'atico de la gr\'afica es $2$.
 
 
-    %F_k(G,L)
+
 \section{Gr\'aficas de Fichas}
 \label{def:fichas}
-%El objetivo de este trabajo es estudiar ... En esta secci\'on 
 
-El concepto de Gr\'aficas de Fichas se plantea en (...) y nace de considerar una
-gr\'afica $G$ y querer colocar $k$ fichas indistinguibles sobre los v\'ertices
-de esta gr\'afica, a lo m\'as una ficha por v\'ertice. Una ficha se puede
-"mover" de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre
-ellos y no haya una ficha en el segundo v\'ertice. Cada configuraci\'on de $k$
-fichas ser\'a un v\'ertice en nuestra nueva gr\'afica donde dos v\'ertices
-ser\'an adyacentes siempre que se puedea llegar de una configuraci\'on a otra al
-mover una ficha atrav\'es de una arista. A esta nueva gr\'afica la nombramos la
-gr\'afica de $k$-fichas de $G$ y la denotamos $F_k(G)$. Formalizando este
-concepto tenemos que, dada una gr\'afica $G$ y $k$ un entero positivo, la
+Durante los a\~{n}os 90, se pueden encontrar nociones de gr\'aficas de $2$-fichas,
+referidas como ``Dobule Vertex Graphs'', en (...) don de Alavi y otros autores
+estudian la conectividad, planidad, regularidad y hamiltonicidad de algunas
+gr\'aficas de $2$-fichas. Por oto lado, en 1992, Zhu estudia las gr\'aficas de
+$k$-fichas, para una $k \in \mathbb{N^{+}}$ m\'as general, refiriendose a ellas
+como ''k-tuplex Vertex Graphs''. Posterior mente, en el 2002 en (...), se
+estudian las gr\'aficas de $2$-fichas bajo otro nombre en (...) donde Rudolph da
+un ejemplo de dos gr\'aficas coespectrales donde sus gr\'aficas de $2$-fichas no
+lo son. M\'as adelante, en el 2007, se utilizan las gr\'aficas de fichas en el
+articulo (...) (Audeanet), donde se refieren a ellas como ''potencias
+sim\'etricas''de una gr\'afica. En este art\'iculo Audeanet demuestra que las
+gr\'aficas de $2$-fichas de las gr\'aficas fuertemente regulares con los mismos
+par\'ametros son coespectrales. M\'as adelante, de manera independiente, Barghi
+y Ponomarenko (2009) y Alzaga (2010) pureban que para alg\'un entero positivo
+dado existe (infinitely many) pares de gr\'aficas no isomorfas con gr\'aficas de
+$k$-fichas coespectrales. En el 2012, Fabila (...) reintroduce el concepto de
+gr\'aficas de fichas, y asign\'andole este nombre, al verlo como colocar $k$
+fichas indistinguibles sobre los v\'ertices de una gr\'afica $G$, a lo m\'as una
+ficha por v\'ertice. Una ficha se puede "mover" de un v\'ertice de $G$ a otro
+siempre y cuando exista una arista entre ellos y no haya una ficha en el segundo
+v\'ertice. Cada configuraci\'on de $k$ fichas ser\'a un v\'ertice en nuestra
+nueva gr\'afica donde dos v\'ertices ser\'an adyacentes siempre que se puedea
+llegar de una configuraci\'on a otra al mover una ficha atrav\'es de una arista.
+A esta nueva gr\'afica la nombramos la gr\'afica de $k$-fichas de $G$ y la
+denotamos $F_k(G)$. M\'as adelante, tomando como base el articulo (Fabila) se
+han seguido estudiando la conexidad, planidad, hamiltonicidad, entre otras
+coasas, de las gr\'aficas de fichas (...).
+
+Formalmente hablando, dada una gr\'afica $G$ y $k$ un entero positivo, la
 gr\'afica cuyo conjunto de v\'ertices es $\binom{V(G)}{k}$ y donde dos
 v\'ertices $A$ y $B$ en son adyacentes si y s\'olo si $|A \triangle B| =
 \{a,b\}$, con $a \in A$, $b \in B$ y $ab \in E(G)$, es la \textbf{gr\'afica de}
-\indiceSub{gr\'afica}{$k$-fichas} \textbf{de $G$} \index{fichas!gr\'afica}. En
-\cref{fig:ex-tok-path} se muestra un ejemplo de una gr\'afica $G$ y su gr\'afica
-de $3$-fichas.
+\indiceSub{gr\'afica}{$k$-fichas} \textbf{de $G$} \index{fichas!gr\'afica}.
+Observamos que la gr\'afica de $1$-fichas es isomorfa a la gr\'afica original
+pues cada v\'ertice de la gr\'afica de fichas es el v\'ertice de la gr\'afica
+original donde se encuentra la ficha. Por lo mismo tambi\'en tiene las mismas
+adyacencias y no adyacencias que la gr\'afica original. Por lo tanto, en general
+para los ejemplos usaremos gr\'aficas de $k$-fichas, con $1<k$. En
+\cref{fig:ex-tok-graph} se muestra un ejemplo de una gr\'afica $G$ y su
+gr\'afica de $2$-fichas. Para ayudar al entendimiento de las gr\'aficas de
+fichas, en la gr\'afica del lado derecho de \cref{fig:ex-tok-graph} en cada
+v\'ertice de $F_2(G)$ se muestra una copia a escala de $G$, resaltando de
+${\color{rosa}\bf rosa}$ los v\'ertices de $G$ donde se encuentran las fichas.
 
 \begin{figure}[ht!]
     \centering
        \begin{tikzpicture}
     
-        \begin{scope}[xshift=-8.5cm]
-            \foreach \i in {0,...,4}
-                \draw ({(360/5)*\i}:2) node(\i)[vertex]{\pgfmathparse{int(\i+1)}
-                \pgfmathresult};
-            \foreach \i/\j in {0/1,0/2,0/3,0/4,1/2,2/3,3/4}
+        \begin{scope}[xshift=-9cm,scale=0.9]
+            \foreach \i in {1,...,5}
+                \draw ({(360/5)*\i}:2) node(\i)[vertex, label=(360/5)*\i:{${\i}$}]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
                 \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+        
+        \begin{scope}[xshift=0cm,yshift=0cm,scale=2]
+            \draw (0,1.8) node (1) [Bvertex, label=90:{\large $34$}] {};
+            \draw (0,-1.4) node (2) [Bvertex, label=270:{\large $25$}] {};
+            \draw (1,1) node (3) [Bvertex, label=45:{\large $35$}] {};
+            \draw (-1,1) node (4) [Bvertex, label=135:{\large $24$}] {};
+            \draw (2.1,0) node (5) [Bvertex, label=0:{\large $45$}] {}; 
+            \draw (-2.1,0) node (6) [Bvertex, label=180:{\large $23$}] {};
+            \draw (0.85,-0.6) node (7) [Bvertex, label=270:{\large $14$}] {};
+            \draw (-0.85,-0.6) node (8) [Bvertex, label=270:{\large $13$}] {};
+            \draw (1.6,-1.8) node (9) [Bvertex, label=290:{\large $15$}] {};
+            \draw (-1.6,-1.8) node (10) [Bvertex, label=240:{\large $12$}] {};
+           
+            \foreach \i/\j in{1/4,1/3,1/7,1/8,2/3,2/4,2/9,2/10,3/5,3/8,3/9,4/6,
+            4/7,4/10,5/7,5/9,6/8,6/10,7/8,7/9,8/10} 
+            \draw[edge,grisOscuro] (\i) to (\j);
+       \end{scope} 
+       
+       \begin{scope}[xshift=0cm,yshift=3.6cm,scale=0.3]
+        \foreach \i in {1,2,5}
+            \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+        \foreach \i in {3,4}
+            \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+        \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+            \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=-2cm,yshift=2cm,scale=0.3]
+            \foreach \i in {1,3,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {2,4}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=2cm,yshift=2cm,scale=0.3]
+            \foreach \i in {1,2,4}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {3,5}
+               \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=-4.2cm,yshift=0cm,scale=0.3]
+            \foreach \i in {1,4,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {2,3}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+        
+        \begin{scope}[xshift=4.2cm,yshift=0cm,scale=0.3]
+            \foreach \i in {1,2,3}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {4,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=-1.7cm,yshift=-1.2cm,scale=0.3]
+            \foreach \i in {2,4,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {1,3}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=1.7cm,yshift=-1.2cm,scale=0.3]
+            \foreach \i in {2,3,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {1,4}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=0cm,yshift=-2.8cm,scale=0.3]
+            \foreach \i in {1,3,4}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {2,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=-3.2cm,yshift=-3.6cm,scale=0.3]
+            \foreach \i in {3,4,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {1,2}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=3.2cm,yshift=-3.6cm,scale=0.3]
+            \foreach \i in {2,3,4}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex]{};
+            \foreach \i in {1,5}
+                \draw ({(360/5)*\i}:2) node(\i)[svertex,fill=rosa]{};
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+        \end{scope}
+    
+    \end{tikzpicture}
+    \caption{El diagrama de una gr\'afica $G$ (izquierda) y su gr\'afica de
+    $2$-fichas (derecha) donde se muestra como se ven las fichas en $G$ para
+    cada v\'ertice.}
+    \label{fig:ex-tok-graph}
+\end{figure}
+
+
+
+...Teniendo eso en mente, definimos el siguiente concepto. Sean $P$ una
+$ab$-trayectoria en la gr\'afica $G$ y $A$ un $k$-conjunto en $G$, en otras
+palabras $A \in F_k(G)$. Si al conjunto $A$ le pedimos que $a\in A$ y $b \notin
+A$, entonces a la pareja $(A,P)$ le podemos asignar una trayectoria en la
+gr\'afica de $k$-fichas, tal que el v\'ertice final est\'a dado por $A'=(A
+\setminus \{a\}) \cup \{b\}$. Para definir esta nueva trayectoria tomamos $A\cap
+P =\{v_1, \dots, v_q\}$, con $v_1 = a$, y "movemos las fichas" de la siguiente
+manera. Primero movemos la ficha de $v_q$, v\'ertice de $G$, hacia el v\'ertice
+$b$, v\'ertice de $G$, por $P$. Luego, para los v\'ertices $v_i$ en $G$, con $i
+\in \{q-1, q-2, \dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. As\'i
+susesivamente vamos moviendo fichas a trav\'es de $P$ por v\'ertices que estan
+libres de fichas. Esta trayectoria en $F_k(G)$ la denotamos \indiceSub{fichas}{$A
+\xrightarrow[P]{} A'$}. A continuaci\'on daremos un ejemplo de esta trayectoria en una
+gr\'afica de $3$-fichas, apoyandonos de \cref{fig:ex-tok-aux} y
+\cref{fig:ex-tok-path}. Para este ejemplo usaremos la misma gr\'afica $G$ que en
+\cref{fig:ex-tok-graph}. Tanto en \cref{fig:ex-tok-aux} como
+\cref{fig:ex-tok-path} la gr\'afica $G$ se muestra del lado izquierdo y en
+\cref{fig:ex-tok-path} se muestra $F_3(G)$ del lado derecho. Primero definamos
+$A=\{2,3,4\}$ en $F_3(G)$ y nuestra trayectoria en $G$ como ${\color{vino}\bf
+P=\{3,1,4,5\}}$, resaltada en \cref{fig:ex-tok-aux}. Por lo tanto tenemos que
+$A'=\{3,4,5\}$. Del lado derecho de la misma figura se muestra el movimiento de
+las fichas que empiezan en $A \cap P =\{3,4\}$, considerando de arriba a abajo
+como se van moviendo las fichas.
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm,scale=0.8]
+            \foreach \i in {1,...,5}
+                \draw ({(360/5)*\i}:2) node(\i)[vertex, label=(360/5)*\i:{${\i}$}]{};
+            
+            \foreach \i/\j in {1/2,1/5,2/3,3/4}
+                \draw [edge,grisOscuro!70] (\i) to (\j);
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [wedge,vino] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[yshift=54]
+            \draw (-1,0) node (1) [vertex, label=90:{$1$}] {};
+            \draw (-3,0) node (3) [vertex, fill=naranja, label=90:{$3$}] {};
+            \draw (1,0) node (4) [vertex, fill=azulMetal, label=90:{$4$}] {};
+            \draw (3,0) node (5) [vertex, label=90:{$5$}] {};
+
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [edge,vino] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[yshift=18]
+            \draw (-1,0) node (1) [vertex, label=90:{$1$}] {};
+            \draw (-3,0) node (3) [vertex, fill=naranja, label=90:{$3$}] {};
+            \draw (1,0) node (4) [vertex, label=90:{$4$}] {};
+            \draw (3,0) node (5) [vertex, fill=azulMetal, label=90:{$5$}] {};
+
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [edge,vino] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[yshift=-18]
+            \draw (-1,0) node (1) [vertex, fill=naranja, label=90:{$1$}] {};
+            \draw (-3,0) node (3) [vertex, label=90:{$3$}] {};
+            \draw (1,0) node (4) [vertex, label=90:{$4$}] {};
+            \draw (3,0) node (5) [vertex, fill= azulMetal, label=90:{$5$}] {};
+
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [edge,vino] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[yshift=-54]
+            \draw (-1,0) node (1) [vertex, label=90:{$1$}] {};
+            \draw (-3,0) node (3) [vertex, label=90:{$3$}] {};
+            \draw (1,0) node (4) [vertex, fill=naranja, label=90:{$4$}] {};
+            \draw (3,0) node (5) [vertex, fill=azulMetal, label=90:{$5$}] {};
+
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [edge,vino] (\i) to (\j);
+        \end{scope}
+        
+    \end{tikzpicture}
+    \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
+    \label{fig:ex-tok-aux}
+\end{figure}
+    
+M\'as adelante, en \cref{fig:ex-tok-path}, se muestra la trayectoria
+${\color{vino}\bf \{2,3,4\}\xrightarrow[P]{}\{2,4,5\}}$ en $F_3(G)$. En cada
+v\'ertice de esta trayecotira se resaltan los n\'umeros del color de la ficha
+que se us\'o en \cref{fig:ex-tok-aux}, \'esto para facilitar el entendimiento de
+la relaci\'on entre la trayectoria de $G$ y la de $F_3(G)$. Observamos que $2$
+no est\'a en $A \cap P =\{3,4\}$ por lo que no se ve en \cref{fig:ex-tok-aux}.
+Esto significa que la ficha en el v\'ertice $2$ se queda fija a trav\'es de la
+trayectoria en la gr\'afica de fichas. Esto se puede ver en
+\cref{fig:ex-tok-path} al fijarnos que el $2$ en todos los v\'ertices de la
+trayectoria, resaltado de negro.
+
+%A lo largo de este trabajo nos ser\'a de utilidad $A'$ por lo que .....
+
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm,scale=0.8]
+            \foreach \i in {1,...,5}
+                \draw ({(360/5)*\i}:2) node(\i)[vertex, label=(360/5)*\i:{\normalsize ${\i}$}]{};
+            
+            \foreach \i/\j in {1/2,1/5,2/3,3/4}
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+            \foreach \i/\j in {1/3,1/4,4/5}
+                \draw [wedge,vino] (\i) to (\j);
             \end{scope}
         
-        \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
-            \draw (0,1.5) node (1) [vertex, label=90:{\scriptsize $134$}] {};
-            \draw (-2,2) node (2) [vertex, label=90:{\scriptsize $234$}] {};
-            \draw (2,2) node (3) [vertex, label=90:{\scriptsize $345$}] {};
-            \draw (-3,1) node (4) [vertex, label=180:{\scriptsize $123$}] {};
-            \draw (3,1) node (5) [vertex, label=0:{\scriptsize $145$}] {}; 
-            \draw (-1,0.7) node (6) [vertex, label=87:{\scriptsize $235$}] {};
-            \draw (1,0.7) node (7) [vertex, label=93:{\scriptsize $245$}] {};
-            \draw (-1.1,-1) node (8) [vertex, label=240:{\scriptsize $124$}] {};
-            \draw (1.1,-1) node (9) [vertex, label=330:{\scriptsize $135$}] {};
-            \draw (0,-2.3) node (10) [vertex, label=270:{\scriptsize $125$}] {};
+        %{\small $12{\bf 6}$}
+        %${\color{azulCielo}\bf azul}$
+        \begin{scope}[xshift=-2cm]
+            \draw (0,1.5) node (1) [vertex, label=90:{\footnotesize $134$}] {};
+            \draw (-2,2) node (2) [vertex, label=90:{${\bf {\color{grisOscuro} 2}{\color{naranja} 3}{\color{azulMetal} 4}}$}] {};
+            \draw (2,2) node (3) [vertex, label=90:{\footnotesize $345$}] {};
+            \draw (-3,1) node (4) [vertex, label=180:{\footnotesize $123$}] {};
+            \draw (3,1) node (5) [vertex, label=0:{\footnotesize $145$}] {}; 
+            \draw (-1.1,0.7) node (6) [vertex, label=87:{${\bf {\color{grisOscuro} 2}{\color{naranja} 3}{\color{azulMetal} 5}}$}] {};
+            \draw (1.1,0.7) node (7) [vertex, label=93:{${\bf {\color{grisOscuro} 2}{\color{naranja} 4}{\color{azulMetal} 5}}$}] {};
+            \draw (-1.1,-1) node (8) [vertex, label=240:{\footnotesize $124$}] {};
+            \draw (1.1,-1) node (9) [vertex, label=330:{\footnotesize $135$}] {};
+            \draw (0,-2.3) node (10) [vertex, label=270:{${\bf {\color{naranja} 1}{\color{grisOscuro} 2}{\color{azulMetal} 5}}$}] {};
            
-            \foreach \i/\j in{1/2, 1/3, 1/8, 1/9, 2/4, 2/6, 2/8, 3/5, 3/7, 3/9,
-            4/6, 4/8, 5/7, 5/9, 6/7, 6/9, 6/10, 7/8, 7/10, 8/10, 9/10} 
-            \draw [edge,grisOscuro] (\i) to (\j);
+            \foreach \i/\j in{1/2,1/3,1/8,1/9,2/4,2/8,3/5,3/7,3/9,4/6,4/8,5/7,
+            5/9,6/7,6/9,7/8,8/10,9/10} 
+                \draw [edge,grisOscuro!75] (\i)to (\j); 
+            \foreach \i/\j in { 2/6,6/10,7/10} 
+                \draw [wedge,vino] (\i) to (\j);
        \end{scope}       
     
     \end{tikzpicture}
@@ -983,23 +1286,129 @@ de $3$-fichas.
     \label{fig:ex-tok-path}
 \end{figure}
 
-Algo interesante a considerar es el caso en el que cierta cantidad de fichas
-estan fijas en la gr\'afica de fichas. En este caso, dado un conjunto $X
-\subseteq V(G)$ con $|X|=r<k$, definimos a $F_k(G,X)$ como la
-\textbf{subgr\'afica de $F_k(G)$ inducida}\index{subgr\'afica!inducida de
+
+Algo que tambi\'en resulta interesante en ejemplo anterior es la ficha que se
+queda fija en el v\'ertice $2$ de la gr\'afica $G$. Al estar fija, todos los
+v\'ertices de la nueva trayectoria en $F_3(G)$ contienen a $2$. Generalizando un
+poco m\'as, nos preguntamos que gr\'afica de $3$-fichas se obtendr\'ia si una
+ficha se queda fija, digamos en $2$. Es f\'acil notar que esta gr\'afica es una
+sugr\'afica de la gr\'afica de $3$-fichas de $G$, pues el conjunto de v\'ertices
+de esta gr\'afica es el conjunto de v\'ertices de $F_3(G)$ que contengan a $2$.
+(M\'as adelante/abajo este ejemplo se representa  en
+\cref{fig:ex-tok-subgraph}.) La idea de fijar una ficha se puede extender a
+$r\leq k$ fichas, aunque el caso interesante ser\'a para $r<k$ pues fijamos
+todas las fichas obtenemos una gr\'afica trivial. Dado un conjunto $X \subseteq
+V(G)$ con $|X|=r<k$, definimos a $F_k(G,X)$ como la \textbf{subgr\'afica de
+$F_k(G)$ inducida}\index{subgr\'afica!inducida de
 fichas}\index{fichas!subgr\'afica inducida} por los v\'ertices de $F_k(G)$ que
-contienen al subconjunto $X$.
+contienen al subconjunto $X$. 
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm,scale=0.7]
+            \foreach \i in {1,3,4,5}
+                \draw ({(360/5)*\i}:2) node(\i)[vertex, label=(360/5)*\i:{\small ${\i}$}]{};
+            \draw ({(360/5)*2}:2) node(2)[vertex, fill=rosa, label=(360/5)*2:{\small ${2}$}]{};
+            
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+        
+        %{\small $12{\bf 6}$}
+        %${\color{azulCielo}\bf azul}$
+        \begin{scope}[xshift=-2cm, scale=0.8]
+            \draw (0,1.5) node (1) [vertex, label=90:{{ {\color{grisOscuro}\footnotesize $134$}}}] {};
+            \draw (-2,2) node (2) [vertex, label=90:\small $234$] {};
+            \draw (2,2) node (3) [vertex, label=90:{{ {\color{grisOscuro}\footnotesize $345$}}}] {};
+            \draw (-3,1) node (4) [vertex, label=180:\small $123$] {};
+            \draw (3,1) node (5) [vertex, label=0:{{ {\color{grisOscuro}\footnotesize $145$}}}] {}; 
+            \draw (-1.1,0.7) node (6) [vertex, label=87:\small $235$] {};
+            \draw (1.1,0.7) node (7) [vertex, label=93:\small $245$] {};
+            \draw (-1.1,-1) node (8) [vertex, label=240:\small $124$] {};
+            \draw (1.1,-1) node (9) [vertex, label=330:{{ {\color{grisOscuro}\footnotesize $135$}}}] {};
+            \draw (0,-2.3) node (10) [vertex, label=270:\small $125$] {};
+           
+            \foreach \i/\j in{1/2,1/3,1/8,1/9,3/5,3/7,3/9,5/7,
+            5/9,9/10} 
+                \draw [edge,grisOscuro!75] (\i)to (\j); 
+            \foreach \i/\j in {2/4,4/6,4/8,2/8,7/8,8/10,2/6,6/7,6/10,7/10} 
+                \draw [wedge,rosa] (\i) to (\j);
+       \end{scope}       
+
+    \end{tikzpicture}
+    \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
+    \label{fig:ex-tok-subgraph}
+\end{figure}
+
+Al momento de generar $F_3(G,\{2\})$ es facil notar que las fichas se mueven por
+$V(G) \setminus \{2\}$, excepto la ficha que est\'a fija. De igual manera, las
+aristas por las que se mueven las fichas son las aristas de $G$ que no tienen
+extremos en $2$. Entonces, podr\'iamosamos interpretar $F_3(G,\{2\})$ como la
+gr\'afica de $(3-1)$-fichas de la gr\'afica $G-\{2\}$, es decir $F_2(G-\{2\})$.
+Esta gr\'afica est\'a eshibida en \cref{fig:ex-tok-subgraph-aux}. De manera
+general, esto quiere decir que existe una relaci\'on entre la subgr\'afica de
+$F_k(G)$ inducida por $X$, donde $|r|=X \subset V(G)$, y la gr\'afica de
+$(k-r)$-fichas de la gr\'afica $G-X$, es decir $F_{k-r}(G-X)$. Afirmamos que,
+para $k,r \in \mathbb{N}$ y $k>|r|=X \subseteq V(G)$, la gr\'afica $F_k(G,X)$ es
+isomorfa a  la gr\'afica $F_{k-r}(G-X)$, con el isomorfismo $A\in
+F_k(G,X)\xrightarrow[]{} A \setminus X \in F_{k-r}(G-X)$, observamos que las
+aristas en $G$ con alg\'un extremos en $X$ no se usan en $F_k(G,X)$ por lo que
+el la funci\'on si preserva adyacencias y no adyacencias..... 
 
 
-%El objetivo de este trabajo es estudiar las gr\'aficas de fichas y como se
-%relacionan con las gr\'aficas "originales".
-Teniendo eso en mente, definimos el siguiente concepto. Sea $P$ una
-$ab$-trayectoria en la gr\'afica $G$, tomamos $A$ un $k$-conjunto en $G$ de tal
-manera que $a\in A$ y $b \notin A$ y definimos \indiceSub{fichas}{$A'$} como
-$A'= (A \setminus \{a\}) \cup \{b\}$. Si $A\cap P =\{v_1, \dots, v_q\}$, con
-$v_1 = a$, definimos \indiceSub{fichas}{$A \xrightarrow[P]{} A'$} como la
-trayectoria en $F_k(G)$ entre $A$ y $A'$ que sigue la siguiente secuencia.
-Primero movemos la ficha de $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$,
-v\'ertice de $G$, por $P$. Luego, para los v\'ertices $v_i$ en $G$,con $i \in
-\{q-1, q-2, \dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. A lo largo de
-este trabajo nos ser\'a de utilidad $A'$ por lo que .....
+
+\begin{proof}
+    
+\end{proof}
+
+
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+       \begin{scope}[xshift=-8.5cm,scale=0.7]
+        \foreach \i in {1,3,4,5}
+            \draw ({(360/5)*\i}:2) node(\i)[vertex, label=(360/5)*\i:{\small ${\i}$}]{};
+        \draw ({(360/5)*2}:2) node(2)[cvertex, label=(360/5)*2:{{ {\color{grisOscuro!75}\small $2$}}}]{};
+        
+        \foreach \i/\j in {1/3,1/4,1/5,3/4,4/5}
+            \draw [edge,grisOscuro] (\i) to (\j);
+
+        \foreach \i/\j in {1/2,2/3}
+            \draw [edge,grisOscuro!50] (\i) to (\j);
+        \end{scope}
+    
+    %{\small $12{\bf 6}$}
+    %${\color{azulCielo}\bf azul}$
+%     \begin{scope}[xshift=-1.3cm]
+%         \draw (-2,2) node (2) [vertex, label=90:$234$] {};
+%         \draw (-3,1) node (4) [vertex, label=180:{$123$}] {};
+%         \draw (-1.1,0.7) node (6) [vertex, label=87:$235$] {};
+%         \draw (1.1,0.7) node (7) [vertex, label=93:$245$] {};
+%         \draw (-1.1,-1) node (8) [vertex, label=240:{$124$}] {};
+%         \draw (0,-2.3) node (10) [vertex, label=270:$125$] {};
+       
+%        \foreach \i/\j in {2/4,4/6,4/8,2/8,7/8,8/10,2/6,6/7,6/10,7/10} 
+%             \draw [edge,grisOscuro] (\i) to (\j);
+%    \end{scope}       
+
+    \begin{scope}[xshift=-2cm]
+        \draw (0.5,0.87) node (1) [vertex,label=87:$235$] {};
+        \draw ({(360/6)*2}:2) node(2)[vertex, label=(360/5)*2:{\small ${234}$}]{};
+        \draw ({(360/6)*3}:2) node(3)[vertex, label=(360/5)*3:{\small ${123}$}]{};
+        \draw (-0.5,-0.87) node (4) [vertex,label=240:\small $124$] {};
+        \draw ({(360/6)*5}:2) node(5)[vertex, label=(360/5)*5:{\small ${125}$}]{};
+        \draw ({(360/6)*6}:2) node(6)[vertex, label=(360/5)*6:{\small ${245}$}]{};
+    %\draw ({(360/5)*2}:2) node(2)[vertex, fill=rosa, label=(360/5)*2:{\small ${2}$}]{};
+    
+    \foreach \i/\j in {1/2,1/3,1/5,1/6,2/3,2/4,3/4,4/5,4/6,5/6}
+        \draw [edge,grisOscuro] (\i) to (\j);
+    \end{scope}
+
+    \end{tikzpicture}
+    \caption{El diagrama de una gr\'afica simple $G$ y $F_3(G)$}
+    \label{fig:ex-tok-subgraph-aux}
+\end{figure}
