@@ -1,7 +1,7 @@
 \chapter{Hamiltonicidad}%
 \label{cap:hamilt}
 
-\section{Gr\'afica abanico $F_n$}%
+\section{Gr\'afica abanico $\mathcal{F}_n$}%
 \label{sec:SimpleFan}
 
  %TODO: definir la grafica abanico como una trayectoria P_{n-1} y K_1 de tal 
@@ -10,58 +10,60 @@
 %que sus elementos estan ordenados de forma creciente
 \begin{proposicion}
         \label{prop:iso-SFan}
-            Sean $F_k(F_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
-            V(F_k(F_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices, con
-            $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(F_n)$
+            Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
+            V(F_k(\mathcal{F}_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices, con
+            $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
             inducida  por $V_i$. Entoncess $S_i$ es isomorfa a
-            $F_{k-1}(F_{n-i})$.
+            $F_{k-1}(\mathcal{F}_{n-i})$.
         \end{proposicion}
     
         \begin{proof}
-            Sea $V(F_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, donde
+            Sea $V(\mathcal{F}_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, donde
             $V(P_{n-i-1}) = \{v_{i+1}, v_{i+2}, \dots, v_{n-1}\}$ y $V(K_1)=
             \{v_n\}$ por definici\'on. Basta demostrar que existe un isomorfismo
-            entre gr\'aficas entre $S_i$ y $F_{k-1}(F_{n-1})$. Proponemos a la
-            funci\'on $A \xrightarrow[]{} A \setminus \{v_i\}$ como el
-            isomorfismo que buscamos. Nos fijamos que para $A \in V(S_i)$
-            tenemos que $A \setminus \{v_i\} \in \ F_{k-1}(F_{n-i})$  y para $B
-            \in F_{k-1}(F_{n-i})$ tenemos que $B \cup \{v_i\} \in S_i$, por lo
-            que $|V(S_i)|=|V(F_{k-1}(F_{n-i}))|$. Adem\'as, observamos que $A$y
-            $B $ son adyacentes en $V(S_i)$ si y s\'olo si $A \setminus \{v_i\}$
-            y $B \setminus \{v_i\}$ son adyacentes en $F_{k-1}(F{n-i})$, esto
-            pues $A\triangle B = \{a,b\}$, donde $a\neq v_i$ y $b \neq v_i$, por
-            lo que $v_i$ no afecta la adyacencia en ninguna de las gr\'aficas.
-            Esto quiere decir que la funci\'on respeta adyacencias. Por lo tanto
-            $S_i \cong F_{k-1}(F_{n-i})$, con $1 \leq i \leq n-k$.
+            entre gr\'aficas entre $S_i$ y $F_{k-1}(\mathcal{F}_{n-1})$.
+            Proponemos a la funci\'on $A \xrightarrow[]{} A \setminus \{v_i\}$
+            como el isomorfismo que buscamos. Nos fijamos que para $A \in
+            V(S_i)$ tenemos que $A \setminus \{v_i\} \in \
+            F_{k-1}(\mathcal{F}_{n-i})$  y para $B \in
+            F_{k-1}(\mathcal{F}_{n-i})$ tenemos que $B \cup \{v_i\} \in S_i$,
+            por lo que $|V(S_i)|=|V(F_{k-1}(\mathcal{F}_{n-i}))|$. Adem\'as,
+            observamos que $A$ y $B $ son adyacentes en $V(S_i)$ si y s\'olo si
+            $A \setminus \{v_i\}$ y $B \setminus \{v_i\}$ son adyacentes en
+            $F_{k-1}(F_{n-i})$, esto pues $A\triangle B = \{a,b\}$, donde $a\neq
+            v_i$ y $b \neq v_i$, por lo que $v_i$ no afecta la adyacencia en
+            ninguna de las gr\'aficas. Esto quiere decir que la funci\'on
+            respeta adyacencias. Por lo tanto $S_i \cong
+            F_{k-1}(\mathcal{F}_{n-i})$, con $1 \leq i \leq n-k$.
         \end{proof}
     
         \begin{teorema}
         \label{teo:hamilt-SFan}
             Sean $n,k \in \mathbb{Z}$ tales que $n \geq 3$ y $1 \leq k \leq n-1$,
-            entonces $F_k(F_n)$ es hamiltoniana.
+            entonces $F_k(\mathcal{F}_n)$ es hamiltoniana.
         \end{teorema}
     
         
         \begin{proof}
             Usando doble inducci\'on sobre $k$ y $n$, demostraremos que
-            $F_k(F_n)$ tiene un ciclo hamiltoniano donde los v\'ertices
+            $F_k(\mathcal{F}_n)$ tiene un ciclo hamiltoniano donde los v\'ertices
             $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k},
             v_{n-k+1}, \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Para esta
             demostraci\'on consideraremos que para todo v\'ertice $A = \{a_1,
             \dots, a_k\}$ de una gr\'afica de $k$-fichas se tiene $a_1 < \cdots
-            < a_k$. Observamos que para $k =1$ tenemos que $F_1(F_n) \cong F_n$
+            < a_k$. Observamos que para $k =1$ tenemos que $F_1(\mathcal{F}_n) \cong \mathcal{F}_n$
             por lo que es hamiltoniana y, por definici\'on de gr\'afica abanico,
             se cumple que $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y
             $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_{n-1}\}$ son adyacentes.
             Entonces, asumiremos $k \geq 2$ para el resto de la demostraci\'on.
             Primero consideramos el caso en el que $k =2$. Si tomamos $n = 3$,
-            tenemos la gr\'afica con conjunto de v\'ertices $V(F_n)=\{v_1, v_2,
+            tenemos la gr\'afica con conjunto de v\'ertices $V(\mathcal{F}_n)=\{v_1, v_2,
             v_3\}$. Entonces tenemos el siguiente ciclo hamiltoniano $C=
             (\{v_1,v_3\},\{v_1,v_2\},\{v_2,v_3\}, \{v_1,v_3\})$, donde $\{v_1,
             v_3\}$ y $\{v_1, v_2\}$ son adyacentes. 
             
-            Ahora veamos el caso de la gr\'afica de $2$-fichas de $F_n$, con $n
-            \geq 4$ y conjunto de v\'ertices $V(F_n)=\{v_1,\dots, v_n\}$.
+            Ahora veamos el caso de la gr\'afica de $2$-fichas de $\mathcal{F}_n$, con $n
+            \geq 4$ y conjunto de v\'ertices $V(\mathcal{F}_n)=\{v_1,\dots, v_n\}$.
             Tomamos el ciclo
     
             $C = (\{v_1, v_{n-1}\},\{v_1, v_n\},\{v_1, v_{n-2}\}, \{v_1,
@@ -79,14 +81,14 @@
             Observamos que $C$ es un ciclo hamiltoniano que cumple tener la
             adyacencia de  $\{v_{n-2}, v_n\}$ y $\{v_{n-2}, v_{n-1}\}$. 
     
-            Ahora supongamos que $F_{k'}(F_{n'})$ satisface las hip\'otesis de
-            inducci\'on, con $k'< k$ y $n'<n$. La gr\'afica $F_{k-1}(F_{n-i})$,
+            Ahora supongamos que $F_{k'}(\mathcal{F}_{n'})$ satisface las hip\'otesis de
+            inducci\'on, con $k'< k$ y $n'<n$. La gr\'afica $F_{k-1}(\mathcal{F}_{n-i})$,
             con $1 \leq i \leq n-k$, satisface la hip\'otesis por lo que tiene
             un ciclo hamiltoniano, y, por \cref{prop:iso-SFan}, sabemos que
-            $F_{k-1}(F_{n-i}) \cong S_i$. Recordemos que  $S_i$ es la
-            subgr\'afica de $F_k(F_n)$ inducida por el conjunto $V_i$ definido
-            en la Proposici\'on, en otras palabras, $S_i= F_k(F_n, V_i)$. Ahora,
-            llamamos $C_i$ al ciclo hamiltoniano de $F_{k-1}(F_{n-i})$ y $X_i =
+            $F_{k-1}(\mathcal{F}_{n-i}) \cong S_i$. Recordemos que  $S_i$ es la
+            subgr\'afica de $F_k(\mathcal{F}_n)$ inducida por el conjunto $V_i$ definido
+            en la Proposici\'on, en otras palabras, $S_i= F_k(\mathcal{F}_n, V_i)$. Ahora,
+            llamamos $C_i$ al ciclo hamiltoniano de $F_{k-1}(\mathcal{F}_{n-i})$ y $X_i =
             \{v_i, v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2}, v_n\}$, $Y_i= \{v_i,
             v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2}, v_{n-1}\}$ a los v\'ertices
             adyacentes en $C_i$. Nombramos $P_i$ a la subtrayectoria
@@ -107,7 +109,7 @@
             $X_j= D_{n-1}$. Adem\'as tenemos las siguientes diferencias
             sim\'etricas $X_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_{n-1}\}$ ,
             $Y_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_n\}$, $Z\triangle D_{n-k+1}
-            =\{v_{n-k}, v_{n-k+1}\}$. Por lo tanto, en $F_k(F_n)$, tenemos las
+            =\{v_{n-k}, v_{n-k+1}\}$. Por lo tanto, en $F_k(\mathcal{F}_n)$, tenemos las
             siguientes adyacencias: $X_{n-k} \sim D_{n-2}$, $Y_{n-k} \sim
             D_{n-2}$ y $Z \sim D_{n-k+1}$. Adicionalmente, observamos que, para
             $1 \leq i \leq n- k- 1$, tenemos $X_{i} \triangle X_{i+1}= \{v_i,
@@ -133,22 +135,22 @@
     
             Afirmamos que en ambos casos $C$ es un ciclo hamiltoniano.
             Observamos que, al ser uni\'on de las trayectorias $P_i$, el ciclo
-            tiene todos los v\'ertices de $F_k(F_n)$ que empiezan con $v_i$, con
+            tiene todos los v\'ertices de $F_k(\mathcal{F}_n)$ que empiezan con $v_i$, con
             $i \in \{1, \dots, n-k-1\}$. Adem\'as, al tener la trayectoria $Q$,
             el ciclo tambi\'en tiene los v\'ertices que faltan. Por lo tanto $C$
-            es un ciclo hamiltoniano de $F_k(F_n)$, donde los v\'ertices
+            es un ciclo hamiltoniano de $F_k(\mathcal{F}_n)$, donde los v\'ertices
             $X_{n-k}$ y $Y_{n-k}$ son adyacentes. 
     
         \end{proof}
 
-\section{Gr\'afica abanico generalizada $F_{m,n}$}%
+\section{Gr\'afica abanico generalizada $\mathcal{F}_{m,n}$}%
 \label{sec:GeneralFan}
 
 
 
 \begin{teorema}
 \label{teo:2-TokGenerFan}
-    La gr\'afica de 2-fichas de $F_{m,n}$ es hamiltoniana si y s\'olo si $n \geq
+    La gr\'afica de 2-fichas de $\mathcal{F}_{m,n}$ es hamiltoniana si y s\'olo si $n \geq
     2$ y $1 \leq m \leq 2n$, o si $n=1$ y $m=3$.
 \end{teorema}
 
@@ -159,14 +161,14 @@
 %TODO: caso en el que n=1
 \begin{proof}
     Primero veamos que para $n \geq 2$ y $1 \leq m \leq 2n$ la gr\'afica de
-    $2$-fichas de $F_{m,n}$ es hamiltoniana. Para esto construiremos un ciclo
+    $2$-fichas de $\mathcal{F}_{m,n}$ es hamiltoniana. Para esto construiremos un ciclo
     hamiltorniano espec\'ifico para cada caso. Consideramos $m=1$ para el primer
-    caso. Si $n=2$, entonces $F_2(F_{m,n}) \cong F_{1,2}$ pues ambas son
+    caso. Si $n=2$, entonces $F_2(\mathcal{F}_{m,n}) \cong \mathcal{F}_{1,2}$ pues ambas son
     isomorfas a $K_3$. Ahora consideramos $n \geq 3$ y tomamos $1 \leq i \leq n$
     para construir una familia de trayectorias
     $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots, \{v_i,v_n\})$. Observamos
     que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una partici\'on de
-    $V(F_2(F_{m,n}))$. %especificar mas?
+    $V(F_2(\mathcal{F}_{m,n}))$. %especificar mas?
     Ahora analizamos el siguiente ciclo $C$.
     
     En el caso en el que $n$ es par, tomamos:
@@ -183,13 +185,13 @@
     \dots, \{v_{n-1},w_1\}
     \xrightarrow[T_{n-1}]{}\{v_{n-1},v_n\},\{v_n,w_1\},\{v_1,v_n\})$
 
-    Primero comprobemos que $C$ es un ciclo en $F_2(F_{m,n})$. En $F_{m,n}$
+    Primero comprobemos que $C$ es un ciclo en $F_2(\mathcal{F}_{m,n})$. En $\mathcal{F}_{m,n}$
     tenemos que $v_i \sim v_{i+1}$. Adem\'as $|\{v_i,w_1\}\triangle
     \{v_{i+1},w_1\}|=2 =|\{v_i,v_n\}\triangle \{v_{i+1},v_n\}|$, por lo que
     $\{v_i,w_1\}\sim \{v_{i+1},w_1\}$ y $\{v_i,v_n\}\sim \{v_{i+1},v_n\}$ en
-    $F_2(F_{m,n})$. Por lo tanto tenemos que $C$ es un ciclo en ambos casos.
+    $F_2(\mathcal{F}_{m,n})$. Por lo tanto tenemos que $C$ es un ciclo en ambos casos.
     Adicionalmente tenemos que los los v\'ertices de las trayectorias son una
-    partici\'on de los v\'ertices de $F_2(F_{m,n})$, por lo que $C$ es un ciclo
+    partici\'on de los v\'ertices de $F_2(\mathcal{F}_{m,n})$, por lo que $C$ es un ciclo
     hamiltoniano. Como nota adicional, notemos que los v\'ertices
     $\{v_{n-2},w_1\}$ y $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria
     $T_{n-2}$. Esto nos servir\'a en el siguiente teorema.
@@ -210,13 +212,13 @@
     \{w_i,v_2\},\{w_i,w_{i+2}\},\{w_i,v_1\},\{w_i,w_{i+1}\})$
 
     Dado que la trayectoria $P_i$ recorre el ciclo $C$, podemos afirmar que es
-    una trayectoria en $F_2(F_{m,n})$, con $2\leq i \leq 2n$. M\'as a\'un,
+    una trayectoria en $F_2(\mathcal{F}_{m,n})$, con $2\leq i \leq 2n$. M\'as a\'un,
     podemos observar que los elementos de toda $P_i$ tienen configuraci\'on
     $\{w_i,v_j\},\{w_i,w_k\}$, con $i, k\in \{1, \dots, 2n\}$ y $j \in \{1,
     \dots, n\}$. Adicionalmente, a partir del tercer elemento de $P_i$, tenemos a
     los elementos con la forma $\{w_i,v_j\},\{w_i,w_{i+j}\}$, con $j \in \{1,
     \dots, n-1\}$.  Por otro lado sabemos que, para toda $i \in \{1, \dots, n\}$
-    y $j \in \{1, \dots, m\}$, se cumple que $v_i \sim w_j$ en $F_{m,n}$ y
+    y $j \in \{1, \dots, m\}$, se cumple que $v_i \sim w_j$ en $\mathcal{F}_{m,n}$ y
     adem\'as $|\{w_i,v_j\} \triangle \{w_i, w_{i+j}\}|=2$, por lo que
     $\{w_i,v_j\} \sim \{w_i, w_{i+j}\}$ en $F_2(F_{m.n})$. Entonces $P_i$ s\'i
     cumple ser una trayectoria en la gr\'afica de $2$-fichas. Ahora construimos
@@ -229,11 +231,11 @@
     adyacente al primer elemento de $P_2$, que es $\{w_2,v_n\}$. De manera
     an\'aloga $\{w_{2n},w_1\}$, el \'ultimo elemento de $P_{2n}$, es adyacente a
     $\{v_n,w_1\}$, el primer elemento de $P_1$. Por lo tanto $C_1 = (P_1,P_2,
-    \dots, P_{2n},\{v_n,w_1\})$ es un ciclo en $F_2(F_{m,n})$. 
+    \dots, P_{2n},\{v_n,w_1\})$ es un ciclo en $F_2(\mathcal{F}_{m,n})$. 
 
     Ahora determinamos si $C_1$ es un ciclo hamiltoniano de la gr\'afica de
     $2$-fichas. Al igual que en el caso anterior, veamos que las trayectorias de
-    $P_i$ generan una partici\'on de $F_2(F_{m,n})$. Primero tenemos que los
+    $P_i$ generan una partici\'on de $F_2(\mathcal{F}_{m,n})$. Primero tenemos que los
     v\'ertices de la forma $\{v_i,v_j\}$ est\'an en $P_1$, con $i,j \in \{1,
     \dots, n\}$ y $i \neq j$. Adem\'as, los v\'ertices $\{w_i,w_1\}$
     est\'an en $P_1$, con $i \in \{1, \dots, m\}$ y $1 \neq i$. Luego,
@@ -244,9 +246,9 @@
     tomamos $1 < i \leq n$ y $i+n-1 < j \leq 2n$, tenemos que $\{w_i,w_j\} \in
     P_j$. Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$.
     Por lo tanto $\{V(P_1),V(P_2), \dots, V(P_{2n})\}$ es una partici\'on de
-    $V(F_2(F_{m,n}))$. Por lo tanto $C_1$ es un ciclo hamiltoniano. La Figura
+    $V(F_2(\mathcal{F}_{m,n}))$. Por lo tanto $C_1$ es un ciclo hamiltoniano. La Figura
     \ref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la gr\'afica
-    $F_{8,4}$ para generar la trayectoria $P_6$ en $F_2(F_{8,4})$, donde la
+    $\mathcal{F}_{8,4}$ para generar la trayectoria $P_6$ en $F_2(\mathcal{F}_{8,4})$, donde la
     ficha en ${\color{coral}w_6}$ est\'a est\'atica.
 
 
@@ -449,13 +451,13 @@
             \end{scope}
 
         \end{tikzpicture}
-        \caption{La gr\'afica $F_2(F_{8,4})$, mostrando el movimiento de fichas
+        \caption{La gr\'afica $F_2(\mathcal{F}_{8,4})$, mostrando el movimiento de fichas
         a trav\'es de $P_6$ }
         \label{fig:exe-tray-n-2n}
     \end{figure}
     
     Por \'ultimo, veamos el caso en el que $1<m<2n$ y del mismo modo que en los
-    casos anteriores, definiremos una familia de trayectorias en $F_2(F_{m,n})$.
+    casos anteriores, definiremos una familia de trayectorias en $F_2(\mathcal{F}_{m,n})$.
     Primero definimos $Q_1 =P_1$. Ahora nos fijamos en $1<i<m$ para definir
     $Q_i$. Queremos usar $P_i$ como referencia para generar las nuevas
     trayectorias, pero $P_i$ tiene m\'as v\'ertices de la forma $\{w_i,w_j\}$,
@@ -466,9 +468,9 @@
     $(\{w_m,v_n\},\{w_m,w_1\},\{w_m,v_{n-1}\},\{w_m,v_{n-2}\}, \dots,
     ,\{w_m,v_{n-j}\},\{w_m,w_{n-j-1}\}\xrightarrow[P_m]{}\{w_m,w_{m+1}\})$ al
     intercambiar los v\'ertices $\{w_m,w_{m+1}\}$ y $\{w_m,w_1\}$. Observamos
-    que las trayectorias $Q_i$ son trayectorias en $F_2(F_{m,n})$ pues $v_i \sim
-    v_{i+1}$ en $F_{m,n}$. Adem\'as, esta familia de trayectorias forma una
-    partici\'on para $F_2(F_{m,n})$ pues son las trayectorias $P_i$ al quitarle
+    que las trayectorias $Q_i$ son trayectorias en $F_2(\mathcal{F}_{m,n})$ pues $v_i \sim
+    v_{i+1}$ en $\mathcal{F}_{m,n}$. Adem\'as, esta familia de trayectorias forma una
+    partici\'on para $F_2(\mathcal{F}_{m,n})$ pues son las trayectorias $P_i$ al quitarle
     los v\'ertices $\{w_i,w_j\}$, con $j< n+i-m$. Por \'ultimo, notamos que,
     salvo $Q_m$, las trayectorias $P_i$ y $Q_i$ tienen los mismos v\'ertices
     iniciales y finales, adicionalmente, el \'ultimo v\'ertice de $Q_i$, es
@@ -476,7 +478,7 @@
     $\{v_n,w_1\}$. Por lo tanto el ciclo $C_2=(Q_1,Q_2, \dots, Q_m,
     \{v_n,w_1\})$ es el ciclo hamiltoniano buscado. La
     Figura\ref{fig:exe-tray-n-m} muestra el movimiento de las fichas en la
-    gr\'afica $F_{3,4}$ para generar la trayectoria $P_2$ en la gr\'afica de
+    gr\'afica $\mathcal{F}_{3,4}$ para generar la trayectoria $P_2$ en la gr\'afica de
     $2$-fichas, donde la ficha en ${\color{azulClaro}w_2}$ est\'a fija.
 
 
@@ -570,41 +572,41 @@
 
         \end{tikzpicture}
     
-        \caption{La gr\'afica $F_2(F_{3,4})$, mostrando el movimiento de fichas
+        \caption{La gr\'afica $F_2(\mathcal{F}_{3,4})$, mostrando el movimiento de fichas
         a trav\'es de $P_2$ }
         \label{fig:exe-tray-n-m}     
     \end{figure}
 
-    Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(F_{m,n}))$, con
+    Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(\mathcal{F}_{m,n}))$, con
     $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
     observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$
-    por lo que es un v\'ertice aislado en $F_2(F_{m,n})-S$, donde $i,j \in
+    por lo que es un v\'ertice aislado en $F_2(\mathcal{F}_{m,n})-S$, donde $i,j \in
     \{1,\dots,m\}$ tal que $i \neq j$. Entonces tenemos $\binom{m}{2}$
-    v\'ertices aislados en $F_2(F_{m,n})-S$. Adem\'as, la subgr\'afica inducida
+    v\'ertices aislados en $F_2(\mathcal{F}_{m,n})-S$. Adem\'as, la subgr\'afica inducida
     por los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
-    $F_2(F_{m,n})-S$. Por lo tanto tenemos que $F_2(F_{m,n})-S$ tiene al menos
+    $F_2(\mathcal{F}_{m,n})-S$. Por lo tanto tenemos que $F_2(\mathcal{F}_{m,n})-S$ tiene al menos
     $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene que
     $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
     mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
-    $F_2(F_{m,n})$ no es hamiltoniana.
+    $F_2(\mathcal{F}_{m,n})$ no es hamiltoniana.
 
 \end{proof}
 
 
     \begin{teorema}
         Sean $k, n, m$ enteros positivos tales que $2 \leq k \leq n$ y $1 \leq m
-        \leq 2n$, entonces la gr\'afica $F_k(F_{m,n})$ es hamiltoniana.
+        \leq 2n$, entonces la gr\'afica $F_k(\mathcal{F}_{m,n})$ es hamiltoniana.
     \end{teorema}
 
     \begin{proof}
         Usando doble inducci\'on sobre $m$ y $k$, demostraremos que
-        $F_k(F_{m,n})$ tiene un ciclo hamiltoniano donde los v\'ertices $\{w_1,
+        $F_k(\mathcal{F}_{m,n})$ tiene un ciclo hamiltoniano donde los v\'ertices $\{w_1,
         v_{n-k}, v_{n-k+1}, \dots, v_{n-2}\}$ y $\{v_{n-k}, v_{n-k+1}, \dots,
         v_{n-2}, v_{n-1}\}$ son adyacentes. Notamos que el caso en el que $m =1$
         equivale al Teorema \ref{teo:hamilt-SFan}, haciedo un cambio de
         notaci\'on de $w_1$ a $v_n$. Por lo tanto tenemos que la gr\'afica de
         $k$-fichas es hamiltoniana. Ahora veamos el caso en el que $m>1$,
-        supongamos que la gr\'afica $F_{k'}(F_{m-1,n}$) cumple la hip\'otesis de
+        supongamos que la gr\'afica $F_{k'}(\mathcal{F}_{m-1,n}$) cumple la hip\'otesis de
         inducci\'on, con $2\leq k'\leq n$ y $1 \leq m-1 \leq 2n$. Para el subcaso de
         $k=2$ usaremos \cref{teo:2-TokGenerFan}. Basta ver que el ciclo
         obtenido en el teorema cumple tener la adyacencia deseada, es decir
@@ -617,18 +619,18 @@
         hamiltoniano con la estructura deseada.
 
         Por \'ultimo, nos fijamos en el subcaso donde $k>2$. Sean $S_1$ y $S_2$
-        los conjuntos $S_1=\{A \in F_k(F_{m,n}) \colon\ w_1 \in A\}$ y $S_2=\{A
-        \in F_k(F_{m,n}) \colon\ w_1 \notin A\}$. Estos conjuntos generan una
-        partici\'on de $(F_k(F_{m,n}))$, pues todo v\'ertice de la gr\'afica de
+        los conjuntos $S_1=\{A \in F_k(\mathcal{F}_{m,n}) \colon\ w_1 \in A\}$ y $S_2=\{A
+        \in F_k(\mathcal{F}_{m,n}) \colon\ w_1 \notin A\}$. Estos conjuntos generan una
+        partici\'on de $(F_k(\mathcal{F}_{m,n}))$, pues todo v\'ertice de la gr\'afica de
         $k$-fichas esta, por definici\'on, exactamente en alguno de estos
         conjuntos. Ahora, nombramos $H_1$ y $H_2$ a las subgr\'aficas de
-        $F_k(F_{m,n})$ inducidas por $S_1$ y $S_2$, respectivamente. Por un
+        $F_k(\mathcal{F}_{m,n})$ inducidas por $S_1$ y $S_2$, respectivamente. Por un
         lado, $H_1$ es la gr\'afica de fichas donde todo v\'ertice contiene
-        $w_1$, en otras palabras $H_1= F_k(F_{m,n},\{w_1\})$. Sabemos que
-        $F_k(F_{m,n},\{w_1\}) \cong F_{k-1}(F_{m,n}- w_1)$, por lo tanto $H_1
-        \cong F_{k-1}(F_{m-1,n})$. Por otro lado, observamos que, al ser $H_2$
+        $w_1$, en otras palabras $H_1= F_k(\mathcal{F}_{m,n},\{w_1\})$. Sabemos que
+        $F_k(\mathcal{F}_{m,n},\{w_1\}) \cong F_{k-1}(\mathcal{F}_{m,n}- w_1)$, por lo tanto $H_1
+        \cong F_{k-1}(\mathcal{F}_{m-1,n})$. Por otro lado, observamos que, al ser $H_2$
         la gr\'afica de fichas donde ning\'un v\'ertice tiene a $w_1$, tenemos
-        que $H_2 \cong F_k(F_{m-1,n})$. Por lo tanto $H_1$ y $H_2$ cumplen la
+        que $H_2 \cong F_k(\mathcal{F}_{m-1,n})$. Por lo tanto $H_1$ y $H_2$ cumplen la
         hip\'otesis de induci\'on, es decir, ambos tienen un ciclo hamiltoniano
         que llamamos $C_1$ y $C_2$, respectivamente. Adem\'as, $C_1$ cumple ser
         un ciclo donde los v\'ertices $X_1 = \{w_1, w_2,v_{n-k},v_{n-k+1},
@@ -642,8 +644,8 @@
         Y_2 = \{w_1, v_{n-1}\}$, por lo que $X_1 \sim X_2$ y $Y_1 \sim Y_2$.
         Ahora definimos el ciclo $C = (X_1 \xrightarrow[P_1]{}Y_1,Y_2
         \xrightarrow[P_2^{-1}]{}X_2,X_1)$. Afirmamos que $C$ es el ciclo
-        buscado. Dado que $\{S_1,S_2\}$ es una partici\'on de $V(F_k(F_{m,n}))$,
+        buscado. Dado que $\{S_1,S_2\}$ es una partici\'on de $V(F_k(\mathcal{F}_{m,n}))$,
         entonces $C$ es un ciclo hamiltoniano. Adem\'as tenemos que $Y_1$ y
         $Y_2$ son adyacentes, por lo que $C$ cumple las condiciones deseadas.
-        Por lo tanto $F_k(F_{m,n})$ es una gr\'afica hamiltoniana.
+        Por lo tanto $F_k(\mathcal{F}_{m,n})$ es una gr\'afica hamiltoniana.
         \end{proof}
