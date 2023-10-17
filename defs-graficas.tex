@@ -443,20 +443,22 @@ v\'ertice o conjunto de v\'ertices que, al quitarlo, ``desconecte'' a la
 gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
 \indice{corte por v\'ertices} $S$ de una gr\'afica $G$ es un subconjunto de
 $V(G)$ tal que $G[V(G)-S]$ es inconexa. Decimos que $S$ es un \indice{$k$-corte
-por v\'ertices} si $S|=k$. Cabe notar que no todas las gr\'aficas tienen alg\'un
-corte por v\'ertices, a saber, las gr\'aficas completas (introducidas en la
-siguiente secci\'on) no tienen corte por v\'ertices y son las \'unicas con esta
-propiedad. Ahora, usando el concepto de corte por v\'ertices, definiremos la
-conexidad de una gr\'afica. La \indice{conexidad} de una gr\'afica $G$, denotada
-por $\kappa(G)$, la definimos como la m\'inima cardinalidad de un conjunto de
-corte de $G$, es decir, $\kappa(G)=\min_\{|S| \colon S \textit{ es corte por
-v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no tienen cortes
-por v\'ertices, no obstante, por convenci\'on diremos que una gr\'afica completa
-de $n$ v\'ertices tiene conexidad $n-1$. Por otra parte, diremos que cualquier
-gr\'afica inconexa tiene conexidad $0$. Adicionalmente, diremos que una
-gr\'afica $G$ es \indiceSub{gr\'afica}{$t$-conexa} para toda $t \in \mathbb{N}$
-tal que $\kappa(G)\geq t$. Un ejemplo de conexidad es considerar las gr\'aficas
-en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son conexas, sin
+por v\'ertices} si $|S|=k$. Cabe notar que no todas las gr\'aficas tienen
+alg\'un corte por v\'ertices, a saber, las gr\'aficas completas (introducidas en
+la siguiente secci\'on) no tienen corte por v\'ertices y son las \'unicas con
+esta propiedad. Ahora, usando el concepto de corte por v\'ertices, definiremos
+la conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de una
+gr\'afica $G$, denotado por $\kappa(G)$, se define como la m\'inima cardinalidad
+de un conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S
+\textnormal{ es corte por v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas
+completas no tienen cortes por v\'ertices, no obstante, por convenci\'on diremos
+que una gr\'afica completa de $n$ v\'ertices tiene n\'umero de conexidad $n-1$.
+Por otra parte, el vac\'io es un corte por v\'ertices en cualquier gr\'afica
+inconexa, por lo que una gr\'afica inconexa tiene n\'umero de conexidad $0$.
+Adicionalmente, diremos que una gr\'afica $G$ es
+\indiceSub{gr\'afica}{$t$-conexa} para toda $t \in \mathbb{N}$ tal que
+$\kappa(G)\geq t$. Un ejemplo de conexidad es considerar las gr\'aficas en
+\cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son conexas, sin
 embargo, necesitar\'iamos m\'as v\'ertices para ``desconectar'' la gr\'afica de
 \cref{fig:subgraf} que las gr\'aficas de \cref{fig:isoGraf}. A saber, las
 gr\'aficas de \cref*{fig:isoGraf} son $2$-conexas y la gr\'afica de
@@ -465,13 +467,13 @@ gr\'aficas de \cref*{fig:isoGraf} son $2$-conexas y la gr\'afica de
 Otra manera de abordar el ``desconectar'' una gr\'afica es  pensar en las
 trayectorias internamente ajenas, pues la cantidad de trayectorias internamente
 ajenas entre dos v\'ertices nos habla de cu\'antas maneras diferentes hay de
-conectar un v\'ertice con otro. De hecho, existe una relaci\'on entra la
+conectar un v\'ertice con otro. De hecho, existe una relaci\'on entre la
 conexidad de una gr\'afica y la cantidad de trayectorias internamente ajenas que
-hay entre cualesquiera dos v\'ertices de dicha gr\'afica. Para ayudar a
-visualizar dicha relaci\'on, en \cref{fig:ex-menger} se muestran dos copias de
-una gr\'afica, donde cada una resalta cosas diferentes. Del lado izquierdo se
-muestran tres $v_1v_5$-trayectorias internamente ajenas, cada una resaltada de
-un color diferente. Del lado derecho se muestra el corte por v\'ertices
+hay entre cualesquiera dos des sus v\'ertices. Para ayudar a visualizar dicha
+relaci\'on, en \cref{fig:ex-menger} se muestran dos copias de una gr\'afica,
+donde cada una resalta cosas diferentes. Del lado izquierdo se muestran tres
+$v_1v_5$-trayectorias internamente ajenas, cada una resaltada de un color
+diferente. Del lado derecho se muestra el corte por v\'ertices
 ${\color{morado}\bf \{v_2, v_6, v_7\} }$, donde cada v\'ertice est\'a relleno de
 morado. Observemos que cada v\'ertice del corte por v\'ertices se encuentra en
 una $v_1v_5$-trayectoria internamente ajena con las dem\'as. Para facilitar esta
