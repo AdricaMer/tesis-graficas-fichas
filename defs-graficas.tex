@@ -348,7 +348,8 @@ una trayectoria contenida por lo que ahora nos enfocaremos en trayectorias. Como
 se mencion\'o anteriormente, entre dos v\'ertices $u$ y $v$ pueden existir
 m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
 \textbf{$uv$-trayectorias} \indiceSub{$uv$-trayectoria}{internamente ajenas} si
-$V(X)\cap V(Y)=\{u,v\}$. Tambi\'en podemos definir un concepto similar
+$V(X)\cap V(Y)=\{u,v\}$. El m\'aximo n\'umero de $uv$-trayectorias internamente
+ajenas se denota por $p(u,v)$. Tambi\'en podemos definir un concepto similar
 enfoc\'andonos en aristas, es decir, dos $uv$-trayectorias que no tengan aristas
 en com\'un. A estas trayectorias las llamamoas \textbf{$uv$-trayectorias}
 \indiceSub{$uv$-trayectoria}{ajenas por aristas}. Estos conceptos nos sevir\'ann
@@ -442,27 +443,31 @@ una gr\'afica. Para esto puede resultar natural cuestionarse si existe alg\'un
 v\'ertice o conjunto de v\'ertices que, al quitarlo, ``desconecte'' a la
 gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
 \indice{corte por v\'ertices} $S$ de una gr\'afica $G$ es un subconjunto de
-$V(G)$ tal que $G[V(G)-S]$ es inconexa. Decimos que $S$ es un \indice{$k$-corte
-por v\'ertices} si $|S|=k$. Cabe notar que no todas las gr\'aficas tienen
-alg\'un corte por v\'ertices, a saber, las gr\'aficas completas (introducidas en
-la siguiente secci\'on) no tienen corte por v\'ertices y son las \'unicas con
-esta propiedad. Ahora, usando el concepto de corte por v\'ertices, definiremos
-la conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de una
-gr\'afica $G$, denotado por $\kappa(G)$, se define como la m\'inima cardinalidad
-de un conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S
-\textnormal{ es corte por v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas
-completas no tienen cortes por v\'ertices, no obstante, por convenci\'on diremos
-que una gr\'afica completa de $n$ v\'ertices tiene n\'umero de conexidad $n-1$.
-Por otra parte, el vac\'io es un corte por v\'ertices en cualquier gr\'afica
-inconexa, por lo que una gr\'afica inconexa tiene n\'umero de conexidad $0$.
-Adicionalmente, diremos que una gr\'afica $G$ es
-\indiceSub{gr\'afica}{$t$-conexa} para toda $t \in \mathbb{N}$ tal que
-$\kappa(G)\geq t$. Un ejemplo de conexidad es considerar las gr\'aficas en
-\cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son conexas, sin
-embargo, necesitar\'iamos m\'as v\'ertices para ``desconectar'' la gr\'afica de
-\cref{fig:subgraf} que las gr\'aficas de \cref{fig:isoGraf}. A saber, las
-gr\'aficas de \cref*{fig:isoGraf} son $2$-conexas y la gr\'afica de
-\cref{fig:subgraf} es $6$-conexa.
+$V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el conjunto $S$
+\indice{separa} a la gr\'afica en dos o m\'as componentes conexas. Decimos que
+$S$ es un \indice{$k$-corte por v\'ertices} si $|S|=k$. A un corte por
+v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$ se le llama
+\indice{$uv$-corte por v\'ertices}. La m\'inima cardinalidad de un $uv$-corte
+por v\'ertices se denota $C(u,v)$ y no est\'a definida si $u$ y $v$ son
+adyacentes o $x=y$.  Cabe notar que no todas las gr\'aficas tienen alg\'un corte
+por v\'ertices, a saber, las gr\'aficas completas (introducidas en la siguiente
+secci\'on) no tienen corte por v\'ertices y son las \'unicas con esta propiedad.
+Ahora, usando el concepto de corte por v\'ertices, definiremos la conexidad de
+una gr\'afica. El \indice{n\'umero de conexidad} de una gr\'afica $G$, denotado
+por $\kappa(G)$, se define como la m\'inima cardinalidad de un conjunto de corte
+de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por
+v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no tienen cortes
+por v\'ertices, no obstante, por convenci\'on diremos que una gr\'afica completa
+de $n$ v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io
+es un corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una
+gr\'afica inconexa tiene n\'umero de conexidad $0$. Adicionalmente, diremos que
+una gr\'afica $G$ es \indiceSub{gr\'afica}{$t$-conexa} si $|G|>t$ y $G-X$ es conexa para todo
+conjunto de v\"ertices $X$ tal que $|X|<t$. Un ejemplo de conexidad es
+considerar las gr\'aficas en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos
+que ambas son conexas, sin embargo, necesitar\'iamos m\'as v\'ertices para
+``desconectar'' la gr\'afica de \cref{fig:subgraf} que las gr\'aficas de
+\cref{fig:isoGraf}. A saber, las gr\'aficas de \cref*{fig:isoGraf} son
+$2$-conexas y la gr\'afica de \cref{fig:subgraf} es $6$-conexa.
 
 Otra manera de abordar el ``desconectar'' una gr\'afica es  pensar en las
 trayectorias internamente ajenas, pues la cantidad de trayectorias internamente
@@ -482,7 +487,7 @@ del mismo color que la $v_1v_5$-trayectoria internamente ajena a la que nos
 referimos. La relaci\'on entre la cantidad de trayectorias internamente ajenas
 entre cualesquiera dos v\'ertices de una gr\'afica y la conexidad de \'esta fue
 demostrada por Menger y es un teorema de mucha relevancia en Teor\'ia de
-Gr\'aficas. En \cref*{teo:menger} se demuestra una versi\'on global de este
+Gr\'aficas. En \cref*{teo:mengerGen} se demuestra una versi\'on global de este
 teorema. 
 
 \begin{figure}[htb!]
@@ -551,13 +556,51 @@ teorema.
 
 \begin{teorema}
     \label{teo:menger}
-Sea $G$ una gr\'afica, $G$ es $k$-conexa si y s\'olo si contiene $k$
-trayectorias internamente ajenas entre cualesquiera dos v\'ertices de $G$.
+    Sea $G$ una gr\'afica y sean $u, v \in V(G)$. Si $u$ y $v$ no son adyacentes
+    en $G$, entonces el m\'aximo n\'umero de $uv$-trayectorias internamente
+    ajenas es igual al m\'inimo n\'umero de $uv$-corte por v\'ertices.
 \end{teorema}
 
 \begin{proof}
     
 \end{proof}
+
+A continuaci\'on, en \cref{teo:mengerGen}, se enuncia y demuestra la versi\'on
+global del Teorema de Menger, es decir, la conexidad de una gr\'afica y la
+cantidad de trayectorias internamente ajenas entre cualesquiera dos v\'ertices
+de dicha gr\'afica.
+
+\begin{teorema}
+    \label{teo:mengerGen}
+     Sea $G$ una gr\'afica, $G$ es $k$-conexa si y s\'olo si contiene
+     $k$-trayectorias internamente ajenas entre cualesquiera dos v\'ertices de
+     $G$.
+ \end{teorema}
+
+ \begin{proof}
+     Primero, sea $G$ una gr\'afica $k$-conexa. Supongamos que existen $u,v \in
+     V(G)$, de manera que el n\'umero de $uv$-trayectorias internamente ajenas
+     sea $t$, con $t<k$. Por el Teorema de Menger (referencia) tenemos que $u\sim
+     v$. Ahora consideramos la gr\'afica $G'$, la subgr\'afica de $G$ obtenida al
+     quitarle la arista $uv$. Entonces, en $G'$ hay $t-1$ trayectorias
+     internamente ajenas entre $u$ y $v$. Por ende, por el Teorema de Menger
+     (ref), tenemos que un $uv$-corte por v\'ertices $x$ tiene, a lo m\'as,
+     cardinalidad $t-1$. Ahora, como $|G|>k$, entonces existe un v\'ertice $w \in
+     V(G)$ tal que $w \notin X\cup\{u,v\}$. Observamos que $X$ separa a $w$ de
+     $u$ o $v$, sin p\'erdida de generalidad supongamos que es un $uw$-corte por
+     v\'ertices. Entonces tenemos que $X\cup\{v\}$ es un conjunto de cardinalidad
+     a lo m\'as $t$ que separa a los v\'ertices $u$ y $w$ en $G$. Esto es una
+     contradicci\'on, pues $G$ es $k$-conexa. Por lo tanto $G$ contiene
+     $k$-trayectorias internamente ajenas entre cualesquiera dos v\'ertices.
+ 
+     Ahora, supongamos que $G$ contiene $k$-trayectorias internamente ajenas
+     entre cualesquiera dos v\'ertices. Por ello, tenemos que $|G|>k$. Adem\'as,
+     dados dos v\'ertices $u$ y $v$, cualquier $uv$-corte por v\'ertices tiene
+     cardinalidad al menos $k$, a saber un v\'ertice por cada $uv$-trayectoria
+     internamente ajena. Por lo tanto $G$ es $k$-conexa.
+         
+ \end{proof}
+ 
 
 \section{Operaciones}
 \label{sec:operaciones}
@@ -781,9 +824,31 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-bip}.
     Una gr\'afica $G$ es bipartita si y s\'olo si no contiene ciclos de longitud impar.
 \end{teorema}
 
-
+%TODO: demostrar que Una gr\'afica es bipartita si y s\'olo si cada una de sus
+%componentes es bipartita
 \begin{proof}
-    
+    Una gr\'afica es bipartita si y s\'olo si cada una de sus componentes es
+    bipartita. Entonces podemos suponer $G$ conexa. Primero, consideremos $G$
+    una gr\'afica bipartita con partici\'on $(X,Y)$. Buscamos probar que $G$,
+    para esto tomamos $C=(v_1,v_2,\dots, v_k,v_1)$ un ciclo en $G$. Sin perdida
+    de generalidad, consideramos $v_1 \in X$, entonces tenemos que $v_2 \in Y$,
+    pues $G$ es bipartita. Entonces tenemos que $v_i \in X$ y $v_j \in Y$ si y
+    s\'olo si $i$ es impar y $j$ es par. Adem\'as, tenemos que $v_k \in Y$ pues
+    $v_kv_1 \in E(G)$ y $v_1 \in X$. Por lo tanto $k$ es par, es decir $C$ tiene
+    longitud par. En consecuencia $G$ no contiene ciclos impares.
+
+    Ahora veamos la segunda implicaci\'on, para esto consideramos $G$ una
+    gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$
+    construimos la siguiente partici\'on de $V(G)$. Denotamoos $X$ al conjunto
+    de los v\'ertices de $G$ que est\'en a distancia impar de $v$, es decir $X =
+    \{u \in V(G) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro
+    conjunto de la partici\'on como $Y = V(G)\setminus X$. Basta que no existen
+    aristas entre cualesquiera dos v\'ertices de $X$ o entre cualesquiera dos
+    v\'ertices de $Y$. Supongamos que existen $u,w \in X$ tales que $uw \in
+    E(G)$, entonces el ciclo $C=(v, \dots,u,w,\dots,v)$ tiene longiutd impar, lo
+    cu\'al es una contradicci\'on. Analogamente, si consideramos $u,w \in Y$ con
+    $uw \in E(G)$ obtenemos un ciclo impar. Por lo tanto $G$ es una gr\'afica
+    bipartita con partici\'on $(X,Y)$.
 \end{proof}
     
 Otra  familia de gr\'aficas que se estudiar\'a este trabajo son los abanicos.Un
