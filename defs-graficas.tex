@@ -231,7 +231,7 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
     \centering
        \begin{tikzpicture}
     
-            \begin{scope}[xshift=0cm,scale=1]
+            \begin{scope}[xshift=0cm,scale=0.9]
                 \foreach \i in {5,...,7} 
                     \draw ({(360/4)*\i}:1.3) node(\i)[avertex, fill=coral,
                     label=(360/4)*\i:{\large $v_{\i}$}]{};
@@ -365,7 +365,7 @@ v\'ertices y aristas que $X$.
     \centering
         \begin{tikzpicture}
     
-            \begin{scope}[xshift=0cm,scale=1]
+            \begin{scope}[xshift=0cm,scale=0.8]
                 \foreach \i in {1,2} \draw ({(360/6)*\i}:2.5)
                     node(\i)[vertex, label=(360/6)*\i:{\large $v_{\i}$}]{};
             
@@ -494,7 +494,7 @@ teorema.
     \centering
     \begin{tikzpicture}
     
-        \begin{scope}[xshift=0cm,scale=1]
+        \begin{scope}[xshift=0cm,scale=0.8]
             \foreach \i in {2,3} \draw ({(360/6)*\i}:2.5)
                 node(\i)[vertex, label=(360/6)*\i:{\large $v_{\i}$}]{};
             
@@ -524,7 +524,7 @@ teorema.
 
         \end{scope}
 
-        \begin{scope}[xshift=8cm,scale=1]
+        \begin{scope}[xshift=8cm,scale=0.8]
             \foreach \i in {1,5} \draw ({(360/6)*\i}:2.5)
                 node(\i)[wvertex, fill=verde, label=(360/6)*\i:{\large $v_{\i}$}]{};
             
@@ -632,28 +632,28 @@ se muestra la uni\'on completa de dichas gr\'aficas.
     \centering
     \begin{tikzpicture}
 
-        \begin{scope}[yshift=1.5cm,scale=1]
+        \begin{scope}[yshift=1cm,xshift=-2cm,rotate=45,scale=1]
             \foreach \i in {1,...,3}
             \draw ({(360/3)*\i-150}:1)
-                node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
+                node(\i)[vertex, label=(360/3)*\i-105:{\large $v_{\i}$}]{};
             \end{scope}
 
-        \begin{scope}[yshift=-1.5cm,scale=1]
+        \begin{scope}[yshift=-1cm,rotate=45,scale=1]
             \foreach \i in {4,...,6}
             \draw ({(360/3)*\i+30}:1)
-                node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
+                node(\i)[vertex, label=(360/3)*\i+75:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
         \end{scope}
 
         \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4,1/4,1/5,1/6,2/4,2/5,2/6,3/4,3/5,3/6}
         \draw [edge,grisOscuro] (\i) to (\j);
 
-        \begin{scope}[yshift=1.5cm,xshift=-6cm,scale=1]
+        \begin{scope}[yshift=1cm,xshift=-8cm,rotate=45,scale=1]
             \foreach \i in {1,...,3}
             \draw ({(360/3)*\i-150}:1)
                 node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
             \end{scope}
 
-        \begin{scope}[yshift=-1.5cm,xshift=-6cm,scale=1]
+        \begin{scope}[yshift=-1cm,xshift=-6cm,rotate=45,scale=1]
             \foreach \i in {4,...,6}
             \draw ({(360/3)*\i+30}:1)
                 node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
@@ -730,7 +730,7 @@ sus propiedades.
     \centering
         \begin{tikzpicture}
         
-            \begin{scope}[xshift=0cm,scale=0.8]
+            \begin{scope}[xshift=0cm,scale=0.7]
 
                 \foreach \i in {1,2,3} \draw ({(360/3)*\i}:1.8)
                     node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
@@ -925,15 +925,15 @@ ciclo hamiltoniano.
     \centering
         \begin{tikzpicture}
         
-            \begin{scope}[xshift=0cm,scale=0.8]
+            \begin{scope}[xshift=0cm,scale=0.7]
 
                 \foreach \i in {1,...,3}
                  \draw ({(360/3)*\i-90}:0.7)
-                    node(\i)[vertex, label=(360/3)*\i-90:{\large $v_{\i}$}]{};
+                    node(\i)[vertex, label=(360/3)*\i-90:{$v_{\i}$}]{};
                 
                 \draw (0,3) node (4) [vertex, label=90:{\large $v_4$}] {};
-                \draw (3,-1.5) node (5) [vertex, label=0:{\large $v_5$}] {};
-                \draw (-3,-1.5) node (6) [vertex, label=180:{\large $v_6$}] {};
+                \draw (3.1,-1.5) node (5) [vertex, label=0:{\large $v_5$}] {};
+                \draw (-3.1,-1.5) node (6) [vertex, label=180:{\large $v_6$}] {};
                 
                 \foreach \i/\j in {4/5,2/3,3/6,1/4}
                     \draw [edge,grisOscuro!50] (\i) to (\j);
@@ -942,15 +942,15 @@ ciclo hamiltoniano.
                     \draw [wedge,verde!110] (\i) to (\j);
                 \end{scope}
         
-            \begin{scope}[xshift=7.5cm,scale=0.8]
+            \begin{scope}[xshift=7.5cm,scale=0.7]
 
                 \foreach \i in {1,...,3}
                  \draw ({(360/3)*\i-90}:0.7)
-                    node(\i)[vertex, label=(360/3)*\i-90:{\large $v_{\i}$}]{};
+                    node(\i)[vertex, label=(360/3)*\i-90:{$v_{\i}$}]{};
                 
                 \draw (0,3) node (4) [vertex, label=90:{\large $v_4$}] {};
-                \draw (3,-1.5) node (5) [vertex, label=0:{\large $v_5$}] {};
-                \draw (-3,-1.5) node (6) [vertex, label=180:{\large $v_6$}] {};
+                \draw (3.1,-1.5) node (5) [vertex, label=0:{\large $v_5$}] {};
+                \draw (-3.1,-1.5) node (6) [vertex, label=180:{\large $v_6$}] {};
                 
                 \foreach \i/\j in {1/2,2/3,4/5,6/4,1/5,3/6}
                     \draw [edge,grisOscuro!50] (\i) to (\j);
@@ -1001,7 +1001,7 @@ propia por aristas, del lado derecho.
     \centering
     \begin{tikzpicture}
     
-        \begin{scope}[xshift=-8cm]
+        \begin{scope}[xshift=-8cm,scale=0.8]
             \foreach \i in {2,5} 
                 \draw ({(360/5)*\i}:2.5) node(\i)[vertex, fill=coral,
                 label=(360/5)*\i:{\large
@@ -1017,7 +1017,7 @@ propia por aristas, del lado derecho.
                 \draw [edge,grisOscuro] (\i) to (\j);
             \end{scope}
 
-        \begin{scope}[xshift=0cm]
+        \begin{scope}[xshift=0cm,scale=0.8]
             \foreach \i in {1,...,5}
                 \draw ({(360/5)*\i}:2.5) node(\i)[vertex,
                 label=(360/5)*\i:{\large $v_{\i}$}]{};
