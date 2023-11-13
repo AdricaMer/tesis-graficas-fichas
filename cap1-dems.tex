@@ -104,6 +104,82 @@ $\delta +1$ v\'ertices, con $k \leq \delta +1$, es decir una trayectoria de
 di\'ametro $\delta$. Es f\'acil observar que para toda $k$ obtenemso una
 gr\'afica de $k$-fichas de di\'ametro $k(\delta-k+1)$. 
 
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-6cm,yshift=-3cm,rotate=135]
+            \draw (2,2) node (1) [vertex,label=0:{\footnotesize $56$}] {};
+            \draw (2,1) node (2) [vertex,label=0:{\footnotesize $46$}] {};
+            \draw (2,0) node (3) [vertex,label=0:{\footnotesize $36$}] {};
+            \draw (2,-1) node (4) [vertex,label=0:{\footnotesize $26$}] {};
+            \draw (2,-2) node (5) [vertex,label=270:{\footnotesize $16$}] {};
+            \draw (-2,-2) node (6) [vertex,label=270:{\footnotesize $12$}] {};
+            \draw (-1,-2) node (7) [vertex,label=270:{\footnotesize $13$}] {};
+            \draw (0,-2) node (8) [vertex,label=270:{\footnotesize $14$}] {};
+            \draw (1,-2) node (9) [vertex,label=270:{\footnotesize $15$}] {};
+            \draw (-1,-1) node (10) [vertex,label=270:{\footnotesize $23$}] {};
+            \draw (0,-1) node (11) [vertex,label=270:{\footnotesize $24$}] {};
+            \draw (1,-1) node (12) [vertex,label=270:{\footnotesize $25$}] {};
+            \draw (0,0) node (13) [vertex,label=270:{\footnotesize $34$}] {};
+            \draw (1,0) node (14) [vertex,label=270:{\footnotesize $35$}] {};
+            \draw (1,1) node (15) [vertex,label=270:{\footnotesize $55$}] {};
+
+            \foreach \i/\j in{1/2,2/3,3/4,4/5,6/7,7/8,8/9,5/9,10/11,11/12,4/12,
+            13/14,3/14,2/15,9/12,12/14,14/15,8/11,11/13,7/10} 
+                \draw [edge] (\i) to (\j);
+        \end{scope}
+        
+        \begin{scope}[rotate=-55]
+           
+            \draw (2,0) node (21) [vertex,label=180:{\footnotesize $236$}] {};
+            \draw (2,-1) node (22) [vertex,label=180:{\footnotesize $136$}] {};
+            \draw (2,-2) node (23) [vertex,label=270:{\footnotesize $126$}] {};
+            \draw (-1,-2) node (24) [vertex,label=250:{\footnotesize $123$}] {};
+            \draw (0,-2) node (25) [vertex,label=250:{\footnotesize $124$}] {};
+            \draw (1,-2) node (26) [vertex,label=250:{\footnotesize $125$}] {};
+            \draw (0,-1) node (27) [vertex,label=120:{\footnotesize $134$}] {};
+            \draw (1,-1) node (28) [vertex,label=180:{\footnotesize $135$}] {};
+            \draw (0,0) node (29) [vertex,label=90:{\footnotesize $234$}] {};
+            \draw (1,0) node (20) [vertex,label=80:{\footnotesize $235$}] {};
+            
+            
+            \foreach \i/\j in{21/22,22/23,24/25,25/26,23/26,27/28,22/28,29/20,
+            21/20,29/27,25/27,28/20,26/28} 
+                \draw [edge] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=3.2cm,yshift=0cm,rotate=-55]
+           
+            \draw (2,0) node (31) [vertex,label=0:{\footnotesize $356$}] {};
+            \draw (2,-1) node (32) [vertex,label=0:{\footnotesize $256$}] {};
+            \draw (2,-2) node (33) [vertex,label=270:{\footnotesize $156$}] {};
+            \draw (2,1) node (34) [vertex,label=0:{\footnotesize $456$}] {};
+            \draw (0,-2) node (35) [vertex,label=0:{\footnotesize $145$}] {};
+            \draw (1,-2) node (36) [vertex,label=250:{\footnotesize $146$}] {};
+            \draw (0,-1) node (37) [vertex,label=90:{\footnotesize $245$}] {};
+            \draw (1,-1) node (38) [vertex,label=90:{\footnotesize $246$}] {};
+            \draw (0,0) node (39) [vertex,label=90:{\footnotesize $345$}] {};
+            \draw (1,0) node (30) [vertex,label=80:{\footnotesize $346$}] {};
+            
+            
+            \foreach \i/\j in{31/32,32/33,31/34,35/36,33/36,37/38,32/38,39/30,
+            31/30,39/37,35/37,38/30,36/38} 
+                \draw [edge] (\i) to (\j);
+        \end{scope}
+
+        \foreach \i/\j in{22/36,28/35,21/38,20/37} 
+            \draw [edge] (\i) to (\j);
+        
+    \end{tikzpicture}
+
+\caption{La gr\'afica de $2$-fichas  (izquierda) y la gr\'afica de $3$-fichas 
+(derecha) de la trayectoria $P_6$, resaltando el di\'ametro en ambas gr\'aficas}
+\label{fig:ex-diamP}       
+\end{figure}
+%TODO:resaltar el di\'ametro en fig:ex-diamP
+
 Nuestro siguiente resultado muestra que algunas subgr\'aficas inducidas de las
 gr\'aficas de fichas son productos cartesianos de algunas subgr\'aficas
 inducidas de $G$.
