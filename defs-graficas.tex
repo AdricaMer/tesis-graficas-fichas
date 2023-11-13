@@ -268,24 +268,24 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 \section{Caminos y conexidad}
 \label{sec:CamConex}
 
-%camino/trayectoria/ciclo generador
 %primera instancia
 %comunmente
 
-En Teor\'ia de Gr\'aficas resulta interesante preguntarse si, en una
-gr\'afica, hay alg\'un ``v\'inculo'' entre dos v\'ertices. Si estos dos
-v\'ertices son adyacentes, es claro que ese v\'inculo existe a trav\'es de
-la arista que comparten. Un \indice{$uv$-camino} entre los v\'ertices $u$ y
-$v$ de una gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y aristas
-de $G$ de la siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1},
-e_k,v_k)$ con $v_i \in V(G)$ y $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0,
-\dots, k\}$ y $j \in \{ 1, \dots, k\}$. Este $uv$-camino es una forma de
-vincular el v\'ertice $u$ con el v\'ertice $v$. En caso de que no sea
-necesario especificar de qu\'e v\'ertice a qu\'e v\'ertice va la suceci\'on,
-nos referiremos simplemente a un \indice{camino}. Al ser una sucesi\'on, a
-un camino $W$ se le puede asociar una longitud, que ser\'a el n\'umero de
-posiciones en la sucesi\'on $W$ que son ocupadas por aristas, se denota
-$\ell(W)$. 
+En Teor\'ia de Gr\'aficas resulta interesante preguntarse si, en una gr\'afica,
+hay alg\'un ``v\'inculo'' entre dos v\'ertices. Si estos dos v\'ertices son
+adyacentes, es claro que ese v\'inculo existe a trav\'es de la arista que
+comparten. Un \indice{$uv$-camino} entre los v\'ertices $u$ y $v$ de una
+gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y aristas de $G$ de la
+siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i
+\in V(G)$ y $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0, \dots, k\}$ y $j \in
+\{ 1, \dots, k\}$. Es importante notar que un camino no siempre tiene aristas.
+Un camino trivial si \'unicamente tiene un v\'ertice y no tiene aristas. E\'este
+es el \'unico caso en el que un camino no tiene aristas.Este $uv$-camino es una
+forma de vincular el v\'ertice $u$ con el v\'ertice $v$. En caso de que no sea
+necesario especificar de qu\'e v\'ertice a qu\'e v\'ertice va la suceci\'on, nos
+referiremos simplemente a un \indice{camino}. Al ser una sucesi\'on, a un camino
+$W$ se le puede asociar una longitud, que ser\'a el n\'umero de posiciones en la
+sucesi\'on $W$ que son ocupadas por aristas, se denota $\ell(W)$. 
 
 Al poderle asignar una longitud a un camino, es natural utilizar esta longitud
 para ver que tan ``cercano'' esta un v\'ertice de otro. Pero, observamos que, un
@@ -361,6 +361,12 @@ $uv$-trayectoria $X$, su \textbf{trayectoria} \indiceSub{trayectoria}{inversa},
 a la cu\'al denotamos $X^{-1}$, es una $vu$-trayectoria que tiene los mismos
 v\'ertices y aristas que $X$.
 
+Algo interesante de observar es que, a pesar de que las trayectorias las
+definimos a partir de tener a v\'ertices como extremos, tambi\'en se pueden
+definir con conjuntos. Sean $X,Y \subseteq V(G)$, definimos la trayectoria
+$P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si $V(P) \cap X= \{v_1\}$ y $V(P)
+\cap Y= \{v_r\}$
+
 \begin{figure}[htb!]
     \centering
         \begin{tikzpicture}
@@ -419,8 +425,11 @@ Cuando los extremos de un camino son iguales, se llama \textbf{camino}
 la pena resaltar el caso en el que un camino cerrado no repite v\'ertices (salvo
 los extremos). Un \indice{ciclo} es un camino cerrado de longitud al menos $3$
 que, adem\'as, no repite v\'ertices, salvo los extremos.  Muchas v\'eces nos
-interesa saber si una gr\'afica contiene o no contiene ciclos.   Una gr\'afica
-sin ciclos es llamada \indiceSub{gr\'afica}{ac\'iclica}.
+interesa saber si una gr\'afica contiene o no contiene ciclos. Una gr\'afica sin
+ciclos es llamada \mathbb{gr\'afica} \indiceSub{gr\'afica}{ac\'iclica}. Algo que
+tambi\'en nos ser\'a de utilidad m\'as adelante es el ciclo generador. Un
+\mathbb{ciclo}\indiceSub{ciclo}{generador} es un ciclo cuyo conjunto de
+v\'ertices es el mismo al conjunto de la gr\'afica.
    
 Hasta ahora nos hemos enfocado en los ``v\'inculos'' entre dos v\'ertices de una
 gr\'afica. Sin embargo, es importante mencionar que no siempre existe manera de
@@ -556,21 +565,125 @@ teorema.
 % que existan entre dichos
 % v\'ertices.
 
+%TODO: definir contraccion de una arista
+%TODO: defiir $XY$-corte por v\'ertices
+
 \begin{teorema}
     \label{teo:menger}
-    Sea $G$ una gr\'afica y sean $u, v \in V(G)$. Si $u$ y $v$ no son adyacentes
-    en $G$, entonces el m\'aximo n\'umero de $uv$-trayectorias internamente
-    ajenas es igual al m\'inimo n\'umero de $uv$-corte por v\'ertices.
+    Sea $G$ una gr\'afica y sean $X, Y \subseteq V(G)$. Entonces el m\'aximo
+    n\'umero de $XY$-trayectorias internamente ajenas en $G$ es igual al
+    m\'inimo n\'umero de v\'ertices que separan a $X$ de $Y$.
 \end{teorema}
 
 \begin{proof}
-    
+    Denotaremos por $k$ al m\'inimo n\'umero de v\'ertices que separan a $X$ de
+    $Y$ en $G$. Observamos que, dada una familia de $XY$-trayectorias
+    interamente ajenas, cada trayectoria contiene al menos un v\'ertice del
+    conjunto que separa a $X$ de $Y$. Entonces, no pueden existir m\'as de $k$
+    trayectorias internamente ajenas entre $X$ y $Y$ pues, de ser as\'i,
+    ning\'un $k$-conjunto separar\'ia a $X$ y $Y$. Por lo tanto, basta demostrar
+    que existen $k$ trayectorias internamente ajenas entre $X$ y $Y$. Se
+    demostrar\'a por inducci\'on sobre el n\'umero de aristas de $G$. Primero
+    veamos el caso en el que $G$ no tiene aristas, entonces la \'unica manera de
+    separar a $X$ de $Y$ es quitar los v\'ertices que tienen en com\'un, en
+    otras palabras $|X \cap Y|=k$. Por otro lado, las $XY$-trayectorias
+    internamente ajenas de $G$ son las trayectorias triviales tomando los
+    v\'ertices de $X \cap Y$. Por lo tanto tenemos el n\'umero de
+    $XY$-trayectorias internamente ajenas es $|X\cap Y|=k$.
+
+    Ahora supongamos que $E(G) \neq \varnothing$ y supongamos que el teorema es
+    v\'alido para gr\'aficas $G'$ tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una
+    arista de $G$. Primero consideremos $G\setminus e$, la gr\'afica obtenida de
+    contraer los extremos de $e$. Al v\'ertice obtenido de contraer la arista
+    $e$ lo nombramos $x_e$. Redefinimos los conjuntos $X$ y $Y$ para $G
+    \setminus e$. Si $u\in X$ o $v\in X$, entonces definimos $X'=(X \setminus
+    \{u,v\}) \cup \{x_e\}$; en otro caso definimos $X'=X$. An\'alogamente,
+    definimos $Y'= (Y \setminus \{u,v\}) \cup \{x_e\}$ si $u \in Y$ o $v \in Y$
+    y definimos $Y'=Y$ en otro caso. Sea $A \subseteq V(G \setminus e)$ un
+    $X'Y'$-corte por v\'ertices. Entonces, por hip\'otesis de inducci\'on, el
+    n\'umero de $X'Y'$-trayectorias internamente ajenas en $G\setminus e$ es
+    $|A|$. Entonces, en $G$, el n\'umero de $XY$-trayectorias internamente
+    ajenas es al menos $|A|$. Por eso, si $|A| \geq k$, entonces tenemos que el
+    n\'umero de $XY$-trayectorias internamente ajenas en $G$ es $k$. Ahora, si
+    $|A| \leq k-1$, entonces podemos afirmar que $x_e \in A$, pues de lo
+    contrario tendr\'iamos que $A$ es es un $XY$-corte por v\'ertices en $G$.
+    Definimos $A'$ como el conjunto obtenido de $A$ al quitarle el v\'ertice
+    $x_e$ y a\~{n}adire los v\'ertices $u$ y $v$, es decir $A'=(A \setminus
+    \{x_e\})\cup \{u,v\}$. Observamos que el conjunto $A'$ separa  a $X$ de $Y$.
+    La cardinalidad de $A'$ es $|A|+1 \leq (k-1)+1= k$, por otro lado, al
+    separar a $X$ y a $Y$ tenemos que $|A'| \geq k$. Por lo tanto $|A'|=k$.
+
+    Ahora consideramos la gr\'afica $G-e$. Afirmamos que cualquier conjunto de
+    v\'ertices que separan a $X$ de $A'$ en $G-e$ tambi\'en separa a $X$ de $Y$
+    en $G$. Para demostrar esto, tomamos $B$ un conjunto que separa a $X$ de
+    $A'$ en $G-e$. Observamos que toda $XY$-trayectoria en $G$ tiene alg\'un
+    v\'ertice de $A'$. Dada una familia de $XY$-trayectorias, tomando el primer
+    v\'ertice de cada trayectoria que, a su vez, est\'e contenido en $A'$. De
+    esta manera obtenemos una $XA'$-trayecotira por cada $XY$-trayectoria. Como
+    $x,y \in A'$, entonces tenemos que dichas $XA'$-trayectorias tambi\'en son
+    trayectorias de $G-e$, pues cada una contiene exactamente un v\'erticede
+    $A'$. Entonces cada $XA'$-trayectoria tiene un v\'ertice en $B$. Por lo
+    tanto cada $XY$-trayectoria contiene un v\'ertice de $B$. Entonces se sigue
+    que $B$ es un conjunto que separa a $X$ de $Y$ en $G$. Observamos que
+    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, es decir,
+    la familia de estas $XA'$-trayectorias tiene la misma cardinalidad de $B$.
+    Notamos que, por construcci\'on, las $XA'$-trayectorias tambi\'en son
+    trayectorias de $G$. Adem\'as tenemos que, al ser $B$ un conjunto que separa
+    a $X$ y a $Y$, $|B| \leq k$. Por lo tanto tenemos que existen $k$
+    $XA'$-trayectorias internamente ajenas en $G$. De manera an\'aloga tenemos
+    que hay $k$ trayectorias internamente ajenas de $Y$ a $A'$ en $G$. Como $A'$
+    separa a $X$ y a $Y$, entones los v\'ertices que comparten las
+    $XA'$-trayectorias y las $YA'$-trayectorias son v\'ertices de $A'$. Sean
+    $a_1, \dots, a_k$ los v\'ertices de $A'$. Denotamos $P_i$ a la
+    $XA'$-trayectoria que contiene a $a_i$ y $Q_i$ a la $YA'$-trayectoria que
+    contiene a $a_i$, con $i \in \{1. \dots, k\}$. Ahora construimos una familia
+    de $XY$-trayectorias internamente ajenas en $G$ de la siguiente manera, $X
+    \xrightarrow[P_i]{} a_i \xrightarrow[Q_i]{} Y$, para toda $i \in \{1, \dots,
+    k\}$. Por lo tanto $G$ tiene $k$ $XY$-trayectorias internamente ajenas. 
 \end{proof}
 
-A continuaci\'on, en \cref{teo:mengerGen}, se enuncia y demuestra la versi\'on
-global del Teorema de Menger, es decir, la conexidad de una gr\'afica y la
-cantidad de trayectorias internamente ajenas entre cualesquiera dos v\'ertices
-de dicha gr\'afica.
+ Tambi\'en existe una versi\'on del Teorema de Menger para v\'ertices. M\'as
+ abajo se muestra dicha versi\'on, \cref{coro:menger}, que nos ser\'a de
+ utilidad para demostrar la versi\'on global del Teorema de Menger.
+
+ \begin{corolario}
+    \label{coro:menger}
+    Sea $G$ una gr\'afica y sean $u, v \in V(G)$. Si $u$ y $v$ no son adyacentes
+    en $G$, entonces el m\'aximo n\'umero de $uv$-trayectorias internamente
+    ajenas es igual al m\'inimo n\'umero de $uv$-corte por v\'ertices.
+\end{corolario}
+
+\begin{proof}
+    Sean $u$ y $v$ v\'ertices no adyacentes de una gr\'afica $G$ y sean $X$ y
+    $Y$ las vecindades de $u$ y $v$, respectivamente. Por \cref{teo:menger}
+    sabemos que el m\'aximo n\'umero de $XY$-trayectorias internamente ajenas en
+    $G$ es igual al m\'inimo n\'umero de v\'ertices que separan a $X$ de $Y$.
+    Adem\'as, ni $u$ ni $v$ son v\'ertices de dichas trayectorias y, por ende,
+    tampoco son v\'ertices del conjunto separador. Sea  $A$ el conjunto que
+    separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y $|Y| \geq r$,
+    entonces tenemos que $A$ tambi\'en separa a $u$ y a $v$. Sean $P_1, \dots,
+    P_r$ una familia de $XY$-trayectorias internamente ajenas, entonces tenemos
+    que $uX\xrightarrow[P_1]{}Yv$, \dots, $uX\xrightarrow[P_r]{}Yv$ forma una
+    familia de $uv$-trayectorias internamente ajenas. 
+
+    Ahora, consideramos el caso en el que alguna de las vecindades tiene
+    cardinalidad menora $r$, sin p\'erdida de generalidad consideramos $|X|<r$.
+    Sea $X = \{x_1, \dots, x_s\}$, con $s<r$. Entonces tenemos que el m\'inimo
+    $uv$-corte por v\'ertices es $X$. Por otro lado, sea $\mathcal{P}$ una
+    familia de $XY$-trayectorias internamente ajenas. Tomamos $\mathcal{P'}
+    \subseteq \mathcal{P}$ la familia con mayor n\'umero de trayectorias que no
+    comparten extremo en $X$. Observamos que $|\mathcal{P'}| = |X|$. Nombramos
+    $P_i$ a la $XY$-trayectoria de $\mathcal{P'}$ que contiene al v\'ertice $x_i
+    \ in X$, con $i \in \{1 \dots, s\}$. Por \'ultimo, consideramos siguiente
+    familia de $uv$-trayectorias internamente ajenas, $uX\xrightarrow[P_1]{}Yv,
+    \dots, uX\xrightarrow[P_s]{}Yv$. Por lo tanto tenemos que el m\'aximo
+    n\'umero de $uv$-trayectorias internamente ajenas es $|X|=s$.
+\end{proof}
+
+
+A continuaci\'on  se enuncia y demuestra la versi\'on global del Teorema de
+Menger, es decir, la conexidad de una gr\'afica y la cantidad de trayectorias
+internamente ajenas entre cualesquiera dos v\'ertices de dicha gr\'afica.
 
 \begin{teorema}
     \label{teo:mengerGen}
@@ -582,7 +695,7 @@ de dicha gr\'afica.
  \begin{proof}
      Primero, sea $G$ una gr\'afica $k$-conexa. Supongamos que existen $u,v \in
      V(G)$, de manera que el m\'aximo n\'umero de $uv$-trayectorias internamente
-     ajenas sea $t$, con $t<k$. Por el Teorema de Menger (referencia) tenemos
+     ajenas sea $t$, con $t<k$. Por \cref{coro:menger} tenemos
      que $u \sim v$. Ahora, consideramos la subgr\'afica de $G$ obtenida al
      borrar la arista $uv$, a la que llamamos $G'$. Entonces, el m\'aximo
      n\'umero de $uv$-trayectorias internamente ajenas en $G'$ es $t-1$. Por
@@ -777,7 +890,7 @@ cuesti\'n de utilidad para el trabajo, definiremos formalmente este
 comportamiento \'unicamente para las gr\'aficas bipartitas. Una gr\'afica es
 \indiceSub{gr\'afica}{bipartita completa}\index{bipartita!completa} si es
 bipartita y dada la partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de
-$X$ es adyacente a cada v\'ertice de $Y$. En \cref{fig:ex-bip} se muestra un
+$X$ es adyacente a cada v\'ertice de $Y$. En \cref{fig:ex-Bip} se muestra un
 ejemplo de una gr\'afica bipartita y una gr\'afica bipartita completa, en ambas
 resaltando de diferentes colores cada conjunto de la partici\'on. 
 
@@ -814,13 +927,13 @@ resaltando de diferentes colores cada conjunto de la partici\'on.
         \end{tikzpicture}
         \caption{El $6$-ciclo como ejemplo de una gr\'afica bipartita
         (izquierda), y una gr\'afica bipartita completa (derecha).}
-        \label{fig:ex-bip}
+        \label{fig:ex-Bip}
     \end{figure}
 
 
 Un teorema muy importante al hablar de gr\'aficas bipartitas es
 \cref{teo:bip-CImpar} y sirve como caracterizaci\'on para esta familia de
-gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-bip}.
+gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
 
 
 \begin{teorema}
@@ -838,7 +951,7 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-bip}.
     ciclo en $G$. Sin perdida de generalidad, consideramos $v_1 \in X$, entonces
     tenemos que $v_2 \in Y$, pues $G$ es bipartita. Entonces tenemos que $v_i
     \in X$ y $v_j \in Y$ si y s\'olo si $i$ es impar y $j$ es par. Adem\'as,
-    tenemos que $v_k \in Y$ pues $v_kv_1 \in E(G)$ y $v_1 \in X$. Por lo tanto
+    tenemos que $v_k \in Y$ pues $v_k v_1 \in E(G)$ y $v_1 \in X$. Por lo tanto
     $k$ es par, es decir $C$ tiene longitud par. En consecuencia $G$ no contiene
     ciclos impares.
 
@@ -847,13 +960,32 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-bip}.
     construimos la siguiente partici\'on de $V(G)$. Denotamos $X$ al conjunto de
     los v\'ertices de $G$ que est\'en a distancia impar de $v$, es decir $X =
     \{u \in V(G) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro
-    conjunto de la partici\'on como $Y = V(G)\setminus X$. Basta verificar que
-    no existen aristas entre cualesquiera dos v\'ertices de $X$ o entre
-    cualesquiera dos v\'ertices de $Y$. Supongamos que existen $u,w \in X$ tales
-    que $uw \in E(G)$, entonces el ciclo $C=(v, \dots,u,w,\dots,v)$ tiene
-    longiutd impar, lo cu\'al es una contradicci\'on. Analogamente, si
-    consideramos $u,w \in Y$ con $uw \in E(G)$ obtenemos un ciclo impar. Por lo
-    tanto $G$ es una gr\'afica bipartita con partici\'on $(X,Y)$.
+    conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on
+    tenemos que $X \cap Y = \varnothing$ y $X \cup Y = V(G)$. S\'olo falta
+    verificar que no existen aristas entre cualesquiera dos v\'ertices de $X$ o
+    entre cualesquiera dos v\'ertices de $Y$. Ambos casos se tienen
+    demostraciones an\'alogas por lo que s\'olo se demostrar\'a para $X$.
+    Supongamos que existen $u,w \in X$ tales que $e=uw \in E(G)$. Sean $P$ y $Q$
+    una $vu$-trayectoria y una $vw$-trayectoria, respectivamente. Tomamos a $P$
+    y a $Q$ de longitud m\'inima, es decir $d(v,u)=|P|$ y $d(v,w)=|Q|$. Ahora,
+    sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias. Observemos
+    que las subtrayectorias $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$
+    tienen la misma longitud. \'esto pues, si alguna tuviera menor longitud, sin
+    p\'erdida de generalidad tomamos a $v \xrightarrow[P]{}z$ con menor
+    longitud, entonces tendr\'iamos que la trayectoria $v
+    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$ lo
+    cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud par y $v
+    \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen la misma longitud,
+    entonces tenemos que $z \xrightarrow[P]{}u$ y $z \xrightarrow[Q]{}w$ tiene
+    ambas longitud par o ambas longitud impar. Ahora consideramos la trayectoria
+    $ R= u \xrightarrow[P^{-1}]{}z \xrightarrow[Q]{}w$, por el argumento
+    anterior sabemos que esta trayectoria tiene longitud par. Por \'utimo,
+    observamos que existe el siguiente ciclo,
+    $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos $C$ es un ciclo longitud
+    impar, lo cu\'al es una contradicci\'on. Por lo tanto no existen aristas
+    entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$ tampoco
+    tiene v\'ertices adyacentes. Por lo que $G$ es una gr\'afica bipartita con
+    partici\'on $(X,Y)$.
 \end{proof}
     
 Otra  familia de gr\'aficas que se estudiar\'a este trabajo son los abanicos. Un
