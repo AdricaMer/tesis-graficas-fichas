@@ -581,9 +581,9 @@ teorema.
     interamente ajenas, cada trayectoria contiene al menos un v\'ertice del
     conjunto que separa a $X$ de $Y$. Entonces, no pueden existir m\'as de $k$
     trayectorias internamente ajenas entre $X$ y $Y$ pues, de ser as\'i,
-    ning\'un $k$-conjunto separar\'ia a $X$ y $Y$. Por lo tanto, basta demostrar
-    que existen $k$ trayectorias internamente ajenas entre $X$ y $Y$. Se
-    demostrar\'a por inducci\'on sobre el n\'umero de aristas de $G$. Primero
+    ning\'un $k$-conjunto separar\'ia a $X$ de $Y$. Por lo tanto, basta
+    demostrar que existen $k$ trayectorias internamente ajenas entre $X$ y $Y$.
+    Se demostrar\'a por inducci\'on sobre el n\'umero de aristas de $G$. Primero
     veamos el caso en el que $G$ no tiene aristas, entonces la \'unica manera de
     separar a $X$ de $Y$ es quitar los v\'ertices que tienen en com\'un, en
     otras palabras $|X \cap Y|=k$. Por otro lado, las $XY$-trayectorias
@@ -593,64 +593,65 @@ teorema.
 
     Ahora supongamos que $E(G) \neq \varnothing$ y supongamos que el teorema es
     v\'alido para gr\'aficas $G'$ tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una
-    arista de $G$. Primero consideremos $G\setminus e$, la gr\'afica obtenida de
-    contraer los extremos de $e$. Al v\'ertice obtenido de contraer la arista
-    $e$ lo nombramos $x_e$. Redefinimos los conjuntos $X$ y $Y$ para $G
-    \setminus e$. Si $u\in X$ o $v\in X$, entonces definimos $X'=(X \setminus
-    \{u,v\}) \cup \{x_e\}$; en otro caso definimos $X'=X$. An\'alogamente,
-    definimos $Y'= (Y \setminus \{u,v\}) \cup \{x_e\}$ si $u \in Y$ o $v \in Y$
-    y definimos $Y'=Y$ en otro caso. Sea $A \subseteq V(G \setminus e)$ un
-    $X'Y'$-corte por v\'ertices. Entonces, por hip\'otesis de inducci\'on, el
-    n\'umero de $X'Y'$-trayectorias internamente ajenas en $G\setminus e$ es
-    $|A|$. Entonces, en $G$, el n\'umero de $XY$-trayectorias internamente
-    ajenas es al menos $|A|$. Por eso, si $|A| \geq k$, entonces tenemos que el
-    n\'umero de $XY$-trayectorias internamente ajenas en $G$ es $k$. Ahora, si
-    $|A| \leq k-1$, entonces podemos afirmar que $x_e \in A$, pues de lo
-    contrario tendr\'iamos que $A$ es es un $XY$-corte por v\'ertices en $G$.
-    Definimos $A'$ como el conjunto obtenido de $A$ al quitarle el v\'ertice
-    $x_e$ y a\~{n}adire los v\'ertices $u$ y $v$, es decir $A'=(A \setminus
-    \{x_e\})\cup \{u,v\}$. Observamos que el conjunto $A'$ separa  a $X$ de $Y$.
-    La cardinalidad de $A'$ es $|A|+1 \leq (k-1)+1= k$, por otro lado, al
-    separar a $X$ y a $Y$ tenemos que $|A'| \geq k$. Por lo tanto $|A'|=k$.
+    arista de $G$. Primero consideremos $G/e$, la gr\'afica obtenida de contraer
+    los extremos de $e$. Al v\'ertice obtenido de contraer la arista $e$ lo
+    nombramos $x_e$. Tal vez, alg\'un extremo de $e$ estaba en $X$ o $Y$, por lo
+    que es necesario redefinir estos conjuntos. Si $u\in X$ o $v\in X$, entonces
+    definimos $X'=(X \setminus \{u,v\}) \cup \{x_e\}$; en otro caso definimos
+    $X'=X$. An\'alogamente, definimos $Y'= (Y \setminus \{u,v\}) \cup \{x_e\}$
+    si $u \in Y$ o $v \in Y$ y definimos $Y'=Y$ en otro caso. Sea $A \subseteq
+    V(G \setminus e)$ un $X'Y'$-corte por v\'ertices. Entonces, por hip\'otesis
+    de inducci\'on, el n\'umero de $X'Y'$-trayectorias internamente ajenas en
+    $G/e$ es $|A|$. Entonces, en $G$, el n\'umero de $XY$-trayectorias
+    internamente ajenas es al menos $|A|$. Por eso, si $|A| \geq k$, entonces
+    tenemos que el n\'umero de $XY$-trayectorias internamente ajenas en $G$ es
+    $k$. Ahora, si $|A| \leq k-1$, entonces podemos afirmar que $x_e \in A$,
+    pues de lo contrario tendr\'iamos que $A$ es es un $XY$-corte por v\'ertices
+    en $G$. Definimos $A'$ como el conjunto obtenido de $A$ al quitarle el
+    v\'ertice $x_e$ y a\~{n}adirle los v\'ertices $u$ y $v$, es decir $A'=(A
+    \setminus \{x_e\})\cup \{u,v\}$. Observamos que el conjunto $A'$ separa  a
+    $X$ de $Y$. La cardinalidad de $A'$ es $|A|+1 \leq (k-1)+1= k$, por otro
+    lado, al separar a $X$ y a $Y$ tenemos que $|A'| \geq k$. Por lo tanto
+    $|A'|=k$.
 
     Ahora consideramos la gr\'afica $G-e$. Afirmamos que cualquier conjunto de
-    v\'ertices que separan a $X$ de $A'$ en $G-e$ tambi\'en separa a $X$ de $Y$
+    v\'ertices que separa a $X$ de $A'$ en $G-e$ tambi\'en separa a $X$ de $Y$
     en $G$. Para demostrar esto, tomamos $B$ un conjunto que separa a $X$ de
     $A'$ en $G-e$. Observamos que toda $XY$-trayectoria en $G$ tiene alg\'un
-    v\'ertice de $A'$. Dada una familia de $XY$-trayectorias, tomando el primer
-    v\'ertice de cada trayectoria que, a su vez, est\'e contenido en $A'$. De
-    esta manera obtenemos una $XA'$-trayecotira por cada $XY$-trayectoria. Como
-    $x,y \in A'$, entonces tenemos que dichas $XA'$-trayectorias tambi\'en son
-    trayectorias de $G-e$, pues cada una contiene exactamente un v\'erticede
-    $A'$. Entonces cada $XA'$-trayectoria tiene un v\'ertice en $B$. Por lo
-    tanto cada $XY$-trayectoria contiene un v\'ertice de $B$. Entonces se sigue
-    que $B$ es un conjunto que separa a $X$ de $Y$ en $G$. Observamos que
-    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, es decir,
-    la familia de estas $XA'$-trayectorias tiene la misma cardinalidad de $B$.
-    Notamos que, por construcci\'on, las $XA'$-trayectorias tambi\'en son
-    trayectorias de $G$. Adem\'as tenemos que, al ser $B$ un conjunto que separa
-    a $X$ y a $Y$, $|B| \leq k$. Por lo tanto tenemos que existen $k$
-    $XA'$-trayectorias internamente ajenas en $G$. De manera an\'aloga tenemos
-    que hay $k$ trayectorias internamente ajenas de $Y$ a $A'$ en $G$. Como $A'$
-    separa a $X$ y a $Y$, entones los v\'ertices que comparten las
-    $XA'$-trayectorias y las $YA'$-trayectorias son v\'ertices de $A'$. Sean
-    $a_1, \dots, a_k$ los v\'ertices de $A'$. Denotamos $P_i$ a la
-    $XA'$-trayectoria que contiene a $a_i$ y $Q_i$ a la $YA'$-trayectoria que
-    contiene a $a_i$, con $i \in \{1. \dots, k\}$. Ahora construimos una familia
-    de $XY$-trayectorias internamente ajenas en $G$ de la siguiente manera, $X
-    \xrightarrow[P_i]{} a_i \xrightarrow[Q_i]{} Y$, para toda $i \in \{1, \dots,
-    k\}$. Por lo tanto $G$ tiene $k$ $XY$-trayectorias internamente ajenas. 
+    v\'ertice de $A'$. Luego, dada una familia de $XY$-trayectorias, es posible
+    tomar una $XA'$-trayectoria por cada $XY$-trayectoria. Como $x,y \in A'$,
+    entonces tenemos que dichas $XA'$-trayectorias tambi\'en son trayectorias de
+    $G-e$, pues cada una contiene exactamente un v\'ertice de $A'$. Entonces
+    cada $XA'$-trayectoria tiene un v\'ertice en $B$. Por lo tanto cada
+    $XY$-trayectoria contiene un v\'ertice de $B$. Entonces se sigue que $B$ es
+    un conjunto que separa a $X$ de $Y$ en $G$. Observamos que $E(G-e)<E(G)$,
+    por lo que se cumple la hip\'otesis de inducci\'on, es decir, la familia de
+    estas $XA'$-trayectorias tiene la misma cardinalidad de $B$. Notamos que,
+    por construcci\'on, las $XA'$-trayectorias tambi\'en son trayectorias de
+    $G$. Adem\'as tenemos que, al ser $B$ un conjunto que separa a $X$ de $Y$,
+    $|B| \leq k$. Por lo tanto tenemos que el n\'umero de $XA'$-trayectorias
+    internamente ajenas en $G$ es $k$. De manera an\'aloga tenemos que hay $k$
+    trayectorias internamente ajenas de $Y$ a $A'$ en $G$. Como $A'$ separa a
+    $X$ y a $Y$, entones los v\'ertices que comparten las $XA'$-trayectorias y
+    las $YA'$-trayectorias son v\'ertices de $A'$. Sean $a_1, \dots, a_k$ los
+    v\'ertices de $A'$. Denotamos $P_i$ a la $XA'$-trayectoria que contiene a
+    $a_i$ y $Q_i$ a la $YA'$-trayectoria que contiene a $a_i$, con $i \in \{1.
+    \dots, k\}$. Ahora construimos una familia de $XY$-trayectorias internamente
+    ajenas en $G$ de la siguiente manera, $X \xrightarrow[P_i]{} a_i
+    \xrightarrow[Q_i]{} Y$, para toda $i \in \{1, \dots, k\}$. Por lo tanto $G$
+    tiene $k$ $XY$-trayectorias internamente ajenas. 
 \end{proof}
 
- Tambi\'en existe una versi\'on del Teorema de Menger para v\'ertices. M\'as
- abajo se muestra dicha versi\'on, \cref{coro:menger}, que nos ser\'a de
- utilidad para demostrar la versi\'on global del Teorema de Menger.
+ Tambi\'en existe una versi\'on del Teorema de Menger para el caso cuando se
+ desea separar v\'ertices en lugar de conjuntos de v\'ertices. M\'as abajo se
+ muestra dicha versi\'on, \cref{coro:menger}, que nos ser\'a de utilidad para
+ demostrar la versi\'on global del Teorema de Menger.
 
  \begin{corolario}
     \label{coro:menger}
     Sea $G$ una gr\'afica y sean $u, v \in V(G)$. Si $u$ y $v$ no son adyacentes
     en $G$, entonces el m\'aximo n\'umero de $uv$-trayectorias internamente
-    ajenas es igual al m\'inimo n\'umero de $uv$-corte por v\'ertices.
+    ajenas es igual a la m\'inima cardinalidad de un $uv$-corte por v\'ertices.
 \end{corolario}
 
 \begin{proof}
@@ -661,20 +662,20 @@ teorema.
     Adem\'as, ni $u$ ni $v$ son v\'ertices de dichas trayectorias y, por ende,
     tampoco son v\'ertices del conjunto separador. Sea  $A$ el conjunto que
     separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y $|Y| \geq r$,
-    entonces tenemos que $A$ tambi\'en separa a $u$ y a $v$. Sean $P_1, \dots,
+    entonces tenemos que $A$ tambi\'en separa a $u$ de $v$. Sean $P_1, \dots,
     P_r$ una familia de $XY$-trayectorias internamente ajenas, entonces tenemos
     que $uX\xrightarrow[P_1]{}Yv$, \dots, $uX\xrightarrow[P_r]{}Yv$ forma una
     familia de $uv$-trayectorias internamente ajenas. 
 
     Ahora, consideramos el caso en el que alguna de las vecindades tiene
-    cardinalidad menora $r$, sin p\'erdida de generalidad consideramos $|X|<r$.
-    Sea $X = \{x_1, \dots, x_s\}$, con $s<r$. Entonces tenemos que el m\'inimo
-    $uv$-corte por v\'ertices es $X$. Por otro lado, sea $\mathcal{P}$ una
+    cardinalidad menor que $r$.  Sin p\'erdida de generalidad consideramos
+    $|X|<r$. Sea $X = \{x_1, \dots, x_s\}$, con $s<r$. Entonces tenemos que $X$
+    es un $uv$-corte por v\'ertices. Por otro lado, sea $\mathcal{P}$ una
     familia de $XY$-trayectorias internamente ajenas. Tomamos $\mathcal{P'}
     \subseteq \mathcal{P}$ la familia con mayor n\'umero de trayectorias que no
     comparten extremo en $X$. Observamos que $|\mathcal{P'}| = |X|$. Nombramos
     $P_i$ a la $XY$-trayectoria de $\mathcal{P'}$ que contiene al v\'ertice $x_i
-    \ in X$, con $i \in \{1 \dots, s\}$. Por \'ultimo, consideramos siguiente
+    \in X$, con $i \in \{1 \dots, s\}$. Por \'ultimo, consideramos siguiente
     familia de $uv$-trayectorias internamente ajenas, $uX\xrightarrow[P_1]{}Yv,
     \dots, uX\xrightarrow[P_s]{}Yv$. Por lo tanto tenemos que el m\'aximo
     n\'umero de $uv$-trayectorias internamente ajenas es $|X|=s$.
@@ -963,17 +964,16 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
     conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on
     tenemos que $X \cap Y = \varnothing$ y $X \cup Y = V(G)$. S\'olo falta
     verificar que no existen aristas entre cualesquiera dos v\'ertices de $X$ o
-    entre cualesquiera dos v\'ertices de $Y$. Ambos casos se tienen
-    demostraciones an\'alogas por lo que s\'olo se demostrar\'a para $X$.
-    Supongamos que existen $u,w \in X$ tales que $e=uw \in E(G)$. Sean $P$ y $Q$
-    una $vu$-trayectoria y una $vw$-trayectoria, respectivamente. Tomamos a $P$
-    y a $Q$ de longitud m\'inima, es decir $d(v,u)=|P|$ y $d(v,w)=|Q|$. Ahora,
-    sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias. Observemos
-    que las subtrayectorias $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$
-    tienen la misma longitud. \'esto pues, si alguna tuviera menor longitud, sin
-    p\'erdida de generalidad tomamos a $v \xrightarrow[P]{}z$ con menor
-    longitud, entonces tendr\'iamos que la trayectoria $v
-    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$ lo
+    entre cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
+    an\'alogas por lo que s\'olo se demostrar\'a para $X$. Supongamos que
+    existen $u,w \in X$ tales que $e=uw \in E(G)$. Sean $P$ una $vu$-trayectoria
+    y $Q$ una $vw$-trayectoria. Tomamos a $P$ y a $Q$ de longitud m\'inima.
+    Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias.
+    Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
+    \xrightarrow[Q]{}z$ tienen la misma longitud, pues si alguna tuviera menor
+    longitud, sin p\'erdida de generalidad tomamos a $v \xrightarrow[P]{}z$ con
+    menor longitud, entonces tendr\'iamos que la trayectoria $v
+    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$, lo
     cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud par y $v
     \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen la misma longitud,
     entonces tenemos que $z \xrightarrow[P]{}u$ y $z \xrightarrow[Q]{}w$ tiene
@@ -981,11 +981,11 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
     $ R= u \xrightarrow[P^{-1}]{}z \xrightarrow[Q]{}w$, por el argumento
     anterior sabemos que esta trayectoria tiene longitud par. Por \'utimo,
     observamos que existe el siguiente ciclo,
-    $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos $C$ es un ciclo longitud
-    impar, lo cu\'al es una contradicci\'on. Por lo tanto no existen aristas
-    entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$ tampoco
-    tiene v\'ertices adyacentes. Por lo que $G$ es una gr\'afica bipartita con
-    partici\'on $(X,Y)$.
+    $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos que $C$ es un ciclo de
+    longitud impar, lo cu\'al es una contradicci\'on. Por lo tanto no existen
+    aristas entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$
+    tampoco tiene v\'ertices adyacentes. Por lo que $G$ es una gr\'afica
+    bipartita con partici\'on $(X,Y)$.
 \end{proof}
     
 Otra  familia de gr\'aficas que se estudiar\'a este trabajo son los abanicos. Un
