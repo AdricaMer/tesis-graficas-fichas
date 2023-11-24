@@ -1,9 +1,20 @@
 \chapter{Clanes y N\'umero Crom\'atico}%
 \label{cap:Clique-ChromNum}
+Los clanes y el n\'umero crom\'atico de una gr\'afica son partes importantes en
+el estudio de las gr\'aficas. En este cap\'itulo estudiaremos un poco el como se
+ven los clanes en las gr\'aficas de fichas. De igual manera, estudiaremos el
+n\'umero crom\'atico de una gr\'afica de fichas en relaci\'on a la gr\'afica
+original.
 
 \section{Clanes}%
 \label{sec:clanes}
 
+Esta secci\'on esta enfocada en los clanes en las gr\'afcias de fichas. Veremos
+una caracterizaci\'on de los clanes y adem\'as veremos una manera de encontrar
+el n\'umero de clan en las gr\'aficas de fichas.
+
+Primero empezaremos con la caracterizaci\'on de los clanes. Para esto, primero
+necesitamos el siguiente lema. 
 
 \begin{lema}%
         \label{lem:K3}
@@ -39,6 +50,9 @@
         \{c\}$, es decir $A = B$ o $A=C$, lo cu\'al es una contradicci\'on. Por
         lo tanto tenemos que $B \cap C \subset A$ o $A \subset B \cup C$.
     \end{proof}
+
+    Ahora, teniendo en cuenta \cref{lem:K3}, pasamos a demostrar el siguiente
+    teorema de caracterizacion de los clanes (??). 
 
     \begin{teorema}
     \label{teo:clanG-clanFG}
@@ -136,14 +150,21 @@
     \end{proof}
     
     Utilizando las gr\'aficas en \cref{fig:ex-tok-path}, daremos un ejemplo de
-    los dos casos mensionados en \cref{teo:clanG-clanFG}. En
-    \cref{fig:ex-clique2}, ${\color{salmon}K_1 \subseteq G}$,
-    ${\color{baige}S_1\subseteq G}$ y ${\color{naranja}X_1\subseteq F_3{G}}$
-    representan el clan en $G$, el subconjunto $S$ y el clan en $F_3(G)$ del
-    caso $1$, respectivamente. De igual manera, ${\color{azulOscuro}K_2\subseteq
-    G}$, ${\color{oro}S_2\subseteq G}$ y ${\color{verde}X_2 \subseteq F_3(G)}$
-    representan los del caso $2$, respectivamente. Por \'ultimo, los n\'umeros
-    en ${\bf negritas}$ son los n\'umeros de el conjunto auxiliar de cada clan.
+    los dos casos mensionados en \cref{teo:clanG-clanFG}. Del lado izquierdo de
+    \cref{fig:ex-clique2} tenemos una gr\'afica de $6$ v\'ertices, a la cu\'al
+    nombramos $G$, duplicada. En cada copia de $G$ tiene resaltados distintos
+    clanes y subconjuntos auxiliares, seg\'un los casos del Teorema
+    \ref{teo:clanG-clanFG}. En la copia superior de $G$ representa el caso $1$
+    del teorema. Nombramos al clan de este caso ${\color{salmon}K_1 \subseteq
+    G}$ y su conjunto auxiliar ${\color{baige}S_1\subseteq G}$ . De manera
+    an\'aloga, para el caso $2$ del teorema utilizamos la copia inferior de $G$.
+    Para este caso, nombramos al clan ${\color{azulOscuro}K_2\subseteq G}$ en
+    $G$ y ${\color{oro}S_2\subseteq G}$ el conjunto auxiliar. Entonces tenemos
+    que en $F_3(G)$, representada del lado derecho en la figura, el clan
+    ${\color{naranja}X_1\subseteq F_3{G}}$ se obtiene del primer caso y el clan
+    ${\color{verde}X_2 \subseteq F_3(G)}$ del segundo caso. Por \'ultimo, en
+    ambos casos, los n\'umeros de los conjuntos auxiliares en $G$ estan
+    representados en ${\bf negritas}$ en $F_3(G)$.
 
     \begin{figure}[ht!]
         \centering
@@ -241,14 +262,14 @@
                     \draw [wedge,verde] (\i) to (\j);
                 \end{scope}
         
-                
-            
-
             \end{tikzpicture}
             \caption{$K_2$, $S_2$ y $X_2$ d\cref{teo:clanG-clanFG}}
             \label{fig:ex-clique2}
             \end{figure}
        
+    A continuaci\'on nos enfocaremos en el n\'umero de clan de las gr\'aficas de
+    fichas, es decir $\omega(F_k(G))$. El siguiente teorema nos da una f\'ormula
+    para el n\'umero de clan.
             
     \begin{teorema}
     \label{teo:clan-max}
@@ -295,7 +316,10 @@
         \{n-k+1,k+1\}\}$.
     \end{proof}
 
+    Este teorema se puede simplificar como se muestra en el siguiente corolario.
+
     \begin{corolario}
+    \label{coro:numCrom}
         Si asumimos $k \leq \frac{n}{2}$, entonces $\omega(F_k(G))= \min
         \{\omega(G), n-k+1\}$.
     \end{corolario}
@@ -308,9 +332,17 @@
         la igualdad deseada.
     \end{proof}
 
+    Recordemos que $F_k(G) \cong F_{n-k}(G)$, por lo que \cref{coro:numCrom} nos es de utilidad
+    . (??)
+
     \section{N\'umero Cr\'omatico}%
 \label{sec:num cromatico}
 
+En esta secci\'on estudiaremos el n\'umero crom\'atico de una gr\'afica de
+$k$-fichas, es decir $\chi (F_k(G))$. A diferencia de la secci\'on anterior, acotamos el n\'umero
+crom\'atico de $F_k(G)$ utilizando el n\'umero crom\'atico de $G$. 
+
+Primero veamos la cota superior de $ \chi (F_k(G))$.
 
 \begin{teorema}
 \label{teo:num cromatico de G y F(G)}
@@ -337,6 +369,17 @@
     que $c'$ es una coloraci\'on propia de $F_k(G)$ con a lo m\'as $\chi (G)$
     colores. Por lo tanto $\chi(F_k(G)) \leq \chi (G)$.
 \end{proof}
+
+%Comentarios al final
+
+%esta demostrado que $\chi(G) \geq \omega (G)$???
+
+Ahora nos enfocamos en la cota inferior de $ \chi (F_k(G))$. Sabemos que $\chi
+(F_k(G)) \geq \omega (F_k(G))$ por lo que podemos sacar una cota inferior en
+t\'erminos de el n\'umero de clan de $G$ utilizando \cref{teo:clan-max}. Por
+otro lado, podemos encontrar una cota en t\'erminos de $\chi (G)$. Primero
+veamos el caso en el que $F_k(G)$ es bipartita.
+
 
 \begin{proposicion}
 \label{prop:biparticion F(G)}
@@ -388,6 +431,19 @@
     $2$-crom\'atica, es decir es una gr\'afica bipartita.
 \end{proof}
 
+
+M\'as abajo se muestra un ejemplo de \cref{prop:biparticion F(G)} en
+\cref{fig:ex-bip} donde, de izquierda a derecha, se muestra una gr\'afica
+bipartita $G$, su gr\'afica de $2$ y $3$-fichas. Notamos que, dada la
+bipartici\'on $({\color{oro}X},{\color{salmon}Y})$ de $G$, toda $F_l(G)$, con
+$l\geq 2$, tiene la bipartici\'on $({\color{verde}X},{\color{salmon}Y})$, donde
+${\color{verde}X=\{V\in X\colon\ (\{2\}\subseteq V  \lor \{3\} \subseteq V)
+\land \{2,3\}\not\subseteq V\}}$ y ${\color{salmon}Y=\{V \in Y\colon\ \{2,3\}\subseteq V \lor \{2,3\}\not\subseteq
+V\}}$. En otras palabras, para toda gr\'afica de fichas de $G$,el conjunto
+${\color{verde}X}$ es el conjunto que contiene a
+${\color{oro}X}\in G$ o no lo contiene. Adem\'as, el conjunto
+${\color{salmon}Y}$ es el conjunto que tiene exactamente un elemente de
+${\color{oro}X}\in G$.
 
 
 \begin{figure}[ht!]
@@ -445,21 +501,13 @@
     \label{fig:ex-bip}
 \end{figure}
 
-Notamos que, dada la bipartici\'on
-$({\color{oro}X},{\color{salmon}Y})$, toda $F_l(G)$, con $l\geq 2$,
-tiene la bipartici\'on $({\color{verde}X},{\color{salmon}Y})$, donde
-${\color{verde}X=\{V\in X\colon\ (\{2\}\subseteq V  \lor \{3\} \subseteq V)
-\land \{2,3\}\not\subseteq V\}}$ y 
+\pagebreak
 
-${\color{salmon}Y=\{V \in Y\colon\ \{2,3\}\subseteq V \lor \{2,3\}\not\subseteq
-V\}}$. En otras palabras, para toda gr\'afica de fichas de $G$,el conjunto
-${\color{verde}X}$ es el conjunto que contiene a
-${\color{oro}X}\in G$ o no lo contiene. Adem\'as, el conjunto
-${\color{salmon}Y}$ es el conjunto que tiene exactamente un elemente de
-${\color{oro}X}\in G$    
+Por \'ultimo, determinemos la cota inferior para $\chi (F_k(G))$ en t\'erminos de $\chi (G)$
+para el caso general.
 
     \begin{teorema}
-        \label{relacion num cromatico G y F(G) con k}
+        \label{teo:numCrom-k}
             Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas.
             Entonces $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$.
         \end{teorema}
@@ -507,8 +555,12 @@ ${\color{oro}X}\in G$
             \chi(F_k(G)) = \frac{(k-2)}{n}\chi(G) +1 + \chi(F_k(G))$. Por lo
             tanto $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$
         \end{proof}
+
+    A partir del Teorema \ref{teo:numCrom-k} podemos encontrar una cota
+    inferiror para $\chi(F_k(G))$ que sea independiente de $k$. Esta relaci\'on
+    se demuestra en el siguiente teorema.
     \begin{teorema}
-    \label{relacion num cromatico indep k}
+    \label{teo:numCrom indep-k}
         Si $G$ es una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
         $\chi (F_k(G)) \geq (\frac{1}{2}+ \frac{2}{n})\chi(G) -1 $ para toda $k
         \geq 1$.
@@ -516,9 +568,9 @@ ${\color{oro}X}\in G$
     
     \begin{proof}
         Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de fichas, con $k \geq 1$. Por
-        \cref{relacion num cromatico G y F(G) con k} tenemos que $\chi(F_k(G)) \geq
+        \cref{teo:numCrom-k} tenemos que $\chi(F_k(G)) \geq
         \frac{n-k+2}{n} \chi(G) -1$. Basta demostrar que $\frac{n-k+2}{n} \geq
-        \frac{1}{2}+\frac{2}{n}$. Sabemos que $F_K(G) \cong F_{n-k}(G)$, por lo que
+        \frac{1}{2}+\frac{2}{n}$. Sabemos que $F_k(G) \cong F_{n-k}(G)$, por lo que
         podemos asumir, sin p\'erdida de generalidad, que $k\leq \frac{n}{2}$.
         Entonces tenemos que $\frac{2n-n}{2}\geq k$, de donde obtenemos que $n-k
         \geq \frac{n}{2}$. Entonces tenemos que $\frac{n-k}{n}\geq \frac{1}{2}$. Por
