@@ -10,7 +10,7 @@ cuales provienen.
 \section{Algunas propiedades interesantes}%
 \label{sec:etiquetas}
 
-En esta primera secci\'on veremos algunas peque\~{n}as propiedades que pueden
+En esta secci\'on veremos algunas peque\~{n}as propiedades que pueden
 resultar interesantes. Primero estableceremos una cota para el di\'ametro de una
 gr\'afica de fichas.
 
@@ -99,10 +99,13 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 \end{proof}
 
 Es interesante notar que los l\'imites obtenidos en \cref{teo:diamFG} son
-alcanzables. Para la cota inferior daremos como ejemplo una trayectoria de
-$\delta +1$ v\'ertices, con $k \leq \delta +1$, es decir una trayectoria de
-di\'ametro $\delta$. Es f\'acil observar que para toda $k$ obtenemso una
-gr\'afica de $k$-fichas de di\'ametro $k(\delta-k+1)$. 
+alcanzables. A continuaci\'on se muestran unos ejemplos para dichas cotas. La
+cota inferior se cumple para toda trayectoria de $d +1$ v\'ertices, con $k
+\leq d +1$, es decir una trayectoria de di\'ametro $d$. Es f\'acil
+observar que para toda $k$ obtenemso una gr\'afica de $k$-fichas de di\'ametro
+$k(d-k+1)$. La Figura \ref{fig:ex-diamP} muestra la trayectoria $P_6$ con todas sus
+posibles gr\'aficas de fichas, con $k<6$. Recordamos que $F_2(P_6) \cong
+F_4(P_6)$ y $F_1(P_6) \cong F_5(P_6)$. %Falta P_6 en la figura, donde se pone?
 
 
 \begin{figure}[ht!]
@@ -110,75 +113,175 @@ gr\'afica de $k$-fichas de di\'ametro $k(\delta-k+1)$.
        \begin{tikzpicture}
     
         \begin{scope}[xshift=-6cm,yshift=-3cm,rotate=135]
-            \draw (2,2) node (1) [vertex,label=0:{\footnotesize $56$}] {};
-            \draw (2,1) node (2) [vertex,label=0:{\footnotesize $46$}] {};
-            \draw (2,0) node (3) [vertex,label=0:{\footnotesize $36$}] {};
-            \draw (2,-1) node (4) [vertex,label=0:{\footnotesize $26$}] {};
+            \draw (2,2) node (1) [vertex,fill=menta,label=270:{\footnotesize $56$}] {};
+            \draw (2,1) node (2) [vertex,fill=menta,label=270:{\footnotesize $46$}] {};
+            \draw (2,0) node (3) [vertex,label=270:{\footnotesize $36$}] {};
+            \draw (2,-1) node (4) [vertex,label=270:{\footnotesize $26$}] {};
             \draw (2,-2) node (5) [vertex,label=270:{\footnotesize $16$}] {};
-            \draw (-2,-2) node (6) [vertex,label=270:{\footnotesize $12$}] {};
-            \draw (-1,-2) node (7) [vertex,label=270:{\footnotesize $13$}] {};
+            \draw (-2,-2) node (6) [vertex,fill=menta,label=270:{\footnotesize $12$}] {};
+            \draw (-1,-2) node (7) [vertex,fill=menta,label=270:{\footnotesize $13$}] {};
             \draw (0,-2) node (8) [vertex,label=270:{\footnotesize $14$}] {};
             \draw (1,-2) node (9) [vertex,label=270:{\footnotesize $15$}] {};
-            \draw (-1,-1) node (10) [vertex,label=270:{\footnotesize $23$}] {};
-            \draw (0,-1) node (11) [vertex,label=270:{\footnotesize $24$}] {};
+            \draw (-1,-1) node (10) [vertex,fill=menta,label=270:{\footnotesize $23$}] {};
+            \draw (0,-1) node (11) [vertex,fill=menta,label=270:{\footnotesize $24$}] {};
             \draw (1,-1) node (12) [vertex,label=270:{\footnotesize $25$}] {};
-            \draw (0,0) node (13) [vertex,label=270:{\footnotesize $34$}] {};
-            \draw (1,0) node (14) [vertex,label=270:{\footnotesize $35$}] {};
-            \draw (1,1) node (15) [vertex,label=270:{\footnotesize $55$}] {};
+            \draw (0,0) node (13) [vertex,fill=menta,label=270:{\footnotesize $34$}] {};
+            \draw (1,0) node (14) [vertex,fill=menta,label=270:{\footnotesize $35$}] {};
+            \draw (1,1) node (15) [vertex,fill=menta,label=270:{\footnotesize $55$}] {};
 
-            \foreach \i/\j in{1/2,2/3,3/4,4/5,6/7,7/8,8/9,5/9,10/11,11/12,4/12,
-            13/14,3/14,2/15,9/12,12/14,14/15,8/11,11/13,7/10} 
-                \draw [edge] (\i) to (\j);
+            \foreach \i/\j in{2/3,3/4,4/5,7/8,8/9,5/9,11/12,4/12,
+            3/14,9/12,12/14,8/11} 
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+
+            \foreach \i/\j in{1/2,2/15,14/15,13/14,11/13,10/11,7/10,6/7} 
+                    \draw [wedge,menta] (\i) to (\j);
         \end{scope}
         
         \begin{scope}[rotate=-55]
            
             \draw (2,0) node (21) [vertex,label=180:{\footnotesize $236$}] {};
-            \draw (2,-1) node (22) [vertex,label=180:{\footnotesize $136$}] {};
-            \draw (2,-2) node (23) [vertex,label=270:{\footnotesize $126$}] {};
-            \draw (-1,-2) node (24) [vertex,label=250:{\footnotesize $123$}] {};
-            \draw (0,-2) node (25) [vertex,label=250:{\footnotesize $124$}] {};
-            \draw (1,-2) node (26) [vertex,label=250:{\footnotesize $125$}] {};
+            \draw (2,-1) node (22) [vertex,fill=azulMetal,label=180:{\footnotesize $136$}] {};
+            \draw (2,-2) node (23) [vertex,fill=azulMetal,label=270:{\footnotesize $126$}] {};
+            \draw (-1,-2) node (24) [vertex,fill=azulMetal,label=250:{\footnotesize $123$}] {};
+            \draw (0,-2) node (25) [vertex,fill=azulMetal,label=250:{\footnotesize $124$}] {};
+            \draw (1,-2) node (26) [vertex,fill=azulMetal,label=250:{\footnotesize $125$}] {};
             \draw (0,-1) node (27) [vertex,label=120:{\footnotesize $134$}] {};
             \draw (1,-1) node (28) [vertex,label=180:{\footnotesize $135$}] {};
             \draw (0,0) node (29) [vertex,label=90:{\footnotesize $234$}] {};
             \draw (1,0) node (20) [vertex,label=80:{\footnotesize $235$}] {};
             
             
-            \foreach \i/\j in{21/22,22/23,24/25,25/26,23/26,27/28,22/28,29/20,
+            \foreach \i/\j in{21/22,27/28,22/28,29/20,
             21/20,29/27,25/27,28/20,26/28} 
-                \draw [edge] (\i) to (\j);
+                \draw [edge,grisOscuro!75] (\i) to (\j);
         \end{scope}
 
         \begin{scope}[xshift=3.2cm,yshift=0cm,rotate=-55]
            
-            \draw (2,0) node (31) [vertex,label=0:{\footnotesize $356$}] {};
-            \draw (2,-1) node (32) [vertex,label=0:{\footnotesize $256$}] {};
-            \draw (2,-2) node (33) [vertex,label=270:{\footnotesize $156$}] {};
-            \draw (2,1) node (34) [vertex,label=0:{\footnotesize $456$}] {};
+            \draw (2,0) node (31) [vertex,fill=azulMetal,label=0:{\footnotesize $356$}] {};
+            \draw (2,-1) node (32) [vertex,fill=azulMetal,label=0:{\footnotesize $256$}] {};
+            \draw (2,-2) node (33) [vertex,fill=azulMetal,label=270:{\footnotesize $156$}] {};
+            \draw (2,1) node (34) [vertex,fill=azulMetal,label=0:{\footnotesize $456$}] {};
             \draw (0,-2) node (35) [vertex,label=0:{\footnotesize $145$}] {};
-            \draw (1,-2) node (36) [vertex,label=250:{\footnotesize $146$}] {};
+            \draw (1,-2) node (36) [vertex,fill=azulMetal,label=250:{\footnotesize $146$}] {};
             \draw (0,-1) node (37) [vertex,label=90:{\footnotesize $245$}] {};
-            \draw (1,-1) node (38) [vertex,label=90:{\footnotesize $246$}] {};
+            \draw (1,-1) node (38) [vertex,label=0:{\footnotesize $246$}] {};
             \draw (0,0) node (39) [vertex,label=90:{\footnotesize $345$}] {};
             \draw (1,0) node (30) [vertex,label=80:{\footnotesize $346$}] {};
             
             
-            \foreach \i/\j in{31/32,32/33,31/34,35/36,33/36,37/38,32/38,39/30,
+            \foreach \i/\j in{35/36,37/38,32/38,39/30,
             31/30,39/37,35/37,38/30,36/38} 
-                \draw [edge] (\i) to (\j);
-        \end{scope}
+                \draw [edge,grisOscuro!75] (\i) to (\j);
 
-        \foreach \i/\j in{22/36,28/35,21/38,20/37} 
-            \draw [edge] (\i) to (\j);
+           
+        \end{scope}
+        
+        \foreach \i/\j in{24/25,25/26,23/26,22/23,22/36,33/36,32/33,31/32,31/34} 
+                    \draw [wedge,azulMetal] (\i) to (\j);
+        
+                    \foreach \i/\j in{28/35,21/38,20/37} 
+            \draw [edge,grisOscuro!75] (\i) to (\j);
         
     \end{tikzpicture}
 
-\caption{La gr\'afica de $2$-fichas  (izquierda) y la gr\'afica de $3$-fichas 
-(derecha) de la trayectoria $P_6$, resaltando el di\'ametro en ambas gr\'aficas}
+\caption{La gr\'afica de $2$-fichas  (izquierda) y la gr\'afica de $3$-fichas
+(derecha) de la trayectoria $P_6$, resaltando una trayectoria de longitud
+m\'axima en ambaas gr\'aficas}
 \label{fig:ex-diamP}       
 \end{figure}
-%TODO:resaltar el di\'ametro en fig:ex-diamP
+
+Para la cota superior del Teorema \ref{teo:diamFG} consideramos la gr\'afica
+$G$, obtenida de a\~{n}adirle $k$ v\'ertices cada extremo de la trayectoria
+$P_{d -1}$ y hacerlos adyacentes a los extremos de esta trayectoria. Observamos
+que $G$ tiene di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de
+$k$-fichas de $G$ tiene di\'ametro $dk$. Para enfatizar esto,
+\cref{fig:ex-diamT} muestra una gr\'afica $G$ formada de tomar la trayectoria
+$P_5$ y tomando $k=4$. Notamos que los v\'ertices $\{v_1,v_2,v_3,v_4\}$ y
+$\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$ pues ambos tienen \'unicamente un
+vecino. La Figura \ref{fig:ex-diamT} muestra el movimiento de las fichas en
+$F_4(G)$ de un extremo al otro extremo. Observamos que una ficha en alg\'un
+$v_i$ tiene que moverse por $d +1$ ......alg\'un $w_i$ es , para $i \in
+\{1,2,3,4\}$. Adem\'as, observamos que cada movimiento corresponde a un
+v\'ertice en la trayectoria en $F_4(G)$ que va de un extremo a otro. Por lo
+tanto tenemos que la trayectoria que va de $\{v_1,v_2,v_3,v_4\}$ a
+$\{w_1,w_2,w_3,w_4\}$ longitud $4(6)=24$.
+
+\pagebreak
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[]
+            \draw (-2,0) node (1) [vertex,label=270:{\footnotesize $1$}] {};
+            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
+            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
+            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
+            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
+            \draw (-3.3,-1) node (6) [vertex,fill=naranja,label=180:{\footnotesize $v_4$}] {};
+            \draw (-3.3,-0.3) node (7) [vertex,fill=naranja,label=180:{\footnotesize $v_3$}] {};
+            \draw (-3.3,0.3) node (8) [vertex,fill=naranja,label=180:{\footnotesize $v_2$}] {};
+            \draw (-3.3,1) node (9) [vertex,fill=naranja,label=180:{\footnotesize $v_1$}] {};
+            \draw (3.3,-1) node (10) [vertex,label=0:{\footnotesize $w_4$}] {};
+            \draw (3.3,-0.3) node (11) [vertex,label=0:{\footnotesize $w_3$}] {};
+            \draw (3.3,0.3) node (12) [vertex,label=0:{\footnotesize $w_2$}] {};
+            \draw (3.3,1) node (13) [vertex,label=0:{\footnotesize $w_1$}] {};
+
+            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[yshift=-3cm]
+            \draw (-2,0) node (1) [vertex,fill=naranja,label=270:{\footnotesize $1$}] {};
+            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
+            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
+            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
+            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
+            \draw (-3.3,-1) node (6) [vertex,label=180:{\footnotesize $v_4$}] {};
+            \draw (-3.3,-0.3) node (7) [vertex,fill=naranja,label=180:{\footnotesize $v_3$}] {};
+            \draw (-3.3,0.3) node (8) [vertex,fill=naranja,label=180:{\footnotesize $v_2$}] {};
+            \draw (-3.3,1) node (9) [vertex,fill=naranja,label=180:{\footnotesize $v_1$}] {};
+            \draw (3.3,-1) node (10) [vertex,label=0:{\footnotesize $w_4$}] {};
+            \draw (3.3,-0.3) node (11) [vertex,label=0:{\footnotesize $w_3$}] {};
+            \draw (3.3,0.3) node (12) [vertex,label=0:{\footnotesize $w_2$}] {};
+            \draw (3.3,1) node (13) [vertex,label=0:{\footnotesize $w_1$}] {};
+
+            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+        \end{scope}
+
+
+        \begin{scope}[]
+            \node at (0,-5.5) {\large \vdots};
+        \end{scope}
+
+        \begin{scope}[yshift=-7.5cm]
+            \draw (-2,0) node (1) [vertex,label=270:{\footnotesize $1$}] {};
+            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
+            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
+            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
+            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
+            \draw (-3.3,-1) node (6) [vertex,label=180:{\footnotesize $v_4$}] {};
+            \draw (-3.3,-0.3) node (7) [vertex,label=180:{\footnotesize $v_3$}] {};
+            \draw (-3.3,0.3) node (8) [vertex,label=180:{\footnotesize $v_2$}] {};
+            \draw (-3.3,1) node (9) [vertex,label=180:{\footnotesize $v_1$}] {};
+            \draw (3.3,-1) node (10) [vertex,fill=naranja,label=0:{\footnotesize $w_4$}] {};
+            \draw (3.3,-0.3) node (11) [vertex,fill=naranja,label=0:{\footnotesize $w_3$}] {};
+            \draw (3.3,0.3) node (12) [vertex,fill=naranja,label=0:{\footnotesize $w_2$}] {};
+            \draw (3.3,1) node (13) [vertex,fill=naranja,label=0:{\footnotesize $w_1$}] {};
+
+            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+        \end{scope}
+
+        
+    \end{tikzpicture}
+
+\caption{La gr\'afica $G$ utilizada como ejemplo del Teorema \ref{teo:diamFG}, 
+resaltando el movimiento de las $4$ fichas al pasar de un extremo de la gr\'afica al otro}
+\label{fig:ex-diamT}       
+\end{figure}
 
 Nuestro siguiente resultado muestra que algunas subgr\'aficas inducidas de las
 gr\'aficas de fichas son productos cartesianos de algunas subgr\'aficas
@@ -238,8 +341,19 @@ inducidas de $G$.
     $F_k(G)$.
 \end{proof}
 
+%Falta corolario del articulo!!!
+
 \section{Trayectorias Internamente Ajenas}%
 \label{sec:TrayIntAj}
+
+El objetivo de este cap\'itulo es estudiar la relac\'on de la conexidad entre
+una gr\'afica y su gr\'afica de $k$-fichas. Para esto, primero nos enfocaremos
+en determinar la cantidad de trayectorias internamente ajenas en una gr\'afica
+de $k$-fichas. Veremos que podemos esta cantidad esta relacionada con la
+conexidad de la gr\'afica original. Adem\'as, para gr\'aficas con conexidad
+suficientemente grandes, podemos encontrar un n\'umero mayor de trayectorias
+internamente ajenas. Para llegar a estos resultados, primero se necesitan
+demostrar dos lemas que nos ser\'an de utilidad.
 
 \begin{lema}%
 \label{lem:TrayIntAj-G-FG}
@@ -278,6 +392,9 @@ $F_{k}(G)$.
     Concluimos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{} A'$ son
     internamente ajenas.
 \end{proof}
+
+Seguidamente se presenta el siguiente lema t\'ecnico, que ser\'a necesario para
+demostrar el resultado prinsipal de esta secci\'on. 
 
 \begin{lema}%
 \label{lem:rb-bipGraph}
@@ -352,16 +469,16 @@ ${\color{fushia}rojas}$ y ${\color{azulMetal}azules}$ mencionadas en
 \label{fig:ex-rb-bioGraph}       
 \end{figure}
 
-Sea ${\color{azulMetal}M}$ el conjunto de aristas azules resaltadas en la
-\cref{fig:ex-rb-bioGraph}, es decir ${\color{azulMetal}M=\{v_1v_8,
-v_2v_9,v_3v_7,v_4v_{10}\}}$. Notemos que a pesar de que ${\color{baige}v_3 \in Y}$ no tiene
-aristas rojas, todo v\'ertice en ${\color{baige}Y}$ tiene una arista en
-${\color{azulMetal}M}$.
+Para aclarar \cref{lem:rb-bipGraph}, m\'as adelante \cref{fig:ex-rb-bioGraph}
+muestra una gr\'afica bipartita con bipartici\'on $({\color{crema}
+\textbf{X}},{\color{baige} \textbf Y})$. Sea ${\color{azulMetal}M}$ el conjunto
+de aristas azules mencionado en \cref{lem:rb-bipGraph}, resaltadas en figura.
+Entonces tenemos que ${\color{azulMetal}M=\{v_1v_8, v_2v_9,v_3v_7,v_4v_{10}\}}$.
+Notemos que todo v\'ertice en ${\color{baige}Y}$ tiene exactamente una arista en
+${\color{azulMetal}M}$. Adem\, la uni\'on de las aristas de $M$ y las aristas
+rojas, no forma un ciclo.
 
-
-%Falta nota sobre cambio de notacion para vertices en las figuras debido a que 
-%luego hay muchos vertices. Desde el inicio ddel capitulo??
-
+Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
 \begin{lema}%
 \label{lem:TrayIntAj}
@@ -523,18 +640,25 @@ ${\color{azulMetal}M}$.
     (|k-1)(t-k) + |D|$ trayectorias internamente ajenas. Despejando tenemos que
     $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k +1)$. Por lo tanto el
     n\'umero de $AB$-trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
+
 \end{proof}
 
-Consideramos ${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los
-v\'ertices en $F_3(G)$ sobre los que veremos los distintos tipos de trayectorias
-internamente en $F_3(G)$ que encontramos en \cref{lem:TrayIntAj}. Tenemos que
-${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que usamos
-$15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de tipo $Q$,
-de manera que las de tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice interno y
-las de tipo $Q$ tienen a ambos como v\'ertices internos. Tomamos
-${\color{naranja}P_1=(1,4,5)}$ y ${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos
-${\color{fushia}2} \in C$ y su vecino ${\color{menta}x\notin P_1}$. De esta
-manera tenemos la tryectoria
+Con esto queda demostrado el resultado principal de esta secci\'on. Para
+intentar ejemplificar los tres tipos de trayectorias mencionados en
+\cref{lem:TrayIntAj}, \cref{fig:ex-tok-path}, a continuaci\'on mostrada, muestra
+una gr\'afica $G$ del lado izquierdo y su gr\'afica de $3$-fichas del lado
+izquierdo. Ahora construimos una trayectoria de cada tipo. Consideramos
+${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los v\'ertices en
+$F_3(G)$ sobre los que veremos los distintos tipos de trayectorias internamente.
+Tenemos que ${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que
+usamos $15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de
+tipo $Q$, de manera que las de tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice
+interno y las de tipo $Q$ tienen a ambos como v\'ertices internos, recordando
+que $A\cap B=\{2,3\}$. Tomamos ${\color{naranja}P_1=(1,4,5)}$ y
+${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos ${\color{fushia}2} \in C$ y su
+vecino ${\color{menta}x\notin P_1}$, en este caso $x=6$. De esta manera tenemos
+la tryectoria
+
 ${\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}\{3,5,6\}\{2,3,5\})}$.
 
 
@@ -628,6 +752,13 @@ las trayectorias internamente ajenas de ${\color{baige}A}$ y ${\color{baige}B}$.
 \section{Conexidad}%
 \label{sec:conexidad}
 
+Pasamos a enfocarnos en la conexidad de las gr\'aficas de fichs. Con ayuda de
+los resuldados encontrados en las secciones anteriores, esta secci\'on buscamos
+estudiar la relaci\'on entre la conexidad de una gr\'afica y su gr\'afica de
+$k$-fichas. 
+
+El Teorema a continuaci\'on mostrado nos muestra la relaci\'on buscada.
+
 \begin{teorema}%
 \label{teo:FG-t-conexa}
     Sea $G$ una gr\'afica $t$-conexa. Entonces $F_{k}(G)$ es $t$-conexa para
@@ -693,16 +824,19 @@ As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
 r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
-
 Para ejemplicar \cref{teo:FG-t-conexa} utilizaremos las gr\'aficas de
-\cref{fig:ex-tConect}. Nos fijamos en que $G$ es una gr\'afica $4$-conexa y su
-gr\'afica de $2$-fichas es $8$-conexa. En la figura se muestra los conjuntos
-de corte ${\color{naranja}\{1,3,5,6\}}$ y
+\cref{fig:ex-tConect}. Nos fijamos en que $G$, mostrada del lado izquierdo, es
+una gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del lado
+derecho, es $8$-conexa. En la figura se muestra los conjuntos de corte
+${\color{naranja}\{1,3,5,6\}}$ y
 ${\color{fushia}\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}$
 para $G$ y $F_2(G)$ respectivamente. Adem\'as, utilizando
-\cref{fig:ex-tok-path}, sabemos que $F_3(G)$ es $9$-conexa. Por lo tanto tenemos
+\cref{fig:ex-tok-path}, podeos ver que $F_3(G)$ es $9$-conexa. Por lo tanto tenemos
 que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
 
+
+Por \'ultimo, el siguiente teorema presenta una cota m\'as (fuerte?/mayor) para
+gr\'aficas suficientemente conexas y suficientemente grandes (???).
 
 %vertices de corte: 12, 13,15,16,24,35,36,56
 \begin{figure}[ht!]
