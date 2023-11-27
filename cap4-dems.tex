@@ -739,3 +739,64 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     hamiltoniana.
 \end{proof}
 
+El teorema anterior nos proporciona una familia de gr\'aficas no hamiltonianas
+que tiene gr\'aficas de fichas que si lo son. Esta familia son los abanicos
+obtenidos de tomar $n+1 < m \leq 2m$. Tenemos $F_{m,n}$ no es hamiltoniana,
+mientras que su gr\'afica de $k$-fichas si lo es. A continuaci\'on veremos una
+familia m\'as general cuyas gr\'aficas de fichas son hamiltonianas. Para esto,
+primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
+
+%TODO:definir subgr\'afica generadora
+
+\begin{proposicion}
+\label{prop:subg-gen}
+    Sea $H$ una subgr\'afica generadora de $G$, entonces $F_k(H)$ es una
+    subgr\'afica generadora de $F_k(G)$, para todo $1 \leq k \leq n-1$.
+\end{proposicion}
+
+\begin{proof}
+    Sean una gr\'afica $G$ y $H$ una de sus subgr\'aficas generadoras.
+    Observamos que $V(H)=V(G)$ por lo que, para todo $1 \leq k \leq n-1$,
+    tenemos que $V(F_k(H))=V(F_k(G))$. Por ende, basta ver que las adyacencias
+    en $F_k(G)$ son adyacencias en $F_k(G)$, para todo $1 \leq k \leq n-1$.
+
+    Sea $1 \leq k \leq n-1$ y sean $A$ y $B$ v\'ertices adyaecentes en $F_k(H)$.
+    Entonces $ A \triangle B = \{a,b\}$, para algunos $a,b \in V(H)$ tales que
+    $ab \in E(H)$. Al ser $H$ una subgr\'afica generadora de $G$ tenemos que
+    $a,b \in V(G)$ y $ab \in E(G)$. Como $V(F_k(G))=V(F_k(H))$, entonces $A,B
+    \in V(F_k(G))$ y, adem\'as, tenemos que $A$ y $B$ tambi\'en son adyacentes
+    en $F_k(G)$. Por lo tanto tenemos que $F_k(H)$ es una subgr\'afica
+    generadora de $F_k(G)$.
+\end{proof}
+
+%TODO: definir orden de una gr\'afica 
+%TODO: uni\'on completa de subgr\'aficas generadoras es un subgr\'afica 
+%generadora de la union completa de las gr\'aficas originales
+
+Pasamos a demostrar el resultado antes mencionado.
+
+\begin{corolario}
+    Sean $k,n,m \in \mathbb{Z^{+}}$ tale que $2 \leq k \leq n-1$ y $1 \leq m
+    \leq 2n$. Sean $G_1$ y $G_2$ dos gr\'aficas de orden $m$ y $n$,
+    respectivamente, donde $G_2$ contiene una trayectoria hamiltoniana. Ahora,
+    sea $G$ la gr\'afica obtenida de la uni\'on completa de $G_1$ y $G_2$, i.e.
+    $G = G_1 \oplus G_2$, entonces $F_k(G)$ es hamiltoniana. 
+\end{corolario}
+
+\begin{proof}
+    Sean $G_1$ y $G_2$ dos gr\'aficas de orden $m$ y $n$, respectivamente, donde
+    $n,m \in \mathbb{Z^{+}}$ tales que $1 \leq m \leq 2n$. Adem\'as, sea $G_2$
+    una gr\'afica que contiene una trayectoria hamiltoniana $P$. Observamos que
+    $\overline{K_m}$ es una subgr\'afica generadora de $G_1$. Por otro lado, $P$
+    es una subgr\'afica generadora de $G_2$. Por lo que tenemos que el abanico
+    $\mathcal{F}_{m,n}$ es una sugr\'afica generadora de $G= G_1 \oplus G_2$.
+    Por el momento nos enfocaremos en $\mathcal{F}_{m,n}$. Nos fijamos que
+    \cref{teo:TokGenerFan} garantiza que $F_k(\mathcal{F}_{m,n})$ es
+    hamiltoniana, para $k \in \mathbb{Z^{+}}$ tal que $2 \leq k \leq n-1$.
+    Ahora, por \cref{prop:subg-gen}, tenemos que $F_k(\mathcal{F}_{m,n})$ es una
+    subgr\'afica generadora de $F_k(G)$. Por ende, el ciclo hamiltoniano de
+    $F_k(\mathcal{F}_{m,n})$ tambi\'en es ciclo hamiltoniano de $F_k(G)$, por lo
+    que $F_k(G)$ es una gr\'afica hamiltoniana.
+\end{proof}
+
+%G con $n+1 < m \leq 2n$ tampoco es hamiltoniana??
