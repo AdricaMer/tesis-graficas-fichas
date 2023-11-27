@@ -4,7 +4,7 @@
 En este cap\'itulo nos enfocaremos en la conexidad de las gr\'aficas de fichas.
 Estableceremos algunas cotas para el di\'ametro y el n\'umero de trayectorias
 internamente ajenas que se pueden encontrar en una gr\'afica de fichas,
-bas\'andonos en las caractere\'isticas y par\'ametros de las gr\'aficas de
+bas\'andonos en las caractere\'isticas y par\'ametros de las gr\'aficas de las
 cuales provienen.
 
 \section{Algunas propiedades interesantes}%
@@ -98,14 +98,14 @@ el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
 \sum_{i=0}^{k-1}i = k(d-k+1)$.
 \end{proof}
 
-Es interesante notar que los l\'imites obtenidos en \cref{teo:diamFG} son
-alcanzables. A continuaci\'on se muestran unos ejemplos para dichas cotas. La
-cota inferior se cumple para toda trayectoria de $d +1$ v\'ertices, con $k
-\leq d +1$, es decir una trayectoria de di\'ametro $d$. Es f\'acil
-observar que para toda $k$ obtenemso una gr\'afica de $k$-fichas de di\'ametro
-$k(d-k+1)$. La Figura \ref{fig:ex-diamP} muestra la trayectoria $P_6$ con todas sus
-posibles gr\'aficas de fichas, con $k<6$. Recordamos que $F_2(P_6) \cong
-F_4(P_6)$ y $F_1(P_6) \cong F_5(P_6)$. %Falta P_6 en la figura, donde se pone?
+Es interesante notar que las cotas obtenidos en \cref{teo:diamFG} son
+alcanzables. A continuaci\'on se muestran algunos ejemplos para dichas cotas. La
+cota inferior se cumple para toda trayectoria de $d +1$ v\'ertices, con $k \leq
+d +1$, es decir una trayectoria de di\'ametro $d$. Es f\'acil observar que para
+toda $k$ obtenemos una gr\'afica de $k$-fichas de di\'ametro $k(d-k+1)$. La
+Figura \ref{fig:ex-diamP} muestra la trayectoria $P_6$ con todas sus posibles
+gr\'aficas de fichas, con $k<6$. Recordamos que $F_2(P_6) \cong F_4(P_6)$ y
+$F_1(P_6) \cong F_5(P_6)$. %Falta P_6 en la figura, donde se pone?
 
 
 \begin{figure}[ht!]
@@ -192,20 +192,20 @@ m\'axima en ambaas gr\'aficas}
 \end{figure}
 
 Para la cota superior del Teorema \ref{teo:diamFG} consideramos la gr\'afica
-$G$, obtenida de a\~{n}adirle $k$ v\'ertices cada extremo de la trayectoria
+$G$, obtenida de a\~{n}adirle $k$ v\'ertices a cada extremo de la trayectoria
 $P_{d -1}$ y hacerlos adyacentes a los extremos de esta trayectoria. Observamos
 que $G$ tiene di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de
-$k$-fichas de $G$ tiene di\'ametro $dk$. Para enfatizar esto,
-\cref{fig:ex-diamT} muestra una gr\'afica $G$ formada de tomar la trayectoria
-$P_5$ y tomando $k=4$. Notamos que los v\'ertices $\{v_1,v_2,v_3,v_4\}$ y
-$\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$ pues ambos tienen \'unicamente un
-vecino. La Figura \ref{fig:ex-diamT} muestra el movimiento de las fichas en
-$F_4(G)$ de un extremo al otro extremo. Observamos que una ficha en alg\'un
-$v_i$ tiene que moverse por $d +1$ ......alg\'un $w_i$ es , para $i \in
-\{1,2,3,4\}$. Adem\'as, observamos que cada movimiento corresponde a un
-v\'ertice en la trayectoria en $F_4(G)$ que va de un extremo a otro. Por lo
-tanto tenemos que la trayectoria que va de $\{v_1,v_2,v_3,v_4\}$ a
-$\{w_1,w_2,w_3,w_4\}$ longitud $4(6)=24$.
+$k$-fichas de $G$ tiene di\'ametro $dk$. Para ejemplificar esto,
+\cref{fig:ex-diamT} muestra una gr\'afica $G$ construida al agregar cuatro
+v\'ertices en cada extremo de la trayectoria $P_5$, i.e., $k=4$. Notamos que los
+v\'ertices $\{v_1,v_2,v_3,v_4\}$ y $\{w_1,w_2,w_3,w_4\}$ son extremos en
+$F_4(G)$ pues ambos tienen \'unicamente un vecino. La Figura \ref{fig:ex-diamT}
+muestra el movimiento de las fichas en $F_4(G)$ de un extremo al otro extremo.
+Observamos que una ficha en alg\'un $v_i$ tiene que moverse por $d +1$
+v\'ertices a alg\'un $w_i$ libre, para $i \in \{1,2,3,4\}$. Adem\'as, observamos
+que cada movimiento corresponde a un v\'ertice en la trayectoria en $F_4(G)$ que
+va de un extremo a otro. Por lo tanto tenemos que la trayectoria que va de
+$\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 
 \pagebreak
 
@@ -289,11 +289,11 @@ inducidas de $G$.
 
 \begin{teorema}
     \label{teo:PCartes}
-    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica
-    $G$ tales que son ajenas dos a dos. Entonces para todos los enteros
-    $s_1, \dots, s_m$ tales que $1 \leq s_i \leq |V(H_i)|$ y
-    $\Sigma s_i = k$, se tiene que $F_{s_1}(H_1) \square \cdots
-    \square F_{s_m}(H_m)$ es una subgr\'afica inducida de $F_k(G)$.
+    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica $G$ tales
+    que son ajenas dos a dos. Para todos los enteros $s_1, \dots, s_m$ tales que
+    $1 \leq s_i \leq |V(H_i)|$ y $\Sigma s_i = k$, se tiene que $F_{s_1}(H_1)
+    \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica inducida de
+    $F_k(G)$.
 \end{teorema}
 
 \begin{proof}
@@ -346,14 +346,14 @@ inducidas de $G$.
 \section{Trayectorias Internamente Ajenas}%
 \label{sec:TrayIntAj}
 
-El objetivo de este cap\'itulo es estudiar la relac\'on de la conexidad entre
+El objetivo de este cap\'itulo es estudiar la relaci\'on de la conexidad entre
 una gr\'afica y su gr\'afica de $k$-fichas. Para esto, primero nos enfocaremos
-en determinar la cantidad de trayectorias internamente ajenas en una gr\'afica
-de $k$-fichas. Veremos que podemos esta cantidad esta relacionada con la
-conexidad de la gr\'afica original. Adem\'as, para gr\'aficas con conexidad
-suficientemente grandes, podemos encontrar un n\'umero mayor de trayectorias
-internamente ajenas. Para llegar a estos resultados, primero se necesitan
-demostrar dos lemas que nos ser\'an de utilidad.
+en determinar la cantidad de trayectorias internamente ajenas entre un par de
+v\'ertices en una gr\'afica de fichas. Veremos que esta cantidad est\'a
+relacionada con la conexidad de la gr\'afica original. Adem\'as, para gr\'aficas
+con conexidad suficientemente grande, podemos encontrar un n\'umero a\'un mayor
+de trayectorias internamente ajenas. Para llegar a estos resultados, primero se
+necesitan demostrar dos lemas que nos ser\'an de utilidad.
 
 \begin{lema}%
 \label{lem:TrayIntAj-G-FG}
@@ -393,8 +393,8 @@ $F_{k}(G)$.
     internamente ajenas.
 \end{proof}
 
-Seguidamente se presenta el siguiente lema t\'ecnico, que ser\'a necesario para
-demostrar el resultado prinsipal de esta secci\'on. 
+Enseguida se presenta el siguiente lema t\'ecnico, que ser\'a necesario para
+demostrar el resultado principal de esta secci\'on. 
 
 \begin{lema}%
 \label{lem:rb-bipGraph}
@@ -469,14 +469,14 @@ ${\color{fushia}rojas}$ y ${\color{azulMetal}azules}$ mencionadas en
 \label{fig:ex-rb-bioGraph}       
 \end{figure}
 
-Para aclarar \cref{lem:rb-bipGraph}, m\'as adelante \cref{fig:ex-rb-bioGraph}
-muestra una gr\'afica bipartita con bipartici\'on $({\color{crema}
+Para aclarar \cref{lem:rb-bipGraph}, \cref{fig:ex-rb-bioGraph} muestra una
+gr\'afica bipartita con bipartici\'on $({\color{crema}
 \textbf{X}},{\color{baige} \textbf Y})$. Sea ${\color{azulMetal}M}$ el conjunto
 de aristas azules mencionado en \cref{lem:rb-bipGraph}, resaltadas en figura.
 Entonces tenemos que ${\color{azulMetal}M=\{v_1v_8, v_2v_9,v_3v_7,v_4v_{10}\}}$.
 Notemos que todo v\'ertice en ${\color{baige}Y}$ tiene exactamente una arista en
-${\color{azulMetal}M}$. Adem\, la uni\'on de las aristas de $M$ y las aristas
-rojas, no forma un ciclo.
+${\color{azulMetal}M}$. Adem\'as, la uni\'on de las aristas de
+${\color{azulMetal}M}$ y las aristas rojas, no forma un ciclo.
 
 Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
@@ -645,21 +645,23 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
 Con esto queda demostrado el resultado principal de esta secci\'on. Para
 intentar ejemplificar los tres tipos de trayectorias mencionados en
-\cref{lem:TrayIntAj}, \cref{fig:ex-tok-path}, a continuaci\'on mostrada, muestra
+\cref{lem:TrayIntAj}, \cref{fig:ex-tok-path}, a continuaci\'on mostrada, exhibe
 una gr\'afica $G$ del lado izquierdo y su gr\'afica de $3$-fichas del lado
-izquierdo. Ahora construimos una trayectoria de cada tipo. Consideramos
+derecho. Ahora construimos una trayectoria de cada tipo. Consideramos
 ${\color{baige}A= \{1,2,3\}}$ y ${\color{baige}B=\{2,3,5\}}$ los v\'ertices en
-$F_3(G)$ sobre los que veremos los distintos tipos de trayectorias internamente.
-Tenemos que ${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$ por lo que
-usamos $15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de
-tipo $Q$, de manera que las de tipo $P$ no tiene a $2$ ni a $3$ como v\'ertice
-interno y las de tipo $Q$ tienen a ambos como v\'ertices internos, recordando
-que $A\cap B=\{2,3\}$. Tomamos ${\color{naranja}P_1=(1,4,5)}$ y
+$F_3(G)$ sobre los que veremos los distintos tipos de trayectorias internamente
+ajenas. Tenemos que ${\color{baige}A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$
+por lo que usamos $15$-trayectorias para encontrar las trayectorias de tipo $P$
+y las de tipo $Q$, de manera que las de tipo $P$ no tienen a $2$ ni a $3$ como
+v\'ertice interno y las de tipo $Q$ tienen a ambos como v\'ertices internos,
+recordando que $A\cap B=\{2,3\}$. Tomamos ${\color{naranja}P_1=(1,4,5)}$ y
 ${\color{fushia}Q_1(1,2,3,5)}$. Ahora tomamos ${\color{fushia}2} \in C$ y su
 vecino ${\color{menta}x\notin P_1}$, en este caso $x=6$. De esta manera tenemos
-la tryectoria
-
-${\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}\{3,5,6\}\{2,3,5\})}$.
+la trayectoria del tercer tipo
+\[
+    {\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}
+    \{3,5,6\}\{2,3,5\})}.
+\]
 
 
 \begin{figure}[ht!]
@@ -745,19 +747,20 @@ ${\color{verdeAzulado}R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}\{3,5,6
 
 \end{tikzpicture}
 \caption{Ejemplo de una gr\'afica $G$ y su gr\'afica de $3$-fichas resaltando
-las trayectorias internamente ajenas de ${\color{baige}A}$ y ${\color{baige}B}$.}
+las trayectorias internamente ajenas de ${\color{baige}A}$ y
+${\color{baige}B}$.}
 \label{fig:ex-tok-path}
 \end{figure}
+
+\newpage
 
 \section{Conexidad}%
 \label{sec:conexidad}
 
-Pasamos a enfocarnos en la conexidad de las gr\'aficas de fichs. Con ayuda de
-los resuldados encontrados en las secciones anteriores, esta secci\'on buscamos
+Pasamos a enfocarnos en la conexidad de las gr\'aficas de fichas. Con ayuda de
+los resultados encontrados en las secciones anteriores, esta secci\'on buscamos
 estudiar la relaci\'on entre la conexidad de una gr\'afica y su gr\'afica de
-$k$-fichas. 
-
-El Teorema a continuaci\'on mostrado nos muestra la relaci\'on buscada.
+$k$-fichas.  El siguiente teorema nos muestra la relaci\'on buscada.
 
 \begin{teorema}%
 \label{teo:FG-t-conexa}
@@ -824,19 +827,19 @@ As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
 r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto $|\mathcal{C}|>t$.
 \end{proof} 
 
-Para ejemplicar \cref{teo:FG-t-conexa} utilizaremos las gr\'aficas de
-\cref{fig:ex-tConect}. Nos fijamos en que $G$, mostrada del lado izquierdo, es
-una gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del lado
-derecho, es $8$-conexa. En la figura se muestra los conjuntos de corte
+Para ejemplificar \cref{teo:FG-t-conexa} utilizaremos las gr\'aficas de
+\cref{fig:ex-tConect}. Nos fijamos que $G$, mostrada del lado izquierdo, es una
+gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del lado derecho, es
+$8$-conexa. En la figura se muestra los conjuntos de corte
 ${\color{naranja}\{1,3,5,6\}}$ y
 ${\color{fushia}\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}$
 para $G$ y $F_2(G)$ respectivamente. Adem\'as, utilizando
-\cref{fig:ex-tok-path}, podeos ver que $F_3(G)$ es $9$-conexa. Por lo tanto tenemos
-que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
+\cref{fig:ex-tok-path}, podeos ver que $F_3(G)$ es $9$-conexa. Por lo tanto
+tenemos que $F_2(G)$ y $F_3(G)$ son gr\'aficas $4$-conexas.
 
 
-Por \'ultimo, el siguiente teorema presenta una cota m\'as (fuerte?/mayor) para
-gr\'aficas suficientemente conexas y suficientemente grandes (???).
+Por \'ultimo, el siguiente teorema presenta una mejor cota para gr\'aficas
+suficientemente conexas y suficientemente grandes.
 
 %vertices de corte: 12, 13,15,16,24,35,36,56
 \begin{figure}[ht!]
