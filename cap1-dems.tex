@@ -343,6 +343,87 @@ inducidas de $G$.
     $F_k(G)$.
 \end{proof}
 
+La Figura \ref{fig:ex-cart}, exhibida a continuaci\'on, es un ejemplo sencillo
+d\cref{teo:PCartes}. Del lado izquierdo de la figura tenemos una gr\'afica $G$,
+resaltando dos subgr\'aficas inducidas ${\color{baige}\bf H_1}$ y
+${\color{azulMetal}\bf H_2}$. El conjunto de v\'ertices de  y
+${\color{azulMetal}\bf H_2}$  es $\{1,2,4,6\}$ mientras que el de
+${\color{baige}\bf H_1}$ es $\{3\}$. Ahora, por un lado tenemos que $1\leq s_1
+\leq |V(H_1)|$ por lo que $s_1 =1$. Por el otro lado $1\leq s_2 \leq |V(H_2)| =
+4$ y, adem\'as, $s_1+s_2 = k =3$, por lo que $s_2 =2$. Del lado derecho de
+\cref{fig:ex-cart} se muestra la gr\'afica $F_3(G)$, resaltando de
+$\color{fushia} \bf rosa$ el producto carteciano $F_1(H_1) \square F_2(H_2)$.
+Observamos que dicha gr\'afica es, en efecto, una subgr\'afica inducida de
+$F_3(G)$.
+
+\begin{figure}[ht!]
+    \centering
+       \begin{tikzpicture}
+    
+        \begin{scope}[xshift=-8.5cm]
+            \foreach \i in {0,1,3,5}
+                \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=azulMetal]{};
+            \draw ({(360/6)*2}:2) node(2)[wvertex,fill=baige]{};
+            \draw ({(360/6)*4}:2) node(4)[wvertex]{}; 
+            \foreach \i in {0,...,5}
+                \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
+               \pgfmathresult};
+            \foreach \i/\j in {0/2,1/2,1/4,2/3,2/4,2/5,3/4,4/5}
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+            
+            \foreach \i/\j in {0/1,0/5,0/3,1/5,3/5}
+                \draw [wedge,azulMetal] (\i) to (\j); 
+            \end{scope}
+        
+        \begin{scope}[xshift=0cm,yshift=0cm,scale=0.9]
+            \foreach \i in {0,1,5,8,9,13} 
+                \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=fushia]{}; 
+            \foreach \i in {2,3,4,6,7,10,11,12,14,15} 
+                \draw({(360/16)*\i}:4) node(\i)[wvertex]{};
+    
+            \draw ({(360/16)*1}:4.5) node (e1) {{${\color{azulMetal}\bf 2}{\color{baige}\bf 3}{\color{azulMetal}\bf6}$}};
+            \draw ({(360/16)*2}:4.5) node (e1) {{\footnotesize $256$}};
+            \draw ({(360/16)*3}:4.5) node (e1) {{\footnotesize $246$}};
+            \draw ({(360/16)*4}:4.5) node (e1) {{\footnotesize $126$}};
+            \draw ({(360/16)*5}:4.5) node (e1) {{${\color{azulMetal}\bf12}{\color{baige}\bf 3}$}};
+            \draw ({(360/16)*6}:4.5) node (e1) {{\footnotesize $125$}};
+            \draw ({(360/16)*7}:4.5) node (e1) {{\footnotesize $245$}};
+            \draw ({(360/16)*8}:4.5) node (e1) {{${\color{azulMetal}\bf2}{\color{baige}\bf 3}{\color{azulMetal}\bf4}$}};
+            \draw ({(360/16)*9}:4.5) node (e1) {{${\color{azulMetal}\bf1}{\color{baige}\bf 3}{\color{azulMetal}\bf4}$}};
+            \draw ({(360/16)*10}:4.5) node (e1) {{\footnotesize $145$}};
+            \draw ({(360/16)*11}:4.5) node (e1) {{\footnotesize $135$}};
+            \draw ({(360/16)*12}:4.5) node (e1) {{\footnotesize $345$}};
+            \draw ({(360/16)*13}:4.5) node (e1) {{${\color{baige}\bf 3}{\color{azulMetal}\bf46}$}};
+            \draw ({(360/16)*14}:4.5) node (e1) {{\footnotesize $456$}};
+            \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $156$}};
+            \draw ({(360/16)*16}:4.5) node (e1) {{${\color{azulMetal}\bf1}{\color{baige}\bf 3}{\color{azulMetal}\bf6}$}};
+    
+            \draw (-1.1,0.2) node (17) [vertex,label=10:{\tiny $124$}] {};
+            \draw (0.1,-0.3) node (18) [vertex,label=70:{\tiny $146$}] {};
+            \draw (1.2,0.7) node (19) [vertex,label=180:{\tiny $356$}] {};
+            \draw (0.3,1.4) node (20) [vertex,label=88:{\tiny $235$}] {};
+            
+            \foreach\i/\j in{0/4,0/11,0/15,0/18,1/2,1/3,1/4,1/19,1/20,2/3,2/6,
+            2/7,2/15,2/19,2/20,3/4,3/7,3/8,3/13,3/14,3/17,3/18,4/5,4/6,4/15,4/17,
+            5/6,5/11,5/17,6/7,6/11,6/15,6/17,6/20,7/8,7/10,7/12,7/14,7/20,8/12,
+            8/17,8/20,9/10,9/11,9/17,9/18,10/11,10/12,10/14,10/15,10/17,10/18,
+            11/12,11/15,11/19,11/20,12/13,12/14,12/19,13/14,13/18,13/19,14/15,
+            14/19,15/18,15/19,17/18,19/20} 
+               \draw [edge,grisOscuro!50] (\i) to (\j);
+
+               \foreach \i/\j in {0/1,0/5,0/9,0/13,1/5,1/8,5/8,8/9,8/13,9/13}
+               \draw [wedge,fushia] (\i) to (\j);
+       \end{scope}
+
+    \end{tikzpicture}
+    \caption{Del lado izquierdo se muestra una gr\'afica $G$, donde se resaltan dos
+    subgr\'aficas inducidas, ${\color{baige}\bf H_1}$ y ${\color{azulMetal}\bf
+    H_2}$. Del lado derecho se muestra $F_3(G)$, donde se resalta su subgr\'afica
+    inducida ${\color{fushia}\bf F_1(H_1) \square F_2(H_2)}$}
+    \label{fig:ex-cart}
+    \end{figure}
+
+\newpage
 
 \section{Trayectorias Internamente Ajenas}%
 \label{sec:TrayIntAj}
