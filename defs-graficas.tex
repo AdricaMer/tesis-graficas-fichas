@@ -7,12 +7,13 @@
 El objeto a estudiar en el \'area de Teor\'ia de Gr\'aficas es, naturalmente,
 una gr\'afica. Una \indice{gr\'afica} $G$ es una pareja ordenada de conjuntos
 finitos $(V(G), E(G))$, donde $V(G)$ es no vac\'io y $E(G) \subseteq
-\binom{V(G)}{2}$. Los elementos de $V(G)$ son llamados \indice{v\'ertices} y los
-elementos de $E(G)$ son \indice{aristas}. Para una arista $e$ y v\'ertices $u,
-v$ de $G$, decimos que $e$ es \indiceSub{aristas}{incidente} en $u$ y en $v$ si
-$e= \{u, v\}$. A su vez, los v\'ertices $u$ y $v$ son
-\indiceSub{v\'ertices}{extremos} de la arista $e$. De igual manera, podemos
-decir que $u$ y $v$ son \textbf{v\'ertices}
+\binom{V(G)}{2}$. A la cardinalidad de $V(G)$ se le llama
+\indiceSub{gr\'afica}{orden} de $G$ y los elementos de $V(G)$ son llamados
+\indice{v\'ertices}. Los elementos de $E(G)$ son \indice{aristas}. Para una
+arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es
+\indiceSub{aristas}{incidente} en $u$ y en $v$ si $e= \{u, v\}$. A su vez, los
+v\'ertices $u$ y $v$ son \indiceSub{v\'ertices}{extremos} de la arista $e$. De
+igual manera, podemos decir que $u$ y $v$ son \textbf{v\'ertices}
 \indiceSub{v\'ertices}{adyacentes}\index{adyacentes!v\'ertices} o
 \indiceSub{v\'ertices}{vecinos} y lo denotamos $u \sim v$. Por otro lado,
 decimos que son \textbf{aristas}
@@ -133,34 +134,37 @@ llamada isomorfismo.
 
 Al momento de ver las relaciones entre dos gr\'aficas, tambi\'en es importante
 analizar el caso en el que una gr\'afica este ``contenida'' en la otra. En el
-caso de conjuntos nos referir\'iamos a subconjunto, y en el caso de gr\'aficas
+caso de conjuntos nos referir\'iamos a subconjunto y, en el caso de gr\'aficas,
 nos vamos a referir a subgr\'aficas. Sean $G$ y $H$ tales que $V(H) \subseteq
 V(G)$ y $E(H) \subseteq E(G)$. Entonces decimos que $H$ es una
 \indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
 \indice{supergr\'afica} de $H$. Esta relaci\'on la denotamos con la misma
-notaci\'on que para subconjuntos, es decir $H \subseteq G$. Un concepto que se
-deriva de las subgr\'aficas parte de fijarnos en la subgr\'afica que tiene la
-mayor cantidad de aristas posibles. Formalmente hablando, nos referimos a $H$,
-la subgr\'afica de $G$, cuyo conjunto de v\'ertices es $S \subseteq V(G)$ y cuyo
-conjunto de aristas son aquellas aristas de $G$ que tienen ambos extremos en
-$S$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta subgr\'afica
-la llamamos la \textbf{subgr\'afica} \indiceSub{subgr\'afica}{inducida} de $G$
-por $S$ y la denotamos $G[S]$. Notemos que esta gr\'afica $G[S]$ es la
-subgr\'afica de $G$ con conjunto de v\'ertices $S$ que m\'as se parece a $G$.
-Otro ejemplo importante de subgr\'aficas es la subgr\'afica inducida obtenida al
-quitarle uno o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S
-\subset V(G)$, nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus
-S$ y $E(H) = E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Tenemos
-que $H$ es la subg\'afica obtenida a partir de $G$ al quitarle el conjunto $S$,
-esta subgr\'afica se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un
-conjunto unitario, es decir, el caso en el que le quitamos un solo v\'ertice $v$
-a $G$. En este caso escribiremos $G-v$ en vez de $G-\{v\}$. A continuaci\'on se
-muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
-${\color{morado}\bf H}$ es una subgr\'afica inducida con $V(H) =
-\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}\bf H'}$ es una subgr\'afica con
-$V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a
-${\color{azulCielo}\bf H'}$ le falta la arista ${\color{grisOscuro!80}\bf
-v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida. 
+notaci\'on que para subconjuntos, es decir $H \subseteq G$. Cuando una
+subgr\'afica tiene el mismo conjunto de v'ertices que la gr\'afica, i.e. $H
+\subseteq G$ y $V(H)= V(G)$, entonces decimos que es una \textbf{subgr\'afica}
+\indiceSub{subgr\'afica}{generadora}. Otro concepto que se deriva de las
+subgr\'aficas parte de fijarnos en la subgr\'afica que tiene la mayor cantidad
+de aristas posibles. Formalmente hablando, nos referimos a $H$, la subgr\'afica
+de $G$, cuyo conjunto de v\'ertices es $S \subseteq V(G)$ y cuyo conjunto de
+aristas son aquellas aristas de $G$ que tienen ambos extremos en $S$, es decir,
+$E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta subgr\'afica la llamamos la
+\textbf{subgr\'afica} \indiceSub{subgr\'afica}{inducida} de $G$ por $S$ y la
+denotamos $G[S]$. Notemos que esta gr\'afica $G[S]$ es la subgr\'afica de $G$
+con conjunto de v\'ertices $S$ que m\'as se parece a $G$. Un tercer tipo
+importante de subgr\'aficas es la subgr\'afica inducida obtenida al quitarle uno
+o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S \subset V(G)$,
+nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus S$ y $E(H) =
+E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Tenemos que $H$ es
+la subg\'afica obtenida a partir de $G$ al quitarle el conjunto $S$, esta
+subgr\'afica se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un conjunto
+unitario, es decir, el caso en el que le quitamos un solo v\'ertice $v$ a $G$.
+En este caso escribiremos $G-v$ en vez de $G-\{v\}$. A continuaci\'on se muestra
+un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde ${\color{morado}\bf H}$
+es una subgr\'afica inducida con $V(H) = \{v_1,v_2,v_3,v_4\}$ y
+${\color{azulCielo}\bf H'}$ es una subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y
+$E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a ${\color{azulCielo}\bf H'}$ le falta
+la arista ${\color{grisOscuro!80}\bf v_5v_7}$, resaltada en la figura, para ser
+una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
     \centering
@@ -445,27 +449,33 @@ Algo que es de inter\'es en este tema es, que tan dif\'icil es ``desconectar''
 una gr\'afica. Para esto puede resultar natural cuestionarse si existe alg\'un
 v\'ertice o conjunto de v\'ertices que, al quitarlo, ``desconecte'' a la
 gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
-\indice{corte por v\'ertices} $S$ de una gr\'afica $G$ es un subconjunto de
-$V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el conjunto $S$
-\indice{separa} a la gr\'afica en dos o m\'as componentes conexas. Decimos que
-$S$ es un \indice{$k$-corte por v\'ertices} si $|S|=k$. A un corte por
-v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$ se le llama
-\indice{$uv$-corte por v\'ertices}. La m\'inima cardinalidad de un $uv$-corte
-por v\'ertices se denota $C(u,v)$ y no est\'a definida si $u$ y $v$ son
-adyacentes o $x=y$.  Cabe notar que no todas las gr\'aficas tienen alg\'un corte
-por v\'ertices, a saber, las gr\'aficas completas (introducidas en la siguiente
-secci\'on) no tienen corte por v\'ertices y son las \'unicas con esta propiedad.
-Ahora, usando el concepto de corte por v\'ertices, definiremos la conexidad de
-una gr\'afica. El \indice{n\'umero de conexidad} de una gr\'afica $G$, denotado
-por $\kappa(G)$, se define como la m\'inima cardinalidad de un conjunto de corte
-de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por
-v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no tienen cortes
-por v\'ertices, no obstante, por convenci\'on diremos que una gr\'afica completa
-de $n$ v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io
-es un corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una
-gr\'afica inconexa tiene n\'umero de conexidad $0$. Adicionalmente, diremos que
-una gr\'afica $G$ es \indiceSub{gr\'afica}{$t$-conexa} si $|G|>t$ y $G-X$ es conexa para todo
-conjunto de v\'ertices $X$ tal que $|X|<t$. Un ejemplo de conexidad es
+\indice{corte por v\'ertices}\index{v\'ertices!corte} $S$ de una gr\'afica $G$
+es un subconjunto de $V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el
+conjunto $S$ \indice{separa} a la gr\'afica en dos o m\'as componentes conexas.
+Decimos que $S$ es un \indiceSub{corte por
+v\'ertices}{$k$-corte}\index{v\'ertices!$k$-corte} \textbf{por v\'ertices} si
+$|S|=k$. A un corte por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$
+se le llama \indiceSub{corte por v\'ertices}{$uv$-corte}\index{v\'ertices!$uv$-corte} \textbf{por
+v\'ertices}. La m\'inima cardinalidad de un $uv$-corte por v\'ertices se denota
+$C(u,v)$ y no est\'a definida si $u$ y $v$ son adyacentes o $x=y$. Tamb\'ien
+pueden existir cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean
+$X,Y \subseteq V(G)$, $S$ es un \indiceSub{corte por v\'ertices}{$XY$-corte
+}\index{v\'ertices!$XY$-corte} \textbf{por v\'ertices} si $G-S$ es una gr\'afica
+inconexa donde $X$ y $Y$ se encuentran en distintas componentes conexas. Cabe
+notar que no todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber,
+las gr\'aficas completas (introducidas en la siguiente secci\'on) no tienen
+corte por v\'ertices y son las \'unicas con esta propiedad. Ahora, usando el
+concepto de corte por v\'ertices, definiremos la conexidad de una gr\'afica. El
+\indice{n\'umero de conexidad} de una gr\'afica $G$, denotado por $\kappa(G)$,
+se define como la m\'inima cardinalidad de un conjunto de corte de $G$, es
+decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por v\'ertices}\}$.
+Como ya se observ\'o, las gr\'aficas completas no tienen cortes por v\'ertices,
+no obstante, por convenci\'on diremos que una gr\'afica completa de $n$
+v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io es un
+corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una gr\'afica
+inconexa tiene n\'umero de conexidad $0$. Adicionalmente, diremos que una
+gr\'afica $G$ es \indiceSub{gr\'afica}{$t$-conexa} si $|G|>t$ y $G-X$ es conexa
+para todo conjunto de v\'ertices $X$ tal que $|X|<t$. Un ejemplo de conexidad es
 considerar las gr\'aficas en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos
 que ambas son conexas, sin embargo, necesitar\'iamos m\'as v\'ertices para
 ``desconectar'' la gr\'afica de \cref{fig:subgraf} que las gr\'aficas de
@@ -883,6 +893,18 @@ caracteristcas. Hay varias familias relevantes en la Teor\'ia de Gr\'aficas; en
 esta secci\'on hablaremos de las familias que son relevantes para este trabajo y
 sus propiedades.
 
+Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
+de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
+le denota $K_n$. Nos fijamos que $K_1$ es la gr\'afica que s\'olo tiene un
+v\'ertice y su conjunto de aristas es vac\'io. A esta gr\'afica tambi\'en se le
+conoce como la gr\'afica \indice{trivial}. Algo que es importante de mencionar
+es que, tanto las gr\'aficas completas como las gr\'aficas vac\'ias son \'unicas
+salvo isomorfismos. Cuando una gr\'afica est\'a conformada \'unicamente por
+v\'ertices aislados decimos que es una gr\'afica \indiceSub{gr\'afica}{vac\'ia}.
+Vale la pena notar que los complementos de la gr\'afica
+completa $K_n$ es gr\'afica vac\'ias de $n$ elementos. A continuaci\'on, en
+\cref{fig:ex-va-comp}, se muestra un ejemplo de una gr\'afica vac\'ia y $K_5$.
+
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
@@ -906,20 +928,13 @@ sus propiedades.
         \caption{La gr\'afica vac\'ia de 3 v\'ertices (izquierda) y la
         gr\'afica completa de 5 v\'ertices (derecha).}
         \label{fig:ex-va-comp}
-    \end{figure}
+    \end{figure} 
 
-Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
-de aristas es igual a $\binom{V(G)}{2}$. A la gr\'afica completa de orden $n$ se
-le denota $K_n$. Cuando una gr\'afica est\'a conformada \'unicamente por
-v\'ertices aislados decimos que es una gr\'afica \indiceSub{gr\'afica}{vac\'ia}
-y la denotamos $\overline{K_n}$, donde $n$ es el n\'umero de v\'ertices de la
-gr\'afica. A $K_1$ tambi\'en se le conoce como la gr\'afica  \indice{trivial}. A
-continuaci\'on, en \cref{fig:ex-va-comp}, se muestra un ejemplo de una gr\'afica
-vac\'ia y $K_5$.
+\newpage
 
 Una familia de gr\'aficas, muy estudiada en Teor\'ia de Gr\'aficas, es la
 familia de las \textbf{gr\'aficas }\indiceSub{gr\'afica}{$k$-partitas}. Una
-gr\'afica es $k$-\textit{partita} si su conjunto de v\'ertices admite una
+gr\'afica es $k$-\textbf{partita} si su conjunto de v\'ertices admite una
 partici\'on en a lo m\'as $k$ conjuntos independientes. Un caso muy relevante, y
 que nos ser\'a particularmente \'util en este trabajo, es el caso en el que
 $k=2$. En este caso se dice que es una \textbf{gr\'afica}
