@@ -281,9 +281,6 @@ ficha en el v\'ertice $2$ se queda fija a trav\'es de la trayectoria en la
 gr\'afica de fichas. Esto se puede ver en \cref{fig:ex-tok-Path} al fijarnos que
 el $2$ en todos los v\'ertices de la trayectoria, resaltado en gris.
 
-%A lo largo de este trabajo nos ser\'a de utilidad $A'$ por lo que .....
-
-
 \begin{figure}[ht!]
     \centering
        \begin{tikzpicture}
@@ -298,8 +295,6 @@ el $2$ en todos los v\'ertices de la trayectoria, resaltado en gris.
                 \draw [wedge,vino] (\i) to (\j);
             \end{scope}
         
-        %{\small $12{\bf 6}$}
-        %${\color{azulCielo}\bf azul}$
         \begin{scope}[xshift=-2cm]
             \draw (0,1.5) node (1) [vertex, label=90:{\footnotesize $134$}] {};
             \draw (-2,2) node (2) [vertex, label=90:{${\bf {\color{grisOscuro} 2}{\color{naranja} 3}{\color{azulMetal} 4}}$}] {};
@@ -354,9 +349,7 @@ inducida} por los v\'ertices de $F_k(G)$ que contienen al subconjunto $X$.
             \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,3/4,4/5}
                 \draw [edge,grisOscuro] (\i) to (\j);
             \end{scope}
-        
-        %{\small $12{\bf 6}$}
-        %${\color{azulCielo}\bf azul}$
+
         \begin{scope}[xshift=-2cm, scale=0.8]
             \draw (0,1.5) node (1) [vertex, label=90:{{ {\color{grisOscuro}\footnotesize $134$}}}] {};
             \draw (-2,2) node (2) [vertex, label=90:\small $234$] {};
@@ -412,20 +405,6 @@ el la funci\'on si preserva adyacencias y no adyacencias.....
         \foreach \i/\j in {1/2,2/3}
             \draw [edge,grisOscuro!50] (\i) to (\j);
         \end{scope}
-    
-    %{\small $12{\bf 6}$}
-    %${\color{azulCielo}\bf azul}$
-%     \begin{scope}[xshift=-1.3cm]
-%         \draw (-2,2) node (2) [vertex, label=90:$234$] {};
-%         \draw (-3,1) node (4) [vertex, label=180:{$123$}] {};
-%         \draw (-1.1,0.7) node (6) [vertex, label=87:$235$] {};
-%         \draw (1.1,0.7) node (7) [vertex, label=93:$245$] {};
-%         \draw (-1.1,-1) node (8) [vertex, label=240:{$124$}] {};
-%         \draw (0,-2.3) node (10) [vertex, label=270:$125$] {};
-       
-%        \foreach \i/\j in {2/4,4/6,4/8,2/8,7/8,8/10,2/6,6/7,6/10,7/10} 
-%             \draw [edge,grisOscuro] (\i) to (\j);
-%    \end{scope}       
 
     \begin{scope}[xshift=-2cm]
         \draw (0.5,0.87) node (1) [vertex,label=87:$235$] {};
@@ -434,8 +413,7 @@ el la funci\'on si preserva adyacencias y no adyacencias.....
         \draw (-0.5,-0.87) node (4) [vertex,label=240:\small $124$] {};
         \draw ({(360/6)*5}:2) node(5)[vertex, label=(360/5)*5:{\small ${125}$}]{};
         \draw ({(360/6)*6}:2) node(6)[vertex, label=(360/5)*6:{\small ${245}$}]{};
-    %\draw ({(360/5)*2}:2) node(2)[vertex, fill=rosa, label=(360/5)*2:{\small ${2}$}]{};
-    
+   
     \foreach \i/\j in {1/2,1/3,1/5,1/6,2/3,2/4,3/4,4/5,4/6,5/6}
         \draw [edge,grisOscuro] (\i) to (\j);
     \end{scope}
