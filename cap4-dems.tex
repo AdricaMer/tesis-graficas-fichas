@@ -79,150 +79,134 @@ gr\'aficas de $k$-fichas de abanicos son hamiltonianas, a partir de abanicos con
 cierto n\'umero de v\'ertices. Para esto, primero es necesaria la siguiente
 proposici\'on.
 
-%TODO:modificacion de def de abanico para homogenizar concepto. (Agregar nombre
-%de v\'ertices en generalizado.)
-%TODO: correccion en la definicion de abanico, es union generalizada.
-
- %TODO: definir la grafica abanico como una trayectoria P_{n-1} y K_1 de tal 
-%manera que los primeros n-1 elementos pertenezcan a la trayectoria
-
-
 \begin{proposicion}
-        \label{prop:iso-SFan}
-            Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
-            V(F_k(\mathcal{F}_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices, con
-            $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
-            inducida  por $V_i$. Entoncess $S_i$ es isomorfa a
-            $F_{k-1}(\mathcal{F}_{n-i})$.
-        \end{proposicion}
+\label{prop:iso-SFan}
+    Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
+    V(F_k(\mathcal{F}_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices,
+    con $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
+    inducida  por $V_i$. Entoncess $S_i$ es isomorfa a
+    $F_{k-1}(\mathcal{F}_{n-i})$.
+\end{proposicion}
     
-        \begin{proof}
-            Sea $V(\mathcal{F}_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, donde
-            $V(P_{n-i-1}) = \{v_{i+1}, v_{i+2}, \dots, v_{n-1}\}$ y $V(K_1)=
-            \{v_n\}$ por definici\'on. Basta demostrar que existe un isomorfismo
-            entre las gr\'aficas $S_i$ y $F_{k-1}(\mathcal{F}_{n-1})$.
-            Proponemos a la funci\'on $A \xrightarrow[]{} A \setminus \{v_i\}$
-            como dicho isomorfismo. Nos fijamos que para $A \in
-            V(S_i)$ tenemos que $A \setminus \{v_i\} \in \
-            F_{k-1}(\mathcal{F}_{n-i})$  y para $B \in
-            F_{k-1}(\mathcal{F}_{n-i})$ tenemos que $B \cup \{v_i\} \in S_i$,
-            por lo que $|V(S_i)|=|V(F_{k-1}(\mathcal{F}_{n-i}))|$. Adem\'as,
-            observamos que $A$ y $B $ son adyacentes en $V(S_i)$ si y s\'olo si
-            $A \setminus \{v_i\}$ y $B \setminus \{v_i\}$ son adyacentes en
-            $F_{k-1}(F_{n-i})$, esto pues $A\triangle B = \{a,b\}$, donde $a\neq
-            v_i$ y $b \neq v_i$, por lo que $v_i$ no afecta la adyacencia en
-            ninguna de las gr\'aficas. Esto quiere decir que la funci\'on
-            respeta adyacencias. Por lo tanto $S_i \cong
-            F_{k-1}(\mathcal{F}_{n-i})$, con $1 \leq i \leq n-k$.
-        \end{proof}
+\begin{proof}
+    Sea $V(\mathcal{F}_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, donde
+    $V(P_{n-i-1}) = \{v_{i+1}, v_{i+2}, \dots, v_{n-1}\}$ y $V(K_1)= \{v_n\}$
+    por definici\'on. Basta demostrar que existe un isomorfismo entre las
+    gr\'aficas $S_i$ y $F_{k-1}(\mathcal{F}_{n-1})$. Proponemos a la funci\'on
+    $A \xrightarrow[]{} A \setminus \{v_i\}$ como dicho isomorfismo. Nos fijamos
+    que para $A \in V(S_i)$ tenemos que $A \setminus \{v_i\} \in \
+    F_{k-1}(\mathcal{F}_{n-i})$  y para $B \in F_{k-1}(\mathcal{F}_{n-i})$
+    tenemos que $B \cup \{v_i\} \in S_i$, por lo que
+    $|V(S_i)|=|V(F_{k-1}(\mathcal{F}_{n-i}))|$. Adem\'as, observamos que $A$ y
+    $B $ son adyacentes en $V(S_i)$ si y s\'olo si $A \setminus \{v_i\}$ y $B
+    \setminus \{v_i\}$ son adyacentes en $F_{k-1}(F_{n-i})$, esto pues
+    $A\triangle B = \{a,b\}$, donde $a\neq v_i$ y $b \neq v_i$, por lo que $v_i$
+    no afecta la adyacencia en ninguna de las gr\'aficas. Esto quiere decir que
+    la funci\'on respeta adyacencias. Por lo tanto $S_i \cong
+    F_{k-1}(\mathcal{F}_{n-i})$, con $1 \leq i \leq n-k$.
+\end{proof}
 
-        Ahora pasamos a demostrar el teorema.
+Ahora pasamos a demostrar el teorema.
     
-        \begin{teorema}
-        \label{teo:hamilt-SFan}
-            Sean $n,k \in \mathbb{Z}$ tales que $n \geq 3$ y $1 \leq k \leq n-1$,
-            entonces $F_k(\mathcal{F}_n)$ es hamiltoniana.
-        \end{teorema}
+\begin{teorema}
+\label{teo:hamilt-SFan}
+    Sean $n,k \in \mathbb{Z}$ tales que $n \geq 3$ y $1 \leq k \leq n-1$,
+    entonces $F_k(\mathcal{F}_n)$ es hamiltoniana.
+\end{teorema}
     
-        
-        \begin{proof}
-            Usando doble inducci\'on sobre $k$ y $n$, demostraremos que
-            $F_k(\mathcal{F}_n)$ tiene un ciclo hamiltoniano donde los v\'ertices
-            $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k},
-            v_{n-k+1}, \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Para esta
-            demostraci\'on consideraremos que para todo v\'ertice $A = \{a_1,
-            \dots, a_k\}$ de una gr\'afica de $k$-fichas se tiene $a_1 < \cdots
-            < a_k$. Observamos que para $k =1$ tenemos que $F_1(\mathcal{F}_n) \cong \mathcal{F}_n$
-            por lo que es hamiltoniana y, por definici\'on de gr\'afica abanico,
-            se cumple que $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y
-            $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_{n-1}\}$ son adyacentes.
-            Entonces, asumiremos $k \geq 2$ para el resto de la demostraci\'on.
-            Primero consideramos el caso en el que $k =2$. Si tomamos $n = 3$,
-            tenemos la gr\'afica con conjunto de v\'ertices $V(\mathcal{F}_n)=\{v_1, v_2,
-            v_3\}$. Entonces tenemos el siguiente ciclo hamiltoniano $C=
-            (\{v_1,v_3\},\{v_1,v_2\},\{v_2,v_3\}, \{v_1,v_3\})$, donde $\{v_1,
-            v_3\}$ y $\{v_1, v_2\}$ son adyacentes. 
+\begin{proof}
+    Usando doble inducci\'on sobre $k$ y $n$, demostraremos que
+    $F_k(\mathcal{F}_n)$ tiene un ciclo hamiltoniano donde los v\'ertices
+    $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k}, v_{n-k+1},
+    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Para esta demostraci\'on
+    consideraremos que para todo v\'ertice $A = \{a_1, \dots, a_k\}$ de una
+    gr\'afica de $k$-fichas se tiene $a_1 < \cdots < a_k$. Observamos que para
+    $k =1$ tenemos que $F_1(\mathcal{F}_n) \cong \mathcal{F}_n$ por lo que es
+    hamiltoniana y, por definici\'on de gr\'afica abanico, se cumple que
+    $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k}, v_{n-k+1},
+    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Entonces, asumiremos $k \geq 2$
+    para el resto de la demostraci\'on. Primero consideramos el caso en el que
+    $k =2$. Si tomamos $n = 3$, tenemos la gr\'afica con conjunto de v\'ertices
+    $V(\mathcal{F}_n)=\{v_1, v_2, v_3\}$. Entonces tenemos el siguiente ciclo
+    hamiltoniano $C= (\{v_1,v_3\},\{v_1,v_2\},\{v_2,v_3\}, \{v_1,v_3\})$, donde
+    $\{v_1, v_3\}$ y $\{v_1, v_2\}$ son adyacentes. 
             
-            Ahora veamos elabanico caso de la gr\'afica de $2$-fichas de $\mathcal{F}_n$, con $n
-            \geq 4$ y conjunto de v\'ertices $V(\mathcal{F}_n)=\{v_1,\dots, v_n\}$.
-            Tomamos el ciclo
+    Ahora veamos elabanico caso de la gr\'afica de $2$-fichas de
+    $\mathcal{F}_n$, con $n \geq 4$ y conjunto de v\'ertices
+    $V(\mathcal{F}_n)=\{v_1,\dots, v_n\}$. Tomamos el ciclo
     
-            $C = (\{v_1, v_{n-1}\},\{v_1, v_n\},\{v_1, v_{n-2}\}, \{v_1,
-            v_{n-3}\}, \dots, \{v_1, v_2\},$
+    $C = (\{v_1, v_{n-1}\},\{v_1, v_n\},\{v_1, v_{n-2}\}, \{v_1, v_{n-3}\},
+    \dots, \{v_1, v_2\},$
             
-            $\{v_2, v_n\}, \{v_2, v_{n-1}\}, \{v_2, v_{n-2}\},
-            \dots, \{v_2, v_3\},$
+    $\{v_2, v_n\}, \{v_2, v_{n-1}\}, \{v_2, v_{n-2}\}, \dots, \{v_2,v_3\},$
     
-            $ \dots,$
+    $ \dots,$
     
-            $\{v_{n-3},v_n\}, \{v_{n-3}, v_{n-1}\},\{v_{n-3},v_{n-2}\},
-            \{v_{n-2}, v_n\},\{v_{n-2}, v_{n-1}\}, \{v_{n-1}, v_n\}, \{v_1,
-            v_{n-1}\})$
+    $\{v_{n-3},v_n\}, \{v_{n-3}, v_{n-1}\},\{v_{n-3},v_{n-2}\}, \{v_{n-2},
+    v_n\},\{v_{n-2}, v_{n-1}\}, \{v_{n-1}, v_n\}, \{v_1, v_{n-1}\})$
     
-            Observamos que $C$ es un ciclo hamiltoniano que cumple tener la
-            adyacencia de  $\{v_{n-2}, v_n\}$ y $\{v_{n-2}, v_{n-1}\}$. 
+    Observamos que $C$ es un ciclo hamiltoniano que cumple tener la adyacencia
+    de  $\{v_{n-2}, v_n\}$ y $\{v_{n-2}, v_{n-1}\}$. 
     
-            Ahora supongamos que $F_{k'}(\mathcal{F}_{n'})$ satisface las hip\'otesis de
-            inducci\'on, con $k'< k$ y $n'<n$. La gr\'afica $F_{k-1}(\mathcal{F}_{n-i})$,
-            con $1 \leq i \leq n-k$, satisface la hip\'otesis por lo que tiene
-            un ciclo hamiltoniano, y, por \cref{prop:iso-SFan}, sabemos que
-            $F_{k-1}(\mathcal{F}_{n-i}) \cong S_i$. Recordemos que  $S_i$ es la
-            subgr\'afica de $F_k(\mathcal{F}_n)$ inducida por el conjunto $V_i$ definido
-            en la Proposici\'on, en otras palabras, $S_i= F_k(\mathcal{F}_n, V_i)$. Ahora,
-            llamamos $C_i$ al ciclo hamiltoniano de $F_{k-1}(\mathcal{F}_{n-i})$ y $X_i =
-            \{v_i, v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2}, v_n\}$, $Y_i= \{v_i,
-            v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2}, v_{n-1}\}$ a los v\'ertices
-            adyacentes en $C_i$. Nombramos $P_i$ a la subtrayectoria
-            hamiltoniana de $X_i$ a $Y_i$. Por \'ultimo, denotamos $Z$ al
-            v\'ertice $\{v_{n-k+1}, v_{n-k+2}, \dots, v_n\}$. Observamos que,
-            por la forma en la que ordenamos los v\'ertices de una gr\'afica de
-            fichas, $Z$ es el \'unico v\'ertice que cumple tener elemento m\'inimo
-            $v_{n-k+1}$. Por lo tanto  $V_{n-k+1} = \{Z\}$. 
+    Ahora supongamos que $F_{k'}(\mathcal{F}_{n'})$ satisface las hip\'otesis de
+    inducci\'on, con $k'< k$ y $n'<n$. La gr\'afica
+    $F_{k-1}(\mathcal{F}_{n-i})$, con $1 \leq i \leq n-k$, satisface la
+    hip\'otesis por lo que tiene un ciclo hamiltoniano, y, por
+    \cref{prop:iso-SFan}, sabemos que $F_{k-1}(\mathcal{F}_{n-i}) \cong S_i$.
+    Recordemos que  $S_i$ es la subgr\'afica de $F_k(\mathcal{F}_n)$ inducida
+    por el conjunto $V_i$ definido en la Proposici\'on, en otras palabras, $S_i=
+    F_k(\mathcal{F}_n, V_i)$. Ahora, llamamos $C_i$ al ciclo hamiltoniano de
+    $F_{k-1}(\mathcal{F}_{n-i})$ y $X_i = \{v_i, v_{n-k+1}, v_{n-k+2}, \dots,
+    v_{n-2}, v_n\}$, $Y_i= \{v_i, v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2},
+    v_{n-1}\}$ a los v\'ertices adyacentes en $C_i$. Nombramos $P_i$ a la
+    subtrayectoria hamiltoniana de $X_i$ a $Y_i$. Por \'ultimo, denotamos $Z$ al
+    v\'ertice $\{v_{n-k+1}, v_{n-k+2}, \dots, v_n\}$. Observamos que, por la
+    forma en la que ordenamos los v\'ertices de una gr\'afica de fichas, $Z$ es
+    el \'unico v\'ertice que cumple tener elemento m\'inimo $v_{n-k+1}$. Por lo
+    tanto  $V_{n-k+1} = \{Z\}$. 
     
-            Ahora, nombramos $D_j =\{v_{n-k}, v_{n-k+1}, \dots, v_{n-1}, v_n\}
-            \setminus \{v_j\}$, con $n-k+1 \leq j \leq n$.  De esta manera,
-            podemos ver al conjunto de v\'ertices de $S_{n-k}$ como
-            $V_{n-k}=\{D_n, D_{n-1}, \dots, D_{n-k+1}\}$. Observamos que
-            $D_{j-1} \triangle D_j= \{v_{j-1}, v_j\}$, para $n-k+2 \leq j \leq
-            n-2$. Entonces tenemos la trayectoria $Q= (D_n, D_{n-1}, \dots,
-            D_{n-k+1})$ en $S_{n-k}$.     
-            Luego, fij\'emonos en que, para $j= n-k$, tenemos que $Y_j = D_n$ y
-            $X_j= D_{n-1}$. Adem\'as tenemos las siguientes diferencias
-            sim\'etricas $X_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_{n-1}\}$ ,
-            $Y_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_n\}$, $Z\triangle D_{n-k+1}
-            =\{v_{n-k}, v_{n-k+1}\}$. Por lo tanto, en $F_k(\mathcal{F}_n)$, tenemos las
-            siguientes adyacencias: $X_{n-k} \sim D_{n-2}$, $Y_{n-k} \sim
-            D_{n-2}$ y $Z \sim D_{n-k+1}$. Adicionalmente, observamos que, para
-            $1 \leq i \leq n- k- 1$, tenemos $X_{i} \triangle X_{i+1}= \{v_i,
-            v_{i+1}\}$ y $Y_i \triangle Y_{i+1} = \{v_i, v_{i+1}\}$. Tambi\'en
-            tenemos que $Y_1 \triangle Z = \{v_1, v_n\}$. Por lo tanto tenemos
-            que $Y_1 \sim Z$, $X_i \sim X_{i+1}$ y $Y_i \sim Y_{i+1}$, para toda
-            $1 \leq i \leq n-k-1$.
+    Ahora, nombramos $D_j =\{v_{n-k}, v_{n-k+1}, \dots, v_{n-1}, v_n\} \setminus
+    \{v_j\}$, con $n-k+1 \leq j \leq n$.  De esta manera, podemos ver al
+    conjunto de v\'ertices de $S_{n-k}$ como $V_{n-k}=\{D_n, D_{n-1}, \dots,
+    D_{n-k+1}\}$. Observamos que $D_{j-1} \triangle D_j= \{v_{j-1}, v_j\}$, para
+    $n-k+2 \leq j \leq n-2$. Entonces tenemos la trayectoria $Q= (D_n, D_{n-1},
+    \dots, D_{n-k+1})$ en $S_{n-k}$.     
+    Luego, fij\'emonos en que, para $j= n-k$, tenemos que $Y_j = D_n$ y $X_j=
+    D_{n-1}$. Adem\'as tenemos las siguientes diferencias sim\'etricas
+    $X_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_{n-1}\}$ , $Y_{n-k}\triangle D_{n-2}
+    =\{v_{n-2}, v_n\}$, $Z\triangle D_{n-k+1} =\{v_{n-k}, v_{n-k+1}\}$. Por lo
+    tanto, en $F_k(\mathcal{F}_n)$, tenemos las siguientes adyacencias: $X_{n-k}
+    \sim D_{n-2}$, $Y_{n-k} \sim D_{n-2}$ y $Z \sim D_{n-k+1}$. Adicionalmente,
+    observamos que, para $1 \leq i \leq n- k- 1$, tenemos $X_{i} \triangle
+    X_{i+1}= \{v_i, v_{i+1}\}$ y $Y_i \triangle Y_{i+1} = \{v_i, v_{i+1}\}$.
+    Tambi\'en tenemos que $Y_1 \triangle Z = \{v_1, v_n\}$. Por lo tanto tenemos
+    que $Y_1 \sim Z$, $X_i \sim X_{i+1}$ y $Y_i \sim Y_{i+1}$, para toda $1 \leq
+    i \leq n-k-1$.
             
-            Definimos el siguiente ciclo $C$ como uni\'on de trayectorias m\'as
-            peque\~{n}as: 
+    Definimos el siguiente ciclo $C$ como uni\'on de trayectorias m\'as
+    peque\~{n}as: 
     
-            En el caso en el que $n-k$ sea par:
+    En el caso en el que $n-k$ sea par:
             
-            $C =(Y_1 \xrightarrow[P_1^{-1}]{} X_1, X_2 \xrightarrow[P_2]{} Y_2,
-            \dots, Y_{n-k-1} \xrightarrow[P_{n-k-1}^{-1}]{} X_{n-k-1}, X_{n-k},
-            Y_{n-k}, D_{n-2} \xrightarrow[Q]{} D_{n-k+1}, Z, Y_1)$
+    $C =(Y_1 \xrightarrow[P_1^{-1}]{} X_1, X_2 \xrightarrow[P_2]{} Y_2, \dots,
+    Y_{n-k-1} \xrightarrow[P_{n-k-1}^{-1}]{} X_{n-k-1}, X_{n-k}, Y_{n-k},
+    D_{n-2} \xrightarrow[Q]{} D_{n-k+1}, Z, Y_1)$
     
-            En el caso en el que $N-k$ sea impar:
+    En el caso en el que $N-k$ sea impar:
     
-            $C = (Y_1 \xrightarrow[P_1^{-1}]{} X_1, X_2 \xrightarrow[P_2]{} Y_2,
-            \dots, X_{n-k-1} \xrightarrow[P_{n-k-1}]{} Y_{n-k-1}, Y_{n-k},
-            X_{n-k}, D_{n-2} \xrightarrow[Q]{} D_{n-k+1}, Z, Y_1)$
+    $C = (Y_1 \xrightarrow[P_1^{-1}]{} X_1, X_2 \xrightarrow[P_2]{} Y_2, \dots,
+    X_{n-k-1} \xrightarrow[P_{n-k-1}]{} Y_{n-k-1}, Y_{n-k}, X_{n-k}, D_{n-2}
+    \xrightarrow[Q]{} D_{n-k+1}, Z, Y_1)$
     
-            Afirmamos que en ambos casos $C$ es un ciclo hamiltoniano.
-            Observamos que, al ser uni\'on de las trayectorias $P_i$, el ciclo
-            tiene todos los v\'ertices de $F_k(\mathcal{F}_n)$ que empiezan con $v_i$, con
-            $i \in \{1, \dots, n-k-1\}$. Adem\'as, al tener la trayectoria $Q$,
-            el ciclo tambi\'en tiene los v\'ertices que faltan. Por lo tanto $C$
-            es un ciclo hamiltoniano de $F_k(\mathcal{F}_n)$, donde los v\'ertices
-            $X_{n-k}$ y $Y_{n-k}$ son adyacentes. 
-    
-        \end{proof}
+    Afirmamos que en ambos casos $C$ es un ciclo hamiltoniano. Observamos que,
+    al ser uni\'on de las trayectorias $P_i$, el ciclo tiene todos los
+    v\'ertices de $F_k(\mathcal{F}_n)$ que empiezan con $v_i$, con $i \in \{1,
+    \dots, n-k-1\}$. Adem\'as, al tener la trayectoria $Q$, el ciclo tambi\'en
+    tiene los v\'ertices que faltan. Por lo tanto $C$ es un ciclo hamiltoniano
+    de $F_k(\mathcal{F}_n)$, donde los v\'ertices $X_{n-k}$ y $Y_{n-k}$ son
+    adyacentes. 
+
+\end{proof}
 
 \section{Gr\'afica abanico generalizada
 \texorpdfstring{$\mathcal{F}_{m,n}$}{Fmn}}%
@@ -243,18 +227,17 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     2$ y $1 \leq m \leq 2n$, o si $n=1$ y $m=3$.
 \end{teorema}
 
-% TODO: dem de prop sobre relacion entre componentes conexas y hamiltonicidad
 %TODO: caso en el que n=1
 \begin{proof}
     Primero veamos que para $n \geq 2$ y $1 \leq m \leq 2n$ la gr\'afica de
-    $2$-fichas de $\mathcal{F}_{m,n}$ es hamiltoniana. Para esto construiremos un ciclo
-    hamiltorniano espec\'ifico para cada caso. Consideramos $m=1$ para el primer
-    caso. Si $n=2$, entonces $F_2(\mathcal{F}_{m,n}) \cong \mathcal{F}_{1,2}$ pues ambas son
-    isomorfas a $K_3$. Ahora consideramos $n \geq 3$ y tomamos $1 \leq i \leq n$
-    para construir una familia de trayectorias
-    $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots, \{v_i,v_n\})$. Observamos
-    que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una partici\'on de
-    $V(F_2(\mathcal{F}_{m,n}))$. %especificar mas?
+    $2$-fichas de $\mathcal{F}_{m,n}$ es hamiltoniana. Para esto construiremos
+    un ciclo hamiltorniano espec\'ifico para cada caso. Consideramos $m=1$ para
+    el primer caso. Si $n=2$, entonces $F_2(\mathcal{F}_{m,n}) \cong
+    \mathcal{F}_{1,2}$ pues ambas son isomorfas a $K_3$. Ahora consideramos $n
+    \geq 3$ y tomamos $1 \leq i \leq n$ para construir una familia de
+    trayectorias $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots,
+    \{v_i,v_n\})$. Observamos que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una
+    partici\'on de $V(F_2(\mathcal{F}_{m,n}))$. %especificar mas?
     Ahora analizamos el siguiente ciclo $C$.
     
     En el caso en el que $n$ es par, tomamos:
@@ -338,343 +321,343 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     ficha en ${\color{coral}w_6}$ est\'a est\'atica.
 
 
-    \begin{figure}[ht!]
-        \centering
-           \begin{tikzpicture}
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
         
-            \begin{scope}[xshift=-5.5cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [bvertex,fill=lila ,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=-5.5cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [bvertex,fill=lila ,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                 
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
 
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
         
-            \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [bcvertex,fill=lila ,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [bcvertex,fill=lila ,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [bvertex,fill=lila ,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [bvertex,fill=lila ,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                             
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
                     
-            \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [bvertex,fill=lila ,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [bvertex,fill=lila ,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [bvertex,fill=lila ,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [bvertex,fill=lila ,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
 
-            \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [bcvertex,fill=lila,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [bcvertex,fill=lila,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3, w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
 
-            \begin{scope}[xshift=-2.5cm,yshift=-11cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [bvertex,fill=lila ,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+        \begin{scope}[xshift=-2.5cm,yshift=-11cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [bvertex,fill=lila ,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [cvertex,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \draw [edge,grisOscuro] (\i) to (\j);
+             
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
+                \draw [edge,grisOscuro!50] (\i) to (\j);
+        \end{scope}
+
+        \begin{scope}[xshift=2.5cm,yshift=-11cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
+            \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
+            \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
+            \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
+            \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
+            \draw (0.75,-2.3) node (w7) [bcvertex,fill=lila,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
+            \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
+                    
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
              
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
+            \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,w5/v4,
+                w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,w8/v2,
+                w8/v3,w8/v4} 
                 \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=2.5cm,yshift=-11cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (-0.75,2.3) node (w2) [vertex,label=90:{\small $w_2$}] {};
-                \draw (0.75,2.3) node (w3) [vertex, label=90:{\small $w_3$}] {};
-                \draw (2,2.3) node (w4) [cvertex,label=90:{\small $\color{grisOscuro!75}w_4$}] {};
-                \draw (-2,-2.3) node (w5) [cvertex,label=270:{\small $\color{grisOscuro!75}w_5$}] {}; 
-                \draw (-0.75,-2.3) node (w6) [bcvertex,fill=coral,label=270:{\small $\color{grisOscuro!75}w_6$}] {};
-                \draw (0.75,-2.3) node (w7) [bcvertex,fill=lila,label=270:{\small $\color{grisOscuro!75}w_7$}] {};
-                \draw (2,-2.3) node (w8) [cvertex,label=270 :{\small $\color{grisOscuro!75} w_8$}] {};
-                    
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
-                \draw [edge,grisOscuro] (\i) to (\j);
-             
-                \foreach \i/\j in{w4/v1,w4/v2,w4/v3,w4/v4,w5/v1,w5/v2,w5/v3,
-                    w5/v4,w6/v1,w6/v2,w6/v3,w6/v4,w7/v1,w7/v2,w7/v3,w7/v4,w8/v1,
-                    w8/v2,w8/v3,w8/v4} 
-                \draw [edge,grisOscuro!50] (\i) to (\j);
-            \end{scope}
-
-        \end{tikzpicture}
-        \caption{La gr\'afica $F_2(\mathcal{F}_{8,4})$, mostrando el movimiento de fichas
+    \end{tikzpicture}
+    \caption{La gr\'afica $F_2(\mathcal{F}_{8,4})$, mostrando el movimiento de fichas
         a trav\'es de $P_6$ }
         \label{fig:exe-tray-n-2n}
-    \end{figure}
+\end{figure}
     
-    Por \'ultimo, veamos el caso en el que $1<m<2n$ y del mismo modo que en los
-    casos anteriores, definiremos una familia de trayectorias en $F_2(\mathcal{F}_{m,n})$.
-    Primero definimos $Q_1 =P_1$. Ahora nos fijamos en $1<i<m$ para definir
-    $Q_i$. Queremos usar $P_i$ como referencia para generar las nuevas
-    trayectorias, pero $P_i$ tiene m\'as v\'ertices de la forma $\{w_i,w_j\}$,
-    en particular cuando $j< n+i-m$. Entonces defnimos $Q_i =
-    (\{w_i,v_n\},\{w_i,w_1\},\{w_i,v_{n-1}\},\{w_i,v_{n-2}\}, \dots,
-    ,\{w_i,v_{n-j}\},\{w_i,w_{n-j-1}\}\xrightarrow[P_i]{}\{w_i,w_{i+1}\})$, con
-    $j = n+i-m-1$. Finalmente, definimos $Q_m$ como la trayectoria
-    $(\{w_m,v_n\},\{w_m,w_1\},\{w_m,v_{n-1}\},\{w_m,v_{n-2}\}, \dots,
-    ,\{w_m,v_{n-j}\},\{w_m,w_{n-j-1}\}\xrightarrow[P_m]{}\{w_m,w_{m+1}\})$ al
-    intercambiar los v\'ertices $\{w_m,w_{m+1}\}$ y $\{w_m,w_1\}$. Observamos
-    que las trayectorias $Q_i$ son trayectorias en $F_2(\mathcal{F}_{m,n})$ pues $v_i \sim
-    v_{i+1}$ en $\mathcal{F}_{m,n}$. Adem\'as, esta familia de trayectorias forma una
-    partici\'on para $F_2(\mathcal{F}_{m,n})$ pues son las trayectorias $P_i$ al quitarle
-    los v\'ertices $\{w_i,w_j\}$, con $j< n+i-m$. Por \'ultimo, notamos que,
-    salvo $Q_m$, las trayectorias $P_i$ y $Q_i$ tienen los mismos v\'ertices
-    iniciales y finales, adicionalmente, el \'ultimo v\'ertice de $Q_i$, es
-    decir $\{w_m,w_1\}$, es adyacente al primer v\'ertice de $P_1$, que es
-    $\{v_n,w_1\}$. Por lo tanto el ciclo $C_2=(Q_1,Q_2, \dots, Q_m,
-    \{v_n,w_1\})$ es el ciclo hamiltoniano buscado. La
-    Figura\ref{fig:exe-tray-n-m} muestra el movimiento de las fichas en la
-    gr\'afica $\mathcal{F}_{3,4}$ para generar la trayectoria $P_2$ en la gr\'afica de
-    $2$-fichas, donde la ficha en ${\color{azulClaro}w_2}$ est\'a fija.
+Por \'ultimo, veamos el caso en el que $1<m<2n$ y del mismo modo que en los
+casos anteriores, definiremos una familia de trayectorias en
+$F_2(\mathcal{F}_{m,n})$. Primero definimos $Q_1 =P_1$. Ahora nos fijamos en
+$1<i<m$ para definir $Q_i$. Queremos usar $P_i$ como referencia para generar las
+nuevas trayectorias, pero $P_i$ tiene m\'as v\'ertices de la forma
+$\{w_i,w_j\}$, en particular cuando $j< n+i-m$. Entonces defnimos $Q_i =
+(\{w_i,v_n\},\{w_i,w_1\},\{w_i,v_{n-1}\},\{w_i,v_{n-2}\}, \dots,
+,\{w_i,v_{n-j}\},\{w_i,w_{n-j-1}\}\xrightarrow[P_i]{}\{w_i,w_{i+1}\})$, con $j =
+n+i-m-1$. Finalmente, definimos $Q_m$ como la trayectoria
+$(\{w_m,v_n\},\{w_m,w_1\},\{w_m,v_{n-1}\},\{w_m,v_{n-2}\}, \dots,
+,\{w_m,v_{n-j}\},\{w_m,w_{n-j-1}\}\xrightarrow[P_m]{}\{w_m,w_{m+1}\})$ al
+intercambiar los v\'ertices $\{w_m,w_{m+1}\}$ y $\{w_m,w_1\}$. Observamos que
+las trayectorias $Q_i$ son trayectorias en $F_2(\mathcal{F}_{m,n})$ pues $v_i
+\sim v_{i+1}$ en $\mathcal{F}_{m,n}$. Adem\'as, esta familia de trayectorias
+forma una partici\'on para $F_2(\mathcal{F}_{m,n})$ pues son las trayectorias
+$P_i$ al quitarle los v\'ertices $\{w_i,w_j\}$, con $j< n+i-m$. Por \'ultimo,
+notamos que, salvo $Q_m$, las trayectorias $P_i$ y $Q_i$ tienen los mismos
+v\'ertices iniciales y finales, adicionalmente, el \'ultimo v\'ertice de $Q_i$,
+es decir $\{w_m,w_1\}$, es adyacente al primer v\'ertice de $P_1$, que es
+$\{v_n,w_1\}$. Por lo tanto el ciclo $C_2=(Q_1,Q_2, \dots, Q_m, \{v_n,w_1\})$ es
+el ciclo hamiltoniano buscado. La Figura\ref{fig:exe-tray-n-m} muestra el
+movimiento de las fichas en la gr\'afica $\mathcal{F}_{3,4}$ para generar la
+trayectoria $P_2$ en la gr\'afica de $2$-fichas, donde la ficha en
+${\color{azulClaro}w_2}$ est\'a fija.
 
 
-    \begin{figure}[ht!]
-        \centering
-           \begin{tikzpicture}
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
         
-            \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [bvertex,fill=amarillo ,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [bvertex,fill=amarillo ,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
                 
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
         
-            \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [bvertex,fill=amarillo ,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [bvertex,fill=amarillo ,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
                             
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
                     
-            \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [bvertex,fill=amarillo ,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [bvertex,fill=amarillo ,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [vertex,label=270:{\small $w_3$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
-            \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
-                \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-                \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-                \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
-                \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
-                \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
-                \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
-                \draw (0,-2.3) node (w3) [bvertex,fill=amarillo ,label=270:{\small $w_3$}] {};
+        \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+            \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
+            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
+            \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
+            \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
+            \draw (0,-2.3) node (w3) [bvertex,fill=amarillo ,label=270:{\small $w_3$}] {};
                     
-                \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,
-                    w2/v4,w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
+            \foreach \i/\j in{w1/v1,w1/v2,w1/v3,w1/v4,w2/v1,w2/v2,w2/v3,w2/v4,
+                w3/v1,w3/v2,w3/v3,w3/v4,v1/v2,v2/v3,v3/v4} 
                 \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
+        \end{scope}
 
         \end{tikzpicture}
     
         \caption{La gr\'afica $F_2(\mathcal{F}_{3,4})$, mostrando el movimiento de fichas
         a trav\'es de $P_2$ }
-        \label{fig:exe-tray-n-m}     
+    \label{fig:exe-tray-n-m}     
     \end{figure}
 
-    Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(\mathcal{F}_{m,n}))$, con
-    $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
-    observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$
-    por lo que es un v\'ertice aislado en $F_2(\mathcal{F}_{m,n})-S$, donde $i,j \in
-    \{1,\dots,m\}$ tal que $i \neq j$. Entonces tenemos $\binom{m}{2}$
-    v\'ertices aislados en $F_2(\mathcal{F}_{m,n})-S$. Adem\'as, la subgr\'afica inducida
-    por los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
-    $F_2(\mathcal{F}_{m,n})-S$. Por lo tanto tenemos que $F_2(\mathcal{F}_{m,n})-S$ tiene al menos
-    $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene que
-    $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
-    mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
-    $F_2(\mathcal{F}_{m,n})$ no es hamiltoniana.
+Ahora veamos que para cuando $m>2n$. Sea $S \subset V(F_2(\mathcal{F}_{m,n}))$,
+con $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
+observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$ por
+lo que es un v\'ertice aislado en $F_2(\mathcal{F}_{m,n})-S$, donde $i,j \in
+\{1,\dots,m\}$ tal que $i \neq j$. Entonces tenemos $\binom{m}{2}$ v\'ertices
+aislados en $F_2(\mathcal{F}_{m,n})-S$. Adem\'as, la subgr\'afica inducida por
+los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
+$F_2(\mathcal{F}_{m,n})-S$. Por lo tanto tenemos que $F_2(\mathcal{F}_{m,n})-S$
+tiene al menos $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene
+que $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
+mn = |S|$. Por lo tanto, por la (Proposicion que falta) tenemos que
+$F_2(\mathcal{F}_{m,n})$ no es hamiltoniana.
 
 \end{proof}
 
@@ -746,8 +729,6 @@ mientras que su gr\'afica de $k$-fichas si lo es. A continuaci\'on veremos una
 familia m\'as general cuyas gr\'aficas de fichas son hamiltonianas. Para esto,
 primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
 
-%TODO:definir subgr\'afica generadora
-
 \begin{proposicion}
 \label{prop:subg-gen}
     Sea $H$ una subgr\'afica generadora de $G$, entonces $F_k(H)$ es una
@@ -768,10 +749,6 @@ primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
     en $F_k(G)$. Por lo tanto tenemos que $F_k(H)$ es una subgr\'afica
     generadora de $F_k(G)$.
 \end{proof}
-
-%TODO: definir orden de una gr\'afica 
-%TODO: uni\'on completa de subgr\'aficas generadoras es un subgr\'afica 
-%generadora de la union completa de las gr\'aficas originales
 
 Pasamos a demostrar el resultado antes mencionado.
 
