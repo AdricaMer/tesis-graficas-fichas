@@ -785,6 +785,32 @@ se muestra la uni\'on completa de dichas gr\'aficas.
 \label{fig:ex-unionCompleta}
 \end{figure}
 
+La siguiente proposici\'on sobre la uni\'on completa de subgr\'aficas
+generadoras nos ser\'a de utilidad m\'as adelante este trabajo, por lo que
+pasamos a demostrarla.
+
+\begin{proposicion}
+\label{prop:HUnion-SSubG}
+    Sean $H \subseteq G$ y $H'\subseteq G$ subgr\'aficas generadoras, entonces
+    la uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la
+    uni\'on completa de $G$ y $G'$.
+\end{proposicion}
+
+\begin{proof}
+    Dadas dos gr\'aficas $G$ y $G'$ y dos gr\'aficas generadoras $H \subseteq G$
+    y $H'\subseteq G'$, buscamos demostrar que $H \oplus H'$ es una subgr\'afica
+    generadora de $G \oplus G'$. Observamos que $V(H)=V(G)$ y $V(H')=V(G)$, por
+    lo que $V(H \oplus H')=V(G \oplus G')$. Por consiguiente, basta ver que las
+    aristas de $H \oplus H'$ son aristas de $G \oplus G'$. Sean $x$ y $y$
+    v\'ertices adyacentes en $\in V(H \oplus H')$. Si $x,y \in V(H)$, de manera
+    an\'aloga si $x,y \in V(H')$, entonces tenemos que $x \sim y$ en $G$,
+    an\'alogamente $x \sim y$ en $G'$. Por ende, en ambos casos tenemos que $x$
+    y $y$ son adyacentes en $G \oplus G'$. Ahora, sin p\'erdida de generalidad,
+    si $x \in V(H)$ y $y \in V(H')$, por definici\'on de uni\'on completa
+    tenemos que $x \sim y$ en $G \oplus G'$. De este modo tenemos que $H \oplus
+    H'$ es una subgr\'afica generadora de $G \oplus G'$.
+\end{proof}
+
 Otra operaci\'on que se utilizar\'a en este trabajo es el producto cartesiano de
 gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el \indice{producto cartesiano} de
 $G$ y $H$, denotado $G \square H$, es la gr\'afica cuyo conjunto de v\'ertices
@@ -940,7 +966,51 @@ que nos ser\'a particularmente \'util en este trabajo, es el caso en el que
 $k=2$. En este caso se dice que es una \textbf{gr\'afica}
 \indiceSub{gr\'afica}{bipartita}\index{bipartita!gr\'afica}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es llamada
-\indice{bipartici\'on}. Adem\'as, existe un caso especial de las gr\'aficas
+\indice{bipartici\'on}. Una propiedad de suma utilidad se demuestra en
+\cref{prop:bip-compConect}. 
+\begin{proposicion}
+\label{prop:bip-compConect}
+    Sea $G$ una gr\'afica, entonces $G$ es bipartita si y s\'olo si cada
+    componente conexa de $G$ es bipartita.
+\end{proposicion}
+
+\begin{proof}
+    En el caso el que $G$ es una gr\'afica conexa, tenemos que s\'olo tiene una
+    componente conexa, ella misma, por lo que la proposici\'on se cumple de
+    manera trivial. Por ello, nos enfocamos en el caso en el que $G$ es
+    inconexa, es decir, $G$ tiene al menos dos componentes conexas. Sean $G_1,
+    \dots, G_n$ las componentes conexas de $G$, con $n \geq 2$. Empezamos
+    suponiendo que $G$ es una gr\'afica bipartita con bipartici\'on $(X,Y)$.
+    Sean $X_i, Y_i\subseteq G_i$ tales que $X_i \subseteq X$ y $Y_i \subseteq
+    Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
+    partici\'on, para cada $G_i$. Primero tenemos que $X_i \cap Y_i =
+    \varnothing$, pues $X \cap Y = \varnothing$ por definici\'on de partici\'on.
+    Adem\'as, de manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego,
+    sean $a \in X_i$ y $b \in Y_i$, como $X_i \subseteq X$ y $Y_i \subseteq Y$,
+    entonces tenemos que $a \in X$ y $b \in Y$, por lo que $a$ y $b$ no son
+    adyacentes. Por lo tanto, $(X_i, Y_i)$ es una partici\'on de $G_i$, en otras
+    palabras $G_i$ es una gr\'afica bipartita.
+
+    Ahora nos enfocamos en la segunda implicaci\'on, i.e. si $G_i$ es una
+    gr\'afica bipartita, para $i \in \{1, \dots, n\}$, entonces $G$ tambi\'en es
+    bipartita. Proponemos la bipartici\'on $(X,Y)$ para $G$, donde $X = \bigcup
+    X_i$ y $Y =\bigcup Y_i$. Nos fijamos en que $X \cup Y = \bigcup
+    V(G_i)=V(G)$. An\'alogamente tenemos que $X \cap Y = \varnothing$. Por
+    \'ultimo, dados $x \in X$ y $y \in Y$, tenemos que $x \in X_i$ y $y \in
+    Y_j$, para algunos $i,j \in \{1, \dots,n\}$. Si $i \neq j$, entonces los
+    v\'ertices estan en distintas componentes conexas, por lo que no son
+    adyacentes. Si $j=i$, entonces tenemos que $x \in X_i$ y $y \in Y_i$, por lo
+    que tampoco son adyacentes. Con esto tenemos que $(X,Y)$ es una partici\'on
+    de $G$, en otras palabras $G$ es bipartita.
+
+\end{proof}
+
+La Proposici\'on\ref{prop:bip-compConect} nos permite estudiar a las gr\'aficas
+bipartitas de manera m\'as general, pues no afirma que no dependemos de si una
+gr\'afica es conexa o no.
+
+
+Existe un caso especial de las gr\'aficas
 $k$-partitas, es cuando todas las aristas posibles est\'an presentes. Por
 cuesti\'on de utilidad para el trabajo, definiremos formalmente este
 comportamiento \'unicamente para las gr\'aficas bipartitas. Una gr\'afica es
@@ -1228,6 +1298,8 @@ propia por aristas, del lado derecho.
         \label{fig:ex-color-prop}
 \end{figure}
 
+\newpage
+
 La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por v\'ertices
 $c$ es el conjunto de todas las v\'ertices de la gr\'afica que estan coloreadas
 del color $i$, es decir $c^{-1}[i]$. Notemos que las clases crom\'aticas pueden
@@ -1235,8 +1307,24 @@ ser vac\'ias, adem\'as, en una coloraci\'on propia, cada clase crom\'atica es un
 conjunto independiente. El m\'inimo entero $k$ para el cu\'al una gr\'afica $G$
 es $k$-coloreable es el \indice{n\'umero crom\'atico} de $G$, denotado por
 $\chi(G)$. En este caso decimos que $G$ es
-\indiceSub{gr\'afica}{$k$-crom\'atica}. Observamos que si $H$ es una
-subgr\'afica de $G$, entonces $\chi(H) \leq \chi(G)$; m\'as a\'un, si si $H$ es
-una gr\'afica completa de $n$ v\'ertices, entonces $n \leq \chi(G)$. Observemos
-que, en \cref{fig:ex-color-prop}, se una $3$-coloraci\'on propia por
-v\'ertices, sin embargo el n\'umero crom\'atico de la gr\'afica es $2$.
+\indiceSub{gr\'afica}{$k$-crom\'atica}. En \cref{fig:ex-color-prop}, se una
+$3$-coloraci\'on propia por v\'ertices, sin embargo el n\'umero crom\'atico de
+la gr\'afica es $2$. 
+
+Es f\'acil observar que una gr\'afica es $1$-crom\'aticas si y s\'olo si es
+vac\'ia, pues de tener alguna arista ser\'ia necesario utilizar un segundo
+color. Adem\'as, tambi\'en podemos determinar como se ven las gr\'aficas
+$2$-crom\'aticas. Para esto, notamos que, al tener dos clases de colores de una
+coloraci\'on propia, garantizamos que la gr\'afica es una gr\'afica bipartita.
+Adem\'as, todas las gr\'aficas bipartitas cumplen ser $2$-crom\'aticas,
+asignandoles un color a cada conjunto de la partici\'on. (Por esta raz\'on, el
+estudio de la $k$-coloraci\'on de una gr\'afica se enfoca en $k>2$.) 
+
+Algo que es interesante de notar es que, si $H$ es una subgr\'afica de $G$,
+entonces $\chi(H) \leq \chi(G)$; m\'as a\'un, si si $H$ es una gr\'afica
+completa de $n$ v\'ertices, entonces $n \leq \chi(G)$. Por \'ultimo, vale la
+pena mencionar la relaci\'on entre el n\'umero crom\'atico de una gr\'afica y el
+n\'umero de clan de \'esta, i.e. $\omega$. Como los clanes cumplen que todos sus
+v\'ertices son adyacentes entre s\'i, entonces la clase crom\'atica de una
+gr\'afica $G$ tiene que ser al menos el n\'umero de clan de $G$, de esta manera
+tenemos que $\omega(G) \leq \chi(G)$. 
