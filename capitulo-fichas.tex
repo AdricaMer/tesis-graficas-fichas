@@ -398,7 +398,7 @@ de la gr\'afica $G-X$, es decir $F_{k-r}(G-X)$. Afirmamos que, para $k,r \in
 isomorfa a la gr\'afica $F_{k-r}(G-X)$, con el isomorfismo que a cada $A \in
 F_k(G,X)$ le asocia $A \setminus X$ en $F_{k-r}(G-X)$.   Observamos que las
 aristas en $G$ con alg\'un extremos en $X$ no se usan en $F_k(G,X)$, por lo que
-el la funci\'on si preserva adyacencias y no adyacencias..... 
+el la funci\'on si preserva adyacencias y no adyacencias.
 
 \begin{figure}[ht!]
     \centering
@@ -433,3 +433,25 @@ el la funci\'on si preserva adyacencias y no adyacencias.....
     gr\'afica de fichas $F_2(G-2)$ (derecha).}
     \label{fig:ex-tok-subgraph-aux}
 \end{figure}
+
+Si nos fijamos bien, podemos ver que la gr\'afica de $2$-fichas en
+\cref{fig:ex-tok-graph} y la gr\'afica de $3$-fichas en \cref{fig:ex-tok-Path}
+son isomorfas. Esto resulta interesante pues ambas provienen de la misma
+gr\'afica. De esto, vale la pena preguntarse, cu\'al es la relaci\'on entre
+ellas. Fij\'andonos a\'un m\'as, vemos que el isomorfismo entre ambas env\'ia un
+v\'ertice $A \in V(F_2(G))$ al v\'ertice $V(G) \setminus A \in V(F_3(G))$.
+Notamos que dos v\'ertices de $ A,B \in V(F_2(G))$ son adyacentes si y s\'olo si
+$V(G) \setminus A$ y $V(G) \setminus B$ son adyacentes en $F_3(G)$. \'Esto pues,
+la diferencia sim\'etrica entre $A$ y $B$ es igual a la diferencia sim\'etrica
+entre sus complementos. Podr\'iamos verlo como recorrer la gr\'afica ``al
+rev\'es''. Generalizando este consepto afirmamos que, para toda gr\'afica $G$,
+$F_k(G)$ y $F_{n-k}(G)$ son gr\'aficas isomorfas. Empezamos viendo que
+$V(F_k(G)) =\binom{n}{k}= \binom{n}{n-k}= V(F_{n-k}(G))$ Tomando la funci\'on
+antes mencionado, falta ver que preserva adyacencias y no adyacencias. Volviendo
+a observar que, para todo $A$ y $B$ en $V(F_k(G))$ tenemos que $A \triangle B =
+(V(G)\setminus A) \triangle (V(G)\setminus B)$, entonces las adyacencias y no
+adyacencias dependen de $G$, por lo que la funci\'on cumple ser un isomorfismo. 
+
+El resultado anterior resulta de mucha utilidad al momento de estudiar las
+gr\'aficas de fichas, pues nos dice que basta en enfocarnos en las gr\'aficas de
+$k$-fichas, para $k \leq \frac{n}{2}$.
