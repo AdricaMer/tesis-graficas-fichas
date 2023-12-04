@@ -105,7 +105,7 @@ d +1$, es decir una trayectoria de di\'ametro $d$. Es f\'acil observar que para
 toda $k$ obtenemos una gr\'afica de $k$-fichas de di\'ametro $k(d-k+1)$. Para
 ejemplificar este tipo de gr\'aficas consideremos la trayectoria $P_6$.
 Recordamos que $F_2(P_6) \cong F_4(P_6)$, $F_1(P_6) \cong F_5(P_6)$ y $F_6(P_6)
-\cong K_1$.La Figura\ref{fig:ex-diamP} muestra las gr\'aficas de $2$ y
+\cong K_1$. \Cref{fig:ex-diamP} muestra las gr\'aficas de $2$ y
 $3$-fichas de la $P_6$. Las gr\'aficas $F_2(P_6)$ y $F_3(P_6)$ tienen di\'ametro
 $8$ y $9$, respectivamente, i.e. tiene di\'ametro $k(d-k+1)$
 
@@ -192,21 +192,21 @@ m\'axima en ambaas gr\'aficas}
 \label{fig:ex-diamP}       
 \end{figure}
 
-Para la cota superior del Teorema\ref{teo:diamFG} consideramos la gr\'afica
-$G$, obtenida de a\~{n}adirle $k$ v\'ertices a cada extremo de la trayectoria
-$P_{d -1}$ y hacerlos adyacentes a los extremos de esta trayectoria. Observamos
-que $G$ tiene di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de
-$k$-fichas de $G$ tiene di\'ametro $dk$. Para ejemplificar esto,
-\cref{fig:ex-diamT} muestra una gr\'afica $G$ construida al agregar cuatro
-v\'ertices en cada extremo de la trayectoria $P_5$, i.e., $k=4$. Notamos que los
-v\'ertices $\{v_1,v_2,v_3,v_4\}$ y $\{w_1,w_2,w_3,w_4\}$ son extremos en
-$F_4(G)$ pues ambos tienen \'unicamente un vecino. La Figura\ref{fig:ex-diamT}
-muestra el movimiento de las fichas en $F_4(G)$ de un extremo al otro extremo.
-Observamos que una ficha en alg\'un $v_i$ tiene que moverse por $d +1$
-v\'ertices a alg\'un $w_i$ libre, para $i \in \{1,2,3,4\}$. Adem\'as, observamos
-que cada movimiento corresponde a un v\'ertice en la trayectoria en $F_4(G)$ que
-va de un extremo a otro. Por lo tanto tenemos que la trayectoria que va de
-$\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
+Para la cota superior d\cref{teo:diamFG} consideramos la gr\'afica $G$, obtenida
+de a\~{n}adirle $k$ v\'ertices a cada extremo de la trayectoria $P_{d -1}$ y
+hacerlos adyacentes a los extremos de esta trayectoria. Observamos que $G$ tiene
+di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de $k$-fichas de
+$G$ tiene di\'ametro $dk$. Para ejemplificar esto, \cref{fig:ex-diamT} muestra
+una gr\'afica $G$ construida al agregar cuatro v\'ertices en cada extremo de la
+trayectoria $P_5$, i.e., $k=4$. Notamos que los v\'ertices $\{v_1,v_2,v_3,v_4\}$
+y $\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$ pues ambos tienen \'unicamente
+un vecino. \Cref{fig:ex-diamT} muestra el movimiento de las fichas en $F_4(G)$
+de un extremo al otro extremo. Observamos que una ficha en alg\'un $v_i$ tiene
+que moverse por $d +1$ v\'ertices a alg\'un $w_i$ libre, para $i \in
+\{1,2,3,4\}$. Adem\'as, observamos que cada movimiento corresponde a un
+v\'ertice en la trayectoria en $F_4(G)$ que va de un extremo a otro. Por lo
+tanto tenemos que la trayectoria que va de $\{v_1,v_2,v_3,v_4\}$ a
+$\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 
 \newpage
 
@@ -278,7 +278,7 @@ $\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 
         
     \end{tikzpicture}
-    \caption{La gr\'afica $G$ utilizada como ejemplo del Teorema\ref{teo:diamFG}, 
+    \caption{La gr\'afica $G$ utilizada como ejemplo d\cref{teo:diamFG}, 
     resaltando el movimiento de las $4$ fichas al pasar de un extremo de la 
     gr\'afica al otro}
 \label{fig:ex-diamT}       
@@ -342,7 +342,7 @@ inducidas de $G$.
     $F_k(G)$.
 \end{proof}
 
-La Figura\ref{fig:ex-cart}, exhibida a continuaci\'on, es un ejemplo sencillo
+\Cref{fig:ex-cart}, exhibida a continuaci\'on, es un ejemplo sencillo
 d\cref{teo:PCartes}. Del lado izquierdo de la figura tenemos una gr\'afica $G$,
 resaltando dos subgr\'aficas inducidas ${\color{baige}\bf H_1}$ y
 ${\color{azulMetal}\bf H_2}$. El conjunto de v\'ertices de  y
@@ -628,30 +628,29 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
     notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto pues de lo
     contrario tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no
-    est\'a en $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in
-    \{1, \dots, s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$.
-    Por lo que concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo
-    tanto tenemos que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$,
-    alg\'un subconjunto de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$
-    si $v \in D$. Notamos que $Y_v ' \neq \varnothing$ porque tomamos $t \geq k
-    + 1$, adem\'as tenemos que $a, b \notin Y_v '$ por definici\'on. 
+    est\'a en $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots,
+    s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que
+    concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo tanto tenemos
+    que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$, alg\'un subconjunto
+    de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$ si $v \in D$.
+    Notamos que $Y_v ' \neq \varnothing$ porque tomamos $t \geq k + 1$, adem\'as
+    tenemos que $a, b \notin Y_v '$ por definici\'on. 
 
     Sea $H_v$ la gr\'afica bipartita completa con clases de colores $Y_v '$ y
     $\{1,\dots, l\}$. Definimos la siguiente coloraci\'on, si $y \in P_i$, para
     alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
     arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
     azul. Ahora veamos si la coloraci\'on definida cumple las hip\'otesis
-    d\cref{lem:rb-bipGraph} Primero tenemos que por construcci\'on
-    de los $P_i$, con $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a
-    en a lo m\'as un $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo
-    m\'as una arista roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+
-    1+ |D| > t-k + |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq
-    t- k+1 = |Y_v '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$.
-    Entonces podemos usar \cref{lem:rb-bipGraph} en $H_v$ con $Z=
-    \{1, \dots, l\}$ y $Y = Y_v '$. Por lo tanto hay un conjunto $M_v$ de
-    aristas azules tal que cada v\'ertice en $Y$ incide en exactamente una
-    arista de $M_v$ y la uni\'on de aristas rojas y aristas de $M_v$ es
-    ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
+    d\cref{lem:rb-bipGraph} Primero tenemos que por construcci\'on de los $P_i$,
+    con $i \in \{1, \dots, l\}$, cada v\'ertice de $Y_v '$ est\'a en a lo m\'as
+    un $P_i$, por lo que cada v\'ertice de $Y_v '$ incide en a lo m\'as una
+    arista roja. Luego, notemos que $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| >
+    t-k + |D|$. Si $v \in D$, entonces $|D| \geq 1$ por lo que $l \geq t- k+1 =
+    |Y_v '|$. Si $v \in C$, tenemos que $l \geq t-k = |Y_v '|$. Entonces podemos
+    usar \cref{lem:rb-bipGraph} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$.
+    Por lo tanto hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice
+    en $Y$ incide en exactamente una arista de $M_v$ y la uni\'on de aristas
+    rojas y aristas de $M_v$ es ac\'\i{}clica. Notamos que $|M_v|=|Y|$.
 
     Usando $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
     manera. Para cada $jx \in M_v$ defininimos $R\langle v, x \rangle$ como la
@@ -706,8 +705,8 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     construcci\'on tenemos que $v$ no est\'a en los v\'ertices internos de $R
     \langle v, x \rangle$. Por lo tanto las trayectorias son internamente
     ajenas. Ahora consideramos el caso en el que $v \in Q_i$, es decir $v \in
-    C$. Por como definimos $R \langle v,x \rangle$, $x$ est\'a en cada
-    v\'ertice interno de la trayectoria. Por otro lado, como $x \in Y_v'$, y por
+    C$. Por como definimos $R \langle v,x \rangle$, $x$ est\'a en cada v\'ertice
+    interno de la trayectoria. Por otro lado, como $x \in Y_v'$, y por
     construcci\'on, tenemos que $Y_v ' \cap ((A\cap B) \cup Q_i) = \varnothing$,
     entonces $x \notin ((A \cap B) \cup Q_i)$. Por definici\'on, cada v\'ertice
     de $A \xrightarrow[Q_i]{}  B$ est\'a contenido en $((A \cap B) \cup Q_i)$,

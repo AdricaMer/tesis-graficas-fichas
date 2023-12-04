@@ -6,7 +6,7 @@ Teor\'ia de Gr\'aficas. En este cap\'itulo veremos un poco de la hamiltonicidad
 de las gr\'aficas de fichas. Algo que es importante mencionar es que la
 hamiltonicidad de una gr\'afica no implica hamiltonicidad en su gr\'afica de
 fichas. De igual manera, una gr\'afica no hamiltoniana puede tener gr\'aficas de
-fichas que si lo sean. Un ejemplo de ambos casos se puede observar en
+fichas que s\'i lo sean. Un ejemplo de ambos casos se puede observar en
 \cref{fig:ex-H-NH} donde, del lado izquierdo, se muestran dos gr\'aficas y sus
 gr\'aficas de $2$-fichas, del lado derecho.
 
@@ -54,15 +54,15 @@ gr\'aficas de $2$-fichas, del lado derecho.
         \end{scope}
 
     \end{tikzpicture}
-    \caption{Las dos gr\'aficas superiores son una gr\'afica hamiltoniana 
+    \caption{Las dos gr\'aficas superiores son una gr\'afica hamiltoniana
     (izquierda) y su gr\'afica de $2$-fichas que no es hamiltoniana (derecha).
-     Las dos gr\'aficas inferiores son una gr\'afica no hamiltoniana (izquierda) 
-     y su gr\'afica de $2$-fichas que es hamiltoniana}
+    Las dos gr\'aficas inferiores son una gr\'afica no hamiltoniana (izquierda)
+    y su gr\'afica de $2$-fichas que es hamiltoniana}
     \label{fig:ex-H-NH}
 \end{figure}
 
 El no tener una relaci\'on tan clara, con respecto a la hamiltonicidad, entre
-una gr\'afica y sus gr\'aficas de fichas nos llevaa a buscar una familia de
+una gr\'afica y sus gr\'aficas de fichas nos lleva a buscar una familia de
 gr\'aficas no hamiltionana cuyas gr\'aficas de $k$-fichas sean hamiltonianas.
 Para lograrlo, primero nos enfocaremos en los abanicos, una familia de
 gr\'aficas que despu\'es facilitar\'a encontrar la familia de gr\'aficas que
@@ -215,8 +215,8 @@ Ahora pasamos a demostrar el teorema.
 En esta secci\'on veremos la hamiltonicidad de las gr\'aficas de fichas para los
 abanicos generalizados, es decir $\mathcal{F}_{m,n}=P_n \oplus \overline{K_m}$.
 Recordemos que, para facilitar la distinci\'on entre los v\'ertices que
-porvienen de $P_n$ y los que vienen de $\overline{K_m}$,denotamos $v_i$ y $w_j$
-a los v\'ertices de $P_n$ y $\overline{K_m}$, respectivamente, con$i \in \{1,
+provienen de $P_n$ y los que vienen de $\overline{K_m}$, denotamos $v_i$ y $w_j$
+a los v\'ertices de $P_n$ y $\overline{K_m}$, respectivamente, con $i \in \{1,
 \dots, n\}$ y $j \in \{1, \dots, m\}$. 
 
 Para demostrar el caso general, es de utlidad primero enfocarnos en las
@@ -282,19 +282,19 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     \{w_i,v_2\},\{w_i,w_{i+2}\},\{w_i,v_1\},\{w_i,w_{i+1}\})$
 
     Dado que la trayectoria $P_i$ recorre el ciclo $C$, podemos afirmar que es
-    una trayectoria en $F_2(\mathcal{F}_{m,n})$, con $2\leq i \leq 2n$. M\'as a\'un,
-    podemos observar que los elementos de toda $P_i$ tienen configuraci\'on
-    $\{w_i,v_j\},\{w_i,w_k\}$, con $i, k\in \{1, \dots, 2n\}$ y $j \in \{1,
-    \dots, n\}$. Adicionalmente, a partir del tercer elemento de $P_i$, tenemos a
-    los elementos con la forma $\{w_i,v_j\},\{w_i,w_{i+j}\}$, con $j \in \{1,
-    \dots, n-1\}$.  Por otro lado sabemos que, para toda $i \in \{1, \dots, n\}$
-    y $j \in \{1, \dots, m\}$, se cumple que $v_i \sim w_j$ en $\mathcal{F}_{m,n}$ y
-    adem\'as $|\{w_i,v_j\} \triangle \{w_i, w_{i+j}\}|=2$, por lo que
-    $\{w_i,v_j\} \sim \{w_i, w_{i+j}\}$ en $F_2(F_{m.n})$. Entonces $P_i$ s\'i
-    cumple ser una trayectoria en la gr\'afica de $2$-fichas. Ahora construimos
-    el ciclo deseado usando las trayectorias $P_i$. Notamos que, para $2 \leq i
-    \leq 2n$, el primer elemento de $P_i$ es $\{w_i, v_n\}$ y el \'ultimo
-    elemento es $\{w_i, w_{i+1}\}$, que son adyacentes por el agumento
+    una trayectoria en $F_2(\mathcal{F}_{m,n})$, con $2\leq i \leq 2n$. M\'as
+    a\'un, podemos observar que los elementos de toda $P_i$ tienen
+    configuraci\'on $\{w_i,v_j\},\{w_i,w_k\}$, con $i, k\in \{1, \dots, 2n\}$ y
+    $j \in \{1, \dots, n\}$. Adicionalmente, a partir del tercer elemento de
+    $P_i$, tenemos a los elementos con la forma $\{w_i,v_j\},\{w_i,w_{i+j}\}$,
+    con $j \in \{1, \dots, n-1\}$.  Por otro lado sabemos que, para toda $i \in
+    \{1, \dots, n\}$ y $j \in \{1, \dots, m\}$, se cumple que $v_i \sim w_j$ en
+    $\mathcal{F}_{m,n}$ y adem\'as $|\{w_i,v_j\} \triangle \{w_i, w_{i+j}\}|=2$,
+    por lo que $\{w_i,v_j\} \sim \{w_i, w_{i+j}\}$ en $F_2(F_{m.n})$. Entonces
+    $P_i$ s\'i cumple ser una trayectoria en la gr\'afica de $2$-fichas. Ahora
+    construimos el ciclo deseado usando las trayectorias $P_i$. Notamos que,
+    para $2 \leq i \leq 2n$, el primer elemento de $P_i$ es $\{w_i, v_n\}$ y el
+    \'ultimo elemento es $\{w_i, w_{i+1}\}$, que son adyacentes por el argumento
     anterior. Entonces tenemos que el \'ultimo elemento de $P_i$ y el primer
     elemento de $P_{i+1}$ son adyacentes. Adem\'as, usando el mismo argumento,
     tenemos que el \'ultimo elemento de $P_1$, es decir $\{v_1,v_n\}$, que es
@@ -309,15 +309,15 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     que los v\'ertices de la forma $\{v_i,v_j\}$ est\'an en $P_1$, con $i,j \in
     \{1, \dots, n\}$ y $i \neq j$. Adem\'as, los v\'ertices $\{w_i,w_1\}$
     est\'an en $P_1$, con $i \in \{1, \dots, m\}$ y $1 \neq i$. Luego,
-    fij\'emosnos que los v\'ertices $\{w_i,v_j\}$ est\'an en $P_i$, para $i\in
+    fij\'emonos que los v\'ertices $\{w_i,v_j\}$ est\'an en $P_i$, para $i\in
     \{1, \dots, m\}$ y $j \in \{1, \dots, n\}$. Por \'ultimo, veamos los
     v\'ertices $\{w_i,w_j\}$, tomando $i < j$. Si $1 < i \leq n$ y $i < j \leq
     i+n-1$, entonces tenemos que $\{w_i,w_j\} \in P_i$, mientras que, si tomamos
     $1 < i \leq n$ y $i+n-1 < j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_j$.
     Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$. Por lo
     tanto $\{V(P_1),V(P_2), \dots, V(P_{2n})\}$ es una partici\'on de
-    $V(F_2(\mathcal{F}_{m,n}))$. Por lo tanto, $C_1$ es un ciclo hamiltoniano. La
-    Figura\ref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la
+    $V(F_2(\mathcal{F}_{m,n}))$. Por lo tanto, $C_1$ es un ciclo hamiltoniano.
+    \Cref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la
     gr\'afica $\mathcal{F}_{8,4}$ para generar la trayectoria $P_6$ en
     $F_2(\mathcal{F}_{8,4})$, donde la ficha en ${\color{coral}w_6}$ est\'a
     est\'atica.
@@ -547,7 +547,7 @@ notamos que, salvo $Q_m$, las trayectorias $P_i$ y $Q_i$ tienen los mismos
 v\'ertices iniciales y finales, adicionalmente, el \'ultimo v\'ertice de $Q_i$,
 es decir $\{w_m,w_1\}$, es adyacente al primer v\'ertice de $P_1$, que es
 $\{v_n,w_1\}$. Por lo tanto, el ciclo $C_2=(Q_1,Q_2, \dots, Q_m, \{v_n,w_1\})$ es
-el ciclo hamiltoniano buscado. La Figura\ref{fig:exe-tray-n-m} muestra el
+el ciclo hamiltoniano buscado. \Cref{fig:exe-tray-n-m} muestra el
 movimiento de las fichas en la gr\'afica $\mathcal{F}_{3,4}$ para generar la
 trayectoria $P_2$ en la gr\'afica de $2$-fichas, donde la ficha en
 ${\color{azulClaro}w_2}$ est\'a fija.
@@ -676,9 +676,8 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     Usando doble inducci\'on sobre $m$ y $k$, demostraremos que
     $F_k(\mathcal{F}_{m,n})$ tiene un ciclo hamiltoniano donde los v\'ertices
     $\{w_1, v_{n-k}, v_{n-k+1}, \dots, v_{n-2}\}$ y $\{v_{n-k}, v_{n-k+1},
-    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Notamos que, cuando $m
-    =1$, haciedo un cambio de
-    notaci\'on de $w_1$ a $v_n$ tenemos un abanico como el
+    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Notamos que, cuando $m =1$,
+    haciendo un cambio de notaci\'on de $w_1$ a $v_n$ tenemos un abanico como el
     d\cref{teo:hamilt-SFan}. Por lo tanto, tenemos que la gr\'afica de
     $k$-fichas es hamiltoniana. Ahora veamos el caso en el que $m>1$, supongamos
     que la gr\'afica $F_{k'}(\mathcal{F}_{m-1,n}$) cumple la hip\'otesis de
@@ -689,7 +688,7 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     demostraci\'on de dicho teorema, tenemos que $\{v_{n-2},w_1\}$ y
     $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria $T_{n-2}$. Esta
     trayectoria es parte de la trayectoria $P_1$, usada para obtener un ciclo
-    hamiltoniano en todos los casos del Teorema\ref{teo:2-TokGenerFan}. Por lo
+    hamiltoniano en todos los casos d\cref{teo:2-TokGenerFan}. Por lo
     tanto, para $k=2$ se obtiene un ciclo hamiltoniano con la estructura
     deseada.
 
@@ -726,11 +725,11 @@ $k$-fichas, para $2 \leq k \leq n-1$.
 \end{proof}
 
 El teorema anterior nos proporciona una familia de gr\'aficas no hamiltonianas
-que tiene gr\'aficas de fichas que si lo son. Esta familia son los abanicos
-obtenidos de tomar $n+1 < m \leq 2m$. Tenemos $F_{m,n}$ no es hamiltoniana,
-mientras que su gr\'afica de $k$-fichas si lo es. A continuaci\'on veremos una
+que tiene gr\'aficas de fichas que s\'i lo son. Esta familia son los abanicos
+obtenidos de tomar $n+1 < m \leq 2m$. Tenemos que $F_{m,n}$ no es hamiltoniana,
+mientras que su gr\'afica de $k$-fichas s\'i lo es. A continuaci\'on vemos una
 familia m\'as general cuyas gr\'aficas de fichas son hamiltonianas. Para esto,
-primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
+primero presentamos una proposici\'on que facilita la demostraci\'on.
 
 \begin{proposicion}
 \label{prop:subg-gen}
@@ -739,12 +738,12 @@ primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
 \end{proposicion}
 
 \begin{proof}
-    Sean una gr\'afica $G$ y $H$ una de sus subgr\'aficas generadoras.
+    Sean $G$ una gr\'afica y $H$ una de sus subgr\'aficas generadoras.
     Observamos que $V(H)=V(G)$ por lo que, para todo $1 \leq k \leq n-1$,
     tenemos que $V(F_k(H))=V(F_k(G))$. Por ende, basta ver que las adyacencias
-    en $F_k(G)$ son adyacencias en $F_k(G)$, para todo $1 \leq k \leq n-1$.
+    en $F_k(H)$ son adyacencias en $F_k(G)$, para todo $1 \leq k \leq n-1$.
 
-    Sea $1 \leq k \leq n-1$ y sean $A$ y $B$ v\'ertices adyaecentes en $F_k(H)$.
+    Sea $1 \leq k \leq n-1$ y sean $A$ y $B$ v\'ertices adyacentes en $F_k(H)$.
     Entonces $ A \triangle B = \{a,b\}$, para algunos $a,b \in V(H)$ tales que
     $ab \in E(H)$. Al ser $H$ una subgr\'afica generadora de $G$ tenemos que
     $a,b \in V(G)$ y $ab \in E(G)$. Como $V(F_k(G))=V(F_k(H))$, entonces $A,B
@@ -756,24 +755,24 @@ primero demostaremos una proposici\'on que facilitar\'a la demostraci\'on.
 Pasamos a demostrar el resultado antes mencionado.
 
 \begin{corolario}
-    Sean $k,n,m \in \mathbb{Z^{+}}$ tale que $2 \leq k \leq n-1$ y $1 \leq m
-    \leq 2n$. Sean $G_1$ y $G_2$ dos gr\'aficas de orden $m$ y $n$,
-    respectivamente, donde $G_2$ contiene una trayectoria hamiltoniana. Ahora,
-    sea $G$ la gr\'afica obtenida de la uni\'on completa de $G_1$ y $G_2$, i.e.
-    $G = G_1 \oplus G_2$, entonces $F_k(G)$ es hamiltoniana. 
+    Sean $k,n,m \in \mathbb{Z^{+}}$ tales que $2 \leq k \leq n-1$ y $1 \leq m
+    \leq 2n$. Sean $G_1$ y $G_2$ gr\'aficas de orden $m$ y $n$, respectivamente,
+    donde $G_2$ contiene una trayectoria hamiltoniana. Ahora, sea $G$ la
+    gr\'afica obtenida de la uni\'on completa de $G_1$ y $G_2$, i.e., $G = G_1
+    \oplus G_2$, entonces $F_k(G)$ es hamiltoniana. 
 \end{corolario}
 
 \begin{proof}
-    Sean $G_1$ y $G_2$ dos gr\'aficas de orden $m$ y $n$, respectivamente, donde
-    $n,m \in \mathbb{Z^{+}}$ tales que $1 \leq m \leq 2n$. Adem\'as, sea $G_2$
-    una gr\'afica que contiene una trayectoria hamiltoniana $P$. Observamos que
-    $\overline{K_m}$ es una subgr\'afica generadora de $G_1$. Por otro lado, $P$
-    es una subgr\'afica generadora de $G_2$. Por lo que tenemos que el abanico
-    $\mathcal{F}_{m,n}$ es una sugr\'afica generadora de $G= G_1 \oplus G_2$.
-    Por el momento nos enfocaremos en $\mathcal{F}_{m,n}$. Nos fijamos que
-    \cref{teo:TokGenerFan} garantiza que $F_k(\mathcal{F}_{m,n})$ es
-    hamiltoniana, para $k \in \mathbb{Z^{+}}$ tal que $2 \leq k \leq n-1$.
-    Ahora, por \cref{prop:subg-gen}, tenemos que $F_k(\mathcal{F}_{m,n})$ es una
+    Sean $G_1$ y $G_2$ gr\'aficas de orden $m$ y $n$, respectivamente, donde
+    $n,m \in \mathbb{Z^{+}}$ tales que $1 \leq m \leq 2n$. Adem\'as, supongamos
+    que $G_2$ contiene una trayectoria hamiltoniana $P$, que es una subgr\'afica
+    generadora de $G_2$. Observamos que $\overline{K_m}$ es una subgr\'afica
+    generadora de $G_1$. Luego, tenemos que el abanico $\mathcal{F}_{m,n}$ es
+    una sugr\'afica generadora de $G= G_1 \oplus G_2$. Por el momento nos
+    enfocaremos en $\mathcal{F}_{m,n}$. Nos fijamos que \cref{teo:TokGenerFan}
+    garantiza que $F_k(\mathcal{F}_{m,n})$ es hamiltoniana, para $k \in
+    \mathbb{Z^{+}}$ tal que $2 \leq k \leq n-1$. Ahora, por
+    \cref{prop:subg-gen}, tenemos que $F_k(\mathcal{F}_{m,n})$ es una
     subgr\'afica generadora de $F_k(G)$. Por ende, el ciclo hamiltoniano de
     $F_k(\mathcal{F}_{m,n})$ tambi\'en es ciclo hamiltoniano de $F_k(G)$, por lo
     que $F_k(G)$ es una gr\'afica hamiltoniana.
