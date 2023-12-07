@@ -6,7 +6,7 @@
 
 
 Durante los a\~{n}os 90, se empiezan a estudiar las de gr\'aficas de $2$-fichas,
-en ese entonces referidas como ``Dobule Vertex Graphs''. Se empiezan a estudiar
+en ese entonces referidas como ``Dobule Vertex Graphs''. Se estudian
 varias propiedades como conectividad, planaridad, regularidad y hamiltonicidad
 \cite{alaviPlanarity, alaviDVGraphs, alaviHamilt, zhuConnect}. Al mismo tiempo,
 en 1992, se comienzan a estudiar las gr\'aficas de $k$-fichas, para una $k \in
@@ -32,7 +32,7 @@ configuraciones de $k$ fichas indistinguibles sobre los v\'ertices de una
 gr\'afica $G$, a lo m\'as una ficha por v\'ertice. Una ficha se puede ``mover''
 de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre ellos y
 no haya una ficha en el segundo v\'ertice. Cada configuraci\'on de $k$ fichas
-ser\'a un v\'ertice en nuestra nueva gr\'afica, donde dos v\'ertices ser\'an
+es un v\'ertice en nuestra nueva gr\'afica, donde dos v\'ertices son
 adyacentes siempre que se pueda llegar de una configuraci\'on a otra al mover
 una ficha a trav\'es de una arista. A esta nueva gr\'afica la nombramos la
 gr\'afica de $k$-fichas de $G$ y la denotamos $F_k(G)$. M\'as adelante, tomando
@@ -49,12 +49,12 @@ $|A \triangle B| = \{a,b\}$, con $a \in A$, $b \in B$ y $ab \in E(G)$.
 Observamos que $F_1(G)$ es isomorfa a $G$, pues cada v\'ertice de $F_1(G)$ es el
 v\'ertice de $G$ donde se encuentra la ficha. Por lo mismo $G$ y $F_1(G)$
 tambi\'en tienen las mismas adyacencias y no adyacencias. Por lo tanto, en
-general nos enfocaremos en $F_k(G)$, para $k > 1$. En \cref{fig:ex-tok-graph} se
+general nos enfocamos en $F_k(G)$, para $k > 1$. En \cref{fig:ex-tok-graph} se
 muestra un ejemplo de una gr\'afica $G$ y su gr\'afica de $2$-fichas. Dentro de
 cada v\'ertice de la gr\'afica de $2$-fichas se muestra una copia a escala de
 $G$, resaltando en ${\color{rosa}\bf rosa}$ los v\'ertices de $G$ donde se
 encuentran las fichas. \'Esto para facilitar el entendimiento de la relacion
-entre $F_2(G)$ y $G$.
+entre $G$ y sus gr\'aficas de fichas.
 
 \begin{figure}[ht!]
     \centering
@@ -200,40 +200,42 @@ como conjunto de v\'ertices a todos los $k$-subconjuntos de $\{1, \dots, n\}$ y
 d\'onde dos v\'ertices $A$ y $B$ son adyacentes si y s\'olo si $|A \cap B| =
 k-1$. Nos fijamos que, para toda $1 \leq k \leq n$, la gr\'afica de Johnson
 $J(n,k)$ es isomorfa a la gr\'afica de $k$-fichas de $K_n$. Las gr\'aficas de
-Johnson son estudiadas tambi\'en desde la Teor\'ia de C\'odigos. Algunas
-propiedades conocidas de estas gr\'aficas son casos particulares de algunos
-resultados de este trabajo.
+Johnson son estudiadas tambi\'en desde la Teor\'ia de C\'odigos, por lo que hay
+m\'as teor\'ia ejemplo de este tipo de gr\'aficas de fichas. De esta manera, las
+gr\'aficas de Johnson pueden servir como ejemplos a trav\'es de este trabajo.
+M\'as a\'un, algunas propiedades conocidas de las gr\'aficas de Johnson son
+casos particulares de algunos resultados de este trabajo.
 
 \section{Algunas estructuras en gr\'aficas de fichas}%
 \label{sec:}
 
 Las fichas en una gr\'afica se pueden mover \'unicamente por aristas existentes,
-por lo que ser\'ia natural pensar que una trayectoria en la gr\'afica tiene
-alguna trayectoria en la gr\'afica de fichas con la misma longitud. Teniendo eso
-en mente, definimos el siguiente concepto. Sean $P$ una $ab$-trayectoria en la
-gr\'afica $G$ y $A$ un $k$-conjunto en $G$, en otras palabras $A \in V(F_k(G))$.
-Si al conjunto $A$ le pedimos que $a\in A$ y $b \notin A$, entonces a la pareja
-$(A,P)$ le podemos asignar una trayectoria en la gr\'afica de $k$-fichas, tal
-que el v\'ertice final est\'a dado por $A'=(A \setminus \{a\}) \cup \{b\}$. Para
-definir esta nueva trayectoria tomamos $A\cap P =\{v_1, \dots, v_q\}$, con $v_1
-= a$, y ``movemos las fichas'' de la siguiente manera. Primero movemos la ficha
-de $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$, v\'ertice de $G$, por $P$.
-Luego, para los v\'ertices $v_i$ en $G$, con $i \in \{q-1, q-2, \dots 1\}$,
-movemos la ficha de $v_i$ a $v_{i+1}$. As\'i, sucesivamente, vamos moviendo
-fichas a trav\'es de $P$ por v\'ertices que estan libres de fichas. Observamos
-que, al recorrer las fichas a trav\'es de $P$ obtenemos una trayectoria de la
-misma longitud que $P$. Esta trayectoria en $F_k(G)$ la denotamos
-\indiceSub{fichas}{$A \xrightarrow[P]{} A'$}. A continuaci\'on daremos un
-ejemplo de esta trayectoria en una gr\'afica de $3$-fichas, mostrada en
-\cref{fig:ex-tok-Path}. La Figura \ref{fig:ex-tok-aux} nos servir\'a como figura
-auxiliar para entender mejor el movimiento de las fichas a trav\'es de la
-trayectoria. La gr\'afica $G$ se muestra del lado izquierdo en ambas figuras,
+por lo que es natural pensar que una trayectoria en la gr\'afica tiene alguna
+trayectoria en la gr\'afica de fichas con la misma longitud. Teniendo eso en
+mente, definimos el siguiente concepto. Sean $P$ una $ab$-trayectoria en la
+gr\'afica $G$ y $A$ un $k$-conjunto en $V(G)$, en otras palabras $A \in
+V(F_k(G))$. Si al conjunto $A$ le pedimos que $a\in A$ y $b \notin A$, entonces
+a la pareja $(A,P)$ le podemos asignar una trayectoria en la gr\'afica de
+$k$-fichas, tal que el v\'ertice final est\'a dado por $A'=(A \setminus \{a\})
+\cup \{b\}$. Para definir esta nueva trayectoria tomamos $A\cap P =\{v_1, \dots,
+v_q\}$, con $v_1 = a$, y ``movemos'' las fichas de la siguiente manera. Primero
+movemos la ficha de $v_q$, v\'ertice de $G$, hacia el v\'ertice $b$, v\'ertice
+de $G$, por $P$. Luego, para los v\'ertices $v_i$ en $G$, con $i \in \{q-1, q-2,
+\dots 1\}$, movemos la ficha de $v_i$ a $v_{i+1}$. As\'i, sucesivamente, vamos
+moviendo fichas a trav\'es de $P$ por v\'ertices que estan libres de fichas.
+Observamos que, al recorrer las fichas a trav\'es de $P$, obtenemos una
+trayectoria de la misma longitud que $P$. Esta trayectoria en $F_k(G)$ la
+denotamos \indiceSub{fichas}{$A \xrightarrow[P]{} A'$}. A continuaci\'on se
+encuentra un ejemplo de este tipo de trayectoria en una gr\'afica de $3$-fichas,
+mostrada en \cref{fig:ex-tok-Path}. Tomamos a \cref{fig:ex-tok-aux} como figura
+auxiliar. \'Esto para entender mejor el movimiento de las fichas a trav\'es de
+la trayectoria. La gr\'afica $G$ se muestra del lado izquierdo en ambas figuras,
 adem\'as, en \cref{fig:ex-tok-Path} se muestra $F_3(G)$ del lado derecho.
 Definamos $A=\{2,3,4\}$ en $F_3(G)$ y nuestra trayectoria en $G$ como
-${\color{vino}\bf P= (3,1,4,5)}$, resaltada en ambas figuras. Entonces tenemos
-que $A'=\{2,4,5\}$. Del lado derecho de \cref{fig:ex-tok-aux} se muestra el
-movimiento de las fichas que empiezan en $A \cap P =\{3,4\}$, considerando de
-arriba a abajo como se van moviendo las fichas.
+${\color{vino}\bf P= (3,1,4,5)}$, resaltada en ambas figuras. De ah\'i se sigue
+que $A'=\{2,4,5\}$. Adem\'as, del lado derecho de \cref{fig:ex-tok-aux} se
+muestra el movimiento de las fichas que empiezan en $A \cap P =\{3,4\}$,
+considerando de arriba a abajo como se van moviendo las fichas.
 
 \begin{figure}[ht!]
     \centering
@@ -298,11 +300,12 @@ arriba a abajo como se van moviendo las fichas.
 M\'as adelante, en \cref{fig:ex-tok-Path}, se muestra la trayectoria
 ${\color{vino}\bf \{2,3,4\}\xrightarrow[P]{}\{2,4,5\}}$ en $F_3(G)$. En cada
 v\'ertice de esta trayecotira se resaltan los n\'umeros del color de la ficha
-que se us\'o en \cref{fig:ex-tok-aux}, \'esto para resaltar la relaci\'on entre
+que se usa en \cref{fig:ex-tok-aux}, para resaltar la relaci\'on entre
 la trayectoria de $G$ y la de $F_3(G)$. Observamos que $2$ no est\'a en $A \cap
 P =\{3,4\}$ por lo que no se ve en \cref{fig:ex-tok-aux}. Esto significa que la
 ficha en el v\'ertice $2$ se queda fija a trav\'es de la trayectoria en la
-gr\'afica de fichas. Esto se puede ver en \cref{fig:ex-tok-Path} al fijarnos que
+gr\'afica de fichas. Al estar fija, todos los v\'ertices de la
+nueva trayectoria en $F_3(G)$ contienen a $2$. Ese hecho se puede ver en \cref{fig:ex-tok-Path} al fijarnos que
 el $2$ en todos los v\'ertices de la trayectoria, resaltado en gris.
 
 \begin{figure}[ht!]
@@ -346,20 +349,20 @@ el $2$ en todos los v\'ertices de la trayectoria, resaltado en gris.
 \end{figure}
 
 
-Algo que tambi\'en resulta interesante en el ejemplo anterior es la ficha que se
-queda fija en el v\'ertice $2$ de la gr\'afica $G$. Al estar fija, todos los
-v\'ertices de la nueva trayectoria en $F_3(G)$ contienen a $2$. Generalizando un
-poco m\'as, nos preguntamos que gr\'afica de $3$-fichas se obtendr\'ia si una
-ficha se queda fija, digamos en $2$. Es f\'acil notar que esta gr\'afica es una
-sugr\'afica de la gr\'afica de $3$-fichas de $G$, pues el conjunto de v\'ertices
-de esta gr\'afica es el conjunto de v\'ertices de $F_3(G)$ que contengan a $2$.
-(A continuaci\'on, este ejemplo se representa en \cref{fig:ex-tok-subgraph}.)
-La idea de fijar una ficha se puede extender a $r\leq k$ fichas, aunque el caso
-interesante ser\'a para $r<k$ pues fijamos todas las fichas obtenemos una
-gr\'afica trivial. Dado un conjunto $X \subseteq V(G)$ con $|X|=r<k$, definimos
-a $F_k(G,X)$ como la \textbf{subgr\'afica de $F_k(G)$
-inducida}\index{subgr\'afica!inducida de fichas}\index{fichas!subgr\'afica
-inducida} por los v\'ertices de $F_k(G)$ que contienen al subconjunto $X$. 
+El tener una ficha fija y como se ve en una trayectoria en la gr\'afica de
+fichas es algo que resulta interesante y vale la pena analizar. Generalizando un
+poco m\'as, nos podemos preguntar, qu\'e gr\'afica de $3$-fichas se obtendr\'ia si
+una ficha se queda fija, digamos en $2$. Es f\'acil notar que esta gr\'afica es
+una sugr\'afica de la gr\'afica de $3$-fichas de $G$, pues el conjunto de
+v\'ertices de esta gr\'afica es el conjunto de v\'ertices de $F_3(G)$ que
+contengan a $2$. (A continuaci\'on, este ejemplo se representa en
+\cref{fig:ex-tok-subgraph}.) La idea de fijar una ficha se puede extender a
+$r\leq k$ fichas, aunque el caso interesante ser\'a para $r<k$ pues fijamos
+todas las fichas obtenemos una gr\'afica trivial. Dado un conjunto $X \subseteq
+V(G)$ con $|X|=r<k$, definimos a $F_k(G,X)$ como la \textbf{subgr\'afica de
+$F_k(G)$ inducida}\index{subgr\'afica!inducida de
+fichas}\index{fichas!subgr\'afica inducida} por los v\'ertices de $F_k(G)$ que
+contienen al subconjunto $X$. 
 
 \begin{figure}[ht!]
     \centering
@@ -402,7 +405,7 @@ inducida} por los v\'ertices de $F_k(G)$ que contienen al subconjunto $X$.
 Al momento de generar $F_3(G,2)$ es f\'acil notar que las fichas se mueven por
 $V(G) \setminus \{2\}$, excepto la ficha que est\'a fija. De igual manera, las
 aristas por las que se mueven las fichas son las aristas de $G$ que no tienen
-extremos en $2$. Entonces, podr\'iamos interpretar $F_3(G,\{2\})$ como la
+extremos en $2$. Entonces, podemos interpretar $F_3(G,\{2\})$ como la
 gr\'afica de $(3-1)$-fichas de la gr\'afica $G-2$, es decir $F_2(G-2)$. Esta
 gr\'afica est\'a exhibida en \cref{fig:ex-tok-subgraph-aux}. De manera general,
 esto quiere decir que existe una relaci\'on entre la subgr\'afica de $F_k(G)$
@@ -448,23 +451,26 @@ el la funci\'on si preserva adyacencias y no adyacencias.
     \label{fig:ex-tok-subgraph-aux}
 \end{figure}
 
-Si nos fijamos bien, podemos ver que la gr\'afica de $2$-fichas en
-\cref{fig:ex-tok-graph} y la gr\'afica de $3$-fichas en \cref{fig:ex-tok-Path}
-son isomorfas. Esto resulta interesante pues ambas provienen de la misma
-gr\'afica. De esto, vale la pena preguntarse, cu\'al es la relaci\'on entre
-ellas. Fij\'andonos a\'un m\'as, vemos que el isomorfismo entre ambas env\'ia un
-v\'ertice $A \in V(F_2(G))$ al v\'ertice $V(G) \setminus A \in V(F_3(G))$.
-Notamos que dos v\'ertices de $ A,B \in V(F_2(G))$ son adyacentes si y s\'olo si
-$V(G) \setminus A$ y $V(G) \setminus B$ son adyacentes en $F_3(G)$. \'Esto pues,
-la diferencia sim\'etrica entre $A$ y $B$ es igual a la diferencia sim\'etrica
-entre sus complementos. Podr\'iamos verlo como recorrer la gr\'afica ``al
-rev\'es''. Generalizando este consepto afirmamos que, para toda gr\'afica $G$,
-$F_k(G)$ y $F_{n-k}(G)$ son gr\'aficas isomorfas. Empezamos viendo que
-$V(F_k(G)) =\binom{n}{k}= \binom{n}{n-k}= V(F_{n-k}(G))$ Tomando la funci\'on
-antes mencionado, falta ver que preserva adyacencias y no adyacencias. Volviendo
-a observar que, para todo $A$ y $B$ en $V(F_k(G))$ tenemos que $A \triangle B =
-(V(G)\setminus A) \triangle (V(G)\setminus B)$, entonces las adyacencias y no
-adyacencias dependen de $G$, por lo que la funci\'on cumple ser un isomorfismo. 
+\newpage
+
+Otra cosa interesante del ejemplo de \cref{fig:ex-tok-Path} es que, si nos
+fijamos bien, podemos ver que tiene el mismo diagrama que la gr\'afica de
+$2$-fichas en \cref{fig:ex-tok-graph}, i.e., son gr\'aficas isomorfas. Al ser
+ambas gr\'aficas de fichas de la misma gr\'afica, vale la pena preguntarse,
+cu\'al es la relaci\'on entre ellas. Fij\'andonos a\'un m\'as, vemos que el
+isomorfismo entre ambas env\'ia el v\'ertice $A \in V(F_2(G))$ al v\'ertice
+$V(G) \setminus A \in V(F_3(G))$. Adem\'as, notamos que dos v\'ertices de $ A,B
+\in V(F_2(G))$ son adyacentes si y s\'olo si $V(G) \setminus A$ y $V(G)
+\setminus B$ son adyacentes en $F_3(G)$. \'Esto pues, la diferencia sim\'etrica
+entre $A$ y $B$ es igual a la diferencia sim\'etrica entre sus complementos.
+Podemos verlo como recorrer la gr\'afica ``al rev\'es''. Generalizando este
+consepto afirmamos que, para toda gr\'afica $G$, $F_k(G)$ y $F_{n-k}(G)$ son
+gr\'aficas isomorfas. Empezamos viendo que $V(F_k(G)) =\binom{n}{k}=
+\binom{n}{n-k}= V(F_{n-k}(G))$ Tomando la funci\'on antes mencionado, falta ver
+que preserva adyacencias y no adyacencias. Volviendo a observar que, para todo
+$A$ y $B$ en $V(F_k(G))$ tenemos que $A \triangle B = (V(G)\setminus A)
+\triangle (V(G)\setminus B)$, entonces las adyacencias y no adyacencias dependen
+de $G$, por lo que la funci\'on cumple ser un isomorfismo. 
 
 El resultado anterior resulta de mucha utilidad al momento de estudiar las
 gr\'aficas de fichas, pues nos dice que basta en enfocarnos en las gr\'aficas de
