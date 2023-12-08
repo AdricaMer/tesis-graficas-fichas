@@ -9,11 +9,11 @@ una gr\'afica. Una \indice{gr\'afica} $G$ es una pareja ordenada de conjuntos
 finitos $(V(G), E(G))$, donde $V(G)$ es no vac\'io y $E(G) \subseteq
 \binom{V(G)}{2}$. A la cardinalidad de $V(G)$ se le llama
 \indiceSub{gr\'afica}{orden} de $G$ y sus elementos son llamados
-\indice{v\'ertices}. A los elementos de $E(G)$ se les conoce como \indice{aristas}. Para una
-arista $e$ y v\'ertices $u, v$ de $G$, decimos que $e$ es
-\indiceSub{aristas}{incidente} en $u$ y en $v$ si $e= \{u, v\}$. A su vez, los
-v\'ertices $u$ y $v$ son \indiceSub{v\'ertices}{extremos} de la arista $e$. De
-igual manera, podemos decir que $u$ y $v$ son \textbf{v\'ertices}
+\indice{v\'ertices}. A los elementos de $E(G)$ se les conoce como
+\indice{aristas}. Para una arista $e$ y v\'ertices $u, v$ de $G$, decimos que
+$e$ es \indiceSub{aristas}{incidente} en $u$ y en $v$ si $e= \{u, v\}$. A su
+vez, los v\'ertices $u$ y $v$ son \indiceSub{v\'ertices}{extremos} de la arista
+$e$. De igual manera, podemos decir que $u$ y $v$ son \textbf{v\'ertices}
 \indiceSub{v\'ertices}{adyacentes}\index{adyacentes!v\'ertices} o
 \indiceSub{v\'ertices}{vecinos} y lo denotamos $u \sim v$. Por otro lado,
 decimos que son \textbf{aristas}
@@ -73,18 +73,18 @@ debe a que la gr\'afica es un objeto matem\'atico, independiente del diagrama.
 Al momento de estudiar objetos matem\'aticos, siempre es importante analizar
 como se relacionan dichos objetos entre s\'i. Ya teniendo la noci\'on de una
 gr\'afica, ahora nos enfocamos en c\'omo se ven las relaciones entre gr\'aficas.
-Veamos que necesitan dos gr\'aficas para ser ``iguales''. Observamos que,
-de igual manera que una gr\'afica puede tener varios diagramas, a un diagrama se
-le pueden asociar distintas gr\'aficas, renombrando v\'ertices y aristas, para
+Veamos qu\'e necesitan dos gr\'aficas para ser ``iguales''. Observamos que, de
+igual manera que una gr\'afica puede tener varios diagramas, a un diagrama se le
+pueden asociar distintas gr\'aficas, renombrando v\'ertices y aristas, para
 obtener distintos conjuntos de v\'ertices y aristas. Un ejemplo de esto es
 \cref{fig:isoGraf}. Al renombrar las aristas de la gr\'afica $G$, podemos
-dibujar a $G$ como la gr\'afica $H$ y viseversa, usando como gu\'ia los colores
-que se muestran en la figura. De manera intuitiva, podr\'iamos decir que las dos gr\'aficas que
-comparten un mismo diagrama son ``iguales''. hasta donde
-nos interesa, pues, al compartir un diagrama, comparten muchas propiedades como
-el n\'umero de v\'ertices, las adyacencias o el grado de los v\'ertices. Estas
-g\'aficas se dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y
-$H$ son \indiceSub{gr\'afica}{isomorfas} si exite una biyecci\'on $\theta: V(G)
+dibujar a $G$ como la gr\'afica $H$ y viceversa, usando como gu\'ia los colores
+que se muestran en la figura. De manera intuitiva, decimos que dos gr\'aficas
+que comparten un mismo diagrama son ``iguales'' pues, al compartir un diagrama,
+comparten muchas propiedades como el n\'umero de v\'ertices, las adyacencias o
+el grado de los v\'ertices. Estas g\'aficas se dice que son isomorfas.
+Formalmente hablando, dos gr\'aficas $G$ y $H$ son
+\indiceSub{gr\'afica}{isomorfas} si exite una biyecci\'on $\theta: V(G)
 \rightarrow V(H)$ tal que para cualesquiera dos v\'ertices $u, v \in V(G)$, se
 cumple que $uv \in E(G)$ si y s\'olo si $\theta(u)\theta(v) \in E(H)$. Es decir,
 la biyecci\'on $\theta$ preserva adyacencias y no adyacencias. Cuando $G$ es
@@ -133,35 +133,36 @@ llamada \indice{isomorfismo}.
 \end{figure}
 
 Al momento de ver las relaciones entre dos objetos matem\'aticos, tambi\'en es
-importante analizar el caso en el que uno est\'e ``contenido'' en el otro. En el
-caso de conjuntos nos referir\'iamos a subconjunto y, en el caso de gr\'aficas,
-nos referimos a subgr\'aficas. Sean $G$ y $H$ tales que $V(H) \subseteq V(G)$ y
-$E(H) \subseteq E(G)$. Entonces decimos que $H$ es una \indice{subgr\'afica} de
-$G$. Por otra parte, decimos que $G$ es una \indice{supergr\'afica} de $H$. Esta
-relaci\'on la denotamos con la misma notaci\'on que para subconjuntos, es decir
-$H \subseteq G$. Cuando una subgr\'afica tiene el mismo conjunto de v\'ertices
-que la gr\'afica, es decir, $H \subseteq G$ y $V(H)= V(G)$, entonces decimos que
-es una \textbf{subgr\'afica} \indiceSub{subgr\'afica}{generadora}. Otro concepto
-que se deriva de las subgr\'aficas parte de fijarnos en la subgr\'afica que
-tiene la mayor cantidad de aristas posibles. Formalmente hablando, nos referimos
-a $H$, la subgr\'afica de $G$, cuyo conjunto de v\'ertices es $S \subseteq V(G)$
-y cuyo conjunto de aristas son aquellas aristas de $G$ que tienen ambos extremos
-en $S$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta
-subgr\'afica la llamamos la \textbf{subgr\'afica}
-\indiceSub{subgr\'afica}{inducida} de $G$ por $S$ y la denotamos $G[S]$. Notamos
-que $G[S]$ es la subgr\'afica de $G$ con conjunto de v\'ertices $S$ que m\'as se
-parece a $G$. Un tercer tipo importante de subgr\'aficas es la subgr\'afica
-inducida obtenida al quitarle uno o m\'as v\'ertices a una gr\'afica. En otras
-palabras, sea $S \subset V(G)$, nombramos $H \subseteq G$ a la gr\'afica con
-$V(H)=V(G) \setminus S$ y $E(H) = E(G)\setminus\{uv \in E(G) \colon\ u \in S
-\lor v \in S\}$. Esta subgr\'afica $H$ se denota $G-S$. Un caso a
-se\~{n}alar es cuando $S$ es un conjunto unitario, i.e., el caso en el que le
-quitamos un solo v\'ertice $v$ a $G$. En este caso escribimos $G-v$, en vez de
-$G-\{v\}$. A continuaci\'on se muestra un ejemplo de subgr\'aficas en
-\cref{fig:subgraf}, donde ${\color{morado}\bf H}$ es una subgr\'afica inducida
-con $V(H) = \{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}\bf H'}$ es una
-subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos
-que a ${\color{azulCielo}\bf H'}$ le falta la arista ${\color{grisOscuro!80}\bf
+importante analizar el caso en el que uno est\'e ``contenido'' en el otro. As\'i
+como en el caso de conjuntos nos referimos a subconjuntos, en el caso de
+gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas tales que
+$V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es una
+\indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
+\indice{supergr\'afica} de $H$. Esta relaci\'on se denota con la misma
+notaci\'on que para subconjuntos, es decir $H \subseteq G$. Cuando una
+subgr\'afica tiene el mismo conjunto de v\'ertices que la gr\'afica, es decir,
+$H \subseteq G$ y $V(H)= V(G)$, entonces decimos que es una
+\textbf{subgr\'afica} \indiceSub{subgr\'afica}{generadora}. Otro concepto que se
+deriva de las subgr\'aficas parte de fijarnos en la subgr\'afica que tiene la
+mayor cantidad de aristas posibles. Formalmente hablando, nos referimos a $H$,
+la subgr\'afica de $G$, cuyo conjunto de v\'ertices es $S \subseteq V(G)$ y cuyo
+conjunto de aristas son aquellas aristas de $G$ que tienen ambos extremos en
+$S$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta subgr\'afica
+la llamamos la \textbf{subgr\'afica} \indiceSub{subgr\'afica}{inducida} de $G$
+por $S$ y la denotamos $G[S]$. Notamos que $G[S]$ es la subgr\'afica de $G$ con
+conjunto de v\'ertices $S$ que m\'as se parece a un pedazo de $G$. Un tercer
+tipo importante de subgr\'aficas es el de las subgr\'aficas inducidas obtenidas
+al quitarle uno o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S
+\subset V(G)$, nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus
+S$ y $E(H) = E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Esta
+subgr\'afica $H$ se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un
+conjunto unitario, i.e., el caso en el que le quitamos un solo v\'ertice $v$ a
+$G$. En este caso escribimos $G-v$, en vez de $G-\{v\}$. A continuaci\'on se
+muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
+${\color{morado}\bf H}$ es una subgr\'afica inducida con $V(H) =
+\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}\bf H'}$ es una subgr\'afica con
+$V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a
+${\color{azulCielo}\bf H'}$ le falta la arista ${\color{grisOscuro!80}\bf
 v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
@@ -204,28 +205,28 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 \label{sec:clanes-CIndep}
 
     Algo que es relevante a trav\'es de varios temas de la Teor\'ia de
-     Gr\'aficas es encontrar conjuntos de v\'ertices que sean adyacentes dos a
-     dos o conjuntos de v\'ertices que, al contrario, no tengan vecinos dentro
-     de dicho conjunto. Teniendo una gr\'afica $G$ y un conjunto $S \subset
-     V(G)$, decimos que $S$ es un \indice{conjunto independiente} si
-     cualesquiera dos v\'ertices de $S$ no son adyacentes. Esto quiere decir que
-     todos los elementos de $S$ tienen grado $0$ en $G[S]$. La cardinalidad del
-     conjunto independiente m\'as grande de una gr\'afica se llama
-     \indice{n\'umero de independencia} y se denota $\alpha$. Por otro lado,
-     decimos que $S$ es un \indice{clan} si cualesquiera dos v\'ertices en $S$
-     son adyacentes. En este caso, el grado de todo v\'ertice de $S$ es $|S-1|$
-     en $G[S]$. De manera an\'aloga a los conjuntos independientes, la
-     cardinaliad del clan con mayor n\'umero de elementos de una gr\'afica es el
-     \indice{n\'umero de clan} y se denota $\omega$. En \cref{fig:ClanInd} se
-     muestra un ejemplo de un ${\color{coral}\bf clan}$ y un ${\color{verde}\bf
-     conjunto}$ ${\color{verde}\bf independiente}$ de una gr\'afica. Es f\'acil
-     observar que el ${\color{verde}\bf conjunto}$ ${\color{verde}\bf
-     independiente}$ no es el conjunto independiente m\'as grande que podemos
-     obtener, pues podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un
-     conjunto independiente. De igual manera, podemos notar que existe un clan
-     con cardinalidad mayor al ${\color{coral}\bf clan}$ mostrado. Este clan,
-     que llamamos $K$, est\'a mostrado con el per\'imetro de los v\'ertices de
-     color ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| = \omega$.
+    Gr\'aficas es encontrar conjuntos de v\'ertices que sean adyacentes dos a
+    dos o conjuntos de v\'ertices que, al contrario, no tengan vecinos dentro de
+    dicho conjunto. Teniendo una gr\'afica $G$ y un conjunto $S \subset V(G)$,
+    decimos que $S$ es un \indice{conjunto independiente} si cualesquiera dos
+    v\'ertices de $S$ no son adyacentes. Esto quiere decir que todos los
+    elementos de $S$ tienen grado $0$ en $G[S]$. La cardinalidad del conjunto
+    independiente m\'as grande de una gr\'afica se llama \indice{n\'umero de
+    independencia} y se denota $\alpha$. Por otro lado, decimos que $S$ es un
+    \indice{clan} si cualesquiera dos v\'ertices en $S$ son adyacentes. En este
+    caso, el grado de todo v\'ertice de $S$ es $|S-1|$ en $G[S]$. De manera
+    an\'aloga a los conjuntos independientes, la cardinaliad del clan con mayor
+    n\'umero de elementos de una gr\'afica es el \indice{n\'umero de clan} y se
+    denota $\omega$. En \cref{fig:ClanInd} se muestra un ejemplo de un
+    ${\color{coral}\bf clan}$ y un ${\color{verde}\bf conjunto}$
+    ${\color{verde}\bf independiente}$ de una gr\'afica. Es f\'acil observar que
+    el ${\color{verde}\bf conjunto}$ ${\color{verde}\bf independiente}$ no es el
+    conjunto independiente m\'as grande que podemos obtener, pues podr\'iamos
+    agregar el v\'ertice $v_2$ y seguir\'ia siendo un conjunto independiente. De
+    igual manera, podemos notar que existe un clan con cardinalidad mayor al
+    ${\color{coral}\bf clan}$ mostrado. Este clan, que llamamos $K$, est\'a
+    mostrado con el per\'imetro de los v\'ertices de color
+    ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| = \omega$.
 
 
 \begin{figure}[ht!]
@@ -277,23 +278,23 @@ comparten. Un \indice{$uv$-camino} entre los v\'ertices $u$ y $v$ de una
 gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y aristas de $G$ de la
 siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i
 \in V(G)$ y $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0, \dots, k\}$ y $j \in
-\{ 1, \dots, k\}$. Este $uv$-camino es una
-forma de vincular el v\'ertice $u$ con el v\'ertice $v$. En caso de que no sea
-necesario especificar de qu\'e v\'ertice a qu\'e v\'ertice va la suceci\'on, nos
-referimos simplemente a un \indice{camino}. Es importante notar que un camino
-no siempre tiene aristas. Un camino es \indiceSub{camino}{trivial} si tiene
-\'unicamente un v\'ertice y no tiene aristas. \'Este es el \'unico caso en el
-que un camino no tiene aristas. Al ser una sucesi\'on, a un camino $W$ se le
-puede asociar una \indiceSub{camino}{longitud}, que es el n\'umero de posiciones en la
-sucesi\'on $W$ que son ocupadas por aristas, se denota $\ell(W)$. 
+\{ 1, \dots, k\}$. Este $uv$-camino es una forma de vincular el v\'ertice $u$
+con el v\'ertice $v$. En caso de que no sea necesario especificar de qu\'e
+v\'ertice a qu\'e v\'ertice va la sucesi\'on, nos referimos simplemente a un
+\indice{camino}. Es importante notar que un camino no siempre tiene aristas. Un
+camino es \indiceSub{camino}{trivial} si tiene \'unicamente un v\'ertice y no
+tiene aristas. \'Este es el \'unico caso en el que un camino no tiene aristas.
+Al ser una sucesi\'on, a un camino $W$ se le puede asociar una
+\indiceSub{camino}{longitud}, que es el n\'umero de posiciones en la sucesi\'on
+$W$ que son ocupadas por aristas, se denota $\ell(W)$. 
 
 Al poderle asignar una longitud a un camino, es natural utilizar esta longitud
 para ver que tan ``cercano'' est\'a un v\'ertice de otro. Pero, observamos que,
 un camino puede pasar m\'ultiples veces por el mismo v\'ertice o la misma
 arista. En otras palabras, el concepto de camino no ayuda mucho para encontrar
-que tan ``cerca'' est\'a un v\'ertice de otro. Por lo tanto, introducimos el
-concepto de trayectoria. Una \indice{trayectoria} es un camino que no repite
-v\'ertices. Al igual que con el concepto de camino, una
+la forma m\'as corta para llegar de un v\'ertice a otro. Por lo tanto,
+introducimos el concepto de trayectoria. Una \indice{trayectoria} es un camino
+que no repite v\'ertices. Al igual que con el concepto de camino, una
 \indice{$uv$-trayectoria} es una trayectoria que tiene v\'ertice inicial $u$ y
 v\'ertice final $v$. En una $uv$-trayectoria, los v\'ertices $u$ y $v$ son
 llamados \indiceSub{v\'ertices}{extremos} y el resto de los v\'ertices de la
@@ -304,14 +305,14 @@ dicha arista. De lo anterior se sigue que todas las trayectorias que tengan los
 mismos v\'ertices y aristas tambi\'en tienen la misma longitud. Esto es una
 mejor aproximaci\'on al concepto de ``cercan\'ia'' entre v\'ertices, sin
 embargo, se puede tener el caso que haya m\'ultiples trayectorias de distintas
-longitudes entre dos v\'ertices. Definimos la \indice{distancia}
-entre dos v\'ertices $u$ y $v$ de una gr\'afica, denotada $d(u,v)$, como la
-longitud de la $uv$-trayectoria m\'as corta. Sea $P$ una trayectoria en una
-gr\'afica, decimos que $P$ no tiene \indice{cuerdas} si la subgr\'afica inducida
-por $V(P)$ tiene grado m\'aximo 2. Observamos que cualquier trayectoria de
-longitud m\'inima entre dos v\'ertices no tiene cuerdas. Adicionalmente, podemos
-darle un ``tama\~{n}o'' a una gr\'afica $G$ al definir su \indice{di\'ametro}
-como $\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
+longitudes entre dos v\'ertices. Definimos la \indice{distancia} entre dos
+v\'ertices $u$ y $v$ de una gr\'afica, denotada $d(u,v)$, como la longitud de la
+$uv$-trayectoria m\'as corta. Sea $P$ una trayectoria en una gr\'afica, decimos
+que $P$ no tiene \indice{cuerdas} si la subgr\'afica inducida por $V(P)$ tiene
+grado m\'aximo 2. Observamos que cualquier trayectoria de longitud m\'inima
+entre dos v\'ertices no tiene cuerdas. Adicionalmente, podemos darle un
+``tama\~{n}o'' a una gr\'afica $G$ al definir su \indice{di\'ametro} como
+$\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
 
 La siguiente proposici\'on nos muestra una relaci\'on entre caminos y
 trayectorias.  
@@ -327,19 +328,19 @@ trayectorias.
 \begin{proof}
     Sea $W$ un $uv$-camino en una gr\'afica $G$, con $u,v \in V(G)$.
     Demostramos, por inducci\'on sobre la longitud de $W$, que $W$ contiene una
-    $uv$-trayectoria. Primero, tomamos un camino $W$ tal que $\ell(W)=1$. \'Esto
-    quiere decir que $W$ solo contiene una arista, por lo tanto, $W$ es una
-    trayectoria. Ahora, suponemos que todo $uv$-camino con longitud menor a $k$
-    contiene una $uv$-trayectoria. Tomamos un camino $W$ con longitud $k$, tal que no es una
-    trayectoria. \'Esto pues, en caso de que lo fuera, $W$ ser\'ia la
-    trayectoria buscada. Tomamos $W= (w_0,e_1,w_1,e_2, \dots, e_n,w_n)$, con
+    $uv$-trayectoria. Primero, tomamos un camino $W$ tal que $\ell(W)=1$. Esto
+    quiere decir que $W$ s\'olo contiene una arista, por lo tanto, $W$ es una
+    trayectoria. Ahora, supongamos que todo $uv$-camino con longitud menor a $k$
+    contiene una $uv$-trayectoria. Tomamos un camino $W$ con longitud $k$, tal
+    que no es una trayectoria. \'Esto pues, en caso de que lo fuera, $W$ ser\'ia
+    la trayectoria buscada. Tomamos $W= (w_0,e_1,w_1,e_2, \dots, e_n,w_n)$, con
     $w_0=u$, $w_n=v$, $e_i \in E(G)$ y $w_j \in V(G)$, donde $i \in \{1, \dots,
     n\}$ y $j \in \{0, \dots, n\}$. Sea $m \in \{0, \dots, n\}$ el \'indice del
     primer v\'ertice de $W$ que se repite y sea $l \in \{m+1, \dots, n\}$ tal
-    que $w_m = w_l$. Formamos el camino $W'= (w_0,e_1,w_1,\dots w_m,
-    e_{l+1}, w_{l+1} \dots, e_n,w_n)$. Observamos que $\ell(W')<\ell(W)$, por lo
-    que, por hip\'otesis de inducci\'on, $W'$ contiene una $uv$-trayectoria. Por
-    lo tanto, $W$ tambi\'en contiene una $uv$-trayectoria.
+    que $w_m = w_l$. Formamos el camino $W'= (w_0,e_1,w_1,\dots w_m, e_{l+1},
+    w_{l+1} \dots, e_n,w_n)$. Observamos que $\ell(W')<\ell(W)$, por lo que, por
+    hip\'otesis de inducci\'on, $W'$ contiene una $uv$-trayectoria. Por lo
+    tanto, $W$ tambi\'en contiene una $uv$-trayectoria.
 \end{proof}
 
 Por \cref{prop:CamTray}, sabemos que, cada que hablamos de caminos, siempre hay
@@ -409,7 +410,7 @@ $P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si $V(P) \cap X= \{v_1\}$ y $V(P)
     
 En \cref{fig:ex-caminos} podemos ver un ejemplo de \cref{prop:CamTray}, donde se
 resaltan las ${\color{morado}\bf aristas}$ de un $v_3 v_5$-camino y donde, para
-mostrar la trayectoria contenida, se resaltan los
+mostrar una trayectoria contenida, se resaltan los
 ${\color{morado}\textbf{v\'ertices}}$ de la $v_3 v_5$-trayectoria contenida.
 Adicionalmente, en la misma figura se observan dos ${\color{coral}\bf v_3
 v_5}$-trayectorias internamente ajenas. Ambas est\'an representadas con sus
@@ -419,6 +420,11 @@ ${\color{morado}\textbf{trayectoria morada}}$ tiene cuerdas, entre ellas, la
 arista $v_8v_5$. Por otro lado, la ${\color{verde}\textbf{trayectoria verde}}$
 no tiene cuerdas y tiene la longitud m\'as corta entre $v_3$ y $v_5$, de donde
 obtenemos que la distancia entre $v_3$ y $v_5$ es $2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Revision 9c5642e
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Cuando los extremos de un camino son iguales, se llama \textbf{camino}
 \indiceSub{camino}{cerrado}. Al igual que en el caso de las trayectorias, vale
