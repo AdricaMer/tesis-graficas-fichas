@@ -54,10 +54,9 @@ gr\'aficas de $2$-fichas, del lado derecho.
         \end{scope}
 
     \end{tikzpicture}
-    \caption{En la parte, superior una gr\'afica hamiltoniana $G$
-    (izquierda) y $F_2(G)$ (derecha).
-    En la parte inferior una gr\'afica no hamiltoniana $K$ (izquierda)
-    y $F_2(K)$ (derecha)}
+    \caption{En la parte, superior una gr\'afica hamiltoniana $G$ (izquierda) y
+    $F_2(G)$ (derecha). En la parte inferior una gr\'afica no hamiltoniana $K$
+    (izquierda) y $F_2(K)$ (derecha)}
     \label{fig:ex-H-NH}
 \end{figure}
 
@@ -83,7 +82,7 @@ proposici\'on.
     Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
     V(F_k(\mathcal{F}_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices,
     con $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
-    inducida  por $V_i$, entoncess $S_i$ es isomorfa a
+    inducida  por $V_i$, entonces $S_i$ es isomorfa a
     $F_{k-1}(\mathcal{F}_{n-i})$.
 \end{proposicion}
     
@@ -123,24 +122,28 @@ Ahora pasamos a demostrar el teorema.
     $k =1$, tenemos que $F_1(\mathcal{F}_n) \cong \mathcal{F}_n$, por lo que es
     hamiltoniana y, por definici\'on de la gr\'afica abanico, se cumple que
     $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k}, v_{n-k+1},
-    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Por ello, asumios $k \geq 2$ para
-    el resto de la demostraci\'on. Primero, consideramos el caso en el que $k
-    =2$. Si tomamos $n = 3$, tenemos la gr\'afica con conjunto de v\'ertices
+    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Por ello, asumimos $k \geq 2$
+    para el resto de la demostraci\'on. Primero, consideramos el caso en el que
+    $k =2$. Si tomamos $n = 3$, tenemos la gr\'afica con conjunto de v\'ertices
     $V(\mathcal{F}_n)=\{v_1, v_2, v_3\}$. As\'i, tenemos el siguiente ciclo
     hamiltoniano $C= (\{v_1,v_3\},\{v_1,v_2\},\{v_2,v_3\}, \{v_1,v_3\})$, donde
     $\{v_1, v_3\}$ y $\{v_1, v_2\}$ son adyacentes. 
             
-    Ahora veamos el caso de la gr\'afica de $2$-fichas de
-    $\mathcal{F}_n$, con $n \geq 4$ y conjunto de v\'ertices
-    $V(\mathcal{F}_n)=\{v_1,\dots, v_n\}$. Tomamos el ciclo
+    Ahora veamos el caso de la gr\'afica de $2$-fichas de $\mathcal{F}_n$, con
+    $n \geq 4$ y conjunto de v\'ertices $V(\mathcal{F}_n)=\{v_1,\dots, v_n\}$.
+    Tomamos el ciclo
     
+    \noindent
     $C = (\{v_1, v_{n-1}\},\{v_1, v_n\},\{v_1, v_{n-2}\}, \{v_1, v_{n-3}\},
     \dots, \{v_1, v_2\}$,
-            
+    
+    \noindent
     $\{v_2, v_n\}, \{v_2, v_{n-1}\}, \{v_2, v_{n-2}\}, \dots, \{v_2,v_3\}$,
     
+    \noindent
     $ \dots$,
     
+    \noindent
     $\{v_{n-3},v_n\}, \{v_{n-3}, v_{n-1}\},\{v_{n-3},v_{n-2}\}, \{v_{n-2},
     v_n\},\{v_{n-2}, v_{n-1}\}, \{v_{n-1}, v_n\}, \{v_1, v_{n-1}\})$
     
@@ -164,12 +167,12 @@ Ahora pasamos a demostrar el teorema.
     el \'unico v\'ertice que cumple tener elemento m\'inimo $v_{n-k+1}$. Por lo
     tanto  $V_{n-k+1} = \{Z\}$. 
     
-    Nombramos $D_j =\{v_{n-k}, v_{n-k+1}, \dots, v_{n-1}, v_n\} \setminus
-    \{v_j\}$, con $n-k+1 \leq j \leq n$.  De esta manera, podemos ver al
-    conjunto de v\'ertices de $S_{n-k}$ como $V_{n-k}=\{D_n, D_{n-1}, \dots,
-    D_{n-k+1}\}$. Observamos que $D_{j-1} \triangle D_j= \{v_{j-1}, v_j\}$, para
-    $n-k+2 \leq j \leq n-2$. De \'esta manera obtenemos la trayectoria $Q= (D_n,
-    D_{n-1}, \dots, D_{n-k+1})$ en $S_{n-k}$.     
+    Nombramos $D_j$ al conjunto $D_j =\{v_{n-k}, v_{n-k+1}, \dots, v_{n-1},
+    v_n\} \setminus \{v_j\}$, con $n-k+1 \leq j \leq n$.  De esta manera,
+    podemos ver al conjunto de v\'ertices de $S_{n-k}$ como $V_{n-k}=\{D_n,
+    D_{n-1}, \dots, D_{n-k+1}\}$. Observamos que $D_{j-1} \triangle D_j=
+    \{v_{j-1}, v_j\}$, para $n-k+2 \leq j \leq n-2$. De \'esta manera obtenemos
+    la trayectoria $Q= (D_n, D_{n-1}, \dots, D_{n-k+1})$ en $S_{n-k}$.     
     Luego, nos fijamos en que, para $j= n-k$, tenemos que $Y_j = D_n$ y $X_j=
     D_{n-1}$. Adem\'as, tenemos las siguientes diferencias sim\'etricas
     $X_{n-k}\triangle D_{n-2} =\{v_{n-2}, v_{n-1}\}$, $Y_{n-k}\triangle D_{n-2}
@@ -237,8 +240,8 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     \geq 3$ y tomamos $1 \leq i \leq n$ para construir una familia de
     trayectorias $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots,
     \{v_i,v_n\})$. Observamos que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una
-    partici\'on de $V(F_2(\mathcal{F}_{m,n}))$. %especificar mas?
-    A continuaci\'on analizamos el siguiente ciclo $C$.
+    partici\'on de $V(F_2(\mathcal{F}_{m,n}))$. A continuaci\'on analizamos el
+    siguiente ciclo $C$.
     
     En el caso en el que $n$ es par, tomamos:
 
@@ -276,10 +279,10 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     $\{w_i,w_{i+(n-2)}\},\dots,\{w_i,v_2\},\{w_i,w_{i+2}\},\{w_i,v_1\},\{w_i,w_{i+1}\})$
 
     Para $n+1\leq i \leq 2n$, consideramos los \'indices de los v\'ertices de
-    $\overline{K_m}$ $\mod 2n$, usando $2n$ en vez de $0$, para definir
-    $P_i=(\{w_i,v_n\},\{w_i,w_{n+1}\},\{w_i,v_{n-1}\},\{w_i,w_{i+(n-1)}\},\{w_i,v_{n-2}\}$,
-    $\{w_i,w_{i+(n-2)}\},\dots,
-    \{w_i,v_2\},\{w_i,w_{i+2}\},\{w_i,v_1\},\{w_i,w_{i+1}\})$
+    $\overline{K_m}$ $\mod 2n$, usando $2n$ en vez de $0$, para definir $P_i =
+    (\{w_i,v_n\}, \{w_i,w_{n+1}\}, \{w_i,v_{n-1}\}, \{w_i,w_{i+(n-1)}\},
+    \{w_i,v_{n-2}\}$, $\{w_i,w_{i+(n-2)}\}, \dots, \{w_i,v_2\}, \{w_i,w_{i+2}\},
+    \{w_i,v_1\}, \{w_i,w_{i+1}\})$
 
     Dado que la trayectoria $P_i$ recorre el ciclo $C$, podemos afirmar que es
     una trayectoria en $F_2(\mathcal{F}_{m,n})$, con $2\leq i \leq 2n$. M\'as
@@ -298,8 +301,8 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     son adyacentes por el argumento anterior. Luego, tenemos que el \'ultimo
     elemento de $P_i$ y el primer elemento de $P_{i+1}$ son adyacentes.
     Adem\'as, usando el mismo argumento, tenemos que el \'ultimo elemento de
-    $P_1$, i.e. $\{v_1,v_n\}$, que es adyacente al primer elemento de $P_2$, que
-    es $\{w_2,v_n\}$. De manera an\'aloga, el \'ultimo elemento de $P_{2n}$,
+    $P_1$, i.e. $\{v_1,v_n\}$, es adyacente al primer elemento de $P_2$, que es
+    $\{w_2,v_n\}$. De manera an\'aloga, el \'ultimo elemento de $P_{2n}$,
     $\{w_{2n},w_1\}$, es adyacente a $\{v_n,w_1\}$, el primer elemento de $P_1$.
     Por lo tanto, $C_1 = (P_1,P_2, \dots, P_{2n},\{v_n,w_1\})$ es un ciclo en
     $F_2(\mathcal{F}_{m,n})$. 
@@ -315,11 +318,11 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     v\'ertices $\{w_i,w_j\}$, tomando $i < j$. Si $1 < i \leq n$ y $i < j \leq
     i+n-1$, entonces tenemos que $\{w_i,w_j\} \in P_i$, mientras que, si tomamos
     $1 < i \leq n$ y $i+n-1 < j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_j$.
-     Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$. Por lo
+    Ahora, si tomamos $n<i<j \leq 2n$, tenemos que $\{w_i,w_j\} \in P_i$. Por lo
     que $\{V(P_1),V(P_2), \dots, V(P_{2n})\}$ es una partici\'on de
     $V(F_2(\mathcal{F}_{m,n}))$. Por lo tanto, $C_1$ es un ciclo hamiltoniano.
-     \Cref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la
-    gr\'afica $\mathcal{F}_{8,4}$ para generar la trayectoria $P_6$ en
+    \Cref{fig:exe-tray-n-2n} muestra el movimiento de fichas en la gr\'afica
+    $\mathcal{F}_{8,4}$ para generar la trayectoria $P_6$ en
     $F_2(\mathcal{F}_{8,4})$, donde la ficha en ${\color{coral}\bf w_6}$ est\'a
     est\'atica.
 
@@ -327,6 +330,7 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
 \begin{figure}[ht!]
     \centering
     \begin{tikzpicture}
+    \begin{scope}[scale=0.95]
         
         \begin{scope}[xshift=-5.5cm,yshift=0cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
@@ -522,13 +526,12 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
                 \draw [edge,grisOscuro!50] (\i) to (\j);
         \end{scope}
 
+    \end{scope}
     \end{tikzpicture}
     \caption{La gr\'afica $F_2(\mathcal{F}_{8,4})$, mostrando el movimiento de fichas
         a trav\'es de $P_6$ }
         \label{fig:exe-tray-n-2n}
 \end{figure}
-
-\newpage
     
 Por \'ultimo, veamos el caso en el que $1<m<2n$ y del mismo modo que en los
 casos anteriores, definiremos una familia de trayectorias en
@@ -554,16 +557,15 @@ el ciclo hamiltoniano buscado. \Cref{fig:exe-tray-n-m} muestra el
 movimiento de las fichas en la gr\'afica $\mathcal{F}_{3,4}$ para generar la
 trayectoria $P_2$ en la gr\'afica de $2$-fichas, donde la ficha en
 ${\color{azulClaro} \bf w_2}$ est\'a fija.
-
-
 \begin{figure}[ht!]
     \centering
     \begin{tikzpicture}
+    \begin{scope}[scale=0.82]
         
         \begin{scope}[xshift=-5cm,yshift=0cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [vertex,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [bvertex,fill=amarillo ,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -576,8 +578,8 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
         
         \begin{scope}[xshift=0cm,yshift=0cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [vertex,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [bvertex,fill=amarillo ,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -590,8 +592,8 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
 
         \begin{scope}[xshift=5cm,yshift=0cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [vertex,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [bvertex,fill=amarillo ,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -602,10 +604,10 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
                 \draw [edge,grisOscuro] (\i) to (\j);
         \end{scope}
                     
-        \begin{scope}[xshift=-5cm,yshift=-5.5cm,scale=0.8]
+        \begin{scope}[xshift=-5cm,yshift=-5.2cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [bvertex,fill=amarillo ,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -616,10 +618,10 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
                 \draw [edge,grisOscuro] (\i) to (\j);
         \end{scope}
 
-        \begin{scope}[xshift=0cm,yshift=-5.5cm,scale=0.8]
+        \begin{scope}[xshift=0cm,yshift=-5.2cm,scale=0.8]
             \draw (-1.8,0) node (v1) [bvertex,fill=amarillo ,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [vertex,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -630,10 +632,10 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
                 \draw [edge,grisOscuro] (\i) to (\j);
         \end{scope}
 
-        \begin{scope}[xshift=5cm,yshift=-5.5cm,scale=0.8]
+        \begin{scope}[xshift=5cm,yshift=-5.2cm,scale=0.8]
             \draw (-1.8,0) node (v1) [vertex,label=240:{\small $v_1$}] {};
-            \draw (-0.6,0) node (v2) [vertex,label=200:{\small $v_2$}] {};
-            \draw (0.6,0) node (v3) [vertex,label=350:{\small $v_3$}] {}; 
+            \draw (-0.6,0) node (v2) [vertex,label=260:{\small $v_2$}] {};
+            \draw (0.6,0) node (v3) [vertex,label=290:{\footnotesize $v_3$}] {}; 
             \draw (1.8,0) node (v4) [vertex,label=300:{\small $v_4$}] {}; 
             \draw (-1.2,2.3) node (w1) [vertex,label=90:{\small $w_1$}] {}; 
             \draw (1.2,2.3) node (w2) [bvertex,fill=azulClaro ,label=90:{\small $w_2$}] {};
@@ -644,6 +646,7 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
                 \draw [edge,grisOscuro] (\i) to (\j);
         \end{scope}
 
+        \end{scope}
         \end{tikzpicture}
     
         \caption{La gr\'afica $F_2(\mathcal{F}_{3,4})$, mostrando el movimiento de fichas
@@ -651,13 +654,14 @@ ${\color{azulClaro} \bf w_2}$ est\'a fija.
     \label{fig:exe-tray-n-m}     
     \end{figure}
 
-Por \"ultimo, veamos el caso cuando $m>2n$. Sea $S \subset V(F_2(\mathcal{F}_{m,n}))$,
-con $S=\{\{w_i,v_j\} \colon\ i \in \{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero,
-observamos que todo v\'ertice $\{w_i,w_j\}$ tiene a todos sus vecinos en $S$ por
-lo que es un v\'ertice aislado en $F_2(\mathcal{F}_{m,n})-S$, donde $i,j \in
-\{1,\dots,m\}$ tal que $i \neq j$. Luego, tenemos $\binom{m}{2}$ v\'ertices
-aislados en $F_2(\mathcal{F}_{m,n})-S$. Adem\'as, la subgr\'afica inducida por
-los v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
+Por \'ultimo, veamos el caso cuando $m>2n$. Sea $S \subset
+V(F_2(\mathcal{F}_{m,n}))$, con $S=\{\{w_i,v_j\} \colon\ i \in
+\{1,\dots,m\},j\in\{1,\dots,n\}\}$. Primero, observamos que todo v\'ertice
+$\{w_i,w_j\}$ tiene a todos sus vecinos en $S$ por lo que es un v\'ertice
+aislado en $F_2(\mathcal{F}_{m,n})-S$, donde $i,j \in \{1,\dots,m\}$ tal que $i
+\neq j$. Luego, tenemos $\binom{m}{2}$ v\'ertices aislados en
+$F_2(\mathcal{F}_{m,n})-S$. Adem\'as, la subgr\'afica inducida por los
+v\'ertices de tipo $\{v_i,v_j\}$ forman una componente conexa en
 $F_2(\mathcal{F}_{m,n})-S$. Por lo tanto, tenemos que $F_2(\mathcal{F}_{m,n})-S$
 tiene al menos $\binom{m}{2} + 1$ componentes conexas. Despejando, se obtiene
 que $\binom{m}{2} + 1 = \frac{m(m-1)}{2} + 1 \geq \frac{m(2n)}{2} + 1 = mn + 1 >
@@ -682,18 +686,17 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Notamos que, cuando $m =1$,
     haciendo un cambio de notaci\'on de $w_1$ a $v_n$ tenemos un abanico como el
     d\cref{teo:hamilt-SFan}. Por lo tanto, tenemos que la gr\'afica de
-    $k$-fichas es hamiltoniana. Ahora, veamos el caso en el que $m>1$, supongamos
-    que la gr\'afica $F_{k'}(\mathcal{F}_{m-1,n}$) cumple la hip\'otesis de
-    inducci\'on, con $2\leq k'\leq n$ y $1 \leq m-1 \leq 2n$. Para el subcaso de
-    $k=2$ usamos \cref{teo:2-TokGenerFan}. Basta ver que el ciclo obtenido en
-    el teorema cumple tener la adyacencia deseada, es decir $\{w_1,
-    v_{n-2}\}\sim\{v_{n-2}, v_{n-1}\}$. Recordando la observaci\'on de la
-    demostraci\'on de dicho teorema, tenemos que $\{v_{n-2},w_1\}$ y
+    $k$-fichas es hamiltoniana. Ahora, veamos el caso en el que $m>1$,
+    supongamos que la gr\'afica $F_{k'}(\mathcal{F}_{m-1,n}$) cumple la
+    hip\'otesis de inducci\'on, con $2\leq k'\leq n$ y $1 \leq m-1 \leq 2n$.
+    Para el subcaso de $k=2$ usamos \cref{teo:2-TokGenerFan}. Basta ver que el
+    ciclo obtenido en el teorema cumple tener la adyacencia deseada, es decir
+    $\{w_1, v_{n-2}\}\sim\{v_{n-2}, v_{n-1}\}$. Recordando la observaci\'on de
+    la demostraci\'on de dicho teorema, tenemos que $\{v_{n-2},w_1\}$ y
     $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria $T_{n-2}$. Esta
     trayectoria es parte de la trayectoria $P_1$, usada para obtener un ciclo
-    hamiltoniano en todos los casos d\cref{teo:2-TokGenerFan}. Por lo
-    tanto, para $k=2$ se obtiene un ciclo hamiltoniano con la estructura
-    deseada.
+    hamiltoniano en todos los casos d\cref{teo:2-TokGenerFan}. Por lo tanto,
+    para $k=2$ se obtiene un ciclo hamiltoniano con la estructura deseada.
 
     Por \'ultimo, nos fijamos en el subcaso donde $k>2$. Sean $S_1$ y $S_2$ los
     conjuntos $S_1=\{A \in F_k(\mathcal{F}_{m,n}) \colon\ w_1 \in A\}$ y
@@ -721,10 +724,10 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     \sim X_2$ y $Y_1 \sim Y_2$. Ahora, definimos el ciclo $C = (X_1
     \xrightarrow[P_1]{}Y_1,Y_2 \xrightarrow[P_2^{-1}]{}X_2,X_1)$. Afirmamos que
     $C$ es el ciclo buscado. Dado que $\{S_1,S_2\}$ es una partici\'on de
-    $V(F_k(\mathcal{F}_{m,n}))$, entonces $C$ es un ciclo hamiltoniano. Adem\'as,
-    tenemos que $Y_1$ y $Y_2$ son adyacentes, por lo que $C$ cumple las
-    condiciones deseadas. Por lo tanto, $F_k(\mathcal{F}_{m,n})$ es una gr\'afica
-    hamiltoniana.
+    $V(F_k(\mathcal{F}_{m,n}))$, entonces $C$ es un ciclo hamiltoniano.
+    Adem\'as, tenemos que $Y_1$ y $Y_2$ son adyacentes, por lo que $C$ cumple
+    las condiciones deseadas. Por lo tanto, $F_k(\mathcal{F}_{m,n})$ es una
+    gr\'afica hamiltoniana.
 \end{proof}
 
 El teorema anterior nos proporciona una familia de gr\'aficas no hamiltonianas
