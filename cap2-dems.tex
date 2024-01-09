@@ -10,43 +10,45 @@ original.
 \label{sec:clanes}
 
 Esta secci\'on est\'a enfocada en los clanes de las gr\'aficas de fichas.
-Veremos una caracterizaci\'on de los clanes y adem\'as veremos una manera de
+Se dar\'a una caracterizaci\'on de los clanes, adem\'as de una manera de
 encontrar el n\'umero de clan en las gr\'aficas de fichas.
 
-Primero empezaremos con la caracterizaci\'on de los clanes. Para esto,
+%%%
+
+Empezamos con la caracterizaci\'on de los clanes. Para esto,
 necesitamos el siguiente lema. 
 
 \begin{lema}%
 \label{lem:K3}
     Sean $A$, $B$ y $C$ v\'ertices en $F_k(G)$ tales que son adyacentes dos a
-    dos. Entonces se cumple s\'olo una de las siguientes relaciones $B \cap C
-    \subset A$ o $A \subset B \cup C$
+    dos, entonces se cumple s\'olo una de las siguientes relaciones $B \cap C
+    \subset A$ o $A \subset B \cup C$.
 \end{lema}
 
 \begin{proof}
-    Primero, supongamos que existen $A$, $B$, $C$ v\'ertices en $F_k(G)$ tales
-    que son adyacentes dos a dos y cumplen $B \cap C \not\subset A$ y $A
-    \not\subset B \cup C$. Entonces existen los v\'ertices  $a \in A \setminus
+    Primeramente, suponemos que existen $A$, $B$, $C$ v\'ertices en $F_k(G)$
+    tales que son adyacentes dos a dos y cumplen $B \cap C \not\subset A$ y $A
+    \not\subset B \cup C$, entonces existen los v\'ertices  $a \in A \setminus
     (B \cup C)$ y $b \in (B \cap C)\setminus A$. Notamos que $b \in B \setminus
     A$ y $b \in C \setminus A$. De manera an\'aloga tenemos que $a \in A
-    \setminus B$ y $a \in A \setminus C$. Por otro lado sabmeos que $A$ y $B$
-    son adyacentes en $F_k(G)$, al igual que $A$ y $C$, por lo tanto, tenemos que
-    $A \triangle B = \{a,b\}$ y $A \triangle C = \{a, b\}$. Entonces tenemos que
-    $(B \cup C \cup \{a\})\setminus \{b\} \subseteq A$. Pero $B$ y $C$ son
-    adyacentes en $F_k(G)$ por lo que $|B \cup C| = k+1$, entonces tenemos que
-    $|A| \geq k+1$, lo cu\'al es una contradicci\'on pues $A \in V (F_k(G))$. 
+    \setminus B$ y $a \in A \setminus C$. Por otro lado, sabmeos que $A$ y $B$
+    son adyacentes en $F_k(G)$, de igual manera $A$ y $C$. Por lo tanto, tenemos
+    que $A \triangle B = \{a,b\}$ y $A \triangle C = \{a, b\}$. As\'i pues, $(B
+    \cup C \cup \{a\})\setminus \{b\} \subseteq A$. Pero $B$ y $C$ son
+    adyacentes en $F_k(G)$, por lo que $|B \cup C| = k+1$. Por lo que $|A| \geq
+    k+1$, lo cu\'al es una contradicci\'on pues $A \in V (F_k(G))$. 
 
-    Ahora supongamos que existen $A$, $B$ y $C$ v\'ertices en $F_k(G)$ que son
+    Ahora, suponemos que existen $A$, $B$ y $C$ v\'ertices en $F_k(G)$ que son
     adyacentes dos a dos y cumplen $A \subset B \cup C$ y $B \cap C \subset A$.
     Como $B$ y $C$ son adyacentes, entonces tenemos que $B \triangle C =
-    \{b,c\}$ con $b \in B$ y $c \in C$. Adem\'as tenemos que $|B \cap C| = k-1$
+    \{b,c\}$ con $b \in B$ y $c \in C$. Adem\'as, tenemos que $|B \cap C| = k-1$
     y $|B \cup C| = k +1$. Notamos que $B \cup C = (B\cap C) \cup \{b,c\}$. Por
     otro lado, dado que $|A|=k$ y $B \cap C \subset A$, tenemos que existe $a
     \in A$ tal que $A = (B \cap C) \cup \{a\}$. Adicionalmente, $A \subset B
-    \cup C$, por lo que $a \in \{b, c\}$. Entonces tenemos que $A = (B \cap C)
+    \cup C$, por lo que $a \in \{b, c\}$. Por eso tenemos que $A = (B \cap C)
     \cup \{b\}$ o $A = (B \cap C) \cup \{c\}$, es decir, $A = B$ o $A=C$, lo
-    cu\'al es una contradicci\'on. Por lo tanto, tenemos que $B \cap C \subset A$
-    o $A \subset B \cup C$.
+    cu\'al es una contradicci\'on. Por lo tanto, $B \cap C \subset
+    A$ o $A \subset B \cup C$.
 \end{proof}
 
 Ahora, teniendo en cuenta \cref{lem:K3}, pasamos a demostrar el siguiente
@@ -54,7 +56,7 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
 
 \begin{teorema}
 \label{teo:clanG-clanFG}
-    Sea $X$ un conjunto de v\'ertices de $F_k(G)$. Entonces $X$ es un clan de
+    Sea $X$ un conjunto de v\'ertices de $F_k(G)$, entonces $X$ es un clan de
     $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S \subseteq
     V(G)$ tales que $K \cap S = \varnothing$ y pasa uno de los siguientes casos:
         \begin{enumerate}
@@ -65,54 +67,53 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
 \end{teorema}
 
 \begin{proof}
-    Primero nos enfocamos en la primera implicaci\'on, es decir, dado $X$ un
-    clan de $F_k(G)$, demostremos que existe un clan $K$ de $G$ y un conjunto $V
+    Empezamos enfoc\'andonos en la primera implicaci\'on, es decir, dado $X$ un
+    clan de $F_k(G)$, demostramos que existe un clan $K$ de $G$ y un conjunto $V
     \subseteq V(G)$ tales que $K \cap S = \varnothing$ y ocurre alguno de los
     incisos del teorema. Si $|X|=2$, entonces $X= \{A, B\}$ para alg\'unos
     v\'ertices $A, B$ de $F_k(G)$ tales que $AB \in E(F_k(G))$. Definimos $K = A
-    \triangle B$ y $S=A \cap B$ y notamos que de esta manera $X$ satisface ambos
+    \triangle B$ y $S=A \cap B$ y notamos que, de esta manera, $X$ satisface ambos
     incisos.
 
-    Ahora veamos el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1, A_2,
+    Ahora nos centramos el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1, A_2,
     \dots, A_p\}$ donde $A_i{A_j} \in E(F_k(G))$, para cualesquiera $i\neq j$,
     con $i,j \in \{1, \dots, p\}$. Por \cref{lem:K3} tenemos que $A_1\cap A_2
-    \subset A_i$ o $A_i \subset A_1 \cup A_2$ para todo $i \in \{3 \dots,p \}$.
+    \subset A_i$ o $A_i \subset A_1 \cup A_2$, para todo $i \in \{3 \dots,p \}$.
     Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3, \dots, p\}$.
-    Supongamos que tenemos el caso en el que $A_1\cap A_2 \subset A_i$ y $A_j
+    Suponemos que tenemos el caso en el que $A_1\cap A_2 \subset A_i$ y $A_j
     \subset A_1 \cup A_2$. Denotamos por $a_1$ y $a_2$ a los v\'ertices en $G$
-    que forman la diferencia sim\'etrica de $A_1$ y $A_2$. Por un lado tenemos
+    que forman la diferencia sim\'etrica de $A_1$ y $A_2$. Por un lado, tenemos
     que $A_i \not\subset A_1\cup A_2$, por \cref{lem:K3}, entonces $A_i =
-    (A_1\cap A_2) \cup \{b\}$ con $b \notin A_1\cup A_2$. Por otro lado tenemos
-    que $A_1 \cap A_2 \not\subset A_j$, tambi\'en por \cref{lem:K3}. En otras
+    (A_1\cap A_2) \cup \{b\}$ con $b \notin A_1\cup A_2$. Por otro lado, $A_1 \cap A_2 \not\subset A_j$, tambi\'en por \cref{lem:K3}. En otras
     palabras, existe $c \in A_1 \cap A_2$ tal que $c \notin A_j$. Sin embargo,
     $A_j \subset A_1 \cup A_2$ y $|A_1 \cup A_2| =k+1$, por lo que $A_j = (A_1
-    \cup A_2)\setminus \{c\}$. Entonces $a_1, a_2 \in A_j$ y $a_1, a_2 \notin
-    A_i$, y adem\'as $b, c \in A_i$, pero $b, c \notin A_j$. As\'i tenemos que
+    \cup A_2)\setminus \{c\}$. Luego, $a_1, a_2 \in A_j$ y $a_1, a_2 \notin
+    A_i$ y, adem\'as, $b, c \in A_i$, pero $b, c \notin A_j$. As\'i tenemos que
     $|A_i \triangle A_j| \geq 4$, lo cu\'al es una contradicci\'on pues $A_i$ y
     $A_j$ son elementos de un clan. Por lo tanto, para todo $i\in \{3, \dots,
     p\}$ se tiene que $A_i \subset A_1\cup A_2$ o $A_1 \cap A_2 \subset A_i$.
 
-    Consideremos primero el caso en el que $A_i \subset A_1\cup A_2$, para todo
+    Consideramos primero el caso en el que $A_i \subset A_1\cup A_2$, para todo
     $i\in \{3, \dots, p\}$. Si $S= A_1 \cap A_2$, entonces tenemos que $|S|
-    =k-1$ por lo que, para cada $i \in \{3, \dots, p\}$, $A_i$ es la uni\'on de
-    $S$ y un elemento que llamamos $v_i$. Notamos que para cualesquiera dos
-    elementos distintos $i, j \in \{1, \dots, p\}$ tenemos que $A_i \triangle
+    =k-1$, por lo que, para cada $i \in \{3, \dots, p\}$, $A_i$ es la uni\'on de
+    $S$ y un elemento que llamamos $v_i$. Notamos que, para cualesquiera dos
+    elementos distintos $i, j \in \{1, \dots, p\}$, tenemos que $A_i \triangle
     A_j = \{v_i, v_j\}$. Como $X$ es un clan en $F_k(G)$, entonces tenemos que
     $v_i{v_j} \in E(G)$, por lo que el conjunto $\{v_i\colon\ i \in \{1 \dots,
     p\}\}$, es un clan en $G$.   Sea $K = \{v_i\colon\ i \in \{1 \dots, p\}\}$.
-    Notamos que  $K \cap S = \varnothing$ y adem\'as $X= \{S \cup \{v\}\colon\ v
+    Notamos que  $K \cap S = \varnothing$, adem\'as $X= \{S \cup \{v\}\colon\ v
     \in K\}$, por lo que tenemos el caso del primer inciso.
 
-    Ahora elegimos el caso en el que $A_1 \cap A_2 \subset A_i$, para todo $i\in
-    \{3, \dots, p\}$. Sabemos que $|A_1 \cup A_2| = k+1$, por lo que existe un
-    elemento de $A_1 \cup A_2$ que no est\'a en $A_i$, llamamos $v_i$ a este
-    elemento. Entonces tenemos que para cualesquiera dos \'indices distintos $i,
-    j \in \{1, \dots, p\}$, los v\'ertices $v_i, v_j \in V(G)$ son adyacentes.
-    Por lo tanto, $K= \{v_i\colon\ i \in \{1, \dots, p\}\}$ es un clan en $G$. Si
-    tomamos $S= (A_1 \cup A_2)\setminus K$, tenemos que $K \cap S = \varnothing$
-    y se cumple $|S| + |K|= |(A_1 \cup A_2)\setminus K| + |K| = k+1$. Adem\'as
-    notamos que $X = \{(S \cup K)\setminus \{v\}\colon\ v\in K\}$ por lo que
-    obtenemos el caso del segundo inciso.
+    Ahora, nos fijamos en el caso en el que $A_1 \cap A_2 \subset A_i$, para
+    todo $i\in \{3, \dots, p\}$. Sabemos que $|A_1 \cup A_2| = k+1$, por lo que
+    existe un elemento de $A_1 \cup A_2$ que no est\'a en $A_i$, llamamos $v_i$
+    a este elemento. Luego, tenemos que, para cualesquiera dos \'indices
+    distintos $i, j \in \{1, \dots, p\}$, los v\'ertices $v_i, v_j \in V(G)$ son
+    adyacentes. Por lo tanto, $K= \{v_i\colon\ i \in \{1, \dots, p\}\}$ es un
+    clan en $G$. Si tomamos $S= (A_1 \cup A_2)\setminus K$, tenemos que $K \cap
+    S = \varnothing$ y se cumple $|S| + |K|= |(A_1 \cup A_2)\setminus K| + |K| =
+    k+1$. Adem\'as, notamos que $X = \{(S \cup K)\setminus \{v\}\colon\ v\in
+    K\}$, por lo que obtenemos el caso del segundo inciso.
 
     De los argumentos anteriores, concluimos que se satisface la primera
     implicaci\'on. Observemos que en ambos casos $S = \bigcap\limits_{i} A_i$ y
@@ -122,14 +123,14 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
     palabras, demostrar que si existen un clan $K$ de $G$ y un conjunto $S
     \subset V(G)$ tales que $K \cap S = \varnothing$ y pasa alguno de los
     incisos del teorema, entonces $X$ es un clan de $F_k(G)$. Basta demostrar
-    que en ambos casos obtenemos $X$ un clan de $F_k(G)$. Si $|K| =1$, entonces
+    que en ambos casos obtenemos $X$, un clan de $F_k(G)$. Si $|K| =1$, entonces
     para ambos incisos obtenemos $|X| =1$, es decir, un clan de un elemento. Por
-    lo tanto vamos a tomar $|K| \geq 2$. Para el primer inciso, tenemos $X = \{S
+    lo tanto, vamos a tomar $|K| \geq 2$. Para el primer inciso, tenemos $X = \{S
     \cup \{v\}\colon\ v \in K\}$ y $|S| = k-1$. Tomamos cualesquiera dos $X_1,
-    X_2 \in X$ v\'ertices distintos tenemos que $X_1 \triangle X_2 =\{x_1,
+    X_2 \in X$ v\'ertices distintos y obtenemos que $X_1 \triangle X_2 =\{x_1,
     x_2\}$, con $x_1, x_2 \in K$. Como $K$ es un clan en $G$, entonces $x_1x_2
     \in E(G)$ y obtenemos que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por lo
-    tanto $X$ es un clan de $F_k(G)$.
+    tanto, $X$ es un clan de $F_k(G)$.
 
     Enfoc\'andonos en el segundo inciso, tomamos $X = \{(S\cup K) \setminus
     \{v\}\colon\ v \in K \}$ con $|S| + |K| = k+1$. Al igual que para el inciso
@@ -138,25 +139,25 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
     $x_2 \notin X_2$. Adem\'as, como tomamos $|K| \geq 2$, podemos garantizamr
     que $x_1 \neq x_2$. Ahora notamos que $X_1 \triangle X_2 = \{x_1, x_2\}$, y
     al ser $K$ un clan de $G$ tenemos que $x_1x_2 \in E(G)$, por lo que tenemos
-    que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por tanto $X$ cumple ser un
+    que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por tanto, $X$ cumple ser un
     clan de $F_k(G)$.
 \end{proof}
     
-Utilizando las gr\'aficas en \cref{fig:ex-tok-path}, daremos un ejemplo de los
-dos casos mencionados en \cref{teo:clanG-clanFG}. Del lado izquierdo de
-\cref{fig:ex-clique2} tenemos una gr\'afica de $6$ v\'ertices, a la cu\'al
-nombramos $G$, duplicada. En cada copia, $G$ tiene resaltados distintos clanes y
-subconjuntos auxiliares, seg\'un los casos d\cref{teo:clanG-clanFG}.
-La copia superior de $G$ representa el caso $1$ del teorema. Nombramos al clan
-de este caso ${\color{salmon}\bf K_1 \subseteq G}$ y su conjunto auxiliar
-${\color{baige}\bf S_1\subseteq G}$. De manera an\'aloga, para el caso $2$ del
-teorema utilizamos la copia inferior de $G$. Para este caso, nombramos al clan
-${\color{azulOscuro}\bf K_2\subseteq G}$ en $G$ y ${\color{oro}\bf S_2\subseteq G}$ el
-conjunto auxiliar. Entonces tenemos que en $F_3(G)$, representada del lado
-derecho en la figura, el clan ${\color{naranja}\bf X_1\subseteq F_3(G)}$ se obtiene
-del primer caso y el clan ${\color{verde}\bf X_2 \subseteq F_3(G)}$ del segundo
-caso. Por \'ultimo, en ambos casos, los n\'umeros de los conjuntos auxiliares en
-$G$ est\'an representados en ${\bf negritas}$ en $F_3(G)$.
+Utilizando las gr\'aficas en \cref{fig:ex-tok-path}, damos un ejemplo de los dos
+casos mencionados en \cref{teo:clanG-clanFG}. Del lado izquierdo de la figura
+tenemos una gr\'afica de $6$ v\'ertices duplicada, a esta gr\'afica la nombramos
+$G$, . En cada copia, $G$ tiene resaltados distintos clanes y subconjuntos
+auxiliares, seg\'un los casos d\cref{teo:clanG-clanFG}. La copia superior de $G$
+representa el caso $1$ del teorema. Nombramos al clan de este caso
+${\color{salmon}\bf K_1 \subseteq G}$ y su conjunto auxiliar ${\color{baige}\bf
+S_1\subseteq G}$. De manera an\'aloga, para el caso $2$ del teorema utilizamos
+la copia inferior de $G$. Para este caso, nombramos al clan
+${\color{azulOscuro}\bf K_2\subseteq G}$ en $G$ y ${\color{oro}\bf S_2\subseteq
+G}$ el conjunto auxiliar. Luego, tenemos que en $F_3(G)$, representada del
+lado derecho en la figura, el clan ${\color{naranja}\bf X_1\subseteq F_3(G)}$ se
+obtiene del primer caso y el clan ${\color{verde}\bf X_2 \subseteq F_3(G)}$ del
+segundo caso. Por \'ultimo, en ambos casos, los n\'umeros de los conjuntos
+auxiliares en $G$ est\'an representados en ${\bf negritas}$ en $F_3(G)$.
 
 \begin{figure}[ht!]
     \centering
@@ -274,33 +275,33 @@ para el n\'umero de clan.
     satisface alguno de los incisos d\cref{teo:clanG-clanFG}. Para el resto de
     esta desigualdad, consideremos a $K$ como en el teorema anterior.   Si $X =
     \{S \cup \{v\} \colon\ v \in K\}$ y $|S| = k-1$, notamos que $|X| = |K|$.
-    Adem\'as tenemos que $n \geq |S| + |K|$. Por lo tanto, tenemos que $n \geq
+    Adem\'as, tenemos que $n \geq |S| + |K|$. Por lo tanto, tenemos que $n \geq
     |S| + |K| = k-1 + |X|$, es decir, $|X| \leq n-k+1$. Ahora, si $X = \{(S\cup
     K) \setminus \{v\} \colon\ v \in K \}$ y $|S| + |K| = k+1$, notamos que
     tenemos la misma cardinalidad que en caso anterior, i.e, $|X| =|K|$.
-    Entonces $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto, de los dos casos
+    Por ello, $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto, de los dos casos
     obtenemos que $|X| \leq \max\{n-k+1, k+1\}$. Adicionalmente, tenemos que
     ambos casos cumplen $|X| = |K| \leq \omega(G)$. Por lo que $\omega(F_k(G)) =
-    |X| \leq \min \{\omega(G), \max \{n-k+1, k+1\}\}$ y de esta manera obtenemos
+    |X| \leq \min \{\omega(G), \max \{n-k+1, k+1\}\}$ y, de esta manera, obtenemos
     la cota superior de la ecuaci\'on deseada.
 
     Tomemos ahora un clan $K$ de $G$ con $\omega(G)$ v\'ertices. Consideramos
     las siguientes construcciones de clanes de $F_k(G)$. Primero, sea $K'$ un
-    subconjunto de $K$ con $\min\{\omega(G),n-k+1\}$ v\'ertices. Entonces
+    subconjunto de $K$ con $\min\{\omega(G),n-k+1\}$ v\'ertices, entonces
     tenemos que $|V(G) \setminus K'| \geq k-1$. Luego, sea $S$ un subconjunto de
     $V(G) \setminus K'$ con exactamente $k-1$ v\'ertices. Obtenemos un clan de
     $F_k(G)$ de la forma $\{ S \cup \{v\} \colon\ v \in K'\}$. Este clan tiene
     $|K'|$ v\'ertices. Por lo tanto, tenemos que $\omega(F_k(G)) \geq \min
-    \{\omega(G), n-k+1\}$. Ahora tomamos el subconjunto $K'$ de $K$ con $\min \{
-    \omega(G), k+1\}$ v\'ertices. Como $n \geq k+1$, entonces existe un
-    subconjunto $S$ de $V(G) \setminus K'$ con $(k+1)-|K'|$ v\'ertices. Entonces
-    tenemos un clan de $F_k(G)$ de la forma $\{ (S \cup K') \setminus \{v\}
+    \{\omega(G), n-k+1\}$. Ahora, tomamos el subconjunto $K'$ de $K$ con $\min
+    \{ \omega(G), k+1\}$ v\'ertices. Como $n \geq k+1$, entonces existe un
+    subconjunto $S$ de $V(G) \setminus K'$ con $(k+1)-|K'|$ v\'ertices. As\'i
+    pues, tenemos un clan de $F_k(G)$ de la forma $\{ (S \cup K') \setminus \{v\}
     \colon\ v \in K'\}$ que tiene $|K'|$ v\'ertices. Por lo tanto, tenemos que
     $\omega(F_k(G)) \geq \min \{\omega(G), k+1\}$.
 
-    Por los dos casos anteriores obtenemos que $\omega(F_k(G)) \geq \max \{\min
+    De los dos casos anteriores tenemos que $\omega(F_k(G)) \geq \max \{\min
     \{\omega(G), n-k+1\}, \min \{\omega(G), k+1 \}\} = \min \{\omega(G), \max
-    \{n-k+1,k+1\}\}$. De esta manera obtenemos la cota inferior de la ecuaci\'on
+    \{n-k+1,k+1\}\}$. De esta manera, obtenemos la cota inferior de la ecuaci\'on
     deseada. Por lo tanto, tenemos que se cumple la igualdad, es decir,
     $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
 \end{proof}
@@ -316,7 +317,7 @@ Este teorema se puede simplificar como se muestra en el siguiente corolario.
 \begin{proof}
     Por \cref{teo:clan-max} sabemos que $\omega(F_k(G))= \min \{\omega(G), \max
     \{n-k+1,k+1\}\}$. Basta demostrar que $\max \{n-k+1, k+1\} = n-k+1$. En
-    otras palabras $n-k+1 \geq k+1$, esto pasa si y s\'olo si $n \geq 2k$. Por
+    otras palabras $n-k+1 \geq k+1$. \'Esto pasa si y s\'olo si $n \geq 2k$. Por
     lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
 \end{proof}
 
@@ -343,26 +344,27 @@ de $G$. Primero veamos la cota superior de $ \chi (F_k(G))$.
     Sea $c: V(G) \to \{0,1, \dots, \chi(G)-1\}$ una coloraci\'on propia de $G$.
     Ahora, a cada v\'ertice $A$ de $F_k(G)$ le asignamos el color $ c'(A)=
     \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una coloraci\'on
-    propia. Supongamos lo contrario, existen $A$ y $B$ v\'ertices adyacentes en
-    $F_k(G)$ tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes, entonces
-    $A \triangle B = \{a,b\}$ para algunos v\'ertices $a$ y $b$ de $G$ tales que
-    $ab \in E(G)$. Al tomar $c'(A) = c'(B)$ tenemos que $\Sigma_{x \in A}c(x)
-    \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin p\'erdida de generalidad
-    consideramos $a \in A$ y $b \in B$, entonces podemos ver la congruencia de
-    la siguiente manera: $c(a) + \Sigma_{x \in A \setminus\{a\}}c(x) \equiv c(b)
-    + \Sigma_{y \in B\setminus\{b\}}c(y) \mod \chi(G)$. Pero $A \triangle B =
-    \{a,b\}$, por lo que $\Sigma_{x \in A\setminus\{a\}}c(x)=\Sigma_{y \in
-    B\setminus\{b\}}c(y)$. Entonces tenemos que $c(a) \equiv c(b) \mod \chi(G)$
-    y de este modo llegamos a la contradicci\'on de que $c$ no es una
-    coloraci\'on propia pues $c(a) = c(b)$ y $ab \in E(G)$. Por lo que tenemos
-    que $c'$ es una coloraci\'on propia de $F_k(G)$ con a lo m\'as $\chi (G)$
-    colores. Por lo tanto, $\chi(F_k(G)) \leq \chi (G)$.
+    propia. Suponemos lo contrario, que existen $A$ y $B$ v\'ertices adyacentes
+    en $F_k(G)$ tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes,
+    entonces $A \triangle B = \{a,b\}$ para algunos v\'ertices $a$ y $b$ de $G$
+    tales que $ab \in E(G)$. Al tomar $c'(A) = c'(B)$, tenemos que $\Sigma_{x
+    \in A}c(x) \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin p\'erdida de
+    generalidad, consideramos $a \in A$ y $b \in B$, entonces podemos ver la
+    congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
+    \setminus\{a\}}c(x) \equiv c(b) + \Sigma_{y \in B\setminus\{b\}}c(y) \mod
+    \chi(G)$. Pero $A \triangle B = \{a,b\}$, por lo que $\Sigma_{x \in
+    A\setminus\{a\}}c(x)=\Sigma_{y \in B\setminus\{b\}}c(y)$, entonces tenemos
+    que $c(a) \equiv c(b) \mod \chi(G)$. De este modo llegamos a la
+    contradicci\'on de que $c$ no es una coloraci\'on propia, pues $c(a) = c(b)$
+    y $ab \in E(G)$. Por lo que tenemos que $c'$ es una coloraci\'on propia de
+    $F_k(G)$ con a lo m\'as $\chi (G)$ colores. Por lo tanto, $\chi(F_k(G)) \leq
+    \chi (G)$.
 \end{proof}
 
 %Comentarios al final
 
 Ahora nos enfocamos en la cota inferior de $ \chi (F_k(G))$. Sabemos que $\chi
-(F_k(G)) \geq \omega (F_k(G))$ por lo que podemos sacar una cota inferior en
+(F_k(G)) \geq \omega (F_k(G))$, por lo que podemos sacar una cota inferior en
 t\'erminos de el n\'umero de clan de $G$ utilizando \cref{teo:clan-max}. Por
 otro lado, podemos encontrar una cota en t\'erminos de $\chi (G)$. Primero
 veamos el caso en el que $F_k(G)$ es bipartita.
@@ -375,11 +377,11 @@ veamos el caso en el que $F_k(G)$ es bipartita.
 \end{proposicion}
 
 \begin{proof}
-    Para empezar, veamos que si $F_k(G)$ es una gr\'afica bipartita, entonces
-    $G$ es una gr\'afica bipartita. Lo probaremos por contrapositiva, es decir,
+    Para empezar, veamos que, si $F_k(G)$ es una gr\'afica bipartita, entonces
+    $G$ es una gr\'afica bipartita. Lo probamos por contrapositiva, es decir,
     si $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es una
     gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces $G$
-    contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p, v_1)$. Primero veamos
+    contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p, v_1)$. Primero, veamos
     el caso en el que $p \geq k+1$. En este caso tenemos un $p$-ciclo en
     $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
     v_k\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots,
@@ -388,18 +390,18 @@ veamos el caso en el que $F_k(G)$ es bipartita.
     v_k, v_p\} \dots \{v_1, v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
     \dots, v_{k-1}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\}$.
     Notamos que el hay $p-k+1$ v\'ertices al mover la ficha de $v_k$ a $p$.
-    Adem\'as tenemos $k-1$ v\'ertices en el resto del ciclo. Por lo tanto,
-    $F_k(G)$ tiene un $p$-ciclo por lo que no es bipartita.
+    Adem\'as, tenemos $k-1$ v\'ertices en el resto del ciclo. Por lo tanto,
+    $F_k(G)$ tiene un $p$-ciclo, por lo que no es bipartita.
     
-    Ahora consideramos el caso en el que $p \leq k$. Notamos que el conjunto
+    Ahora, consideramos el caso en el que $p \leq k$. Notamos que el conjunto
     $V(G)\setminus C$ tiene cardinalidad $n-p$, donde $C$ es el ciclo impar
     antes mencionado. Como $n \geq k+1$, entonces $n-p \geq k+1-p$, por lo que
     existe un conjunto $A$ de $k-p+1$ v\'ertices en $V(G)\setminus C$. Notemos
-    que al colocar una ficha en cada v\'ertice de $A$, y mantenerlas fijas, o
+    que, al colocar una ficha en cada v\'ertice de $A$ y mantenerlas fijas, o
     equivalentemente s\'olo mover las $p-1$ fichas restantes, se obtiene una
-    gr\'afica isomorfa a la gr\'afica de fichas $F_{p-1}(G-A)$. Entonces tenemos
-    del caso anterior, en el que $k \leq p$, que $F_{p-1}(G-A)$ no es una
-    gr\'afica bipartita. Pero como ya notamos, $F_{p-1}(G-A) = F_{k-(k+1-p)}
+    gr\'afica isomorfa a la gr\'afica de fichas $F_{p-1}(G-A)$. De \'este modo
+    tenemos del caso anterior, en el que $k \leq p$, que $F_{p-1}(G-A)$ no es
+    una gr\'afica bipartita. Pero, como ya notamos, $F_{p-1}(G-A) = F_{k-(k+1-p)}
     (G-A)$ es isomorfa a la subgr\'afica de $F_k(G)$ inducida por los v\'ertices
     de $F_k(G)$ que contienen a $A$, $F_k(G,A)$. Por lo tanto, existe un ciclo
     impar en una gr\'afica inducida de $F_k(G)$, de manera que $F_k(G)$ no es
@@ -486,25 +488,27 @@ ${\color{oro}X}\bf \in G$.
 
 \pagebreak
 
-Por \'ultimo, determinemos la cota inferior para $\chi (F_k(G))$ en t\'erminos de $\chi (G)$
+Por \'ultimo, determinamos la cota inferior para $\chi (F_k(G))$ en t\'erminos de $\chi (G)$
 para el caso general.
 
 \begin{teorema}
 \label{teo:numCrom-k}
-    Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas. Entonces
-    $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$.
+    Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
+    \[
+        \chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1
+    \]
 \end{teorema}
         
 %definici\ón de grafica inducida dem n\'umero crom\'atico de
 %subgr\'afica menor a n\'umero cr\'omatioc de gr\'afica 
 \begin{proof}
     Primero consideramos $k=1$. Sabemos que $n \geq \chi(G)$, por lo que tenemos
-    que $n\chi(G) \geq n\chi(G) + \chi(G) -n$. Entonces obtenemos $\chi (G) \geq
+    que $n\chi(G) \geq n\chi(G) + \chi(G) -n$. As\'i pues, $\chi (G) \geq
     \frac{(n+1)\chi(G)-n}{n} = \frac{n+1}{n}\chi (G) -1$. Por otra parte,
     $F_1(G) \cong (G)$. Por lo tanto, tenemos que $\chi(F_1(G)) \geq
     \frac{n-1+2}{n} \chi(G) -1$.
         
-    Ahora supongamos $k \geq 2$ y una coloraci\'on de $\chi(G)$ colores en $G$.
+    Ahora suponemos $k \geq 2$ y una coloraci\'on de $\chi(G)$ colores en $G$.
     Nombramos $V_1 V_2, \dots, V_{\chi(G)}$ a las clases crom\'aticas de $G$.
     Sin p\'erdida de generalidad, consideramos que $|V_1|\geq |V_2|\geq \cdots
     \geq |V_{\chi(G)}|$. Al tomar este orden, todo \'indice $m$ cumple que
@@ -514,24 +518,24 @@ para el caso general.
     $\Sigma_{i=1}^{m'}|V_i| \geq k-1$. Notamos que $\Sigma_{i=1}^{m'-1}|V_i|
     \leq k-2$, pues de lo contrario tendr\'iamos que
     $k-2<\Sigma_{i=1}^{m'-1}|V_i| < k-1$, es decir, $\Sigma_{i=1}^{m'-1}|V_i|
-    \notin \mathbb{Z}$. Entonces tenemos que $\frac{(m'-1)n}{\chi(G)}\leq
+    \notin \mathbb{Z}$. Luego, tenemos que $\frac{(m'-1)n}{\chi(G)}\leq
     \Sigma_{i=1}^{m'-1}|V_i| \leq k-2$. Ahora, tomamos $X \subseteq
     \bigcup_{i=1}^{m'} V_i$ con cardinalidad $k-1$. Por como se defini\'o el
     conjunto, $G[X]$ es $m'$-coloreable.
     %Notamos que para un conjunto $S \subset V(G)$ se cumple que
     %$\chi(G) \leq \chi(G[S])+\¢hi(G-S)$. 
-    Entonces tenemos que  $\chi(G) \leq \chi(G[X])+\chi(G-X) \leq m' +
+    Por lo que tenemos que  $\chi(G) \leq \chi(G[X])+\chi(G-X) \leq m' +
     \chi(G-X)$.
 %TODO convertir el comentario en lema en la introduccion
         
     Ahora, sabemos que $F_{k-r}(G-H) \cong F_k(G,H)$, donde $r = |X|$. En este
-    caso $|X| = k-1$, por lo que tenemos que $F_1(G-X) \cong F_k(G,X)$.
+    caso, $|X| = k-1$, por lo que tenemos que $F_1(G-X) \cong F_k(G,X)$.
     Adem\'as, sabemos que $F_1(G) \cong G$. Por lo que tenemos que $G-X \cong
     F_k(G,X)$, que es una subr\'afica de $F_k(G)$. Por lo tanto, tenemos que
-    $\chi(G) \leq m + \chi(G-X) = m' + \chi(F_k(G,X)) \leq m' + \chi(F_k(G))$. X
+    $\chi(G) \leq m + \chi(G-X) = m' + \chi(F_k(G,X)) \leq m' + \chi(F_k(G))$. 
             
     Por otro lado, tenemos $\frac{(m'-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m'-1}|V_i|
-    \leq k-2$. Entonces $m'-1 \leq \frac{(k-2)}{n}\chi(G)$, de donde se sigue
+    \leq k-2$. As\'i $m'-1 \leq \frac{(k-2)}{n}\chi(G)$, de donde se sigue
     que $\chi(G) \leq m' + \chi(F_k(G)) = \frac{(k-2)}{n}\chi(G) +1 +
     \chi(F_k(G))$. Por lo tanto, $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$
 \end{proof}
@@ -552,8 +556,8 @@ en el siguiente teorema.
     \cref{teo:numCrom-k} tenemos que $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G)
     -1$. Basta demostrar que $\frac{n-k+2}{n} \geq \frac{1}{2}+\frac{2}{n}$.
     Sabemos que $F_k(G) \cong F_{n-k}(G)$, por lo que podemos asumir, sin
-    p\'erdida de generalidad, que $k\leq \frac{n}{2}$. Entonces tenemos que
-    $\frac{2n-n}{2}\geq k$, de donde obtenemos que $n-k \geq \frac{n}{2}$.
-    Entonces tenemos que $\frac{n-k}{n}\geq \frac{1}{2}$. Por lo tanto,
+    p\'erdida de generalidad, que $k\leq \frac{n}{2}$. Luego, tenemos que
+    $\frac{2n-n}{2}\geq k$, de donde obtenemos que $n-k \geq \frac{n}{2}$,
+    entonces tenemos que $\frac{n-k}{n}\geq \frac{1}{2}$. Por lo tanto,
     $\frac{n-k+2}{n} \geq \frac{1}{2}+\frac{2}{n}$.
 \end{proof}
