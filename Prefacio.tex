@@ -1,20 +1,50 @@
 \chapter{Prefacio}
 \label{sec:prefacio}
 
-Dentro de la historia de las Matem\'aticas, la Teor\'ia de Gr\'aficas es un
-\'area relativamente nueva que ha ido cambiando durante su crecimiento. 
+El trabajo a continuaci\'on presentado se estudia desde la Teor\'ia de
+Gr\'aficas. La intenci\'on de este trabajo es generar literatura que pueda
+servir como referencia a alumnos de la carrera de Matem\'aticas, as\'i como
+cualquier persona interesada, por lo que busca busca ser un trabajo
+autocontenido. Por ello, todas las proposiciones, lemas y teoremas del \'area de
+Teor\'ia de Gr\'aficas son demostrados en el trabajo. Sin embargo, es (deseable
+que) el lector tenga conocimientos b\'asicos en el \'area de Matem\'aticas para
+entender con m\'as facilidad el contenido. 
 
-Durante el proceso de este trabajo, al momento de explicar el tema de mi
-proyecto, sobretodo a mis conocidos no matem\'aticos, es el pensar a una
-gr\'afica como un tablero sobre el cu\'al se colocan fichas. Pensamos a los
-v\'ertices de la gr\'afica como los lugares donde pueden estar las fichas y a
-las aristas como los lugares por los cuales se pueden mover las fichas de un
-v\'ertice a otro. De esta manera, la gr\'afica de fichas es la gr\'afica que
-optienes de ver todas las posibilidades que tienes en tu tablero con un n\'umero
-fijo de fichas. Los v\'ertices de esta nueva gr\'afica son todas las
-configuraciones en las que puedes poner las fichas en tu gr\'afica original, una
-``fotografia'' de la gr\'afica original con las fichas en los v\'ertices. Las
-aristas de la gr\'afica de fichas nos dicen si se puede pasar de una
-configuraci\'on a otra, de acuerdo a las reglas dadas. Otra manera de verlo es
-el pensar a las aristas como un posible movimiento en el tablero, es decir, la gr\'afica original.
+El objetivo es estudiar varias propiedades de un tipo de gr\'aficas llamadas
+gr\'aficas de fichas, traducido de su nombre en ingl\'es ``token graphs''.
+%Tomando una gr\'afica $G$ y un entero positivo $k$, vamos a definir la
+% gr\'afica de $k$-fichas de $G$ como la gr\'afica cuyo conjunto de v\'ertices
+% es $\binom{V(G)}{k}$ y donde dos v\'ertices $A$ y $B$ son adyacentes si y
+% s\'olo si $|A \triangle B| = \{a,b\}$, con $a \in A$, $b \in B$ y $ab \in
+% E(G)$. 
+La mayor\'ia de las propiedades a considerar salen del art\'iculo en el cu\'al
+se bas\'o este trabajo \cite{fabilaToken} donde se trabaja la conexidad, los
+clanes y el n\'umero de crom\'atico de las gr\'aficas de fichas, El \'ultimo
+capitulo se enfoca en la hamiltonicidad de estas gr\'aficas y para esto se toma
+como b\'ase \cite{adameHamilt}. 
 
+El primer cap\'itulo es una introducci\'on a la Teor\'ia de Gr\'aficas. Se
+definen conceptos como el de una gr\'afica, subgr\'afica.....
+
+El segundo cap\'itulo es una introducci\'on a las gr\'aficas de fichas. Se da
+una breve explicaci\'on historica de el estudio de este tipo de gr\'aficas.
+Luego, se pasa a explicar m\'as a detalle como son estas gr\'aficas. Finalmente
+se dan algunos isomorfisos de gr\'aficas.
+
+El cuarto cap\'itulo se centra en la conexidad de las gr\'aficas de fichas. Se
+trabaja la relaci\'on entre la conexidad de una gr\'afica y la cantidad de
+trayectorias internamente ajenas entre v\'ertices de la gr\'afica de fichas de
+dicha gr\'afica. \'Esto para ayudar a probar la relaci\'on entre la conexidad de
+una gr\'afica y la conexidad de su gr\'afica de fichas. En este cap\'itulo
+tambien se ve un teorema sobre el di\'ametro de una gr\'afica y un teorema sobre
+producto carteciano.
+
+El cuarto cap\'itulo se  divide en dos secciones. La primera secci\'on se dan
+cotas el n\'umero crom\'atico de una gr\'afica de fichas. En la segunda
+secci\'on se da una caracterizaci\'on de los clanes de una gr\'afica de fichas.
+Tamb\'ien se da un aproximado para el n\'umero de caln.
+
+En el \'ultimo capitulo se estudia la hamiltonicidad de una familia de
+gr\'aficas espec\'ifica, los abanicos. \'Esto con la intenci\'on de encontrar
+una familia de gr\'aficas no hamiltonianas cuyas gr\'afcias de fichas si sean
+hamiltonianas.
