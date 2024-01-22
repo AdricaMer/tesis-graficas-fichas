@@ -1333,10 +1333,37 @@ asignandoles un color a cada conjunto de la partici\'on. (Por esta raz\'on, el
 estudio de la $k$-coloraci\'on de una gr\'afica se enfoca en $k>2$.) 
 
 Algo que es interesante de notar es que, si $H$ es una subgr\'afica de $G$,
-entonces $\chi(H) \leq \chi(G)$; m\'as a\'un, si $H$ es una gr\'afica
-completa de $n$ v\'ertices, entonces $n \leq \chi(G)$. Por \'ultimo, vale la
-pena mencionar la relaci\'on entre el n\'umero crom\'atico de una gr\'afica y el
-n\'umero de clan de \'esta, i.e., $\omega$. Como los clanes cumplen que todos sus
-v\'ertices son adyacentes entre s\'i, entonces la clase crom\'atica de una
-gr\'afica $G$ tiene que ser al menos el n\'umero de clan de $G$, de esta manera
-tenemos que $\omega(G) \leq \chi(G)$. 
+entonces $\chi(H) \leq \chi(G)$; m\'as a\'un, si $H$ es una gr\'afica completa
+de $n$ v\'ertices, entonces $n \leq \chi(G)$. Sin embargo, la suma del n\'umero
+crom\'atico de dos subgr\'aficas puede ser mayor que el n\'umero crom\'atico de
+la gr\'afica. A continuaci\'on se demuestra el resultado.
+
+\begin{proposicion}
+    Sen  $S \subset V(G)$ un conjunto, entonces se cumple la siguiente
+    desigualdad
+    \[
+        \chi(G) \leq \chi(G[S])+\chi(G-S).
+    \] 
+\end{proposicion}
+
+\begin{proof}
+    Sean $G$ una gr\'afica y $S \subseteq V(G)$. Sean $k,m,n \in \mathbb{Z^+}$
+    tales que $\chi (G) =k$, $\chi (G[S]) =m$ y $\chi (G-S) =n$. Supongamos que
+    existe $S \subseteq V(G)$ tal que $ \chi(G[S])+\chi(G-S) <\chi(G)$.
+    Consideramos la coloraci\'on $c_1$ de $G[S]$ y la coloraci\'on $c_2$ de
+    $G-S$. Tomamos la coloraci\'on $c$ en $G$ utilizando los colores $\{1, 2,
+    \dots, m, m+1, \dots, m+n, \dots, k\}$ y asignandole los mismos colores que
+    en $c_1$ y$c_2$, de ser posible. Dado que $k>m+n$, existe un v\'ertice $v
+    \in V(G[S])$ tal que $N(v) \not \subset V(G[S])$ y $c_1 (v) = i$ y que $c(v)
+    = j$, donde $i \in \{1, \dots, m\}$ y $j \in \{m+n+1, \dots, k\}$. En otras
+    palabras, alg\'un veino $w \in V(G)$ de $v$ tiene color $i$. Esto pasa si y
+    s\'olo si $w \in V (G[S])$, es decir, $w$ tambi\'en es vecino de $v$ en
+    $G[S]$. Por ello, $c_1$ les asigna distintos colores, por lo tanto $c(v)
+    \neq c(w)$.
+\end{proof}
+
+Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
+de una gr\'afica y el n\'umero de clan de \'esta, i.e., $\omega$. Como los
+clanes cumplen que todos sus v\'ertices son adyacentes entre s\'i, entonces la
+clase crom\'atica de una gr\'afica $G$ tiene que ser al menos el n\'umero de
+clan de $G$, de esta manera tenemos que $\omega(G) \leq \chi(G)$.
