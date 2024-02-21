@@ -30,13 +30,11 @@
 % Colores
 \usepackage[table]{xcolor}
 
-\definecolor{verdeOscuro}{rgb}{0,0.6,0}
 \definecolor{verdeAzulado}{RGB}{27, 154, 170}
 \definecolor{gris}{rgb}{0.5,0.5,0.5}
 \definecolor{malva}{rgb}{0.58,0,0.82}
-\definecolor{grisClaro}{rgb}{0.92,0.92,0.92}
 \definecolor{grisOscuro}{RGB}{87, 90, 102}
-\definecolor{amarilloOscuro}{RGB}{216, 175, 57}
+\definecolor{oro}{RGB}{216, 175, 57}
 \definecolor{azulMetal}{RGB}{39, 139, 154}
 \definecolor{salmon}{RGB}{222, 120, 98}
 \definecolor{rosa}{RGB}{231, 91, 100}
@@ -46,16 +44,11 @@
 \definecolor{fushia}{RGB}{239, 71, 111}
 \definecolor{naranja}{RGB}{249, 132, 0}
 \definecolor{menta}{RGB}{6, 214, 160}
-\definecolor{cereza}{RGB}{181, 10, 42}
-\definecolor{GverdePasto}{RGB}{	115, 143, 55}
-\definecolor{crema}{RGB}{238,216,194}
-\definecolor{oro}{RGB}{216, 175, 57}
 \definecolor{crema}{RGB}{238,216,194}
 \definecolor{amarillo}{RGB}{230,194,41}
 \definecolor{azulClaro}{RGB}{127,209,185}
 \definecolor{lila}{RGB}{163,121,201}
 \definecolor{coral}{RGB}{247,142,105}
-%\definecolor{verde}{RGB}{104,163,87}
 \definecolor{azulCielo}{RGB}{0,178,202}
 \definecolor{morado}{RGB}{152,95,153}
 \definecolor{azulFuerte}{RGB}{19,84,102}
@@ -113,7 +106,7 @@
 \tikzstyle{vertex}=[circle, draw, minimum size=6pt,
                     line width=0.75pt, inner sep=0pt,
                     outer sep=0pt]
- \tikzstyle{wvertex}=[circle, draw, minimum size=6pt,
+\tikzstyle{wvertex}=[circle, draw, minimum size=6pt,
                     line width=0.75pt, inner sep=0.5pt,
                     outer sep=0pt]
 \tikzstyle{bvertex}=[circle, draw, minimum size=7pt,
@@ -140,6 +133,9 @@
 \tikzstyle{mvertex}=[circle, draw=morado, minimum size=7.5pt,
                     line width=1.8pt, inner sep=0pt,
                     outer sep=0pt]
+\tikzstyle{bcvertex}=[circle, draw=grisOscuro!75, minimum size=7pt,
+                     line width=0.75pt, inner sep=0pt,
+                     outer sep=0pt]
 
 
 % Ajuste de parametros en la pagina
@@ -247,7 +243,8 @@
 \include{capitulo-fichas}
 \include{cap1-dems}
 \include{cap2-dems}
-\include{cap3-dems}
+%\include{cap3-dems}
+\include{cap4-dems}
 
 
 \backmatter%
