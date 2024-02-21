@@ -169,8 +169,8 @@
 \newcounter{proofcount}
 
 % Generacion de tabla de contenidos
-\usepackage{makeidx}
-\makeindex
+\usepackage{imakeidx}
+\makeindex[intoc]
 
 % Ambientes de teorema y demostracion
 \usepackage{amsthm}
@@ -233,12 +233,13 @@
 \include{caratula}
 \include{hojadedatos}
 \include{agradecimientos}
+\include{Prefacio}
 \tableofcontents
 
 
 \mainmatter%
 
-%\include{introduccion}
+
 \include{defs-graficas}
 \include{capitulo-fichas}
 \include{cap1-dems}
