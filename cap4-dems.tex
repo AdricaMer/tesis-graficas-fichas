@@ -230,18 +230,41 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     si $n \geq 2$ y $1 \leq m \leq 2n$, o si $n=1$ y $m=3$.
 \end{teorema}
 
-%TODO: caso en el que n=1
 \begin{proof}
-    Comenzamos viendo que, para $n \geq 2$ y $1 \leq m \leq 2n$, la gr\'afica de
-    $2$-fichas de $\mathcal{F}_{m,n}$ es hamiltoniana. Para esto construimos un
-    ciclo hamiltorniano espec\'ifico para cada caso. Consideramos $m=1$ para el
-    primer caso. Si $n=2$, entonces $F_2(\mathcal{F}_{m,n}) \cong
-    \mathcal{F}_{1,2}$ pues ambas son isomorfas a $K_3$. Ahora, consideramos $n
-    \geq 3$ y tomamos $1 \leq i \leq n$ para construir una familia de
-    trayectorias $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots,
-    \{v_i,v_n\})$. Observamos que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una
-    partici\'on de $V(F_2(\mathcal{F}_{m,n}))$. A continuaci\'on analizamos el
-    siguiente ciclo $C$.
+    Comenzamos enfoc\'andonos en el caso en el que $n=1$. En este caso trabajamos
+    con gr\'aficas que son estrellas. Cuando $m=1$ o $m=2$, tenemos que
+    $\mathcal{F}_{m,1}$ es una trayectoria, por lo que su gr\'afica de
+    $2$-fichas tambi\'en es una trayectoria y no es hamiltoniana. 
+    
+    Para $m > 2$, tomamos la siguiente partici'on de v\'ertices de
+    $F_2(\mathcal{F}_{m,1})$. El primero es el conjunto de los v\'ertices que
+    contienen a $v_1$, es decir $V_1=\{A \in V(F_2(\mathcal{F}_{m,1})) \colon
+    v_1 \in A\}$. El segundo son los v\'ertices que contienen \'unicamente
+    v\'ertices de $\overline{K_m}$, i.e. $V_2=\{A \in V(F_2(\mathcal{F}_{m,1}))
+    \colon A \subseteq \overline{K_m} \}$. Notamos que, $|V_1|=m$. Tambi\'en
+    podemos notar que, para toda $m \in \mathbb{Z^+}$, los v\'ertices en $V_2$
+    tienen grado $2$. M\'as a\'un, los vecinos de $A \in V_2$ est\'an en $V_1$.
+    De \'esto, tenemos que el c\'iclo m\'aximo de la gr\'afica de $2$-fichas de
+    $\mathcal{F}_{m,1}$ tiene a todos los v\'ertices de $V_1$. Luego, para que
+    el ciclo m\'aximo sea un ciclo hamiltoniano, debe suceder que $|V_1| =
+    |V_2|$. Observamos que para $m=3$, tenemos que $|V(F_2(\mathcal{F}_{3,1}))|
+    = 6 = 2m$, por lo que la gr\'afica tiene un ciclo hamiltoniano. Para $m=4$
+    tenemos que $|V(F_2(\mathcal{F}_{4,1}))| = 10 > 2m=8$, por lo que no es
+    hamiltoniana. Sabemos que $|V(F_2(\mathcal{F}_{i,1}))1 \geq
+    |V(F_2(\mathcal{F}_{j,1}))|$, con $i<j$, por lo tanto
+    $F_2(\mathcal{F}_{m,1})$ no es hamiltoniana para $m >3$.
+
+    Pasamos al caso en el que $n \geq 2$ y $1 \leq m \leq 2n$. Buscamos
+    demostrar que la gr\'afica de $2$-fichas de $\mathcal{F}_{m,n}$ es
+    hamiltoniana. Para esto construimos un ciclo hamiltorniano espec\'ifico para
+    cada caso. Consideramos $m=1$ para el primer caso. Si $n=2$, entonces
+    $F_2(\mathcal{F}_{m,n}) \cong \mathcal{F}_{1,2}$ pues ambas son isomorfas a
+    $K_3$. Ahora, consideramos $n \geq 3$ y tomamos $1 \leq i \leq n$ para
+    construir una familia de trayectorias
+    $T_i=(\{v_i,w_1\},\{v_i,v_{i+1}\},\{v_i,v_{i+2}\},\dots, \{v_i,v_n\})$.
+    Observamos que $\{V(T_1),V(T_2),\dots, V(T_n)\}$ es una partici\'on de
+    $V(F_2(\mathcal{F}_{m,n}))$. A continuaci\'on analizamos el siguiente ciclo
+    $C$.
     
     En el caso en el que $n$ es par, tomamos:
 
