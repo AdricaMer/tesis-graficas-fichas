@@ -1340,19 +1340,15 @@ la gr\'afica. A continuaci\'on se demuestra el resultado.
 \end{proposicion}
 
 \begin{proof}
-    Sean $G$ una gr\'afica y $S \subseteq V(G)$. Sean $k,m,n \in \mathbb{Z^+}$
-    tales que $\chi (G) =k$, $\chi (G[S]) =m$ y $\chi (G-S) =n$. Supongamos que
-    existe $S \subseteq V(G)$ tal que $ \chi(G[S])+\chi(G-S) <\chi(G)$.
-    Consideramos la coloraci\'on $c_1$ de $G[S]$ y la coloraci\'on $c_2$ de
-    $G-S$. Tomamos la coloraci\'on $c$ en $G$ utilizando los colores $\{1, 2,
-    \dots, m, m+1, \dots, m+n, \dots, k\}$ y asignandole los mismos colores que
-    en $c_1$ y$c_2$, de ser posible. Dado que $k>m+n$, existe un v\'ertice $v
-    \in V(G[S])$ tal que $N(v) \not \subset V(G[S])$ y $c_1 (v) = i$ y que $c(v)
-    = j$, donde $i \in \{1, \dots, m\}$ y $j \in \{m+n+1, \dots, k\}$. En otras
-    palabras, alg\'un veino $w \in V(G)$ de $v$ tiene color $i$. Esto pasa si y
-    s\'olo si $w \in V (G[S])$, es decir, $w$ tambi\'en es vecino de $v$ en
-    $G[S]$. Por ello, $c_1$ les asigna distintos colores, por lo tanto $c(v)
-    \neq c(w)$.
+    Sean $G$ una gr\'afica y $S \subseteq V(G)$.  Sea $c_1$ una coloraci\'on
+    propia de  $G[S]$ de $ k= \chi(G[S])$ colores, con $k \in \mathbb{Z^+}$.
+    An\'alogamente, sea $c_2$ una coloracic\'on propia de $G-S$ de $l=
+    \chi(G-S)$ colores, tomando el siguiente conjunto de colores $\{k+1, k+2,
+    \dots, k+l\}$. Observamos que $c_1$ y $c_2$ no comparten colores, por lo que
+    podemos construir una coloraci\'on porpia de $G$ de $\{1, \dots, k+l\}$
+    colores asignandole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$. De
+    esta manera tenemos que $G$ es $k+l$-coloreable, donde $k = \chi(G[S])$ y $l
+    = 'chi(G-S)$. Por lo tanto tenemos que $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
 \end{proof}
 
 Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
