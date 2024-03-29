@@ -137,9 +137,9 @@ llamada \indice{isomorfismo}.
 Al momento de ver las relaciones entre dos objetos matem\'aticos, tambi\'en es
 importante analizar el caso en el que uno est\'e ``contenido'' en el otro. As\'i
 como en el caso de conjuntos nos referimos a subconjuntos, en el caso de
-gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas tales que
-$V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es una
-\indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
+gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas, tales
+que $V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es
+una \indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
 \indice{supergr\'afica} de $H$. Esta relaci\'on se denota con la misma
 notaci\'on que para subconjuntos, es decir, $H \subseteq G$. Cuando una
 subgr\'afica tiene el mismo conjunto de v\'ertices que la gr\'afica, es decir,
@@ -599,7 +599,7 @@ global de \'este.
     internamente ajenas es $|X\cap Y|=k$.
 
     Ahora suponemos que $E(G) \neq \varnothing$ y que el teorema es v\'alido
-    para gr\'aficas $G'$ tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una arista
+    para gr\'aficas $G'$, tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una arista
     de $G$. Primero consideramos $G/e$, la gr\'afica obtenida de contraer a la
     arista $e$ (definido en la siguiente secci\'on). Al v\'ertice obtenido de la
     contracci\'on de $e$ lo nombramos $x_e$. Tal vez alg\'un extremo de $e$
@@ -990,21 +990,21 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 \end{proposicion}
 
 \begin{proof}
-    En el caso en el que el que $G$ es una gr\'afica conexa, tenemos que s\'olo tiene una
-    componente conexa, ella misma, por lo que la proposici\'on se cumple de
-    manera trivial. Por \'ello, nos enfocamos en el caso en el que $G$ es
-    inconexa, i.e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
+    En el caso en el que el que $G$ es una gr\'afica conexa, tenemos que s\'olo
+    tiene una componente conexa, ella misma, por lo que la proposici\'on se
+    cumple de manera trivial. Por \'ello, nos enfocamos en el caso en el que $G$
+    es inconexa, i.e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
     \dots, G_n$ las componentes conexas de $G$, con $n \geq 2$. Empezamos
     suponiendo que $G$ es una gr\'afica bipartita con bipartici\'on $(X,Y)$.
-    Sean $X_i, Y_i\subseteq G_i$ tales que $X_i \subseteq X$ y $Y_i \subseteq
+    Sean $X_i, Y_i\subseteq G_i$, tales que $X_i \subseteq X$ y $Y_i \subseteq
     Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
-    partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i =
-    \varnothing$, pues $X \cap Y = \varnothing$ por definici\'on de partici\'on.
-    Adem\'as, de manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego,
-    sean $a \in X_i$ y $b \in Y_i$, como $X_i \subseteq X$ y $Y_i \subseteq Y$,
-    entonces tenemos que $a \in X$ y $b \in Y$, por lo que $a$ y $b$ no son
-    adyacentes. Por lo tanto, $(X_i, Y_i)$ es una partici\'on de $G_i$, en otras
-    palabras, $G_i$ es una gr\'afica bipartita.
+    partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i = \varnothing$, pues
+    $X \cap Y = \varnothing$ por definici\'on de partici\'on. Adem\'as, de
+    manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego, sean $a \in
+    X_i$ y $b \in Y_i$, como $X_i \subseteq X$ y $Y_i \subseteq Y$, entonces
+    tenemos que $a \in X$ y $b \in Y$, por lo que $a$ y $b$ no son adyacentes.
+    Por lo tanto, $(X_i, Y_i)$ es una partici\'on de $G_i$, en otras palabras,
+    $G_i$ es una gr\'afica bipartita.
 
     Ahora nos enfocamos en la segunda implicaci\'on, es decir, si $G_i$ es una
     gr\'afica bipartita, para $i \in \{1, \dots, n\}$, entonces $G$ tambi\'en lo
@@ -1073,7 +1073,8 @@ resaltando de diferentes colores cada conjunto de la partici\'on.
 
 Un teorema muy importante al hablar de gr\'aficas bipartitas es
 \cref{teo:bip-CImpar}, que sirve como caracterizaci\'on para esta familia de
-gr\'aficas. \'Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
+gr\'aficas. \'Esto tambi\'en se puede observar en el ejemplo de
+\cref{fig:ex-Bip}.
 
 \begin{teorema}
     \label{teo:bip-CImpar}
@@ -1092,31 +1093,31 @@ gr\'aficas. \'Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip
     v_1 \in E(G)$ y $v_1 \in X$. Por lo tanto, $k$ es par, i.e., $C$ tiene
     longitud par. En consecuencia $G$ no contiene ciclos impares.
 
-    Ahora pasamos a la segunda implicaci\'on, para esto consideramos $G$ una
+    Ahora pasamos a la segunda implicaci\'on, para \'esto, consideramos $G$ una
     gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$
     construimos la siguiente partici\'on de $V(G)$. Denotamos $X$ al conjunto de
     los v\'ertices de $G$ que est\'en a distancia impar de $v$, es decir, $X =
     \{u \in V(G) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro
-    conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on
+    conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on,
     tenemos que $X \cap Y = \varnothing$ y $X \cup Y = V(G)$. S\'olo falta
     verificar que no existen aristas entre cualesquiera dos v\'ertices de $X$ o
     entre cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
-    an\'alogas por lo que s\'olo lo demostramos para $X$. Supongamos que existen
-    $u,w \in X$ tales que $e=uw \in E(G)$. Sean $P$ una $vu$-trayectoria y $Q$
-    una $vw$-trayectoria. Tomamos a $P$ y a $Q$ de longitud m\'inima. Ahora, sea
-    $z$ el \'ultimo v\'ertice que comparten estas trayectorias. Observemos que
-    las subtrayectorias $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen
-    la misma longitud. \'Esto pues, si alguna tuviera menor longitud, sin
-    p\'erdida de generalidad, tomamos a $v \xrightarrow[P]{}z$ con menor
-    longitud, entonces tendr\'iamos que la trayectoria $v
-    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$, lo
-    cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud par y $v
-    \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$, tienen la misma longitud,
-    entonces tenemos que $z \xrightarrow[P]{}u$ y $z \xrightarrow[Q]{}w$ tiene
-    ambas longitud par o tienen ambas longitud impar. Ahora consideramos la
-    trayectoria $ R= u \xrightarrow[P^{-1}]{}z \xrightarrow[Q]{}w$, por el
-    argumento anterior sabemos que esta trayectoria tiene longitud par. Por
-    \'utimo, observamos que existe el siguiente ciclo,
+    an\'alogas, por lo que s\'olo lo demostramos para $X$. Supongamos que
+    existen $u,w \in X$, tales que $e=uw \in E(G)$. Sean $P$ una
+    $vu$-trayectoria y $Q$ una $vw$-trayectoria. Tomamos a $P$ y a $Q$ de
+    longitud m\'inima. Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas
+    trayectorias. Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
+    \xrightarrow[Q]{}z$ tienen la misma longitud. \'Esto pues, si alguna tuviera
+    menor longitud, sin p\'erdida de generalidad, tomamos a $v
+    \xrightarrow[P]{}z$ con menor longitud, entonces tendr\'iamos que la
+    trayectoria $v \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a
+    $d(v,w)$, lo cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud
+    par y $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$, tienen la misma
+    longitud, entonces tenemos que $z \xrightarrow[P]{}u$ y $z
+    \xrightarrow[Q]{}w$ tiene ambas longitud par o tienen ambas longitud impar.
+    Ahora consideramos la trayectoria $ R= u \xrightarrow[P^{-1}]{}z
+    \xrightarrow[Q]{}w$, por el argumento anterior sabemos que esta trayectoria
+    tiene longitud par. Por \'utimo, observamos que existe el siguiente ciclo,
     $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos que $C$ es un ciclo de
     longitud impar, lo cu\'al es una contradicci\'on. Por lo tanto, no existen
     aristas entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$
@@ -1245,11 +1246,12 @@ aristas. Primero, veamos la coloraci\'on por aristas. Formalmente, una
 aristas}\index{aristas!coloraci\'on} de una gr\'afica $G$, para un entero $k$,
 es una funci\'on $c' \colon E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
 La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
-$c'$ es el conjunto de todas las aristas de la gr\'afica que estan coloreadas
-del color $i$, es decir, $c'^{-1}[i]$. Notamos que las clases crom\'aticas pueden
-ser vac\'ias. Una \textbf{coloraci\'on} \indiceSub{$k$-coloraci\'on}{propia por
-aristas}\index{aristas!$k$-coloraci\'on propia} es una coloraci\'on por aristas
-donde se le asignan colores diferentes a todas las aristas adyacentes.
+$c'$ es el conjunto de todas las aristas de la gr\'afica que est\'an coloreadas
+del color $i$, es decir, $c'^{-1}[i]$. Notamos que las clases crom\'aticas
+pueden ser vac\'ias. Una \textbf{coloraci\'on}
+\indiceSub{$k$-coloraci\'on}{propia por aristas}\index{aristas!$k$-coloraci\'on
+propia} es una coloraci\'on por aristas, donde se le asignan colores diferentes
+a todas las aristas adyacentes.
 
 Por otro lado, una una \textbf{$k$-coloraci\'on}
 \indiceSub{$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
@@ -1259,13 +1261,13 @@ coloraci\'on por v\'ertices o por aristas, a los elementos del codominio de la
 funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
 \indiceSub{$-$coloraci\'on}{propia por
 v\'ertices}\index{v\'ertices!$k$-coloraci\'on propia} es una coloraci\'on por
-v\'ertices donde se le asignan colores diferentes a todos los v\'ertices
+v\'ertices, donde se le asignan colores diferentes a todos los v\'ertices
 adyacentes. Decimos que una gr\'afica $G$ es
 \indiceSub{gr\'afica}{$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite una
 $k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
-\cref{fig:ex-color-prop}, se muestra una gr\'afica $G$ donde se resalta una
-coloraci\'on propia por v\'ertices, del lado izquierdo, y una coloraci\'on
-propia por aristas, del lado derecho. 
+\cref{fig:ex-color-prop}, se muestra una gr\'afica $G$, donde se resalta una
+coloraci\'on propia por v\'ertices del lado izquierdo y una coloraci\'on propia
+por aristas del lado derecho. 
 
 \begin{figure}[ht!]
     \centering
@@ -1302,7 +1304,7 @@ propia por aristas, del lado derecho.
         \end{scope}
 
     \end{tikzpicture}
-    \caption{Una $3$-coloraci\'on propia por v\'ertices (izquierda) y una 
+    \caption{Una $3$-coloraci\'on propia por v\'ertices (izquierda) y una
         $5$-coloraci\'on propia por aristas (derecha).}
         \label{fig:ex-color-prop}
 \end{figure}
@@ -1310,20 +1312,20 @@ propia por aristas, del lado derecho.
 \newpage
 
 La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por v\'ertices
-$c$ es el conjunto de todos los v\'ertices de la gr\'afica que estan coloreados
-del color $i$, es decir, $c^{-1}[i]$. Notamos que las clases crom\'aticas pueden
-ser vac\'ias, adem\'as, en una coloraci\'on propia, cada clase crom\'atica es un
-conjunto independiente. El m\'inimo entero $k$ para el cu\'al una gr\'afica $G$
-es $k$-coloreable es el \indice{n\'umero crom\'atico} de $G$, denotado por
-$\chi(G)$. En este caso, decimos que $G$ es
+$c$ es el conjunto de todos los v\'ertices de la gr\'afica que est\'an
+coloreados del color $i$, es decir, $c^{-1}[i]$. Notamos que las clases
+crom\'aticas pueden ser vac\'ias, adem\'as, en una coloraci\'on propia, cada
+clase crom\'atica es un conjunto independiente. El m\'inimo entero $k$ para el
+cu\'al una gr\'afica $G$ es $k$-coloreable es el \indice{n\'umero crom\'atico}
+de $G$, denotado por $\chi(G)$. En este caso, decimos que $G$ es
 \indiceSub{gr\'afica}{$k$-crom\'atica}. En \cref{fig:ex-color-prop}, se muestra
-una $3$-coloraci\'on propia por v\'ertices, sin embargo el n\'umero crom\'atico
+una $3$-coloraci\'on propia por v\'ertices, sin embargo, el n\'umero crom\'atico
 de la gr\'afica es $2$. 
 
 Es f\'acil observar que una gr\'afica es $1$-crom\'atica si y s\'olo si es
 vac\'ia, pues, de tener alguna arista ser\'ia necesario utilizar un segundo
-color. Tambi\'en podemos determinar como se ven las gr\'aficas $2$-crom\'aticas.
-Para esto, notamos que, al tener dos clases de colores de una coloraci\'on
+color. Tambi\'en podemos determinar c\'omo se ven las gr\'aficas $2$-crom\'aticas.
+Para \'esto, notamos que, al tener dos clases de colores de una coloraci\'on
 propia, garantizamos que la gr\'afica es una gr\'afica bipartita. Adem\'as,
 todas las gr\'aficas bipartitas cumplen ser $2$-crom\'aticas, asign\'andole un
 color a cada conjunto de la partici\'on.
@@ -1349,9 +1351,10 @@ la gr\'afica. A continuaci\'on se demuestra el resultado.
     colores, tomando el siguiente conjunto con colores $\{k+1, k+2, \dots,
     k+l\}$. Observamos que $c_1$ y $c_2$ no comparten colores, por lo que
     podemos construir una coloraci\'on propia de $G$ de $\{1, \dots, k+l\}$
-    colores asignandole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$. De
-    esta manera tenemos que $G$ es $k+l$-coloreable, donde $k = \chi(G[S])$ y $l
-    = '\chi(G-S)$. Por lo tanto tenemos que $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
+    colores, asign\'andole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$.
+    De esta manera tenemos que $G$ es $k+l$-coloreable, donde $k = \chi(G[S])$ y
+    $l = '\chi(G-S)$. Por lo tanto, tenemos que $\chi(G) \leq
+    \chi(G[S])+\chi(G-S)$.
 \end{proof}
 
 Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
