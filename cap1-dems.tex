@@ -849,62 +849,61 @@ $k$-fichas.  El siguiente teorema nos muestra la relaci\'on buscada.
 \begin{teorema}%
 \label{teo:FG-t-conexa}
     Si $G$ es una gr\'afica $t$-conexa, entonces $F_{k}(G)$ es $t$-conexa para
-    todo $k>1$
+    todo $k>1$.
 \end{teorema}
         
 \begin{proof}
 Primero, observamos que $A$ y $B$ son v\'ertices adyacentes en $F_k(G)$ si y
 s\'olo si $V(G) \setminus A$ y $V(G)\setminus B$ son adyacentes en $F_{n-k}(G)$.
-De esta manera, tenemos que $F_k(G) \cong F_{n-k}(G)$. Por lo tanto, asumimos
+De esta manera, tenemos que $F_k(G) \cong F_{n-k}(G)$. Por lo tanto, asumimos,
 sin p\'erdida de generalidad, que $k \leq \frac{n}{2}$.
 
-Sea $\mathcal{C}$ un m\'inimo corte por v\'ertices de $F_k(G)$. Basta
-demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
-distintas componentes de $F_k(G)- \mathcal{C}$, tales que $|A \triangle B|$ es
-m\'inimo.
+Sea $\mathcal{C}$ un m\'inimo corte por v\'ertices de $F_k(G)$. Basta demostrar
+que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en distintas
+componentes de $F_k(G)- \mathcal{C}$, tales que $|A \triangle B|$ es m\'inimo.
 
-Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj}
-tenemos que hay $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo
-que tenemos que $|\mathcal{C}| \geq t$.
+Si $|A \triangle B| = 2$, entonces, por \cref{lem:TrayIntAj}, tenemos que hay
+$t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
+$|\mathcal{C}| \geq t$.
 
-Ahora consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
+Ahora, consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
 =\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
 definimos $A_{i,x} = A\setminus \{a_i\} \cup \{x\}$ y $B_{j,x} = B\setminus
-\{b_j\} \cup \{x\}$ para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
-(A\cup B)$. Supongamos que para algunos $i, j$ y $x$ tenemos que $A_{i,x} \notin
-\mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} = \{a_i,
-x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$, por lo que
-$A$ y $A_{i,x}$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
+\{b_j\} \cup \{x\}$, para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
+(A\cup B)$. Supongamos que, para algunos $i, j$ y $x$, tenemos que $A_{i,x}
+\notin \mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} =
+\{a_i, x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$, por
+lo que $A$ y $A_{i,x}$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
 An\'alogamente, tenemos que  $B$ y $B_{j,x}$ est\'an en la misma componente de
 $F_k(G)-\mathcal{C}$.
 
-Luego nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
+Luego, nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
 \{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i, tenemos
 que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
-\mathcal{C}$. Pero tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente, de
-$F_K(G) - \mathcal{C}$, de igual manera que $B$ y $B_{j,x}$, por lo tanto, $A$ y
-$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. Esto es una
+\mathcal{C}$. Pero, tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente de
+$F_K(G) - \mathcal{C}$; de igual manera que $B$ y $B_{j,x}$. Por lo tanto, $A$ y
+$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. \'Esto es una
 cotradicci\'on, pues tomamos a $A$ y $B$ en distintas componentes, lo que
 implica que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$
 y $x$.
 
-Por lo anterior tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
-$\mathcal{C}$ tiene todos los $\{A_i,x \colon\  i \in \{1, \dots, r\}\}$ o todos los
-$\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
-$\mathcal{C}$ tiene, al menos, $r(n-k-r)$ v\'ertices.
+Por lo anterior, tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
+$\mathcal{C}$ tiene todos los $\{A_i,x \colon\  i \in \{1, \dots, r\}\}$ o todos
+los $\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$,
+sabemos que $\mathcal{C}$ tiene, al menos, $r(n-k-r)$ v\'ertices.
 
-Ahora definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} =
-(B\setminus \{b_i\}) \cup \{a_j\}$, para toda $ i, j \in \{1, \dots, r\}$.
-Notamos que hay $2r^2$ de estos conjuntos. Supongamos que $A_{i,j} \notin
-\mathcal{C}$, para algunos $ i, j \in \{1, \dots, r\}$, entonces tenemos que $A
-\triangle A_{i,j} = \{a_i, b_j\}$. Por tanto, $A$ y $A_{i,j}$ est\'an en la
-misma componente de $F_k(G)- \mathcal{C}$. Por otro lado, $|B \triangle A_{i,j}|
-= 2 (r-1)$, por lo que $B$ y $A_{i,j}$ est\'an en la misma componente de $F_k(G)
-- \mathcal{C}$. Por ende, tenemos que $A$ y $B$ est\'an en la misma componente
-de $F_k(G)-\mathcal{C}$, lo cu\'al nos lleva a la misma contradicci\'on que el
-caso anterior. Por lo tanto, tenemos que $A_{i,j} \in \mathcal{C}$ para toda $i,
-j \in \{1, \dots, r\}$. De manera an\'aloga $B_{i,j} \in \mathcal{C}$. Por lo
-tanto tenemos que $\mathcal{C}$ tiene $2r^2$ v\'ertices, adem\'as de los del
+Definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} = (B\setminus
+\{b_i\}) \cup \{a_j\}$, para toda $ i, j \in \{1, \dots, r\}$. Notamos que hay
+$2r^2$ de estos conjuntos. Supongamos que $A_{i,j} \notin \mathcal{C}$, para
+algunos $ i, j \in \{1, \dots, r\}$, entonces tenemos que $A \triangle A_{i,j} =
+\{a_i, b_j\}$. Por tanto, $A$ y $A_{i,j}$ est\'an en la misma componente de
+$F_k(G)- \mathcal{C}$. Por otro lado, $|B \triangle A_{i,j}| = 2 (r-1)$, por lo
+que $B$ y $A_{i,j}$ est\'an en la misma componente de $F_k(G) - \mathcal{C}$.
+Por ende, tenemos que $A$ y $B$ est\'an en la misma componente de
+$F_k(G)-\mathcal{C}$, lo cu\'al nos lleva a la misma contradicci\'on que el caso
+anterior. Por lo tanto, tenemos que $A_{i,j} \in \mathcal{C}$, para toda $i, j
+\in \{1, \dots, r\}$. De manera an\'aloga, $B_{i,j} \in \mathcal{C}$. Por lo
+tanto, tenemos que $\mathcal{C}$ tiene $2r^2$ v\'ertices, adem\'as de los del
 caso anterior.
 
 As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
@@ -920,7 +919,7 @@ ${\color{naranja}\bf \{1,3,5,6\}}$ y ${\color{fushia}\bf
 \{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}$ para $G$ y
 $F_2(G)$, respectivamente. Adem\'as, utilizando \cref{fig:ex-tok-path}, podemos
 ver que $F_3(G)$ es $9$-conexa. Por lo tanto, tenemos que $F_2(G)$ y $F_3(G)$
-son gr\'aficas $4$-conexas.
+tambi\'en son gr\'aficas $4$-conexas.
 
 \begin{figure}[ht!]
     \centering
@@ -989,18 +988,18 @@ suficientemente conexas y suficientemente grandes.
 
 \begin{teorema}%
     \label{teo:FG_k(t- k+ 1)-conexa}
-        Sea $G$ una gr\'afica.   Si $G$ es $t$-conexa con $t \ge k$ y $n \ge
+        Sea $G$ una gr\'afica. Si $G$ es $t$-conexa, con $t \ge k$ y $n \ge
         \frac{1}{2} kt$, entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
     \end{teorema}
 
     \begin{proof}
-        Sea $\mathcal{C}$ un corte por v\'ertices m\'inimo de $F_k(G)$. Sean
-        $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
-       , tales que $|A \triangle B|$ es m\'inima.
+        Sea $\mathcal{C}$ un corte por v\'ertices m\'inimo de $F_k(G)$. Sean $A$
+        y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$,
+        tales que $|A \triangle B|$ es m\'inima.
 
-        Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj} tenemos que
-        $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
-        $|\mathcal{C}| \geq k (t- k+ 1)$.
+        Si $|A \triangle B| = 2$, entonces, por \cref{lem:TrayIntAj}, tenemos
+        que $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos
+        que $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora nos enfocamos en el caso en el que $|A \triangle B| = 2r \ge 4$.
         Utilizamos la desigualdad obtenida al final de la demostraci\'on
