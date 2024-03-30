@@ -1238,6 +1238,35 @@ izquierdo y de una gr\'afica hamiltoniana del lado izquierdo, respectivamente.
     \label{fig:ex-hamilt}
 \end{figure}
 
+Una proposici\'on que nos servir\'a m\'as adelante es \cref{prop:hamilt}, a
+continuaci\'on demostrada.
+
+\begin{proposicion}
+\label{prop:hamilt}
+   Sea $G$ una gr\'afica y sea $S \subseteq V(G)$ un subconjunto no vac\'io. Si
+    $G$ es una gr\'afica hamiltoniana, entonces, $G-S$ tiene, a lo m\'as, $|S|$
+    componentes conexas.
+\end{proposicion}
+
+
+\begin{proof}
+    Sea $G$ una gr\'afica hamiltoniana con ciclo hamiltoniano $C= (v_1, v_2,
+    \dots, v_n, v_1)$ y sea $S \subseteq V(G)$ un subconjunto no vac\'io. Si
+    $G-S$ es conexa, entonces se cumple la proposici\'on, pues $|S| \geq 1$ por
+    definici\'on.
+    
+    Suponemos ahora que $G-S$ es inconexa. Sea $k$ el n\'umero de componentes
+    conexas de $G-S$ y sean $G_1, G_2, \cdots, G_ k$ dichas componentes conexas,
+    con $k < n$. Nombramos $u_i$ al \'ultimo v\'ertice de $C$ que est\'a en
+    $G_i$, para $i \in \{1, \dots, k\}$. Luego, sea $w_i$ el siguiente v\'ertice
+    en $C$. Observamos que $w_i \notin G_i$ por como se defini\'o. Adem\'as,
+    $w_i \notin G_j$, con $j \in \{1, \dots, k\}$ y $j \neq i$, por definici\'on
+    de componentes conexas. Por lo tanto, tenemos que $w_i$ es elemento de $S$.
+    Adem\'as, notamos que, al ser $C$ un ciclo, tenemos que $w_i \neq w_j$, para
+    diferentes $i,j \in \{1, \dots, k\}$. Por lo tanto, tenemos que $w_1, \dots,
+    w_k \in S$, en otras palabras, $k \leq |S|$. 
+\end{proof} 
+
 \section{Coloraci\'on}
 \label{sec:coloracion}
 
