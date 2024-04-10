@@ -31,7 +31,7 @@ gr\'afica de fichas.
     Buscamos demostrar que el di\'ametro de $F_{k}(G)$ es, a lo m\'as, $d k$,
     por lo que basta demostrar por inducci\'on que, para cualesquiera dos
     v\'ertices $A$ y $B$ de $F_{k}(G)$, hay una $AB$-trayectoria de, a lo m\'as,
-    $\frac{d}{2}|A\triangle B|$. Observamos que \'esto tambi\'en implica que
+    $\frac{d}{2}|A\triangle B|$. Observamos que esto tambi\'en implica que
     $F_{k}(G)$ es conexa.
 
     Si $A\triangle B=\varnothing$, entonces $A=B$, por lo que no hay nada que
@@ -188,7 +188,7 @@ di\'ametro $8$ y $9$, respectivamente, i.e., tiene di\'ametro $k(d-k+1)$
 
 \caption{La gr\'afica de $2$-fichas (izquierda) y la gr\'afica de $3$-fichas
 (derecha) de la trayectoria $P_6$, resaltando una trayectoria de longitud
-m\'axima en ambaas gr\'aficas.}
+m\'axima en ambas gr\'aficas.}
 \label{fig:ex-diamP}       
 \end{figure}
 
@@ -196,7 +196,7 @@ Para la cota superior d\cref{teo:diamFG} consideramos la gr\'afica $G$, obtenida
 de a\~{n}adirle $k$ v\'ertices a cada extremo de la trayectoria $P_{d -1}$ y
 hacerlos adyacentes a los extremos de esta trayectoria. Observamos que $G$ tiene
 di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de $k$-fichas de
-$G$ tiene di\'ametro $dk$. Para ejemplificar \'esto, \cref{fig:ex-diamT} muestra
+$G$ tiene di\'ametro $dk$. Para ejemplificar esto, \cref{fig:ex-diamT} muestra
 una gr\'afica $G$ construida al agregar cuatro v\'ertices en cada extremo de la
 trayectoria $P_5$, i.e., $k=4$. Notamos que, los v\'ertices
 $\{v_1,v_2,v_3,v_4\}$ y $\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$, pues
@@ -292,9 +292,9 @@ inducidas de $G$.
     \label{teo:PCartes}
     Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica $G$ tales
     que son ajenas dos a dos. Para todos los enteros $s_1, \dots, s_m$, tales
-    que $1 \leq s_i \leq |V(H_i)|$ y $\Sigma s_i = k$, se tiene que
-    $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica
-    inducida de $F_k(G)$.
+    que $1 \leq s_i \leq |V(H_i)|$ y $\sum s_i = k$, se tiene que $F_{s_1}(H_1)
+    \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica inducida de
+    $F_k(G)$.
 \end{teorema}
 
 \begin{proof}
@@ -303,7 +303,7 @@ inducidas de $G$.
     $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
     $H_i$, para $i \in \{1, \dots, m\}$, lo llamamos $L$, i.e., $L = \{A
     \subseteq G \colon\ |A\cap H_1|=s_1 , |A \cap H_2|=s_2, \dots, |A \cap
-    H_m|=m \}$. Observamos que, debido a  que $\Sigma s_i = k$, todo elemento de
+    H_m|=m \}$. Observamos que, debido a  que $\sum s_i = k$, todo elemento de
     $L$ tiene cardinalidad $k$. Buscamos ver que la subgr\'afica inducida de
     $F_k(G)$ por $L$, i.e., $F_k(G,L)$, es isomorfa a $F_{s_1}(H_1) \square
     \cdots \square F_{s_m}(H_m)$. Primero, analizamos el conjunto de v\'ertices
@@ -316,7 +316,7 @@ inducidas de $G$.
     \times \cdots \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i
     \in F_{s_i}(H_i)$. De lo anterior, tenemos que $A \cap V(H_i) = A'_i$, por
     lo que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
-    Adicionalmente, tenemos que $|A|= k$, puesto que $\Sigma s_i = k$. Por lo
+    Adicionalmente, tenemos que $|A|= k$, puesto que $\sum s_i = k$. Por lo
     tanto, $A \in V(F_k(G,L))$.
 
     Ahora, nos enfocamos en la relaci\'on entre las aristas de ambas gr\'aficas
@@ -324,10 +324,10 @@ inducidas de $G$.
     E(F_k(G,L))$, en otras palabras, existen $b \in B$ y $c \in C$, tales que $B
     \triangle C = \{b, c\}$ y $bc \in E(G,L)$. Por definici\'on, tenemos que
     $H_i \cap H_j = \varnothing$, con $i \neq j$, por lo que $b, c \in H_i$.
-    \'Esto significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j
-    \in \{1, \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$
-    es una arista en la subgr\'afica de fichas inducida por $H_i$. Como $H_i
-    \cap H_j = \varnothing$, para $i \neq j$, entonces la subgr\'afica de fichas
+    Esto significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j \in
+    \{1, \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es
+    una arista en la subgr\'afica de fichas inducida por $H_i$. Como $H_i \cap
+    H_j = \varnothing$, para $i \neq j$, entonces la subgr\'afica de fichas
     inducida por $H_i$ es isomorfa a $F_{s_i}(H_i)$. Al tener el resto de las
     fichas est\'aticas, tenemos que $BC \in E(F_{s_1}(H_1) \square \cdots
     \square F_{s_m}(H_m))$.
@@ -451,9 +451,9 @@ siguientes dos lemas nos son de utilidad.
     la trayectoria $(v_{p},b ]$, por construcci\'on de $A \xrightarrow[P]{} A'$
     . Por ello, $R$ no contiene al conjunto $\{v_{2}, \dots, v_{p}\}$. Por otro
     lado, como $\{v_{2}, \dots, v_{p}\}$ est\'a en $A \cap V(P)$, y $Q$ y $P$
-    son internamente ajenas, entonces $\{v_{2}, \dots, v_{p}\}$ est\'an
-    est\'aticos en cada v\'ertice de $A \xrightarrow[Q]{} A'$. Por lo tanto,
-    tenemos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{}A'$ son
+    son internamente ajenas, entonces las fichas de $\{v_{2}, \dots, v_{p}\}$
+    est\'an est\'aticos en cada v\'ertice de $A \xrightarrow[Q]{} A'$. Por lo
+    tanto, tenemos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{}A'$ son
     trayectorias internamente ajenas. Al suponer que $|A \cap Q| \geq 2$,
     tenemos un caso an\'alogo al anterior.
 
@@ -477,10 +477,10 @@ demostrar el resultado principal de esta secci\'on.
 \label{lem:rb-bipGraph}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$,
     donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo, de
-    manera que cada v\'ertice de $Y$ es incidente en, a lo m\'as, una arista
-    roja, entonces $H$ tiene un conjunto $M$ de aristas azules, tal que cada
-    v\'ertice en $Y$ incide en exactamente una arista de $M$. Adem\'as, la
-    uni\'on de aristas rojas y aristas de $M$ es ac\'iclica.
+    manera que cada v\'ertice de $Y$ es incidente en a lo m\'as una arista roja,
+    entonces $H$ tiene un conjunto $M$ de aristas azules, tal que cada v\'ertice
+    en $Y$ incide en exactamente una arista de $M$. Adem\'as, la uni\'on de
+    aristas rojas y aristas de $M$ es ac\'iclica.
 \end{lema}
 
 \begin{proof}
@@ -551,10 +551,11 @@ gr\'afica bipartita con bipartici\'on $({\color{crema}
 \textbf{X}},{\color{baige} \textbf Y})$, con ${\color{crema} \textbf{X}}=\{v_5,
 v_6,v_7, v_8, v_9, _{10}\}$ y ${\color{baige} \textbf Y}=\{v_1, v_2, v_3,
 v_4\}$. Sea ${\color{azulMetal} \bf M=\{v_1v_8, v_2v_9,v_3v_7,v_4v_{10}\}}$ el
-conjunto de aristas azules mencionado en \cref{lem:rb-bipGraph}, resaltadas en
-figura. Notamos que, todo v\'ertice en ${\color{baige} \bf Y}$ tiene exactamente
-una arista en ${\color{azulMetal}\bf M}$. Adem\'as, la uni\'on de las aristas de
-${\color{azulMetal}\bf M}$ y las aristas rojas, no forma un ciclo.
+conjunto de aristas azules mencionado en \cref{lem:rb-bipGraph}, y resaltadas en
+la figura. Notamos que, todo v\'ertice en ${\color{baige} \bf Y}$ tiene
+exactamente una arista en ${\color{azulMetal}\bf M}$. Adem\'as, la uni\'on de
+las aristas de ${\color{azulMetal}\bf M}$ y las aristas rojas, no forma un
+ciclo.
 
 Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
@@ -624,7 +625,7 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     Ahora, sea $v \in D$ y definimos $Y_v = N_G(v) \setminus (A \cup B)$. Al ser
     $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as, tenemos
     que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
-    notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto pues, de lo
+    notemos que $(a, v, b)$ no es una trayectoria en $G$. Esto pues, de lo
     contrario, tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no
     est\'a en $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots,
     s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que
@@ -672,9 +673,9 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     y $y' \in P_{i'}$. Al tener $x'\in Y_{v'} '$, adem\'as de que $((A \cap B
     )\setminus \{v\}) \cap Y_{v'}'= \varnothing$, tenemos que $x' \in \{x,y\}$.
     An\'alogamente, como $(A \cap B) \cap P_i = \varnothing$, tenemos que $y'\in
-    \{x, y\}$. Por lo tanto, tenemos $\{x,y\}= \{x',y'\}$. \'Esto implica que
+    \{x, y\}$. Por lo tanto, tenemos $\{x,y\}= \{x',y'\}$. Esto implica que
     $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, entonces $v = v'$.
-    \'Esto implica que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
+    Esto implica que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
     v\'ertice de $Y_v '$ es incidente en s\'olo una arista de $M_v$, por lo que
     $x \neq x'$ y $i \neq i'$. Como tenemos que $\{x, y\}=\{x', y'\}$, entonces
     $x=y'$ y $y=x'$. Por ello, tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo
@@ -683,7 +684,7 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     respectivamente, lo cu\'al es una contradicci\'on. As\'i pues, las
     trayectorias de tipo $R$ son internamente ajenas dos a dos.
 
-    APasamos a demostrar que los tipos de trayectorias formadas son internamente
+    Pasamos a demostrar que los tipos de trayectorias formadas son internamente
     ajenas dos a dos. Observamos que, las trayectorias de tipo $Q$ y de tipo $P$
     son internamente ajenas por construcci\'on. As\'i pues, comenzamos con las
     trayectorias de tipo $R$ y las de tipo $P$. Sean $R\langle v,x \rangle$ y $A
@@ -840,7 +841,7 @@ ${\color{baige}\bf B}$.}
 \section{Conexidad}%
 \label{sec:conexidad}
 
-Pasamos a enfocarnos en la conexidad de las gr\'aficas de fichas. Con ayuda de
+Ahora nos enfocamos en la conexidad de las gr\'aficas de fichas. Con ayuda de
 los resultados encontrados en las secciones anteriores, esta secci\'on buscamos
 estudiar la relaci\'on entre la conexidad de una gr\'afica y su gr\'afica de
 $k$-fichas.  El siguiente teorema nos muestra la relaci\'on buscada.
@@ -860,7 +861,6 @@ sin p\'erdida de generalidad, que $k \leq \frac{n}{2}$.
 Sea $\mathcal{C}$ un m\'inimo corte por v\'ertices de $F_k(G)$. Basta demostrar
 que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en distintas
 componentes de $F_k(G)- \mathcal{C}$, tales que $|A \triangle B|$ es m\'inimo.
-
 Si $|A \triangle B| = 2$, entonces, por \cref{lem:TrayIntAj}, tenemos que hay
 $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
 $|\mathcal{C}| \geq t$.
@@ -881,7 +881,7 @@ Luego, nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
 que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
 \mathcal{C}$. Pero, tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente de
 $F_K(G) - \mathcal{C}$; de igual manera que $B$ y $B_{j,x}$. Por lo tanto, $A$ y
-$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. \'Esto es una
+$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. Esto es una
 cotradicci\'on, pues tomamos a $A$ y $B$ en distintas componentes, lo que
 implica que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$
 y $x$.
