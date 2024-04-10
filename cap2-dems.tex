@@ -29,11 +29,11 @@ siguiente lema.
     \not\subset B \cup C$, entonces existen los v\'ertices  $a \in A \setminus
     (B \cup C)$ y $b \in (B \cap C)\setminus A$. Notamos que $b \in B \setminus
     A$ y $b \in C \setminus A$. De manera an\'aloga, tenemos que $a \in A
-    \setminus B$ y $a \in A \setminus C$. Por otro lado, sabmeos que $A$ y $B$
+    \setminus B$ y $a \in A \setminus C$. Por otro lado, sabemos que $A$ y $B$
     son adyacentes en $F_k(G)$, de igual manera $A$ y $C$. Por lo tanto, tenemos
     que $A \triangle B = \{a,b\}$ y $A \triangle C = \{a, b\}$. As\'i pues, $(B
     \cup C \cup \{a\})\setminus \{b\} \subseteq A$. Pero $B$ y $C$ son
-    adyacentes en $F_k(G)$, por lo que $|B \cup C| = k+1$. Por lo que $|A| \geq
+    adyacentes en $F_k(G)$, por lo que $|B \cup C| = k+1$. Luego, $|A| \geq
     k+1$, lo cu\'al es una contradicci\'on pues $A \in V (F_k(G))$. 
 
     Ahora, supongamos que existen $A$, $B$ y $C$ v\'ertices en $F_k(G)$ que son
@@ -136,7 +136,7 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
     \{v\}\colon\ v \in K \}$ con $|S| + |K| = k+1$. Al igual que para el inciso
     anterior, tomamos $X_1$ y $X_2$ v\'ertices distintos de $X$. Por
     construcci\'on de $X$, existen $x_1, x_2 \in K$ tales que $x_1 \notin X_1$ y
-    $x_2 \notin X_2$. Adem\'as, como tomamos $|K| \geq 2$, podemos garantizamr
+    $x_2 \notin X_2$. Adem\'as, como tomamos $|K| \geq 2$, podemos garantizar
     que $x_1 \neq x_2$. Ahora, notamos que $X_1 \triangle X_2 = \{x_1, x_2\}$ y,
     al ser $K$ un clan de $G$, tenemos que $x_1x_2 \in E(G)$, por lo que tenemos
     que $X_1$ y $X_2$ son adyacentes en $F_k(G)$. Por tanto, $X$ cumple ser un
@@ -276,13 +276,13 @@ para el n\'umero de clan.
 \begin{proof}
     Sea $X$ un clan de $F_k(G)$ con $\omega(F_k(G))$ v\'ertices. Sabemos que $X$
     satisface alguno de los incisos d\cref{teo:clanG-clanFG}. Para el resto de
-    esta desigualdad, consideremos a $K$ como en el teorema anterior.   Si $X =
-    \{S \cup \{v\} \colon\ v \in K\}$ y $|S| = k-1$, notamos que $|X| = |K|$.
+    esta demostraci\'on, consideremos a $K$ como en el teorema anterior.   Si $X
+    = \{S \cup \{v\} \colon\ v \in K\}$ y $|S| = k-1$, notamos que $|X| = |K|$.
     Adem\'as, tenemos que $n \geq |S| + |K|$. Por lo tanto, tenemos que $n \geq
     |S| + |K| = k-1 + |X|$, es decir, $|X| \leq n-k+1$. Ahora, si $X = \{(S\cup
     K) \setminus \{v\} \colon\ v \in K \}$ y $|S| + |K| = k+1$, notamos que
-    tenemos la misma cardinalidad que en caso anterior, i.e, $|X| =|K|$. Por
-    \'ello, $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto, de los dos casos,
+    tenemos la misma cardinalidad que en caso anterior, i.e., $|X| =|K|$. Por
+    ello, $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto, de los dos casos,
     obtenemos que $|X| \leq \max\{n-k+1, k+1\}$. Adicionalmente, tenemos que
     ambos casos cumplen $|X| = |K| \leq \omega(G)$. Por lo que $\omega(F_k(G)) =
     |X| \leq \min \{\omega(G), \max \{n-k+1, k+1\}\}$ y, de esta manera,
@@ -320,8 +320,8 @@ Este teorema se puede simplificar como se muestra en el siguiente corolario.
 \begin{proof}
     Por \cref{teo:clan-max} sabemos que $\omega(F_k(G))= \min \{\omega(G), \max
     \{n-k+1,k+1\}\}$. Basta demostrar que $\max \{n-k+1, k+1\} = n-k+1$. En
-    otras palabras, $n-k+1 \geq k+1$. \'Esto pasa si y s\'olo si $n \geq 2k$.
-    Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
+    otras palabras, $n-k+1 \geq k+1$. Esto \'ultimo pasa si y s\'olo si $n \geq
+    2k$. Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
 \end{proof}
 
 Recordando que $F_k(G) \cong F_{n-k}(G)$, la utilidad  d\cref{coro:numCrom}
@@ -400,7 +400,7 @@ viendo el caso en el que $F_k(G)$ es bipartita.
     existe un conjunto $A$ de $k-p+1$ v\'ertices en $V(G)\setminus C$. Notemos
     que, al colocar una ficha en cada v\'ertice de $A$ y mantenerlas fijas, o
     equivalentemente s\'olo mover las $p-1$ fichas restantes, se obtiene una
-    gr\'afica isomorfa a la gr\'afica de fichas $F_{p-1}(G-A)$. De \'este modo,
+    gr\'afica isomorfa a la gr\'afica de fichas $F_{p-1}(G-A)$. De este modo,
     tenemos el caso anterior, en el que $k \leq p$, que $F_{p-1}(G-A)$ no es una
     gr\'afica bipartita. Pero, como ya notamos, $F_{p-1}(G-A) = F_{k-(k+1-p)}
     (G-A)$ es isomorfa a la subgr\'afica de $F_k(G)$ inducida por los v\'ertices
@@ -536,7 +536,7 @@ de $\chi (G)$ para el caso general.
     Por lo tanto, $\chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1$
 \end{proof}
 
-A partir d\cref{teo:numCrom-k} podemos encontrar una cota inferiror para
+A partir d\cref{teo:numCrom-k} podemos encontrar una cota inferior para
 $\chi(F_k(G))$ que sea independiente de $k$. Esta relaci\'on se demuestra en el
 siguiente teorema.
 
