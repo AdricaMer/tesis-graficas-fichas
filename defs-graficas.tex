@@ -276,17 +276,17 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 En Teor\'ia de Gr\'aficas resulta interesante preguntarse si, en una gr\'afica,
 hay alg\'un ``v\'inculo'' entre dos v\'ertices. Si estos dos v\'ertices son
 adyacentes, es claro que ese v\'inculo existe a trav\'es de la arista que
-comparten. Un \indice{$uv$-camino} entre los v\'ertices $u$ y $v$ de una
-gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y aristas de $G$ de la
-siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i
-\in V(G)$ y donde $e_j = v_{j-1}v_j$ para $i \in \{0, \dots, k\}$ y $j \in \{ 1,
-\dots, k\}$. Este $uv$-camino es una forma de vincular el v\'ertice $u$ con el
-v\'ertice $v$. En caso de que no sea necesario especificar de qu\'e v\'ertice a
-qu\'e v\'ertice va la sucesi\'on, nos referimos simplemente a un
-\indice{camino}. Es importante notar que un camino no siempre tiene aristas. Un
-camino es \indiceSub{camino}{trivial} si tiene \'unicamente un v\'ertice y no
-tiene aristas. Este es el \'unico caso en el que un camino no tiene aristas. Al
-ser una sucesi\'on, a un camino $W$ se le puede asociar una
+comparten. Un $uv$\textbf{-camino}\index{u @$uv$-camino} entre los v\'ertices
+$u$ y $v$ de una gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y
+aristas de $G$ de la siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1},
+e_k,v_k)$ con $v_i \in V(G)$ y donde $e_j = v_{j-1}v_j$ para $i \in \{0, \dots,
+k\}$ y $j \in \{ 1, \dots, k\}$. Este $uv$-camino es una forma de vincular el
+v\'ertice $u$ con el v\'ertice $v$. En caso de que no sea necesario especificar
+de qu\'e v\'ertice a qu\'e v\'ertice va la sucesi\'on, nos referimos simplemente
+a un \indice{camino}. Es importante notar que un camino no siempre tiene
+aristas. Un camino es \indiceSub{camino}{trivial} si tiene \'unicamente un
+v\'ertice y no tiene aristas. Este es el \'unico caso en el que un camino no
+tiene aristas. Al ser una sucesi\'on, a un camino $W$ se le puede asociar una
 \indiceSub{camino}{longitud}, el n\'umero de posiciones en $W$ que son ocupadas
 por aristas. Denotamos la longitud de $W$ como $\ell(W)$. 
 
@@ -297,21 +297,21 @@ arista. En otras palabras, el concepto de camino no ayuda mucho para encontrar
 la forma m\'as corta para llegar de un v\'ertice a otro. Por lo tanto,
 introducimos el concepto de trayectoria. Una \indice{trayectoria} es un camino
 que no repite v\'ertices. Al igual que con el concepto de camino, una
-\indice{$uv$-trayectoria} es una trayectoria que tiene v\'ertice inicial $u$ y
-v\'ertice final $v$. En una $uv$-trayectoria, los v\'ertices $u$ y $v$ son
-llamados \indiceSub{v\'ertices}{extremos} y el resto de los v\'ertices de la
-trayectoria son llamados \textbf{v\'ertices} \indiceSub{v\'ertices}{internos}.
-Notamos que, al no repetir v\'ertices, este camino tampoco repite aristas, pues,
-si lo hiciera, necesitar\'ia volver a pasar por al menos uno de los extremos de
-dicha arista. De lo anterior se sigue que todas las trayectorias que tengan los
-mismos v\'ertices y aristas tambi\'en tienen la misma longitud. El usar
-trayectorias es una mejor aproximaci\'on al concepto de ``cercan\'ia'' entre
-v\'ertices, sin embargo, se puede tener el caso que haya m\'ultiples
-trayectorias de distintas longitudes entre dos v\'ertices. Definimos la
-\indice{distancia} entre dos v\'ertices $u$ y $v$ de una gr\'afica, denotada
-$d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. Sea $P$ una
-trayectoria en una gr\'afica, decimos que $P$ no tiene \indice{cuerdas} si la
-subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2. Observamos que
+$uv$\textbf{-trayectoria} \index{u @$uv$-trayectoria} es una trayectoria que
+tiene v\'ertice inicial $u$ y v\'ertice final $v$. En una $uv$-trayectoria, los
+v\'ertices $u$ y $v$ son llamados \indiceSub{v\'ertices}{extremos} y el resto de
+los v\'ertices de la trayectoria son llamados \textbf{v\'ertices}
+\indiceSub{v\'ertices}{internos}. Notamos que, al no repetir v\'ertices, este
+camino tampoco repite aristas, pues, si lo hiciera, necesitar\'ia volver a pasar
+por al menos uno de los extremos de dicha arista. De lo anterior se sigue que
+todas las trayectorias que tengan los mismos v\'ertices y aristas tambi\'en
+tienen la misma longitud. El usar trayectorias es una mejor aproximaci\'on al
+concepto de ``cercan\'ia'' entre v\'ertices, sin embargo, se puede tener el caso
+que haya m\'ultiples trayectorias de distintas longitudes entre dos v\'ertices.
+Definimos la \indice{distancia} entre dos v\'ertices $u$ y $v$ de una gr\'afica,
+denotada $d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. Sea $P$
+una trayectoria en una gr\'afica, decimos que $P$ no tiene \indice{cuerdas} si
+la subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2. Observamos que
 cualquier trayectoria de longitud m\'inima entre dos v\'ertices no tiene
 cuerdas. Adicionalmente, podemos darle un ``tama\~{n}o'' a una gr\'afica $G$ al
 definir su \indice{di\'ametro} como $\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
@@ -347,12 +347,12 @@ Por \cref{prop:CamTray}, sabemos que, cada que hablamos de caminos, siempre hay
 una trayectoria contenida. Por esta raz\'on, de ahora en adelante nos enfocamos
 en trayectorias. Como se mencion\'o anteriormente, entre dos v\'ertices $u$ y
 $v$ pueden existir m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
-\textbf{$uv$-trayectorias} \indiceSub{$uv$-trayectoria}{internamente ajenas} si
+\textbf{$uv$-trayectorias} \indiceSub{u @$uv$-trayectoria}{internamente ajenas} si
 $V(X)\cap V(Y)=\{u,v\}$, i.e. los v\'ertices en com\'un entre $X$ y $Y$ son
 \'unicamente sus extremos. El m\'aximo n\'umero de $uv$-trayectorias
 internamente ajenas se denota por $p(u,v)$. Tambi\'en podemos definir un
 concepto similar enfoc\'andonos en aristas. Llamamos \textbf{$uv$-trayectorias}
-\indiceSub{$uv$-trayectoria}{ajenas por aristas} a dos o m\'as $uv$-trayectorias
+\indiceSub{u @$uv$-trayectoria}{ajenas por aristas} a dos o m\'as $uv$-trayectorias
 que no tengan aristas en com\'un. Estos conceptos nos sevir\'an m\'as adelante
 cuando hablemos de conexidad. Adicionalmente, siempre podemos recorrer una
 trayectoria en sentido contrario, es decir, empezando por el \'ultimo v\'ertice
@@ -456,33 +456,32 @@ gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
 \indice{corte por v\'ertices}\index{v\'ertices!corte} $S$ de una gr\'afica $G$
 es un subconjunto de $V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el
 conjunto $S$ \indice{separa} a la gr\'afica en dos o m\'as componentes conexas.
-Decimos que $S$ es un \indiceSub{corte por
-v\'ertices}{$k$-corte}\index{v\'ertices!$k$-corte} \textbf{por v\'ertices} si
-$|S|=k$. A un corte por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$
-se le llama \indiceSub{corte por
-v\'ertices}{$uv$-corte}\index{v\'ertices!$uv$-corte} \textbf{por v\'ertices}. La
-m\'inima cardinalidad de un $uv$-corte por v\'ertices se denota $c(u,v)$ y no
-est\'a definida si $u$ y $v$ son adyacentes o $x=y$. Tambi\'en pueden existir
-cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean $X,Y \subseteq
-V(G)$, $S$ es un \indiceSub{cortepor
-v\'ertices}{$XY$-corte}\index{v\'ertices!$XY$-corte} \textbf{por v\'ertices} si
-$G-S$ es una gr\'afica inconexa donde $X$ y $Y$ se encuentran en distintas
-componentes conexas. Cabe notar que no todas las gr\'aficas tienen alg\'un corte
-por v\'ertices, a saber, las gr\'aficas en las que cualesquiera dos v\'ertices
-son adyacentes no tienen cortes por v\'ertices, y son las \'unicas con esta
-propiedad. Ahora, usando el concepto de corte por v\'ertices, definimos la
-conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de una gr\'afica
-$G$, denotado por $\kappa(G)$, se define como la m\'inima cardinalidad de un
-conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{
-es corte por v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no
-tienen cortes por v\'ertices, no obstante, por convenci\'on decimos que una
-gr\'afica completa de $n$ v\'ertices tiene n\'umero de conexidad $n-1$. Por otra
-parte, el vac\'io es un corte por v\'ertices en cualquier gr\'afica inconexa,
-por lo que una gr\'afica inconexa tiene n\'umero de conexidad $0$.
-Adicionalmente, decimos que una gr\'afica $G$ es
-\indiceSub{gr\'afica}{$t$-conexa} si $|G|>t$ y $G-X$ es conexa para todo
-conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el conecpto de
-conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
+Decimos que $S$ es un $k$\textbf{-corte por v\'ertices}\index{corte por
+v\'ertices!k @ $k$-corte}\index{v\'ertices!k @$k$-corte} si $|S|=k$. A un corte
+por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$ se le llama
+$uv$\textbf{-corte por v\'ertices}\index{corte por v\'ertices!u
+@$uv$-corte}\index{v\'ertices!u @$uv$-corte}. La m\'inima cardinalidad de un
+$uv$-corte por v\'ertices se denota $c(u,v)$ y no est\'a definida si $u$ y $v$
+son adyacentes o $x=y$. Tambi\'en pueden existir cortes por v\'ertices entre dos
+conjuntos de v\'ertices. Sean $X,Y \subseteq V(G)$, $S$ es un $XY$\textbf{-corte
+por v\'ertices}\index{corte por v\'ertices!X @$XY$-corte}\index{v\'ertices!X
+@$XY$-corte} si $G-S$ es una gr\'afica inconexa donde $X$ y $Y$ se encuentran en
+distintas componentes conexas. Cabe notar que no todas las gr\'aficas tienen
+alg\'un corte por v\'ertices, a saber, las gr\'aficas en las que cualesquiera
+dos v\'ertices son adyacentes no tienen cortes por v\'ertices, y son las
+\'unicas con esta propiedad. Ahora, usando el concepto de corte por v\'ertices,
+definimos la conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de
+una gr\'afica $G$, denotado por $\kappa(G)$, se define como la m\'inima
+cardinalidad de un conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S|
+\colon\ S \textnormal{ es corte por v\'ertices}\}$. Como ya se observ\'o, las
+gr\'aficas completas no tienen cortes por v\'ertices, no obstante, por
+convenci\'on decimos que una gr\'afica completa de $n$ v\'ertices tiene n\'umero
+de conexidad $n-1$. Por otra parte, el vac\'io es un corte por v\'ertices en
+cualquier gr\'afica inconexa, por lo que una gr\'afica inconexa tiene n\'umero
+de conexidad $0$. Adicionalmente, decimos que una gr\'afica $G$ es
+$t$\textbf{-conexa} \index{gr\'afica!t @$t$-conexa} si $|G|>t$ y $G-X$ es conexa
+para todo conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el
+conecpto de conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
 \cref{fig:subgraf}. Notamos que ambas son conexas, sin embargo, necesitamos
 m\'as v\'ertices para ``desconectar'' la gr\'afica de \cref{fig:subgraf} que las
 gr\'aficas de \cref{fig:isoGraf}. A saber, las gr\'aficas de \cref{fig:isoGraf}
@@ -978,10 +977,11 @@ se\~{n}alar que una \indiceSub{v\'ertices}{partici\'on}\index{partici\'on} de
 $V(G)$ en $V_1, V_2, \dots, V_k$ partes debe satisfacer $V_i \cap V_j =
 \varnothing$, para $i \ne j$ y $V_1 \cup V_2 \cup \cdots \cup V_k = V(G)$, sin
 embargo, no pedimos que cada parte sea no vac\'ia. Estamos listos para definir
-la familia de gr\'aficas. Una gr\'afica es \indiceSub{gr\'afica}{$k$-partita} si
-su conjunto de v\'ertices admite una partici\'on en, a lo m\'as, $k$ conjuntos
-independientes. Un caso muy relevante, el cu\'al se utiliza en este trabajo,
-es cuando $k=2$. En este caso se dice que es una \textbf{gr\'afica}
+la familia de gr\'aficas. Una gr\'afica es
+$k$\textbf{-partita}\index{gr\'afica!k @$k$-partita} si su conjunto de
+v\'ertices admite una partici\'on en, a lo m\'as, $k$ conjuntos independientes.
+Un caso muy relevante, el cu\'al se utiliza en este trabajo, es cuando $k=2$. En
+este caso se dice que es una \textbf{gr\'afica}
 \indiceSub{gr\'afica}{bipartita}\index{bipartita!gr\'afica}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 \indice{bipartici\'on} de $G$. Una propiedad de suma utilidad se demuestra en
@@ -1273,29 +1273,29 @@ continuaci\'on demostrada.
 En Teor\'ia de Gr\'aficas, cuando hablamos de colorear a una gr\'afica nos
 referimos a una manera de etiquetar a todos sus v\'ertices o a todas sus
 aristas. Primero, veamos la coloraci\'on por aristas. Formalmente, una
-\textbf{$k$-coloraci\'on} \indiceSub{$k$-coloraci\'on}{por
+\textbf{$k$-coloraci\'on} \indiceSub{k@$k$-coloraci\'on}{por
 aristas}\index{aristas!coloraci\'on} de una gr\'afica $G$, para un entero $k$,
 es una funci\'on $c' \colon E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
 La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
 $c'$ es el conjunto de todas las aristas de la gr\'afica que est\'an coloreadas
 del color $i$, es decir, $c'^{-1}[i]$. Notamos que las clases crom\'aticas
 pueden ser vac\'ias. Una \textbf{coloraci\'on}
-\indiceSub{$k$-coloraci\'on}{propia por aristas}\index{aristas!$k$-coloraci\'on
-propia} es una coloraci\'on por aristas, donde se le asignan colores diferentes
-a todas las aristas adyacentes.
+\indiceSub{k@$k$-coloraci\'on}{propia por aristas}\index{aristas!k
+@$k$-coloraci\'on propia} es una coloraci\'on por aristas, donde se le asignan
+colores diferentes a todas las aristas adyacentes.
 
 Por otro lado, una una \textbf{$k$-coloraci\'on}
-\indiceSub{$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
+\indiceSub{k@$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
 una gr\'afica $G$, para un entero $k$, es una funci\'on $c \colon V(G)\to T$,
 donde $T$ es un conjunto de cardinalidad $k$. En ambos casos, ya sea
 coloraci\'on por v\'ertices o por aristas, a los elementos del codominio de la
 funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
-\indiceSub{$-$coloraci\'on}{propia por
-v\'ertices}\index{v\'ertices!$k$-coloraci\'on propia} es una coloraci\'on por
+\indiceSub{k@$k$-coloraci\'on}{propia por
+v\'ertices}\index{v\'ertices!k @$k$-coloraci\'on propia} es una coloraci\'on por
 v\'ertices, donde se le asignan colores diferentes a todos los v\'ertices
-adyacentes. Decimos que una gr\'afica $G$ es
-\indiceSub{gr\'afica}{$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite una
-$k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
+adyacentes. Decimos que una gr\'afica $G$ es $k$\textbf{-coloreable}
+\index{gr\'afica!k @$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite
+una $k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
 \cref{fig:ex-color-prop}, se muestra una gr\'afica $G$, donde se resalta una
 coloraci\'on propia por v\'ertices del lado izquierdo y una coloraci\'on propia
 por aristas del lado derecho. 
@@ -1349,9 +1349,9 @@ crom\'aticas pueden ser vac\'ias, adem\'as, en una coloraci\'on propia, cada
 clase crom\'atica es un conjunto independiente. El m\'inimo entero $k$ para el
 cu\'al una gr\'afica $G$ es $k$-coloreable es el \indice{n\'umero crom\'atico}
 de $G$, denotado por $\chi(G)$. En este caso, decimos que $G$ es
-\indiceSub{gr\'afica}{$k$-crom\'atica}. En \cref{fig:ex-color-prop}, se muestra
-una $3$-coloraci\'on propia por v\'ertices, sin embargo, el n\'umero crom\'atico
-de la gr\'afica es $2$. 
+$k$\textbf{-crom\'atica} \index{gr\'afica!k @$k$-crom\'atica}. En
+\cref{fig:ex-color-prop}, se muestra una $3$-coloraci\'on propia por v\'ertices,
+sin embargo, el n\'umero crom\'atico de la gr\'afica es $2$. 
 
 Es f\'acil observar que una gr\'afica es $1$-crom\'atica si y s\'olo si es
 vac\'ia, pues, de tener alguna arista ser\'ia necesario utilizar un segundo

@@ -1,12 +1,12 @@
 \chapter{Hamiltonicidad}%
 \label{cap:hamilt}
 
-La hamiltonicidad de una gr\'afica es un \'area muy estudiada dentro de la
+La hamiltonicidad de una gr\'afica es una propiedad muy estudiada dentro de la
 Teor\'ia de Gr\'aficas. En este cap\'itulo veremos un poco de la hamiltonicidad
 de las gr\'aficas de fichas. Algo que es importante mencionar es que la
 hamiltonicidad de una gr\'afica no implica hamiltonicidad en su gr\'afica de
-fichas. De igual manera, una gr\'afica no hamiltoniana puede tener gr\'aficas de
-fichas que s\'i lo sean. Un ejemplo de ambos casos se puede observar en
+fichas. De igual manera, una gr\'afica no hamiltoniana puede tener gr\'afica de
+fichas que s\'i lo sea. Un ejemplo de ambos casos se puede observar en
 \cref{fig:ex-H-NH} donde, del lado izquierdo, se muestran dos gr\'aficas y sus
 gr\'aficas de $2$-fichas, del lado derecho.
 
@@ -97,9 +97,9 @@ proposici\'on.
     tenemos que $B \cup \{v_i\} \in S_i$, por lo que
     $|V(S_i)|=|V(F_{k-1}(\mathcal{F}_{n-i}))|$. Adem\'as, observamos que $A$ y
     $B $ son adyacentes en $V(S_i)$ si y s\'olo si $A \setminus \{v_i\}$ y $B
-    \setminus \{v_i\}$ son adyacentes en $F_{k-1}(F_{n-i})$. \'Esto pues
+    \setminus \{v_i\}$ son adyacentes en $F_{k-1}(F_{n-i})$. Esto pues
     $A\triangle B = \{a,b\}$, donde $a\neq v_i$ y $b \neq v_i$, por lo que $v_i$
-    no afecta la adyacencia en ninguna de las gr\'aficas. En otras palabras, la
+    no afecta la adyacencia en alguna de las gr\'aficas. En otras palabras, la
     funci\'on respeta adyacencias. Por lo tanto, $S_i \cong
     F_{k-1}(\mathcal{F}_{n-i})$, con $1 \leq i \leq n-k$.
 \end{proof}
@@ -156,7 +156,7 @@ Pasamos a demostrar el teorema.
     hip\'otesis, por lo que tiene un ciclo hamiltoniano, y, por
     \cref{prop:iso-SFan}, sabemos que $F_{k-1}(\mathcal{F}_{n-i}) \cong S_i$.
     Recordemos que,  $S_i$ es la subgr\'afica de $F_k(\mathcal{F}_n)$ inducida
-    por el conjunto $V_i$ definido en la Proposici\'on, en otras palabras, $S_i=
+    por el conjunto $V_i$ definido en la proposici\'on, en otras palabras, $S_i=
     F_k(\mathcal{F}_n, V_i)$. Ahora, llamamos $C_i$ al ciclo hamiltoniano de
     $F_{k-1}(\mathcal{F}_{n-i})$ y $X_i = \{v_i, v_{n-k+1}, v_{n-k+2}, \dots,
     v_{n-2}, v_n\}$, $Y_i= \{v_i, v_{n-k+1}, v_{n-k+2}, \dots, v_{n-2},
@@ -257,7 +257,7 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
 
     Pasamos al caso en el que $n \geq 2$ y $1 \leq m \leq 2n$. Buscamos
     demostrar que la gr\'afica de $2$-fichas de $\mathcal{F}_{m,n}$ es
-    hamiltoniana. Para \'esto, construimos un ciclo hamiltorniano espec\'ifico
+    hamiltoniana. Para esto, construimos un ciclo hamiltorniano espec\'ifico
     para cada caso. Consideramos $m=1$ para el primer caso. Si $n=2$, entonces
     $F_2(\mathcal{F}_{m,n}) \cong \mathcal{F}_{1,2}$ pues ambas son isomorfas a
     $K_3$. Ahora, consideramos $n \geq 3$ y tomamos $1 \leq i \leq n$ para
@@ -290,7 +290,7 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     de las trayectorias son una partici\'on de los v\'ertices de
     $F_2(\mathcal{F}_{m,n})$, por lo que $C$ es un ciclo hamiltoniano. Como nota
     adicional, notemos que los v\'ertices $\{v_{n-2},w_1\}$ y
-    $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria $T_{n-2}$. \'Esto nos
+    $\{v_{n-2},v_{n-1}\}$ son adyacentes en la trayectoria $T_{n-2}$. Esto nos
     servir\'a en el siguiente teorema.
 
     Para el segundo caso consideramos $m=2n$. Definimos la siguiente familia de
@@ -558,7 +558,7 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
 \end{figure}
     
 Veamos ahora el caso en el que $1<m<2n$ y, del mismo modo que en los casos
-anteriores, definiremos una familia de trayectorias en $F_2(\mathcal{F}_{m,n})$.
+anteriores, definimos una familia de trayectorias en $F_2(\mathcal{F}_{m,n})$.
 Primero, definimos $Q_1 =P_1$. Ahora nos fijamos en $1<i<m$ para definir $Q_i$.
 Queremos usar $P_i$ como referencia para generar las nuevas trayectorias, pero
 $P_i$ tiene m\'as v\'ertices de la forma $\{w_i,w_j\}$, en particular, cuando
@@ -726,32 +726,32 @@ $k$-fichas, para $2 \leq k \leq n-1$.
     conjuntos $S_1=\{A \in F_k(\mathcal{F}_{m,n}) \colon\ w_1 \in A\}$ y
     $S_2=\{A \in F_k(\mathcal{F}_{m,n}) \colon\ w_1 \notin A\}$. Estos conjuntos
     generan una partici\'on de $(F_k(\mathcal{F}_{m,n}))$, pues todo v\'ertice
-    de la gr\'afica de $k$-fichas esta, por definici\'on, exactamente en alguno
-    de estos conjuntos. Ahora, nombramos $H_1$ y $H_2$ a las subgr\'aficas de
-    $F_k(\mathcal{F}_{m,n})$ inducidas por $S_1$ y $S_2$, respectivamente. Por
-    un lado, $H_1$ es la gr\'afica de fichas donde todo v\'ertice contiene
-    $w_1$, en otras palabras $H_1= F_k(\mathcal{F}_{m,n},\{w_1\})$. Sabemos que
-    $F_k(\mathcal{F}_{m,n},\{w_1\}) \cong F_{k-1}(\mathcal{F}_{m,n}- w_1)$, por
-    lo tanto $H_1 \cong F_{k-1}(\mathcal{F}_{m-1,n})$. Por otro lado, observamos
-    que, al ser $H_2$ la gr\'afica de fichas donde ning\'un v\'ertice tiene a
-    $w_1$, tenemos que $H_2 \cong F_k(\mathcal{F}_{m-1,n})$. Por lo tanto, $H_1$
-    y $H_2$ cumplen la hip\'otesis de induci\'on, es decir, ambos tienen un
-    ciclo hamiltoniano que llamamos $C_1$ y $C_2$, respectivamente. Adem\'as,
-    $C_1$ cumple ser un ciclo donde los v\'ertices $X_1 = \{w_1,
-    w_2,v_{n-k},v_{n-k+1}, \dots, v_{n-3}\}$ y $Y_1 = \{w_1,v_{n-k},v_{n-k+1},
-    \dots, v_{n-3},v_{n-2}\}$ son adyacentes. De manera an\'aloga, $C_2$ es un
-    ciclo hamiltoniano donde los v\'ertices $X_2 = \{ w_2,v_{n-k},v_{n-k+1},
-    \dots, v_{n-2}\}$ y $Y_2 = \{v_{n-k},v_{n-k+1}, \dots, v_{n-2},v_{n-1}\}$
-    son adyacentes. Definimos $P_i$ como la subtrayectoria hamiltoniana de $X_i$
-    a $Y_i$, con $i \in \{ 1,2 \}$. Observamos que $X_1 \triangle X_2 =
-    \{w_1,v_{n-2}\}$ y $Y_1 \triangle Y_2 = \{w_1, v_{n-1}\}$, por lo que $X_1
-    \sim X_2$ y $Y_1 \sim Y_2$. Ahora, definimos el ciclo $C = (X_1
-    \xrightarrow[P_1]{}Y_1,Y_2 \xrightarrow[P_2^{-1}]{}X_2,X_1)$. Afirmamos que
-    $C$ es el ciclo buscado. Dado que $\{S_1,S_2\}$ es una partici\'on de
-    $V(F_k(\mathcal{F}_{m,n}))$, entonces $C$ es un ciclo hamiltoniano.
-    Adem\'as, tenemos que $Y_1$ y $Y_2$ son adyacentes, por lo que $C$ cumple
-    las condiciones deseadas. Por lo tanto, $F_k(\mathcal{F}_{m,n})$ es una
-    gr\'afica hamiltoniana.
+    de la gr\'afica de $k$-fichas est\'a, por definici\'on, exactamente en
+    alguno de estos conjuntos. Ahora, nombramos $H_1$ y $H_2$ a las
+    subgr\'aficas de $F_k(\mathcal{F}_{m,n})$ inducidas por $S_1$ y $S_2$,
+    respectivamente. Por un lado, $H_1$ es la gr\'afica de fichas donde todo
+    v\'ertice contiene $w_1$, en otras palabras $H_1=
+    F_k(\mathcal{F}_{m,n},\{w_1\})$. Sabemos que $F_k(\mathcal{F}_{m,n},\{w_1\})
+    \cong F_{k-1}(\mathcal{F}_{m,n}- w_1)$, por lo tanto $H_1 \cong
+    F_{k-1}(\mathcal{F}_{m-1,n})$. Por otro lado, observamos que, al ser $H_2$
+    la gr\'afica de fichas donde ning\'un v\'ertice tiene a $w_1$, tenemos que
+    $H_2 \cong F_k(\mathcal{F}_{m-1,n})$. Por lo tanto, $H_1$ y $H_2$ cumplen la
+    hip\'otesis de induci\'on, es decir, ambos tienen un ciclo hamiltoniano que
+    llamamos $C_1$ y $C_2$, respectivamente. Adem\'as, $C_1$ cumple ser un ciclo
+    donde los v\'ertices $X_1 = \{w_1, w_2,v_{n-k},v_{n-k+1}, \dots, v_{n-3}\}$
+    y $Y_1 = \{w_1,v_{n-k},v_{n-k+1}, \dots, v_{n-3},v_{n-2}\}$ son adyacentes.
+    De manera an\'aloga, $C_2$ es un ciclo hamiltoniano donde los v\'ertices
+    $X_2 = \{ w_2,v_{n-k},v_{n-k+1}, \dots, v_{n-2}\}$ y $Y_2 =
+    \{v_{n-k},v_{n-k+1}, \dots, v_{n-2},v_{n-1}\}$ son adyacentes. Definimos
+    $P_i$ como la subtrayectoria hamiltoniana de $X_i$ a $Y_i$, con $i \in \{
+    1,2 \}$. Observamos que $X_1 \triangle X_2 = \{w_1,v_{n-2}\}$ y $Y_1
+    \triangle Y_2 = \{w_1, v_{n-1}\}$, por lo que $X_1 \sim X_2$ y $Y_1 \sim
+    Y_2$. Ahora, definimos el ciclo $C = (X_1 \xrightarrow[P_1]{}Y_1,Y_2
+    \xrightarrow[P_2^{-1}]{}X_2,X_1)$. Afirmamos que $C$ es el ciclo buscado.
+    Dado que $\{S_1,S_2\}$ es una partici\'on de $V(F_k(\mathcal{F}_{m,n}))$,
+    entonces $C$ es un ciclo hamiltoniano. Adem\'as, tenemos que $Y_1$ y $Y_2$
+    son adyacentes, por lo que $C$ cumple las condiciones deseadas. Por lo
+    tanto, $F_k(\mathcal{F}_{m,n})$ es una gr\'afica hamiltoniana.
 \end{proof}
 
 El teorema anterior nos proporciona una familia de gr\'aficas no hamiltonianas
