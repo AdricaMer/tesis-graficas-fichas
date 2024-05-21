@@ -80,8 +80,8 @@ proposici\'on.
 \begin{proposicion}
 \label{prop:iso-SFan}
     Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas y $V_i=\{ Y \in
-    V(F_k(\mathcal{F}_n) \colon\ v_i \in Y) \}$ un subconjunto de v\'ertices,
-    con $1 \leq i \leq n-k$. Sea $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
+    V(F_k(\mathcal{F}_n)) \colon\ v_i \in Y \}$ un subconjunto de v\'ertices,
+    con $1 \leq i \leq n-k$. Si $S_i$ la subgr\'afica de $F_k(\mathcal{F}_n)$
     inducida  por $V_i$, entonces $S_i$ es isomorfa a
     $F_{k-1}(\mathcal{F}_{n-i})$.
 \end{proposicion}
@@ -108,7 +108,7 @@ Pasamos a demostrar el teorema.
     
 \begin{teorema}
 \label{teo:hamilt-SFan}
-    Sean $n,k \in \mathbb{Z}$, tales que $n \geq 3$ y $1 \leq k \leq n-1$,
+    Si $n$ y $k$ son dos enteros, tales que $n \geq 3$ y $1 \leq k \leq n-1$,
     entonces $F_k(\mathcal{F}_n)$ es hamiltoniana.
 \end{teorema}
     
@@ -303,7 +303,7 @@ gr\'aficas de $2$-fichas, teorema que es demostrado a continuaci\'on.
     $\{w_i,w_{i+(n-2)}\},\dots,\{w_i,v_2\},\{w_i,w_{i+2}\},\{w_i,v_1\},\{w_i,w_{i+1}\})$.
 
     Para $n+1\leq i \leq 2n$, consideramos los \'indices de los v\'ertices de
-    $\overline{K_m}$ $\mod 2n$, usando $2n$ en vez de $0$, para definir $P_i =
+    $\overline{K_m}$ $\pmod {2n}$, usando $2n$ en vez de $0$, para definir $P_i =
     (\{w_i,v_n\}, \{w_i,w_{n+1}\}, \{w_i,v_{n-1}\}, \{w_i,w_{i+(n-1)}\},
     \{w_i,v_{n-2}\}$, $\{w_i,w_{i+(n-2)}\}, \dots, \{w_i,v_2\}, \{w_i,w_{i+2}\},
     \{w_i,v_1\}, \{w_i,w_{i+1}\})$.
@@ -700,8 +700,9 @@ $k$-fichas, para $2 \leq k \leq n-1$.
 
 \begin{teorema}
 \label{teo:TokGenerFan}
-    Sean $k, n, m$ enteros positivos, tales que $2 \leq k \leq n$ y $1 \leq m
-       \leq 2n$, entonces la gr\'afica $F_k(\mathcal{F}_{m,n})$ es hamiltoniana.
+    Si $k$, $n$ y $m$ son enteros positivos, tales que $2 \leq k \leq n$ y $1
+       \leq m \leq 2n$, entonces la gr\'afica $F_k(\mathcal{F}_{m,n})$ es
+       hamiltoniana.
 \end{teorema}
 
 \begin{proof}
@@ -764,7 +765,7 @@ primero presentamos una proposici\'on que facilita la demostraci\'on.
 
 \begin{proposicion}
 \label{prop:subg-gen}
-    Sea $H$ una subgr\'afica generadora de $G$, entonces $F_k(H)$ es una
+    Si $H$ es una subgr\'afica generadora de $G$, entonces $F_k(H)$ es una
     subgr\'afica generadora de $F_k(G)$, para todo $1 \leq k \leq n-1$.
 \end{proposicion}
 
@@ -789,9 +790,9 @@ Pasamos a demostrar el resultado antes mencionado.
 \label{coro:Token-Join}
     Sean $k,n,m \in \mathbb{Z^{+}}$, tales que $2 \leq k \leq n-1$ y $1 \leq m
     \leq 2n$. Sean $G_1$ y $G_2$ gr\'aficas de orden $m$ y $n$, respectivamente,
-    donde $G_2$ contiene una trayectoria hamiltoniana. Ahora, sea $G$ la
-    gr\'afica obtenida de la uni\'on completa de $G_1$ y $G_2$, i.e., $G = G_1
-    \oplus G_2$, entonces $F_k(G)$ es hamiltoniana. 
+    donde $G_2$ contiene una trayectoria hamiltoniana. Si $G$ es la gr\'afica
+    obtenida de la uni\'on completa de $G_1$ y $G_2$, i.e., $G = G_1 \oplus
+    G_2$, entonces $F_k(G)$ es hamiltoniana. 
 \end{corolario}
 
 \begin{proof}
