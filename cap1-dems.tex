@@ -16,7 +16,7 @@ gr\'afica de fichas.
 
 \begin{teorema}%
 \label{teo:diamFG}
-    Sea $G$ una gr\'afica conexa con di\'ametro $d$. Entonces, $F_{k}(G)$ es
+    Si $G$ una gr\'afica conexa con di\'ametro $d$, entonces, $F_{k}(G)$ es
     conexa con di\'ametro, al menos, $k(d -k+1)$ y, a lo m\'as, $d k$.
 \end{teorema}
 
@@ -41,7 +41,7 @@ gr\'afica de fichas.
     una $CD$-trayectoria con longitud, a lo m\'as, $\frac{d}{2}|C\triangle D|$.
     Al tomar $A\triangle B \neq \varnothing$, tenemos un v\'ertice de $G$ en
     $A\setminus B$ y un v\'ertice en $B\setminus A$, que denotamos $a$ y $b$,
-    respectivamente. Dado que el di\'ametro de $G$ es $d$, entonces hay una
+    respectivamente. Dado que el di\'ametro de $G$ es $d$, tenemos que hay una
     $ab$-trayectoria de longitud a lo m\'as $d$, digamos $P$.
 
     Definimos $A'=(A\setminus \{a\})\cup \{b\}$ y la trayectoria
@@ -49,12 +49,12 @@ gr\'afica de fichas.
     B\cap A'$ y $b\notin B\cap A$. Por otro lado, tenemos que $a \notin A'$, por
     lo que $a\notin A'\cup B$ y $a\notin A\cap B$. Sin embargo, tanto $a$ como
     $b$ est\'an en $A\cup B$. Por eso, tenemos que $a,b \in A\triangle B$ y $a,b
-    \notin A'\triangle B$. Ahora, tomamos $v\in A$ tal que $v \neq a$, entonces
-    tenemos que $v \in A\triangle B$ si y s\'olo si $v\in A'\triangle B$. Por lo
-    tanto, tenemos que $|A'\triangle B|=|A \triangle B|- 2$. Por hip\'otesis
-    inductiva, sabemos que hay una $A'B$-trayectoria en $F_{k}(G)$ de longitud,
-    a lo m\'as, $\frac{d}{2}|A'\triangle B|$ que, como se observ\'o
-    anteriormente, coincide con $\frac{d}{2}|A\triangle B| - d$.
+    \notin A'\triangle B$. Ahora, tomamos $v\in A$ tal que $v \neq a$, se sigue
+    que $v \in A\triangle B$ si y s\'olo si $v\in A'\triangle B$. Por lo tanto,
+    tenemos que $|A'\triangle B|=|A \triangle B|- 2$. Por hip\'otesis inductiva,
+    sabemos que hay una $A'B$-trayectoria en $F_{k}(G)$ de longitud, a lo m\'as,
+    $\frac{d}{2}|A'\triangle B|$ que, como se observ\'o anteriormente, coincide
+    con $\frac{d}{2}|A\triangle B| - d$.
 
     Sabemos que $A\xrightarrow[P]{} A'$ tiene la misma longitud que $P$, que es,
     a lo m\'as, $d$. Por ello, tenemos una $AB$-trayectoria de la forma
@@ -79,10 +79,10 @@ gr\'afica de fichas.
     o $V_{b+1}\cup \cdots \cup V_{d}$. 
 
     Consideremos una trayectoria entre $A$ y $B$ en $F_{k}(G)$. Cualquier ficha
-    inicialmente en $A$, digamos $v \in G$, se mueve a alg\'un v\'ertice en $B$,
-    digamos $v'\in G$. Notamos que todas las aristas de $G$ est\'an dentro de
-    alg\'un $V_{i}$ o, a lo m\'as, entre alg\'un $V_{i}$ y $V_{i+1}$, con
-    $i\in[0,d]$. As\'i pues, para la ficha en $v$ se necesitan, al menos,
+    inicialmente en $A$, digamos $v \in (G)$, se mueve a alg\'un v\'ertice en
+    $B$, digamos $v'\in (G)$. Notamos que todas las aristas de $G$ est\'an
+    dentro de alg\'un $V_{i}$ o, a lo m\'as, entre alg\'un $V_{i}$ y $V_{i+1}$,
+    con $i\in[0,d]$. As\'i pues, para la ficha en $v$ se necesitan, al menos,
     $d_x(v')-d_x(v)$ movimientos para llegar a $v'$, ocupando s\'olo las aristas
     entre $V_{i}$ y $V_{i+1}$. Por lo tanto, el di\'ametro de $F_{k}(G)$ es, al
     menos, $\sum_{v\in A}(d_x(v')-d_x(v))= \sum_{w\in B}d_x(w)-\sum_{v\in
@@ -292,9 +292,9 @@ inducidas de $G$.
     \label{teo:PCartes}
     Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica $G$ tales
     que son ajenas dos a dos. Para todos los enteros $s_1, \dots, s_m$, tales
-    que $1 \leq s_i \leq |V(H_i)|$ y $\sum s_i = k$, se tiene que $F_{s_1}(H_1)
-    \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica inducida de
-    $F_k(G)$.
+    que $1 \leq s_i \leq |V(H_i)|$ y $\sum\limits_{i=1}^{m}  s_i = k$, se tiene
+    que $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica
+    inducida de $F_k(G)$.
 \end{teorema}
 
 \begin{proof}
@@ -302,32 +302,32 @@ inducidas de $G$.
     s_m \in \mathbb{Z}$ como en el enunciado. Al conjunto de los
     $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
     $H_i$, para $i \in \{1, \dots, m\}$, lo llamamos $L$, i.e., $L = \{A
-    \subseteq G \colon\ |A\cap H_1|=s_1 , |A \cap H_2|=s_2, \dots, |A \cap
-    H_m|=m \}$. Observamos que, debido a  que $\sum s_i = k$, todo elemento de
-    $L$ tiene cardinalidad $k$. Buscamos ver que la subgr\'afica inducida de
-    $F_k(G)$ por $L$, i.e., $F_k(G,L)$, es isomorfa a $F_{s_1}(H_1) \square
-    \cdots \square F_{s_m}(H_m)$. Primero, analizamos el conjunto de v\'ertices
-    de ambas gr\'aficas de fichas. Sea $A \in V(F_k(G,L))$, de tal manera que
-    $A=\{a_1, \dots, a_{s_1}, b_1,\dots, b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$.
-    Por definici\'on, $|A \cap V(H_i)|= s_i$, para $i \in \{1, \dots, m\}$.
-    Adem\'as, sabemos que cada v\'ertice de $F_{s_i}(H_i)$ tiene cardinalidad
-    $s_i$, para $i \in \{1, \dots, m\}$, por lo que tenemos que $A \in V(H_1)
-    \times \cdots \times V(H_m)$. De manera an\'aloga, si tomamos $A \in V(H_1)
-    \times \cdots \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i
-    \in F_{s_i}(H_i)$. De lo anterior, tenemos que $A \cap V(H_i) = A'_i$, por
-    lo que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
-    Adicionalmente, tenemos que $|A|= k$, puesto que $\sum s_i = k$. Por lo
-    tanto, $A \in V(F_k(G,L))$.
+    \subseteq G \colon\ |A\cap V(H_1)|=s_1 , |A \cap V(H_2)|=s_2, \dots, |A \cap
+    V(H_m)|=m \}$. Observamos que, debido a  que $\sum\limits_{i=1}^{m} s_i = k$,
+    todo elemento de $L$ tiene cardinalidad $k$. Buscamos ver que la
+    subgr\'afica inducida de $F_k(G)$ por $L$, i.e., $F_k(G,L)$, es isomorfa a
+    $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$. Primero, analizamos el
+    conjunto de v\'ertices de ambas gr\'aficas de fichas. Sea $A \in
+    V(F_k(G,L))$, de tal manera que $A=\{a_1, \dots, a_{s_1}, b_1,\dots,
+    b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por definici\'on, $|A \cap V(H_i)|=
+    s_i$, para $i \in \{1, \dots, m\}$. Adem\'as, sabemos que cada v\'ertice de
+    $F_{s_i}(H_i)$ tiene cardinalidad $s_i$, para $i \in \{1, \dots, m\}$, por
+    lo que tenemos que $A \in V(H_1) \times \cdots \times V(H_m)$. De manera
+    an\'aloga, si tomamos $A \in V(H_1) \times \cdots \times V(H_m)$, $A =
+    \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i \in F_{s_i}(H_i)$. De lo anterior,
+    tenemos que $A \cap V(H_i) = A'_i$, por lo que $|A \cap V(H_i)|= s_i$, para
+    toda $i \in \{1, \dots, m\}$. Adicionalmente, tenemos que $|A|= k$, puesto
+    que $\sum\limits_{i=1}^{m} s_i = k$. Por lo tanto, $A \in V(F_k(G,L))$.
 
     Ahora, nos enfocamos en la relaci\'on entre las aristas de ambas gr\'aficas
-    de fichas. Sean $B, C \in A \in V(F_k(G,L))$, tales que $BC \in
-    E(F_k(G,L))$, en otras palabras, existen $b \in B$ y $c \in C$, tales que $B
-    \triangle C = \{b, c\}$ y $bc \in E(G,L)$. Por definici\'on, tenemos que
-    $H_i \cap H_j = \varnothing$, con $i \neq j$, por lo que $b, c \in H_i$.
-    Esto significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j \in
-    \{1, \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es
-    una arista en la subgr\'afica de fichas inducida por $H_i$. Como $H_i \cap
-    H_j = \varnothing$, para $i \neq j$, entonces la subgr\'afica de fichas
+    de fichas. Sean $B, C \in V(F_k(G,L))$, tales que $BC \in E(F_k(G,L))$, en
+    otras palabras, existen $b \in B$ y $c \in C$, tales que $B \triangle C =
+    \{b, c\}$ y $bc \in E(G,L)$. Por definici\'on, tenemos que $V(H_i) \cap
+    V(H_j) = \varnothing$, con $i \neq j$, por lo que $b, c \in V(H_i)$. Esto
+    significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j \in \{1,
+    \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es una
+    arista en la subgr\'afica de fichas inducida por $H_i$. Como $V(H_i) \cap
+    V(H_j) = \varnothing$, para $i \neq j$, entonces la subgr\'afica de fichas
     inducida por $H_i$ es isomorfa a $F_{s_i}(H_i)$. Al tener el resto de las
     fichas est\'aticas, tenemos que $BC \in E(F_{s_1}(H_1) \square \cdots
     \square F_{s_m}(H_m))$.
@@ -463,7 +463,7 @@ siguientes dos lemas nos son de utilidad.
     que $P$ no es la arista $ab$, entonces tenemos que $P \setminus \{a,b\} \neq
     \varnothing$. Por lo tanto, tenemos que todo v\'ertice interno de $A
     \xrightarrow[P]{} A'$ tiene alg\'un v\'ertice de $P \setminus \{a, b\}$. Por
-    otra parte, ya que $P$ y $Q$ son internamente ajenos y s\'olo comparten el
+    otra parte, ya que $P$ y $Q$ son internamente ajenas y s\'olo comparten el
     v\'ertice $a$ con $A$, ning\'un v\'ertice interno de $A \xrightarrow[Q]{}
     A'$ tiene un v\'ertice de $P \setminus \{a, b\}$. Luego, cada v\'ertice
     interno de ambas trayectorias tiene intersecci\'on vac\'ia con $A$.
@@ -541,14 +541,14 @@ demostrar el resultado principal de esta secci\'on.
         
     \end{tikzpicture}
 
-\caption{Una bigr\'afica completa, resaltando la uni\'on de aristas
+\caption{Una gr\'afica bipartita completa, resaltando la uni\'on de aristas
 ${\color{fushia} \bf rojas}$ y ${\color{azulMetal}\bf azules}$ mencionadas en
 \cref{lem:rb-bipGraph}.}
 \label{fig:ex-rb-bioGraph}       
 \end{figure}
 
 Para aclarar \cref{lem:rb-bipGraph}, \cref{fig:ex-rb-bioGraph} muestra una
-gr\'afica bipartita con bipartici\'on $({\color{crema}
+gr\'afica bipartita completa con bipartici\'on $({\color{crema}
 \boldsymbol{X}},{\color{baige} \boldsymbol {Y}})$, con ${\color{crema}
 \boldsymbol {X}}=\{v_5, v_6,v_7, v_8, v_9, _{10}\}$ y ${\color{baige}
 \boldsymbol {Y}}=\{v_1, v_2, v_3, v_4\}$. Sea ${\color{azulMetal} \boldsymbol
@@ -675,8 +675,8 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     )\setminus \{v\}) \cap Y_{v'}'= \varnothing$, tenemos que $x' \in \{x,y\}$.
     An\'alogamente, como $(A \cap B) \cap P_i = \varnothing$, tenemos que $y'\in
     \{x, y\}$. Por lo tanto, tenemos $\{x,y\}= \{x',y'\}$. Esto implica que
-    $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, entonces $v = v'$.
-    Esto implica que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
+    $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, as\'i $v = v'$.
+    Se sigue que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
     v\'ertice de $Y_v '$ es incidente en s\'olo una arista de $M_v$, por lo que
     $x \neq x'$ y $i \neq i'$. Como tenemos que $\{x, y\}=\{x', y'\}$, entonces
     $x=y'$ y $y=x'$. Por ello, tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo
@@ -869,8 +869,8 @@ $|\mathcal{C}| \geq t$.
 
 Ahora, consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
 =\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
-definimos $A_{i,x} = A\setminus \{a_i\} \cup \{x\}$ y $B_{j,x} = B\setminus
-\{b_j\} \cup \{x\}$, para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
+definimos $A_{i,x} = (A\setminus \{a_i\}) \cup \{x\}$ y $B_{j,x} = (B\setminus
+\{b_j\}) \cup \{x\}$, para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
 (A\cup B)$. Supongamos que, para algunos $i, j$ y $x$, tenemos que $A_{i,x}
 \notin \mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} =
 \{a_i, x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$, por
