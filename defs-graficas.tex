@@ -10,7 +10,7 @@ finitos $(V(G), E(G))$, donde $V(G)$ es no vac\'io y $E(G) \subseteq
 \binom{V(G)}{2}$. A la cardinalidad de $V(G)$ se le llama
 \indiceSub{gr\'afica}{orden} de $G$ y sus elementos son llamados
 \indice{v\'ertices}. A los elementos de $E(G)$ se les conoce como
-\indice{aristas}. Para una arista $e$ y v\'ertices $u, v$ de $G$, decimos que
+\indice{aristas}. Para una arista $e$ y v\'ertices $u$ y $v$ de $G$, decimos que
 $e$ es \indiceSub{aristas}{incidente} en $u$ y en $v$ si $e= \{u, v\}$. A su
 vez, los v\'ertices $u$ y $v$ son \indiceSub{v\'ertices}{extremos} de la arista
 $e$. De igual manera, podemos decir que $u$ y $v$ son \textbf{v\'ertices}
@@ -142,7 +142,7 @@ una \indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
 \indice{supergr\'afica} de $H$. Esta relaci\'on se denota con la misma
 notaci\'on que para subconjuntos, es decir, $H \subseteq G$. Cuando una
 subgr\'afica tiene el mismo conjunto de v\'ertices que la gr\'afica, es decir,
-$H \subseteq G$ y $V(H)= V(G)$, entonces decimos que es una
+$H \subseteq G$ y $V(H)= V(G)$, entonces decimos que $H$ es una
 \textbf{subgr\'afica} \indiceSub{subgr\'afica}{generadora}. Otro concepto que se
 deriva de las subgr\'aficas parte de fijarnos en la subgr\'afica que tiene la
 mayor cantidad de aristas posibles. Formalmente hablando, nos referimos a $H$,
@@ -212,24 +212,23 @@ ${\color{azulCielo}\boldsymbol {H'}}$ le falta la arista ${\color{grisOscuro!80}
     decimos que $S$ es un \indice{conjunto independiente} si cualesquiera dos
     v\'ertices de $S$ no son adyacentes. Esto quiere decir que todos los
     elementos de $S$ tienen grado $0$ en $G[S]$. La cardinalidad del conjunto
-    independiente m\'as grande de una gr\'afica se llama \indice{n\'umero de
-    independencia} y se denota $\alpha$. Por otro lado, decimos que $S$ es un
-    \indice{clan} si cualesquiera dos v\'ertices en $S$ son adyacentes. En este
-    caso, el grado de todo v\'ertice de $S$ en $G[S]$ es $|S-1|$. De manera
-    an\'aloga a los conjuntos independientes, la cardinalidad del clan con mayor
-    n\'umero de elementos de una gr\'afica es el \indice{n\'umero de clan} y se
-    denota $\omega$. En \cref{fig:ClanInd} se muestra un ejemplo de un
-    ${\color{coral}\bf {clan}}$ y un ${\color{verde}\bf
-    {conjunto}}$ ${\color{verde}\bf {independiente}}$ de una gr\'afica,
+    independiente m\'as grande de una gr\'afica $G$ se llama \indice{n\'umero de
+    independencia} y se denota $\alpha (G)$. Por otro lado, decimos que $S$ es
+    un \indice{clan} si cualesquiera dos v\'ertices en $S$ son adyacentes. En
+    este caso, el grado de todo v\'ertice de $S$ en $G[S]$ es $|S-1|$. De manera
+    an\'aloga a los conjuntos independientes, a la cardinalidad del clan con
+    mayor n\'umero de elementos de una gr\'afica $G$ se le llama
+    \indice{n\'umero de clan} y se denota $\omega(G)$. En \cref{fig:ClanInd} se
+    muestra un ejemplo de un ${\color{coral}\bf {clan}}$ y un ${\color{verde}\bf
+    {conjunto}}$ ${\color{verde}\bf {independiente}}$ de una gr\'afica $G$,
     resaltados de color naranja y verde, respectivamente. Es f\'acil observar
-    que el ${\color{verde}\bf {conjunto}}$ ${\color{verde}\bf
-    {independiente}}$ no es el conjunto independiente m\'as grande que podemos
-    obtener, pues podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un
-    conjunto independiente. De igual manera, podemos notar que existe un clan
-    con cardinalidad mayor al ${\color{coral}\bf {clan}}$ mostrado. Este
-    clan, que llamamos $K$, est\'a mostrado con el per\'imetro de los v\'ertices
-    de color ${\color{azulCielo}\bf {azul}}$. Es f\'acil ver que $|K| =
-    \omega$.
+    que el ${\color{verde}\bf {conjunto}}$ ${\color{verde}\bf {independiente}}$
+    no es el conjunto independiente m\'as grande que podemos obtener, pues
+    podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un conjunto
+    independiente. De igual manera, podemos notar que existe un clan con
+    cardinalidad mayor al ${\color{coral}\bf {clan}}$ mostrado. Este clan, que
+    llamamos $K$, est\'a mostrado con el per\'imetro de los v\'ertices de color
+    ${\color{azulCielo}\bf {azul}}$. Es f\'acil ver que $|K| = \omega (G)$.
 
 
 \begin{figure}[ht!]
@@ -310,12 +309,14 @@ tienen la misma longitud. El usar trayectorias es una mejor aproximaci\'on al
 concepto de ``cercan\'ia'' entre v\'ertices, sin embargo, se puede tener el caso
 que haya m\'ultiples trayectorias de distintas longitudes entre dos v\'ertices.
 Definimos la \indice{distancia} entre dos v\'ertices $u$ y $v$ de una gr\'afica,
-denotada $d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. Sea $P$
-una trayectoria en una gr\'afica, decimos que $P$ no tiene \indice{cuerdas} si
-la subgr\'afica inducida por $V(P)$ tiene grado m\'aximo 2. Observamos que
-cualquier trayectoria de longitud m\'inima entre dos v\'ertices no tiene
-cuerdas. Adicionalmente, podemos darle un ``tama\~{n}o'' a una gr\'afica $G$ al
-definir su \indice{di\'ametro} como $\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
+denotada $d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. En caso
+de que no existan $uv$-trayectorias en la gr\'afica, decimos que la distancia
+entre $u$ y $v$ es infinito. Sea $P$ una trayectoria en una gr\'afica, decimos
+que $P$ no tiene \indice{cuerdas} si la subgr\'afica inducida por $V(P)$ tiene
+grado m\'aximo 2. Observamos que cualquier trayectoria de longitud m\'inima
+entre dos v\'ertices no tiene cuerdas. Adicionalmente, podemos darle un
+``tama\~{n}o'' a una gr\'afica $G$ al definir su \indice{di\'ametro} como
+$\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
 
 La siguiente proposici\'on nos muestra una relaci\'on entre caminos y
 trayectorias.
@@ -460,35 +461,37 @@ gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
 es un subconjunto de $V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el
 conjunto $S$ \indice{separa} a la gr\'afica en dos o m\'as componentes conexas.
 Decimos que $S$ es un $k$\textbf{-corte por v\'ertices}\index{corte por
-v\'ertices!k @ $k$-corte}\index{v\'ertices!k @$k$-corte} si $|S|=k$. A un corte
-por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$ se le llama
-$uv$\textbf{-corte por v\'ertices}\index{corte por v\'ertices!u
-@$uv$-corte}\index{v\'ertices!u @$uv$-corte}. La m\'inima cardinalidad de un
-$uv$-corte por v\'ertices se denota $c(u,v)$ y no est\'a definida si $u$ y $v$
-son adyacentes o $x=y$. Tambi\'en pueden existir cortes por v\'ertices entre dos
-conjuntos de v\'ertices. Sean $X,Y \subseteq V(G)$, $S$ es un $XY$\textbf{-corte
-por v\'ertices}\index{corte por v\'ertices!X @$XY$-corte}\index{v\'ertices!X
-@$XY$-corte} si $G-S$ es una gr\'afica inconexa donde $X$ y $Y$ se encuentran en
-distintas componentes conexas. Cabe notar que no todas las gr\'aficas tienen
-alg\'un corte por v\'ertices, a saber, las gr\'aficas en las que cualesquiera
-dos v\'ertices son adyacentes no tienen cortes por v\'ertices, y son las
-\'unicas con esta propiedad. Ahora, usando el concepto de corte por v\'ertices,
-definimos la conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de
-una gr\'afica $G$, denotado por $\kappa(G)$, se define como la m\'inima
-cardinalidad de un conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S|
-\colon\ S \textnormal{ es corte por v\'ertices}\}$. Como ya se observ\'o, las
-gr\'aficas completas no tienen cortes por v\'ertices, no obstante, por
-convenci\'on decimos que una gr\'afica completa de $n$ v\'ertices tiene n\'umero
-de conexidad $n-1$. Por otra parte, el vac\'io es un corte por v\'ertices en
-cualquier gr\'afica inconexa, por lo que una gr\'afica inconexa tiene n\'umero
-de conexidad $0$. Adicionalmente, decimos que una gr\'afica $G$ es
-$t$\textbf{-conexa} \index{gr\'afica!t @$t$-conexa} si $|G|>t$ y $G-X$ es conexa
-para todo conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el
-conecpto de conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
-\cref{fig:subgraf}. Notamos que ambas son conexas, sin embargo, necesitamos
-m\'as v\'ertices para ``desconectar'' la gr\'afica de \cref{fig:subgraf} que las
-gr\'aficas de \cref{fig:isoGraf}. A saber, las gr\'aficas de \cref{fig:isoGraf}
-son $2$-conexas y la gr\'afica de \cref{fig:subgraf} es $6$-conexa.
+v\'ertices!k @ $k$-corte}\index{v\'ertices!k @$k$-corte} si $|S|=k$. Un corte
+por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$ es un corte por
+v\'ertices que deja a $u$ y a $v$ en diferentes componentes conexas. A este
+corte por v\'ertices se le llama $uv$\textbf{-corte por v\'ertices}\index{corte
+por v\'ertices!u @$uv$-corte}\index{v\'ertices!u @$uv$-corte}. La m\'inima
+cardinalidad de un $uv$-corte por v\'ertices se denota $c(u,v)$ y no est\'a
+definida si $u$ y $v$ son adyacentes o $x=y$. Tambi\'en pueden existir cortes
+por v\'ertices entre dos conjuntos de v\'ertices. Sean $X,Y \subseteq V(G)$, $S$
+es un $XY$\textbf{-corte por v\'ertices}\index{corte por v\'ertices!X
+@$XY$-corte}\index{v\'ertices!X @$XY$-corte} si $G-S$ es una gr\'afica inconexa
+donde $X$ y $Y$ se encuentran en distintas componentes conexas. Cabe notar que
+no todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber, las
+gr\'aficas en las que cualesquiera dos v\'ertices son adyacentes no tienen
+cortes por v\'ertices, y son las \'unicas con esta propiedad. Ahora, usando el
+concepto de corte por v\'ertices, definimos la conexidad de una gr\'afica. El
+\indice{n\'umero de conexidad} de una gr\'afica $G$, denotado por $\kappa(G)$,
+se define como la m\'inima cardinalidad de un conjunto de corte de $G$, es
+decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por v\'ertices}\}$.
+Como ya se observ\'o, las gr\'aficas completas no tienen cortes por v\'ertices,
+no obstante, por convenci\'on decimos que una gr\'afica completa de $n$
+v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io es un
+corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una gr\'afica
+inconexa tiene n\'umero de conexidad $0$. Adicionalmente, decimos que una
+gr\'afica $G$ es $t$\textbf{-conexa} \index{gr\'afica!t @$t$-conexa} si
+$|V(G)|>t$ y $G-X$ es conexa para todo conjunto de v\'ertices $X$ tal que
+$|X|<t$. Para ejemplificar el conecpto de conexidad nos fijamos en las
+gr\'aficas en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son
+conexas, sin embargo, necesitamos m\'as v\'ertices para ``desconectar'' la
+gr\'afica de \cref{fig:subgraf} que las gr\'aficas de \cref{fig:isoGraf}. A
+saber, las gr\'aficas de \cref{fig:isoGraf} son $2$-conexas y la gr\'afica de
+\cref{fig:subgraf} es $6$-conexa.
 
 Otra manera de abordar el tema de ``desconectar'' una gr\'afica es  pensar en
 las trayectorias internamente ajenas, pues la cantidad de trayectorias
@@ -804,9 +807,10 @@ pasamos a demostrarla.
 
 \begin{proposicion}
 \label{prop:HUnion-SSubG}
-    Sean $H \subseteq G$ y $H'\subseteq G'$ subgr\'aficas generadoras, entonces
-    la uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la
-    uni\'on completa de $G$ y $G'$.
+    Sean $H$, $H'$, $G$ y $G'$ cuatro gr\'aficas. Si $H$ y $H'$ son
+    subgr\'aficas generadoras de $G$ y $G'$, respectivamente, entonces la
+    uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la uni\'on
+    completa de $G$ y $G'$.
 \end{proposicion}
 
 \begin{proof}
@@ -992,8 +996,8 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 \cref{prop:bip-compConect}. 
 \begin{proposicion}
 \label{prop:bip-compConect}
-    Sea $G$ una gr\'afica, entonces $G$ es bipartita si y s\'olo si cada
-    componente conexa de $G$ es bipartita.
+    Sea $G$ una gr\'afica, $G$ es bipartita si y s\'olo si cada componente
+    conexa de $G$ es bipartita.
 \end{proposicion}
 
 \begin{proof}
@@ -1003,8 +1007,8 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
     es inconexa, i.e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
     \dots, G_n$ las componentes conexas de $G$, con $n \geq 2$. Empezamos
     suponiendo que $G$ es una gr\'afica bipartita con bipartici\'on $(X,Y)$.
-    Sean $X_i, Y_i\subseteq G_i$, tales que $X_i \subseteq X$ y $Y_i \subseteq
-    Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
+    Sean $X_i, Y_i\subseteq V(G_i)$, tales que $X_i \subseteq X$ y $Y_i
+    \subseteq Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
     partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i = \varnothing$, pues
     $X \cap Y = \varnothing$ por definici\'on de partici\'on. Adem\'as, de
     manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego, sean $a \in
@@ -1015,15 +1019,15 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 
     Ahora nos enfocamos en la segunda implicaci\'on, es decir, si $G_i$ es una
     gr\'afica bipartita, para $i \in \{1, \dots, n\}$, entonces $G$ tambi\'en lo
-    es. Proponemos la bipartici\'on $(X,Y)$ para $G$ donde $X = \bigcup X_i$ y
-    $Y =\bigcup Y_i$. Nos fijamos en que $X \cup Y = \bigcup V(G_i)=V(G)$. De
-    manera an\'aloga $X \cap Y = \varnothing$. Por \'ultimo, dados $u,v \in X$
-    tenemos que $u \in X_i$ y $v \in X_j$, para algunos $i,j \in \{1,
-    \dots,n\}$. Si $i \neq j$, entonces los v\'ertices est\'an en distintas
-    componentes conexas, por lo que no son adyacentes. Si $j=i$, entonces
-    tenemos que $u,v \in X_i$, por lo que tampoco son adyacentes. An\'alogamente
-    si $u,v \in Y$. Con esto tenemos que $(X,Y)$ es una bipartici\'on de $G$; en
-    otras palabras, $G$ es bipartita.
+    es. Proponemos la bipartici\'on $(X,Y)$ para $G$ donde $X =
+    \bigcup\limits_{i} X_i$ y $Y =\bigcup\limits_{i}  Y_i$. Nos fijamos en que $X \cup
+    Y = \bigcup \limits_{i}  V(G_i)=V(G)$. De manera an\'aloga $X \cap Y =
+    \varnothing$. Por \'ultimo, dados $u,v \in X$ tenemos que $u \in X_i$ y $v
+    \in X_j$, para algunos $i,j \in \{1, \dots,n\}$. Si $i \neq j$, entonces los
+    v\'ertices est\'an en distintas componentes conexas, por lo que no son
+    adyacentes. Si $j=i$, entonces tenemos que $u,v \in X_i$, por lo que tampoco
+    son adyacentes. An\'alogamente si $u,v \in Y$. Con esto tenemos que $(X,Y)$
+    es una bipartici\'on de $G$; en otras palabras, $G$ es bipartita.
 \end{proof}
 
 La Proposici\'on\ref{prop:bip-compConect} nos permite estudiar a las gr\'aficas
