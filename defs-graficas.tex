@@ -160,11 +160,11 @@ subgr\'afica $H$ se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un
 conjunto unitario, i.e., el caso en el que le quitamos un solo v\'ertice $v$ a
 $G$. En este caso escribimos $G-v$, en vez de $G-\{v\}$. A continuaci\'on se
 muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
-${\color{morado}\bf H}$ es una subgr\'afica inducida con $V(H) =
-\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}\bf H'}$ es una subgr\'afica con
+${\color{morado}\boldsymbol {H}}$ es una subgr\'afica inducida con $V(H) =
+\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{ H'}}}$ es una subgr\'afica con
 $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a
-${\color{azulCielo}\bf H'}$ le falta la arista ${\color{grisOscuro!80}\bf
-v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida. 
+${\color{azulCielo}\boldsymbol {H'}}$ le falta la arista ${\color{grisOscuro!80}\boldsymbol
+{v_5v_7}}$, resaltada en la figura, para ser una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
     \centering
@@ -197,7 +197,7 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
                 
     \end{tikzpicture}
     \caption{Una gr\'afica en la que se resalta una subgr\'afica inducida,
-    ${\color{morado}\bf H}$, y una subgr\'afica, ${\color{azulCielo}\bf H'}$.}
+    ${\color{morado}\boldsymbol {H}}$, y una subgr\'afica, ${\color{azulCielo}\boldsymbol {H'}}$.}
     \label{fig:subgraf}
 \end{figure}
 
@@ -219,16 +219,17 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
     an\'aloga a los conjuntos independientes, la cardinalidad del clan con mayor
     n\'umero de elementos de una gr\'afica es el \indice{n\'umero de clan} y se
     denota $\omega$. En \cref{fig:ClanInd} se muestra un ejemplo de un
-    ${\color{coral}\bf clan}$y un ${\color{verde}\bf conjunto}$
-    ${\color{verde}\bf independiente}$ de una gr\'afica, resaltados de color
-    naranja y verde, respectivamente. Es f\'acil observar que el
-    ${\color{verde}\bf conjunto}$ ${\color{verde}\bf independiente}$ no es el
-    conjunto independiente m\'as grande que podemos obtener, pues podr\'iamos
-    agregar el v\'ertice $v_2$ y seguir\'ia siendo un conjunto independiente. De
-    igual manera, podemos notar que existe un clan con cardinalidad mayor al
-    ${\color{coral}\bf clan}$ mostrado. Este clan, que llamamos $K$, est\'a
-    mostrado con el per\'imetro de los v\'ertices de color
-    ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| = \omega$.
+    ${\color{coral}\bf {clan}}$ y un ${\color{verde}\bf
+    {conjunto}}$ ${\color{verde}\bf {independiente}}$ de una gr\'afica,
+    resaltados de color naranja y verde, respectivamente. Es f\'acil observar
+    que el ${\color{verde}\bf {conjunto}}$ ${\color{verde}\bf
+    {independiente}}$ no es el conjunto independiente m\'as grande que podemos
+    obtener, pues podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un
+    conjunto independiente. De igual manera, podemos notar que existe un clan
+    con cardinalidad mayor al ${\color{coral}\bf {clan}}$ mostrado. Este
+    clan, que llamamos $K$, est\'a mostrado con el per\'imetro de los v\'ertices
+    de color ${\color{azulCielo}\bf {azul}}$. Es f\'acil ver que $|K| =
+    \omega$.
 
 
 \begin{figure}[ht!]
@@ -347,20 +348,20 @@ Por \cref{prop:CamTray}, sabemos que, cada que hablamos de caminos, siempre hay
 una trayectoria contenida. Por esta raz\'on, de ahora en adelante nos enfocamos
 en trayectorias. Como se mencion\'o anteriormente, entre dos v\'ertices $u$ y
 $v$ pueden existir m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
-\textbf{$uv$-trayectorias} \indiceSub{u @$uv$-trayectoria}{internamente ajenas} si
-$V(X)\cap V(Y)=\{u,v\}$, i.e. los v\'ertices en com\'un entre $X$ y $Y$ son
+\textbf{$uv$-trayectorias} \indiceSub{u @$uv$-trayectoria}{internamente ajenas}
+si $V(X)\cap V(Y)=\{u,v\}$, i.e. los v\'ertices en com\'un entre $X$ y $Y$ son
 \'unicamente sus extremos. El m\'aximo n\'umero de $uv$-trayectorias
 internamente ajenas se denota por $p(u,v)$. Tambi\'en podemos definir un
 concepto similar enfoc\'andonos en aristas. Llamamos \textbf{$uv$-trayectorias}
-\indiceSub{u @$uv$-trayectoria}{ajenas por aristas} a dos o m\'as $uv$-trayectorias
-que no tengan aristas en com\'un. Estos conceptos nos sevir\'an m\'as adelante
-cuando hablemos de conexidad. Adicionalmente, siempre podemos recorrer una
-trayectoria en sentido contrario, es decir, empezando por el \'ultimo v\'ertice
-y terminando por el primero. Al recorrer la trayectoria de esta manera obtenemos
-una nueva trayectoria. Formalmente hablando, teniendo una $uv$-trayectoria $X$,
-su \textbf{trayectoria} \indiceSub{trayectoria}{inversa}, a la cu\'al denotamos
-$X^{-1}$, es una $vu$-trayectoria que tiene los mismos v\'ertices y aristas que
-$X$.
+\indiceSub{u @$uv$-trayectoria}{ajenas por aristas} a dos o m\'as
+$uv$-trayectorias que no tengan aristas en com\'un. Estos conceptos nos
+sevir\'an m\'as adelante cuando hablemos de conexidad. Adicionalmente, siempre
+podemos recorrer una trayectoria en sentido contrario, es decir, empezando por
+el \'ultimo v\'ertice y terminando por el primero. Al recorrer la trayectoria de
+esta manera obtenemos una nueva trayectoria. Formalmente hablando, teniendo una
+$uv$-trayectoria $X$, su \textbf{trayectoria} \indiceSub{trayectoria}{inversa},
+a la cu\'al denotamos $X^{-1}$, es una $vu$-trayectoria que tiene los mismos
+v\'ertices y aristas que $X$.
 
 Algo interesante de observar es que, a pesar de que las trayectorias las
 definimos a partir de tener a v\'ertices como extremos, tambi\'en se pueden
@@ -399,25 +400,27 @@ $P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si $V(P) \cap X= \{v_1\}$ y $V(P)
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Una gr\'afica,resaltando las ${\color{morado}\bf aristas}$ de un
-    ${\color{coral}\bf v_3 v_5}$-camino con su ${\color{coral}\bf v_3
-    v_5}$-trayectoria contenida, resaltando
+    \caption{Una gr\'afica,resaltando las ${\color{morado}\bf
+    {aristas}}$ de un ${\color{coral}\boldsymbol {v_3 v_5}}$-camino con su
+    ${\color{coral}\boldsymbol {v_3 v_5}}$-trayectoria contenida, resaltando
     ${\color{morado}\textbf{v\'ertices}}$ de \'esta \'ultima.  Tambi\'en se
-    resalta una ${\color{coral}\bf v_3 v_5}$-trayectoria sin cuerdas de color
-    ${\color{verde}\bf verde}$.}
+    resalta una ${\color{coral}\boldsymbol {v_3 v_5}}$-trayectoria sin cuerdas
+    de color ${\color{verde}\bf {verde}}$.}
     \label{fig:ex-caminos}
 \end{figure}
     
 En \cref{fig:ex-caminos} podemos ver un ejemplo de \cref{prop:CamTray}, donde se
-resaltan las aristas de ${\color{morado}\bf morado}$ de un $v_3 v_5$-camino y
-donde, para mostrar una trayectoria contenida, se resaltan los v\'ertices de
-${\color{morado}\textbf{morado}}$ de la $v_3 v_5$-trayectoria contenida.
-Adicionalmente, en la misma figura se observan dos ${\color{coral}\bf v_3
-v_5}$-trayectorias internamente ajenas. Ambas est\'an representadas con sus
-v\'ertices internos coloreados del mismo color, una de ${\color{morado}\bf
-morado}$ y la otra de ${\color{verde}\bf verde}$. Notamos que la
-${\color{morado}\textbf{trayectoria morada}}$ tiene cuerdas, entre ellas, la
-arista $v_8v_5$. Por otro lado, la ${\color{verde}\textbf{trayectoria verde}}$
+resaltan las aristas de ${\color{morado}\boldsymbol {morado}}$ de un $v_3
+v_5$-camino y donde, para mostrar una trayectoria contenida, se resaltan los
+v\'ertices de ${\color{morado}\textbf{morado}}$ de la $v_3 v_5$-trayectoria
+contenida. Adicionalmente, en la misma figura se observan dos
+${\color{coral}\boldsymbol {v_3 v_5}}$-trayectorias internamente ajenas. Ambas
+est\'an representadas con sus v\'ertices internos coloreados del mismo color,
+una de ${\color{morado}\bf {morado}}$ y la otra de
+${\color{verde}\bf {verde}}$. Notamos que la
+${\color{morado}\bf{trayectoria}}$ ${\color{morado}\bf
+{morada}}$ tiene cuerdas, entre ellas, la arista $v_8v_5$. Por otro lado, la
+${\color{verde}\bf{trayectoria}}$ ${\color{verde}\bf {verde}}$
 no tiene cuerdas y tiene la longitud m\'as corta entre $v_3$ y $v_5$, de donde
 obtenemos que la distancia entre $v_3$ y $v_5$ es $2$.
 
@@ -498,10 +501,10 @@ copias de una gr\'afica, donde cada copia busca la manera de separar los
 v\'ertices $\color{verde} \bf v_1$ y $\color{verde} \bf v_5$ utilizando
 conceptos diferentes. Del lado izquierdo se muestran tres $v_1v_5$-trayectorias
 internamente ajenas, cada una resaltada de un color diferente. Del lado derecho
-se muestra el corte por v\'ertices ${\color{morado}\bf \{v_2, v_6, v_7\} }$,
-donde cada v\'ertice est\'a relleno de morado. Observemos que cada v\'ertice del
-corte por v\'ertices se encuentra en una $v_1v_5$-trayectoria que es
-internamente ajena de las dem\'as. Para facilitar esta visualizaci\'on, cada
+se muestra el corte por v\'ertices ${\color{morado}\boldsymbol {\{v_2, v_6,
+v_7\} }}$, donde cada v\'ertice est\'a relleno de morado. Observemos que cada
+v\'ertice del corte por v\'ertices se encuentra en una $v_1v_5$-trayectoria que
+es internamente ajena de las dem\'as. Para facilitar esta visualizaci\'on, cada
 v\'ertice del corte por v\'ertices tiene el per\'imetro del mismo color que la
 $v_1v_5$-trayectoria internamente ajena a la que nos referimos. La relaci\'on
 entre la cantidad de trayectorias internamente ajenas entre cualesquiera dos
@@ -829,11 +832,12 @@ $V(H)$, es decir, $V(G \square H) = V(G) \times V(H)$. Adem\'as,
 $(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y s\'olo si $g_1 = g_2$ y
 $h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A continuaci\'on, en
 \cref{fig:ex-cartesiano}, se muestran tres gr\'aficas, la primera del lado
-izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\bf{v_1}},
-{\color{coral}\bf{v_2}}\}$ y la segunda en la parte inferior y con conjunto de
-v\'ertices $\{{\color{amarillo}\bf{w_1}},{\color{morado}\bf{w_2}}\}$. Estas dos
-gr\'aficas son copias de la gr\'afica $K_2$ (introducida formalmente en la
-siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
+izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\boldsymbol{{v_1}}},
+{\color{coral}\boldsymbol{{v_2}}}\}$ y la segunda en la parte inferior y con
+conjunto de v\'ertices
+$\{{\color{amarillo}\boldsymbol{{w_1}}},{\color{morado}\boldsymbol{{w_2}}}\}$.
+Estas dos gr\'aficas son copias de la gr\'afica $K_2$ (introducida formalmente
+en la siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
 gr\'afica, el producto cartesiano de las gr\'aficas antes mencionadas,
 resaltando de d\'onde vienen los v\'ertices de esta \'ultima gr\'afica.
 
@@ -913,7 +917,7 @@ de aristas.
 
     \end{tikzpicture}
     \caption{Dos gr\'aficas, $G$ (izquierda) y
-    $G/{\color{azulCielo}\textbf{e}}$ (derecha).}
+    $G/{\color{azulCielo}\boldsymbol{e}}$ (derecha).}
 \label{fig:ex-contract}
 \end{figure}
 
