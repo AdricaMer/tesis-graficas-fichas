@@ -996,8 +996,8 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 \cref{prop:bip-compConect}. 
 \begin{proposicion}
 \label{prop:bip-compConect}
-    Sea $G$ una gr\'afica, $G$ es bipartita si y s\'olo si cada componente
-    conexa de $G$ es bipartita.
+    Una gr\'afica $G$ es bipartita si y s\'olo si cada componente conexa de $G$
+    es bipartita.
 \end{proposicion}
 
 \begin{proof}
@@ -1114,9 +1114,9 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
     entre cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
     an\'alogas, por lo que s\'olo lo demostramos para $X$. Supongamos que
     existen $u,w \in X$, tales que $e=uw \in E(G)$. Sean $P$ una
-    $vu$-trayectoria y $Q$ una $vw$-trayectoria. Tomamos a $P$ y a $Q$ de
-    longitud m\'inima. Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas
-    trayectorias. Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
+    $vu$-trayectoria y $Q$ una $vw$-trayectoria, ambas de longitud m\'inima.
+    Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias.
+    Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
     \xrightarrow[Q]{}z$ tienen la misma longitud. Esto pues, si alguna tuviera
     menor longitud, sin p\'erdida de generalidad, tomamos a $v
     \xrightarrow[P]{}z$ con menor longitud, entonces tendr\'iamos que la
@@ -1267,12 +1267,12 @@ continuaci\'on demostrada.
     conexas de $G-S$ y sean $G_1, G_2, \cdots, G_ k$ dichas componentes conexas,
     con $k < n$. Nombramos $u_i$ al \'ultimo v\'ertice de $C$ que est\'a en
     $G_i$, para $i \in \{1, \dots, k\}$. Luego, sea $w_i$ el siguiente v\'ertice
-    en $C$. Observamos que $w_i \notin G_i$ por como se defini\'o. Adem\'as,
-    $w_i \notin G_j$, con $j \in \{1, \dots, k\}$ y $j \neq i$, por definici\'on
-    de componentes conexas. Por lo tanto, tenemos que $w_i$ es elemento de $S$.
-    Adem\'as, notamos que, al ser $C$ un ciclo, tenemos que $w_i \neq w_j$, para
-    diferentes $i,j \in \{1, \dots, k\}$. Por lo tanto, tenemos que $w_1, \dots,
-    w_k \in S$, en otras palabras, $k \leq |S|$. 
+    en $C$. Observamos que $w_i \notin V(G_i)$ por como se defini\'o. Adem\'as,
+    $w_i \notin V(G_j)$, con $j \in \{1, \dots, k\}$ y $j \neq i$, por
+    definici\'on de componentes conexas. Por lo tanto, tenemos que $w_i$ es
+    elemento de $S$. Adem\'as, notamos que, al ser $C$ un ciclo, tenemos que
+    $w_i \neq w_j$, para diferentes $i,j \in \{1, \dots, k\}$. Por lo tanto,
+    tenemos que $w_1, \dots, w_k \in S$, en otras palabras, $k \leq |S|$. 
 \end{proof} 
 
 \section{Coloraci\'on}
