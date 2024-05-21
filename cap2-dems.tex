@@ -18,9 +18,10 @@ siguiente lema.
 
 \begin{lema}%
 \label{lem:K3}
-    Sean $A$, $B$ y $C$ v\'ertices en $F_k(G)$, tales que son adyacentes dos a
-    dos, entonces se cumple s\'olo una de las siguientes relaciones: $B \cap C
-    \subset A$ o $A \subset B \cup C$.
+    Sean $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas. Si $A$, $B$ y
+    $C$ son v\'ertices en $F_k(G)$, tales que son adyacentes dos a dos, entonces
+    se cumple s\'olo una de las siguientes relaciones: $B \cap C \subset A$ o $A
+    \subset B \cup C$.
 \end{lema}
 
 \begin{proof}
@@ -54,10 +55,10 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
 
 \begin{teorema}
 \label{teo:clanG-clanFG}
-    Sea $X$ un conjunto de v\'ertices de $F_k(G)$, entonces $X$ es un clan de
-    $F_k(G)$ si y s\'olo si hay un clan $K$ de $G$ y un conjunto $S \subseteq
-    V(G)$, tales que $K \cap S = \varnothing$ y pasa uno de los siguientes
-    casos:
+    Sea $F_k(G)$ la gr\'afica de $k$-fichas de una gr\'afica $G$. Si $X$ es un
+    conjunto de v\'ertices de $F_k(G)$, entonces $X$ es un clan de $F_k(G)$ si y
+    s\'olo si hay un clan $K$ de $G$ y un conjunto $S \subseteq V(G)$, tales que
+    $K \cap S = \varnothing$ y pasa uno de los siguientes casos:
         \begin{enumerate}
             \item $X = \{S \cup \{v\}\colon\ v \in K\}$ y $|S| = k-1$
             \item $X = \{(S\cup K) \setminus \{v\}\colon\ v \in K \}$ y $|S| +
@@ -67,7 +68,7 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
 
 \begin{proof}
     Empezamos enfoc\'andonos en la primera implicaci\'on, es decir, dado $X$ un
-    clan de $F_k(G)$, demostramos que existe un clan $K$ de $G$ y un conjunto $V
+    clan de $F_k(G)$, demostramos que existe un clan $K$ de $G$ y un conjunto $S
     \subseteq V(G)$, tales que $K \cap S = \varnothing$ y ocurre alguno de los
     incisos del teorema. Si $|X|=2$, entonces $X= \{A, B\}$, para alg\'unos
     v\'ertices $A, B$ de $F_k(G)$, tales que $AB \in E(F_k(G))$. Definimos $K =
@@ -272,7 +273,7 @@ para el n\'umero de clan.
             
 \begin{teorema}
 \label{teo:clan-max}
-    Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
+    Si $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
     $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
 \end{teorema}
 
@@ -316,8 +317,8 @@ Este teorema se puede simplificar como se muestra en el siguiente corolario.
 
 \begin{corolario}
 \label{coro:numCrom}
-    Si asumimos $k \leq \frac{n}{2}$, entonces $\omega(F_k(G))= \min\{\omega(G),
-    n-k+1\}$.
+    Sean $G$ un agr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas. Si $k \leq
+    \frac{n}{2}$, entonces $\omega(F_k(G))= \min\{\omega(G), n-k+1\}$.
 \end{corolario}
 
 \begin{proof}
@@ -354,7 +355,7 @@ de $G$. Comenzamos con la cota superior de $ \chi (F_k(G))$.
     en $F_k(G)$, tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes,
     entonces $A \triangle B = \{a,b\}$, para algunos v\'ertices $a$ y $b$ de $G$
     , tales que $ab \in E(G)$. Al tomar $c'(A) = c'(B)$, tenemos que $\Sigma_{x
-    \in A}c(x) \equiv \Sigma_{y \in B}c(y) \mod \chi(G)$. Sin p\'erdida de
+    \in A}c(x) \equiv \Sigma_{y \in B}c(y) \pmod {\chi(G)}$. Sin p\'erdida de
     generalidad, consideramos $a \in A$ y $b \in B$, entonces podemos ver la
     congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
     \setminus\{a\}}c(x) \equiv c(b) + \Sigma_{y \in B\setminus\{b\}}c(y) \mod
@@ -500,7 +501,8 @@ de $\chi (G)$ para el caso general.
 
 \begin{teorema}
 \label{teo:numCrom-k}
-    Sea $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
+    Sea $G$ una gr\'afica. Si $F_k(G)$ es la gr\'afica de $k$-fichas de $G$,
+    entonces
     \[
         \chi(F_k(G)) \geq \frac{n-k+2}{n} \chi(G) -1.
     \]
@@ -514,7 +516,7 @@ de $\chi (G)$ para el caso general.
     \frac{n-1+2}{n} \chi(G) -1$.
         
     En segundo lugar, suponemos $k \geq 2$ y consideramos una coloraci\'on de
-    $\chi(G)$ colores en $G$. Nombramos $V_1 V_2, \dots, V_{\chi(G)}$ a las
+    $\chi(G)$ colores en $G$. Nombramos $V_1, V_2, \dots, V_{\chi(G)}$ a las
     clases crom\'aticas de $G$. Sin p\'erdida de generalidad, consideramos que
     $|V_1|\geq |V_2|\geq \cdots \geq |V_{\chi(G)}|$. Al tomar este orden, todo
     \'indice $m$ cumple que $\Sigma_{i=1}^{m}|V_i| \geq \frac{mn}{\chi(G)}$, con
@@ -531,10 +533,10 @@ de $\chi (G)$ para el caso general.
     tenemos que $\chi(G) \leq \chi(G[X])+\chi(G-X) \leq m' + \chi(G-X)$.
 
     Ahora, sabemos que $F_{k-r}(G-H) \cong F_k(G,H)$, donde $r = |X|$. En este
-    caso, $|X| = k-1$, por lo que tenemos que $F_1(G-X) \cong F_k(G,X)$.
-    Adem\'as, sabemos que $F_1(G) \cong G$. Por lo que tenemos que $G-X \cong
-    F_k(G,X)$, que es una subr\'afica de $F_k(G)$. Por lo tanto, tenemos que
-    $\chi(G) \leq m + \chi(G-X) = m' + \chi(F_k(G,X)) \leq m' + \chi(F_k(G))$. 
+    caso, $|X| = k-1$, as\'i tenemos que $F_1(G-X) \cong F_k(G,X)$. Adem\'as,
+    sabemos que $F_1(G) \cong G$. Lo que implica que $G-X \cong F_k(G,X)$, que
+    es una subr\'afica de $F_k(G)$. Por lo tanto, $\chi(G) \leq m + \chi(G-X) =
+    m' + \chi(F_k(G,X)) \leq m' + \chi(F_k(G))$. 
             
     Por otro lado, tenemos $\frac{(m'-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m'-1}|V_i|
     \leq k-2$. As\'i, $m'-1 \leq \frac{(k-2)}{n}\chi(G)$, de donde se sigue que
