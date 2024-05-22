@@ -31,7 +31,7 @@ siguiente lema.
     (B \cup C)$ y $b \in (B \cap C)\setminus A$. Notamos que $b \in B \setminus
     A$ y $b \in C \setminus A$. De manera an\'aloga, tenemos que $a \in A
     \setminus B$ y $a \in A \setminus C$. Por otro lado, sabemos que $A$ y $B$
-    son adyacentes en $F_k(G)$, de igual manera $A$ y $C$. Por lo tanto, tenemos
+    son adyacentes en $F_k(G)$, al igual que $A$ y $C$. Por lo tanto, tenemos
     que $A \triangle B = \{a,b\}$ y $A \triangle C = \{a, b\}$. As\'i pues, $(B
     \cup C \cup \{a\})\setminus \{b\} \subseteq A$. Pero $B$ y $C$ son
     adyacentes en $F_k(G)$, por lo que $|B \cup C| = k+1$. Luego, $|A| \geq
@@ -78,8 +78,8 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
     Ahora nos centramos en el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1,
     A_2, \dots, A_p\}$ donde $A_i{A_j} \in E(F_k(G))$, para cualesquiera $i\neq
     j$, con $i,j \in \{1, \dots, p\}$. Por \cref{lem:K3}, tenemos que $A_1\cap
-    A_2 \subset A_i$ o $A_i \subset A_1 \cup A_2$, para todo $i \in \{3 \dots,p
-    \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3, \dots,
+    A_2 \subset A_i$ o $A_i \subset A_1 \cup A_2$, para todo $i \in \{3, \dots,
+    p \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3, \dots,
     p\}$. Suponemos que tenemos el caso en el que $A_1\cap A_2 \subset A_i$ y
     $A_j \subset A_1 \cup A_2$. Denotamos por $a_1$ y $a_2$ a los v\'ertices en
     $G$ que forman la diferencia sim\'etrica de $A_1$ y $A_2$. Por un lado,
@@ -100,8 +100,8 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
     $S$ y un elemento que llamamos $v_i$. Notamos que, para cualesquiera dos
     elementos distintos $i, j \in \{1, \dots, p\}$, tenemos que $A_i \triangle
     A_j = \{v_i, v_j\}$. Como $X$ es un clan en $F_k(G)$, entonces tenemos que
-    $v_i{v_j} \in E(G)$, por lo que el conjunto $\{v_i\colon\ i \in \{1 \dots,
-    p\}\}$, es un clan en $G$.   Sea $K = \{v_i\colon\ i \in \{1 \dots, p\}\}$.
+    $v_i{v_j} \in E(G)$, por lo que el conjunto $\{v_i\colon\ i \in \{1, \dots,
+    p\}\}$, es un clan en $G$.   Sea $K = \{v_i\colon\ i \in \{1, \dots, p\}\}$.
     Notamos que  $K \cap S = \varnothing$, adem\'as $X= \{S \cup \{v\}\colon\ v
     \in K\}$, por lo que tenemos el caso del primer inciso.
 
@@ -259,7 +259,7 @@ est\'an representados en ${\bf negritas}$ en $F_3(G)$.
         
     \end{tikzpicture}
 \caption{Del lado izquierdo, dos copias de $G$, resaltando
-${\color{salmon}\boldsymbol {K_2}}$ y ${\color{baige}\boldsymbol {S_1}}$ (copia
+${\color{salmon}\boldsymbol {K_1}}$ y ${\color{baige}\boldsymbol {S_1}}$ (copia
 superior) y resaltando ${\color{azulOscuro}\boldsymbol {K_2}}$ y
 ${\color{oro}\boldsymbol {S_2}}$ (copia inferior). Del lado derecho, $F_3(G)$,
 resaltando ${\color{naranja}\boldsymbol {X_1}}$ y ${\color{verde}\boldsymbol
@@ -274,7 +274,9 @@ para el n\'umero de clan.
 \begin{teorema}
 \label{teo:clan-max}
     Si $G$ una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
-    $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
+    \[
+    \omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}.
+    \]
 \end{teorema}
 
 \begin{proof}
@@ -353,8 +355,8 @@ de $G$. Comenzamos con la cota superior de $ \chi (F_k(G))$.
     \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una coloraci\'on
     propia. Suponemos lo contrario, que existen $A$ y $B$ v\'ertices adyacentes
     en $F_k(G)$, tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes,
-    entonces $A \triangle B = \{a,b\}$, para algunos v\'ertices $a$ y $b$ de $G$
-    , tales que $ab \in E(G)$. Al tomar $c'(A) = c'(B)$, tenemos que $\Sigma_{x
+    entonces $A \triangle B = \{a,b\}$, para algunos v\'ertices $a$ y $b$ de
+    $G$, tales que $ab \in E(G)$. Al ser $c'(A) = c'(B)$, tenemos que $\Sigma_{x
     \in A}c(x) \equiv \Sigma_{y \in B}c(y) \pmod {\chi(G)}$. Sin p\'erdida de
     generalidad, consideramos $a \in A$ y $b \in B$, entonces podemos ver la
     congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
