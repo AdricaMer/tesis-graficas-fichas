@@ -4,14 +4,17 @@ Los clanes y el n\'umero crom\'atico de una gr\'afica son partes importantes en
 el estudio de las gr\'aficas. En este cap\'itulo estudiaremos un poco el c\'omo
 se ven los clanes en las gr\'aficas de fichas. De igual manera, estudiaremos el
 n\'umero crom\'atico de una gr\'afica de fichas en relaci\'on a la gr\'afica
-original.
+original. Las proposiciones de ambas secciones salen del art\'iculo
+\textit{Token graphs} \cite{fabilaToken}. 
 
 \section{Clanes}%
 \label{sec:clanes}
 
 Esta secci\'on est\'a enfocada en los clanes de las gr\'aficas de fichas. Se
 dar\'a una caracterizaci\'on de los clanes, adem\'as de una manera de encontrar
-el n\'umero de clan en las gr\'aficas de fichas.
+el n\'umero de clan en las gr\'aficas de fichas. Las demostraciones de esta
+secci\'on salen del art\'iculo \textit{Token graphs} \cite{fabilaToken}, con
+esepci\'on del \cref{coro:numClan}.
 
 Empezamos con la caracterizaci\'on de los clanes. Para esto, necesitamos el
 siguiente lema.
@@ -315,10 +318,14 @@ para el n\'umero de clan.
     decir, $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
 \end{proof}
 
-Este teorema se puede simplificar como se muestra en el siguiente corolario.
+Este teorema se puede simplificar como se muestra en el siguiente corolario. La
+demostraci\'on de este corolario no se encuentra en el art\'iculo
+\cite{fabilaToken}, pues sale de manera directa, utilizando \cref{teo:clan-max}.
+Sin embargo, para este trabajo se considera pertinente poner la demostraci\'on,
+por lo que a continuaci\'on pasamos a demostrar el corolario.
 
 \begin{corolario}
-\label{coro:numCrom}
+\label{coro:numClan}
     Sean $G$ un agr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas. Si $k \leq
     \frac{n}{2}$, entonces $\omega(F_k(G))= \min\{\omega(G), n-k+1\}$.
 \end{corolario}
@@ -330,7 +337,7 @@ Este teorema se puede simplificar como se muestra en el siguiente corolario.
     2k$. Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
 \end{proof}
 
-Recordando que $F_k(G) \cong F_{n-k}(G)$, la utilidad  d\cref{coro:numCrom}
+Recordando que $F_k(G) \cong F_{n-k}(G)$, la utilidad  d\cref{coro:numClan}
 resulta evidente.
 
 \section{N\'umero cr\'omatico}%
@@ -339,7 +346,9 @@ resulta evidente.
 En esta secci\'on estudiaremos el n\'umero crom\'atico de una gr\'afica de
 $k$-fichas, es decir, $\chi (F_k(G))$. A diferencia de la secci\'on anterior,
 acotamos el n\'umero crom\'atico de $F_k(G)$ utilizando el n\'umero crom\'atico
-de $G$. Comenzamos con la cota superior de $ \chi (F_k(G))$.
+de $G$. Comenzamos con la cota superior de $ \chi (F_k(G))$ en el siguiente
+teorema, cuya demostraci\'on sale del art\'iculo \textit{Token graphs}
+\cite{fabilaToken}.
 
 \begin{teorema}
 \label{teo:num cromatico de G y F(G)}
@@ -373,9 +382,11 @@ de $G$. Comenzamos con la cota superior de $ \chi (F_k(G))$.
 Nos enfocamos ahora en la cota inferior de $ \chi (F_k(G))$. Sabemos que $\chi
 (F_k(G)) \geq \omega (F_k(G))$, por lo que podemos sacar una cota inferior en
 t\'erminos de el n\'umero de clan de $G$, utilizando \cref{teo:clan-max}. Por
-otro lado, podemos encontrar una cota en t\'erminos de $\chi (G)$. Empezamos
-viendo el caso en el que $F_k(G)$ es bipartita.
-
+otro lado, podemos encontrar una cota en t\'erminos de $\chi (G)$.
+\Cref{prop:biparticion F(G)} y \cref{teo:numCrom-k}, a continuaci\'on exhibidos,
+tienen demostraci\'ones basadas en el art\'iculo \textit{Token graphs}
+\cite{fabilaToken}. Empezamos viendo \cref{prop:biparticion F(G)}, una propiedad
+sobre las gr\'aficas bipartitas en gr\'aficas de fichas.
 
 \begin{proposicion}
 \label{prop:biparticion F(G)}
@@ -548,7 +559,9 @@ de $\chi (G)$ para el caso general.
 
 A partir d\cref{teo:numCrom-k} podemos encontrar una cota inferior para
 $\chi(F_k(G))$ que sea independiente de $k$. Esta relaci\'on se demuestra en el
-siguiente teorema.
+siguiente teorema, cuya demostraci\'on no se desarrolla en el art\'iculo
+\textit{Token graphs} \cite{fabilaToken}, de donde sale el teorema.
+
 
 \begin{teorema}
 \label{teo:numCrom indep-k}
