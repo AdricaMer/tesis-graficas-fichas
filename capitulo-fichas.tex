@@ -217,13 +217,14 @@ V(F_k(G))$. Si al conjunto $A$ le pedimos que $a\in A$ y $b \notin A$, entonces
 a la pareja $(A,P)$ le podemos asignar una trayectoria en la gr\'afica de
 $k$-fichas, tal que el v\'ertice final est\'a dado por $A'=(A \setminus \{a\})
 \cup \{b\}$. Para definir esta nueva trayectoria tomamos $A\cap P =\{v_1, \dots,
-v_q\}$, con $v_1 = a$, y ``movemos'' las fichas de la siguiente manera. Primero,
-movemos la ficha de $v_q \in V(G)$ hacia el v\'ertice $b \in V(G)$ por $P$.
-Luego, para los v\'ertices $v_i$ en $G$, con $i \in \{q-1, q-2, \dots 1\}$,
-movemos la ficha de $v_i$ a $v_{i+1}$. As\'i, sucesivamente, vamos moviendo
-fichas a trav\'es de $P$ por v\'ertices que est\'an libres de fichas. Observamos
-que, al recorrer las fichas a trav\'es de $P$, obtenemos una trayectoria de la
-misma longitud que $P$. Esta trayectoria en $F_k(G)$ la denotamos
+v_q\}$, usando el orden en el que los v\'ertices aparecen en $P$ y con $v_1 =
+a$. Luego, ``movemos'' las fichas de la siguiente manera. Empezamos, movemos la
+ficha de $v_q \in V(G)$ hacia el v\'ertice $b \in V(G)$ por $P$. Despu\'es, para
+los v\'ertices $v_i$ en $G$, con $i \in \{q-1, q-2, \dots 1\}$, movemos la ficha
+de $v_i$ a $v_{i+1}$ por $P$. As\'i, sucesivamente, vamos moviendo fichas a
+trav\'es de $P$ por v\'ertices que est\'an libres de fichas. Observamos que, al
+recorrer las fichas a trav\'es de $P$, obtenemos una trayectoria de la misma
+longitud que $P$. Esta trayectoria en $F_k(G)$ la denotamos
 \indiceSub{fichas}{$A \xrightarrow[P]{} A'$}. A continuaci\'on, se encuentra un
 ejemplo de este tipo de trayectoria en una gr\'afica de $3$-fichas, mostrada en
 \cref{fig:ex-tok-Path}. Tomamos a \cref{fig:ex-tok-aux} como figura auxiliar
@@ -410,7 +411,7 @@ extremos en $2$. Vi\'endolo as\'i, podemos interpretar $F_3(G,\{2\})$ como la
 gr\'afica de $(3-1)$-fichas de la gr\'afica $G-2$, es decir, $F_2(G-2)$. Esta
 gr\'afica est\'a exhibida en \cref{fig:ex-tok-subgraph-aux}. De manera general,
 esto quiere decir que existe una relaci\'on entre la subgr\'afica de $F_k(G)$
-inducida por $X$, donde $|r|=X \subset V(G)$, y la gr\'afica de $(k-r)$-fichas
+inducida por $X$, donde $|r|=X \subseteq V(G)$, y la gr\'afica de $(k-r)$-fichas
 de la gr\'afica $G-X$, es decir, $F_{k-r}(G-X)$. Afirmamos que, para $k,r \in
 \mathbb{N}$ y $k>r = |X|$, con $X \subseteq V(G)$, la gr\'afica $F_k(G,X)$ es
 isomorfa a la gr\'afica $F_{k-r}(G-X)$, con el isomorfismo que a cada $A \in
@@ -676,15 +677,14 @@ hacerlos adyacentes a los extremos de esta trayectoria. Observamos que $G$ tiene
 di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de $k$-fichas de
 $G$ tiene di\'ametro $dk$. Para ejemplificar esto, \cref{fig:ex-diamT} muestra
 una gr\'afica $G$ construida al agregar cuatro v\'ertices en cada extremo de la
-trayectoria $P_5$, i.e., $k=4$. Notamos que, los v\'ertices
-$\{v_1,v_2,v_3,v_4\}$ y $\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$, pues
-ambos tienen \'unicamente un vecino. \Cref{fig:ex-diamT} muestra el movimiento
-de las fichas en $F_4(G)$ de un extremo al otro. Observamos que, una ficha en
-alg\'un $v_i$ tiene que moverse por $d +1$ v\'ertices a alg\'un $w_i$ libre,
-para $i \in \{1,2,3,4\}$. Adem\'as, cada movimiento corresponde a un v\'ertice
-en la trayectoria en $F_4(G)$, que va de un extremo a otro. Por lo tanto,
-tenemos que la trayectoria que va de $\{v_1,v_2,v_3,v_4\}$ a
-$\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
+trayectoria $P_5$, i.e., $k=4$. Notamos que, la trayectoria que va de
+$\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ es una trayectoria de longitud
+m\'axima. \Cref{fig:ex-diamT} muestra el movimiento de las fichas en $F_4(G)$ de
+un extremo al otro. Observamos que, una ficha en alg\'un $v_i$ tiene que moverse
+por $d +1$ v\'ertices a alg\'un $w_i$ libre, para $i \in \{1,2,3,4\}$. Adem\'as,
+cada movimiento corresponde a un v\'ertice en la trayectoria en $F_4(G)$, que va
+de un extremo a otro. Por lo tanto, tenemos que la trayectoria que va de
+$\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 
 \begin{figure}[ht!]
     \centering
@@ -762,7 +762,7 @@ $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 
 Nuestro siguiente resultado muestra que algunas subgr\'aficas inducidas de las
 gr\'aficas de fichas son productos cartesianos de algunas subgr\'aficas
-inducidas de $G$. El art\'iculo \textit{Token Graphs} \cite{fabilaToken}, de
+inducidas de $G$. El art\'iculo \textit{Token graphs} \cite{fabilaToken}, de
 donde sale el siguiente teorema, no proporciona una demostraci\'on del dicho
 teorema, por lo que la siguiente demostraci\'on es independiente del art\'iculo.
 
@@ -800,7 +800,7 @@ teorema, por lo que la siguiente demostraci\'on es independiente del art\'iculo.
     Ahora, nos enfocamos en la relaci\'on entre las aristas de ambas gr\'aficas
     de fichas. Sean $B, C \in V(F_k(G,L))$, tales que $BC \in E(F_k(G,L))$, en
     otras palabras, existen $b \in B$ y $c \in C$, tales que $B \triangle C =
-    \{b, c\}$ y $bc \in E(G,L)$. Por definici\'on, tenemos que $V(H_i) \cap
+    \{b, c\}$ y $bc \in E(G[L])$. Por definici\'on, tenemos que $V(H_i) \cap
     V(H_j) = \varnothing$, con $i \neq j$, por lo que $b, c \in V(H_i)$. Esto
     significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j \in \{1,
     \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es una

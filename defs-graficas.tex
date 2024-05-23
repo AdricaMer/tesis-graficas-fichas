@@ -139,7 +139,7 @@ importante analizar el caso en el que uno est\'e ``contenido'' en el otro. As\'i
 como en el caso de conjuntos nos referimos a subconjuntos, en el caso de
 gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas, tales
 que $V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es
-una \indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
+una \indice{subgr\'afica} de $G$. En tal caso, tambi\'en decimos que $G$ es una
 \indice{supergr\'afica} de $H$. Esta relaci\'on se denota con la misma
 notaci\'on que para subconjuntos, es decir, $H \subseteq G$. Cuando una
 subgr\'afica tiene el mismo conjunto de v\'ertices que la gr\'afica, es decir,
@@ -162,10 +162,11 @@ conjunto unitario, i.e., el caso en el que le quitamos un solo v\'ertice $v$ a
 $G$. En este caso escribimos $G-v$, en vez de $G-\{v\}$. A continuaci\'on se
 muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
 ${\color{morado}\boldsymbol {H}}$ es una subgr\'afica inducida con $V(H) =
-\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{ H'}}}$ es una subgr\'afica con
-$V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a
-${\color{azulCielo}\boldsymbol {H'}}$ le falta la arista ${\color{grisOscuro!80}\boldsymbol
-{v_5v_7}}$, resaltada en la figura, para ser una subgr\'afica inducida. 
+\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{ H'}}}$ es una
+subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos
+que a ${\color{azulCielo}\boldsymbol {H'}}$ le falta la arista
+${\color{grisOscuro!80}\boldsymbol {v_5v_7}}$, resaltada en la figura, para ser
+una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
     \centering
@@ -676,12 +677,12 @@ global de \'este.
     sabemos que el m\'aximo n\'umero de $XY$-trayectorias internamente ajenas en
     $G$ es igual al m\'inimo n\'umero de v\'ertices que separan a $X$ de $Y$.
     Adem\'as, ni $u$ ni $v$ son v\'ertices de dichas trayectorias y, por ende,
-    tampoco son v\'ertices del conjunto separador. Sea  $A$ un conjunto que
-    separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y $|Y| \geq r$,
-    entonces tenemos que $A$ tambi\'en separa a $u$ de $v$. Sean $P_1, \dots,
-    P_r$ una familia de $XY$-trayectorias internamente ajenas, entonces
-    $uX\xrightarrow[P_1]{}Yv$,\dots, $uX\xrightarrow[P_r]{}Yv$ forma una familia
-    de $uv$-trayectorias internamente ajenas. 
+    tampoco son v\'ertices de los conjuntos separan a $X$ y $Y$. Sea  $A$ un
+    conjunto que separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y
+    $|Y| \geq r$, entonces tenemos que $A$ tambi\'en separa a $u$ de $v$. Sean
+    $P_1, \dots, P_r$ una familia de $XY$-trayectorias internamente ajenas,
+    entonces $uX\xrightarrow[P_1]{}Yv$,\dots, $uX\xrightarrow[P_r]{}Yv$ forma
+    una familia de $uv$-trayectorias internamente ajenas. 
 
     Ahora, consideramos el caso en el que alguna de las vecindades tiene
     cardinalidad menor que $r$.  Sin p\'erdida de generalidad, consideramos
@@ -751,15 +752,15 @@ gr\'aficas que definimos es la uni\'on ajena. La \textbf{uni\'on}
 uni\'on de $G$ y $H$, donde $V(G) \cap V(H) = \varnothing$. Por \'ultimo, otra
 operaci\'on que surge del concepto de uni\'on de conjuntos y que va a ser de
 utilidad en este trabajo es la uni\'on completa. La \textbf{uni\'on}
-\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$ es la gr\'afica con
-conjunto de v\'ertices $V(G) \cup V(H)$ y cuyo conjunto de aristas es $E(G) \cup
-E(H) \cup \{uv \colon u \in V(G), v \in V(H) \}$. La uni\'on completa la
-denotamos $G \oplus H$. En \cref{fig:ex-unionCompleta} se muestra un ejemplo de
-este tipo de uni\'on. Del lado izquierdo de la figura se muestran dos
-gr\'aficas, la primera, en la parte superior, tiene v\'ertices $v_i$ y la
-segunda, en la parte inferior, tiene v\'ertices $w_i$, ambas con $i \in \{1, 2
-,3\}$. Del lado derecho de la figura se muestra la uni\'on completa de dichas
-gr\'aficas.
+\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$, tales que $V(G) \cap
+V(H)=\varnothing$, es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$ y
+cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
+V(H) \}$. La uni\'on completa la denotamos $G \oplus H$. En
+\cref{fig:ex-unionCompleta} se muestra un ejemplo de este tipo de uni\'on. Del
+lado izquierdo de la figura se muestran dos gr\'aficas, la primera, en la parte
+superior, tiene v\'ertices $v_i$ y la segunda, en la parte inferior, tiene
+v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado derecho de la figura
+se muestra la uni\'on completa de dichas gr\'aficas.
 
 \begin{figure}[htb!]
     \centering
@@ -1013,11 +1014,11 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
     \subseteq Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
     partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i = \varnothing$, pues
     $X \cap Y = \varnothing$ por definici\'on de partici\'on. Adem\'as, de
-    manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego, sean $a \in
-    X_i$ y $b \in Y_i$, como $X_i \subseteq X$ y $Y_i \subseteq Y$, entonces
-    tenemos que $a \in X$ y $b \in Y$, por lo que $a$ y $b$ no son adyacentes.
-    Por lo tanto, $(X_i, Y_i)$ es una partici\'on de $G_i$, en otras palabras,
-    $G_i$ es una gr\'afica bipartita.
+    manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego, sean $a, b
+    \in X_i$, como $X_i \subseteq X$, entonces tenemos que $a,b \in X$. Por
+    ende, $a$ y $b$ no son adyacentes. An\'alogamente, si $a,b \in Y_i$, tenemos
+    que $a$ y $b$ no son adyacentes. Por lo tanto, $(X_i, Y_i)$ es una
+    partici\'on de $G_i$, en otras palabras, $G_i$ es una gr\'afica bipartita.
 
     Ahora nos enfocamos en la segunda implicaci\'on, es decir, si $G_i$ es una
     gr\'afica bipartita, para $i \in \{1, \dots, n\}$, entonces $G$ tambi\'en lo
@@ -1106,35 +1107,38 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
     longitud par. En consecuencia $G$ no contiene ciclos impares.
 
     Ahora pasamos a la segunda implicaci\'on, para esto, consideramos $G$ una
-    gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$
-    construimos la siguiente partici\'on de $V(G)$. Denotamos $X$ al conjunto de
-    los v\'ertices de $G$ que est\'en a distancia impar de $v$, es decir, $X =
-    \{u \in V(G) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro
-    conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on,
-    tenemos que $X \cap Y = \varnothing$ y $X \cup Y = V(G)$. S\'olo falta
-    verificar que no existen aristas entre cualesquiera dos v\'ertices de $X$ o
-    entre cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
-    an\'alogas, por lo que s\'olo lo demostramos para $X$. Supongamos que
-    existen $u,w \in X$, tales que $e=uw \in E(G)$. Sean $P$ una
-    $vu$-trayectoria y $Q$ una $vw$-trayectoria, ambas de longitud m\'inima.
-    Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias.
-    Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
-    \xrightarrow[Q]{}z$ tienen la misma longitud. Esto pues, si alguna tuviera
-    menor longitud, sin p\'erdida de generalidad, tomamos a $v
-    \xrightarrow[P]{}z$ con menor longitud, entonces tendr\'iamos que la
-    trayectoria $v \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a
-    $d(v,w)$, lo cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud
-    par y $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$, tienen la misma
-    longitud, entonces tenemos que $z \xrightarrow[P]{}u$ y $z
-    \xrightarrow[Q]{}w$ tiene ambas longitud par o tienen ambas longitud impar.
-    Ahora consideramos la trayectoria $ R= u \xrightarrow[P^{-1}]{}z
-    \xrightarrow[Q]{}w$, por el argumento anterior sabemos que esta trayectoria
-    tiene longitud par. Por \'utimo, observamos que existe el siguiente ciclo,
+    gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$ en
+    la componente conexa $G_1$ de $G$, construimos la siguiente partici\'on de
+    $V(G_1)$. Denotamos $X$ al conjunto de los v\'ertices de $G_1$ que est\'en a
+    distancia impar de $v$, es decir, $X = \{u \in V(G_1) \colon d(u,v)
+    \textnormal{ es impar}\}$. Tomamos al otro conjunto de la partici\'on como
+    $Y = V(G_1)\setminus X$. Por construcci\'on, tenemos que $X \cap Y =
+    \varnothing$ y $X \cup Y = V(G_1)$. S\'olo falta verificar que no existen
+    aristas entre cualesquiera dos v\'ertices de $X$ o entre cualesquiera dos
+    v\'ertices de $Y$. Ambos casos tienen demostraciones an\'alogas, por lo que
+    s\'olo lo demostramos para $X$. Supongamos que existen $u,w \in X$, tales
+    que $e=uw \in E(G_1)$. Sean $P$ una $vu$-trayectoria y $Q$ una
+    $vw$-trayectoria, ambas de longitud m\'inima. Ahora, sea $z$ el \'ultimo
+    v\'ertice que comparten estas trayectorias. Observemos que las
+    subtrayectorias $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen la
+    misma longitud. Esto pues, si alguna tuviera menor longitud, sin p\'erdida
+    de generalidad, tomamos a $v \xrightarrow[P]{}z$ con menor longitud,
+    entonces tendr\'iamos que la trayectoria $v
+    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$, lo
+    cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud par y $v
+    \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$, tienen la misma longitud,
+    entonces tenemos que $z \xrightarrow[P]{}u$ y $z \xrightarrow[Q]{}w$ tiene
+    ambas longitud par o tienen ambas longitud impar. Ahora consideramos la
+    trayectoria $ R= u \xrightarrow[P^{-1}]{}z \xrightarrow[Q]{}w$, por el
+    argumento anterior sabemos que esta trayectoria tiene longitud par. Por
+    \'utimo, observamos que existe el siguiente ciclo,
     $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos que $C$ es un ciclo de
     longitud impar, lo cu\'al es una contradicci\'on. Por lo tanto, no existen
     aristas entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$
-    tampoco tiene v\'ertices adyacentes, por lo que $G$ es una gr\'afica
-    bipartita con bipartici\'on $(X,Y)$.
+    tampoco tiene v\'ertices adyacentes, As\'i $G_1$ es una gr\'afica bipartita
+    con bipartici\'on $(X,Y)$. Por lo tanto, todas las componentes conexas de
+    $G$ son bipartitas, en el caso de que $G$ sea inconexa. Por ende, usando
+    \cref{prop:bip-compConect}, tenemos que $G$ es bipartita.
 \end{proof}
     
 Otra  familia de gr\'aficas que se estudia m\'as adelante en este trabajo son
@@ -1302,7 +1306,7 @@ donde $T$ es un conjunto de cardinalidad $k$. En ambos casos, ya sea
 coloraci\'on por v\'ertices o por aristas, a los elementos del codominio de la
 funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
 \indiceSub{k@$k$-coloraci\'on}{propia por
-v\'ertices}\index{v\'ertices!k @$k$-coloraci\'on propia} es una coloraci\'on por
+v\'ertices}\index{v\'ertices!k $k$-coloraci\'on propia} es una coloraci\'on por
 v\'ertices, donde se le asignan colores diferentes a v\'ertices
 adyacentes. Decimos que una gr\'afica $G$ es $k$\textbf{-coloreable}
 \index{gr\'afica!k @$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite
@@ -1388,15 +1392,15 @@ la gr\'afica. A continuaci\'on se demuestra este resultado.
 
 \begin{proof}
     Sean $G$ una gr\'afica y $S \subseteq V(G)$, con $S \neq \varnothing$.  Sea
-    $c_1$ una coloraci\'on propia de $G[S]$ con $ k= \chi(G[S])$ colores, para
-    $k \in \mathbb{Z^+}$. An\'alogamente, sea $c_2$ una coloraci\'on propia de
-    $G-S$ con $l= \chi(G-S)$ colores, tomando el siguiente conjunto con colores
-    $\{k+1, k+2, \dots, k+l\}$. Observamos que $c_1$ y $c_2$ no comparten
-    colores, por lo que podemos construir una coloraci\'on propia de $G$ con los
-    colores $\{1, \dots, k+l\}$, asign\'andole los colores de $c_1$ y $c_2$ a
-    los v\'ertices de $G$. De esta manera tenemos que $G$ es $(k+l)$-coloreable,
-    donde $k = \chi(G[S])$ y $l = '\chi(G-S)$. Por lo tanto, tenemos que
-    $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
+    $c_1$ una coloraci\'on propia de $G[S]$ con $ k= \chi(G[S])$ colores,
+    tomando el conjunto de colores $\{1, \dots, k\}$. An\'alogamente, sea $c_2$
+    una coloraci\'on propia de $G-S$ con $l= \chi(G-S)$ colores, tomando el
+    siguiente conjunto con colores $\{k+1, k+2, \dots, k+l\}$. Observamos que
+    $c_1$ y $c_2$ no comparten colores, por lo que podemos construir una
+    coloraci\'on propia de $G$ con los colores $\{1, \dots, k+l\}$,
+    asign\'andole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$. De esta
+    manera tenemos que $G$ es $(k+l)$-coloreable, donde $k = \chi(G[S])$ y $l =
+    '\chi(G-S)$. Por lo tanto, tenemos que $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
 \end{proof}
 
 Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
