@@ -92,8 +92,8 @@ demostrar el resultado principal de esta secci\'on.
     $e$, en caso de existir, la arista roja incidente en $v$. Tomamos $H'=
     (H-v)-x$ con $R'$ el conjunto de aristas rojas de $H'$. Observamos que $Y' =
     Y- v$ y $Z'= Z- x$ son las clases de color de $H'$. Por hip\'otesis de
-    inducci\'on, existe un conjunto $M'$ de aristas azules incidentes en $H'$,
-    tal que cada v\'ertice de $Y'$ incide exactamente en una arista de $M'$.
+    inducci\'on, existe un conjunto $M' \subseteq E(H')$ de aristas azules, tal
+    que cada v\'ertice de $Y'$ incide exactamente en una arista de $M'$.
     Adem\'as, $R'\cup M'$ es ac\'iclico.
     
     En $H$ definimos $M = M'\cup \{xv\}$. Al tomar $x$ sin aristas rojas,
@@ -185,13 +185,13 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
     Definimos a $C$ como el conjunto de v\'ertices en $A \cap B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, s\}$. Observamos que, al ser $Q_1,
-    \dots, Q_s$ internamente ajenas, entonces cada v\'ertice de $C$ est\'a en
-    exactamente una $Q_i$, con $i \in \{1, \dots, s\}$. Definimos a $D$ como el
-    conjunto de v\'ertices en $A \cap B$ que no intersecta a $Q_i$ alguna, con
-    $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$ inducen una partici\'on de
-    $A \cap B$. Por ello, tenemos que $|A\cap B| = |C| + |D| = k-1$. Adem\'as
-    podemos ver que $s \leq |C| \leq k-1$ y, como $ t - s \leq l$, entonces $l
-    \geq t -|C| = t- (k-1-|D|)$.
+    \dots, Q_s$ internamente ajenas y sin cuerdas, entonces cada v\'ertice de
+    $C$ est\'a en exactamente una $Q_i$, con $i \in \{1, \dots, s\}$. Definimos
+    a $D$ como el conjunto de v\'ertices en $A \cap B$ que no intersecta a $Q_i$
+    alguna, con $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$ inducen una
+    partici\'on de $A \cap B$. Por ello, tenemos que $|A\cap B| = |C| + |D| =
+    k-1$. Adem\'as podemos ver que $s \leq |C| \leq k-1$ y, como $ t - s \leq
+    l$, entonces $l \geq t -|C| = t- (k-1-|D|)$.
 
     Podemos separar en tres tipos a las $AB$-trayectorias que consideramos en
     $F_{k}(G)$. Los primeros dos tipos son las trayectorias obtenidas
@@ -330,15 +330,21 @@ distintos tipos de trayectorias internamente ajenas obtenidas en el lema
 anterior. Tenemos que ${\color{baige} \boldsymbol {A\triangle B=\{1,5\}}}$ y
 $A\cap B=\{2,3\}$, por lo que usamos $15$-trayectorias para encontrar las
 trayectorias de tipo $P$ y las de tipo $Q$, de manera que las de tipo $P$ no
-tienen a $2$ ni a $3$ como v\'ertice interno y las de tipo $Q$ tienen a ambos
-como v\'ertices internos, recordando que $A\cap B=\{2,3\}$. Tomamos
-${\color{naranja}\boldsymbol {P_1=(1,4,5)}}$ y ${\color{fushia}\boldsymbol
-{Q_1(1,2,3,5)}}$. Ahora, tomamos ${\color{fushia}\boldsymbol {2}} \in C$ y un
-vecino ${\color{menta}\boldsymbol {x} \color{naranja}\boldsymbol {\notin P_1}}$,
-en este caso $x=6$. De esta manera tenemos la trayectoria del tercer tipo
+tienen a $2$ ni a $3$ como v\'ertice interno y las de tipo $Q$ tienen, o bien a
+$2$ o bien a $3$ como v\'ertices internos. Notamos que hay dos trayectorias de
+tipo $P$ en $G$, la trayectoria $P_1=(1,4,5)$ y la trayectoria
+${\color{naranja}\boldsymbol {P_2=(1,6,5)}}$. En \cref{fig:ex-tok-path} se
+encuentra resaltada $P_2$ de ${\color{naranja} \bf naranja}$. Tambi\'en podemos
+observar que hay dos trayectorias de tipo $Q$ en $G$, la trayectoria
+${\color{fushia}\boldsymbol {Q_1(1,3,5)}}$, resaltada en \cref{fig:ex-tok-path}
+de ${\color{fushia}\bf rosa}$, y la trayectoria $Q_2=(1,2,5)$. As\'i, tenemos
+que los conjuntos auxiliares d\cref{lem:TrayIntAj} son $C=\{2,3\}$ y $D=
+\varnothing$. Utilizando $v=3$ y ${\color{menta}\boldsymbol {x=4}}$ del lema y
+${\color{naranja}\boldsymbol {P_2}}$, construimos la trayectoria $
+{\color{verdeAzulado}\boldsymbol {R\langle 3, 4 \rangle}}$. Tenemos que 
 \[
-    {\color{verdeAzulado}\boldsymbol {R_1=(\{1,2,3\}\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}
-    \{3,5,6\}\{2,3,5\})}}.
+    {\color{verdeAzulado}\boldsymbol {R\langle 3, 4 \rangle =(\{1,2,3\}\{1,2,4\}
+    \{2,4,6\}\{2,4,5\}\{2,3,5\})}}.
 \]
 
 \begin{figure}[ht!]
@@ -350,32 +356,31 @@ en este caso $x=6$. De esta manera tenemos la trayectoria del tercer tipo
        
         \foreach \i in {0,4}
             \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=baige]{};
-        \foreach \i in {1,2}
-            \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=fushia]{};
-        \draw ({(360/6)*3}:2) node(3)[wvertex,fill=naranja]{};
-        \draw ({(360/6)*5}:2) node(5)[wvertex,fill=menta]{}; 
+        \draw ({(360/6)}:2) node(1)[bvertex]{};
+        \draw ({(360/6)*2}:2) node(2)[wvertex,fill=fushia]{}; 
+        \draw ({(360/6)*3}:2) node(3)[wvertex,fill=menta]{};
+        \draw ({(360/6)*5}:2) node(5)[wvertex,fill=naranja]{}; 
         \foreach \i in {0,...,5}
             \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
            \pgfmathresult};
-        \foreach \i/\j in {0/2,0/5,1/4,1/5,2/3,2/5,3/5,4/5}
+        \foreach \i/\j in {0/3,0/1,1/2,1/4,1/5,2/3,2/5,3/5,3/4}
             \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach \i/\j in {0/1,1/2,2/4}
+        \foreach \i/\j in {0/2,2/4}
             \draw [wedge,fushia] (\i) to (\j);
-        \foreach \i/\j in {0/3,3/4}
+        \foreach \i/\j in {0/5,4/5}
             \draw [wedge,naranja] (\i) to (\j);
         
         \end{scope}
     
     \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
 
-        \foreach \i in {6,11} 
-            \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=fushia]{}; 
-        \foreach \i in {0,2,15} 
+        \draw ({(360/16)*6}:4) node(6)[wvertex,fill=fushia]{}; 
+        \foreach \i in {3,7} 
             \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=verdeAzulado]{}; 
         
         \draw ({(360/16)*5}:4) node(5)[wvertex,fill=baige]{};
-        \draw ({(360/16)*8}:4) node(8)[wvertex,fill=naranja]{};     
-        \foreach \i in {1,3,4,7,9,10,12,13,14} 
+        \draw ({(360/16)*1}:4) node(1)[wvertex,fill=naranja]{};     
+        \foreach \i in {8,12,4,10,14,11,0,2,9,13,15} 
             \draw({(360/16)*\i}:4) node(\i)[wvertex]{};
 
         \draw ({(360/16)*1}:4.5) node (e1) {{\footnotesize $236$}};
@@ -395,27 +400,27 @@ en este caso $x=6$. De esta manera tenemos la trayectoria del tercer tipo
         \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $156$}};
         \draw ({(360/16)*16}:4.5) node (e1) {{\footnotesize $136$}};
 
-        \draw (-1.1,0.2) node (17) [vertex,label=10:{\tiny $124$}] {};
-        \draw (0.1,-0.3) node (18) [vertex,fill=verdeAzulado ,label=70:{\tiny $146$}] {};
-        \draw (1.2,0.7) node (19) [vertex,fill=verdeAzulado ,label=180:{\tiny $356$}] {};
+        \draw (-1.1,0.2) node (17) [vertex,fill=verdeAzulado,label=10:{\tiny $124$}] {};
+        \draw (0.1,-0.3) node (18) [vertex,label=70:{\tiny $146$}] {};
+        \draw (1.2,0.7) node (19) [vertex,label=180:{\tiny $356$}] {};
         \draw (0.3,1.4) node (20) [vertex,fill=baige ,label=88:{\tiny $235$}] {};
         
         \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,6/7,7/8,8/9,9/10,10/11,
-           11/12,12/13,13/14, 14/15, 15/0} 
+           11/12,12/13,13/14, 14/15,15/0} 
            \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach\i/\j in{0/4,0/11,0/13,1/3,1/4,1/5,2/6,2/7,3/7,3/8,
+        \foreach\i/\j in{0/4,0/11,0/13,1/3,1/4,2/6,2/7,3/8,
         4/6,4/15,6/15,7/10,7/12,8/12,8/13,9/11,9/13,10/12,10/14,10/15,
         11/15,12/14} 
            \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach \i/\j in{1/8,3/13,3/14,5/11,7/14,9/0,9/18,17/3,17/4,17/5,17/6,
+        \foreach \i/\j in{1/8,3/13,3/14,5/11,7/14,9/0,9/18,17/4,17/6,
         17/8,17/9,17/10,17/18,3/18,18/10,18/13,19/1,19/11,19/12,
-        19/13,19/14,19/15,20/1,20/2,20/6,20/7}
+        19/13,19/14,19/15,6/11,11/20,20/2,5/0,0/18,18/15,15/2,2/19,19/20,5/8,8/20}
           \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach\i/\j in{5/6,6/11,11/20} 
+        \foreach\i/\j in{5/6,20/6} 
            \draw [wedge,fushia] (\i) to (\j);
-        \foreach\i/\j in{5/8,8/20} 
+        \foreach\i/\j in{1/5,20/1} 
            \draw [wedge,naranja] (\i) to (\j);
-        \foreach\i/\j in{5/0,0/18,18/15,15/2,2/19,19/20} 
+        \foreach\i/\j in{17/5,17/3,3/7, 20/7} 
           \draw [wedge,verdeAzulado] (\i) to (\j);
         
    \end{scope}
@@ -424,8 +429,8 @@ en este caso $x=6$. De esta manera tenemos la trayectoria del tercer tipo
 
 \end{tikzpicture}
 \caption{Una gr\'afica $G$ (izquierda) y su gr\'afica de $3$-fichas (derecha),
-resaltando las trayectorias internamente ajenas de ${\color{baige}\bf A}$ y
-${\color{baige}\bf B}$.}
+resaltando las trayectorias internamente ajenas de ${\color{baige}\boldsymbol
+{A}}$ y ${\color{baige}\boldsymbol {B}}$.}
 \label{fig:ex-tok-path}
 \end{figure}
 
