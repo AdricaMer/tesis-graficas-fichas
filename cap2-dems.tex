@@ -361,14 +361,14 @@ teorema, cuya demostraci\'on sale del art\'iculo \textit{Token graphs}
 \begin{proof}
     Sea $c \colon V(G) \to \{0,1, \dots, \chi(G)-1\}$ una coloraci\'on propia de
     $G$. Ahora, a cada v\'ertice $A$ de $F_k(G)$ le asignamos el color $ c'(A)=
-    \Sigma_{x \in A}c(x) \mod \chi(G)$. Basta ver que $c'$ es una coloraci\'on
-    propia. Suponemos lo contrario, que existen $A$ y $B$ v\'ertices adyacentes
-    en $F_k(G)$, tales que $c'(A) = c'(B)$. Como $A$ y $B$ son adyacentes,
-    entonces $A \triangle B = \{a,b\}$, para algunos v\'ertices $a$ y $b$ de
-    $G$, tales que $ab \in E(G)$. Al ser $c'(A) = c'(B)$, tenemos que $\Sigma_{x
-    \in A}c(x) \equiv \Sigma_{y \in B}c(y) \pmod {\chi(G)}$. Sin p\'erdida de
-    generalidad, consideramos $a \in A$ y $b \in B$, entonces podemos ver la
-    congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
+    \Sigma_{x \in A}c(x)$ m\'odulo $\chi(G)$. Basta ver que $c'$ es una
+    coloraci\'on propia. Suponemos lo contrario, que existen $A$ y $B$
+    v\'ertices adyacentes en $F_k(G)$, tales que $c'(A) = c'(B)$. Como $A$ y $B$
+    son adyacentes, entonces $A \triangle B = \{a,b\}$, para algunos v\'ertices
+    $a$ y $b$ de $G$, tales que $ab \in E(G)$. Al ser $c'(A) = c'(B)$, tenemos
+    que $\Sigma_{x \in A}c(x) \equiv \Sigma_{y \in B}c(y) \pmod {\chi(G)}$. Sin
+    p\'erdida de generalidad, consideramos $a \in A$ y $b \in B$, entonces
+    podemos ver la congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
     \setminus\{a\}}c(x) \equiv c(b) + \Sigma_{y \in B\setminus\{b\}}c(y) \mod
     \chi(G)$. Pero $A \triangle B = \{a,b\}$, por lo que $\Sigma_{x \in
     A\setminus\{a\}}c(x)=\Sigma_{y \in B\setminus\{b\}}c(y)$, entonces tenemos

@@ -144,9 +144,9 @@ gr\'afica bipartita completa con bipartici\'on $({\color{crema}
 \boldsymbol {X}}=\{v_5, v_6,v_7, v_8, v_9, v_{10}\}$ y ${\color{baige}
 \boldsymbol {Y}}=\{v_1, v_2, v_3, v_4\}$. Sea ${\color{azulMetal} \boldsymbol
 {M=\{v_1v_8, v_2v_9,v_3v_7,v_4v_{10}\}}}$ el conjunto de aristas azules
-mencionado en \cref{lem:rb-bipGraph}, y resaltadas en la figura. Notamos que,
-todo v\'ertice en ${\color{baige} \boldsymbol {Y}}$ tiene exactamente una arista
-en ${\color{azulMetal}\boldsymbol {M}}$. Adem\'as, la uni\'on de las aristas de
+d\cref{lem:rb-bipGraph}, y resaltadas en la figura. Notamos que, todo v\'ertice
+en ${\color{baige} \boldsymbol {Y}}$ tiene exactamente una arista en
+${\color{azulMetal}\boldsymbol {M}}$. Adem\'as, la uni\'on de las aristas de
 ${\color{azulMetal}\boldsymbol {M}}$ y las aristas rojas, no forma un ciclo.
 
 Ahora pasamos a demostrar el lema principal de esta secci\'on.
@@ -228,21 +228,21 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     Adem\'as, tenemos que $a, b \notin Y_v '$, por definici\'on. 
 
     Sea $H_v$ la gr\'afica bipartita completa con clases de colores $Y_v '$ y
-    $\{1,\dots, l\}$. Definimos la siguiente coloraci\'on, si $y \in P_i$, para
-    alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
-    arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
-    azul. Ahora, pasamos a comprobar que la coloraci\'on definida cumple las
-    hip\'otesis d\cref{lem:rb-bipGraph}. Empezamos notando que, por
+    $\{1,\dots, l\}$. Luego, definimos la siguiente coloraci\'on, si $y \in
+    P_i$, para alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces
+    coloreamos la arista $iy$ de rojo y coloreamos el resto de las aristas de la
+    gr\'afica de azul. Ahora, pasamos a comprobar que la coloraci\'on definida
+    cumple las hip\'otesis d\cref{lem:rb-bipGraph}. Primero, notamos que, por
     construcci\'on de los $P_i$, con $i \in \{1, \dots, l\}$, cada v\'ertice de
     $Y_v '$ est\'a en, a lo m\'as, un $P_i$, por lo que cada v\'ertice de $Y_v
-    '$ incide en, a lo m\'as, una arista roja. Luego, notemos que $|\{1, \dots,
-    l\}| = l  \geq t-k+ 1+ |D| > t-k + |D|$. Si $v \in D$, entonces $|D| \geq
-    1$, por lo que $l \geq t- k+1 = |Y_v '|$. Si $v \in C$, tenemos que $l \geq
-    t-k = |Y_v '|$. As\'i, podemos usar \cref{lem:rb-bipGraph} en $H_v$ con $Z=
-    \{1, \dots, l\}$ y $Y = Y_v '$. Por lo tanto, hay un conjunto $M_v$ de
-    aristas azules tal que cada v\'ertice en $Y$ incide en exactamente una
-    arista de $M_v$ y la uni\'on de aristas rojas y aristas de $M_v$ es
-    ac\'iclica. Notamos que $|M_v|=|Y|$.
+    '$ incide en, a lo m\'as, una arista roja. A continuaci\'on, notemos que
+    $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k + |D|$. Si $v \in D$,
+    entonces $|D| \geq 1$, por lo que $l \geq t- k+1 = |Y_v '|$. Si $v \in C$,
+    tenemos que $l \geq t-k = |Y_v '|$. As\'i, podemos usar
+    \cref{lem:rb-bipGraph} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por
+    lo tanto, hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice en
+    $Y$ incide en exactamente una arista de $M_v$ y la uni\'on de aristas rojas
+    y aristas de $M_v$ es ac\'iclica. Notamos que $|M_v|=|Y|$.
 
     Usando $M_v$, construimos las trayectorias de tipo $R$ de la siguiente
     manera. Para cada $jx \in M_v$, defininimos $R\langle v, x \rangle$ como la
@@ -319,39 +319,35 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
 \end{proof}
 
-Con esto queda demostrado el resultado principal de esta secci\'on. Para
-intentar ejemplificar los tres tipos de trayectorias mencionados en
-\cref{lem:TrayIntAj}, \cref{fig:ex-tok-path}, a continuaci\'on mostrada, exhibe
-una gr\'afica $G$ del lado izquierdo y su gr\'afica de $3$-fichas del lado
-derecho. Ahora, construimos una trayectoria de cada tipo. Consideramos
-${\color{baige}\boldsymbol {A= \{1,2,3\}}}$ y ${\color{baige}\boldsymbol
-{B=\{2,3,5\}}}$ los v\'ertices en $F_3(G)$ sobre los que resaltamos los
-distintos tipos de trayectorias internamente ajenas obtenidas en el lema
-anterior. Tenemos que ${\color{baige} \boldsymbol {A\triangle B=\{1,5\}}}$ y
-$A\cap B=\{2,3\}$, por lo que usamos $15$-trayectorias para encontrar las
-trayectorias de tipo $P$ y las de tipo $Q$, de manera que las de tipo $P$ no
-tienen a $2$ ni a $3$ como v\'ertice interno y las de tipo $Q$ tienen, o bien a
-$2$ o bien a $3$ como v\'ertices internos. Notamos que hay dos trayectorias de
-tipo $P$ en $G$, la trayectoria $P_1=(1,4,5)$ y la trayectoria
-${\color{naranja}\boldsymbol {P_2=(1,6,5)}}$. En \cref{fig:ex-tok-path} se
-encuentra resaltada $P_2$ de ${\color{naranja} \bf naranja}$. Tambi\'en podemos
-observar que hay dos trayectorias de tipo $Q$ en $G$, la trayectoria
-${\color{fushia}\boldsymbol {Q_1(1,3,5)}}$, resaltada en \cref{fig:ex-tok-path}
-de ${\color{fushia}\bf rosa}$, y la trayectoria $Q_2=(1,2,5)$. As\'i, tenemos
-que los conjuntos auxiliares d\cref{lem:TrayIntAj} son $C=\{2,3\}$ y $D=
-\varnothing$. Utilizando $v=3$ y ${\color{menta}\boldsymbol {x=4}}$ del lema y
-${\color{naranja}\boldsymbol {P_2}}$, construimos la trayectoria $
-{\color{verdeAzulado}\boldsymbol {R\langle 3, 4 \rangle}}$. Tenemos que 
-\[
-    {\color{verdeAzulado}\boldsymbol {R\langle 3, 4 \rangle =(\{1,2,3\}\{1,2,4\}
-    \{2,4,6\}\{2,4,5\}\{2,3,5\})}}.
-\]
+Con esto queda demostrado el resultado principal de la secci\'on. Para
+ejemplificar los tres tipos de trayectorias mencionados en \cref{lem:TrayIntAj},
+\cref{fig:ex-tok-path}, mostrada a continuaci\'on, exhibe una gr\'afica $G$ del
+lado izquierdo y su gr\'afica de $3$-fichas del lado derecho. Ahora, construimos
+una trayectoria de cada tipo. Consideramos ${\color{baige}\boldsymbol {A=
+\{1,2,3\}}}$ y ${\color{baige}\boldsymbol {B=\{2,3,5\}}}$ los v\'ertices en
+$F_3(G)$ sobre los que resaltamos los distintos tipos de trayectorias
+internamente ajenas obtenidas en el lema anterior. Tenemos que ${\color{baige}
+\boldsymbol {A\triangle B=\{1,5\}}}$ y $A\cap B=\{2,3\}$, por lo que usamos
+$15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de tipo $Q$,
+de manera que las de tipo $P$ no tienen a $2$ ni a $3$ como v\'ertice interno y
+las de tipo $Q$ tienen, o bien a $2$ o bien a $3$ como v\'ertices internos.
+Notamos que hay dos trayectorias de tipo $P$ en $G$, la trayectoria
+$P_1=(1,4,5)$ y la trayectoria ${\color{naranja}\boldsymbol {P_2=(1,6,5)}}$. En
+\cref{fig:ex-tok-path} se encuentra resaltada $P_2$ de ${\color{naranja} \bf
+naranja}$. Tambi\'en podemos observar que hay dos trayectorias de tipo $Q$ en
+$G$, la trayectoria ${\color{fushia}\boldsymbol {Q_1(1,3,5)}}$, resaltada en
+\cref{fig:ex-tok-path} de ${\color{fushia}\bf rosa}$, y la trayectoria
+$Q_2=(1,2,5)$. As\'i, tenemos que los conjuntos auxiliares d\cref{lem:TrayIntAj}
+son $C=\{2,3\}$ y $D= \varnothing$. Utilizando $v=3$ y
+${\color{menta}\boldsymbol {x=4}}$ del lema y ${\color{naranja}\boldsymbol
+{P_2}}$, construimos la trayectoria $ {\color{verdeAzulado}\boldsymbol {R\langle
+3, 4 \rangle =\{1,2,3\}\{1,2,4\} \{2,4,6\}\{2,4,5\}\{2,3,5\}}}$.
 
 \begin{figure}[ht!]
 \centering
    \begin{tikzpicture}
 
-    \begin{scope}[xshift=-8.5cm]
+    \begin{scope}[xshift=-8.5cm,scale=0.9]
         
        
         \foreach \i in {0,4}
@@ -372,7 +368,7 @@ ${\color{naranja}\boldsymbol {P_2}}$, construimos la trayectoria $
         
         \end{scope}
     
-    \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
+    \begin{scope}[xshift=-0.5cm,yshift=0cm,scale=1]
 
         \draw ({(360/16)*6}:4) node(6)[wvertex,fill=fushia]{}; 
         \foreach \i in {3,7} 
@@ -507,14 +503,15 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto, $|\mathcal{C}|>t$.
 \end{proof} 
 
 Utilizamos las gr\'aficas de \cref{fig:ex-tConect} para ejemplificar
-\cref{teo:FG-t-conexa}. Nos fijamos que $G$, mostrada del lado izquierdo, es una
-gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del lado derecho, es
-$8$-conexa. En la figura, se muestran los conjuntos de corte
-${\color{naranja}\boldsymbol{ \{1,3,5,6\}}}$ y ${\color{fushia}\boldsymbol
-{\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}}$ para $G$
-y $F_2(G)$, respectivamente. Adem\'as, utilizando \cref{fig:ex-tok-path},
-podemos ver que $F_3(G)$ es $9$-conexa. Por lo tanto, tenemos que $F_2(G)$ y
-$F_3(G)$ tambi\'en son gr\'aficas $4$-conexas.
+\cref{teo:FG-t-conexa}. Nos fijamos que $G$, mostrada del lado izquierdo en la
+figura, es una gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del
+lado derecho, es $8$-conexa. En la figura tambi\'en se muestra el conjuntos de
+corte de $G$, ${\color{naranja}\boldsymbol{ \{1,3,5,6\}}}$, y el conjunto de
+corte de $F_k(G)$, es decir, ${\color{fushia}\boldsymbol
+{\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}}$.
+Adem\'as, utilizando \cref{fig:ex-tok-path}, podemos ver que $F_3(G)$ es
+$9$-conexa. Por lo tanto, tenemos que $F_2(G)$ y $F_3(G)$ tambi\'en son
+gr\'aficas $4$-conexas.
 
 \begin{figure}[ht!]
     \centering
@@ -578,8 +575,8 @@ $F_3(G)$ tambi\'en son gr\'aficas $4$-conexas.
     \label{fig:ex-tConect}
     \end{figure}
 
-Por \'ultimo, el siguiente teorema presenta una mejor cota para gr\'aficas
-suficientemente conexas y suficientemente grandes.
+Por \'ultimo, \cref{teo:FG_k(t- k+ 1)-conexa} presenta una mejor cota para
+gr\'aficas suficientemente conexas y suficientemente grandes.
 
 \begin{teorema}%
     \label{teo:FG_k(t- k+ 1)-conexa}
