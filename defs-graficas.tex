@@ -270,6 +270,213 @@ una subgr\'afica inducida.
     \label{fig:ClanInd}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operaciones}
+\label{sec:operaciones}
+
+Al igual que en muchas \'areas de las matem\'aticas, al buscar maneras de
+generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas. A
+continuaci\'on nos enfocamos en las operaciones de gr\'aficas que son
+pertinentes para este trabajo. El primer grupo de operaciones que se define se
+basa en el concepto de uni\'on de conjuntos. La \indice{uni\'on} de dos
+gr\'aficas $G$ y $H$ la definimos como la gr\'afica cuyo conjunto de v\'ertices
+y de aristas son la uni\'on de los conjuntos de v\'ertices  y de aristas de
+ambas gr\'aficas, respectivamente. Se utiliza la misma notaci\'on que para la
+uni\'on de conjuntos, es decir, $G \cup H$. El segundo tipo de uni\'on de
+gr\'aficas que definimos es la uni\'on ajena. La \textbf{uni\'on}
+\indiceSub{uni\'on}{ajena} de las gr\'aficas $G$ y $H$, denotada $G + H$, es la
+uni\'on de $G$ y $H$, donde $V(G) \cap V(H) = \varnothing$. Por \'ultimo, otra
+operaci\'on que surge del concepto de uni\'on de conjuntos y que va a ser de
+utilidad en este trabajo es la uni\'on completa. La \textbf{uni\'on}
+\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$, tales que $V(G) \cap
+V(H)=\varnothing$, es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$ y
+cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
+V(H) \}$. La uni\'on completa la denotamos $G \oplus H$. En
+\cref{fig:ex-unionCompleta} se muestra un ejemplo de este tipo de uni\'on. Del
+lado izquierdo de la figura se muestran dos gr\'aficas, la primera, en la parte
+superior, tiene v\'ertices $v_i$ y la segunda, en la parte inferior, tiene
+v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado derecho de la figura
+se muestra la uni\'on completa de dichas gr\'aficas.
+
+\begin{figure}[htb!]
+    \centering
+    \begin{tikzpicture}
+
+        \begin{scope}[yshift=1cm,xshift=-2cm,rotate=45,scale=1]
+            \foreach \i in {1,...,3}
+            \draw ({(360/3)*\i-150}:1)
+                node(\i)[vertex, label=(360/3)*\i-105:{\large $v_{\i}$}]{};
+            \end{scope}
+
+        \begin{scope}[yshift=-1cm,rotate=45,scale=1]
+            \foreach \i in {4,...,6}
+            \draw ({(360/3)*\i+30}:1)
+                node(\i)[vertex, label=(360/3)*\i+75:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
+        \end{scope}
+
+        \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4,1/4,1/5,1/6,2/4,2/5,2/6,3/4,3/5,3/6}
+        \draw [edge,grisOscuro] (\i) to (\j);
+
+        \begin{scope}[yshift=1cm,xshift=-8cm,rotate=45,scale=1]
+            \foreach \i in {1,...,3}
+            \draw ({(360/3)*\i-150}:1)
+                node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
+            \end{scope}
+
+        \begin{scope}[yshift=-1cm,xshift=-6cm,rotate=45,scale=1]
+            \foreach \i in {4,...,6}
+            \draw ({(360/3)*\i+30}:1)
+                node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
+        \end{scope}
+
+
+            \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4}
+                \draw [edge,grisOscuro] (\i) to (\j);
+    \end{tikzpicture}
+    \caption{Dos gr\'aficas (izquierda) y su uni\'on completa (derecha).}
+\label{fig:ex-unionCompleta}
+\end{figure}
+
+La siguiente proposici\'on sobre la uni\'on completa de subgr\'aficas
+generadoras nos ser\'a de utilidad m\'as adelante este trabajo, por lo que
+pasamos a demostrarla.
+
+\begin{proposicion}
+\label{prop:HUnion-SSubG}
+    Sean $H$, $H'$, $G$ y $G'$ cuatro gr\'aficas. Si $H$ y $H'$ son
+    subgr\'aficas generadoras de $G$ y $G'$, respectivamente, entonces la
+    uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la uni\'on
+    completa de $G$ y $G'$.
+\end{proposicion}
+
+\begin{proof}
+    Dadas dos gr\'aficas $G$ y $G'$ y dos gr\'aficas generadoras $H \subseteq G$
+    y $H'\subseteq G'$, buscamos demostrar que $H \oplus H'$ es una subgr\'afica
+    generadora de $G \oplus G'$. Observamos que $V(H)=V(G)$ y $V(H')=V(G)$, de
+    ah\'i que $V(H \oplus H')=V(G \oplus G')$. Por consiguiente, basta ver que
+    las aristas de $H \oplus H'$ son aristas de $G \oplus G'$. Sean $x$ y $y$
+    v\'ertices adyacentes en $H \oplus H'$. Si $x,y \in V(H)$, de manera
+    an\'aloga si $x,y \in V(H')$, entonces tenemos que $x \sim y$ en $G$,
+    an\'alogamente $x \sim y$ en $G'$. Por ende, en ambos casos tenemos que $x$
+    y $y$ son adyacentes en $G \oplus G'$. Ahora, sin p\'erdida de generalidad,
+    de la definici\'on de  uni\'on completa tenemos que, si $x \in V(H)$ y $y
+    \in V(H')$, entonces $x \sim y$ en $G \oplus G'$. De este modo tenemos que
+    $H \oplus H'$ es una subgr\'afica generadora de $G \oplus G'$.
+\end{proof}
+
+Otra operaci\'on que se utilizar\'a m\'as adelante en este trabajo es el
+producto cartesiano de gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el
+\indice{producto cartesiano} de $G$ y $H$, denotado $G \square H$, es la
+gr\'afica cuyo conjunto de v\'ertices es el producto cartesiano de $V(G)$ y
+$V(H)$, es decir, $V(G \square H) = V(G) \times V(H)$. Adem\'as,
+$(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y s\'olo si $g_1 = g_2$ y
+$h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A continuaci\'on, en
+\cref{fig:ex-cartesiano}, se muestran tres gr\'aficas, la primera del lado
+izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\boldsymbol{{v_1}}},
+{\color{coral}\boldsymbol{{v_2}}}\}$ y la segunda en la parte inferior y con
+conjunto de v\'ertices
+$\{{\color{amarillo}\boldsymbol{{w_1}}},{\color{morado}\boldsymbol{{w_2}}}\}$.
+Estas dos gr\'aficas son copias de la gr\'afica $K_2$ (introducida formalmente
+en la siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
+gr\'afica, el producto cartesiano de las gr\'aficas antes mencionadas,
+resaltando de d\'onde vienen los v\'ertices de esta \'ultima gr\'afica.
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=0.9]
+
+                \draw ({(360/4)*2 - 45}:2) node(1)[avertex,fill=amarillo, label=(360/4)*2 -
+                    45:{\large $k_{1}$}]{};
+                \draw ({(360/4) - 45}:2) node(2)[avertex, fill=morado, label=(360/4) -
+                    45:{\large $k_{2}$}]{};
+                \draw ({(360/4)*3 - 45}:2) node(3)[coralvertex,fill= amarillo, label=(360/4)*3 - 
+                45:{\large $k_{3}$}]{};
+                \draw ({(360/4)*4 - 45}:2) node(4)[coralvertex, fill= morado, label=(360/4)*4 - 
+                45:{\large $k_{4}$}]{};
+                \draw (-3,1.4) node (5) [avertex, label=180:{\large $v_1$}] {};
+                \draw (-3,-1.4) node (6) [coralvertex, label=180:{\large $v_2$}] {}; 
+                \draw (-1.4,-3) node (7) [bvertex, fill= amarillo, label=270:{\large $w_1$}] {};
+                \draw (1.4,-3) node (8) [bvertex, fill= morado, label=270:{\large $w_2$}] {};
+
+                \foreach \i/\j in {1/2,1/3,3/4,2/4,5/6,7/8}
+                    \draw [edge,grisOscuro] (\i) to (\j);
+                \end{scope}
+
+                    
+        \end{tikzpicture}
+        \caption{En el centro, la gr\'afica $K_2 \square K_2$. Una copia de
+        $K_2$ a la izquierda y abajo, resaltando cada v\'ertice de distinto
+        color.}
+        \label{fig:ex-cartesiano}
+    \end{figure}
+
+Hasta ahora se han definido operaciones para dos o m\'as gr\'aficas, sin
+embargo, tambi\'en existen operaciones sobre una misma gr\'afica. Tal es el caso
+de la \indiceSub{aristas}{contraci\'on} \textbf{de aristas}. Dada una gr\'afica
+$G$ y $e=uv$ una arista de $G$, denotamos $G/e$ a la gr\'afica obtenida de
+contraer a la arista $e$. El conjunto de aristas de $G/e$ es $ E(G/e)=E(G)
+\setminus \{e\}$ y el conjunto de v\'ertices es $V(G/e)=(V(G)\setminus \{u,v\})
+\cup \{w\}$, donde $w$ es un v\'ertice tal que $N(w)=\{x \in V(G) \colon x \in
+(N(u)\setminus \{v\}) \lor x \in (N(v) \setminus (N(u) \cup \{u\}))\}$. En otras
+palabras, $G/e$ es la gr\'afica obtenida de eliminar la arista $e$ y
+``fusionar'' los extremos de $e$ para crear un nuevo v\'ertice llamado $w$. La
+Figura \ref{fig:ex-contract} muestra un peque\~{n}o ejemplo de la contracci\'on
+de aristas.
+
+\begin{figure}[htb!]
+    \centering
+    \begin{tikzpicture}
+
+        \begin{scope}[xshift=0cm]
+            \foreach \i in {1,2}
+            \draw ({(360/3)*\i}:1.5)
+                node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
+                
+            \draw (360:1.5) node(3)[vertex, fill=azulCielo, label=0:{\large $w$}]{};
+                
+            \foreach \i/\j in {1/2,1/3,2/3}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+
+        \begin{scope}[xshift=-6cm]
+            \foreach \i in {1,2}
+            \draw ({(360/4)*\i}:1.5)
+                node(\i)[vertex, label=(360/4)*\i:{\large $v_{\i}$}]{};
+
+            \draw ({(360/4)*3}:1.5) node(3)[vertex, fill=amarillo, label=(360/4)*3:{\large $v_{3}$}]{};
+            \draw (360:1.5) node(4)[vertex, fill=coral, label=0:{\large $v_{4}$}]{};
+
+            \foreach \i/\j in {1/2,1/3,1/4,2/3}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            
+            \foreach \i/\j in {3/4}
+                \draw[wedge,azulCielo] (\i) to (\j);
+            \end{scope}
+
+    \end{tikzpicture}
+    \caption{La gr\'afica $G$ con la arista $e=v_3v_4$ resaltada de
+    ${\color{azulCielo}\bf azul}$ (izquierda) y la gr\'afica
+    $G/{\color{azulCielo}\boldsymbol{e}}$ (derecha).}
+\label{fig:ex-contract}
+\end{figure}
+
+Por \'ultimo, definimos el \indice{complemento} de una gr\'afica
+$G$ como la gr\'afica que tiene el mismo conjunto de v\'ertices que $G$ y cuyo
+conjunto de aristas es $\binom{V(G)}{2} - E(G)$. A esta gr\'afica la denotamos
+$\overline{G}$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Caminos y conexidad}
 \label{sec:CamConex}
 
@@ -351,7 +558,7 @@ una trayectoria contenida. Por esta raz\'on, de ahora en adelante nos enfocamos
 en trayectorias. Como se mencion\'o anteriormente, entre dos v\'ertices $u$ y
 $v$ pueden existir m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
 \textbf{$uv$-trayectorias} \indiceSub{u @$uv$-trayectoria}{internamente ajenas}
-si $V(X)\cap V(Y)=\{u,v\}$, i.e. los v\'ertices en com\'un entre $X$ y $Y$ son
+si $V(X)\cap V(Y)=\{u,v\}$, i.~e. los v\'ertices en com\'un entre $X$ y $Y$ son
 \'unicamente sus extremos. El m\'aximo n\'umero de $uv$-trayectorias
 internamente ajenas se denota por $p(u,v)$. Tambi\'en podemos definir un
 concepto similar enfoc\'andonos en aristas. Llamamos \textbf{$uv$-trayectorias}
@@ -639,7 +846,7 @@ global de \'este.
     manera, cada $XA'$-trayectoria tiene un v\'ertice en $B$. Por este motivo,
     cada $XY$-trayectoria contiene un v\'ertice de $B$, de donde se sigue que
     $B$ es un conjunto que separa a $X$ de $Y$ en $G$. Observamos que
-    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, i.e., la
+    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, i.~e., la
     familia de estas $XA'$-trayectorias tiene la misma cardinalidad de $B$.
     Notamos que, por construcci\'on, las $XA'$-trayectorias tambi\'en son
     trayectorias de $G$. Adem\'as tenemos que, al ser $B$ un conjunto que separa
@@ -732,204 +939,11 @@ internamente ajenas entre cualesquiera dos v\'ertices de dicha gr\'afica.
      $uv$-trayectoria internamente ajena. De ah\'i que $G$ es $k$-conexa.
          
  \end{proof}
- 
-\section{Operaciones}
-\label{sec:operaciones}
-
-Al igual que en muchas \'areas de las matem\'aticas, al buscar maneras de
-generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas. A
-continuaci\'on nos enfocamos en las operaciones de gr\'aficas que son
-pertinentes para este trabajo. El primer grupo de operaciones que se define se
-basa en el concepto de uni\'on de conjuntos. La \indice{uni\'on} de dos
-gr\'aficas $G$ y $H$ la definimos como la gr\'afica cuyo conjunto de v\'ertices
-y de aristas son la uni\'on de los conjuntos de v\'ertices  y de aristas de
-ambas gr\'aficas, respectivamente. Se utiliza la misma notaci\'on que para la
-uni\'on de conjuntos, es decir, $G \cup H$. El segundo tipo de uni\'on de
-gr\'aficas que definimos es la uni\'on ajena. La \textbf{uni\'on}
-\indiceSub{uni\'on}{ajena} de las gr\'aficas $G$ y $H$, denotada $G + H$, es la
-uni\'on de $G$ y $H$, donde $V(G) \cap V(H) = \varnothing$. Por \'ultimo, otra
-operaci\'on que surge del concepto de uni\'on de conjuntos y que va a ser de
-utilidad en este trabajo es la uni\'on completa. La \textbf{uni\'on}
-\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$, tales que $V(G) \cap
-V(H)=\varnothing$, es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$ y
-cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
-V(H) \}$. La uni\'on completa la denotamos $G \oplus H$. En
-\cref{fig:ex-unionCompleta} se muestra un ejemplo de este tipo de uni\'on. Del
-lado izquierdo de la figura se muestran dos gr\'aficas, la primera, en la parte
-superior, tiene v\'ertices $v_i$ y la segunda, en la parte inferior, tiene
-v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado derecho de la figura
-se muestra la uni\'on completa de dichas gr\'aficas.
-
-\begin{figure}[htb!]
-    \centering
-    \begin{tikzpicture}
-
-        \begin{scope}[yshift=1cm,xshift=-2cm,rotate=45,scale=1]
-            \foreach \i in {1,...,3}
-            \draw ({(360/3)*\i-150}:1)
-                node(\i)[vertex, label=(360/3)*\i-105:{\large $v_{\i}$}]{};
-            \end{scope}
-
-        \begin{scope}[yshift=-1cm,rotate=45,scale=1]
-            \foreach \i in {4,...,6}
-            \draw ({(360/3)*\i+30}:1)
-                node(\i)[vertex, label=(360/3)*\i+75:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
-        \end{scope}
-
-        \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4,1/4,1/5,1/6,2/4,2/5,2/6,3/4,3/5,3/6}
-        \draw [edge,grisOscuro] (\i) to (\j);
-
-        \begin{scope}[yshift=1cm,xshift=-8cm,rotate=45,scale=1]
-            \foreach \i in {1,...,3}
-            \draw ({(360/3)*\i-150}:1)
-                node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
-            \end{scope}
-
-        \begin{scope}[yshift=-1cm,xshift=-6cm,rotate=45,scale=1]
-            \foreach \i in {4,...,6}
-            \draw ({(360/3)*\i+30}:1)
-                node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
-        \end{scope}
 
 
-            \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4}
-                \draw [edge,grisOscuro] (\i) to (\j);
-    \end{tikzpicture}
-    \caption{Dos gr\'aficas (izquierda) y su uni\'on completa (derecha).}
-\label{fig:ex-unionCompleta}
-\end{figure}
-
-La siguiente proposici\'on sobre la uni\'on completa de subgr\'aficas
-generadoras nos ser\'a de utilidad m\'as adelante este trabajo, por lo que
-pasamos a demostrarla.
-
-\begin{proposicion}
-\label{prop:HUnion-SSubG}
-    Sean $H$, $H'$, $G$ y $G'$ cuatro gr\'aficas. Si $H$ y $H'$ son
-    subgr\'aficas generadoras de $G$ y $G'$, respectivamente, entonces la
-    uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la uni\'on
-    completa de $G$ y $G'$.
-\end{proposicion}
-
-\begin{proof}
-    Dadas dos gr\'aficas $G$ y $G'$ y dos gr\'aficas generadoras $H \subseteq G$
-    y $H'\subseteq G'$, buscamos demostrar que $H \oplus H'$ es una subgr\'afica
-    generadora de $G \oplus G'$. Observamos que $V(H)=V(G)$ y $V(H')=V(G)$, de
-    ah\'i que $V(H \oplus H')=V(G \oplus G')$. Por consiguiente, basta ver que
-    las aristas de $H \oplus H'$ son aristas de $G \oplus G'$. Sean $x$ y $y$
-    v\'ertices adyacentes en $H \oplus H'$. Si $x,y \in V(H)$, de manera
-    an\'aloga si $x,y \in V(H')$, entonces tenemos que $x \sim y$ en $G$,
-    an\'alogamente $x \sim y$ en $G'$. Por ende, en ambos casos tenemos que $x$
-    y $y$ son adyacentes en $G \oplus G'$. Ahora, sin p\'erdida de generalidad,
-    de la definici\'on de  uni\'on completa tenemos que, si $x \in V(H)$ y $y
-    \in V(H')$, entonces $x \sim y$ en $G \oplus G'$. De este modo tenemos que
-    $H \oplus H'$ es una subgr\'afica generadora de $G \oplus G'$.
-\end{proof}
-
-Otra operaci\'on que se utilizar\'a m\'as adelante en este trabajo es el
-producto cartesiano de gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el
-\indice{producto cartesiano} de $G$ y $H$, denotado $G \square H$, es la
-gr\'afica cuyo conjunto de v\'ertices es el producto cartesiano de $V(G)$ y
-$V(H)$, es decir, $V(G \square H) = V(G) \times V(H)$. Adem\'as,
-$(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y s\'olo si $g_1 = g_2$ y
-$h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A continuaci\'on, en
-\cref{fig:ex-cartesiano}, se muestran tres gr\'aficas, la primera del lado
-izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\boldsymbol{{v_1}}},
-{\color{coral}\boldsymbol{{v_2}}}\}$ y la segunda en la parte inferior y con
-conjunto de v\'ertices
-$\{{\color{amarillo}\boldsymbol{{w_1}}},{\color{morado}\boldsymbol{{w_2}}}\}$.
-Estas dos gr\'aficas son copias de la gr\'afica $K_2$ (introducida formalmente
-en la siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
-gr\'afica, el producto cartesiano de las gr\'aficas antes mencionadas,
-resaltando de d\'onde vienen los v\'ertices de esta \'ultima gr\'afica.
-
-\begin{figure}[ht!]
-    \centering
-        \begin{tikzpicture}
-        
-            \begin{scope}[xshift=0cm,scale=0.9]
-
-                \draw ({(360/4)*2 - 45}:2) node(1)[avertex,fill=amarillo, label=(360/4)*2 -
-                    45:{\large $k_{1}$}]{};
-                \draw ({(360/4) - 45}:2) node(2)[avertex, fill=morado, label=(360/4) -
-                    45:{\large $k_{2}$}]{};
-                \draw ({(360/4)*3 - 45}:2) node(3)[coralvertex,fill= amarillo, label=(360/4)*3 - 
-                45:{\large $k_{3}$}]{};
-                \draw ({(360/4)*4 - 45}:2) node(4)[coralvertex, fill= morado, label=(360/4)*4 - 
-                45:{\large $k_{4}$}]{};
-                \draw (-3,1.4) node (5) [avertex, label=180:{\large $v_1$}] {};
-                \draw (-3,-1.4) node (6) [coralvertex, label=180:{\large $v_2$}] {}; 
-                \draw (-1.4,-3) node (7) [bvertex, fill= amarillo, label=270:{\large $w_1$}] {};
-                \draw (1.4,-3) node (8) [bvertex, fill= morado, label=270:{\large $w_2$}] {};
-
-                \foreach \i/\j in {1/2,1/3,3/4,2/4,5/6,7/8}
-                    \draw [edge,grisOscuro] (\i) to (\j);
-                \end{scope}
-
-                    
-        \end{tikzpicture}
-        \caption{En el centro, la gr\'afica $K_2 \square K_2$. Una copia de
-        $K_2$ a la izquierda y abajo, resaltando cada v\'ertice de distinto
-        color.}
-        \label{fig:ex-cartesiano}
-    \end{figure}
-
-Hasta ahora se han definido operaciones para dos o m\'as gr\'aficas, sin
-embargo, tambi\'en existen operaciones sobre una misma gr\'afica. Tal es el caso
-de la \indiceSub{aristas}{contraci\'on} \textbf{de aristas}. Dada una gr\'afica
-$G$ y $e=uv$ una arista de $G$, denotamos $G/e$ a la gr\'afica obtenida de
-contraer a la arista $e$. El conjunto de aristas de $G/e$ es $ E(G/e)=E(G)
-\setminus \{e\}$ y el conjunto de v\'ertices es $V(G/e)=(V(G)\setminus \{u,v\})
-\cup \{w\}$, donde $w$ es un v\'ertice tal que $N(w)=\{x \in V(G) \colon x \in
-(N(u)\setminus \{v\}) \lor x \in (N(v) \setminus (N(u) \cup \{u\}))\}$. En otras
-palabras, $G/e$ es la gr\'afica obtenida de eliminar la arista $e$ y
-``fusionar'' los extremos de $e$ para crear un nuevo v\'ertice llamado $w$. La
-Figura \ref{fig:ex-contract} muestra un peque\~{n}o ejemplo de la contracci\'on
-de aristas.
-
-\begin{figure}[htb!]
-    \centering
-    \begin{tikzpicture}
-
-        \begin{scope}[xshift=0cm]
-            \foreach \i in {1,2}
-            \draw ({(360/3)*\i}:1.5)
-                node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
-                
-            \draw (360:1.5) node(3)[vertex, fill=azulCielo, label=0:{\large $w$}]{};
-                
-            \foreach \i/\j in {1/2,1/3,2/3}
-                \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
-
-        \begin{scope}[xshift=-6cm]
-            \foreach \i in {1,2}
-            \draw ({(360/4)*\i}:1.5)
-                node(\i)[vertex, label=(360/4)*\i:{\large $v_{\i}$}]{};
-
-            \draw ({(360/4)*3}:1.5) node(3)[vertex, fill=amarillo, label=(360/4)*3:{\large $v_{3}$}]{};
-            \draw (360:1.5) node(4)[vertex, fill=coral, label=0:{\large $v_{4}$}]{};
-
-            \foreach \i/\j in {1/2,1/3,1/4,2/3}
-                \draw [edge,grisOscuro] (\i) to (\j);
-            
-            \foreach \i/\j in {3/4}
-                \draw[wedge,azulCielo] (\i) to (\j);
-            \end{scope}
-
-    \end{tikzpicture}
-    \caption{La gr\'afica $G$ con la arista $e=v_3v_4$ resaltada de
-    ${\color{azulCielo}\bf azul}$ (izquierda) y la gr\'afica
-    $G/{\color{azulCielo}\boldsymbol{e}}$ (derecha).}
-\label{fig:ex-contract}
-\end{figure}
-
-Por \'ultimo, definimos el \indice{complemento} de una gr\'afica
-$G$ como la gr\'afica que tiene el mismo conjunto de v\'ertices que $G$ y cuyo
-conjunto de aristas es $\binom{V(G)}{2} - E(G)$. A esta gr\'afica la denotamos
-$\overline{G}$.
-
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Algunas familias relevantes}
 \label{sec:famGraf}
@@ -1003,7 +1017,7 @@ bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
     En el caso en el que el que $G$ es una gr\'afica conexa, tenemos que s\'olo
     tiene una componente conexa, ella misma, por lo que la proposici\'on se
     cumple de manera trivial. Por ello, nos enfocamos en el caso en el que $G$
-    es inconexa, i.e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
+    es inconexa, i.~e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
     \dots, G_n$ las componentes conexas de $G$, con $n \geq 2$. Empezamos
     suponiendo que $G$ es una gr\'afica bipartita con bipartici\'on $(X,Y)$.
     Sean $X_i, Y_i\subseteq V(G_i)$, tales que $X_i \subseteq X$ y $Y_i
@@ -1099,7 +1113,7 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
     consideramos $v_1 \in X$, entonces tenemos que $v_2 \in Y$, pues $G$ es
     bipartita. Inductivamente, tenemos que $v_i \in X$ y $v_j \in Y$ si y s\'olo
     si $i$ es impar y $j$ es par. Adem\'as, tenemos que $v_k \in Y$ pues $v_k
-    v_1 \in E(G)$ y $v_1 \in X$. Por lo tanto, $k$ es par, i.e., $C$ tiene
+    v_1 \in E(G)$ y $v_1 \in X$. Por lo tanto, $k$ es par, i.~e., $C$ tiene
     longitud par. En consecuencia $G$ no contiene ciclos impares.
 
     Ahora pasamos a la segunda implicaci\'on, para esto, consideramos $G$ una
@@ -1192,7 +1206,7 @@ de gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir
 algunos conceptos necesarios. El primer concepto es el de trayectoria
 hamiltoniana. Una \textbf{trayectoria}
 \indiceSub{trayectoria}{hamiltoniana}\index{hamiltoniana!trayectoria} es una
-trayectoria generadora, i.e., una trayectoria cuyo conjunto de v\'ertices es el
+trayectoria generadora, i.~e., una trayectoria cuyo conjunto de v\'ertices es el
 conjunto de v\'ertices de la gr\'afica. Asimismo, un \textbf{ciclo}
 \indiceSub{ciclo}{hamiltoniano}\index{hamiltoniana!ciclo} es un ciclo generador.
 Por \'ultimo, una \indice{subtrayectoria
@@ -1399,7 +1413,7 @@ la gr\'afica. A continuaci\'on se demuestra este resultado.
 \end{proof}
 
 Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
-de una gr\'afica y el n\'umero de clan de \'esta, i.e., $\omega$. Como los
+de una gr\'afica y el n\'umero de clan de \'esta, i.~e., $\omega$. Como los
 clanes cumplen que todos sus v\'ertices son adyacentes entre s\'i, entonces la
 clase crom\'atica de una gr\'afica $G$ tiene que ser al menos el n\'umero de
 clan de $G$, de esta manera tenemos que $\omega(G) \leq \chi(G)$. 
