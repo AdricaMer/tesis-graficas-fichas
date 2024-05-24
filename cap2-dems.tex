@@ -270,9 +270,66 @@ resaltando ${\color{naranja}\boldsymbol {X_1}}$ y ${\color{verde}\boldsymbol
 \label{fig:ex-clique2}
 \end{figure}
        
-A continuaci\'on nos enfocaremos en el n\'umero de clan de las gr\'aficas de
-fichas, es decir, $\omega(F_k(G))$. El siguiente teorema nos da una f\'ormula
-para el n\'umero de clan.
+Por la caracterizaci\'on obtenida en \cref{teo:clanG-clanFG},
+sabemos que un clan $X$ en $F_k(G)$ tiene la misma cardinalidad que $K$, clan en
+$G$ como en el teorema. Por ello, podr\'ia parecer que $G$ y $F_k(G)$ tienen el
+mismo n\'umero de clan. Sin embargo,\cref{fig:ex-wG} nos muestra un ejemplo en
+el que el n\'umero de clan de $G$ es mayor al de $F_k(G)$.
+
+
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+
+        \begin{scope}[xshift=-4cm]
+                
+            \foreach \i in {1,...,5}
+                \draw ({(360/5)*\i}:1.5) node(\i)[vertex]{};
+                        
+            \foreach \i in {0,...,4}
+                \draw ({(360/5)*\i}:2) node(e0){\pgfmathparse{int(\i+1)}
+                   \pgfmathresult};
+    
+            \foreach \i/\j in {1/2,1/3,1/4,1/5,2/3,2/4,2/5,3/4,3/5,4/5}
+                \draw [edge,grisOscuro!75] (\i) to (\j);
+                
+        \end{scope}
+            
+        \begin{scope}[xshift=4cm,yshift=0cm,scale=0.8]
+            \foreach \i in {0,1,3,4,5,9} 
+            \draw ({(360/10)*\i}:3.5) node(\i)[wvertex]{};
+
+            \foreach \i in {2,6,7,8}
+                \draw ({(360/10)*\i}:3.5) node(\i)[bvertex,fill=azulOscuro]{};
+                
+            \draw ({(360/10)*1}:4) node (e1) {{\footnotesize $135$}};
+            \draw ({(360/10)*2}:4) node (e1) {{\footnotesize $145$}};
+            \draw ({(360/10)*3}:4) node (e1) {{\footnotesize $345$}};
+            \draw ({(360/10)*4}:4) node (e1) {{\footnotesize $134$}};
+            \draw ({(360/10)*5}:4) node (e1) {{\footnotesize $234$}};
+            \draw ({(360/10)*6}:4) node (e1) {{\footnotesize $124$}};
+            \draw ({(360/10)*7}:4) node (e1) {{\footnotesize $245$}};
+            \draw ({(360/10)*8}:4) node (e1) {{\footnotesize $125$}};
+            \draw ({(360/10)*9}:4) node (e1) {{\footnotesize $123$}};
+            \draw ({(360/10)*10}:4) node (e1) {{\footnotesize $235$}};
+            
+            \foreach\i/\j in{0/1,0/3,0/5,0/7,0/8,0/9,1/2,1/3,1/4,1/8,1/9,2/3,2/4,
+            3/4,3/5,3/7,4/5,4/6,4/9,5/6,5/7,5/9,6/9,8/9} 
+                \draw [edge,grisOscuro!60] (\i) to (\j);
+
+            \foreach \i/\j in {2/6,2/7,2/8,6/7,6/8,7/8}
+                \draw [wedge,azulOscuro] (\i) to (\j);
+                
+        \end{scope}
+        
+    \end{tikzpicture}
+\caption{La gr\'afica $K_5$ (izquierda) y su gr\'afica de $3$-fichas resaltando
+un ${\color{azulOscuro}\bf {clan}}$ de cardinalidad $\omega(F_3(K_4))$ (derecha).}
+\label{fig:ex-wG}
+\end{figure}
+
+Pasamos a determinar el n\'umero de clan de $F_k(G)$ en el siguiente teorema,
+que nos da una f\'ormula para $\omega(F_k(G))$.
             
 \begin{teorema}
 \label{teo:clan-max}
@@ -339,7 +396,7 @@ corolario.
 \end{proof}
 
 Recordando que $F_k(G) \cong F_{n-k}(G)$, la utilidad  d\cref{coro:numClan}
-resulta evidente.
+resulta evidente. 
 
 \section{N\'umero cr\'omatico}%
 \label{sec:num cromatico}
@@ -549,7 +606,7 @@ de $\chi (G)$ para el caso general.
     Ahora, sabemos que $F_{k-r}(G-H) \cong F_k(G,H)$, donde $r = |X|$. En este
     caso, $|X| = k-1$, as\'i tenemos que $F_1(G-X) \cong F_k(G,X)$. Adem\'as,
     sabemos que $F_1(G) \cong G$. Lo que implica que $G-X \cong F_k(G,X)$, que
-    es una subr\'afica de $F_k(G)$. Por lo tanto, $\chi(G) \leq m + \chi(G-X) =
+    es una subr\'afica de $F_k(G)$. Por lo tanto, $\chi(G) \leq m' + \chi(G-X) =
     m' + \chi(F_k(G,X)) \leq m' + \chi(F_k(G))$. 
             
     Por otro lado, tenemos $\frac{(m'-1)n}{\chi(G)}\leq \Sigma_{i=1}^{m'-1}|V_i|
