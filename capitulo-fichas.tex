@@ -763,7 +763,7 @@ $\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene longitud $4 \cdot 6 = 24$.
 \label{fig:ex-diamT}       
 \end{figure}
 
-Nuestro siguiente resultado muestra que algunas subgr\'aficas inducidas de las
+El siguiente resultado muestra que algunas subgr\'aficas inducidas de las
 gr\'aficas de fichas son productos cartesianos de algunas subgr\'aficas
 inducidas de $G$. El art\'iculo \textit{Token graphs} \cite{fabilaToken}, de
 donde sale el siguiente teorema, no proporciona una demostraci\'on del dicho
@@ -781,26 +781,26 @@ teorema, por lo que la siguiente demostraci\'on es independiente del art\'iculo.
 \end{teorema}
 
 \begin{proof}
-    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y sean $s_1, \dots,
-    s_m\in \mathbb{Z^{+}}$ enteros positivos como en el enunciado. Llamamos $L$
-    al conjunto de los $k$-subconjuntos de $G$ que cumplen tener exactamente
-    $s_i$ elementos de $H_i$, para toda $i \in \{1, \dots, m\}$, es decir, $L = \{A
-    \subseteq G \colon\ |A\cap V(H_1)|=s_1 , |A \cap V(H_2)|=s_2, \dots, |A \cap
-    V(H_m)|=m \}$. Observamos que, debido a  que $\sum\limits_{i=1}^{m} s_i =
-    k$, todo elemento de $L$ tiene cardinalidad $k$. Buscamos ver que la
-    subgr\'afica inducida de $F_k(G)$ por $L$, i.~e., $F_k(G,L)$, es isomorfa
-    a $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$. Primero, analizamos el
-    conjunto de v\'ertices de ambas gr\'aficas. Sea $A \in
-    V(F_k(G,L))$, tal que $A=\{a_1, \dots, a_{s_1}, b_1,\dots,
-    b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por definici\'on, $|A \cap V(H_i)|=
-    s_i$, para $i \in \{1, \dots, m\}$. Adem\'as, sabemos que cada v\'ertice de
-    $F_{s_i}(H_i)$ tiene cardinalidad $s_i$, para $i \in \{1, \dots, m\}$, por
-    lo que tenemos que $A \in V(H_1) \times \cdots \times V(H_m)$. De manera
-    an\'aloga, si tomamos $A \in V(H_1) \times \cdots \times V(H_m)$, $A =
-    \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i \in F_{s_i}(H_i)$. De lo anterior,
-    tenemos que $A \cap V(H_i) = A'_i$, por lo que $|A \cap V(H_i)|= s_i$, para
-    toda $i \in \{1, \dots, m\}$. Adicionalmente, tenemos que $|A|= k$, puesto
-    que $\sum\limits_{i=1}^{m} s_i = k$. Por lo tanto, $A \in V(F_k(G,L))$.
+    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y $s_1, \dots, s_m$
+    enteros positivos como en el enunciado. Llamamos $L$ al conjunto de los
+    $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
+    $H_i$, para toda $i \in \{1, \dots, m\}$, es decir, $L = \{A \subseteq G
+    \colon\ |A\cap V(H_1)|=s_1 , |A \cap V(H_2)|=s_2, \dots, |A \cap V(H_m)|=m
+    \}$. Observamos que, debido a  que $\sum\limits_{i=1}^{m} s_i = k$, todo
+    elemento de $L$ tiene cardinalidad $k$. Buscamos ver que la subgr\'afica
+    inducida de $F_k(G)$ por $L$, i.~e., $F_k(G,L)$, es isomorfa a $F_{s_1}(H_1)
+    \square \cdots \square F_{s_m}(H_m)$. Primero, analizamos el conjunto de
+    v\'ertices de ambas gr\'aficas. Sea $A \in V(F_k(G,L))$, tal que $A=\{a_1,
+    \dots, a_{s_1}, b_1,\dots, b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por
+    definici\'on, $|A \cap V(H_i)|= s_i$, para $i \in \{1, \dots, m\}$.
+    Adem\'as, sabemos que cada v\'ertice de $F_{s_i}(H_i)$ tiene cardinalidad
+    $s_i$, para $i \in \{1, \dots, m\}$, por lo que tenemos que $A \in V(H_1)
+    \times \cdots \times V(H_m)$. De manera an\'aloga, si tomamos $A \in V(H_1)
+    \times \cdots \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i
+    \in F_{s_i}(H_i)$. De lo anterior, tenemos que $A \cap V(H_i) = A'_i$, por
+    lo que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
+    Adicionalmente, tenemos que $|A|= k$, puesto que $\sum\limits_{i=1}^{m} s_i
+    = k$. Por lo tanto, $A \in V(F_k(G,L))$.
 
     Ahora, nos enfocamos en la relaci\'on entre las aristas de ambas gr\'aficas
     de fichas. Sean $B, C \in V(F_k(G,L))$, tales que $BC \in E(F_k(G,L))$, en
