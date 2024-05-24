@@ -153,20 +153,19 @@ $S$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta subgr\'afica
 la llamamos la \textbf{subgr\'afica} \indiceSub{subgr\'afica}{inducida} de $G$
 por $S$ y la denotamos $G[S]$. Notamos que $G[S]$ es la subgr\'afica de $G$, con
 conjunto de v\'ertices $S$, que m\'as se parece a un pedazo de $G$. Un tercer
-tipo importante de subgr\'aficas es el de las subgr\'aficas inducidas obtenidas
-al quitarle uno o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S
-\subset V(G)$, nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus
-S$ y $E(H) = E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Esta
-subgr\'afica $H$ se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un
-conjunto unitario, en otras palabras, el caso en el que le quitamos un solo v\'ertice $v$ a
-$G$. En este caso escribimos $G-v$, en vez de $G-\{v\}$. A continuaci\'on se
-muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
-${\color{morado}\boldsymbol {H}}$ es una subgr\'afica inducida con $V(H) =
-\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{ H'}}}$ es una
-subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos
-que a ${\color{azulCielo}\boldsymbol {H'}}$ le falta la arista
-${\color{grisOscuro!80}\boldsymbol {v_5v_7}}$, resaltada en la figura, para ser
-una subgr\'afica inducida. 
+tipo importante de subgr\'aficas es el de las subgr\'aficas inducidas de $G$
+obtenidas al quitarle uno o m\'as v\'ertices y las aristas que inciden en dichos
+v\'ertices. En otras palabras, sea $S \subset V(G)$, nos referimos a la
+subgr\'afica inducida $G[V(G)-S]$. Esta gr\'afica se denota $G-S$. Un caso a
+se\~{n}alar es cuando $S$ es un conjunto unitario, en otras palabras, el caso en
+el que le quitamos un solo v\'ertice $v$ a $G$. En este caso escribimos $G-v$,
+en vez de $G-\{v\}$. A continuaci\'on se muestra un ejemplo de subgr\'aficas en
+\cref{fig:subgraf}, donde ${\color{morado}\boldsymbol {H}}$ es una subgr\'afica
+inducida con $V(H) = \{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{
+H'}}}$ es una subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,
+v_6v_7\}$. Notamos que a ${\color{azulCielo}\boldsymbol {H'}}$ le falta la
+arista ${\color{grisOscuro!80}\boldsymbol {v_5v_7}}$, resaltada en la figura,
+para ser una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
     \centering
