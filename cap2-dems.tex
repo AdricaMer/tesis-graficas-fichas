@@ -71,18 +71,21 @@ teorema de caracterizaci\'on de los clanes en gr\'aficas de fichas.
 
 \begin{proof}
     Empezamos enfoc\'andonos en la primera implicaci\'on, es decir, dado $X$ un
-    clan de $F_k(G)$, demostramos que existe un clan $K$ de $G$ y un conjunto $S
-    \subseteq V(G)$, tales que $K \cap S = \varnothing$ y ocurre alguno de los
-    incisos del teorema. Si $|X|=2$, entonces $X= \{A, B\}$, para alg\'unos
-    v\'ertices $A, B$ de $F_k(G)$, tales que $AB \in E(F_k(G))$. Definimos $K =
-    A \triangle B$ y $S=A \cap B$ y notamos que, de esta manera, $X$ satisface
-    ambos incisos.
+    clan de $F_k(G)$, demostramos que existe un clan $K$ de $G$ y $S \subseteq
+    V(G)$, tales que $K \cap S = \varnothing$ y ocurre alguno de los incisos del
+    teorema. Si $|X|=2$, entonces 
+    \linebreak
+    $X= \{A, B\}$, para alg\'unos v\'ertices $A,
+    B$ de $F_k(G)$, tales que $AB \in E(F_k(G))$. Definimos $K = A \triangle B$
+    y $S=A \cap B$ y notamos que, de esta manera, $X$ satisface ambos incisos.
 
-    Ahora nos centramos en el caso en el que $|X|= p \geq 3$. Tomamos $X=\{A_1,
-    A_2, \dots, A_p\}$ donde $A_i{A_j} \in E(F_k(G))$, para cualesquiera $i\neq
-    j$, con $i,j \in \{1, \dots, p\}$. Por \cref{lem:K3}, tenemos que $A_1\cap
-    A_2 \subset A_i$ o $A_i \subset A_1 \cup A_2$, para todo $i \in \{3, \dots,
-    p \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3, \dots,
+    Ahora nos centramos en el caso en el que $|X|= p \geq 3$. Tomamos el
+    conjunto $X=\{A_1, A_2, \dots, A_p\}$ donde $A_i{A_j} \in E(F_k(G))$, para
+    cualesquiera $i\neq j$, con 
+    \linebreak
+    $i,j \in \{1, \dots, p\}$. Por \cref{lem:K3}, tenemos que $A_1\cap A_2
+    \subset A_i$ o $A_i \subset A_1 \cup A_2$, para todo $i \in \{3, \dots, p
+    \}$. Sean $A_i, A_j \in X$ tales que $i \neq j$ y $i, j \in \{3, \dots,
     p\}$. Suponemos que tenemos el caso en el que $A_1\cap A_2 \subset A_i$ y
     $A_j \subset A_1 \cup A_2$. Denotamos por $a_1$ y $a_2$ a los v\'ertices en
     $G$ que forman la diferencia sim\'etrica de $A_1$ y $A_2$. Por un lado,
@@ -270,11 +273,11 @@ resaltando ${\color{naranja}\boldsymbol {X_1}}$ y ${\color{verde}\boldsymbol
 \label{fig:ex-clique2}
 \end{figure}
        
-Por la caracterizaci\'on obtenida en \cref{teo:clanG-clanFG},
-sabemos que un clan $X$ en $F_k(G)$ tiene la misma cardinalidad que $K$, clan en
-$G$ como en el teorema. Por ello, podr\'ia parecer que $G$ y $F_k(G)$ tienen el
-mismo n\'umero de clan. Sin embargo,\cref{fig:ex-wG} nos muestra un ejemplo en
-el que el n\'umero de clan de $G$ es mayor al de $F_k(G)$.
+Por la caracterizaci\'on obtenida en \cref{teo:clanG-clanFG}, sabemos que un
+clan $X$ en $F_k(G)$ tiene la misma cardinalidad que $K$, clan en $G$ como en el
+teorema. Por ello, podr\'ia parecer que $G$ y $F_k(G)$ tienen el mismo n\'umero
+de clan. Sin embargo, \cref{fig:ex-wG} nos muestra un ejemplo en el que el
+n\'umero de clan de $G$ es mayor al de $F_k(G)$.
 
 
 \begin{figure}[ht!]
@@ -341,18 +344,20 @@ que nos da una f\'ormula para $\omega(F_k(G))$.
 
 \begin{proof}
     Sea $X$ un clan de $F_k(G)$ con $\omega(F_k(G))$ v\'ertices. Sabemos que $X$
-    satisface alguno de los incisos d\cref{teo:clanG-clanFG}. Para el resto de
-    esta demostraci\'on, consideremos a $K$ como en el teorema anterior.   Si $X
-    = \{S \cup \{v\} \colon\ v \in K\}$ y $|S| = k-1$, notamos que $|X| = |K|$.
+    satisface alguno de los incisos d\cref{teo:clanG-clanFG}. Para esta
+    demostraci\'on, consideramos a $K$ como en el teorema anterior.   Si $X =
+    \{S \cup \{v\} \colon\ v \in K\}$ y $|S| = k-1$, notamos que $|X| = |K|$.
     Adem\'as, tenemos que $n \geq |S| + |K|$. Por lo tanto, tenemos que $n \geq
-    |S| + |K| = k-1 + |X|$, es decir, $|X| \leq n-k+1$. Ahora, si $X = \{(S\cup
-    K) \setminus \{v\} \colon\ v \in K \}$ y $|S| + |K| = k+1$, notamos que
-    tenemos la misma cardinalidad que en caso anterior, i.~e., $|X| =|K|$. Por
-    ello, $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto, de los dos casos,
-    obtenemos que $|X| \leq \max\{n-k+1, k+1\}$. Adicionalmente, tenemos que
-    ambos casos cumplen $|X| = |K| \leq \omega(G)$. Por lo que $\omega(F_k(G)) =
-    |X| \leq \min \{\omega(G), \max \{n-k+1, k+1\}\}$ y, de esta manera,
-    obtenemos la cota superior de la ecuaci\'on deseada.
+    |S| + |K| = k-1 + |X|$, es decir, $|X| \leq n-k+1$. Por otro lado, si 
+    \linebreak
+    $X = \{(S\cup K) \setminus \{v\} \colon\ v \in K \}$ y $|S| + |K| = k+1$,
+    notamos que tenemos la misma cardinalidad que en caso anterior, i.~e., $|X|
+    =|K|$. Por ello, obtenemos $|X| = |K| \leq |S| + |K| = k+1$. Por lo tanto,
+    de los dos casos, obtenemos que $|X| \leq \max\{n-k+1, k+1\}$.
+    Adicionalmente, tenemos que ambos casos cumplen $|X| = |K| \leq \omega(G)$.
+    Por lo que $\omega(F_k(G)) = |X| \leq \min \{\omega(G), \max \{n-k+1,
+    k+1\}\}$ y, de esta manera, tenemos la cota superior de la ecuaci\'on
+    deseada.
 
     Tomemos ahora un clan $K$ de $G$ con $\omega(G)$ v\'ertices. Consideramos
     las siguientes construcciones de clanes de $F_k(G)$. Primero, sea $K'$ un
@@ -368,11 +373,10 @@ que nos da una f\'ormula para $\omega(F_k(G))$.
     \{v\} \colon\ v \in K'\}$ que tiene $|K'|$ v\'ertices. Por lo tanto, tenemos
     que $\omega(F_k(G)) \geq \min \{\omega(G), k+1\}$.
 
-    De los dos casos anteriores, tenemos que $\omega(F_k(G)) \geq \max \{\min
-    \{\omega(G), n-k+1\}, \min \{\omega(G), k+1 \}\} = \min \{\omega(G), \max
-    \{n-k+1,k+1\}\}$. De esta manera, obtenemos la cota inferior de la
-    ecuaci\'on deseada. Por lo tanto, tenemos que se cumple la igualdad, es
-    decir, $\omega(F_k(G))= \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
+    De los casos anteriores, tenemos que $\omega(F_k(G)) \geq  \min \{\omega(G),
+    \max \{n-k+1,k+1\}\}$. De esta manera, obtenemos la cota inferior deseada.
+    Por lo tanto, tenemos que se cumple la igualdad, i.~e., $\omega(F_k(G))=
+    \min \{\omega(G), \max \{n-k+1,k+1\}\}$.
 \end{proof}
 
 Este teorema se puede simplificar como se muestra en el siguiente corolario. La
@@ -389,9 +393,11 @@ corolario.
 \end{corolario}
 
 \begin{proof}
-    Por \cref{teo:clan-max} sabemos que $\omega(F_k(G))= \min \{\omega(G), \max
+    D\cref{teo:clan-max} tenemos $\omega(F_k(G))= \min \{\omega(G), \max
     \{n-k+1,k+1\}\}$. Basta demostrar que $\max \{n-k+1, k+1\} = n-k+1$. En
-    otras palabras, $n-k+1 \geq k+1$. Esto \'ultimo pasa si y s\'olo si $n \geq
+    otras palabras, 
+    \linebreak
+    $n-k+1 \geq k+1$. Esto \'ultimo pasa si y s\'olo si $n \geq
     2k$. Por lo tanto, si $\frac{n}{2} \geq k$, se cumple la igualdad deseada.
 \end{proof}
 
@@ -426,25 +432,28 @@ teorema, cuya demostraci\'on sale del art\'iculo \textit{Token graphs}
     $a$ y $b$ de $G$, tales que $ab \in E(G)$. Al ser $c'(A) = c'(B)$, tenemos
     que $\Sigma_{x \in A}c(x) \equiv \Sigma_{y \in B}c(y) \pmod {\chi(G)}$. Sin
     p\'erdida de generalidad, consideramos $a \in A$ y $b \in B$, entonces
-    podemos ver la congruencia de la siguiente manera: $c(a) + \Sigma_{x \in A
-    \setminus\{a\}}c(x) \equiv c(b) + \Sigma_{y \in B\setminus\{b\}}c(y) \mod
-    \chi(G)$. Pero $A \triangle B = \{a,b\}$, por lo que $\Sigma_{x \in
-    A\setminus\{a\}}c(x)=\Sigma_{y \in B\setminus\{b\}}c(y)$, entonces tenemos
-    que $c(a) \equiv c(b) \mod \chi(G)$. De este modo llegamos a la
-    contradicci\'on de que $c$ no es una coloraci\'on propia, pues $c(a) = c(b)$
-    y $ab \in E(G)$. Por lo que tenemos que $c'$ es una coloraci\'on propia de
-    $F_k(G)$ con, a lo m\'as, $\chi (G)$ colores. Por lo tanto, $\chi(F_k(G))
-    \leq \chi (G)$.
+    podemos ver la congruencia de la siguiente manera:
+    \[ c(a) + \Sigma_{x \in A \setminus\{a\}}c(x) \equiv c(b) + \Sigma_{y \in
+    B\setminus\{b\}}c(y) \mod \chi(G).
+    \] 
+    Pero $A \triangle B = \{a,b\}$, por lo
+    que $\Sigma_{x \in A\setminus\{a\}}c(x)=\Sigma_{y \in B\setminus\{b\}}c(y)$,
+    entonces tenemos que $c(a) \equiv c(b) \mod \chi(G)$. De este modo llegamos
+    a la contradicci\'on de que $c$ no es una coloraci\'on propia, pues $c(a) =
+    c(b)$ y $ab \in E(G)$. Por lo que tenemos que $c'$ es una coloraci\'on
+    propia de $F_k(G)$ con, a lo m\'as, $\chi (G)$ colores. Por lo tanto,
+    $\chi(F_k(G)) \leq \chi (G)$.
 \end{proof}
 
 Nos enfocamos ahora en la cota inferior de $ \chi (F_k(G))$. Sabemos que $\chi
-(F_k(G)) \geq \omega (F_k(G))$, por lo que podemos sacar una cota inferior en
-t\'erminos de el n\'umero de clan de $G$, utilizando \cref{teo:clan-max}. Por
-otro lado, podemos encontrar una cota en t\'erminos de $\chi (G)$.
-\Cref{prop:biparticion F(G)} y \cref{teo:numCrom-k}, a continuaci\'on exhibidos,
-tienen demostraci\'ones basadas en el art\'iculo \textit{Token graphs}
-\cite{fabilaToken}. Empezamos viendo \cref{prop:biparticion F(G)}, una propiedad
-sobre las gr\'aficas bipartitas en gr\'aficas de fichas.
+(G) \geq \omega (G)$ para todas las gr\'aficas, por lo que podemos sacar una
+cota inferior en t\'erminos de el n\'umero de clan de $G$, utilizando
+\cref{teo:clan-max}. Por otro lado, podemos encontrar una cota en t\'erminos de
+$\chi (G)$. \Cref{prop:biparticion F(G)} y \cref{teo:numCrom-k}, a
+continuaci\'on exhibidos, tienen demostraci\'ones basadas en el art\'iculo
+\textit{Token graphs} \cite{fabilaToken}. Empezamos viendo
+\cref{prop:biparticion F(G)}, una propiedad sobre las gr\'aficas bipartitas en
+gr\'aficas de fichas.
 
 \begin{proposicion}
 \label{prop:biparticion F(G)}
@@ -458,13 +467,15 @@ sobre las gr\'aficas bipartitas en gr\'aficas de fichas.
     $G$ no es una gr\'afica bipartita, entonces $F_k(G)$ tampoco es una
     gr\'afica bipartita. Sea $G$ una gr\'afica que no es bipartita, entonces $G$
     contiene un ciclo impar $C=(v_1, \dots, v_{p-1}, v_p, v_1)$. Primero, veamos
-    el caso en el que $p \geq k+1$. En este caso tenemos un $p$-ciclo en
-    $F_k(G)$ de la siguiente manera: $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
-    v_k\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\}$ $\{v_1, v_2, \dots,
-    v_{k-2}, v_{k-1}, v_{k+2}\}$ $\cdots$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1},
-    v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-1},
-    v_k, v_p\}$ $\dots$ $\{v_1, v_3, \dots, v_{k-1}, v_k, v_p\}$ $\{v_2, v_3,
-    \dots, v_{k-1}, v_k, v_p\}$ $\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\}$.
+    el caso en el que $p \geq k+1$. En este caso $F_k(G)$ tiene un $p$-ciclo de
+    la siguiente manera: 
+    \[
+    (\{v_1, v_2, \dots, v_{k-2}, v_{k-1},v_k\},\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+1}\},\]
+    \[\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_{k+2}\},\cdots,\{v_1, v_2, \dots, v_{k-2}, v_{k-1},v_p\},\]
+    \[\{v_1, v_2, \dots, v_{k-2}, v_k, v_p\},\{v_1, v_2, \dots, v_{k-1},v_k, v_p\},
+    \dots,\{v_1, v_3, \dots, v_{k-1}, v_k, v_p\},\]
+    \[\{v_2, v_3,\dots, v_{k-1}, v_k, v_p\},\{v_1, v_2, \dots, v_{k-2}, v_{k-1}, v_k\})
+    \]
     Notamos que, hay $p-k+1$ v\'ertices al mover la ficha de $v_k$ a $p$.
     Adem\'as, tenemos $k-1$ v\'ertices en el resto del ciclo. Por lo tanto,
     $F_k(G)$ tiene un $p$-ciclo, por lo que no es bipartita.
@@ -492,22 +503,6 @@ sobre las gr\'aficas bipartitas en gr\'aficas de fichas.
     \chi (G) = 2$. Por lo tanto, tenemos que $F_l(G)$ es $2$-crom\'atica, i.~e.,
     es una gr\'afica bipartita.
 \end{proof}
-
-
-M\'as abajo se muestra un ejemplo de \cref{prop:biparticion F(G)}, en
-\cref{fig:ex-bip}, donde, de izquierda a derecha, se muestra una gr\'afica
-bipartita $G$, su gr\'afica de $2$ y $3$-fichas. Notamos que, dada la
-bipartici\'on $({\color{oro}\boldsymbol {X}},{\color{salmon}\boldsymbol {Y}})$
-de $G$, toda $F_l(G)$ con $l\geq 2$, tiene la bipartici\'on $({\color{verde}
-\boldsymbol {Z}},{\color{salmon}\boldsymbol {W}})$, donde
-${\color{verde}\boldsymbol {Z=\{V\in X\colon\ (\{2\}\subseteq V  \lor \{3\}
-\subseteq V) \land \{2,3\}\not\subseteq V\}}}$ y ${\color{salmon}\boldsymbol
-{W=\{V \in Y\colon\ \{2,3\}\subseteq V \lor \{2,3\}\not\subseteq V\}}}$. En
-otras palabras, para toda gr\'afica de fichas de $G$, el conjunto
-${\color{verde}\boldsymbol {Z}}$ es el conjunto que contiene a
-${\color{oro}\boldsymbol {X}}\in G$, o no lo contiene. Adem\'as, el conjunto
-${\color{salmon}\boldsymbol {W}}$ es el conjunto que tiene exactamente un
-elemento de ${\color{oro}\boldsymbol {X}}\in G$.
 
 \begin{figure}[ht!]
     \centering
@@ -565,7 +560,20 @@ elemento de ${\color{oro}\boldsymbol {X}}\in G$.
 \label{fig:ex-bip}
 \end{figure}
 
-\pagebreak
+
+\Cref{fig:ex-bip}, mostrada arriba, brinda un ejemplo de \cref{prop:biparticion
+F(G)}, donde, de izquierda a derecha, se muestra una gr\'afica bipartita $G$, su
+gr\'afica de $2$ y $3$-fichas. Notamos que, dada la bipartici\'on
+$({\color{oro}\boldsymbol {X}},{\color{salmon}\boldsymbol {Y}})$ de $G$, toda
+$F_l(G)$ con $l\geq 2$, tiene la bipartici\'on $({\color{verde} \boldsymbol
+{Z}},{\color{salmon}\boldsymbol {W}})$, donde ${\color{verde}\boldsymbol
+{Z=\{V\in X\colon\ (\{2\}\subseteq V  \lor \{3\} \subseteq V) \land
+\{2,3\}\not\subseteq V\}}}$ y ${\color{salmon}\boldsymbol {W=\{V \in Y\colon\
+\{2,3\}\subseteq V \lor \{2,3\}\not\subseteq V\}}}$. En otras palabras, para
+toda gr\'afica de fichas de $G$, el conjunto ${\color{verde}\boldsymbol {Z}}$ es
+el conjunto que contiene a ${\color{oro}\boldsymbol {X}}\in G$, o no lo
+contiene. Adem\'as, el conjunto ${\color{salmon}\boldsymbol {W}}$ es el conjunto
+que tiene exactamente un elemento de ${\color{oro}\boldsymbol {X}}\in G$.
 
 Por \'ultimo, determinamos la cota inferior para $\chi (F_k(G))$ en t\'erminos
 de $\chi (G)$ para el caso general.
@@ -624,6 +632,7 @@ siguiente teorema, cuya demostraci\'on no se desarrolla en el art\'iculo
 \begin{teorema}
 \label{teo:numCrom indep-k}
     Si $G$ es una gr\'afica y $F_k(G)$ su gr\'afica de $k$-fichas, entonces
+    \linebreak
     $\chi (F_k(G)) \geq (\frac{1}{2}+ \frac{2}{n})\chi(G) -1 $, para toda $k
     \geq 1$.
 \end{teorema}

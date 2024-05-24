@@ -49,9 +49,9 @@ siguientes dos lemas nos son de utilidad.
     trayectorias internamente ajenas. Al suponer que $|A \cap Q| \geq 2$,
     tenemos un caso an\'alogo al anterior.
 
-    Ahora, suponemos que $|A \cap V(P)| = 1$ y $|A \cap V(Q)| = 1$, es decir, $A
-    \cap V(P) = \{a\} = A \cap V(Q)$. Sin p\'erdida de generalidad, suponemos
-    que $P$ no es la arista $ab$, entonces tenemos que $P \setminus \{a,b\} \neq
+    Suponemos que $|A \cap V(P)| = 1$ y $|A \cap V(Q)| = 1$, i.~e., $A \cap V(P)
+    = \{a\} = A \cap V(Q)$. Sin p\'erdida de generalidad, suponemos que $P$ no
+    es la arista $ab$, entonces tenemos que $P \setminus \{a,b\} \neq
     \varnothing$. Por lo tanto, tenemos que todo v\'ertice interno de $A
     \xrightarrow[P]{} A'$ tiene alg\'un v\'ertice de $P \setminus \{a, b\}$. Por
     otra parte, ya que $P$ y $Q$ son internamente ajenas y s\'olo comparten el
@@ -205,27 +205,27 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     mover la ficha de $a$ a trav\'es de $P_i$ hacia $b$, con $i \in \{1, \dots,
     l\}$.
     
-    Las \'ultimas trayectorias a considerar son las del tipo $R$, que
-    construimos a continuaci\'on utilizando los vecinos de los v\'ertices en $A
-    \cap B$. Empezamos considerando $v \in C$, por lo que $v \in Q_i$ para un
-    $i \in \{1, \dots, s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B) \cup
+    Las \'ultimas trayectorias a considerar son las trayectorias de tipo $R$,
+    que construimos a continuaci\'on utilizando los vecinos de los v\'ertices en
+    $A \cap B$. Empezamos considerando $v \in C$, as\'i $v \in Q_i$ para un $i
+    \in \{1, \dots, s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B) \cup
     V(Q_i))$. Dado que $G$ es una gr\'afica $t$-conexa, $d_G(v) \geq t$. A su
     vez, $|A \cap B| =k -1$ y $v \in (A \cap B) \setminus N_G(v)$. Por \'ultimo,
     como $Q_i$ no tiene cuerdas, $v$ s\'olo tiene dos vecinos en $Q_i$. Por lo
     tanto, tenemos que $|Y_v| \geq t- (k-2)-2 = t-k$. 
     
     Ahora, sea $v \in D$ y definimos $Y_v = N_G(v) \setminus (A \cup B)$. Al ser
-    $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as, tenemos
-    que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
-    notemos que $(a, v, b)$ no es una trayectoria en $G$. Esto pues, de lo
-    contrario, tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no
-    est\'a en $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots,
-    s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que
-    concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo tanto, tenemos
-    que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$, alg\'un subconjunto
-    de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$ si $v \in D$.
-    Notamos que $Y_v ' \neq \varnothing$, porque tomamos $t \geq k + 1$.
-    Adem\'as, tenemos que $a, b \notin Y_v '$, por definici\'on. 
+    $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as, $|A \cup
+    B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora, notemos que $(a,
+    v, b)$ no es una trayectoria en $G$. Esto pues, de lo contrario,
+    tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no est\'a en
+    $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots, s\}$, por
+    lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que concluimos
+    que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo tanto, tenemos que $|Y_v|
+    \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$, alg\'un subconjunto de $Y_v$
+    con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$ si $v \in D$. Notamos que
+    $Y_v ' \neq \varnothing$, porque tomamos $t \geq k + 1$. Adem\'as, tenemos
+    que $a, b \notin Y_v '$, por definici\'on. 
 
     Sea $H_v$ la gr\'afica bipartita completa con clases de colores $Y_v '$ y
     $\{1,\dots, l\}$. Luego, definimos la siguiente coloraci\'on, si $y \in
@@ -308,14 +308,17 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     las trayectorias $R \langle v,x \rangle$ y $A \xrightarrow[Q_i]{}  B$ son
     internamente ajenas.
 
-    Tenemos que hay $l$ y $s$ trayectorias de tipo $P$ y $Q$, respectivamente.
-    Adem\'as, para cada $v \in C$, hay $t-k$ trayectorias de tipo $R$ y, para
-    cada $v \in D$, hay $t-k+1$ trayectorias de tipo $R$. Por lo que, en
-    $F_k(G)$, hay $l+ s+ |C|(t-k)+ |D|(t-k +1) = l + s + (|C| + |D|)(t-k) + |D|
-    = l + s + (|k-1)(t-k) + |D|$ trayectorias internamente ajenas. Despejando,
-    tenemos que $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k +1)$. Por
-    lo tanto, el n\'umero de $AB$-trayectorias en $F_k(G)$ es, al menos,
-    $k(t-k+1)$.
+    Hay $l$ y $s$ trayectorias de tipo $P$ y $Q$, respectivamente. Adem\'as,
+    para cada $v \in C$, hay $t-k$ trayectorias de tipo $R$ y, para cada $v \in
+    D$, hay $t-k+1$ trayectorias de tipo $R$. Por lo que la cantidad de
+    trayectorias internamente ajenas en $F_k(G)$ es
+    \[
+    l+ s+ |C|(t-k)+ |D|(t-k +1) = l + s + (|C| + |D|)(t-k) + |D|
+    = l + s + (|k-1)(t-k) + |D|.
+    \]
+     Despejando, tenemos que $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k
+    +1)$. Por lo tanto, el n\'umero de $AB$-trayectorias en $F_k(G)$ es, al
+    menos, $k(t-k+1)$.
 
 \end{proof}
 
@@ -458,8 +461,12 @@ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
 $|\mathcal{C}| \geq t$.
 
 Ahora, consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
-=\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
-definimos $A_{i,x} = (A\setminus \{a_i\}) \cup \{x\}$ y $B_{j,x} = (B\setminus
+=\{a_1, \dots, a_r\}$ y
+\linebreak
+ $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
+definimos $A_{i,x} = (A\setminus \{a_i\}) \cup \{x\}$ y 
+\linebreak
+$B_{j,x} = (B\setminus
 \{b_j\}) \cup \{x\}$, para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
 (A\cup B)$. Supongamos que, para algunos $i, j$ y $x$, tenemos que $A_{i,x}
 \notin \mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} =
@@ -469,7 +476,9 @@ An\'alogamente, tenemos que  $B$ y $B_{j,x}$ est\'an en la misma componente de
 $F_k(G)-\mathcal{C}$.
 
 Luego, nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
-\{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i, tenemos
+\{a_i, b_j\}$. Por lo que 
+\linebreak
+$|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i, tenemos
 que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
 \mathcal{C}$. Pero, tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente de
 $F_K(G) - \mathcal{C}$; de igual manera que $B$ y $B_{j,x}$. Por lo tanto, $A$ y
@@ -484,7 +493,9 @@ los $\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$,
 sabemos que $\mathcal{C}$ tiene, al menos, $r(n-k-r)$ v\'ertices.
 
 Definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} = (B\setminus
-\{b_i\}) \cup \{a_j\}$, para toda $ i, j \in \{1, \dots, r\}$. Notamos que hay
+\{b_i\}) \cup \{a_j\}$, para toda 
+\linebreak
+$ i, j \in \{1, \dots, r\}$. Notamos que hay
 $2r^2$ de estos conjuntos. Supongamos que $A_{i,j} \notin \mathcal{C}$, para
 algunos $ i, j \in \{1, \dots, r\}$, entonces tenemos que $A \triangle A_{i,j} =
 \{a_i, b_j\}$. Por tanto, $A$ y $A_{i,j}$ est\'an en la misma componente de
@@ -595,9 +606,13 @@ gr\'aficas suficientemente conexas y suficientemente grandes.
 
         Ahora nos enfocamos en el caso en el que $|A \triangle B| = 2r \ge 4$.
         Utilizamos la desigualdad obtenida al final de la demostraci\'on
-        d\cref{teo:FG-t-conexa}, i.~e., $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
-        que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
-        $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
+        d\cref{teo:FG-t-conexa}, es decir, 
+        \linebreak
+        $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado que $r \ge 2$ y $n \ge
+        \frac{1}{2}kt$, entonces tenemos que 
+        \[
+            |\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4.
+        \]
         Observamos que $k^2 -3k + 4 \ge 0$, para toda $k \ge 1$. De ah\'i que
         $-2k+4 \ge -k^2 + k$, lo cu\'al implica que $kt -2k +4 \ge kt - k^2 + k
         = k (t - k +1)$. Luego, tenemos que $|\mathcal{C}| \ge tk -2k +4 \ge

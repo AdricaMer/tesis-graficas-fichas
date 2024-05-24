@@ -11,23 +11,23 @@ sus propiedades, como conectividad, planaridad, regularidad y hamiltonicidad
 \cite{alaviPlanarity, alaviDVGraphs, alaviHamilt, zhuConnect}. Al mismo tiempo,
 en 1992, se comienzan a estudiar las gr\'aficas de $k$-fichas, para una $k \in
 \mathbb{N^{+}}$ m\'as general, refiri\'endose a ellas como \textit{$k$-tuplex
-Vertex Graphs} \cite{zhuNTuples}. Posteriormente, en 2002, Rudolph estudia
-nuevamente las gr\'aficas de $2$-fichas, presentando un ejemplo de dos
-gr\'aficas coespectrales\footnote{La Teor\'ia de Gr\'aficas
-Espectrales estudia las gr\'aficas en relaci\'on a su polinomio
-caracter\'istico, valores y vectores propios de las matrices asociadas a las
-gr\'aficas. Dos gr\'aficas son coespectrales si sus matrices de adyacencia
-tienen multiconjuntos de valores propios iguales.}, cuyas gr\'aficas de
-$2$-fichas no lo son \cite{rudolphGInv}. En el 2007, se estudian nuevamente las
-gr\'aficas de fichas en \cite{audeanetSymPower}, donde se refieren a ellas como
-las ``potencias sim\'etricas'' de una gr\'afica. En el art\'iculo, se demuestra
-que las gr\'aficas de $2$-fichas de las gr\'aficas fuertemente regulares, con
-los mismos par\'ametros, son coespectrales. M\'as adelante, de manera
-independiente, Barghi y Ponomarenko \cite{barghi-ponomarenko} y Alzaga, Iglesias
-y Pignol \cite{alzagaSymPower} prueban que, para alg\'un entero positivo dado,
-existen una cantidad infinita de pares de gr\'aficas no isomorfas con gr\'aficas
-de $k$-fichas coespectrales. En el 2012 se reintroduce el concepto de gr\'aficas
-de fichas \cite{fabilaToken}, asign\'andole este nombre al pensarlo como
+Vertex Graphs} \cite{zhuNTuples}. Posteriormente, en a\~{n}o 2002, Rudolph
+estudia nuevamente las gr\'aficas de $2$-fichas, presentando un ejemplo de dos
+gr\'aficas coespectrales\footnote{La Teor\'ia de Gr\'aficas Espectrales estudia
+las gr\'aficas en relaci\'on a su polinomio caracter\'istico, valores y vectores
+propios de las matrices asociadas a las gr\'aficas. Dos gr\'aficas son
+coespectrales si sus matrices de adyacencia tienen multiconjuntos de valores
+propios iguales.}, cuyas gr\'aficas de $2$-fichas no lo son \cite{rudolphGInv}.
+En el 2007, se estudian nuevamente las gr\'aficas de fichas en
+\cite{audeanetSymPower}, donde se refieren a ellas como las ``potencias
+sim\'etricas'' de una gr\'afica. En este art\'iculo, se demuestra que las
+gr\'aficas de $2$-fichas de las gr\'aficas fuertemente regulares, con los mismos
+par\'ametros, son coespectrales. M\'as adelante, de manera independiente, tanto
+Barghi y Ponomarenko \cite{barghi-ponomarenko} como Alzaga, Iglesias y Pignol
+\cite{alzagaSymPower} prueban que, para alg\'un entero positivo dado, existen
+una cantidad infinita de pares de gr\'aficas no isomorfas con gr\'aficas de
+$k$-fichas coespectrales. En el 2012 se reintroduce el concepto de gr\'aficas de
+fichas \cite{fabilaToken}, asign\'andole este nombre al pensarlo como
 configuraciones de $k$ fichas indistinguibles sobre los v\'ertices de una
 gr\'afica $G$, a lo m\'as una ficha por v\'ertice. Una ficha se puede ``mover''
 de un v\'ertice de $G$ a otro siempre y cuando exista una arista entre ellos y
@@ -458,16 +458,14 @@ la funci\'on s\'i preserva adyacencias y no adyacencias.
     \label{fig:ex-tok-subgraph-aux}
 \end{figure}
 
-\newpage
-
 Otra cosa interesante del ejemplo de \cref{fig:ex-tok-Path} es que, si nos
 fijamos bien, podemos ver que tiene el mismo diagrama que la gr\'afica de
-$2$-fichas en \cref{fig:ex-tok-graph}, i.~e., son gr\'aficas isomorfas. Al ser
-ambas gr\'aficas de fichas de la misma gr\'afica, vale la pena preguntarse,
-cu\'al es la relaci\'on entre ellas. Fij\'andonos a\'un m\'as, vemos que el
-isomorfismo entre ambas env\'ia el v\'ertice $A \in V(F_2(G))$ al v\'ertice
-$V(G) \setminus A \in V(F_3(G))$. Adem\'as, notamos que dos v\'ertices de $ A,B
-\in V(F_2(G))$ son adyacentes si y s\'olo si $V(G) \setminus A$ y $V(G)
+$2$-fichas en \cref{fig:ex-tok-graph}, en otras palabras, son gr\'aficas
+isomorfas. Al ser ambas gr\'aficas de fichas de la misma gr\'afica, vale la pena
+preguntarse, cu\'al es la relaci\'on entre ellas. Fij\'andonos a\'un m\'as,
+vemos que el isomorfismo entre ambas env\'ia el v\'ertice $A \in V(F_2(G))$ al
+v\'ertice $V(G) \setminus A \in V(F_3(G))$. Adem\'as, notamos que dos v\'ertices
+de $ A,B \in V(F_2(G))$ son adyacentes si y s\'olo si $V(G) \setminus A$ y $V(G)
 \setminus B$ son adyacentes en $F_3(G)$. As\'i, la diferencia sim\'etrica entre
 $A$ y $B$ es igual a la diferencia sim\'etrica entre sus complementos. Podemos
 verlo como recorrer la gr\'afica ``al rev\'es''. Generalizando este concepto,
@@ -566,20 +564,20 @@ en la demostraci\'on del art\'iculo antes mencionado.
     inicialmente en $A$, digamos $v \in (G)$, se mueve a alg\'un v\'ertice en
     $B$, digamos $v'\in (G)$. Notamos que todas las aristas de $G$ est\'an
     dentro de alg\'un $V_{i}$ o, a lo m\'as, entre alg\'un $V_{i}$ y $V_{i+1}$,
-    con $i\in[0,d]$. As\'i pues, para la ficha en $v$ se necesitan, al menos,
+    con $i\in[0,d]$. As\'i pues, la ficha en $v$ se necesitan, al menos,
     $d_x(v')-d_x(v)$ movimientos para llegar a $v'$, ocupando s\'olo las aristas
     entre $V_{i}$ y $V_{i+1}$. Por lo tanto, el di\'ametro de $F_{k}(G)$ es, al
     menos, $\sum_{v\in A}(d_x(v')-d_x(v))= \sum_{w\in B}d_x(w)-\sum_{v\in
-    A}d_x(v)$. Observamos que, al ser $G$ conexa, toda $V_{i}$ tiene al menos un
-    elemento y, por construcci\'on, $V_{i} \cap V_{i+1}=\varnothing$, para toda
-    $i\in [0,d]$. Tomamos el caso en el que $|V_{i}|=1$, para toda $i\in [0,d]$.
-    Luego, tenemos que $k\leq |V_{b}\cup\cdots\cup
-    V_{d}|=|V_{b}|+|V_{b+1}|+\cdots +|V_d|$ $=\sum_{b}^{d}1 = d -b+1$.
-    An\'alogamente, tenemos que $k\leq |V_{0}\cup V_{1}\cup \cdots \cup
-    V_{a}|=|V_{0}|+|V_{1}|+\cdots + |V_{a}|$ $=\sum_{0}^{a} 1 = a+1$. En ambos
-    casos, la cota m\'inima se alcanza en la igualdad, por lo que tomamos
-    $a=k-1$ y $b=d-k+1$. Por lo tanto, tenemos que el di\'ametro de $F_{k}(G)$
-    es al menos $\sum_{j=d -k+1}^{d}j - \sum_{i=0}^{k-1}i = k(d-k+1)$.
+    A}d_x(v)$. Observamos que, al ser $G$ conexa, $V_{i} \neq \varnothing$, para
+    toda $i\in [0,d]$, y, por construcci\'on, $V_{i} \cap V_{i+1}=\varnothing$.
+    Tomamos el caso en el que $|V_{i}|=1$, para toda $i\in [0,d]$. Luego,
+    tenemos que $k\leq |V_{b}\cup\cdots\cup V_{d}|=|V_{b}|+|V_{b+1}|+\cdots
+    +|V_d|$ $=\sum_{b}^{d}1 = d -b+1$. An\'alogamente, $k\leq |V_{0}\cup
+    V_{1}\cup \cdots \cup V_{a}|=|V_{0}|+|V_{1}|+\cdots + |V_{a}|$
+    $=\sum_{0}^{a} 1 = a+1$. En ambos casos, la cota m\'inima se alcanza en la
+    igualdad, por lo que tomamos $a=k-1$ y $b=d-k+1$. Por lo tanto, tenemos que
+    el di\'ametro de $F_{k}(G)$ es al menos $\sum_{j=d -k+1}^{d}j -
+    \sum_{i=0}^{k-1}i = k(d-k+1)$.
 \end{proof}
 
 Es interesante notar que las cotas obtenidos en \cref{teo:diamFG} son
@@ -775,23 +773,25 @@ teorema, por lo que la siguiente demostraci\'on es independiente del art\'iculo.
     \label{teo:PCartes}
     Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica $G$ tales
     que son ajenas dos a dos. Para todos los enteros positivos $s_1, \dots,
-    s_m$, tales que $1 \leq s_i \leq |V(H_i)|$ y $\sum\limits_{i=1}^{m}  s_i =
+    s_m$, tales que 
+    \linebreak
+    $1 \leq s_i \leq |V(H_i)|$ y $\sum\limits_{i=1}^{m}  s_i =
     k$, se tiene que $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$ es una
     subgr\'afica inducida de $F_k(G)$.
 \end{teorema}
 
 \begin{proof}
     Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y sean $s_1, \dots,
-    s_m \in \mathbb{Z}$ como en el enunciado. Al conjunto de los
-    $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
-    $H_i$, para $i \in \{1, \dots, m\}$, lo llamamos $L$, i.~e., $L = \{A
+    s_m\in \mathbb{Z^{+}}$ enteros positivos como en el enunciado. Llamamos $L$
+    al conjunto de los $k$-subconjuntos de $G$ que cumplen tener exactamente
+    $s_i$ elementos de $H_i$, para toda $i \in \{1, \dots, m\}$, es decir, $L = \{A
     \subseteq G \colon\ |A\cap V(H_1)|=s_1 , |A \cap V(H_2)|=s_2, \dots, |A \cap
     V(H_m)|=m \}$. Observamos que, debido a  que $\sum\limits_{i=1}^{m} s_i =
     k$, todo elemento de $L$ tiene cardinalidad $k$. Buscamos ver que la
-    subgr\'afica inducida de $F_k(G)$ por $L$, es decir, $F_k(G,L)$, es isomorfa
+    subgr\'afica inducida de $F_k(G)$ por $L$, i.~e., $F_k(G,L)$, es isomorfa
     a $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$. Primero, analizamos el
-    conjunto de v\'ertices de ambas gr\'aficas de fichas. Sea $A \in
-    V(F_k(G,L))$, de tal manera que $A=\{a_1, \dots, a_{s_1}, b_1,\dots,
+    conjunto de v\'ertices de ambas gr\'aficas. Sea $A \in
+    V(F_k(G,L))$, tal que $A=\{a_1, \dots, a_{s_1}, b_1,\dots,
     b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por definici\'on, $|A \cap V(H_i)|=
     s_i$, para $i \in \{1, \dots, m\}$. Adem\'as, sabemos que cada v\'ertice de
     $F_{s_i}(H_i)$ tiene cardinalidad $s_i$, para $i \in \{1, \dots, m\}$, por
