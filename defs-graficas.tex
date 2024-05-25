@@ -8,23 +8,23 @@ El objeto a estudiar en el \'area de Teor\'ia de Gr\'aficas es, naturalmente,
 una gr\'afica. Una \indice{gr\'afica} $G$ es una pareja ordenada de conjuntos
 finitos $(V(G), E(G))$, donde $V(G)$ es no vac\'io y $E(G) \subseteq
 \binom{V(G)}{2}$. A la cardinalidad de $V(G)$ se le llama
-\indiceSub{gr\'afica}{orden} de $G$ y sus elementos son llamados
+\indice{orden} de $G$ y sus elementos son llamados
 \indice{v\'ertices}. A los elementos de $E(G)$ se les conoce como
-\indice{aristas}. Para una arista $e$ y v\'ertices $u, v$ de $G$, decimos que
+\indice{aristas}. Para una arista $e$ y v\'ertices $u$ y $v$ de $G$, decimos que
 $e$ es \indiceSub{aristas}{incidente} en $u$ y en $v$ si $e= \{u, v\}$. A su
 vez, los v\'ertices $u$ y $v$ son \indiceSub{v\'ertices}{extremos} de la arista
 $e$. De igual manera, podemos decir que $u$ y $v$ son \textbf{v\'ertices}
 \indiceSub{v\'ertices}{adyacentes}\index{adyacentes!v\'ertices} o
 \indiceSub{v\'ertices}{vecinos} y lo denotamos $u \sim v$. Por otro lado,
-decimos que son \textbf{aristas}
-\indiceSub{aristas}{adyacentes}\index{adyacentes!aristas} cuando dos aristas
-comparten un extremo. 
+decimos que dos aristas son \textbf{aristas}
+\indiceSub{aristas}{adyacentes}\index{adyacentes!aristas} cuando comparten un
+extremo. 
 
-Al conjunto de vecinos de un v\'ertice $v$ se le llama
-\indice{vecindad}, y se denota $N_G(v)$, mientras que al n\'umero de aristas
-incidentes en $v$ se le llama \indice{grado} de $v$, $d(v)$. Un
-\textbf{v\'ertice} \indiceSub{v\'ertices}{aislado}, es decir, un v\'ertice que
-no tiene vecinos, tiene grado $0$.
+Al conjunto de vecinos de un v\'ertice $v$ se le llama la \indice{vecindad} de
+$v$, y se denota por $N_G(v)$, mientras que definimos al n\'umero de aristas
+incidentes en $v$ como el \indice{grado} de $v$, se denota $d(v)$. Un
+\textbf{v\'ertice} \indiceSub{v\'ertices}{aislado} es  un v\'ertice que no tiene
+vecinos, es decir, tiene grado $0$.
 
 \begin{figure}[ht!]
     \centering
@@ -57,33 +57,35 @@ no tiene vecinos, tiene grado $0$.
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Diferentes diagramas de una gr\'afica $G$}
+    \caption{Dos diagramas diferentes de una gr\'afica $G$.}
     \label{fig:diagGraf}
 \end{figure}
 
 Las gr\'aficas pueden ser representadas por \indice{diagramas}, donde los
-v\'ertices son c\'irculos y las arista son l\'ineas cuyos extremos son sus
-v\'ertices incidentes. Cabe recalcar que una gr\'afica puede tener m\'ultiples
-diagramas, como se muestra en \cref{fig:diagGraf}. Es f\'acil observar que, en
-ambos diagr\'amas de $G$, los v\'ertices tienen las mismas propiedades, por
-ejemplo que $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$ es $1$.   Esto se
-debe a que la gr\'afica es un objeto matem\'atico, independiente del diagrama.
+v\'ertices en ellas son c\'irculos y las aristas son l\'ineas cuyos extremos son
+sus v\'ertices incidentes. Cabe recalcar que una gr\'afica puede tener
+m\'ultiples diagramas, como se muestra en \cref{fig:diagGraf}. Es f\'acil
+observar que, en ambos diagramas de $G$, los v\'ertices tienen las mismas
+propiedades, por ejemplo, que $N_G(v_3)=\{v_1,v_4,v_5\}$ o que el grado de $v_2$
+es $1$. Esto se debe a que la gr\'afica es un objeto matem\'atico, independiente
+del diagrama.
 
 
 Al momento de estudiar objetos matem\'aticos, siempre es importante analizar
-como se relacionan dichos objetos entre s\'i. Ya teniendo la noci\'on de una
-gr\'afica, ahora nos enfocamos en c\'omo se ven las relaciones entre gr\'aficas.
+c\'omo se relacionan dichos objetos entre s\'i. Ya teniendo la noci\'on de una
+gr\'afica, nos enfocamos en c\'omo se ven las relaciones entre gr\'aficas.
 Veamos qu\'e necesitan dos gr\'aficas para ser ``iguales''. Observamos que, de
 igual manera que una gr\'afica puede tener varios diagramas, a un diagrama se le
 pueden asociar distintas gr\'aficas, renombrando v\'ertices y aristas, para
-obtener distintos conjuntos de v\'ertices y aristas. Un ejemplo de esto es
-\cref{fig:isoGraf}. Al renombrar las aristas de la gr\'afica $G$, podemos
-dibujar a $G$ como la gr\'afica $H$ y viceversa, usando como gu\'ia los colores
-que se muestran en la figura. De manera intuitiva, decimos que dos gr\'aficas
-que comparten un mismo diagrama son ``iguales'' pues, al compartir un diagrama,
-comparten muchas propiedades como el n\'umero de v\'ertices, las adyacencias o
-el grado de los v\'ertices. Estas g\'aficas se dice que son isomorfas.
-Formalmente hablando, dos gr\'aficas $G$ y $H$ son
+obtener distintos conjuntos de v\'ertices y aristas. Un ejemplo de esto se
+aprecia en \cref{fig:isoGraf}. Al renombrar los v\'ertices de la gr\'afica $G$,
+podemos dibujar a $G$ como la gr\'afica $H$ y viceversa. En \cref{fig:isoGraf}
+se muestra una forma de renombrar los v\'ertices al usar los colores que se
+muestran en la figura como gu\'ia. De manera intuitiva, decimos que dos
+gr\'aficas que comparten un mismo diagrama son ``iguales'' pues, al compartir un
+diagrama, comparten muchas propiedades que nos interesan, como el n\'umero de
+v\'ertices, las adyacencias o el grado de los v\'ertices. Estas g\'aficas se
+dice que son isomorfas. Formalmente hablando, dos gr\'aficas $G$ y $H$ son
 \indiceSub{gr\'afica}{isomorfas} si exite una biyecci\'on $\theta: V(G)
 \rightarrow V(H)$ tal que para cualesquiera dos v\'ertices $u, v \in V(G)$, se
 cumple que $uv \in E(G)$ si y s\'olo si $\theta(u)\theta(v) \in E(H)$. Es decir,
@@ -135,13 +137,13 @@ llamada \indice{isomorfismo}.
 Al momento de ver las relaciones entre dos objetos matem\'aticos, tambi\'en es
 importante analizar el caso en el que uno est\'e ``contenido'' en el otro. As\'i
 como en el caso de conjuntos nos referimos a subconjuntos, en el caso de
-gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas tales que
-$V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es una
-\indice{subgr\'afica} de $G$. Por otra parte, decimos que $G$ es una
+gr\'aficas, nos referimos a subgr\'aficas. Si $G$ y $H$ son gr\'aficas, tales
+que $V(H) \subseteq V(G)$ y $E(H) \subseteq E(G)$, entonces decimos que $H$ es
+una \indice{subgr\'afica} de $G$. En tal caso, tambi\'en decimos que $G$ es una
 \indice{supergr\'afica} de $H$. Esta relaci\'on se denota con la misma
-notaci\'on que para subconjuntos, es decir $H \subseteq G$. Cuando una
+notaci\'on que para subconjuntos, es decir, $H \subseteq G$. Cuando una
 subgr\'afica tiene el mismo conjunto de v\'ertices que la gr\'afica, es decir,
-$H \subseteq G$ y $V(H)= V(G)$, entonces decimos que es una
+$H \subseteq G$ y $V(H)= V(G)$, entonces decimos que $H$ es una
 \textbf{subgr\'afica} \indiceSub{subgr\'afica}{generadora}. Otro concepto que se
 deriva de las subgr\'aficas parte de fijarnos en la subgr\'afica que tiene la
 mayor cantidad de aristas posibles. Formalmente hablando, nos referimos a $H$,
@@ -149,21 +151,21 @@ la subgr\'afica de $G$, cuyo conjunto de v\'ertices es $S \subseteq V(G)$ y cuyo
 conjunto de aristas son aquellas aristas de $G$ que tienen ambos extremos en
 $S$, es decir, $E(H) = \{uv \in E(G) \colon\ u,v \in S\}$. A esta subgr\'afica
 la llamamos la \textbf{subgr\'afica} \indiceSub{subgr\'afica}{inducida} de $G$
-por $S$ y la denotamos $G[S]$. Notamos que $G[S]$ es la subgr\'afica de $G$ con
-conjunto de v\'ertices $S$ que m\'as se parece a un pedazo de $G$. Un tercer
-tipo importante de subgr\'aficas es el de las subgr\'aficas inducidas obtenidas
-al quitarle uno o m\'as v\'ertices a una gr\'afica. En otras palabras, sea $S
-\subset V(G)$, nombramos $H \subseteq G$ a la gr\'afica con $V(H)=V(G) \setminus
-S$ y $E(H) = E(G)\setminus\{uv \in E(G) \colon\ u \in S \lor v \in S\}$. Esta
-subgr\'afica $H$ se denota $G-S$. Un caso a se\~{n}alar es cuando $S$ es un
-conjunto unitario, i.e., el caso en el que le quitamos un solo v\'ertice $v$ a
-$G$. En este caso escribimos $G-v$, en vez de $G-\{v\}$. A continuaci\'on se
-muestra un ejemplo de subgr\'aficas en \cref{fig:subgraf}, donde
-${\color{morado}\bf H}$ es una subgr\'afica inducida con $V(H) =
-\{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}\bf H'}$ es una subgr\'afica con
-$V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,  v_6v_7\}$. Notamos que a
-${\color{azulCielo}\bf H'}$ le falta la arista ${\color{grisOscuro!80}\bf
-v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida. 
+por $S$ y la denotamos $G[S]$. Notamos que $G[S]$ es la subgr\'afica de $G$, con
+conjunto de v\'ertices $S$, que m\'as se parece a un pedazo de $G$. Un tercer
+tipo importante de subgr\'aficas es el de las subgr\'aficas inducidas de $G$
+obtenidas al quitarle uno o m\'as v\'ertices y las aristas que inciden en dichos
+v\'ertices. En otras palabras, sea $S \subset V(G)$, nos referimos a la
+subgr\'afica inducida $G[V(G)-S]$. Esta gr\'afica se denota $G-S$. Un caso a
+se\~{n}alar es cuando $S$ es un conjunto unitario, en otras palabras, el caso en
+el que le quitamos un solo v\'ertice $v$ a $G$. En este caso escribimos $G-v$,
+en vez de $G-\{v\}$. A continuaci\'on se muestra un ejemplo de subgr\'aficas en
+\cref{fig:subgraf}, donde ${\color{morado}\boldsymbol {H}}$ es una subgr\'afica
+inducida con $V(H) = \{v_1,v_2,v_3,v_4\}$ y ${\color{azulCielo}{\boldsymbol{
+H'}}}$ es una subgr\'afica con $V(H')=\{v_5,v_6,v_7\}$ y $E(H')=\{v_5v_6,
+v_6v_7\}$. Notamos que a ${\color{azulCielo}\boldsymbol {H'}}$ le falta la
+arista ${\color{grisOscuro!80}\boldsymbol {v_5v_7}}$, resaltada en la figura,
+para ser una subgr\'afica inducida. 
 
 \begin{figure}[ht!]
     \centering
@@ -196,7 +198,7 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
                 
     \end{tikzpicture}
     \caption{Una gr\'afica en la que se resalta una subgr\'afica inducida,
-    ${\color{morado}\bf H}$, y una subgr\'afica, ${\color{azulCielo}\bf H'}$.}
+    ${\color{morado}\boldsymbol {H}}$, y una subgr\'afica, ${\color{azulCielo}\boldsymbol {H'}}$.}
     \label{fig:subgraf}
 \end{figure}
 
@@ -207,26 +209,27 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
     Algo que es relevante a trav\'es de varios temas de la Teor\'ia de
     Gr\'aficas es encontrar conjuntos de v\'ertices que sean adyacentes dos a
     dos o conjuntos de v\'ertices que, al contrario, no tengan vecinos dentro de
-    dicho conjunto. Teniendo una gr\'afica $G$ y un conjunto $S \subset V(G)$,
+    dicho conjunto. Teniendo una gr\'afica $G$ y un conjunto $S \subseteq V(G)$,
     decimos que $S$ es un \indice{conjunto independiente} si cualesquiera dos
     v\'ertices de $S$ no son adyacentes. Esto quiere decir que todos los
     elementos de $S$ tienen grado $0$ en $G[S]$. La cardinalidad del conjunto
-    independiente m\'as grande de una gr\'afica se llama \indice{n\'umero de
-    independencia} y se denota $\alpha$. Por otro lado, decimos que $S$ es un
-    \indice{clan} si cualesquiera dos v\'ertices en $S$ son adyacentes. En este
-    caso, el grado de todo v\'ertice de $S$ es $|S-1|$ en $G[S]$. De manera
-    an\'aloga a los conjuntos independientes, la cardinaliad del clan con mayor
-    n\'umero de elementos de una gr\'afica es el \indice{n\'umero de clan} y se
-    denota $\omega$. En \cref{fig:ClanInd} se muestra un ejemplo de un
-    ${\color{coral}\bf clan}$ y un ${\color{verde}\bf conjunto}$
-    ${\color{verde}\bf independiente}$ de una gr\'afica. Es f\'acil observar que
-    el ${\color{verde}\bf conjunto}$ ${\color{verde}\bf independiente}$ no es el
-    conjunto independiente m\'as grande que podemos obtener, pues podr\'iamos
-    agregar el v\'ertice $v_2$ y seguir\'ia siendo un conjunto independiente. De
-    igual manera, podemos notar que existe un clan con cardinalidad mayor al
-    ${\color{coral}\bf clan}$ mostrado. Este clan, que llamamos $K$, est\'a
-    mostrado con el per\'imetro de los v\'ertices de color
-    ${\color{azulCielo}\bf azul}$. Es f\'acil ver que $|K| = \omega$.
+    independiente m\'as grande de una gr\'afica $G$ se llama \indice{n\'umero de
+    independencia} y se denota $\alpha (G)$. Por otro lado, decimos que $S$ es
+    un \indice{clan} si cualesquiera dos v\'ertices en $S$ son adyacentes. En
+    este caso, el grado de todo v\'ertice de $S$ en $G[S]$ es $|S-1|$. De manera
+    an\'aloga a los conjuntos independientes, a la cardinalidad del clan con
+    mayor n\'umero de elementos de una gr\'afica $G$ se le llama
+    \indice{n\'umero de clan} y se denota $\omega(G)$. En \cref{fig:ClanInd} se
+    muestra un ejemplo de un ${\color{coral}\bf {clan}}$ y un ${\color{verde}\bf
+    {conjunto}}$ ${\color{verde}\bf {independiente}}$ de una gr\'afica $G$,
+    resaltados de color naranja y verde, respectivamente. Es f\'acil observar
+    que el ${\color{verde}\bf {conjunto}}$ ${\color{verde}\bf {independiente}}$
+    no es el conjunto independiente m\'as grande que podemos obtener, pues
+    podr\'iamos agregar el v\'ertice $v_2$ y seguir\'ia siendo un conjunto
+    independiente. De igual manera, podemos notar que existe un clan con
+    cardinalidad mayor al ${\color{coral}\bf {clan}}$ mostrado. Este clan, que
+    llamamos $K$, est\'a mostrado con el per\'imetro de los v\'ertices de color
+    ${\color{azulCielo}\bf {azul}}$. Es f\'acil ver que $|K| = \omega (G)$.
 
 
 \begin{figure}[ht!]
@@ -266,7 +269,212 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
     \label{fig:ClanInd}
 \end{figure}
 
-\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operaciones}
+\label{sec:operaciones}
+
+Al igual que en muchas \'areas de las matem\'aticas, al buscar maneras de
+generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas. A
+continuaci\'on nos enfocamos en las operaciones de gr\'aficas que son
+pertinentes para este trabajo. El primer grupo de operaciones que se define se
+basa en el concepto de uni\'on de conjuntos. La \indice{uni\'on} de dos
+gr\'aficas $G$ y $H$ la definimos como la gr\'afica cuyo conjunto de v\'ertices
+y de aristas son la uni\'on de los conjuntos de v\'ertices  y de aristas de
+ambas gr\'aficas, respectivamente. Se utiliza la misma notaci\'on que para la
+uni\'on de conjuntos, es decir, $G \cup H$. El segundo tipo de uni\'on de
+gr\'aficas que definimos es la uni\'on ajena. La \textbf{uni\'on}
+\indiceSub{uni\'on}{ajena} de las gr\'aficas $G$ y $H$, denotada $G + H$, es la
+uni\'on de $G$ y $H$, donde $V(G) \cap V(H) = \varnothing$. Por \'ultimo, otra
+operaci\'on que surge del concepto de uni\'on de conjuntos y que va a ser de
+utilidad en este trabajo es la uni\'on completa. La \textbf{uni\'on}
+\indiceSub{uni\'on}{completa} de dos gr\'aficas $G$ y $H$, tales que $V(G) \cap
+V(H)=\varnothing$, es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$ y
+cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
+V(H) \}$. La uni\'on completa la denotamos $G \oplus H$. En
+\cref{fig:ex-unionCompleta} se muestra un ejemplo de este tipo de uni\'on. Del
+lado izquierdo de la figura se muestran dos gr\'aficas, la primera, en la parte
+superior, tiene v\'ertices $v_i$ y la segunda, en la parte inferior, tiene
+v\'ertices $w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado derecho de la figura
+se muestra la uni\'on completa de dichas gr\'aficas.
+
+\begin{figure}[htb!]
+    \centering
+    \begin{tikzpicture}
+
+        \begin{scope}[yshift=1cm,xshift=-2cm,rotate=45,scale=1]
+            \foreach \i in {1,...,3}
+            \draw ({(360/3)*\i-150}:1)
+                node(\i)[vertex, label=(360/3)*\i-105:{\large $v_{\i}$}]{};
+            \end{scope}
+
+        \begin{scope}[yshift=-1cm,rotate=45,scale=1]
+            \foreach \i in {4,...,6}
+            \draw ({(360/3)*\i+30}:1)
+                node(\i)[vertex, label=(360/3)*\i+75:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
+        \end{scope}
+
+        \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4,1/4,1/5,1/6,2/4,2/5,2/6,3/4,3/5,3/6}
+        \draw [edge,grisOscuro] (\i) to (\j);
+
+        \begin{scope}[yshift=1cm,xshift=-8cm,rotate=45,scale=1]
+            \foreach \i in {1,...,3}
+            \draw ({(360/3)*\i-150}:1)
+                node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
+            \end{scope}
+
+        \begin{scope}[yshift=-1cm,xshift=-6cm,rotate=45,scale=1]
+            \foreach \i in {4,...,6}
+            \draw ({(360/3)*\i+30}:1)
+                node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
+        \end{scope}
+
+
+            \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4}
+                \draw [edge,grisOscuro] (\i) to (\j);
+    \end{tikzpicture}
+    \caption{Dos gr\'aficas (izquierda) y su uni\'on completa (derecha).}
+\label{fig:ex-unionCompleta}
+\end{figure}
+
+La siguiente proposici\'on sobre la uni\'on completa de subgr\'aficas
+generadoras nos ser\'a de utilidad m\'as adelante este trabajo, por lo que
+pasamos a demostrarla.
+
+\begin{proposicion}
+\label{prop:HUnion-SSubG}
+    Sean $H$, $H'$, $G$ y $G'$ cuatro gr\'aficas. Si $H$ y $H'$ son
+    subgr\'aficas generadoras de $G$ y $G'$, respectivamente, entonces la
+    uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la uni\'on
+    completa de $G$ y $G'$.
+\end{proposicion}
+
+\begin{proof}
+    Dadas dos gr\'aficas $G$ y $G'$ y dos gr\'aficas generadoras $H \subseteq G$
+    y $H'\subseteq G'$, buscamos demostrar que $H \oplus H'$ es una subgr\'afica
+    generadora de $G \oplus G'$. Observamos que $V(H)=V(G)$ y $V(H')=V(G)$, de
+    ah\'i que $V(H \oplus H')=V(G \oplus G')$. Por consiguiente, basta ver que
+    las aristas de $H \oplus H'$ son aristas de $G \oplus G'$. Sean $x$ y $y$
+    v\'ertices adyacentes en $H \oplus H'$. Si $x,y \in V(H)$, de manera
+    an\'aloga si $x,y \in V(H')$, entonces tenemos que $x \sim y$ en $G$,
+    an\'alogamente $x \sim y$ en $G'$. Por ende, en ambos casos tenemos que $x$
+    y $y$ son adyacentes en $G \oplus G'$. Ahora, sin p\'erdida de generalidad,
+    de la definici\'on de  uni\'on completa tenemos que, si $x \in V(H)$ y $y
+    \in V(H')$, entonces $x \sim y$ en $G \oplus G'$. De este modo tenemos que
+    $H \oplus H'$ es una subgr\'afica generadora de $G \oplus G'$.
+\end{proof}
+
+Otra operaci\'on que se utilizar\'a m\'as adelante en este trabajo es el
+producto cartesiano de gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el
+\indice{producto cartesiano} de $G$ y $H$, denotado $G \square H$, es la
+gr\'afica cuyo conjunto de v\'ertices es el producto cartesiano de $V(G)$ y
+$V(H)$, es decir, $V(G \square H) = V(G) \times V(H)$. Adem\'as,
+$(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y s\'olo si $g_1 = g_2$ y
+$h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A continuaci\'on, en
+\cref{fig:ex-cartesiano}, se muestran tres gr\'aficas, la primera del lado
+izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\boldsymbol{{v_1}}},
+{\color{coral}\boldsymbol{{v_2}}}\}$ y la segunda en la parte inferior y con
+conjunto de v\'ertices
+$\{{\color{amarillo}\boldsymbol{{w_1}}},{\color{morado}\boldsymbol{{w_2}}}\}$.
+Estas dos gr\'aficas son copias de la gr\'afica $K_2$ (introducida formalmente
+en la siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
+gr\'afica, el producto cartesiano de las gr\'aficas antes mencionadas,
+resaltando de d\'onde vienen los v\'ertices de esta \'ultima gr\'afica.
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+        
+            \begin{scope}[xshift=0cm,scale=0.9]
+
+                \draw ({(360/4)*2 - 45}:2) node(1)[avertex,fill=amarillo, label=(360/4)*2 -
+                    45:{\large $k_{1}$}]{};
+                \draw ({(360/4) - 45}:2) node(2)[avertex, fill=morado, label=(360/4) -
+                    45:{\large $k_{2}$}]{};
+                \draw ({(360/4)*3 - 45}:2) node(3)[coralvertex,fill= amarillo, label=(360/4)*3 - 
+                45:{\large $k_{3}$}]{};
+                \draw ({(360/4)*4 - 45}:2) node(4)[coralvertex, fill= morado, label=(360/4)*4 - 
+                45:{\large $k_{4}$}]{};
+                \draw (-3,1.4) node (5) [avertex, label=180:{\large $v_1$}] {};
+                \draw (-3,-1.4) node (6) [coralvertex, label=180:{\large $v_2$}] {}; 
+                \draw (-1.4,-3) node (7) [bvertex, fill= amarillo, label=270:{\large $w_1$}] {};
+                \draw (1.4,-3) node (8) [bvertex, fill= morado, label=270:{\large $w_2$}] {};
+
+                \foreach \i/\j in {1/2,1/3,3/4,2/4,5/6,7/8}
+                    \draw [edge,grisOscuro] (\i) to (\j);
+                \end{scope}
+
+                    
+        \end{tikzpicture}
+        \caption{En el centro, la gr\'afica $K_2 \square K_2$. Una copia de
+        $K_2$ a la izquierda y abajo, resaltando cada v\'ertice de distinto
+        color.}
+        \label{fig:ex-cartesiano}
+    \end{figure}
+
+Hasta ahora se han definido operaciones para dos o m\'as gr\'aficas, sin
+embargo, tambi\'en existen operaciones sobre una misma gr\'afica. Tal es el caso
+de la \indiceSub{aristas}{contraci\'on} \textbf{de aristas}. Dada una gr\'afica
+$G$ y $e=uv$ una arista de $G$, denotamos $G/e$ a la gr\'afica obtenida de
+contraer a la arista $e$. Donde $E(G/e)=E(G) \setminus \{e\}$ es el conjunto de
+aristas de $G/e$ y su conjunto de v\'ertices es $V(G/e)=(V(G)\setminus \{u,v\})
+\cup \{w\}$, donde $w$ es un v\'ertice tal que $N(w)=\{x \in V(G) \colon x \in
+(N(u)\setminus \{v\}) \lor x \in (N(v) \setminus \{u\})\}$. En otras palabras,
+$G/e$ es la gr\'afica obtenida de eliminar la arista $e$ y ``fusionar'' los
+extremos de $e$ para crear un nuevo v\'ertice llamado $w$. La Figura
+\ref{fig:ex-contract} muestra un peque\~{n}o ejemplo de la contracci\'on de
+aristas.
+
+\begin{figure}[htb!]
+    \centering
+    \begin{tikzpicture}
+
+        \begin{scope}[xshift=0cm]
+            \foreach \i in {1,2}
+            \draw ({(360/3)*\i}:1.5)
+                node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
+                
+            \draw (360:1.5) node(3)[vertex, fill=azulCielo, label=0:{\large $w$}]{};
+                
+            \foreach \i/\j in {1/2,1/3,2/3}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            \end{scope}
+
+        \begin{scope}[xshift=-6cm]
+            \foreach \i in {1,2}
+            \draw ({(360/4)*\i}:1.5)
+                node(\i)[vertex, label=(360/4)*\i:{\large $v_{\i}$}]{};
+
+            \draw ({(360/4)*3}:1.5) node(3)[vertex, fill=amarillo, label=(360/4)*3:{\large $v_{3}$}]{};
+            \draw (360:1.5) node(4)[vertex, fill=coral, label=0:{\large $v_{4}$}]{};
+
+            \foreach \i/\j in {1/2,1/3,1/4,2/3}
+                \draw [edge,grisOscuro] (\i) to (\j);
+            
+            \foreach \i/\j in {3/4}
+                \draw[wedge,azulCielo] (\i) to (\j);
+            \end{scope}
+
+    \end{tikzpicture}
+    \caption{La gr\'afica $G$ con la arista $e=v_3v_4$ resaltada de
+    ${\color{azulCielo}\bf azul}$ (izquierda) y la gr\'afica
+    $G/{\color{azulCielo}\boldsymbol{e}}$ (derecha).}
+\label{fig:ex-contract}
+\end{figure}
+
+Por \'ultimo, definimos el \indice{complemento} de una gr\'afica
+$G$ como la gr\'afica que tiene el mismo conjunto de v\'ertices que $G$ y cuyo
+conjunto de aristas es $\binom{V(G)}{2} - E(G)$. A esta gr\'afica la denotamos
+$\overline{G}$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Caminos y conexidad}
 \label{sec:CamConex}
@@ -274,19 +482,19 @@ v_5v_7}$, resaltada en la figura, para ser una subgr\'afica inducida.
 En Teor\'ia de Gr\'aficas resulta interesante preguntarse si, en una gr\'afica,
 hay alg\'un ``v\'inculo'' entre dos v\'ertices. Si estos dos v\'ertices son
 adyacentes, es claro que ese v\'inculo existe a trav\'es de la arista que
-comparten. Un \indice{$uv$-camino} entre los v\'ertices $u$ y $v$ de una
-gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y aristas de $G$ de la
-siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1}, e_k,v_k)$ con $v_i
-\in V(G)$ y $v_{j-1}v_j = e_j \in E(G)$, para $i \in \{0, \dots, k\}$ y $j \in
-\{ 1, \dots, k\}$. Este $uv$-camino es una forma de vincular el v\'ertice $u$
-con el v\'ertice $v$. En caso de que no sea necesario especificar de qu\'e
-v\'ertice a qu\'e v\'ertice va la sucesi\'on, nos referimos simplemente a un
-\indice{camino}. Es importante notar que un camino no siempre tiene aristas. Un
-camino es \indiceSub{camino}{trivial} si tiene \'unicamente un v\'ertice y no
-tiene aristas. \'Este es el \'unico caso en el que un camino no tiene aristas.
-Al ser una sucesi\'on, a un camino $W$ se le puede asociar una
-\indiceSub{camino}{longitud}, que es el n\'umero de posiciones en la sucesi\'on
-$W$ que son ocupadas por aristas, se denota $\ell(W)$. 
+comparten. Un $uv$\textbf{-camino}\index{u @$uv$-camino} entre los v\'ertices
+$u$ y $v$ de una gr\'afica $G$ es una sucesi\'on alternada de v\'ertices y
+aristas de $G$ de la siguiente forma, $W=(v_0, e_1,v_1, \dots, e_{k-1},v_{k-1},
+e_k,v_k)$ con $v_i \in V(G)$ y donde $e_j = v_{j-1}v_j$ para $i \in \{0, \dots,
+k\}$ y $j \in \{ 1, \dots, k\}$. Este $uv$-camino es una forma de vincular el
+v\'ertice $u$ con el v\'ertice $v$. En caso de que no sea necesario especificar
+de qu\'e v\'ertice a qu\'e v\'ertice va la sucesi\'on, nos referimos simplemente
+a un \indice{camino}. Es importante notar que un camino no siempre tiene
+aristas. Un camino es \indiceSub{camino}{trivial} si tiene \'unicamente un
+v\'ertice y no tiene aristas. Este es el \'unico caso en el que un camino no
+tiene aristas. Al ser una sucesi\'on, a un camino $W$ se le puede asociar una
+\indiceSub{camino}{longitud}, definido como el n\'umero de posiciones en $W$ que
+son ocupadas por aristas. Denotamos la longitud de $W$ como $\ell(W)$. 
 
 Al poderle asignar una longitud a un camino, es natural utilizar esta longitud
 para ver que tan ``cercano'' est\'a un v\'ertice de otro. Pero, observamos que,
@@ -295,24 +503,27 @@ arista. En otras palabras, el concepto de camino no ayuda mucho para encontrar
 la forma m\'as corta para llegar de un v\'ertice a otro. Por lo tanto,
 introducimos el concepto de trayectoria. Una \indice{trayectoria} es un camino
 que no repite v\'ertices. Al igual que con el concepto de camino, una
-\indice{$uv$-trayectoria} es una trayectoria que tiene v\'ertice inicial $u$ y
-v\'ertice final $v$. En una $uv$-trayectoria, los v\'ertices $u$ y $v$ son
-llamados \indiceSub{v\'ertices}{extremos} y el resto de los v\'ertices de la
-trayectoria son llamados \textbf{v\'ertices} \indiceSub{v\'ertices}{internos}.
-Notamos que, al no repetir v\'ertices, este camino tampoco repite aristas, pues,
-si lo hiciera, necesitar\'ia volver a pasar por al menos uno de los extremos de
-dicha arista. De lo anterior se sigue que todas las trayectorias que tengan los
-mismos v\'ertices y aristas tambi\'en tienen la misma longitud. Esto es una
-mejor aproximaci\'on al concepto de ``cercan\'ia'' entre v\'ertices, sin
-embargo, se puede tener el caso que haya m\'ultiples trayectorias de distintas
-longitudes entre dos v\'ertices. Definimos la \indice{distancia} entre dos
-v\'ertices $u$ y $v$ de una gr\'afica, denotada $d(u,v)$, como la longitud de la
-$uv$-trayectoria m\'as corta. Sea $P$ una trayectoria en una gr\'afica, decimos
-que $P$ no tiene \indice{cuerdas} si la subgr\'afica inducida por $V(P)$ tiene
-grado m\'aximo 2. Observamos que cualquier trayectoria de longitud m\'inima
-entre dos v\'ertices no tiene cuerdas. Adicionalmente, podemos darle un
-``tama\~{n}o'' a una gr\'afica $G$ al definir su \indice{di\'ametro} como
-$\max_{v\in G}\{\max_{u\in G}\{d(u,v)\}\}$. 
+$uv$\textbf{-trayectoria} \index{u @$uv$-trayectoria} es una trayectoria que
+tiene v\'ertice inicial $u$ y v\'ertice final $v$. En una $uv$-trayectoria, los
+v\'ertices $u$ y $v$ son llamados \indiceSub{v\'ertices}{extremos} y el resto de
+los v\'ertices de la trayectoria son llamados \textbf{v\'ertices}
+\indiceSub{v\'ertices}{internos}. A la $uv$-trayectoria $P$, la podemos escribir
+como $u\xrightarrow[P]{} v$. Notamos que, al no repetir v\'ertices, este camino
+tampoco repite aristas, pues, si lo hiciera, necesitar\'ia volver a pasar por al
+menos uno de los extremos de dicha arista. De lo anterior se sigue que todas las
+trayectorias que tengan los mismos v\'ertices y aristas tambi\'en tienen la
+misma longitud. El usar trayectorias es una mejor aproximaci\'on al concepto de
+``cercan\'ia'' entre v\'ertices, sin embargo, se puede tener el caso que haya
+m\'ultiples trayectorias de distintas longitudes entre dos v\'ertices. Definimos
+la \indice{distancia} entre dos v\'ertices $u$ y $v$ de una gr\'afica, denotada
+$d(u,v)$, como la longitud de la $uv$-trayectoria m\'as corta. En caso de que no
+existan $uv$-trayectorias en la gr\'afica, decimos que la distancia entre $u$ y
+$v$ es infinito. Sea $P$ una trayectoria en una gr\'afica, decimos que $P$ no
+tiene \indice{cuerdas} si la subgr\'afica inducida por $V(P)$ tiene grado
+m\'aximo 2. Observamos que cualquier trayectoria de longitud m\'inima entre dos
+v\'ertices no tiene cuerdas. Adicionalmente, podemos darle una ``dimensi\'on'' a
+una gr\'afica $G$ al definir su \indice{di\'ametro} como $\max_{v\in
+G}\{\max_{u\in G}\{d(u,v)\}\}$ si $G$ es conexa e infinito si es inconexa. 
 
 La siguiente proposici\'on nos muestra una relaci\'on entre caminos y
 trayectorias.
@@ -335,36 +546,36 @@ trayectorias.
     $w_n=v$, $e_i \in E(G)$ y $w_j \in V(G)$, donde $i \in \{1, \dots, n\}$ y $j
     \in \{0, \dots, n\}$. Sea $m \in \{0, \dots, n\}$ el \'indice del primer
     v\'ertice de $W$ que se repite y sea $l \in \{m+1, \dots, n\}$ tal que $w_m
-    = w_l$. Formamos el camino $W'= (w_0,e_1,w_1,\dots w_m, e_{l+1}, w_{l+1}
-    \dots, e_n,w_n)$. Observamos que $\ell(W')<\ell(W)$, por lo que, por
-    hip\'otesis de inducci\'on, $W'$ contiene una $uv$-trayectoria. Por lo
-    tanto, $W$ tambi\'en contiene una $uv$-trayectoria.
+    = w_l$. Formamos el camino $W'= (w_0,e_1,w_1,\dots, w_m, e_{l+1}, w_{l+1},
+    \dots, e_n,w_n)$. Observamos que $\ell(W')<\ell(W)$, por lo que $W'$
+    contiene una $uv$-trayectoria, por hip\'otesis de inducci\'on. Por lo tanto,
+    $W$ tambi\'en contiene una $uv$-trayectoria.
 \end{proof}
 
 Por \cref{prop:CamTray}, sabemos que, cada que hablamos de caminos, siempre hay
 una trayectoria contenida. Por esta raz\'on, de ahora en adelante nos enfocamos
 en trayectorias. Como se mencion\'o anteriormente, entre dos v\'ertices $u$ y
 $v$ pueden existir m\'ultiples trayectorias. Decimos que $X$ y $Y$ son dos
-\textbf{$uv$-trayectorias} \indiceSub{$uv$-trayectoria}{internamente ajenas} si
-$V(X)\cap V(Y)=\{u,v\}$, i.e. los v\'ertices en com\'un entre $X$ y $Y$ son
+\textbf{$uv$-trayectorias} \indiceSub{u @$uv$-trayectoria}{internamente ajenas}
+si $V(X)\cap V(Y)=\{u,v\}$, i.~e. los v\'ertices en com\'un entre $X$ y $Y$ son
 \'unicamente sus extremos. El m\'aximo n\'umero de $uv$-trayectorias
 internamente ajenas se denota por $p(u,v)$. Tambi\'en podemos definir un
 concepto similar enfoc\'andonos en aristas. Llamamos \textbf{$uv$-trayectorias}
-\indiceSub{$uv$-trayectoria}{ajenas por aristas} a dos o m\'as $uv$-trayectorias
-que no tengan aristas en com\'un. Estos conceptos nos sevir\'an m\'as adelante
-cuando hablemos de conexidad. Adicionalmente, siempre podemos recorrer una
-trayectoria en sentido contrario, es decir, empezando por el \'ultimo v\'ertice
-y terminando por el primero. Al recorrer la trayectoria de esta manera obtenemos
-otra trayectoria. Formalmente hablando, teniendo una $uv$-trayectoria $X$, su
-\textbf{trayectoria} \indiceSub{trayectoria}{inversa}, a la cu\'al denotamos
-$X^{-1}$, es una $vu$-trayectoria que tiene los mismos v\'ertices y aristas que
-$X$.
+\indiceSub{u @$uv$-trayectoria}{ajenas por aristas} a dos o m\'as
+$uv$-trayectorias que no tengan aristas en com\'un. Estos conceptos nos
+sevir\'an m\'as adelante cuando hablemos de conexidad. Adicionalmente, siempre
+podemos recorrer una trayectoria en sentido contrario, es decir, empezando por
+el \'ultimo v\'ertice y terminando por el primero. Al recorrer la trayectoria de
+esta manera obtenemos una nueva trayectoria. Formalmente hablando, teniendo una
+$uv$-trayectoria $X$, su \textbf{trayectoria} \indiceSub{trayectoria}{inversa},
+a la cual denotamos $X^{-1}$, es una $vu$-trayectoria que tiene los mismos
+v\'ertices y aristas que $X$.
 
 Algo interesante de observar es que, a pesar de que las trayectorias las
-definimos a partir de tener a v\'ertices como extremos, tambi\'en se pueden
-definir con conjuntos. Sean $X,Y \subseteq V(G)$, definimos la trayectoria
-$P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si $V(P) \cap X= \{v_1\}$ y $V(P)
-\cap Y= \{v_r\}$.
+definimos con v\'ertices como extremos, tambi\'en se pueden definir con
+conjuntos de la siguiente manera. Sean $X,Y \subseteq V(G)$, definimos la
+trayectoria $P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si sucede que $V(P)
+\cap X= \{v_1\}$ y $V(P) \cap Y= \{v_r\}$.
 
 \begin{figure}[htb!]
     \centering
@@ -397,55 +608,56 @@ $P=(v_1,\dots, v_r)$ como una $XY$-trayectoria si $V(P) \cap X= \{v_1\}$ y $V(P)
             \end{scope}
                 
     \end{tikzpicture}
-    \caption{Una gr\'afica en la que se resaltan las ${\color{morado}\bf
-    aristas}$ de un ${\color{coral}\bf v_3 v_5}$-camino con su
-    ${\color{coral}\bf v_3 v_5}$-trayectoria contenida, resaltando sus
-    ${\color{morado}\textbf{v\'ertices}}$.  Tambi\'en se resalta una
-    ${\color{coral}\bf v_3 v_5}$-trayectoria sin cuerdas de color
-    ${\color{verde}\bf verde}$.}
+    \caption{Una gr\'afica, donde se resaltan las ${\color{morado}\bf
+    {aristas}}$ de un ${\color{coral}\boldsymbol {v_3 v_5}}$-camino y resaltando
+    los ${\color{morado}\textbf{v\'ertices}}$  de su ${\color{coral}\boldsymbol
+    {v_3 v_5}}$-trayectoria contenida.  Tambi\'en se resalta, en
+    ${\color{verde}\bf {verde}}$, una ${\color{coral}\boldsymbol {v_3
+    v_5}}$-trayectoria sin cuerdas.}
     \label{fig:ex-caminos}
 \end{figure}
     
 En \cref{fig:ex-caminos} podemos ver un ejemplo de \cref{prop:CamTray}, donde se
-resaltan las ${\color{morado}\bf aristas}$ de un $v_3 v_5$-camino y donde, para
-mostrar una trayectoria contenida, se resaltan los
-${\color{morado}\textbf{v\'ertices}}$ de la $v_3 v_5$-trayectoria contenida.
-Adicionalmente, en la misma figura se observan dos ${\color{coral}\bf v_3
-v_5}$-trayectorias internamente ajenas. Ambas est\'an representadas con sus
-v\'ertices internos coloreados del mismo color, una de ${\color{morado}\bf
-morado}$ y la otra de ${\color{verde}\bf verde}$. Notamos que la
-${\color{morado}\textbf{trayectoria morada}}$ tiene cuerdas, entre ellas, la
-arista $v_8v_5$. Por otro lado, la ${\color{verde}\textbf{trayectoria verde}}$
-no tiene cuerdas y tiene la longitud m\'as corta entre $v_3$ y $v_5$, de donde
-obtenemos que la distancia entre $v_3$ y $v_5$ es $2$.
+resaltan las aristas de ${\color{morado}\bf {morado}}$ de un $v_3 v_5$-camino y
+donde, para mostrar una trayectoria contenida, se resaltan los v\'ertices de
+${\color{morado}\textbf{morado}}$ de dicha $v_3 v_5$-trayectoria.
+Adem\'as, en la misma figura se observan dos ${\color{coral}\boldsymbol
+{v_3 v_5}}$-trayectorias internamente ajenas. Ambas est\'an representadas con
+sus v\'ertices internos coloreados del mismo color, una de ${\color{morado}\bf
+{morado}}$ y la otra de ${\color{verde}\bf {verde}}$. Notamos que la
+${\color{morado}\bf{trayectoria}}$ ${\color{morado}\bf {morada}}$ tiene cuerdas,
+entre ellas, la arista $v_8v_5$. Por otro lado, la
+${\color{verde}\bf{trayectoria}}$ ${\color{verde}\bf {verde}}$ no tiene cuerdas
+y tiene la longitud m\'as corta entre $v_3$ y $v_5$, de donde obtenemos que la
+distancia entre $v_3$ y $v_5$ es $2$.
 
-Cuando los extremos de un camino son iguales, se llama \textbf{camino}
+Cuando un camino tiene extremos iguales, se le llama \textbf{camino}
 \indiceSub{camino}{cerrado}. Al igual que en el caso de las trayectorias, vale
 la pena resaltar el caso en el que un camino cerrado no repite v\'ertices (salvo
 los extremos). Un \indice{ciclo} es un camino cerrado de longitud al menos $3$
-que, adem\'as, no repite v\'ertices, salvo los extremos.  Muchas veces nos
+que, adicionalmente, no repite v\'ertices, salvo los extremos.  Muchas veces nos
 interesa saber si una gr\'afica contiene o no contiene ciclos. Una gr\'afica sin
 ciclos es llamada \textbf{gr\'afica} \indiceSub{gr\'afica}{ac\'iclica}. Algo que
-tambi\'en nos ser\'a de utilidad m\'as adelante, es el ciclo generador. De
-manera similar a una subgr\'afica generadora, un \textbf{ciclo}
+tambi\'en nos ser\'a de utilidad m\'as adelante, es el concepto de ciclo
+generador. De manera similar a una subgr\'afica generadora, un \textbf{ciclo}
 \indiceSub{ciclo}{generador} es un ciclo cuyo conjunto de v\'ertices es el mismo
 que el de la gr\'afica.
    
 Hasta ahora nos hemos enfocado en los ``v\'inculos'' entre dos v\'ertices de una
 gr\'afica. Sin embargo, es importante mencionar que no siempre existe una manera
-de ``vincular'' dos v\'ertices, como se puede ver \cref{fig:diagGraf}, donde no
-existen trayectorias que conecten a $v_7$ con alg\'un otro v\'ertice.  Definimos
-una gr\'afica $G$ como \indiceSub{gr\'afica}{conexa}\index{conexa!gr\'afica} si,
-para cualquier par de v\'ertices $u,v \in V(G)$, existe una $uv$-trayectoria. Si
-una gr\'afica no cumple esta propiedad, decimos que es
-\indiceSub{gr\'afica}{inconexa}. Observamos que toda gr\'afica, incluso las
-gr\'aficas inconexas, contienen ``partes'' que s\'i son conexas, dado que un
-v\'ertice aislado es trivialmente conexo. Por lo anterior, en todo caso, al
-estudiar la conexidad de las gr\'aficas, nos podemos enfocar en dichas partes.
-En una gr\'afica $G$, las subgr\'aficas m\'aximas con la propiedad de ser
-conexas son llamadas \indice{componentes conexas}\index{conexa!componente}.
-Notamos que si una gr\'afica es conexa, contiene s\'olo una componente conexa,
-ella misma.
+de ``vincular'' dos v\'ertices, como se puede ver en \cref{fig:diagGraf}, donde
+no existen trayectorias que conecten a $v_7$ con alg\'un otro v\'ertice.
+Definimos una gr\'afica $G$ como
+\indiceSub{gr\'afica}{conexa}\index{conexa!gr\'afica} si, para cualquier par de
+v\'ertices $u,v \in V(G)$, existe una $uv$-trayectoria. Si una gr\'afica no
+cumple esta propiedad, decimos que es \indiceSub{gr\'afica}{inconexa}.
+Observamos que toda gr\'afica, incluso las gr\'aficas inconexas, contienen
+``partes'' que s\'i son conexas, dado que un v\'ertice aislado es trivialmente
+conexo. Por lo anterior, al estudiar la conexidad de las gr\'aficas, en todo
+caso, nos podemos enfocar en dichas partes. En una gr\'afica $G$, las
+subgr\'aficas m\'aximas con la propiedad de ser conexas son llamadas
+\indice{componentes conexas}\index{conexa!componente}. Notamos que si una
+gr\'afica es conexa, contiene s\'olo una componente conexa, ella misma.
 
 Una pregunta interesante en este tema es, qu\'e tan dif\'icil es ``desconectar''
 una gr\'afica. Para esto puede resultar natural cuestionarse si existe alg\'un
@@ -454,58 +666,61 @@ gr\'afica. A este conjunto lo llamamos corte por v\'ertices. Formalmente, un
 \indice{corte por v\'ertices}\index{v\'ertices!corte} $S$ de una gr\'afica $G$
 es un subconjunto de $V(G)$ tal que $G[V(G)-S]$ es inconexa, es decir, el
 conjunto $S$ \indice{separa} a la gr\'afica en dos o m\'as componentes conexas.
-Decimos que $S$ es un \indiceSub{corte por
-v\'ertices}{$k$-corte}\index{v\'ertices!$k$-corte} \textbf{por v\'ertices} si
-$|S|=k$. A un corte por v\'ertices entre dos v\'ertices no adyacentes $u$ y $v$
-se le llama \indiceSub{corte por
-v\'ertices}{$uv$-corte}\index{v\'ertices!$uv$-corte} \textbf{por v\'ertices}. La
-m\'inima cardinalidad de un $uv$-corte por v\'ertices se denota $c(u,v)$ y no
-est\'a definida si $u$ y $v$ son adyacentes o $x=y$. Tamb\'ien pueden existir
-cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean $X,Y \subseteq
-V(G)$, $S$ es un \indiceSub{corte por v\'ertices}{$XY$-corte
-}\index{v\'ertices!$XY$-corte} \textbf{por v\'ertices} si $G-S$ es una gr\'afica
-inconexa donde $X$ y $Y$ se encuentran en distintas componentes conexas. Cabe
-notar que no todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber,
-las gr\'aficas completas (introducidas en la siguiente secci\'on) no tienen
-corte por v\'ertices y son las \'unicas con esta propiedad. Ahora, usando el
-concepto de corte por v\'ertices, definimos la conexidad de una gr\'afica. El
-\indice{n\'umero de conexidad} de una gr\'afica $G$, denotado por $\kappa(G)$,
-se define como la m\'inima cardinalidad de un conjunto de corte de $G$, es
-decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por v\'ertices}\}$.
-Como ya se observ\'o, las gr\'aficas completas no tienen cortes por v\'ertices,
-no obstante, por convenci\'on decimos que una gr\'afica completa de $n$
-v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io es un
-corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una gr\'afica
-inconexa tiene n\'umero de conexidad $0$. Adicionalmente, decimos que una
-gr\'afica $G$ es \indiceSub{gr\'afica}{$t$-conexa} si $|G|>t$ y $G-X$ es conexa
-para todo conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el
-conecpto de conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
+Decimos que $S$ es un $k$\textbf{-corte por v\'ertices}\index{corte por
+v\'ertices!k @ $k$-corte}\index{v\'ertices!k @$k$-corte} si $|S|=k$. Un corte
+por v\'ertices $S$ entre dos v\'ertices no adyacentes $u$ y $v$ es un corte por
+v\'ertices que deja a $u$ y a $v$ en diferentes componentes conexas en $G-S$. A
+este corte por v\'ertices se le llama $uv$\textbf{-corte por
+v\'ertices}\index{corte por v\'ertices!u @$uv$-corte}\index{v\'ertices!u
+@$uv$-corte}. La m\'inima cardinalidad de un $uv$-corte por v\'ertices se denota
+$c(u,v)$ y no est\'a definida si $u$ y $v$ son adyacentes o $x=y$. Tambi\'en
+pueden existir cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean
+$X,Y \subseteq V(G)$, $S$ es un $XY$\textbf{-corte por v\'ertices}\index{corte
+por v\'ertices!X @$XY$-corte}\index{v\'ertices!X @$XY$-corte} si $G-S$ es una
+gr\'afica inconexa donde $X$ y $Y$ se encuentran en distintas componentes
+conexas. Cabe notar que no todas las gr\'aficas tienen alg\'un corte por
+v\'ertices, a saber, las gr\'aficas en las que cualesquiera dos v\'ertices son
+adyacentes no tienen cortes por v\'ertices, y son las \'unicas con esta
+propiedad. Ahora, usando el concepto de corte por v\'ertices, definimos la
+conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de una gr\'afica
+$G$, denotado por $\kappa(G)$, se define como la m\'inima cardinalidad de un
+conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{
+es corte por v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no
+tienen cortes por v\'ertices, no obstante, por convenci\'on decimos que una
+gr\'afica completa de $n$ v\'ertices tiene n\'umero de conexidad $n-1$. Por otra
+parte, el vac\'io es un corte por v\'ertices en cualquier gr\'afica inconexa,
+por lo que una gr\'afica inconexa tiene n\'umero de conexidad $0$.
+Adicionalmente, decimos que una gr\'afica $G$ es $t$\textbf{-conexa}
+\index{gr\'afica!t @$t$-conexa} si $|V(G)|>t$ y $G-X$ es conexa para todo
+conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el concepto de
+conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
 \cref{fig:subgraf}. Notamos que ambas son conexas, sin embargo, necesitamos
 m\'as v\'ertices para ``desconectar'' la gr\'afica de \cref{fig:subgraf} que las
 gr\'aficas de \cref{fig:isoGraf}. A saber, las gr\'aficas de \cref{fig:isoGraf}
 son $2$-conexas y la gr\'afica de \cref{fig:subgraf} es $6$-conexa.
 
-Otra manera de abordar el tema de``desconectar'' una gr\'afica es  pensar en las
-trayectorias internamente ajenas, pues la cantidad de trayectorias internamente
-ajenas entre dos v\'ertices nos habla de cu\'antas maneras diferentes hay de
-conectar un v\'ertice con otro. De hecho, existe una relaci\'on entre la
-conexidad de una gr\'afica y la cantidad de trayectorias internamente ajenas que
-hay entre cualesquiera dos de sus v\'ertices. Para ayudar a visualizar dicha
-relaci\'on, en \cref{fig:ex-menger} se muestran dos copias de una gr\'afica,
-donde cada copia busca la manera de separar los v\'ertices $\color{verde} \bf
-v_1$ y $\color{verde} \bf v_5$ utilizando conceptos diferentes. Del lado
-izquierdo se muestran tres $v_1v_5$-trayectorias internamente ajenas, cada una
-resaltada de un color diferente. Del lado derecho se muestra el corte por
-v\'ertices ${\color{morado}\bf \{v_2, v_6, v_7\} }$, donde cada v\'ertice est\'a
-relleno de morado. Observemos que cada v\'ertice del corte por v\'ertices se
-encuentra en una $v_1v_5$-trayectoria que es internamente ajena de las dem\'as.
-Para facilitar esta visualizaci\'on, cada v\'ertice del corte por v\'ertices
-tiene el per\'imetro del mismo color que la $v_1v_5$-trayectoria internamente
-ajena a la que nos referimos. La relaci\'on entre la cantidad de trayectorias
-internamente ajenas entre cualesquiera dos v\'ertices de una gr\'afica y la
-conexidad de \'esta fue demostrada por Menger y es un teorema de mucha
-relevancia en Teor\'ia de Gr\'aficas. A continuaci\'on demostramos dicho
-teorema, conocido como el Teorema de Menger, y una versi\'on global de este. 
+Otra manera de abordar el tema de ``desconectar'' una gr\'afica es  pensar en
+las trayectorias internamente ajenas, pues la cantidad de trayectorias
+internamente ajenas entre dos v\'ertices nos habla de cu\'antas maneras
+diferentes hay de conectar un v\'ertice con otro. De hecho, existe una
+relaci\'on entre la conexidad de una gr\'afica y la cantidad de trayectorias
+internamente ajenas que hay entre cualesquiera dos de sus v\'ertices. Para
+ayudar a visualizar dicha relaci\'on, en \cref{fig:ex-menger} se muestran dos
+copias de una gr\'afica, donde cada copia busca la manera de separar los
+v\'ertices $\color{verde} \bf v_1$ y $\color{verde} \bf v_5$ utilizando
+conceptos diferentes. Del lado izquierdo se muestran tres $v_1v_5$-trayectorias
+internamente ajenas, cada una resaltada de un color diferente. Del lado derecho
+se muestra el corte por v\'ertices ${\color{morado}\boldsymbol {\{v_2, v_6,
+v_7\} }}$, donde cada v\'ertice est\'a relleno de morado. Observemos que cada
+v\'ertice del corte por v\'ertices se encuentra en una $v_1v_5$-trayectoria que
+es internamente ajena de las dem\'as. Para facilitar esta visualizaci\'on, cada
+v\'ertice del corte por v\'ertices tiene el per\'imetro del mismo color que la
+$v_1v_5$-trayectoria internamente ajena a la que nos referimos. La relaci\'on
+entre la cantidad de trayectorias internamente ajenas entre cualesquiera dos
+v\'ertices de una gr\'afica y la conexidad de \'esta fue demostrada por Menger y
+es un teorema de mucha relevancia en Teor\'ia de Gr\'aficas. A continuaci\'on
+demostramos dicho teorema, conocido como el Teorema de Menger, y una versi\'on
+global de \'este. 
 
 \begin{figure}[htb!]
     \centering
@@ -567,11 +782,9 @@ teorema, conocido como el Teorema de Menger, y una versi\'on global de este.
 
 % Otra forma de determinar como ``desvincular'' dos v\'ertices es preguntarse
 % cuantas aristas se necesitar\'ian ``borrar'' para que no hubiera trayectorias
-% entre dichos v\'ertices. Es f\'acil observar que esto est\'a relacionado con la
-% cantidad de trayectorias ajenas por aristas
-% %% TODO: agregar definición trayectorias ajenas por aristas
-% que existan entre dichos
-% v\'ertices.
+% entre dichos v\'ertices. Es f\'acil observar que esto est\'a relacionado con
+% la cantidad de trayectorias ajenas por aristas %% TODO: agregar definición
+% trayectorias ajenas por aristas que existan entre dichos v\'ertices.
 
 \begin{teorema}
     \label{teo:menger}
@@ -583,7 +796,7 @@ teorema, conocido como el Teorema de Menger, y una versi\'on global de este.
 \begin{proof}
     Denotamos por $k$ al m\'inimo n\'umero de v\'ertices que separan a $X$ de
     $Y$ en $G$. Observamos que, dada una familia de $XY$-trayectorias
-    interamente ajenas, cada trayectoria contiene al menos un v\'ertice del
+    internamente ajenas, cada trayectoria contiene al menos un v\'ertice del
     conjunto que separa a $X$ de $Y$. Por eso, no pueden existir m\'as de $k$
     trayectorias internamente ajenas entre $X$ y $Y$ pues, de ser as\'i,
     ning\'un $k$-conjunto separar\'ia a $X$ de $Y$. Por lo tanto, basta
@@ -593,28 +806,30 @@ teorema, conocido como el Teorema de Menger, y una versi\'on global de este.
     separar a $X$ de $Y$ es quitar los v\'ertices que tienen en com\'un, en
     otras palabras $|X \cap Y|=k$. Por otro lado, las $XY$-trayectorias
     internamente ajenas de $G$ son las trayectorias triviales tomando los
-    v\'ertices de $X \cap Y$. Por ende, tenemos el n\'umero de
-    $XY$-trayectorias internamente ajenas es $|X\cap Y|=k$.
+    v\'ertices de $X \cap Y$. Por ende, tenemos el n\'umero de $XY$-trayectorias
+    internamente ajenas es $|X\cap Y|=k$.
 
     Ahora suponemos que $E(G) \neq \varnothing$ y que el teorema es v\'alido
-    para gr\'aficas $G'$ tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una arista
-    de $G$. Primero consideramos $G/e$, la gr\'afica obtenida de contraer a la
-    arista $e$ (definido en la siguiente secci\'on). Al v\'ertice obtenido de la
-    contracci\'on de $e$ lo nombramos $x_e$. Tal vez alg\'un extremo de $e$
-    estaba en $X$ o $Y$, por lo que es necesario redefinir estos conjuntos. Si
-    $u\in X$ o $v\in X$, entonces definimos $X'=(X \setminus \{u,v\}) \cup
-    \{x_e\}$; en otro caso definimos $X'=X$. An\'alogamente, definimos $Y'= (Y
-    \setminus \{u,v\}) \cup \{x_e\}$ si $u \in Y$ o $v \in Y$ y definimos $Y'=Y$
-    en otro caso. Sea $A \subseteq V(G \setminus e)$ un $X'Y'$-corte por
-    v\'ertices, entonces, por hip\'otesis de inducci\'on, el n\'umero de
-    $X'Y'$-trayectorias internamente ajenas en $G/e$ es $|A|$. De lo que se
-    sigue que, en $G$, el n\'umero de $XY$-trayectorias internamente ajenas es
-    al menos $|A|$. Por eso, si $|A| \geq k$, entonces tenemos que el n\'umero
-    de $XY$-trayectorias internamente ajenas en $G$ es $k$. Ahora, si $|A| \leq
-    k-1$, entonces podemos afirmar que $x_e \in A$, pues de lo contrario
-    tendr\'iamos que $A$ es es un $XY$-corte por v\'ertices en $G$. Definimos
-    $A'$ como el conjunto obtenido de $A$ al quitarle el v\'ertice $x_e$ y
-    a\~{n}adirle los v\'ertices $u$ y $v$, es decir $A'=(A \setminus
+    para gr\'aficas $G'$, tales que $|E(G')| < |E(G)|$. Sea $e = uv$ una arista
+    de $G$. Primero consideramos $G/e$, la gr\'afica obtenida de ``contraer'' a
+    la arista $e$, es decir, sustituir $u$ y $v$ por un \'unico v\'ertice cuya
+    vecindad es igual a las uniones de las vecindades $u$ y $v$ (salvo $u$ y $v$
+    mismos), definido en la siguiente secci\'on. Al v\'ertice obtenido de la
+    contracci\'on de $e$ lo nombramos $x_e$. Puede suseder que alg\'un extremo
+    de $e$ estaba en $X$ o $Y$, por lo que es necesario redefinir estos
+    conjuntos. Si $u\in X$ o $v\in X$, entonces definimos $X'=(X \setminus
+    \{u,v\}) \cup \{x_e\}$; en otro caso definimos $X'=X$. An\'alogamente,
+    definimos $Y'= (Y \setminus \{u,v\}) \cup \{x_e\}$ si $u \in Y$ o $v \in Y$
+    y definimos $Y'=Y$ en otro caso. Sea $A \subseteq V(G \setminus e)$ un
+    $X'Y'$-corte por v\'ertices, entonces, por hip\'otesis de inducci\'on, el
+    n\'umero de $X'Y'$-trayectorias internamente ajenas en $G/e$ es $|A|$. De lo
+    que se sigue que, en $G$, el n\'umero de $XY$-trayectorias internamente
+    ajenas es al menos $|A|$. Por eso, si $|A| \geq k$, entonces tenemos que el
+    n\'umero de $XY$-trayectorias internamente ajenas en $G$ es $k$. Ahora, si
+    $|A| \leq k-1$, entonces podemos afirmar que $x_e \in A$, pues de lo
+    contrario tendr\'iamos que $A$ es un $XY$-corte por v\'ertices en $G$.
+    Definimos $A'$ como el conjunto obtenido de $A$ al quitarle el v\'ertice
+    $x_e$ y a\~{n}adirle los v\'ertices $u$ y $v$, es decir, $A'=(A \setminus
     \{x_e\})\cup \{u,v\}$. Observamos que el conjunto $A'$ separa  a $X$ de $Y$.
     La cardinalidad de $A'$ es $|A|+1 \leq (k-1)+1= k$, por otro lado, al
     separar a $X$ y a $Y$ tenemos que $|A'| \geq k$. As\'i pues, $|A'|=k$.
@@ -630,27 +845,27 @@ teorema, conocido como el Teorema de Menger, y una versi\'on global de este.
     manera, cada $XA'$-trayectoria tiene un v\'ertice en $B$. Por este motivo,
     cada $XY$-trayectoria contiene un v\'ertice de $B$, de donde se sigue que
     $B$ es un conjunto que separa a $X$ de $Y$ en $G$. Observamos que
-    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, i.e., la
+    $E(G-e)<E(G)$, por lo que se cumple la hip\'otesis de inducci\'on, i.~e., la
     familia de estas $XA'$-trayectorias tiene la misma cardinalidad de $B$.
     Notamos que, por construcci\'on, las $XA'$-trayectorias tambi\'en son
     trayectorias de $G$. Adem\'as tenemos que, al ser $B$ un conjunto que separa
     a $X$ de $Y$, $|B| \leq k$. Por lo tanto, tenemos que el n\'umero de
     $XA'$-trayectorias internamente ajenas en $G$ es $k$. De manera an\'aloga
     tenemos que hay $k$ trayectorias internamente ajenas de $Y$ a $A'$ en $G$.
-    Como $A'$ separa a $X$ y a $Y$, entones los v\'ertices que comparten las
+    Como $A'$ separa a $X$ y a $Y$, entonces los v\'ertices que comparten las
     $XA'$-trayectorias y las $YA'$-trayectorias son v\'ertices de $A'$. Sean
-    $a_1, \dots, a_k$ los v\'ertices de $A'$. Denotamos $P_i$ a la
+    $a_1, \dots, a_k$ los v\'ertices de $A'$. Denotamos por $P_i$ a la
     $XA'$-trayectoria que contiene a $a_i$ y $Q_i$ a la $YA'$-trayectoria que
-    contiene a $a_i$, con $i \in \{1. \dots, k\}$. Ahora construimos una familia
-    de $XY$-trayectorias internamente ajenas en $G$ de la siguiente manera, $X
-    \xrightarrow[P_i]{} a_i \xrightarrow[Q_i]{} Y$, para toda $i \in \{1, \dots,
-    k\}$. As\'i, concluimos que $G$ tiene $k$ $XY$-trayectorias internamente
-    ajenas. 
+    contiene a $a_i$, con $i \in \{1. \dots, k\}$. A continuaci\'on, construimos
+    una familia de $XY$-trayectorias internamente ajenas en $G$ de la siguiente
+    manera, $X \xrightarrow[P_i]{} a_i \xrightarrow[Q_i]{} Y$, para toda $i \in
+    \{1, \dots, k\}$. As\'i, concluimos que $G$ tiene $k$ $XY$-trayectorias
+    internamente ajenas. 
 \end{proof}
 
  Tambi\'en existe una versi\'on del Teorema de Menger para el caso cuando se
- desea separar v\'ertices en lugar de conjuntos de v\'ertices. Pasamos a
- demostrar dicha versi\'on en \cref{coro:menger}, la cu\'al es de utilidad al
+ desea separar v\'ertices, en lugar de conjuntos de v\'ertices. Pasamos a
+ demostrar dicha versi\'on en \cref{coro:menger}, la cual es de utilidad al
  demostrar la versi\'on global del Teorema de Menger.
 
  \begin{corolario}
@@ -666,22 +881,22 @@ teorema, conocido como el Teorema de Menger, y una versi\'on global de este.
     sabemos que el m\'aximo n\'umero de $XY$-trayectorias internamente ajenas en
     $G$ es igual al m\'inimo n\'umero de v\'ertices que separan a $X$ de $Y$.
     Adem\'as, ni $u$ ni $v$ son v\'ertices de dichas trayectorias y, por ende,
-    tampoco son v\'ertices del conjunto separador. Sea  $A$ el conjunto que
-    separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y $|Y| \geq r$,
-    entonces tenemos que $A$ tambi\'en separa a $u$ de $v$. Sean $P_1, \dots,
-    P_r$ una familia de $XY$-trayectorias internamente ajenas, entonces
-    $uX\xrightarrow[P_1]{}Yv$, \dots, $uX\xrightarrow[P_r]{}Yv$ forma una
-    familia de $uv$-trayectorias internamente ajenas. 
+    tampoco son v\'ertices de los conjuntos separan a $X$ y $Y$. Sea  $A$ un
+    conjunto que separa a $X$ y a $Y$ con cardinalidad $r$. Si $|X| \geq r$ y
+    $|Y| \geq r$, entonces tenemos que $A$ tambi\'en separa a $u$ de $v$. Sean
+    $P_1, \dots, P_r$ una familia de $XY$-trayectorias internamente ajenas,
+    entonces $uX\xrightarrow[P_1]{}Yv$,\dots, $uX\xrightarrow[P_r]{}Yv$ forma
+    una familia de $uv$-trayectorias internamente ajenas. 
 
-    Ahora, consideramos el caso en el que alguna de las vecindades tiene
-    cardinalidad menor que $r$.  Sin p\'erdida de generalidad consideramos
+    Nos enfocamos en el caso en el que alguna de las vecindades tiene
+    cardinalidad menor que $r$.  Sin p\'erdida de generalidad, consideramos
     $|X|<r$. Sea $X = \{x_1, \dots, x_s\}$, con $s<r$, entonces tenemos que $X$
     es un $uv$-corte por v\'ertices. Por otro lado, sea $\mathcal{P}$ una
     familia de $XY$-trayectorias internamente ajenas. Tomamos $\mathcal{P'}
     \subseteq \mathcal{P}$ la familia con mayor n\'umero de trayectorias que no
     comparten extremo en $X$. Observamos que $|\mathcal{P'}| = |X|$. Nombramos
     $P_i$ a la $XY$-trayectoria de $\mathcal{P'}$ que contiene al v\'ertice $x_i
-    \in X$, con $i \in \{1 \dots, s\}$. Por \'ultimo, consideramos siguiente
+    \in X$, con $i \in \{1, \dots, s\}$. Por \'ultimo, consideramos siguiente
     familia de $uv$-trayectorias internamente ajenas, $uX\xrightarrow[P_1]{}Yv,
     \dots, uX\xrightarrow[P_s]{}Yv$. Por lo tanto, tenemos que el m\'aximo
     n\'umero de $uv$-trayectorias internamente ajenas es $|X|=s$.
@@ -712,220 +927,30 @@ internamente ajenas entre cualesquiera dos v\'ertices de dicha gr\'afica.
      Observamos que $X$ separa a $w$ de $u$ o $v$ en $G'$. Suponemos, sin
      p\'erdida de generalidad, que $X$ es un $uw$-corte por v\'ertices en $G'$.
      De este modo, $X\cup\{v\}$ es un conjunto de cardinalidad a lo m\'as $t$,
-     que separa a los v\'ertices $u$ y $w$ en $G$. \'Esto es una
-     contradicci\'on, pues $G$ es $k$-conexa y $t < k$. Por lo tanto, $G$
-     contiene $k$ trayectorias internamente ajenas entre cualesquiera dos
-     v\'ertices.
+     que separa a los v\'ertices $u$ y $w$ en $G$. Esto es una contradicci\'on,
+     pues $G$ es $k$-conexa y $t < k$. Por lo tanto, $G$ contiene $k$
+     trayectorias internamente ajenas entre cualesquiera dos v\'ertices.
  
-     Ahora, suponemos que $G$ contiene $k$ trayectorias internamente ajenas
+     Suponemos que $G$ contiene $k$ trayectorias internamente ajenas
      entre cualesquiera dos v\'ertices, por lo que tenemos que $|V(G)|>k$.
      Adem\'as, dados dos v\'ertices $u$ y $v$, cualquier $uv$-corte por
      v\'ertices tiene cardinalidad al menos $k$, a saber un v\'ertice por cada
      $uv$-trayectoria internamente ajena. De ah\'i que $G$ es $k$-conexa.
          
  \end{proof}
- 
-\section{Operaciones}
-\label{sec:operaciones}
-
-Al igual que en muchas \'areas de las matem\'aticas, al buscar maneras de
-generar nuevas gr\'aficas, nos encontramos con las operaciones de gr\'aficas. A
-continuaci\'on nos enfocamos en las operaciones de gr\'aficas que son
-pertinentes para este trabajo. El primer grupo operaciones que se define se basa
-en el concepto de uni\'on de conjuntos. La \indice{uni\'on} de dos gr\'aficas
-$G$ y $H$ la definimos como la gr\'afica cuyo conjunto de v\'ertices y de
-aristas son la uni\'on de los conjuntos de v\'ertices  y de aristas de ambas
-gr\'aficas, respectivamente. Se utiliza la misma notaci\'on que para la uni\'on
-de conjuntos, es decir $G \cup H$. El segundo tipo de uni\'on de gr\'aficas que
-definimos es la uni\'on ajena. La \textbf{uni\'on} \indiceSub{uni\'on}{ajena} de
-las gr\'aficas $G$ y $H$, denotada $G + H$, es la uni\'on de $G$ y $H$, donde
-$V(G) \cap V(H) = \varnothing$. Por \'ultimo, otra operaci\'on que surge del
-concepto de uni\'on de conjuntos y que va a ser de utilidad en este trabajo es
-la uni\'on completa. La \textbf{uni\'on} \indiceSub{uni\'on}{completa} de dos
-gr\'aficas $G$ y $H$ es la gr\'afica con conjunto de v\'ertices $V(G) \cup V(H)$
-y cuyo conjunto de aristas es $E(G) \cup E(H) \cup \{uv \colon u \in V(G), v \in
-V(H) \}$. La uni\'on completa la denotamos $G \oplus H$ y, en
-\cref{fig:ex-unionCompleta} se muestra un ejemplo de este tipo de uni\'on. Del
-lado izquierdo se muestran de dos gr\'aficas, la primera, en la parte superior,
-tiene v\'ertices $v_i$ y la segunda, en la parte inferior, tiene v\'ertices
-$w_i$, ambas con $i \in \{1, 2 ,3\}$. Del lado derecho de la figura se muestra
-la uni\'on completa de dichas gr\'aficas.
-
-\begin{figure}[htb!]
-    \centering
-    \begin{tikzpicture}
-
-        \begin{scope}[yshift=1cm,xshift=-2cm,rotate=45,scale=1]
-            \foreach \i in {1,...,3}
-            \draw ({(360/3)*\i-150}:1)
-                node(\i)[vertex, label=(360/3)*\i-105:{\large $v_{\i}$}]{};
-            \end{scope}
-
-        \begin{scope}[yshift=-1cm,rotate=45,scale=1]
-            \foreach \i in {4,...,6}
-            \draw ({(360/3)*\i+30}:1)
-                node(\i)[vertex, label=(360/3)*\i+75:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
-        \end{scope}
-
-        \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4,1/4,1/5,1/6,2/4,2/5,2/6,3/4,3/5,3/6}
-        \draw [edge,grisOscuro] (\i) to (\j);
-
-        \begin{scope}[yshift=1cm,xshift=-8cm,rotate=45,scale=1]
-            \foreach \i in {1,...,3}
-            \draw ({(360/3)*\i-150}:1)
-                node(\i)[vertex, label=(360/3)*\i-150:{\large $v_{\i}$}]{};
-            \end{scope}
-
-        \begin{scope}[yshift=-1cm,xshift=-6cm,rotate=45,scale=1]
-            \foreach \i in {4,...,6}
-            \draw ({(360/3)*\i+30}:1)
-                node(\i)[vertex, label=(360/3)*\i+30:{\large $w_{{\pgfmathparse{int(\i-3)}\pgfmathresult}}$}]{};
-        \end{scope}
 
 
-            \foreach \i/\j in {1/2,2/3,3/1,4/5,5/6,6/4}
-                \draw [edge,grisOscuro] (\i) to (\j);
-    \end{tikzpicture}
-    \caption{Dos gr\'aficas (izquierda) y su uni\'on completa (derecha).}
-\label{fig:ex-unionCompleta}
-\end{figure}
-
-\newpage
-
-La siguiente proposici\'on sobre la uni\'on completa de subgr\'aficas
-generadoras nos ser\'a de utilidad m\'as adelante este trabajo, por lo que
-pasamos a demostrarla.
-
-\begin{proposicion}
-\label{prop:HUnion-SSubG}
-    Sean $H \subseteq G$ y $H'\subseteq G'$ subgr\'aficas generadoras, entonces
-    la uni\'on completa de $H$ y $H'$ es una subg\'afica generadora de la
-    uni\'on completa de $G$ y $G'$.
-\end{proposicion}
-
-\begin{proof}
-    Dadas dos gr\'aficas $G$ y $G'$ y dos gr\'aficas generadoras $H \subseteq G$
-    y $H'\subseteq G'$, buscamos demostrar que $H \oplus H'$ es una subgr\'afica
-    generadora de $G \oplus G'$. Observamos que $V(H)=V(G)$ y $V(H')=V(G)$, de
-    ah\'i que $V(H \oplus H')=V(G \oplus G')$. Por consiguiente, basta ver que
-    las aristas de $H \oplus H'$ son aristas de $G \oplus G'$. Sean $x$ y $y$
-    v\'ertices adyacentes en $\in V(H \oplus H')$. Si $x,y \in V(H)$, de manera
-    an\'aloga si $x,y \in V(H')$, entonces tenemos que $x \sim y$ en $G$,
-    an\'alogamente $x \sim y$ en $G'$. Por ende, en ambos casos tenemos que $x$
-    y $y$ son adyacentes en $G \oplus G'$. Ahora, sin p\'erdida de generalidad,
-    de la definici\'on de  uni\'on completa tenemos que, si $x \in V(H)$ y $y
-    \in V(H')$, entonces $x \sim y$ en $G \oplus G'$. De este modo tenemos que
-    $H \oplus H'$ es una subgr\'afica generadora de $G \oplus G'$.
-\end{proof}
-
-Otra operaci\'on que se utilizar\'a m\'as adelante en este trabajo es el
-producto cartesiano de gr\'aficas. Dadas dos gr\'aficas $G$ y $H$, el
-\indice{producto cartesiano} de $G$ y $H$, denotado $G \square H$, es la
-gr\'afica cuyo conjunto de v\'ertices es el producto cartesiano de $V(G)$ y
-$V(H)$, es decir $V(G \square H) = V(G) \times V(H)$. Adem\'as,
-$(g_1,g_2)(h_1,h_2)$ es arista de $G \square H$ si y s\'olo si $g_1 = g_2$ y
-$h_1h_2 \in E(H)$, o $h_1 = h_2$ y $g_1g_2 \in E(G)$. A continuaci\'on, en
-\cref{fig:ex-cartesiano}, se muestran tres gr\'aficas, la primera del lado
-izquierdo y con conjunto de v\'ertices $\{{\color{azulCielo}\bf{v_1}},
-{\color{coral}\bf{v_2}}\}$ y la segunda en la parte inferior y con conjunto de
-v\'ertices $\{{\color{amarillo}\bf{w_1}},{\color{morado}\bf{w_2}}\}$. Estas dos
-gr\'aficas gr\'aficas son copias de la gr\'afica $K_2$ (mencionada en la
-siguiente secci\'on). En medio de estas gr\'aficas se encuentra la tercera
-gr\'afica, el producto cartesiano de las gr\'aficas antes mencionadas,
-resaltando de donde vienen los v\'ertices de esta \'ultima gr\'afica.
-
-\begin{figure}[ht!]
-    \centering
-        \begin{tikzpicture}
-        
-            \begin{scope}[xshift=0cm,scale=0.9]
-
-                \draw ({(360/4)*2 - 45}:2) node(1)[avertex,fill=amarillo, label=(360/4)*2 -
-                    45:{\large $k_{1}$}]{};
-                \draw ({(360/4) - 45}:2) node(2)[avertex, fill=morado, label=(360/4) -
-                    45:{\large $k_{2}$}]{};
-                \draw ({(360/4)*3 - 45}:2) node(3)[coralvertex,fill= amarillo, label=(360/4)*3 - 
-                45:{\large $k_{3}$}]{};
-                \draw ({(360/4)*4 - 45}:2) node(4)[coralvertex, fill= morado, label=(360/4)*4 - 
-                45:{\large $k_{4}$}]{};
-                \draw (-3,1.4) node (5) [avertex, label=180:{\large $v_1$}] {};
-                \draw (-3,-1.4) node (6) [coralvertex, label=180:{\large $v_2$}] {}; 
-                \draw (-1.4,-3) node (7) [bvertex, fill= amarillo, label=270:{\large $w_1$}] {};
-                \draw (1.4,-3) node (8) [bvertex, fill= morado, label=270:{\large $w_2$}] {};
-
-                \foreach \i/\j in {1/2,1/3,3/4,2/4,5/6,7/8}
-                    \draw [edge,grisOscuro] (\i) to (\j);
-                \end{scope}
-
-                    
-        \end{tikzpicture}
-        \caption{En el centro la gr\'afica $K_2 \square K_2$ y a su izquierda y 
-        abajo una copia de $K_2$ resaltando cada v\'ertice de distinto color.}
-        \label{fig:ex-cartesiano}
-    \end{figure}
-
-Hasta ahora se han definido operaciones para dos o m\'as gr\'aficas, sin
-embargo, tamb\'en existen operaciones sobre una misma gr\'afica. Tal es el caso
-de la \indiceSub{aristas}{contraci\'on} \textbf{de aristas}. Dada una gr\'afica
-$G$ y $e=uv$ una arista de $G$, denotamos $G/e$ a la gr\'afica obtenida de
-contraer a la arista $e$. El conjunto de aristas de $G/e$ es $ E(G/e)=E(G)
-\setminus \{e\}$ y el conjunto de v\'ertices es $V(G/e)=(V(G)\setminus \{u,v\})
-\cup \{w\}$, donde $w$ es un v\'ertice tal que $N(w)=\{x \in V(G) \colon x \in
-(N(u)\setminus \{v\}) \lor x \in (N(v) \setminus (N(u) \cup \{u\}))\}$. En otras
-palabras, $G/e$ es la gr\'afica obtenida de eliminar la arista $e$ y
-``fusionar'' los extremos de $e$ para crear un nuevo v\'ertice llamado $w$. La
-Figura \ref{fig:ex-contract} muestra un peque\~{n}o ejemplo de la contracci\'on
-de aristas.
-
-\begin{figure}[htb!]
-    \centering
-    \begin{tikzpicture}
-
-        \begin{scope}[xshift=0cm]
-            \foreach \i in {1,2}
-            \draw ({(360/3)*\i}:1.5)
-                node(\i)[vertex, label=(360/3)*\i:{\large $v_{\i}$}]{};
-                
-            \draw (360:1.5) node(3)[vertex, fill=azulCielo, label=0:{\large $w$}]{};
-                
-            \foreach \i/\j in {1/2,1/3,2/3}
-                \draw [edge,grisOscuro] (\i) to (\j);
-            \end{scope}
-
-        \begin{scope}[xshift=-6cm]
-            \foreach \i in {1,2}
-            \draw ({(360/4)*\i}:1.5)
-                node(\i)[vertex, label=(360/4)*\i:{\large $v_{\i}$}]{};
-
-            \draw ({(360/4)*3}:1.5) node(3)[vertex, fill=amarillo, label=(360/4)*3:{\large $v_{3}$}]{};
-            \draw (360:1.5) node(4)[vertex, fill=coral, label=0:{\large $v_{4}$}]{};
-
-            \foreach \i/\j in {1/2,1/3,1/4,2/3}
-                \draw [edge,grisOscuro] (\i) to (\j);
-            
-            \foreach \i/\j in {3/4}
-                \draw[wedge,azulCielo] (\i) to (\j);
-            \end{scope}
-
-    \end{tikzpicture}
-    \caption{Dos gr\'aficas, $G$ del lado izquierdo izquierdo y $G/{\color{azulCielo}\textbf{e}}$}
-\label{fig:ex-contract}
-\end{figure}
-
-Por \'ultimo, definimos el \indice{complemento} de una gr\'afica
-$G$ como la gr\'afica que tiene el mismo conjunto de v\'ertices que $G$ y cuyo
-conjunto de aristas es $\binom{V(G)}{2} - E(G)$. A esta gr\'afica la denotamos
-$\overline{G}$.
-
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Algunas familias relevantes}
 \label{sec:famGraf}
    
-Muchas veces, en Teor\'ia de Gr\'aficas, al momento de abordrar varios
-problemas, es de utilidad separar las gr\'aficas en familias donde se compartan
-caracteristcas. Hay varias familias relevantes en la Teor\'ia de Gr\'aficas; en
-esta secci\'on nos enfocamos en las familias  y porpiedades de \'estas que son
+Muchas veces, en Teor\'ia de Gr\'aficas, al momento de abordar varios problemas,
+es de utilidad separar las gr\'aficas en familias donde se compartan
+caracter\'isticas. Hay varias familias relevantes en la Teor\'ia de Gr\'aficas;
+en esta secci\'on nos enfocamos en las familias y sus propiedades que son
 relevantes para este trabajo.
 
 Decimos que una gr\'afica $G$ es \indiceSub{gr\'afica}{completa} si su conjunto
@@ -935,7 +960,7 @@ v\'ertice y su conjunto de aristas es vac\'io. A esta gr\'afica tambi\'en se le
 conoce como la gr\'afica \indice{trivial}. Cuando una gr\'afica est\'a
 conformada \'unicamente por v\'ertices aislados decimos que es una gr\'afica
 \indiceSub{gr\'afica}{vac\'ia}. Algo que es importante de mencionar es que,
-tanto las gr\'aficas completas como las gr\'aficas vac\'ias son \'unicas salvo
+tanto las gr\'aficas completas, como las gr\'aficas vac\'ias, son \'unicas salvo
 isomorfismos, por lo que les podemos dar un nombre propio. Vale la pena notar
 que el complemento de la gr\'afica completa $K_n$ es gr\'afica vac\'ia de $n$
 elementos. \Cref{fig:ex-va-comp}, muestra un ejemplo de una gr\'afica vac\'ia y
@@ -962,7 +987,7 @@ una completa.
                     
         \end{tikzpicture}
         \caption{La gr\'afica vac\'ia de 3 v\'ertices (izquierda) y $K_5$
-        (derecha)}
+        (derecha).}
         \label{fig:ex-va-comp}
     \end{figure} 
 
@@ -970,66 +995,68 @@ Una familia de gr\'aficas muy estudiada en Teor\'ia de Gr\'aficas es la familia
 de las gr\'aficas $k$-partitas. Antes de definir esta familia, es importante
 se\~{n}alar que una \indiceSub{v\'ertices}{partici\'on}\index{partici\'on} de
 $V(G)$ en $V_1, V_2, \dots, V_k$ partes debe satisfacer $V_i \cap V_j =
-\varnothing$ para $i \ne j$ y $V_1 \cup V_2 \cup \cdots \cup V_k = V(G)$, sin
+\varnothing$, para $i \ne j$ y $V_1 \cup V_2 \cup \cdots \cup V_k = V(G)$, sin
 embargo, no pedimos que cada parte sea no vac\'ia. Estamos listos para definir
-la familia de gr\'aficas. Una gr\'afica es \indiceSub{gr\'afica}{$k$-partita} si
-su conjunto de v\'ertices admite una partici\'on en, a lo m\'as, $k$ conjuntos
-independientes. Un caso muy relevante, y el cu\'al se utiliza en este trabajo,
-es cuando $k=2$. En este caso se dice que es una \textbf{gr\'afica}
+la familia de gr\'aficas. Una gr\'afica es
+$k$\textbf{-partita}\index{gr\'afica!k @$k$-partita} si su conjunto de
+v\'ertices admite una partici\'on en, a lo m\'as, $k$ conjuntos independientes.
+Un caso muy relevante, el cu\'al se utiliza en este trabajo, es cuando $k=2$. En
+este caso se dice que es una \textbf{gr\'afica}
 \indiceSub{gr\'afica}{bipartita}\index{bipartita!gr\'afica}. Una gr\'afica
 bipartita $G$ con partici\'on $(X,Y)$ se denota $G[X,Y]$, y $(X,Y)$ es una
 \indice{bipartici\'on} de $G$. Una propiedad de suma utilidad se demuestra en
 \cref{prop:bip-compConect}. 
 \begin{proposicion}
 \label{prop:bip-compConect}
-    Sea $G$ una gr\'afica, entonces $G$ es bipartita si y s\'olo si cada
-    componente conexa de $G$ es bipartita.
+    Una gr\'afica $G$ es bipartita si y s\'olo si cada componente conexa de $G$
+    es bipartita.
 \end{proposicion}
 
 \begin{proof}
-    En el caso el que $G$ es una gr\'afica conexa, tenemos que s\'olo tiene una
-    componente conexa, ella misma, por lo que la proposici\'on se cumple de
-    manera trivial. Por ello, nos enfocamos en el caso en el que $G$ es
-    inconexa, i.e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
+    En el caso en el que el que $G$ es una gr\'afica conexa, tenemos que s\'olo
+    tiene una componente conexa, ella misma, por lo que la proposici\'on se
+    cumple de manera trivial. Por ello, nos enfocamos en el caso en el que $G$
+    es inconexa, i.~e., $G$ tiene al menos dos componentes conexas. Sean $G_1,
     \dots, G_n$ las componentes conexas de $G$, con $n \geq 2$. Empezamos
     suponiendo que $G$ es una gr\'afica bipartita con bipartici\'on $(X,Y)$.
-    Sean $X_i, Y_i\subseteq G_i$ tales que $X_i \subseteq X$ y $Y_i \subseteq
-    Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
-    partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i =
-    \varnothing$, pues $X \cap Y = \varnothing$ por definici\'on de partici\'on.
-    Adem\'as, de manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego,
-    sean $a \in X_i$ y $b \in Y_i$, como $X_i \subseteq X$ y $Y_i \subseteq Y$,
-    entonces tenemos que $a \in X$ y $b \in Y$, por lo que $a$ y $b$ no son
-    adyacentes. Por lo tanto, $(X_i, Y_i)$ es una partici\'on de $G_i$, en otras
-    palabras $G_i$ es una gr\'afica bipartita.
+    Sean $X_i, Y_i\subseteq V(G_i)$, tales que $X_i \subseteq X$ y $Y_i
+    \subseteq Y$, para $i \in \{1, \dots, n\}$. Afirmamos que $(X_i,Y_i)$ es una
+    partici\'on, para cada $G_i$. Tenemos que $X_i \cap Y_i = \varnothing$, pues
+    $X \cap Y = \varnothing$ por definici\'on de partici\'on. Adem\'as, de
+    manera an\'aloga, tenemos que $X_i \cup Y_i = V(G_i)$.  Luego, sean $a, b
+    \in X_i$, como $X_i \subseteq X$, entonces tenemos que $a,b \in X$. Por
+    ende, $a$ y $b$ no son adyacentes. An\'alogamente, si $a,b \in Y_i$, tenemos
+    que $a$ y $b$ no son adyacentes. Por lo tanto, $(X_i, Y_i)$ es una
+    partici\'on de $G_i$, en otras palabras, $G_i$ es una gr\'afica bipartita.
 
-    Ahora nos enfocamos en la segunda implicaci\'on, es decir, si $G_i$ es una
+    Nos enfocamos en la segunda implicaci\'on, es decir, si $G_i$ es una
     gr\'afica bipartita, para $i \in \{1, \dots, n\}$, entonces $G$ tambi\'en lo
-    es. Proponemos la bipartici\'on $(X,Y)$ para $G$ donde $X = \bigcup X_i$ y
-    $Y =\bigcup Y_i$. Nos fijamos en que $X \cup Y = \bigcup V(G_i)=V(G)$. De
-    manera an\'aloga $X \cap Y = \varnothing$. Por \'ultimo, dados $u,v \in X$
-    tenemos que $u \in X_i$ y $v \in X_j$, para algunos $i,j \in \{1,
-    \dots,n\}$. Si $i \neq j$, entonces los v\'ertices est\'an en distintas
-    componentes conexas, por lo que no son adyacentes. Si $j=i$, entonces
-    tenemos que $u,v \in X_i$, por lo que tampoco son adyacentes. An\'alogamente
-    si $u,v \in Y$. Con esto tenemos que $(X,Y)$ es una bipartici\'on de $G$; en
-    otras palabras, $G$ es bipartita.
+    es. Proponemos la bipartici\'on $(X,Y)$ para $G$ donde $X =
+    \bigcup\limits_{i} X_i$ y $Y =\bigcup\limits_{i}  Y_i$. Nos fijamos en que
+    $X \cup Y = \bigcup \limits_{i}  V(G_i)=V(G)$. De manera an\'aloga $X \cap Y
+    = \varnothing$. Por \'ultimo, dados $u,v \in X$ tenemos que $u \in X_i$ y $v
+    \in X_j$, para algunos $i,j \in \{1, \dots,n\}$. Si $i \neq j$, entonces los
+    v\'ertices est\'an en distintas componentes conexas, por lo que no son
+    adyacentes. Si $j=i$, entonces tenemos que $u,v \in X_i$, por lo que tampoco
+    son adyacentes. An\'alogamente si tomamos a $u,v \in Y$. Con esto tenemos
+    que $(X,Y)$ es una bipartici\'on de $G$; en otras palabras, $G$ es
+    bipartita.
 \end{proof}
 
 La Proposici\'on\ref{prop:bip-compConect} nos permite estudiar a las gr\'aficas
-bipartitas de manera m\'as general, pues no afirma que no dependemos de si una
-gr\'afica es conexa o no.
+bipartitas de manera m\'as general, pues afirma que no dependemos de si una
+gr\'afica bipartita es conexa o no.
 
 
-Existe un caso especial de las gr\'aficas
-$k$-partitas, es cuando todas las aristas posibles est\'an presentes. Por
-cuesti\'on de utilidad para el trabajo, definimos formalmente este
-comportamiento \'unicamente para las gr\'aficas bipartitas. Una gr\'afica es
-\indiceSub{gr\'afica}{bipartita completa}\index{bipartita!completa} si es
-bipartita y dada la partici\'on $X$ y $Y$ de sus v\'ertices, cada v\'ertice de
-$X$ es adyacente a cada v\'ertice de $Y$. En \cref{fig:ex-Bip} se muestra un
-ejemplo de una gr\'afica bipartita y una gr\'afica bipartita completa, en ambas
-resaltando de diferentes colores cada conjunto de la partici\'on. 
+Existe un caso especial de las gr\'aficas $k$-partitas, es cuando todas las
+aristas posibles est\'an presentes. Por cuesti\'on de utilidad para el trabajo,
+definimos este comportamiento de manera formal \'unicamente para las gr\'aficas
+bipartitas. Una gr\'afica es \indiceSub{gr\'afica}{bipartita
+completa}\index{bipartita!completa} si es bipartita y, dada la partici\'on $X$ y
+$Y$ de sus v\'ertices, cada v\'ertice de $X$ es adyacente a cada v\'ertice de
+$Y$. En \cref{fig:ex-Bip} se muestra un ejemplo de una gr\'afica bipartita y una
+gr\'afica bipartita completa, en ambas resaltando de diferentes colores cada
+conjunto de la partici\'on. 
 
 \begin{figure}[ht!]
     \centering
@@ -1069,7 +1096,7 @@ resaltando de diferentes colores cada conjunto de la partici\'on.
 
 
 Un teorema muy importante al hablar de gr\'aficas bipartitas es
-\cref{teo:bip-CImpar} y sirve como caracterizaci\'on para esta familia de
+\cref{teo:bip-CImpar}, que sirve como caracterizaci\'on para esta familia de
 gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
 
 \begin{teorema}
@@ -1079,46 +1106,49 @@ gr\'aficas. Esto tambi\'en se puede observar en el ejemplo de \cref{fig:ex-Bip}.
 \end{teorema}
 
 \begin{proof}
-    Por \cref{prop:bip-compConect} podemos suponer que $G$ es conexa. Empezamos
+    Por \cref{prop:bip-compConect}, podemos suponer que $G$ es conexa. Empezamos
     considerando $G$ una gr\'afica bipartita con partici\'on $(X,Y)$. Buscamos
-    probar que $G$ no tiene ciclos impares, para esto tomamos $C=(v_1,v_2,\dots,
-    v_k,v_1)$ un ciclo en $G$. Sin perdida de generalidad, consideramos $v_1 \in
-    X$, entonces tenemos que $v_2 \in Y$, pues $G$ es bipartita. Inductivamente,
-    tenemos que $v_i \in X$ y $v_j \in Y$ si y s\'olo si $i$ es impar y $j$ es
-    par. Adem\'as, tenemos que $v_k \in Y$ pues $v_k v_1 \in E(G)$ y $v_1 \in
-    X$. Por lo tanto, $k$ es par, i.e., $C$ tiene longitud par. En consecuencia
-    $G$ no contiene ciclos impares.
+    probar que $G$ no tiene ciclos impares. Para esto, tomamos
+    $C=(v_1,v_2,\dots, v_k,v_1)$ un ciclo en $G$. Sin p\'erdida de generalidad,
+    consideramos $v_1 \in X$, entonces tenemos que $v_2 \in Y$, pues $G$ es
+    bipartita. Inductivamente, tenemos que $v_i \in X$ y $v_j \in Y$ si y s\'olo
+    si $i$ es impar y $j$ es par. Adem\'as, tenemos que $v_k \in Y$ pues $v_k
+    v_1 \in E(G)$ y $v_1 \in X$. Por lo tanto, $k$ es par, i.~e., $C$ tiene
+    longitud par. En consecuencia $G$ no contiene ciclos impares.
 
-    Ahora pasamos a la segunda implicaci\'on, para esto consideramos $G$ una
-    gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$
-    construimos la siguiente partici\'on de $V(G)$. Denotamos $X$ al conjunto de
-    los v\'ertices de $G$ que est\'en a distancia impar de $v$, es decir $X =
-    \{u \in V(G) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro
-    conjunto de la partici\'on como $Y = V(G)\setminus X$. Por construcci\'on
-    tenemos que $X \cap Y = \varnothing$ y $X \cup Y = V(G)$. S\'olo falta
-    verificar que no existen aristas entre cualesquiera dos v\'ertices de $X$ o
-    entre cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
-    an\'alogas por lo que s\'olo lo demostramos para $X$. Supongamos que existen
-    $u,w \in X$ tales que $e=uw \in E(G)$. Sean $P$ una $vu$-trayectoria y $Q$
-    una $vw$-trayectoria. Tomamos a $P$ y a $Q$ de longitud m\'inima. Ahora, sea
-    $z$ el \'ultimo v\'ertice que comparten estas trayectorias. Observemos que
-    las subtrayectorias $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen
-    la misma longitud. \'Esto pues, si alguna tuviera menor longitud, sin
-    p\'erdida de generalidad tomamos a $v \xrightarrow[P]{}z$ con menor
-    longitud, entonces tendr\'iamos que la trayectoria $v
-    \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a $d(v,w)$, lo
-    cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud par y $v
-    \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$ tienen la misma longitud,
-    entonces tenemos que $z \xrightarrow[P]{}u$ y $z \xrightarrow[Q]{}w$ tiene
-    ambas longitud par o ambas longitud impar. Ahora consideramos la trayectoria
-    $ R= u \xrightarrow[P^{-1}]{}z \xrightarrow[Q]{}w$, por el argumento
-    anterior sabemos que esta trayectoria tiene longitud par. Por \'utimo,
-    observamos que existe el siguiente ciclo,
+    Ahora pasamos a la segunda implicaci\'on. Para esto, consideramos $G$ una
+    gr\'afica que no contiene ciclos impares. Dado un v\'ertice $v \in V(G)$,
+    sea  $G_1$ la componente conexade $G$, tal que $v \in V(G_1)$. Construimos
+    la siguiente partici\'on de $V(G_1)$. Sea $X$ al conjunto de los v\'ertices
+    de $G_1$ que est\'en a distancia impar de $v$, en otras palabras, $X = \{u
+    \in V(G_1) \colon d(u,v) \textnormal{ es impar}\}$. Tomamos al otro conjunto
+    de la partici\'on como $Y = V(G_1)\setminus X$. Por construcci\'on, tenemos
+    que $X \cap Y = \varnothing$ y $X \cup Y = V(G_1)$. S\'olo falta verificar
+    que no existen aristas entre cualesquiera dos v\'ertices de $X$ o entre
+    cualesquiera dos v\'ertices de $Y$. Ambos casos tienen demostraciones
+    an\'alogas, por lo que s\'olo lo demostramos para $X$. Supongamos que
+    existen $u,w \in X$, tales que $e=uw \in E(G_1)$. Sean $P$ una
+    $vu$-trayectoria y $Q$ una $vw$-trayectoria, ambas de longitud m\'inima.
+    Ahora, sea $z$ el \'ultimo v\'ertice que comparten estas trayectorias.
+    Observemos que las subtrayectorias $v \xrightarrow[P]{}z$ y $v
+    \xrightarrow[Q]{}z$ tienen la misma longitud. Esto pues, si alguna tuviera
+    menor longitud, sin p\'erdida de generalidad, tomamos a $v
+    \xrightarrow[P]{}z$ con menor longitud, entonces tendr\'iamos que la
+    trayectoria $v \xrightarrow[P]{}z\xrightarrow[Q]{}w$ tiene longitud menor a
+    $d(v,w)$, lo cu\'al es una contradicci\'on. Como $P$ y $Q$ tienen longitud
+    par y $v \xrightarrow[P]{}z$ y $v \xrightarrow[Q]{}z$, tienen la misma
+    longitud, entonces tenemos que $z \xrightarrow[P]{}u$ y $z
+    \xrightarrow[Q]{}w$ tiene ambas longitud par o tienen ambas longitud impar.
+    Ahora consideramos la trayectoria $ R= u \xrightarrow[P^{-1}]{}z
+    \xrightarrow[Q]{}w$, por el argumento anterior sabemos que esta trayectoria
+    tiene longitud par. Por \'utimo, observamos que existe el siguiente ciclo,
     $C=u\xrightarrow[R]{}w\xrightarrow[e]{}u$. Tenemos que $C$ es un ciclo de
     longitud impar, lo cu\'al es una contradicci\'on. Por lo tanto, no existen
     aristas entre v\'ertices de $X$. De manera an\'aloga podemos ver que $Y$
-    tampoco tiene v\'ertices adyacentes, por lo que $G$ es una gr\'afica
-    bipartita con partici\'on $(X,Y)$.
+    tampoco tiene v\'ertices adyacentes, As\'i $G_1$ es una gr\'afica bipartita
+    con bipartici\'on $(X,Y)$. Por lo tanto, todas las componentes conexas de
+    $G$ son bipartitas, en el caso de que $G$ sea inconexa. Por ende, usando
+    \cref{prop:bip-compConect}, tenemos que $G$ es bipartita.
 \end{proof}
     
 Otra  familia de gr\'aficas que se estudia m\'as adelante en este trabajo son
@@ -1128,7 +1158,7 @@ $\mathcal{F}_n$ son los v\'ertices pertenecientes a $P_{n-1}$ y el $n$-\'esimo
 v\'ertice de la gr\'afica es el que le corresponde a $K_1$. Al igual que en
 varios casos, existe una generalizaci\'on de esta estructura al sustituir $K_1$
 por $\overline{K_n}$. Un \textbf{abanico} \indiceSub{abanico}{generalizado},
-denotado $\mathcal{F}_{m.n}$, se define como $\mathcal{F}_{m,n}=\overline{K_m}
+denotado $\mathcal{F}_{m,n}$, se define como $\mathcal{F}_{m,n}=\overline{K_m}
 \oplus P_n$. Por simplicidad, llamamos $v_i \in V(\mathcal{F}_{m,n})$ y $w_j \in
 V(\mathcal{F}_{m,n})$ a los v\'ertices que provienen de $P_n$ y
 $\overline{K_m}$, respectivamente, donde $i \in \{1, \dots, n\}$ y $j \in \{1,
@@ -1164,7 +1194,7 @@ lado izquierdo y un abanico generalizado del lado derecho.
             \draw [edge,grisOscuro] (\i) to (\j);
         \end{scope}
 \end{tikzpicture}
-\caption{Las gr\'aficas $\mathcal{F}_5$ (izquierda) y $\mathcal{F}_{2,5}$
+\caption{Las gr\'aficas $\mathcal{F}_6$ (izquierda) y $\mathcal{F}_{2,5}$
 (derecha).}
 \label{fig:ex-abanico}
 \end{figure}
@@ -1176,14 +1206,14 @@ de gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir
 algunos conceptos necesarios. El primer concepto es el de trayectoria
 hamiltoniana. Una \textbf{trayectoria}
 \indiceSub{trayectoria}{hamiltoniana}\index{hamiltoniana!trayectoria} es una
-trayectoria generadora, i.e., una trayectoria cuyo conjunto de v\'ertices es el
+trayectoria generadora, i.~e., una trayectoria cuyo conjunto de v\'ertices es el
 conjunto de v\'ertices de la gr\'afica. Asimismo, un \textbf{ciclo}
 \indiceSub{ciclo}{hamiltoniano}\index{hamiltoniana!ciclo} es un ciclo generador.
 Por \'ultimo, una \indice{subtrayectoria
 hamiltoniana}\index{hamiltoniana!subtrayectoria} es la trayectoria hamiltoniana
-resultante de quitarle una arista a un ciclo hamiltoniano. Ahora, pasamos a
-definir una \textbf{gr\'afica}
-\indiceSub{gr\'afica}{hamiltoniana}\index{hamiltoniana!gr\'afica}, que es una
+resultante de quitarle una arista a un ciclo hamiltoniano. Definimos una
+\textbf{gr\'afica}
+\indiceSub{gr\'afica}{hamiltoniana}\index{hamiltoniana!gr\'afica} como una
 gr\'afica que contiene un ciclo hamiltoniano. En \cref{fig:ex-hamilt} se muestra
 un ejemplo de una gr\'afica que contiene una trayectoria hamiltoniana del lado
 izquierdo y de una gr\'afica hamiltoniana del lado izquierdo, respectivamente.
@@ -1232,37 +1262,80 @@ izquierdo y de una gr\'afica hamiltoniana del lado izquierdo, respectivamente.
     \label{fig:ex-hamilt}
 \end{figure}
 
+Una proposici\'on que nos servir\'a m\'as adelante es \cref{prop:hamilt},
+demostrada a continuaci\'on.
+
+\begin{proposicion}
+\label{prop:hamilt}
+   Sea $G$ una gr\'afica y sea $S \subseteq V(G)$ un subconjunto no vac\'io. Si
+    $G$ es una gr\'afica hamiltoniana, entonces, $G-S$ tiene, a lo m\'as, $|S|$
+    componentes conexas.
+\end{proposicion}
+
+
+\begin{proof}
+    Sea $G$ una gr\'afica con ciclo hamiltoniano $C= (v_1, v_2, \dots, v_n,
+    v_1)$ y sea $S \subseteq V(G)$ un subconjunto no vac\'io. Si $G-S$ es
+    conexa, entonces se cumple la proposici\'on, pues $|S| \geq 1$ por
+    definici\'on.
+    
+    Suponemos ahora que $G-S$ es inconexa. Sea $k$ el n\'umero de componentes
+    conexas de $G-S$ y sean $G_1, G_2, \cdots, G_ k$ dichas componentes conexas,
+    con $k < n$. Nombramos $u_i$ al \'ultimo v\'ertice de $C$ que est\'a en
+    $G_i$, para $i \in \{1, \dots, k\}$. Luego, sea $w_i$ el v\'ertice que sigue
+    de $u_i$ en $C$. Observamos que $w_i \notin V(G_i)$ por como se defini\'o.
+    Adem\'as, $w_i \notin V(G_j)$, con $j \in \{1, \dots, k\}$ y $j \neq i$, por
+    definici\'on de componentes conexas. Por lo tanto, tenemos que $w_i$ es
+    elemento de $S$. Adem\'as, notamos que, al ser $C$ un ciclo, tenemos que
+    $w_i \neq w_j$, para diferentes $i,j \in \{1, \dots, k\}$. Por lo tanto,
+    tenemos que $\{w_1, \dots, w_k\} \subseteq S$, lo que implica que $k \leq
+    |S|$. 
+\end{proof} 
+
 \section{Coloraci\'on}
 \label{sec:coloracion}
 
-En Teor\'ia de Gr\'aficas, hablamos de colorear una gr\'afica como manera de
-etiquetar a los elementos de una gr\'afica, ya sean a los v\'ertices o a las
+En Teor\'ia de Gr\'aficas, cuando hablamos de colorear a una gr\'afica nos
+referimos a una manera de etiquetar a todos sus v\'ertices o a todas sus
 aristas. Primero, veamos la coloraci\'on por aristas. Formalmente, una
 \textbf{$k$-coloraci\'on} \indiceSub{$k$-coloraci\'on}{por
 aristas}\index{aristas!coloraci\'on} de una gr\'afica $G$, para un entero $k$,
 es una funci\'on $c' \colon E(G)\to S$, con $S$ un conjunto de cardinalidad $k$.
 La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por aristas
-$c'$ es el conjunto de todas las aristas de la gr\'afica que estan coloreadas
-del color $i$, es decir $c'^{-1}[i]$. Notamos que las clases crom\'aticas pueden
-ser vac\'ias. Una \textbf{coloraci\'on} \indiceSub{$k$-coloraci\'on}{propia por
-aristas}\index{aristas!$k$-coloraci\'on propia} es una coloraci\'on por aristas
-donde se le asignan colores diferentes a todas las aristas adyacentes.
+$c'$ es el conjunto de todas las aristas de la gr\'afica que est\'an coloreadas
+del color $i$, es decir, $c'^{-1}[i]$. Notamos que las clases crom\'aticas
+pueden ser vac\'ias. Una \textbf{coloraci\'on}
+\indiceSub{k@$k$-coloraci\'on}{propia por aristas}\index{aristas!k
+@$k$-coloraci\'on propia} es una coloraci\'on por aristas, donde se le asignan
+colores diferentes a aristas adyacentes.
 
 Por otro lado, una una \textbf{$k$-coloraci\'on}
-\indiceSub{$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
+\indiceSub{k@$k$-coloraci\'on}{por v\'ertices}\index{v\'ertices!coloraci\'on} de
 una gr\'afica $G$, para un entero $k$, es una funci\'on $c \colon V(G)\to T$,
 donde $T$ es un conjunto de cardinalidad $k$. En ambos casos, ya sea
 coloraci\'on por v\'ertices o por aristas, a los elementos del codominio de la
 funci\'on se les llama \indice{colores}. Una \textbf{coloraci\'on}
-\indiceSub{$-$coloraci\'on}{propia por
-v\'ertices}\index{v\'ertices!$k$-coloraci\'on propia} es una coloraci\'on por
-v\'ertices donde se le asignan colores diferentes a todos los v\'ertices
-adyacentes. Decimos que una gr\'afica $G$ es
-\indiceSub{gr\'afica}{$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite una
-$k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
-\cref{fig:ex-color-prop}, se muestra una gr\'afica $G$ donde se resalta una
-coloraci\'on propia por v\'ertices, del lado izquierdo, y una coloraci\'on
-propia por aristas, del lado derecho. 
+\indiceSub{k@$k$-coloraci\'on}{propia por
+v\'ertices}\index{v\'ertices!k $k$-coloraci\'on propia} es una coloraci\'on por
+v\'ertices, donde se le asignan colores diferentes a v\'ertices
+adyacentes. Decimos que una gr\'afica $G$ es $k$\textbf{-coloreable}
+\index{gr\'afica!k @$k$-coloreable}, con $k \in \mathbb{Z}$, si $G$ admite
+una $k$-coloraci\'on propia por v\'ertices. A continuaci\'on, en
+\cref{fig:ex-color-prop}, se muestra una gr\'afica $G$, donde se resalta una
+coloraci\'on propia por v\'ertices del lado izquierdo y una coloraci\'on propia
+por aristas del lado derecho. 
+
+La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por v\'ertices
+$c$ es el conjunto de todos los v\'ertices de la gr\'afica que est\'an
+coloreados del color $i$, es decir, $c^{-1}[i]$. Notamos que las clases
+crom\'aticas pueden ser vac\'ias. Adem\'as, en una coloraci\'on propia, cada
+clase crom\'atica es un conjunto independiente. El m\'inimo entero $k$ para el
+cu\'al una gr\'afica $G$ es $k$-coloreable es el \indice{n\'umero crom\'atico}
+de $G$, denotado por $\chi(G)$. En este caso, decimos que $G$ es
+$k$\textbf{-crom\'atica} \index{gr\'afica!k @$k$-crom\'atica}. En
+\cref{fig:ex-color-prop}, se muestra una $3$-coloraci\'on propia por v\'ertices,
+sin embargo, el n\'umero crom\'atico de la gr\'afica es $2$. 
+
 
 \begin{figure}[ht!]
     \centering
@@ -1299,60 +1372,52 @@ propia por aristas, del lado derecho.
         \end{scope}
 
     \end{tikzpicture}
-    \caption{una $3$-coloraci\'on propia por v\'ertices (izquierda) y una 
+    \caption{Una $3$-coloraci\'on propia por v\'ertices (izquierda) y una
         $5$-coloraci\'on propia por aristas (derecha).}
         \label{fig:ex-color-prop}
 \end{figure}
 
-\newpage
-
-La \indice{clase crom\'atica} de un color $i$ en una coloraci\'on por v\'ertices
-$c$ es el conjunto de todos los v\'ertices de la gr\'afica que estan coloreados
-del color $i$, es decir $c^{-1}[i]$. Notamos que las clases crom\'aticas pueden
-ser vac\'ias, adem\'as, en una coloraci\'on propia, cada clase crom\'atica es un
-conjunto independiente. El m\'inimo entero $k$ para el cu\'al una gr\'afica $G$
-es $k$-coloreable es el \indice{n\'umero crom\'atico} de $G$, denotado por
-$\chi(G)$. En este caso, decimos que $G$ es
-\indiceSub{gr\'afica}{$k$-crom\'atica}. En \cref{fig:ex-color-prop}, se muestra
-una $3$-coloraci\'on propia por v\'ertices, sin embargo el n\'umero crom\'atico
-de la gr\'afica es $2$. 
-
 Es f\'acil observar que una gr\'afica es $1$-crom\'atica si y s\'olo si es
 vac\'ia, pues, de tener alguna arista ser\'ia necesario utilizar un segundo
-color. Tambi\'en podemos determinar como se ven las gr\'aficas $2$-crom\'aticas.
-Para esto, notamos que, al tener dos clases de colores de una coloraci\'on
-propia, garantizamos que la gr\'afica es una gr\'afica bipartita. Adem\'as,
-todas las gr\'aficas bipartitas cumplen ser $2$-crom\'aticas, asign\'andole un
-color a cada conjunto de la partici\'on.
+color. Tambi\'en podemos determinar c\'omo se ven las gr\'aficas
+$2$-crom\'aticas. Para esto, notamos que, al tener dos clases de colores de una
+coloraci\'on propia, garantizamos que la gr\'afica es una gr\'afica bipartita.
+Adem\'as, todas las gr\'aficas bipartitas cumplen ser $2$-crom\'aticas,
+asign\'andole un color a cada conjunto de la partici\'on.
 
 Algo que es interesante de notar es que, si $H$ es una subgr\'afica de $G$,
 entonces $\chi(H) \leq \chi(G)$; m\'as a\'un, si $H$ es una gr\'afica completa
-de $n$ v\'ertices, entonces $n \leq \chi(G)$. Sin embargo, la suma del n\'umero
-crom\'atico de dos subgr\'aficas puede ser mayor que el n\'umero crom\'atico de
-la gr\'afica. A continuaci\'on se demuestra el resultado.
+de $n$ v\'ertices, entonces tenmos $n \leq \chi(G)$. Sin embargo, la suma del
+n\'umero crom\'atico de dos subgr\'aficas puede ser mayor que el n\'umero
+crom\'atico de la gr\'afica. A continuaci\'on se demuestra este resultado.
 
 \begin{proposicion}
-    Sea $G$ una gr\'afica.   Si $S \subset V(G)$, entonces se cumple la
-    siguiente desigualdad
+    Sea $G$ una gr\'afica.   Si $S \subseteq V(G)$ y $S \neq \varnothing$,
+    entonces se cumple la siguiente desigualdad
     \[
         \chi(G) \leq \chi(G[S])+\chi(G-S).
     \] 
 \end{proposicion}
 
 \begin{proof}
-    Sean $G$ una gr\'afica y $S \subseteq V(G)$.  Sea $c_1$ una coloraci\'on
-    propia de $G[S]$ con $ k= \chi(G[S])$ colores, para $k \in \mathbb{Z^+}$.
-    An\'alogamente, sea $c_2$ una coloraci\'on propia de $G-S$ de $l= \chi(G-S)$
-    colores, tomando el siguiente conjunto con colores $\{k+1, k+2, \dots,
-    k+l\}$. Observamos que $c_1$ y $c_2$ no comparten colores, por lo que
-    podemos construir una coloraci\'on porpia de $G$ de $\{1, \dots, k+l\}$
-    colores asignandole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$. De
-    esta manera tenemos que $G$ es $k+l$-coloreable, donde $k = \chi(G[S])$ y $l
-    = '\chi(G-S)$. Por lo tanto tenemos que $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
+    Sean $G$ una gr\'afica y $S \subseteq V(G)$, con $S \neq \varnothing$.  Sea
+    $c_1$ una coloraci\'on propia de $G[S]$ con $ k= \chi(G[S])$ colores,
+    tomando el conjunto de colores $\{1, \dots, k\}$. An\'alogamente, sea $c_2$
+    una coloraci\'on propia de $G-S$ con $l= \chi(G-S)$ colores, tomando el
+    siguiente conjunto con colores $\{k+1, k+2, \dots, k+l\}$. Observamos que
+    $c_1$ y $c_2$ no comparten colores, por lo que podemos construir una
+    coloraci\'on propia de $G$ con los colores $\{1, \dots, k+l\}$,
+    asign\'andole los colores de $c_1$ y $c_2$ a los v\'ertices de $G$. De esta
+    manera tenemos que $G$ es $(k+l)$-coloreable, donde $k = \chi(G[S])$ y $l =
+    '\chi(G-S)$. Por lo tanto, tenemos que $\chi(G) \leq \chi(G[S])+\chi(G-S)$.
 \end{proof}
 
 Por \'ultimo, vale la pena mencionar la relaci\'on entre el n\'umero crom\'atico
-de una gr\'afica y el n\'umero de clan de \'esta, i.e., $\omega$. Como los
+de una gr\'afica y el n\'umero de clan de \'esta, i.~e., $\omega$. Como los
 clanes cumplen que todos sus v\'ertices son adyacentes entre s\'i, entonces la
 clase crom\'atica de una gr\'afica $G$ tiene que ser al menos el n\'umero de
-clan de $G$, de esta manera tenemos que $\omega(G) \leq \chi(G)$.
+clan de $G$, de esta manera tenemos que $\omega(G) \leq \chi(G)$. 
+
+Con \'esto se concluyen los conceptos de Teor\'a de Gr\'aficas que se necesitan
+en este trabajo, por lo que pasamos a estudiar las gr\'aficas de fichas, el
+enfoque principal de este trabajo.

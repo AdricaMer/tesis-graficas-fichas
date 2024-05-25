@@ -1,468 +1,60 @@
 \chapter{Conexidad}%
 \label{cap:conexidad}
 
-Este cap\'itulo se enfoca en la conexidad de las gr\'aficas de fichas. Establece
-algunas cotas para el di\'ametro al igual que el n\'umero de trayectorias
-internamente ajenas que se pueden encontrar en una gr\'afica de fichas,
-bas\'andose en las caractere\'isticas y par\'ametros de las gr\'aficas de las
-cu\'ales provienen.
-
-\section{Algunas propiedades interesantes}%
-\label{sec:etiquetas}
-
-En esta secci\'on estudiamos algunas peque\~{n}as propiedades que pueden
-resultar interesantes. Primero establecemos una cota para el di\'ametro de una
-gr\'afica de fichas.
-
-\begin{teorema}%
-\label{teo:diamFG}
-Sea $G$ una gr\'afica conexa con di\'ametro $d$. Entonces, $F_{k}(G)$ es 
-conexa con di\'ametro al menos $k(d -k+1)$ y a lo m\'as $d k$.
-\end{teorema}
-
-\begin{proof}
-Sean $A$ y $B$ v\'ertices de $F_{k}(G)$. Primero nos enfocamos en la cota
-superior. Por definici\'on tenemos que $|A \triangle B| \leq |A \cup B|$, con
-igualdad cuando $A \cap B = \varnothing$. Observamos que, al ser $A$ y $B$
-v\'ertices de $F_{k}(G)$, tenemos que $|A|=k$ y $|B|=k$, por lo que $|A \cup B|
-\le 2k$. Luego, tenemos que $|A \triangle B| \leq 2k$, por lo que
-$\frac{1}{2} |A \triangle B| \leq k$.
-
-Buscamos demostrar que el di\'ametro de $F_{k}(G)$ es a lo m\'as $d k$, por
-lo que basta demostrar por inducci\'on que, para cualesquiera dos v\'ertices
-$A$ y $B$ de $F_{k}(G)$, hay una $AB$-trayectoria de a lo m\'as
-$\frac{d}{2}|A\triangle B|$. Observamos que esto tambi\'en implica que
-$F_{k}(G)$ es conexa.
-
-Si $A\triangle B=\varnothing$, entonces $A=B$, por lo que no hay nada que probar.
-Ahora consideramos $A$ y $B$ tales que $A\triangle B \neq \varnothing$. Tomamos
-como hip\'otesis que para cualesquiera dos v\'ertices de $F_{k}(G)$, $C$ y $D$,
-tales que $|C\triangle D|<|A \triangle B|$, existe una $CD$-trayectoria con
-longitud a lo m\'as $\frac{d}{2}|C\triangle D|$. Al tomar $A\triangle B
-\neq \varnothing$ tenemos un v\'ertice de $G$ en $A\setminus B$ y un v\'ertice
-en $B\setminus A$, que denotamos $a$ y $b$, respectivamente. Dado que el
-di\'ametro de $G$ es $d$, entonces hay una $ab$-trayectoria de longitud a
-lo m\'as $d$, digamos $P$.
-
-Definimos $A'=(A\setminus \{a\})\cup \{b\}$ y la trayectoria $A\xrightarrow[P]{}
-A'$ en $F_{k}(G)$. Observamos que, por un lado $b\in B\cap A'$ y $b\notin B\cap
-A$, pero $b\in A\cup B$. Por otro lado, tenemos que $a \notin A'$, por lo que
-$a\notin A'\cup B$ y $a\notin A\cap B$, pero $a\in A\cup B$. Por eso, tenemos
-que $a,b \in A\triangle B$ y $a,b \notin A'\triangle B$. Ahora tomamos $v\in A$
-tal que $v \neq a$. Entonces, tenemos que $v \in A\triangle B$ si y s\'olo si
-$v\in A'\triangle B$. Por lo tanto, tenemos que $|A'\triangle B|=|A \triangle B|-
-2$. Por hip\'otesis inductiva, sabemos que hay una $A'B$-trayectoria en
-$F_{k}(G)$ de longitud a lo m\'as $\frac{d}{2}|A'\triangle B|$, que como se
-observ\'o anteriormente, coincide con $\frac{d}{2}|A\triangle B| - d$.
-
-Sabemos que $A\xrightarrow[P]{} A'$ tiene la misma longitud que $P$, que es a lo
-m\'as $d$. Entonces, tenemos una $AB$-trayectoria de la forma $A\rightarrow
-A'\rightarrow B$ que tiene longitud a lo m\'as $\frac{d}{2}|A\triangle
-B|-d +d =\frac{d}{2}|A\triangle B|$. Por lo tanto, tenemos que
-$F_{k}(G)$ es conexa y tiene di\'ametro a lo m\'as $d k$.
-
-Ahora demostramos la cota inferior. Sabemos que $G$ es una gr\'afica conexa con
-di\'ametro $d$, por lo que existen vertices que est\'an a distancia $d$, digamos
-$x$ y $y$. Ahora, construimos una partici\'on de $V$ usando la distancia que
-tiene cada v\'ertice a $x$. Es decir, para cada $i\in [0,d]$, sea $V_{i}$ el
-conjunto de v\'ertices de $G$ a distancia $i$ de $x$. Por tanto, tenemos que
-$V_{0}=\{x\}$ y $y\in V_{d}$. Denotamos $d_x(v)$ a la distancia entre $x$ y el
-v\'ertice $v$.
-
-Sea $a$ el m\'inimo \'indice para el cu\'al se tiene $k \leq |V_{0}\cup
-V_{1}\cup \cdots \cup V_{a}|$ y sea $b$ el m\'aximo \'indice para el cu\'al se
-tiene $k\leq |V_{b}\cup V_{b+1}\cup \cdots \cup V_{d}|$. Tomamos $A$ un
-$k$-subconjunto de $V_{0}\cup \cdots \cup V_{a}$  tal que $A\subseteq V_{0}$ o
-$V_{0}\cup \cdots \cup V_{a-1}\subseteq A$. Adem\'as, tomamos $B$ un
-$k$-subconjunto de $V_{b}\cup \cdots \cup V_{d}$ tal que $B\subseteq V_{d}$ o
-$V_{b+1}\cup \cdots \cup V_{d}$. 
-
-Consideramos una trayectoria entre $A$ y $B$ en $F_{k}(G)$. Cualquier ficha
-inicialmente en $A$, digamos $v \in G$, se mueve a alg\'un v\'ertice en $B$,
-digamos $v'\in G$. Notamos que todas las aristas de $G$ est\'an dentro de
-alg\'un $V_{i}$ o, a lo m\'as, entre alg\'un $V_{i}$ y $V_{i+1}$, con
-$i\in[0,d]$. As\'i pues, para la ficha en $v$ se necesitan al menos
-$d_x(v')-d_x(v)$ movimientos para llegar a $v'$, ocupando s\'olo las aristas
-entre $V_{i}$ y $V_{i+1}$, $i\in [0,d]$. Por lo tanto, el di\'ametro de
-$F_{k}(G)$ es al menos $\sum_{v\in A}(d_x(v')-d_x(v))= \sum_{w\in
-B}d_x(w)-\sum_{v\in A}d_x(v)$. Observamos que, al ser $G$ conexa, toda $V_{i}$
-tiene al menos un elemento y por construcci\'on $V_{i} \cap
-V_{i+1}=\varnothing$, para toda $i\in [0,d]$. Tomamos el caso en el que
-$|V_{i}|=1$, para toda $i\in [0,d]$. Luego, tenemos que $k\leq
-|V_{b}\cup\cdots\cup V_{d}|=|V_{b}|+|V_{b+1}|+\cdots +|V_d|$ $=\sum_{b}^{d}1 = d
--b+1$. An\'alogamente, tenemos que $k\leq |V_{0}\cup V_{1}\cup \cdots \cup
-V_{a}|=|V_{0}|+|V_{1}|+\cdots + |V_{a}|$ $=\sum_{0}^{a} 1 = a+1$. En ambos
-casos, la cota m\'inima se alcanza en la igualdad, por lo que tomamos $a=k-1$ y
-$b=d-k+1$. Por lo tanto, tenemos que el di\'ametro de $F_{k}(G)$ es al menos
-$\sum_{j=d -k+1}^{d}j - \sum_{i=0}^{k-1}i = k(d-k+1)$.
-\end{proof}
-
-Es interesante notar que las cotas obtenidos en \cref{teo:diamFG} son
-alcanzables. A continuaci\'on se muestran algunos ejemplos para dichas cotas. La
-cota inferior se cumple para toda trayectoria de $d +1$ v\'ertices, con $k \leq
-d +1$, es decir, una trayectoria de di\'ametro $d$. Es f\'acil observar que,
-para toda $k$, obtenemos una gr\'afica de $k$-fichas de di\'ametro $k(d-k+1)$.
-Para ejemplificar este tipo de gr\'aficas, consideremos a la trayectoria $P_6$.
-Recordamos que $F_2(P_6) \cong F_4(P_6)$, $F_1(P_6) \cong F_5(P_6)$ y $F_6(P_6)
-\cong K_1$, por lo que en \cref{fig:ex-diamP} se muestran las gr\'aficas de $2$
-y $3$-fichas de la $P_6$. Las gr\'aficas $F_2(P_6)$ y $F_3(P_6)$ tienen
-di\'ametro $8$ y $9$, respectivamente, i.e., tiene di\'ametro $k(d-k+1)$
-
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-    
-        \begin{scope}[xshift=-6cm,yshift=-3cm,rotate=135]
-            \draw (2,2) node (1) [vertex,fill=menta,label=270:{\footnotesize $56$}] {};
-            \draw (2,1) node (2) [vertex,fill=menta,label=270:{\footnotesize $46$}] {};
-            \draw (2,0) node (3) [vertex,label=270:{\footnotesize $36$}] {};
-            \draw (2,-1) node (4) [vertex,label=270:{\footnotesize $26$}] {};
-            \draw (2,-2) node (5) [vertex,label=270:{\footnotesize $16$}] {};
-            \draw (-2,-2) node (6) [vertex,fill=menta,label=270:{\footnotesize $12$}] {};
-            \draw (-1,-2) node (7) [vertex,fill=menta,label=270:{\footnotesize $13$}] {};
-            \draw (0,-2) node (8) [vertex,label=270:{\footnotesize $14$}] {};
-            \draw (1,-2) node (9) [vertex,label=270:{\footnotesize $15$}] {};
-            \draw (-1,-1) node (10) [vertex,fill=menta,label=270:{\footnotesize $23$}] {};
-            \draw (0,-1) node (11) [vertex,fill=menta,label=270:{\footnotesize $24$}] {};
-            \draw (1,-1) node (12) [vertex,label=270:{\footnotesize $25$}] {};
-            \draw (0,0) node (13) [vertex,fill=menta,label=270:{\footnotesize $34$}] {};
-            \draw (1,0) node (14) [vertex,fill=menta,label=270:{\footnotesize $35$}] {};
-            \draw (1,1) node (15) [vertex,fill=menta,label=270:{\footnotesize $55$}] {};
-
-            \foreach \i/\j in{2/3,3/4,4/5,7/8,8/9,5/9,11/12,4/12,
-            3/14,9/12,12/14,8/11} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-
-            \foreach \i/\j in{1/2,2/15,14/15,13/14,11/13,10/11,7/10,6/7} 
-                    \draw [wedge,menta] (\i) to (\j);
-        \end{scope}
-        
-        \begin{scope}[rotate=-55]
-           
-            \draw (2,0) node (21) [vertex,label=180:{\footnotesize $236$}] {};
-            \draw (2,-1) node (22) [vertex,fill=azulMetal,label=180:{\footnotesize $136$}] {};
-            \draw (2,-2) node (23) [vertex,fill=azulMetal,label=270:{\footnotesize $126$}] {};
-            \draw (-1,-2) node (24) [vertex,fill=azulMetal,label=250:{\footnotesize $123$}] {};
-            \draw (0,-2) node (25) [vertex,fill=azulMetal,label=250:{\footnotesize $124$}] {};
-            \draw (1,-2) node (26) [vertex,fill=azulMetal,label=250:{\footnotesize $125$}] {};
-            \draw (0,-1) node (27) [vertex,label=120:{\footnotesize $134$}] {};
-            \draw (1,-1) node (28) [vertex,label=180:{\footnotesize $135$}] {};
-            \draw (0,0) node (29) [vertex,label=90:{\footnotesize $234$}] {};
-            \draw (1,0) node (20) [vertex,label=80:{\footnotesize $235$}] {};
-            
-            
-            \foreach \i/\j in{21/22,27/28,22/28,29/20,
-            21/20,29/27,25/27,28/20,26/28} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-        \end{scope}
-
-        \begin{scope}[xshift=3.2cm,yshift=0cm,rotate=-55]
-           
-            \draw (2,0) node (31) [vertex,fill=azulMetal,label=0:{\footnotesize $356$}] {};
-            \draw (2,-1) node (32) [vertex,fill=azulMetal,label=0:{\footnotesize $256$}] {};
-            \draw (2,-2) node (33) [vertex,fill=azulMetal,label=270:{\footnotesize $156$}] {};
-            \draw (2,1) node (34) [vertex,fill=azulMetal,label=0:{\footnotesize $456$}] {};
-            \draw (0,-2) node (35) [vertex,label=0:{\footnotesize $145$}] {};
-            \draw (1,-2) node (36) [vertex,fill=azulMetal,label=250:{\footnotesize $146$}] {};
-            \draw (0,-1) node (37) [vertex,label=90:{\footnotesize $245$}] {};
-            \draw (1,-1) node (38) [vertex,label=0:{\footnotesize $246$}] {};
-            \draw (0,0) node (39) [vertex,label=90:{\footnotesize $345$}] {};
-            \draw (1,0) node (30) [vertex,label=80:{\footnotesize $346$}] {};
-            
-            
-            \foreach \i/\j in{35/36,37/38,32/38,39/30,
-            31/30,39/37,35/37,38/30,36/38} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-
-           
-        \end{scope}
-        
-        \foreach \i/\j in{24/25,25/26,23/26,22/23,22/36,33/36,32/33,31/32,31/34} 
-                    \draw [wedge,azulMetal] (\i) to (\j);
-        
-                    \foreach \i/\j in{28/35,21/38,20/37} 
-            \draw [edge,grisOscuro!75] (\i) to (\j);
-        
-    \end{tikzpicture}
-
-\caption{La gr\'afica de $2$-fichas  (izquierda) y la gr\'afica de $3$-fichas
-(derecha) de la trayectoria $P_6$, resaltando una trayectoria de longitud
-m\'axima en ambaas gr\'aficas}
-\label{fig:ex-diamP}       
-\end{figure}
-
-Para la cota superior d\cref{teo:diamFG} consideramos la gr\'afica $G$, obtenida
-de a\~{n}adirle $k$ v\'ertices a cada extremo de la trayectoria $P_{d -1}$ y
-hacerlos adyacentes a los extremos de esta trayectoria. Observamos que $G$ tiene
-di\'ametro $d$. Adem\'as, para toda $k \leq n$, la gr\'afica de $k$-fichas de
-$G$ tiene di\'ametro $dk$. Para ejemplificar esto, \cref{fig:ex-diamT} muestra
-una gr\'afica $G$ construida al agregar cuatro v\'ertices en cada extremo de la
-trayectoria $P_5$, i.e., $k=4$. Notamos que los v\'ertices $\{v_1,v_2,v_3,v_4\}$
-y $\{w_1,w_2,w_3,w_4\}$ son extremos en $F_4(G)$ pues ambos tienen \'unicamente
-un vecino. \Cref{fig:ex-diamT} muestra el movimiento de las fichas en $F_4(G)$
-de un extremo al otro extremo. Observamos que una ficha en alg\'un $v_i$ tiene
-que moverse por $d +1$ v\'ertices a alg\'un $w_i$ libre, para $i \in
-\{1,2,3,4\}$. Adem\'as, cada movimiento corresponde a un v\'ertice en la
-trayectoria en $F_4(G)$ que va de un extremo a otro. Por lo tanto, tenemos que
-la trayectoria que va de $\{v_1,v_2,v_3,v_4\}$ a $\{w_1,w_2,w_3,w_4\}$ tiene
-longitud $4 \cdot 6 = 24$.
-
-\newpage
-
-\begin{figure}[ht!]
-    \centering
-       \begin{tikzpicture}
-    
-        \begin{scope}[]
-            \draw (-2,0) node (1) [vertex,label=270:{\footnotesize $1$}] {};
-            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
-            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
-            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
-            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
-            \draw (-3.3,-1) node (6) [vertex,fill=naranja,label=180:{\footnotesize $v_4$}] {};
-            \draw (-3.3,-0.3) node (7) [vertex,fill=naranja,label=180:{\footnotesize $v_3$}] {};
-            \draw (-3.3,0.3) node (8) [vertex,fill=naranja,label=180:{\footnotesize $v_2$}] {};
-            \draw (-3.3,1) node (9) [vertex,fill=naranja,label=180:{\footnotesize $v_1$}] {};
-            \draw (3.3,-1) node (10) [vertex,label=0:{\footnotesize $w_4$}] {};
-            \draw (3.3,-0.3) node (11) [vertex,label=0:{\footnotesize $w_3$}] {};
-            \draw (3.3,0.3) node (12) [vertex,label=0:{\footnotesize $w_2$}] {};
-            \draw (3.3,1) node (13) [vertex,label=0:{\footnotesize $w_1$}] {};
-
-            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-        \end{scope}
-
-        \begin{scope}[yshift=-3cm]
-            \draw (-2,0) node (1) [vertex,fill=naranja,label=270:{\footnotesize $1$}] {};
-            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
-            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
-            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
-            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
-            \draw (-3.3,-1) node (6) [vertex,label=180:{\footnotesize $v_4$}] {};
-            \draw (-3.3,-0.3) node (7) [vertex,fill=naranja,label=180:{\footnotesize $v_3$}] {};
-            \draw (-3.3,0.3) node (8) [vertex,fill=naranja,label=180:{\footnotesize $v_2$}] {};
-            \draw (-3.3,1) node (9) [vertex,fill=naranja,label=180:{\footnotesize $v_1$}] {};
-            \draw (3.3,-1) node (10) [vertex,label=0:{\footnotesize $w_4$}] {};
-            \draw (3.3,-0.3) node (11) [vertex,label=0:{\footnotesize $w_3$}] {};
-            \draw (3.3,0.3) node (12) [vertex,label=0:{\footnotesize $w_2$}] {};
-            \draw (3.3,1) node (13) [vertex,label=0:{\footnotesize $w_1$}] {};
-
-            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-        \end{scope}
+Este cap\'itulo se enfoca en la conexidad de las gr\'aficas de fichas. Se
+empieza por estudiar el n\'umero de trayectorias internamente ajenas que se
+pueden encontrar en una gr\'afica de fichas, bas\'andose en las
+caracter\'isticas y par\'ametros de las gr\'aficas de las cu\'ales provienen.
+Despu\'es pasa a estudiar la relaci\'on entre la conexidad de una gr\'afica y su
+gr\'afica de fichas. Todas las proposiciones del cap\'itulo salen del art\'iculo
+\textit{Token graphs} \cite{fabilaToken}. El art\'iculo proporciona
+demostraciones de dichas proposiciones, en las cuales se basan las
+demostraciones de este cap\'itulo.
 
 
-        \begin{scope}[]
-            \node at (0,-5) {\large \vdots};
-        \end{scope}
-
-        \begin{scope}[yshift=-6.7cm]
-            \draw (-2,0) node (1) [vertex,label=270:{\footnotesize $1$}] {};
-            \draw (-1,0) node (2) [vertex,label=270:{\footnotesize $2$}] {};
-            \draw (0,0) node (3) [vertex,label=270:{\footnotesize $3$}] {};
-            \draw (1,0) node (4) [vertex,label=270:{\footnotesize $4$}] {};
-            \draw (2,0) node (5) [vertex,label=270:{\footnotesize $5$}] {};
-            \draw (-3.3,-1) node (6) [vertex,label=180:{\footnotesize $v_4$}] {};
-            \draw (-3.3,-0.3) node (7) [vertex,label=180:{\footnotesize $v_3$}] {};
-            \draw (-3.3,0.3) node (8) [vertex,label=180:{\footnotesize $v_2$}] {};
-            \draw (-3.3,1) node (9) [vertex,label=180:{\footnotesize $v_1$}] {};
-            \draw (3.3,-1) node (10) [vertex,fill=naranja,label=0:{\footnotesize $w_4$}] {};
-            \draw (3.3,-0.3) node (11) [vertex,fill=naranja,label=0:{\footnotesize $w_3$}] {};
-            \draw (3.3,0.3) node (12) [vertex,fill=naranja,label=0:{\footnotesize $w_2$}] {};
-            \draw (3.3,1) node (13) [vertex,fill=naranja,label=0:{\footnotesize $w_1$}] {};
-
-            \foreach \i/\j in{1/2,1/6,1/7,1/8,1/9,2/3,3/4,4/5,5/10,5/11,5/12,5/13} 
-                \draw [edge,grisOscuro!75] (\i) to (\j);
-        \end{scope}
-
-        
-    \end{tikzpicture}
-    \caption{La gr\'afica $G$ utilizada como ejemplo d\cref{teo:diamFG}, 
-    resaltando el movimiento de las $4$ fichas al pasar de un extremo de la 
-    gr\'afica al otro}
-\label{fig:ex-diamT}       
-\end{figure}
-
-Nuestro siguiente resultado muestra que algunas subgr\'aficas inducidas de las
-gr\'aficas de fichas son productos cartesianos de algunas subgr\'aficas
-inducidas de $G$.
-
-\begin{teorema}
-    \label{teo:PCartes}
-    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de una gr\'afica $G$ tales
-    que son ajenas dos a dos. Para todos los enteros $s_1, \dots, s_m$ tales que
-    $1 \leq s_i \leq |V(H_i)|$ y $\Sigma s_i = k$, se tiene que $F_{s_1}(H_1)
-    \square \cdots \square F_{s_m}(H_m)$ es una subgr\'afica inducida de
-    $F_k(G)$.
-\end{teorema}
-
-\begin{proof}
-    Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y sean $s_1, \dots,
-    s_m \in \mathbb{Z}$ como en el enunciado. Definimos el conjunto $L$ de los
-    $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
-    $H_i$, para $i \in \{1, \dots, m\}$, es decir, $L = \{A \subseteq G \colon\
-    |A\cap H_1|=s_1 , |A \cap H_2|=s_2, \dots, |A \cap H_m|=m \}$. Observamos
-    que, debido a  que $\Sigma s_i = k$, todo elemento de $L$ tiene cardinalidad
-    $k$. Buscamos ver que la subgr\'afica inducida de $F_k(G)$ por $L$, i.e.,
-    $F_k(G,L)$, es isomorfa a $F_{s_1}(H_1) \square \cdots \square
-    F_{s_m}(H_m)$. Primero, analizamos el conjunto de v\'ertices de ambas
-    gr\'afcias de fichas. Sea $A \in V(F_k(G,L))$, de tal manera que $A=\{a_1,
-    \dots, a_{s_1}, b_1,\dots, b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por
-    definici\'on $|A \cap V(H_i)|= s_i$, para $i \in \{1, \dots, m\}$. Adem\'as,
-    sabemos que cada v\'ertice de $F_{s_i}(H_i)$ tiene cardinalidad $s_i$, para
-    $i \in \{1, \dots, m\}$, por lo que tenemos que $A \in V(H_1) \times \cdots
-    \times V(H_m)$. De manera an\'aloga, si tomamos $A \in V(H_1) \times \cdots
-    \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i \in
-    F_{s_i}(H_i)$. De lo anterior, tenemos que $A \cap V(H_i) = A'_i$, por lo
-    que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
-    Adicionalmente, tenemos que $|A|= k$ puesto que $\Sigma s_i = k$. Por lo
-    tanto, $A \in V(F_k(G,L))$.
-
-    Ahora nos enfocamos en la relaci\'on entre las aristas de ambas
-    gr\'aficas de fichas. Sean $B, C \in A \in V(F_k(G,L))$ tales que
-    $BC \in E(F_k(G,L))$, en otras palabras, existen $b \in B$ y $c \in
-    C$ tales que $B \triangle C = \{b, c\}$ y $bc \in E(G,L)$. Por
-    definici\'on tenemos que $H_i \cap H_j = \varnothing$, con $i \neq
-    j$, por lo que $b, c \in H_i$. \'Esto significa que las fichas en
-    $H_j$ est\'an est\'aticas, para todo $j \in \{1, \dots, m\} \setminus
-    \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es una arista en la
-    subgr\'afica de fichas inducida por $H_i$. Como $H_i \cap H_j =
-    \varnothing$, para $i \neq j$, entonces la subfr\'afica de fichas
-    inducida por $H_i$ es isomora a $F_{s_i}(H_i)$. Al tener el resto de
-    las fichas est\'aticas, tenemos que $BC \in E(F_{s_1}(H_1) \square
-    \cdots \square F_{s_m}(H_m))$.
-
-    Por lo tanto, tenemos un isomorfismo entre $F_{s_1}(H_1) \square \cdots
-    \square F_{s_m}(H_m)$ y $F_k(G,L)$, una subgr\'afica inducida de $F_k(G)$.
-    Por ende, $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$ es una
-    subgr\'afica inducida de $F_k(G)$.
-\end{proof}
-
-\Cref{fig:ex-cart}, exhibida a continuaci\'on, es un ejemplo sencillo
-d\cref{teo:PCartes}. Del lado izquierdo de la figura tenemos una gr\'afica $G$,
-resaltando dos subgr\'aficas inducidas ${\color{baige}\bf H_1}$ y
-${\color{azulMetal}\bf H_2}$. El conjunto de v\'ertices de
-${\color{azulMetal}\bf H_2}$ es $\{1,2,4,6\}$, mientras que el de
-${\color{baige}\bf H_1}$ es $\{3\}$. Ahora, por un lado tenemos que $1\leq s_1
-\leq |V(H_1)|$, por lo que $s_1 =1$. Por otro lado, $1\leq s_2 \leq |V(H_2)| =
-4$ y, adem\'as, $s_1+s_2 = k =3$, por lo que $s_2 =2$. Del lado derecho de
-\cref{fig:ex-cart} se muestra la gr\'afica $F_3(G)$, resaltando de
-$\color{fushia} \bf rosa$ el producto carteciano $F_1(H_1) \square F_2(H_2)$.
-Observamos que dicha gr\'afica es, en efecto, una subgr\'afica inducida de
-$F_3(G)$.
-
-\begin{figure}[ht!]
-    \centering
-       \begin{tikzpicture}
-    
-        \begin{scope}[xshift=-8.5cm]
-            \foreach \i in {0,1,3,5}
-                \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=azulMetal]{};
-            \draw ({(360/6)*2}:2) node(2)[wvertex,fill=baige]{};
-            \draw ({(360/6)*4}:2) node(4)[wvertex]{}; 
-            \foreach \i in {0,...,5}
-                \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
-               \pgfmathresult};
-            \foreach \i/\j in {0/2,1/2,1/4,2/3,2/4,2/5,3/4,4/5}
-                \draw [edge,grisOscuro!50] (\i) to (\j);
-            
-            \foreach \i/\j in {0/1,0/5,0/3,1/5,3/5}
-                \draw [wedge,azulMetal] (\i) to (\j); 
-            \end{scope}
-        
-        \begin{scope}[xshift=0cm,yshift=0cm,scale=0.9]
-            \foreach \i in {0,1,5,8,9,13} 
-                \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=fushia]{}; 
-            \foreach \i in {2,3,4,6,7,10,11,12,14,15} 
-                \draw({(360/16)*\i}:4) node(\i)[wvertex]{};
-    
-            \draw ({(360/16)*1}:4.5) node (e1) {{${\color{azulMetal}\bf 2}{\color{baige}\bf 3}{\color{azulMetal}\bf6}$}};
-            \draw ({(360/16)*2}:4.5) node (e1) {{\footnotesize $256$}};
-            \draw ({(360/16)*3}:4.5) node (e1) {{\footnotesize $246$}};
-            \draw ({(360/16)*4}:4.5) node (e1) {{\footnotesize $126$}};
-            \draw ({(360/16)*5}:4.5) node (e1) {{${\color{azulMetal}\bf12}{\color{baige}\bf 3}$}};
-            \draw ({(360/16)*6}:4.5) node (e1) {{\footnotesize $125$}};
-            \draw ({(360/16)*7}:4.5) node (e1) {{\footnotesize $245$}};
-            \draw ({(360/16)*8}:4.5) node (e1) {{${\color{azulMetal}\bf2}{\color{baige}\bf 3}{\color{azulMetal}\bf4}$}};
-            \draw ({(360/16)*9}:4.5) node (e1) {{${\color{azulMetal}\bf1}{\color{baige}\bf 3}{\color{azulMetal}\bf4}$}};
-            \draw ({(360/16)*10}:4.5) node (e1) {{\footnotesize $145$}};
-            \draw ({(360/16)*11}:4.5) node (e1) {{\footnotesize $135$}};
-            \draw ({(360/16)*12}:4.5) node (e1) {{\footnotesize $345$}};
-            \draw ({(360/16)*13}:4.5) node (e1) {{${\color{baige}\bf 3}{\color{azulMetal}\bf46}$}};
-            \draw ({(360/16)*14}:4.5) node (e1) {{\footnotesize $456$}};
-            \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $156$}};
-            \draw ({(360/16)*16}:4.5) node (e1) {{${\color{azulMetal}\bf1}{\color{baige}\bf 3}{\color{azulMetal}\bf6}$}};
-    
-            \draw (-1.1,0.2) node (17) [vertex,label=10:{\tiny $124$}] {};
-            \draw (0.1,-0.3) node (18) [vertex,label=70:{\tiny $146$}] {};
-            \draw (1.2,0.7) node (19) [vertex,label=180:{\tiny $356$}] {};
-            \draw (0.3,1.4) node (20) [vertex,label=88:{\tiny $235$}] {};
-            
-            \foreach\i/\j in{0/4,0/11,0/15,0/18,1/2,1/3,1/4,1/19,1/20,2/3,2/6,
-            2/7,2/15,2/19,2/20,3/4,3/7,3/8,3/13,3/14,3/17,3/18,4/5,4/6,4/15,4/17,
-            5/6,5/11,5/17,6/7,6/11,6/15,6/17,6/20,7/8,7/10,7/12,7/14,7/20,8/12,
-            8/17,8/20,9/10,9/11,9/17,9/18,10/11,10/12,10/14,10/15,10/17,10/18,
-            11/12,11/15,11/19,11/20,12/13,12/14,12/19,13/14,13/18,13/19,14/15,
-            14/19,15/18,15/19,17/18,19/20} 
-               \draw [edge,grisOscuro!50] (\i) to (\j);
-
-               \foreach \i/\j in {0/1,0/5,0/9,0/13,1/5,1/8,5/8,8/9,8/13,9/13}
-               \draw [wedge,fushia] (\i) to (\j);
-       \end{scope}
-
-    \end{tikzpicture}
-    \caption{Del lado izquierdo se muestra una gr\'afica $G$, donde se resaltan dos
-    subgr\'aficas inducidas, ${\color{baige}\bf H_1}$ y ${\color{azulMetal}\bf
-    H_2}$. Del lado derecho se muestra $F_3(G)$, donde se resalta su subgr\'afica
-    inducida ${\color{fushia}\bf F_1(H_1) \square F_2(H_2)}$}
-    \label{fig:ex-cart}
-    \end{figure}
-
-\newpage
-
-\section{Trayectorias Internamente Ajenas}%
+\section{Trayectorias internamente ajenas}%
 \label{sec:TrayIntAj}
 
 El objetivo de este cap\'itulo es estudiar la relaci\'on de la conexidad entre
-una gr\'afica y su gr\'afica de $k$-fichas. Para esto, empezamos
-enfoc\'andonos en determinar la cantidad de trayectorias internamente ajenas
-entre un par de v\'ertices en una gr\'afica de fichas. Veremos que esta cantidad
-est\'a relacionada con la conexidad de la gr\'afica original. Adem\'as, para
-gr\'aficas con conexidad suficientemente grande, podemos encontrar un n\'umero
-a\'un mayor de trayectorias internamente ajenas. Para llegar a estos resultados,
-los siguientes dos lemas nos son de utilidad.
+una gr\'afica y su gr\'afica de $k$-fichas. Para esto, empezamos enfoc\'andonos
+en determinar la cantidad de trayectorias internamente ajenas entre un par de
+v\'ertices en una gr\'afica de fichas. Veremos que esta cantidad est\'a
+relacionada con la conexidad de la gr\'afica original. Adem\'as, para gr\'aficas
+con conexidad suficientemente grande, podemos encontrar un n\'umero a\'un mayor
+de trayectorias internamente ajenas. Para llegar a estos resultados, los
+siguientes dos lemas nos son de utilidad.
 
 \begin{lema}%
 \label{lem:TrayIntAj-G-FG}
-Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$ tales que $a \in
-A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$ y $Q$
-son $ab$-trayectorias internamente ajenas en $G$, entonces $A \xrightarrow[P]{}
-A'$ y $A \xrightarrow[Q]{} A'$ son trayectorias internamente ajenas en
-$F_{k}(G)$.
+    Sea $A$ un $k$-conjunto en la gr\'afica $G$ y $a, b \in V(G)$, tales que $a
+    \in A$ y $b \notin A$. Sea $A' = (A \setminus \{ a \}) \cup \{ b \}$. Si $P$
+    y $Q$ son $ab$-trayectorias internamente ajenas en $G$, entonces $A
+    \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{} A'$ son trayectorias
+    internamente ajenas en $F_{k}(G)$.
 \end{lema}
 
 \begin{proof}
-    Primero, suponemos que $|V(P) \cap A| \geq 2$, con $V(P) \cap A = \{v_{1},
-    v_{2}, \dots, v_{p}\}$, con $v_{1} = a$. Notamos que, si $k > p$, entonces
-    $k-p$ fichas no est\'an sobre $P$, por lo que est\'an est\'aticas en todos
-    los v\'ertices de $A \xrightarrow[P]{} A'$. Ahora, consideramos $R$ un
-    v\'ertice interno de $A \xrightarrow[P]{} A'$. Por la observaci\'on
-    anterior, tenemos que  $|R \cap V(P)| = p$. Adem\'as, por construcci\'on de
-    $A \xrightarrow[P]{} A'$, $R$ tiene una ficha en la trayectoria $(v_{p},b
-    ]$. Por ello, $R$ no contiene al conjunto $\{v_{2}, \dots, v_{p}\}$. Por
-    otro lado, como $\{v_{2}, \dots, v_{p}\}$ est\'a en $A \cap V(P)$, y $Q$ y
-    $P$ son internamente ajenas, entonces $\{v_{2}, \dots, v_{p}\}$ est\'an
-    est\'aticos en cada v\'ertice de $A \xrightarrow[Q]{} A'$. Por lo tanto,
-    tenemos que $A \xrightarrow[P]{} A'$ y $A \xrightarrow[Q]{}A'$ son
-    trayectorias internamente ajenas. Al suponer que $|A \cap Q| \geq 2$,
-    tenemos un caso an\'alogo al anterior.
+    Primero, suponemos que la cardinalidad del conjunto $V(P) \cap A$ es al
+    menos $2$, con $V(P) \cap A = \{v_{1}, v_{2}, \dots, v_{p}\}$ y $v_{1} = a$.
+    Notamos que, si $k > p$, entonces $k-p$ fichas no est\'an sobre $P$, por lo
+    que est\'an est\'aticas en todos los v\'ertices de $A \xrightarrow[P]{} A'$.
+    Ahora, consideramos $R$ un v\'ertice interno de $A \xrightarrow[P]{} A'$.
+    Por la observaci\'on anterior, tenemos que  $|R \cap V(P)| = p$. Adem\'as,
+    $R$ tiene una ficha en la trayectoria $(v_{p},b ]$, por construcci\'on de $A
+    \xrightarrow[P]{} A'$ . Por ello, $R$ no contiene al conjunto $\{v_{2},
+    \dots, v_{p}\}$. Por otro lado, como $\{v_{2}, \dots, v_{p}\}$ est\'a en $A
+    \cap V(P)$, y $Q$ y $P$ son internamente ajenas, entonces las fichas de
+    $\{v_{2}, \dots, v_{p}\}$ est\'an est\'aticos en cada v\'ertice de $A
+    \xrightarrow[Q]{} A'$. Por lo tanto, tenemos que $A \xrightarrow[P]{} A'$ y
+    $A \xrightarrow[Q]{}A'$ son trayectorias internamente ajenas. Al suponer que
+    $|A \cap Q| \geq 2$, tenemos un caso an\'alogo al anterior.
 
-    Ahora, suponemos que $|A \cap V(P)| = 1$ y $|A \cap V(Q)| = 1$, es decir, $A
-    \cap V(P) = \{a\} = A \cap V(Q)$. Sin p\'erdida de generalidad, suponemos
-    que $P$ no es la arista $ab$, entonces tenemos que $P \setminus \{a,b\} \neq
+    Suponemos que $|A \cap V(P)| = 1$ y $|A \cap V(Q)| = 1$, i.~e., $A \cap V(P)
+    = \{a\} = A \cap V(Q)$. Sin p\'erdida de generalidad, suponemos que $P$ no
+    es la arista $ab$, entonces tenemos que $P \setminus \{a,b\} \neq
     \varnothing$. Por lo tanto, tenemos que todo v\'ertice interno de $A
     \xrightarrow[P]{} A'$ tiene alg\'un v\'ertice de $P \setminus \{a, b\}$. Por
-    otra parte, ya que $P$ y $Q$ son internamente ajenos y s\'olo comparten el
+    otra parte, ya que $P$ y $Q$ son internamente ajenas y s\'olo comparten el
     v\'ertice $a$ con $A$, ning\'un v\'ertice interno de $A \xrightarrow[Q]{}
     A'$ tiene un v\'ertice de $P \setminus \{a, b\}$. Luego, cada v\'ertice
     interno de ambas trayectorias tiene intersecci\'on vac\'ia con $A$.
@@ -476,9 +68,9 @@ demostrar el resultado principal de esta secci\'on.
 \begin{lema}%
 \label{lem:rb-bipGraph}
     Sea $H$ una gr\'afica bipartita completa con clases de color $Y$ y $Z$,
-    donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo de
+    donde $|Y|<|Z|$. Si las aristas de $H$ est\'an coloreadas de azul y rojo, de
     manera que cada v\'ertice de $Y$ es incidente en a lo m\'as una arista roja,
-    entonces $H$ tiene un conjunto $M$ de aristas azules tal que cada v\'ertice
+    entonces $H$ tiene un conjunto $M$ de aristas azules, tal que cada v\'ertice
     en $Y$ incide en exactamente una arista de $M$. Adem\'as, la uni\'on de
     aristas rojas y aristas de $M$ es ac\'iclica.
 \end{lema}
@@ -490,25 +82,25 @@ demostrar el resultado principal de esta secci\'on.
 
     Empezamos suponiendo que $Y=\{y\}$. Como $H$ es bipartita completa, existe
     una arista azul $e$ tal que $y$ es incidente en $e$, de ah\'i que $M = \{ e
-    \}$. Por otro lado, a lo m\'as existe una arista roja incidente en $y$,
+    \}$. Por otro lado, a lo m\'as, existe una arista roja incidente en $y$,
     digamos $e'$. Por tanto, la uni\'on de aristas rojas y aristas en $M$ es
     $\{e, e'\}$, que no es un ciclo.
 
-    Ahora suponemos que $|Y|>1$. Como tenemos que $|Y|<|Z|$, y hay a lo m\'as
+    Luego, suponemos que $|Y|>1$. Como tenemos que $|Y|<|Z|$ y hay, a lo m\'as,
     una arista roja incidente en cada v\'ertice de $Y$, entonces existe alg\'un
-    $x \in Z$ tal que no tiene aristas rojas incidentes. Sea $v \in Y$ y sea
+    $x \in Z$, tal que no tiene aristas rojas incidentes. Sea $v \in Y$ y sea
     $e$, en caso de existir, la arista roja incidente en $v$. Tomamos $H'=
     (H-v)-x$ con $R'$ el conjunto de aristas rojas de $H'$. Observamos que $Y' =
     Y- v$ y $Z'= Z- x$ son las clases de color de $H'$. Por hip\'otesis de
-    inducci\'on, existe un conjunto $M'$ de aristas azules incidentes en $H'$
-    tal que cada v\'ertice de $Y'$ incide exactamente en una arista de $M'$.
+    inducci\'on, existe un conjunto $M' \subseteq E(H')$ de aristas azules, tal
+    que cada v\'ertice de $Y'$ incide exactamente en una arista de $M'$.
     Adem\'as, $R'\cup M'$ es ac\'iclico.
     
     En $H$ definimos $M = M'\cup \{xv\}$. Al tomar $x$ sin aristas rojas,
-    tenemos que $M$ cumple tener una arista azul por v\'ertice en $Y$. Tambi\'en
-    definimos $R= R'\cup \{ e \}$, si es que existe $e$.  Dado que  $M'\cup R'$
-    es ac\'iclica y las aristas $\{vx\}$ y $e$, en caso de existir, no est\'an
-    en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'iclico.
+    tenemos que $M$ cumple tener una arista azul por v\'ertice en $Y$.
+    Tambi\'en, definimos $R= R'\cup \{ e \}$, si es que existe $e$.  Dado que
+    $M'\cup R'$ es ac\'iclica y las aristas $\{vx\}$ y $e$, en caso de existir,
+    no est\'an en $M'\cup R'$, entonces tenemos que $M \cup R$ es ac\'iclico.
 \end{proof}
 
 \begin{figure}[ht!]
@@ -540,50 +132,51 @@ demostrar el resultado principal de esta secci\'on.
         
     \end{tikzpicture}
 
-\caption{Ejemplo de una bigr\'afica completa resaltando la uni\'on de aristas
+\caption{Una gr\'afica bipartita completa, resaltando la uni\'on de aristas
 ${\color{fushia} \bf rojas}$ y ${\color{azulMetal}\bf azules}$ mencionadas en
 \cref{lem:rb-bipGraph}.}
 \label{fig:ex-rb-bioGraph}       
 \end{figure}
 
 Para aclarar \cref{lem:rb-bipGraph}, \cref{fig:ex-rb-bioGraph} muestra una
-gr\'afica bipartita con bipartici\'on $({\color{crema}
-\textbf{X}},{\color{baige} \textbf Y})$. Sea ${\color{azulMetal}\bf M}$ el
-conjunto de aristas azules mencionado en \cref{lem:rb-bipGraph}, resaltadas en
-figura, tenemos que ${\color{azulMetal} \bf M=\{v_1v_8,
-v_2v_9,v_3v_7,v_4v_{10}\}}$. Notamos que todo v\'ertice en ${\color{baige} \bf
-Y}$ tiene exactamente una arista en ${\color{azulMetal}\bf M}$. Adem\'as, la
-uni\'on de las aristas de ${\color{azulMetal}\bf M}$ y las aristas rojas, no
-forma un ciclo.
+gr\'afica bipartita completa con bipartici\'on $({\color{crema}
+\boldsymbol{X}},{\color{baige} \boldsymbol {Y}})$, con ${\color{crema}
+\boldsymbol {X}}=\{v_5, v_6,v_7, v_8, v_9, v_{10}\}$ y ${\color{baige}
+\boldsymbol {Y}}=\{v_1, v_2, v_3, v_4\}$. Sea ${\color{azulMetal} \boldsymbol
+{M=\{v_1v_8, v_2v_9,v_3v_7,v_4v_{10}\}}}$ el conjunto de aristas azules
+d\cref{lem:rb-bipGraph}, y resaltadas en la figura. Notamos que, todo v\'ertice
+en ${\color{baige} \boldsymbol {Y}}$ tiene exactamente una arista en
+${\color{azulMetal}\boldsymbol {M}}$. Adem\'as, la uni\'on de las aristas de
+${\color{azulMetal}\boldsymbol {M}}$ y las aristas rojas, no forma un ciclo.
 
 Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
 \begin{lema}%
 \label{lem:TrayIntAj}
-    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de $F_{k}(G)$
+    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de $F_{k}(G)$,
     tales que $|A \triangle B| = 2$, entonces hay $t$ $AB$-trayectorias
     internamente ajenas en $F_{k}(G)$. Adem\'as, si $t \geq k$, entonces hay
     $k(t- k + 1)$ $AB$-trayectorias internamente ajenas en $F_{k}(G)$.
 \end{lema}
 
 \begin{proof}
-    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de $F_{k}(G)$
+    Sea $G$ una gr\'afica $t$-conexa y sean $A$ y $B$ v\'ertices de $F_{k}(G)$,
     tales que $|A \triangle B| = 2$. Empezamos por probar que el n\'umero de
-    $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es al menos $t$. 
+    $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es, al menos, $t$. 
     
     Sean $a \in A \setminus B$ y $b \in B \setminus A$ los v\'ertices en la
-    diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces por el
-    Teorema General de Menger, existen $P_{1}, \dots, P_{t}$ $ab$-trayectorias
-    internamente ajenas en $G$. Por lo tanto, por \cref{lem:TrayIntAj-G-FG},
-    existen $A \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_t]{}  B$
-    $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
+    diferencia sim\'etrica. Al ser $G$ una gr\'afica $t$-conexa, entonces, por
+    el Teorema General de Menger, existen $P_{1}, \dots, P_{t}$
+    $ab$-trayectorias internamente ajenas en $G$. Por lo tanto, por
+    \cref{lem:TrayIntAj-G-FG}, existen $A \xrightarrow[P_1]{}  B, \dots, A
+    \xrightarrow[P_t]{}  B$ $AB$-trayectorias internamente ajenas en $F_{k}(G)$. 
 
     Ahora buscamos demostrar que, si $t \geq k$, entonces el n\'umero de
-    $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es al menos $k(t- k
+    $AB$-trayectorias internamente ajenas en $F_{k}(G)$ es, al menos, $k(t- k
     +1)$. Si $t=k$, entonces tenemos que $k(t - k + 1) = t(t-t+1) = t$, por lo
     que tenemos el caso anterior. Por lo tanto, consideramos  $t \geq k + 1$.
     Sea $\mathcal{P}$ un conjunto m\'aximo de $ab$-trayectorias internamente
-    ajenas en $G$. Por el Teorema General de Menger sabemos que $|\mathcal{P}|
+    ajenas en $G$. Por el Teorema General de Menger, sabemos que $|\mathcal{P}|
     \ge t$. Elegimos un conjunto $\mathcal{P}$ para el que ninguna trayectoria
     tenga cuerdas. Definimos a las trayectorias $P_{1}, \dots, P_{l}$ como
     aquellas en $\mathcal{P}$ que no intersectan a $A \cap B$ y $Q_{1}, \dots,
@@ -592,16 +185,16 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
 
     Definimos a $C$ como el conjunto de v\'ertices en $A \cap B$ que intersectan
     alg\'un $Q_i$, con $i \in \{1, \dots, s\}$. Observamos que, al ser $Q_1,
-    \dots, Q_s$ internamente ajenas, entonces cada v\'ertice de $C$ est\'a en
-    exactamente una $Q_i$, con $i \in \{1, \dots, s\}$. Definimos a $D$ como el
-    conjunto de v\'ertices en $A \cap B$ que no intersecta a $Q_i$ alguna, con
-    $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$ inducen una partici\'on
-    de $A \cap B$. Por ello, tenemos que $|A\cap B| = |C| + |D| = k-1$. Adem\'as
-    podemos ver que $s \leq |C| \leq k-1$ y como $ t - s \leq l$, entonces $l
-    \geq t -|C| = t- (k-1-|D|)$.
+    \dots, Q_s$ internamente ajenas y sin cuerdas, entonces cada v\'ertice de
+    $C$ est\'a en exactamente una $Q_i$, con $i \in \{1, \dots, s\}$. Definimos
+    a $D$ como el conjunto de v\'ertices en $A \cap B$ que no intersecta a $Q_i$
+    alguna, con $i \in \{1, \dots, s\}$. Observamos que $C$ y $D$ inducen una
+    partici\'on de $A \cap B$. Por ello, tenemos que $|A\cap B| = |C| + |D| =
+    k-1$. Adem\'as podemos ver que $s \leq |C| \leq k-1$ y, como $ t - s \leq
+    l$, entonces $l \geq t -|C| = t- (k-1-|D|)$.
 
-    Podemos separar las $AB$-trayectorias que consideramos en $F_{k}(G)$ en tres
-    tipos. Los primeros dos tipos son las trayectorias obtenidas
+    Podemos separar en tres tipos a las $AB$-trayectorias que consideramos en
+    $F_{k}(G)$. Los primeros dos tipos son las trayectorias obtenidas
     d\cref{lem:TrayIntAj-G-FG}, es decir, las trayectorias $A
     \xrightarrow[P_1]{}  B, \dots, A \xrightarrow[P_l]{}  B$ y $A
     \xrightarrow[Q_1]{}  B, \dots, A \xrightarrow[Q_s]{}  B$. Nombramos a estos
@@ -612,47 +205,47 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     mover la ficha de $a$ a trav\'es de $P_i$ hacia $b$, con $i \in \{1, \dots,
     l\}$.
     
-    Las \'ultimas trayectorias a considerar son las del tipo $R$, que
+    El \'ultimo tipo de trayectorias a considerar son las de tipo $R$, que
     construimos a continuaci\'on utilizando los vecinos de los v\'ertices en $A
-    \cap B$. Empezamos considerando $v \in C$, por lo que $v \in Q_i$ para un  $i
-    \in \{1, \dots, s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B) \cup
+    \cap B$. Empezamos considerando $v \in C$, as\'i $v \in Q_i$ para un $i \in
+    \{1, \dots, s\}$. Definimos $Y_v = N_G(v) \setminus ((A \cap B) \cup
     V(Q_i))$. Dado que $G$ es una gr\'afica $t$-conexa, $d_G(v) \geq t$. A su
     vez, $|A \cap B| =k -1$ y $v \in (A \cap B) \setminus N_G(v)$. Por \'ultimo,
     como $Q_i$ no tiene cuerdas, $v$ s\'olo tiene dos vecinos en $Q_i$. Por lo
     tanto, tenemos que $|Y_v| \geq t- (k-2)-2 = t-k$. 
     
     Ahora, sea $v \in D$ y definimos $Y_v = N_G(v) \setminus (A \cup B)$. Al ser
-    $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as, tenemos
-    que $|A \cup B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora,
-    notemos que $(a, v, b)$ no es una trayectoria en $G$. \'Esto pues de lo
-    contrario tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no
-    est\'a en $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots,
-    s\}$, por lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que
-    concluimos que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo tanto, tenemos
-    que $|Y_v| \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$, alg\'un subconjunto
-    de $Y_v$ con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$ si $v \in D$.
-    Notamos que $Y_v ' \neq \varnothing$ porque tomamos $t \geq k + 1$, adem\'as
-    tenemos que $a, b \notin Y_v '$ por definici\'on. 
+    $G$ una gr\'afica $t$-conexa, se cumple $d_G(v) \geq t$. Adem\'as, $|A \cup
+    B| = k + 1$ y $v \in (A \cup B) \setminus N_G(v)$. Ahora, notemos que $(a,
+    v, b)$ no es una trayectoria en $G$. Esto pues, de lo contrario,
+    tendr\'iamos una trayectoria cuyo \'unico v\'ertice interno no est\'a en
+    $P_i$ ni $Q_j$, con $i \in \{1, \dots, l\}$ y $j \in \{1, \dots, s\}$, por
+    lo que la trayectoria no estar\'ia en $\mathcal{P}$. Por lo que concluimos
+    que $a \notin N_G(v)$ o $b \notin N_G(v)$. Por lo tanto, tenemos que $|Y_v|
+    \geq t- (k-1) = t-k + 1$. Elegimos a $Y_v '$, alg\'un subconjunto de $Y_v$
+    con cardinalidad $t-k$ si $v \in C$ y $t- k+ 1$ si $v \in D$. Notamos que
+    $Y_v ' \neq \varnothing$, porque tomamos $t \geq k + 1$. Adem\'as, tenemos
+    que $a, b \notin Y_v '$, por definici\'on. 
 
     Sea $H_v$ la gr\'afica bipartita completa con clases de colores $Y_v '$ y
-    $\{1,\dots, l\}$. Definimos la siguiente coloraci\'on, si $y \in P_i$, para
-    alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces coloreamos la
-    arista $iy$ de rojo. Coloreamos el resto de las aristas de la gr\'afica de
-    azul. Ahora pasamos a comprobar que la coloraci\'on definida cumple las
-    hip\'otesis d\cref{lem:rb-bipGraph}. Empezamos notando que, por
+    $\{1,\dots, l\}$. Luego, definimos la siguiente coloraci\'on, si $y \in
+    P_i$, para alg\'un $i \in \{1, \dots, l\}$ y $y \in Y_v '$, entonces
+    coloreamos la arista $iy$ de rojo y coloreamos el resto de las aristas de la
+    gr\'afica de azul. Ahora, pasamos a comprobar que la coloraci\'on definida
+    cumple las hip\'otesis d\cref{lem:rb-bipGraph}. Primero, notamos que, por
     construcci\'on de los $P_i$, con $i \in \{1, \dots, l\}$, cada v\'ertice de
-    $Y_v '$ est\'a en a lo m\'as un $P_i$, por lo que cada v\'ertice de $Y_v '$
-    incide en a lo m\'as una arista roja. Luego, notemos que $|\{1, \dots, l\}|
-    = l  \geq t-k+ 1+ |D| > t-k + |D|$. Si $v \in D$, entonces $|D| \geq 1$ por
-    lo que $l \geq t- k+1 = |Y_v '|$. Si $v \in C$, tenemos que $l \geq t-k =
-    |Y_v '|$. As\'i, podemos usar \cref{lem:rb-bipGraph} en $H_v$ con $Z= \{1,
-    \dots, l\}$ y $Y = Y_v '$. Por lo tanto, hay un conjunto $M_v$ de aristas
-    azules tal que cada v\'ertice en $Y$ incide en exactamente una arista de
-    $M_v$ y la uni\'on de aristas rojas y aristas de $M_v$ es ac\'iclica.
-    Notamos que $|M_v|=|Y|$.
+    $Y_v '$ est\'a en, a lo m\'as, un $P_i$, por lo que cada v\'ertice de $Y_v
+    '$ incide en, a lo m\'as, una arista roja. A continuaci\'on, notemos que
+    $|\{1, \dots, l\}| = l  \geq t-k+ 1+ |D| > t-k + |D|$. Si $v \in D$,
+    entonces $|D| \geq 1$, por lo que $l \geq t- k+1 = |Y_v '|$. Si $v \in C$,
+    tenemos que $l \geq t-k = |Y_v '|$. As\'i, podemos usar
+    \cref{lem:rb-bipGraph} en $H_v$ con $Z= \{1, \dots, l\}$ y $Y = Y_v '$. Por
+    lo tanto, hay un conjunto $M_v$ de aristas azules tal que cada v\'ertice en
+    $Y$ incide en exactamente una arista de $M_v$ y la uni\'on de aristas rojas
+    y aristas de $M_v$ es ac\'iclica. Notamos que $|M_v|=|Y|$.
 
-    Usando $M_v$ construimos las trayectorias de tipo $R$ de la siguiente
-    manera. Para cada $jx \in M_v$ defininimos $R\langle v, x \rangle$ como la
+    Usando $M_v$, construimos las trayectorias de tipo $R$ de la siguiente
+    manera. Para cada $jx \in M_v$, defininimos $R\langle v, x \rangle$ como la
     trayectoria en $F_k(G)$ que corresponde a mover la ficha en $v$ hacia $x$,
     luego recorrer la trayectoria $A\setminus \{v\} \xrightarrow[P_j]{}
     (A\setminus \{v\})'$, donde $(A\setminus \{v\})' = (A\setminus \{v,a\})\cup
@@ -662,41 +255,41 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     \{v\}) \cup \{x\}$ y alg\'un v\'ertice $y \in P_i$.
 
     Falta ver que cada trayectoria de tipo $R$ es internamente ajena al resto de
-    las trayectorias. Primero veamos que las trayectorias de tipo $R$ son
+    las trayectorias. Primero, veamos que las trayectorias de tipo $R$ son
     internamente ajenas dos a dos. Supongamos que existen $R \langle v, x
-    \rangle$ y $R\langle v',x' \rangle$ tales que $(v,x) \neq (v',x')$ pero
+    \rangle$ y $R\langle v',x' \rangle$, tales que $(v,x) \neq (v',x')$ pero
     comparten un v\'ertice interno. Luego, tenemos que $ix \in M_v$ y $i'x'\in
     M_{v'}$, con $i, i' \in \{1, \dots, l\}$. Por construcci\'on de las
-    trayectorias de tipo $R$ tenemos que $((A\cap B)\setminus \{v\}) \cup \{x,
-    y\} =((A\cap B)\setminus \{v'\}) \cup \{x', y'\}$ para alg\'un $y \in P_i$ y
-    $y' \in P_{i'}$. Al tener $x'\in Y_{v'} '$, y ya que $((A \cap B )\setminus
-    \{v\}) \cap Y_{v'}'= \varnothing$, tenemos que $x' \in \{x,y\}$.
+    trayectorias de tipo $R$, tenemos que $((A\cap B)\setminus \{v\}) \cup \{x,
+    y\} =((A\cap B)\setminus \{v'\}) \cup \{x', y'\}$, para alg\'un $y \in P_i$
+    y $y' \in P_{i'}$. Al tener $x'\in Y_{v'} '$, adem\'as de que $((A \cap B
+    )\setminus \{v\}) \cap Y_{v'}'= \varnothing$, tenemos que $x' \in \{x,y\}$.
     An\'alogamente, como $(A \cap B) \cap P_i = \varnothing$, tenemos que $y'\in
-    \{x, y\}$. Por lo tanto, tenemos $\{x,y\}= \{x',y'\}$, lo cual implica que
-    $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, entonces $v = v'$.
-    \'Esto implica que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
+    \{x, y\}$. Por lo tanto, tenemos $\{x,y\}= \{x',y'\}$. Esto implica que
+    $(A\cap B)\setminus \{v\} = (A\cap B)\setminus \{v'\}$, as\'i $v = v'$.
+    Se sigue que $ix, i'x' \in M_v$, pero, por construcci\'on, cada
     v\'ertice de $Y_v '$ es incidente en s\'olo una arista de $M_v$, por lo que
     $x \neq x'$ y $i \neq i'$. Como tenemos que $\{x, y\}=\{x', y'\}$, entonces
-    $x=y'$ y $y=x'$. Por ello, tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo cual
-    implica que $xi'$ y $x'i$ son aristas rojas en $H_v$. Por lo tanto, tenemos
-    el ciclo $(x, i, x', i)$ con aristas de color azul, rojo, azul, rojo
-    respectivamente, lo cual es una contradicci\'on. As\'i pues, las
+    $x=y'$ y $y=x'$. Por ello, tenemos que $x \in P_{i'}$ y $x'\in P_i$, lo
+    cu\'al implica que $xi'$ y $x'i$ son aristas rojas en $H_v$. Por lo tanto,
+    tenemos el ciclo $(x, i, x', i)$ con aristas de color azul, rojo, azul, rojo
+    respectivamente, lo cu\'al es una contradicci\'on. As\'i pues, las
     trayectorias de tipo $R$ son internamente ajenas dos a dos.
 
-    Ahora pasamos a demostrar que los tipos de trayectorias formadas son
-    internamente ajenas dos a dos. Observamos que las trayectorias de tipo $Q$ y
-    de tipo $P$ son internamente ajenas por construcci\'on. As\'i pues,
-    comenzamos con las trayectorias de tipo $R$ y las de tipo $P$. Sean
-    $R\langle v,x \rangle$ y $A \xrightarrow[P_i]{}  B$, para alg\'un $i \in
-    \{1, \dots, l\}$, trayectorias en $F_k(G)$ de tipo $R$ y $P$,
-    respectivamente. Por construcci\'on, $v$ no est\'a en v\'ertice interno
-    alguno de $R \langle v,x \rangle$. Por otro lado, como $ v \in A\cap B$,
-    entonces $v$ est\'a est\'atico en $A \xrightarrow[P_i]{}  B$, es decir, $v$
-    est\'a en cada v\'ertice de la trayectoria. Por lo tanto, tenemos que las
-    trayectorias $R\langle v,x \rangle$ y $A \xrightarrow[P_i]{}  B$, para
-    alg\'un $i \in \{1, \dots, l\}$, son internamente ajenas.
+    Pasamos a demostrar que los tipos de trayectorias formadas son internamente
+    ajenas dos a dos. Observamos que, las trayectorias de tipo $Q$ y de tipo $P$
+    son internamente ajenas por construcci\'on. As\'i pues, comenzamos con las
+    trayectorias de tipo $R$ y las de tipo $P$. Sean $R\langle v,x \rangle$ y $A
+    \xrightarrow[P_i]{}  B$, para alg\'un $i \in \{1, \dots, l\}$, trayectorias
+    en $F_k(G)$ de tipo $R$ y $P$, respectivamente. Por construcci\'on, $v$ no
+    est\'a en v\'ertice interno alguno de $R \langle v,x \rangle$. Por otro
+    lado, como $ v \in A\cap B$, entonces $v$ est\'a est\'atico en $A
+    \xrightarrow[P_i]{}  B$, es decir, $v$ est\'a en cada v\'ertice de la
+    trayectoria. Por lo tanto, tenemos que las trayectorias $R\langle v,x
+    \rangle$ y $A \xrightarrow[P_i]{}  B$, para alg\'un $i \in \{1, \dots, l\}$,
+    son internamente ajenas.
 
-    Ahora nos enfocamos las trayectorias de tipo $Q$ y las de tipo $R$. Sean
+    Ahora, nos enfocamos en las trayectorias de tipo $Q$ y las de tipo $R$. Sean
     $R\langle v,x \rangle$ y $A \xrightarrow[Q_i]{}  B$, para alg\'un $i \in
     \{1, \dots, s\}$, trayectorias en $F_k(G)$ de tipo $R$ y $Q$,
     respectivamente. Sea $jx$ arista en $M_v$, con $j \in \{1, \dots, l\}$,
@@ -704,7 +297,7 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     est\'atico en $A \xrightarrow[Q_i]{} B$, es decir, est\'a en cada v\'ertice
     de la trayectoria. Por otro lado, por construcci\'on, tenemos que $v$ no
     est\'a en los v\'ertices internos de $R \langle v, x \rangle$. Por lo tanto,
-    las trayectorias son internamente ajenas. Ahora consideramos el caso en el
+    las trayectorias son internamente ajenas. Luego, consideramos el caso en el
     que $v \in Q_i$, es decir, $v \in C$. Por como definimos $R \langle v,x
     \rangle$, $x$ est\'a en cada v\'ertice interno de la trayectoria. Por otro
     lado, como $x \in Y_v'$, y por construcci\'on, tenemos que $Y_v ' \cap
@@ -715,73 +308,78 @@ Ahora pasamos a demostrar el lema principal de esta secci\'on.
     las trayectorias $R \langle v,x \rangle$ y $A \xrightarrow[Q_i]{}  B$ son
     internamente ajenas.
 
-    Tenemos que hay $l$ y $s$ trayectorias de tipo $P$ y $Q$ respectivamente.
-    Adem\'as, para cada $v \in C$ hay $t-k$ trayectorias de tipo $R$ y para cada
-    $v \in D$ hay $t-k+1$ trayectorias de tipo $R$. Por lo que en $F_k(G)$ hay $l+
-    s+ |C|(t-k)+ |D|(t-k +1) = l + s + (|C| + |D|)(t-k) + |D| = l + s +
-    (|k-1)(t-k) + |D|$ trayectorias internamente ajenas. Despejando tenemos que
-    $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k +1)$. Por lo tanto, el
-    n\'umero de $AB$-trayectorias en $F_k(G)$ es al menos $k(t-k+1)$.
+    Hay $l$ y $s$ trayectorias de tipo $P$ y $Q$, respectivamente. Adem\'as,
+    para cada $v \in C$, hay $t-k$ trayectorias de tipo $R$ y, para cada $v \in
+    D$, hay $t-k+1$ trayectorias de tipo $R$. Por lo que la cantidad de
+    trayectorias internamente ajenas en $F_k(G)$ es
+    \[
+    l+ s+ |C|(t-k)+ |D|(t-k +1) = l + s + (|C| + |D|)(t-k) + |D|
+    = l + s + (|k-1)(t-k) + |D|.
+    \]
+     Despejando, tenemos que $l + s + (k-1)(t-k) + |D| \geq t+ (k-1)(t-k) = k (t -k
+    +1)$. Por lo tanto, el n\'umero de $AB$-trayectorias en $F_k(G)$ es, al
+    menos, $k(t-k+1)$.
 
 \end{proof}
 
-Con esto queda demostrado el resultado principal de esta secci\'on. Para
-intentar ejemplificar los tres tipos de trayectorias mencionados en
-\cref{lem:TrayIntAj}, \cref{fig:ex-tok-path}, a continuaci\'on mostrada, exhibe
-una gr\'afica $G$ del lado izquierdo y su gr\'afica de $3$-fichas del lado
-derecho. Ahora, construimos una trayectoria de cada tipo. Consideramos
-${\color{baige}\bf A= \{1,2,3\}}$ y ${\color{baige}\bf B=\{2,3,5\}}$ los
-v\'ertices en $F_3(G)$ sobre los que resaltamos los distintos tipos de
-trayectorias internamente ajenas obtenidas en el lema anterior. Tenemos que
-${\color{baige} \bf A\triangle B=\{1,5\}}$ y $A\cap B=\{2,3\}$, por lo que
-usamos $15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de
-tipo $Q$, de manera que las de tipo $P$ no tienen a $2$ ni a $3$ como v\'ertice
-interno y las de tipo $Q$ tienen a ambos como v\'ertices internos, recordando
-que $A\cap B=\{2,3\}$. Tomamos ${\color{naranja}\bf P_1=(1,4,5)}$ y
-${\color{fushia}\bf Q_1(1,2,3,5)}$. Ahora tomamos ${\color{fushia}\bf 2} \in C$
-y su vecino ${\color{menta}\bf x\notin P_1}$, en este caso $x=6$. De esta manera
-tenemos la trayectoria del tercer tipo
-\[
-    {\color{verdeAzulado}\bf R_1=(\{1,2,3\}.\{1,3,6\}\{1,4,6\}\{1,5,6\}\{2,5,6\}
-    \{3,5,6\}\{2,3,5\})}.
-\]
-
+Con esto queda demostrado el resultado principal de la secci\'on. Para
+ejemplificar los tres tipos de trayectorias mencionados en \cref{lem:TrayIntAj},
+\cref{fig:ex-tok-path}, mostrada a continuaci\'on, exhibe una gr\'afica $G$ del
+lado izquierdo y su gr\'afica de $3$-fichas del lado derecho. Ahora, construimos
+una trayectoria de cada tipo. Consideramos ${\color{baige}\boldsymbol {A=
+\{1,2,3\}}}$ y ${\color{baige}\boldsymbol {B=\{2,3,5\}}}$ los v\'ertices en
+$F_3(G)$ sobre los que resaltamos los distintos tipos de trayectorias
+internamente ajenas obtenidas en el lema anterior. Tenemos que ${\color{baige}
+\boldsymbol {A\triangle B=\{1,5\}}}$ y $A\cap B=\{2,3\}$, por lo que usamos
+$15$-trayectorias para encontrar las trayectorias de tipo $P$ y las de tipo $Q$,
+de manera que las de tipo $P$ no tienen a $2$ ni a $3$ como v\'ertice interno y
+las de tipo $Q$ tienen, o bien a $2$ o bien a $3$ como v\'ertices internos.
+Notamos que hay dos trayectorias de tipo $P$ en $G$, la trayectoria
+$P_1=(1,4,5)$ y la trayectoria ${\color{naranja}\boldsymbol {P_2=(1,6,5)}}$. En
+\cref{fig:ex-tok-path} se encuentra resaltada $P_2$ de ${\color{naranja} \bf
+naranja}$. Tambi\'en podemos observar que hay dos trayectorias de tipo $Q$ en
+$G$, la trayectoria ${\color{fushia}\boldsymbol {Q_1(1,3,5)}}$, resaltada en
+\cref{fig:ex-tok-path} de ${\color{fushia}\bf rosa}$, y la trayectoria
+$Q_2=(1,2,5)$. As\'i, tenemos que los conjuntos auxiliares d\cref{lem:TrayIntAj}
+son $C=\{2,3\}$ y $D= \varnothing$. Utilizando $v=3$ y
+${\color{menta}\boldsymbol {x=4}}$ del lema y ${\color{naranja}\boldsymbol
+{P_2}}$, construimos la trayectoria $ {\color{verdeAzulado}\boldsymbol {R\langle
+3, 4 \rangle =\{1,2,3\}\{1,2,4\} \{2,4,6\}\{2,4,5\}\{2,3,5\}}}$.
 
 \begin{figure}[ht!]
 \centering
    \begin{tikzpicture}
 
-    \begin{scope}[xshift=-8.5cm]
+    \begin{scope}[xshift=-8.5cm,scale=0.9]
         
        
         \foreach \i in {0,4}
             \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=baige]{};
-        \foreach \i in {1,2}
-            \draw ({(360/6)*\i}:2) node(\i)[wvertex,fill=fushia]{};
-        \draw ({(360/6)*3}:2) node(3)[wvertex,fill=naranja]{};
-        \draw ({(360/6)*5}:2) node(5)[wvertex,fill=menta]{}; 
+        \draw ({(360/6)}:2) node(1)[bvertex]{};
+        \draw ({(360/6)*2}:2) node(2)[wvertex,fill=fushia]{}; 
+        \draw ({(360/6)*3}:2) node(3)[wvertex,fill=menta]{};
+        \draw ({(360/6)*5}:2) node(5)[wvertex,fill=naranja]{}; 
         \foreach \i in {0,...,5}
             \draw ({(360/6)*\i}:2.5) node(e0){\pgfmathparse{int(\i+1)}
            \pgfmathresult};
-        \foreach \i/\j in {0/2,0/5,1/4,1/5,2/3,2/5,3/5,4/5}
+        \foreach \i/\j in {0/3,0/1,1/2,1/4,1/5,2/3,2/5,3/5,3/4}
             \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach \i/\j in {0/1,1/2,2/4}
+        \foreach \i/\j in {0/2,2/4}
             \draw [wedge,fushia] (\i) to (\j);
-        \foreach \i/\j in {0/3,3/4}
+        \foreach \i/\j in {0/5,4/5}
             \draw [wedge,naranja] (\i) to (\j);
         
         \end{scope}
     
-    \begin{scope}[xshift=0cm,yshift=0cm,scale=1]
+    \begin{scope}[xshift=-0.77cm,yshift=0cm,scale=1]
 
-        \foreach \i in {6,11} 
-            \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=fushia]{}; 
-        \foreach \i in {0,2,15} 
+        \draw ({(360/16)*6}:4) node(6)[wvertex,fill=fushia]{}; 
+        \foreach \i in {3,7} 
             \draw ({(360/16)*\i}:4) node(\i)[wvertex,fill=verdeAzulado]{}; 
         
         \draw ({(360/16)*5}:4) node(5)[wvertex,fill=baige]{};
-        \draw ({(360/16)*8}:4) node(8)[wvertex,fill=naranja]{};     
-        \foreach \i in {1,3,4,7,9,10,12,13,14} 
+        \draw ({(360/16)*1}:4) node(1)[wvertex,fill=naranja]{};     
+        \foreach \i in {8,12,4,10,14,11,0,2,9,13,15} 
             \draw({(360/16)*\i}:4) node(\i)[wvertex]{};
 
         \draw ({(360/16)*1}:4.5) node (e1) {{\footnotesize $236$}};
@@ -801,109 +399,107 @@ tenemos la trayectoria del tercer tipo
         \draw ({(360/16)*15}:4.5) node (e1) {{\footnotesize $156$}};
         \draw ({(360/16)*16}:4.5) node (e1) {{\footnotesize $136$}};
 
-        \draw (-1.1,0.2) node (17) [vertex,label=10:{\tiny $124$}] {};
-        \draw (0.1,-0.3) node (18) [vertex,fill=verdeAzulado ,label=70:{\tiny $146$}] {};
-        \draw (1.2,0.7) node (19) [vertex,fill=verdeAzulado ,label=180:{\tiny $356$}] {};
+        \draw (-1.1,0.2) node (17) [vertex,fill=verdeAzulado,label=10:{\tiny $124$}] {};
+        \draw (0.1,-0.3) node (18) [vertex,label=70:{\tiny $146$}] {};
+        \draw (1.2,0.7) node (19) [vertex,label=180:{\tiny $356$}] {};
         \draw (0.3,1.4) node (20) [vertex,fill=baige ,label=88:{\tiny $235$}] {};
         
         \foreach\i/\j in{0/1,1/2,2/3,3/4,4/5,6/7,7/8,8/9,9/10,10/11,
-           11/12,12/13,13/14, 14/15, 15/0} 
+           11/12,12/13,13/14, 14/15,15/0} 
            \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach\i/\j in{0/4,0/11,0/13,1/3,1/4,1/5,2/6,2/7,3/7,3/8,
+        \foreach\i/\j in{0/4,0/11,0/13,1/3,1/4,2/6,2/7,3/8,
         4/6,4/15,6/15,7/10,7/12,8/12,8/13,9/11,9/13,10/12,10/14,10/15,
         11/15,12/14} 
            \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach \i/\j in{1/8,3/13,3/14,5/11,7/14,9/0,9/18,17/3,17/4,17/5,17/6,
+        \foreach \i/\j in{1/8,3/13,3/14,5/11,7/14,9/0,9/18,17/4,17/6,
         17/8,17/9,17/10,17/18,3/18,18/10,18/13,19/1,19/11,19/12,
-        19/13,19/14,19/15,20/1,20/2,20/6,20/7}
+        19/13,19/14,19/15,6/11,11/20,20/2,5/0,0/18,18/15,15/2,2/19,19/20,5/8,8/20}
           \draw [edge,grisOscuro!60] (\i) to (\j);
-        \foreach\i/\j in{5/6,6/11,11/20} 
+        \foreach\i/\j in{5/6,20/6} 
            \draw [wedge,fushia] (\i) to (\j);
-        \foreach\i/\j in{5/8,8/20} 
+        \foreach\i/\j in{1/5,20/1} 
            \draw [wedge,naranja] (\i) to (\j);
-        \foreach\i/\j in{5/0,0/18,18/15,15/2,2/19,19/20} 
+        \foreach\i/\j in{17/5,17/3,3/7, 20/7} 
           \draw [wedge,verdeAzulado] (\i) to (\j);
         
    \end{scope}
 
-        
-
 \end{tikzpicture}
-\caption{Ejemplo de una gr\'afica $G$ y su gr\'afica de $3$-fichas resaltando
-las trayectorias internamente ajenas de ${\color{baige}\bf A}$ y
-${\color{baige}\bf B}$.}
+\caption{Una gr\'afica $G$ (izquierda) y su gr\'afica de $3$-fichas (derecha),
+resaltando las trayectorias internamente ajenas de ${\color{baige}\boldsymbol
+{A}}$ y ${\color{baige}\boldsymbol {B}}$.}
 \label{fig:ex-tok-path}
 \end{figure}
-
-\newpage
 
 \section{Conexidad}%
 \label{sec:conexidad}
 
-Pasamos a enfocarnos en la conexidad de las gr\'aficas de fichas. Con ayuda de
-los resultados encontrados en las secciones anteriores, esta secci\'on buscamos
+Ahora nos enfocamos en la conexidad de las gr\'aficas de fichas. Con ayuda de
+los resultados encontrados en la secci\'on anterior, en esta secci\'on buscamos
 estudiar la relaci\'on entre la conexidad de una gr\'afica y su gr\'afica de
 $k$-fichas.  El siguiente teorema nos muestra la relaci\'on buscada.
 
 \begin{teorema}%
 \label{teo:FG-t-conexa}
     Si $G$ es una gr\'afica $t$-conexa, entonces $F_{k}(G)$ es $t$-conexa para
-    todo $k>1$
+    todo $k>1$.
 \end{teorema}
         
 \begin{proof}
 Primero, observamos que $A$ y $B$ son v\'ertices adyacentes en $F_k(G)$ si y
 s\'olo si $V(G) \setminus A$ y $V(G)\setminus B$ son adyacentes en $F_{n-k}(G)$.
-De esta manera, tenemos que $F_k(G) \cong F_{n-k}(G)$. Por lo tanto, asumimos
+De esta manera, tenemos que $F_k(G) \cong F_{n-k}(G)$. Por lo tanto, asumimos,
 sin p\'erdida de generalidad, que $k \leq \frac{n}{2}$.
 
-Sea $\mathcal{C}$ un m\'inimo corte por v\'ertices de $F_k(G)$. Basta
-demostrar que $|\mathcal{C}| \geq t$. Definimos $A$ y $B$ como los v\'ertices en
-distintas componentes de $F_k(G)- \mathcal{C}$ tales que $|A \triangle B|$ es
-m\'inimo.
+Sea $\mathcal{C}$ un corte m\'inimo por v\'ertices de $F_k(G)$. Basta demostrar
+que $|\mathcal{C}| \geq t$. Sean $A$ y $B$ v\'ertices en distintas componentes
+de $F_k(G)- \mathcal{C}$, tales que $|A \triangle B|$ es m\'inimo. Si $|A
+\triangle B| = 2$, entonces, por \cref{lem:TrayIntAj}, tenemos que hay $t$
+$AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo que tenemos que
+$|\mathcal{C}| \geq t$.
 
-Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj}
-tenemos que hay $t$ $AB$-trayectorias internamente ajenas en $F_k(G)$. Por lo
-que tenemos que $|\mathcal{C}| \geq t$.
-
-Ahora consideramos $|A \triangle B| = 2r \geq 4$. Definimos $A \setminus B
-=\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$. Tambi\'en
-definimos $A_{i,x} = A\setminus \{a_i\} \cup \{x\}$ y $B_{j,x} = B\setminus
-\{b_j\} \cup \{x\}$ para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
-(A\cup B)$. Supongamos que para algunos $i, j$ y $x$ tenemos que $A_{i,x} \notin
-\mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} = \{a_i,
-x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$, por lo que
-$A$ y $A_{i,x}$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
+Ahora, consideramos el caso en el que $|A \triangle B| = 2r \geq 4$. Definimos
+$A \setminus B =\{a_1, \dots, a_r\}$ y $B \setminus A =\{b_1, \dots, b_r\}$.
+Tambi\'en definimos $A_{i,x} = (A\setminus \{a_i\}) \cup \{x\}$ y 
+\linebreak
+$B_{j,x} = (B\setminus
+\{b_j\}) \cup \{x\}$, para cada $i \in \{1, \dots, r\}$ y $x \in V(G)\setminus
+(A\cup B)$. Supongamos que, para algunos $i, j$ y $x$, tenemos que $A_{i,x}
+\notin \mathcal{C}$ y $B_{j,x} \notin \mathcal{C}$. Como $A \triangle A_{i,x} =
+\{a_i, x\}$, entonces tenemos que $|A \triangle A_{i,x}|< |A \triangle B|$, por
+lo que $A$ y $A_{i,x}$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
 An\'alogamente, tenemos que  $B$ y $B_{j,x}$ est\'an en la misma componente de
 $F_k(G)-\mathcal{C}$.
 
-Luego nos fijamos en que $A_{i,x} \triangle B_{j,x} = (A \triangle B) \setminus
-\{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$. As\'i, tenemos
-que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de $F_k(G)-
-\mathcal{C}$. Pero tenemos que $A$ y$A_{i,x}$ est\'an en la misma componente, de
-$F_K(G) - \mathcal{C}$, de igual manera que $B$ y $B_{j,x}$, por lo tanto, $A$ y
-$B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$. Esto es una
-cotradicci\'on, pues tomamos a $A$ y $B$ en distintas componentes, lo que
-implica que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las $i,j$
-y $x$.
+Por otro lado, notemos que $A_{i,x} \triangle B_{j,x} = (A \triangle B)
+\setminus \{a_i, b_j\}$. Por lo que $|A_{i,x} \triangle B_{j,x}| = 2(r-1)$.
+As\'i, tenemos que $A_{i,x}$ y $B_{j,x}$ est\'an en la misma componente de
+$F_k(G)- \mathcal{C}$. Pero, tenemos que $A$ y$A_{i,x}$ est\'an en la misma
+componente de $F_K(G) - \mathcal{C}$; de igual manera que $B$ y $B_{j,x}$. Por
+lo tanto, $A$ y $B$ est\'an en la misma componente de $F_k(G)- \mathcal{C}$.
+Esto es una contradicci\'on, pues tomamos a $A$ y $B$ en distintas componentes,
+lo que implica que $A_{i,x}$ o $B_{j,x}$ est\'a en $\mathcal{C}$, para todas las
+$i,j$ y $x$.
 
-Por lo anterior tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
-$\mathcal{C}$ tiene todos los $\{A_i,x \colon\  i \in \{1, \dots, r\}\}$ o todos los
-$\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$, sabemos que
-$\mathcal{C}$ tiene al menos $r(n-k-r)$ v\'ertices.
+Por lo anterior, tenemos que, para cada $x \in V(G)\setminus (A \cup B)$,
+$\mathcal{C}$ tiene todos los $\{A_i,x \colon\  i \in \{1, \dots, r\}\}$ o todos
+los $\{B_j,x \colon\ j \in \{1, \dots, r\}\}$. Dado que $|A\cup B|=k +r$,
+sabemos que $\mathcal{C}$ tiene, al menos, $r(n-k-r)$ v\'ertices.
 
-Ahora definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} =
-(B\setminus \{b_i\}) \cup \{a_j\}$, para toda $ i, j \in \{1, \dots, r\}$.
-Notamos que hay $2r^2$ de estos conjuntos. Supongamos que $A_{i,j} \notin
-\mathcal{C}$, para algunos $ i, j \in \{1, \dots, r\}$, entonces tenemos que $A
-\triangle A_{i,j} = \{a_i, b_j\}$. Por tanto, $A$ y $A_{i,j}$ est\'an en la
-misma componente de $F_k(G)- \mathcal{C}$. Por otro lado, $|B \triangle A_{i,j}|
-= 2 (r-1)$, por lo que $B$ y $A_{i,j}$ est\'an en la misma componente de $F_k(G)
-- \mathcal{C}$. Por ende, tenemos que $A$ y $B$ est\'an en la misma componente
-de $F_k(G)-\mathcal{C}$, lo cu\'al nos lleva a la misma contradicci\'on que el
-caso anterior. Por lo tanto, tenemos que $A_{i,j} \in \mathcal{C}$ para toda $i,
-j \in \{1, \dots, r\}$. De manera an\'aloga $B_{i,j} \in \mathcal{C}$. Por lo
-tanto tenemos que $\mathcal{C}$ tiene $2r^2$ v\'ertices, adem\'as de los del
+Definimos $A_{i,j} = (A\setminus \{a_i\}) \cup \{b_j\}$ y $B_{i,j} = (B\setminus
+\{b_i\}) \cup \{a_j\}$, para toda 
+\linebreak
+$ i, j \in \{1, \dots, r\}$. Notamos que hay
+$2r^2$ de estos conjuntos. Supongamos que $A_{i,j} \notin \mathcal{C}$, para
+algunos $ i, j \in \{1, \dots, r\}$, entonces tenemos que $A \triangle A_{i,j} =
+\{a_i, b_j\}$. Por tanto, $A$ y $A_{i,j}$ est\'an en la misma componente de
+$F_k(G)- \mathcal{C}$. Por otro lado, $|B \triangle A_{i,j}| = 2 (r-1)$, por lo
+que $B$ y $A_{i,j}$ est\'an en la misma componente de $F_k(G) - \mathcal{C}$.
+Por ende, tenemos que $A$ y $B$ est\'an en la misma componente de
+$F_k(G)-\mathcal{C}$, lo cu\'al nos lleva a la misma contradicci\'on que el caso
+anterior. Por lo tanto, tenemos que $A_{i,j} \in \mathcal{C}$, para toda $i, j
+\in \{1, \dots, r\}$. De manera an\'aloga, $B_{i,j} \in \mathcal{C}$. Por lo
+tanto, tenemos que $\mathcal{C}$ tiene $2r^2$ v\'ertices, adem\'as de los del
 caso anterior.
 
 As\'i, tenemos que $|\mathcal{C}|\geq r(n-k-r)+2r^2 = r(n-k) + r^2$, pero $r
@@ -912,14 +508,15 @@ r(n-k)+r^2 > r(n-k) \geq 2(n-k) \geq n >t$. Por lo tanto, $|\mathcal{C}|>t$.
 \end{proof} 
 
 Utilizamos las gr\'aficas de \cref{fig:ex-tConect} para ejemplificar
-\cref{teo:FG-t-conexa}. Nos fijamos que $G$, mostrada del lado izquierdo, es una
-gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del lado derecho, es
-$8$-conexa. En la figura, se muestran los conjuntos de corte
-${\color{naranja}\bf \{1,3,5,6\}}$ y ${\color{fushia}\bf
-\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}$ para $G$ y
-$F_2(G)$, respectivamente. Adem\'as, utilizando \cref{fig:ex-tok-path}, podemos
-ver que $F_3(G)$ es $9$-conexa. Por lo tanto, tenemos que $F_2(G)$ y $F_3(G)$
-son gr\'aficas $4$-conexas.
+\cref{teo:FG-t-conexa}. Nos fijamos que $G$, mostrada del lado izquierdo en la
+figura, es una gr\'afica $4$-conexa y su gr\'afica de $2$-fichas, mostrada del
+lado derecho, es $8$-conexa. En la figura tambi\'en se muestra el conjuntos de
+corte de $G$, ${\color{naranja}\boldsymbol{ \{1,3,5,6\}}}$, y el conjunto de
+corte de $F_k(G)$, es decir, ${\color{fushia}\boldsymbol
+{\{\{1,2\},\{1,3\},\{1,5\},\{1,6\},\{2,4\},\{3,5\},\{3,6\},\{5,6\}\}}}$.
+Adem\'as, utilizando \cref{fig:ex-tok-path}, podemos ver que $F_3(G)$ es
+$9$-conexa. Por lo tanto, tenemos que $F_2(G)$ y $F_3(G)$ tambi\'en son
+gr\'aficas $4$-conexas.
 
 \begin{figure}[ht!]
     \centering
@@ -945,7 +542,7 @@ son gr\'aficas $4$-conexas.
         \begin{scope}[xshift=-1cm,yshift=0cm,scale=1]
         
             \foreach \i in{0,3,7,8,10} \draw ({(360/12)*\i}:3.5)
-            node(\i)[wvertex,,fill=azulMetal]{};
+            node(\i)[wvertex,fill=azulMetal]{};
 
             \foreach \i in{1,2,4,5,6,9,11} \draw ({(360/12)*\i}:3.5)
             node(\i)[wvertex,fill=fushia!60]{};
@@ -962,7 +559,7 @@ son gr\'aficas $4$-conexas.
             \draw ({(360/12)*10}:4) node (e1) {{\footnotesize $34$}};
             \draw ({(360/12)*11}:4) node (e1) {{\footnotesize $24$}};
             \draw ({(360/12)*12}:4) node (e1) {{\footnotesize $23$}};
-            \draw (0.3,1) node (13) [vertex,,fill=azulMetal, label=10:{\scriptsize $25$}] {};
+            \draw (0.3,1) node (13) [vertex,fill=azulMetal, label=10:{\scriptsize $25$}] {};
             \draw (0.9,-1) node (14) [vertex,fill=azulMetal, label=10:{\scriptsize $14$}] {};
             \draw (-0.8,-0.6) node (15) [vertex,fill=fushia!60, label=120:{\scriptsize $36$}] {};
           
@@ -979,33 +576,38 @@ son gr\'aficas $4$-conexas.
             \end{scope}
 
     \end{tikzpicture}
-    \caption{Cortes m\'inimos en $G$ y en $F_2(G)$.}
+    \caption{Cortes m\'inimos en $G$ (izquierda) y en $F_2(G)$ (derecha).}
     \label{fig:ex-tConect}
     \end{figure}
 
-Por \'ultimo, el siguiente teorema presenta una mejor cota para gr\'aficas
-suficientemente conexas y suficientemente grandes.
+Por \'ultimo, \cref{teo:FG_k(t- k+ 1)-conexa} presenta una mejor cota para
+gr\'aficas suficientemente conexas y suficientemente grandes.
 
 \begin{teorema}%
     \label{teo:FG_k(t- k+ 1)-conexa}
-        Sea $G$ una gr\'afica.   Si $G$ es $t$-conexa con $t \ge k$ y $n \ge
+        Sea $G$ una gr\'afica. Si $G$ es $t$-conexa, con $t \ge k$ y $n \ge
         \frac{1}{2} kt$, entonces $F_{k}(G)$ es $k (t- k+ 1)$-conexa.
     \end{teorema}
 
     \begin{proof}
-        Sea $\mathcal{C}$ un corte por v\'ertices m\'inimo de $F_k(G)$. Sean
-        $A$ y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$
+        Sea $\mathcal{C}$ un corte por v\'ertices m\'inimo de $F_k(G)$. Sean $A$
+        y $B$ v\'ertices en distintas componentes de $F_k(G)- \mathcal{C}$,
         tales que $|A \triangle B|$ es m\'inima.
 
-        Si $|A \triangle B| = 2$, entonces por \cref{lem:TrayIntAj} tenemos que
-        $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos que
-        $|\mathcal{C}| \geq k (t- k+ 1)$.
+        Si $|A \triangle B| = 2$, entonces, por \cref{lem:TrayIntAj}, tenemos
+        que $F_k(G)$ tiene $k (t- k+ 1)$ $AB$-trayectorias. Por lo que tenemos
+        que $|\mathcal{C}| \geq k (t- k+ 1)$.
 
         Ahora nos enfocamos en el caso en el que $|A \triangle B| = 2r \ge 4$.
         Utilizamos la desigualdad obtenida al final de la demostraci\'on
-        d\cref{teo:FG-t-conexa}, i.e., $|\mathcal{C}| \ge r(n-k-r)+2r^2$. Dado
-        que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que
-        $|\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4$.
+        d\cref{teo:FG-t-conexa}, es decir, 
+        \[
+            |\mathcal{C}| \ge r(n-k-r)+2r^2.
+        \]
+        Dado que $r \ge 2$ y $n \ge \frac{1}{2}kt$, entonces tenemos que 
+        \[
+            |\mathcal{C}| \ge r(n-k-r)+2r^2 \ge 2 (n- k -2) + 8 \ge tk - 2k+ 4.
+        \]
         Observamos que $k^2 -3k + 4 \ge 0$, para toda $k \ge 1$. De ah\'i que
         $-2k+4 \ge -k^2 + k$, lo cu\'al implica que $kt -2k +4 \ge kt - k^2 + k
         = k (t - k +1)$. Luego, tenemos que $|\mathcal{C}| \ge tk -2k +4 \ge
