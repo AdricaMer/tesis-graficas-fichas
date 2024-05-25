@@ -678,26 +678,30 @@ pueden existir cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean
 $X,Y \subseteq V(G)$, $S$ es un $XY$\textbf{-corte por v\'ertices}\index{corte
 por v\'ertices!X @$XY$-corte}\index{v\'ertices!X @$XY$-corte} si $G-S$ es una
 gr\'afica inconexa donde $X$ y $Y$ se encuentran en distintas componentes
-conexas. Cabe notar que no todas las gr\'aficas tienen alg\'un corte por
-v\'ertices, a saber, las gr\'aficas en las que cualesquiera dos v\'ertices son
-adyacentes no tienen cortes por v\'ertices, y son las \'unicas con esta
-propiedad. Ahora, usando el concepto de corte por v\'ertices, definimos la
-conexidad de una gr\'afica. El \indice{n\'umero de conexidad} de una gr\'afica
-$G$, denotado por $\kappa(G)$, se define como la m\'inima cardinalidad de un
-conjunto de corte de $G$, es decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{
-es corte por v\'ertices}\}$. Como ya se observ\'o, las gr\'aficas completas no
-tienen cortes por v\'ertices, no obstante, por convenci\'on decimos que una
-gr\'afica completa de $n$ v\'ertices tiene n\'umero de conexidad $n-1$. Por otra
-parte, el vac\'io es un corte por v\'ertices en cualquier gr\'afica inconexa,
-por lo que una gr\'afica inconexa tiene n\'umero de conexidad $0$.
-Adicionalmente, decimos que una gr\'afica $G$ es $t$\textbf{-conexa}
-\index{gr\'afica!t @$t$-conexa} si $|V(G)|>t$ y $G-X$ es conexa para todo
-conjunto de v\'ertices $X$ tal que $|X|<t$. Para ejemplificar el concepto de
-conexidad nos fijamos en las gr\'aficas en \cref{fig:isoGraf} y
-\cref{fig:subgraf}. Notamos que ambas son conexas, sin embargo, necesitamos
-m\'as v\'ertices para ``desconectar'' la gr\'afica de \cref{fig:subgraf} que las
-gr\'aficas de \cref{fig:isoGraf}. A saber, las gr\'aficas de \cref{fig:isoGraf}
-son $2$-conexas y la gr\'afica de \cref{fig:subgraf} es $6$-conexa.
+conexas. Vale la pena notar que $X$ y $Y$ pueden compartir v\'ertices, en este
+caso, para separar a los conjuntos, $S$ debe contener a los elementos de la
+intersecci\'on, por lo que el $XY$-corte por v\'ertices $S$ deja a $X\setminus
+S$ y $Y \setminus S$ en dos componentes conexas en $G-S$. Cabe notar que no
+todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber, las
+gr\'aficas en las que cualesquiera dos v\'ertices son adyacentes no tienen
+cortes por v\'ertices, y son las \'unicas con esta propiedad. Ahora, usando el
+concepto de corte por v\'ertices, definimos la conexidad de una gr\'afica. El
+\indice{n\'umero de conexidad} de una gr\'afica $G$, denotado por $\kappa(G)$,
+se define como la m\'inima cardinalidad de un conjunto de corte de $G$, es
+decir, $\kappa(G)=\min \{|S| \colon\ S \textnormal{ es corte por v\'ertices}\}$.
+Como ya se observ\'o, las gr\'aficas completas no tienen cortes por v\'ertices,
+no obstante, por convenci\'on decimos que una gr\'afica completa de $n$
+v\'ertices tiene n\'umero de conexidad $n-1$. Por otra parte, el vac\'io es un
+corte por v\'ertices en cualquier gr\'afica inconexa, por lo que una gr\'afica
+inconexa tiene n\'umero de conexidad $0$. Adicionalmente, decimos que una
+gr\'afica $G$ es $t$\textbf{-conexa} \index{gr\'afica!t @$t$-conexa} si
+$|V(G)|>t$ y $G-X$ es conexa para todo conjunto de v\'ertices $X$ tal que
+$|X|<t$. Para ejemplificar el concepto de conexidad nos fijamos en las
+gr\'aficas en \cref{fig:isoGraf} y \cref{fig:subgraf}. Notamos que ambas son
+conexas, sin embargo, necesitamos m\'as v\'ertices para ``desconectar'' la
+gr\'afica de \cref{fig:subgraf} que las gr\'aficas de \cref{fig:isoGraf}. A
+saber, las gr\'aficas de \cref{fig:isoGraf} son $2$-conexas y la gr\'afica de
+\cref{fig:subgraf} es $6$-conexa.
 
 Otra manera de abordar el tema de ``desconectar'' una gr\'afica es  pensar en
 las trayectorias internamente ajenas, pues la cantidad de trayectorias
@@ -794,6 +798,19 @@ global de \'este.
 \end{teorema}
 
 \begin{proof}
+    Primero, consideramos el caso en el que un conjunto de v\'ertices est\'a
+    contenido en el otro, sin p\'erdida de generalidad, consideramos $X
+    \subseteq Y$. Por un lado, cada v\'ertice de $X$ es una $XY$-trayectoria
+    tivial, por lo que el n\'umero de $XY$-trayectorias internamente ajenas es
+    $|X|$. Por otro lado, cualquier conjunto de v\'ertices que separe a $X$ de
+    $Y$ debe contener a los v\'ertices de $X$, por lo tanto, el m\'inimo
+    n\'umero de v\'ertices que separan a $X$ de $Y$ es $|X|$.
+
+    En segunda instancia, consideramos el caso en el que $X$ y $Y$ sean
+    completamente adyacentes, i.~e., todo elemento de $X$ tiene, al menos, un
+    vecino en $Y$ y todo elemento de $Y$ tiene, al menos, un vecino en $X$. Sin
+    p\'erdida de generalidad, consideramos $|X| \leq |Y|$. 
+
     Denotamos por $k$ al m\'inimo n\'umero de v\'ertices que separan a $X$ de
     $Y$ en $G$. Observamos que, dada una familia de $XY$-trayectorias
     internamente ajenas, cada trayectoria contiene al menos un v\'ertice del
