@@ -82,20 +82,20 @@ necesaria la siguiente proposici\'on.
 
 \begin{proposicion}
 \label{prop:iso-SFan}
-    Sean $F_k(\mathcal{F}_n)$ una gr\'afica de $k$-fichas de $\mathcal{F}_n$ y
-    \linebreak
-    $V_i=\{ Y \in V(F_k(\mathcal{F}_n)) \colon\ v_i \in Y \}$ un subconjunto de
-    v\'ertices, con $1 \leq i \leq n-k$. Si $S_i$ la subgr\'afica de
-    $F_k(\mathcal{F}_n)$ inducida  por $V_i$, entonces $S_i$ es isomorfa a
+    Sean $k$ un entero positivo, y  $V_i=\{ Y \in V(F_k(\mathcal{F}_n)) \colon\
+    v_i \in Y \}$ un subconjunto de v\'ertices de $F_k(\mathcal{F}_n)$, con $1
+    \leq i \leq n-k$. Si $S_i$ es la subgr\'afica de $F_k(\mathcal{F}_n)$
+    inducida por $V_i$, entonces $S_i$ es isomorfa a
     $F_{k-1}(\mathcal{F}_{n-i})$.
 \end{proposicion}
     
 \begin{proof}
-    Sea $V(\mathcal{F}_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, con
-    $V(P_{n-i-1}) = \{v_{i+1}, v_{i+2}, \dots, v_{n-1}\}$ y $V(K_1)= \{v_n\}$,
-    por definici\'on. Basta demostrar que existe un isomorfismo entre las
-    gr\'aficas $S_i$ y $F_{k-1}(\mathcal{F}_{n-1})$. Proponemos a la funci\'on
-    $A \xrightarrow[]{} A \setminus \{v_i\}$ como dicho isomorfismo. Nos fijamos
+    Siguiendo la convenci\'on del $(n-i)$-\'esimo abanico, sea
+    $V(\mathcal{F}_{n-i}) = \{v_{i+1}, v_{i+2}, \dots, v_n\}$, con $V(P_{n-i-1})
+    = \{v_{i+1}, v_{i+2}, \dots, v_{n-1}\}$ y $V(K_1)= \{v_n\}$, por
+    definici\'on. Basta demostrar que existe un isomorfismo entre las gr\'aficas
+    $S_i$ y $F_{k-1}(\mathcal{F}_{n-1})$. Proponemos a la funci\'on $A
+    \xrightarrow[]{} A \setminus \{v_i\}$ como dicho isomorfismo. Nos fijamos
     que, para $A \in V(S_i)$, tenemos que $A \setminus \{v_i\} \in \
     F_{k-1}(\mathcal{F}_{n-i})$ y, para $B \in F_{k-1}(\mathcal{F}_{n-i})$,
     tenemos que $B \cup \{v_i\} \in S_i$, por lo que
@@ -117,10 +117,10 @@ Pasamos a demostrar el teorema, mencionado al inicio de esta secci\'on.
 \end{teorema}
     
 \begin{proof}
-    Usando doble inducci\'on sobre $k$ y $n$, demostraremos que
-    $F_k(\mathcal{F}_n)$ tiene un ciclo hamiltoniano, donde $\{v_{n-k},
-    v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2},
-    v_{n-1}\}$ son v\'ertices adyacentes. Para esta demostraci\'on
+    Usando doble inducci\'on sobre $k$ y $n$, demostraremos que la gr\'afica
+    $F_k(\mathcal{F}_n)$ tiene un ciclo hamiltoniano, donde los v\'ertices
+    $\{v_{n-k}, v_{n-k+1}, \dots, v_{n-2}, v_n\}$ y $\{v_{n-k}, v_{n-k+1},
+    \dots, v_{n-2}, v_{n-1}\}$ son adyacentes. Para esta demostraci\'on
     consideraremos que, para todo v\'ertice $A = \{a_1, \dots, a_k\}$ de una
     gr\'afica de $k$-fichas, se tiene $a_1 < \cdots < a_k$. Observamos que, para
     $k =1$, tenemos que $F_1(\mathcal{F}_n) \cong \mathcal{F}_n$, por lo que es
