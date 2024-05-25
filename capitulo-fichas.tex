@@ -782,56 +782,57 @@ teorema, por lo que la siguiente demostraci\'on es independiente del art\'iculo.
 \begin{proof}
     Sean $H_1, \dots, H_m$ subgr\'aficas inducidas de  $G$ y $s_1, \dots, s_m$
     enteros positivos como en el enunciado. Llamamos $L$ al conjunto de los
-    $k$-subconjuntos de $G$ que cumplen tener exactamente $s_i$ elementos de
-    $H_i$, para toda $i \in \{1, \dots, m\}$, es decir, $L = \{A \subseteq G
+    $k$-subconjuntos de $V(G)$ que cumplen tener exactamente $s_i$ elementos de
+    $H_i$, para toda $i \in \{1, \dots, m\}$, es decir, $L = \{A \subseteq V(G)
     \colon\ |A\cap V(H_1)|=s_1 , |A \cap V(H_2)|=s_2, \dots, |A \cap V(H_m)|=m
     \}$. Observamos que, debido a  que $\sum\limits_{i=1}^{m} s_i = k$, todo
     elemento de $L$ tiene cardinalidad $k$. Buscamos ver que la subgr\'afica
-    inducida de $F_k(G)$ por $L$, i.~e., $F_k(G,L)$, es isomorfa a $F_{s_1}(H_1)
-    \square \cdots \square F_{s_m}(H_m)$. Primero, analizamos el conjunto de
-    v\'ertices de ambas gr\'aficas. Sea $A \in V(F_k(G,L))$, tal que $A=\{a_1,
-    \dots, a_{s_1}, b_1,\dots, b_{s_2}, \dots, m_1, \dots, m_{s_m}\}$. Por
-    definici\'on, $|A \cap V(H_i)|= s_i$, para $i \in \{1, \dots, m\}$.
-    Adem\'as, sabemos que cada v\'ertice de $F_{s_i}(H_i)$ tiene cardinalidad
-    $s_i$, para $i \in \{1, \dots, m\}$, por lo que tenemos que $A \in V(H_1)
-    \times \cdots \times V(H_m)$. De manera an\'aloga, si tomamos $A \in V(H_1)
-    \times \cdots \times V(H_m)$, $A = \{A'_1, A'_2, \dots, A'_m\}$ con $A'_i
-    \in F_{s_i}(H_i)$. De lo anterior, tenemos que $A \cap V(H_i) = A'_i$, por
-    lo que $|A \cap V(H_i)|= s_i$, para toda $i \in \{1, \dots, m\}$.
-    Adicionalmente, tenemos que $|A|= k$, puesto que $\sum\limits_{i=1}^{m} s_i
-    = k$. Por lo tanto, $A \in V(F_k(G,L))$.
+    inducida de $F_k(G)$ por $L$, es decir, $F_k(G,L)$, es isomorfa a
+    $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$. Proponemos la funci\'on
+    $A \xrightarrow[]{}(A_1, \dots, A_m)$, con $A_i \subseteq V(H_i)$ para $i
+    \in \{1, \dots, m\}$, como el isomorfismo que buscamos. Primero, observamos
+    que si $A \in V(F_k(G,L))$, entonces tenemos que $|A \cap V(H_i)|=s_i$, para
+    toda $i \in \{1, \dots, m\}$. Sea $A_i = A \cap V(H_i)$, notamos que $A_i
+    \cap A_j = \varnothing$, para $i \neq j$. As\'i, tenemos que $A_i \in
+    V(F_{s_i}(H_i))$, para toda $i \in \{1, \dots, m\}$. Por lo tanto tenemos
+    $(A_1, \dots, A_m) \in V(F_{s_1}(H_1)) \times \cdots \times
+    V(F_{s_m}(H_m))$. Ahora, sea $B \in V(F_{s_1}(H_1) \square \cdots \square
+    F_{s_m}(H_m))$, es decir, $B \in V(F_{s_1}(H_1)) \times \cdots \times
+    V(F_{s_m}(H_m))$, entonces tenemos que $B= (B_1, \dots, B_m)$, donde $B_i
+    \in F_{s_i}(H_i)$, $i \in \{1, \dots, m\}$. As\'i, $|B_i|= s_i$ y adem\'as
+    $B_i \subseteq V(H_i)$, por definici\'on. Como $H_1 ,\dots, H_m$
+    subgr\'aficas inducidas de $G$, entonces tenemos que $V(H_1), \dots V(H_m)
+    \subseteq V(G)$. As\'i, tenemos que $B_i \subseteq V(G)$, con $i \in \{1,
+    \dots, m\}$. Por tanto, tenemos que $B \subseteq V(G)$. Adem\'as, las
+    gr\'aficas $H_1, \dots, H_m$ son ajenas dos a dos, entonces $B \cap V(H_i)=
+    B_i$, por lo que $|B \cap V(H_i)|=s_i$, para toda $i \in \{1, \dots, m\}$.
+    Por ende, tenemos que $B \in L$. Adicionalmente, $|B| =
+    \sum\limits_{i=1}^{m} |B_i| =\sum\limits_{i=1}^{m} s_i = k$, por lo que, $B
+    \in V(F_k(G,L))$.
 
-    Ahora, nos enfocamos en la relaci\'on entre las aristas de ambas gr\'aficas
-    de fichas. Sean $B, C \in V(F_k(G,L))$, tales que $BC \in E(F_k(G,L))$, en
+    Ahora, veamos que la funci\'on propuesta preserva adyacencias y no
+    adyacencias. Sean $B, C \in V(F_k(G,L))$, tales que $BC \in E(F_k(G,L))$, en
     otras palabras, existen $b \in B$ y $c \in C$, tales que $B \triangle C =
     \{b, c\}$ y $bc \in E(G[L])$. Por definici\'on, tenemos que $V(H_i) \cap
-    V(H_j) = \varnothing$, con $i \neq j$, por lo que $b, c \in V(H_i)$. Esto
-    significa que las fichas en $H_j$ est\'an est\'aticas, para todo $j \in \{1,
-    \dots, m\} \setminus \{i\}$. Lo cu\'al pasa si y s\'olo s\'i $BC$ es una
-    arista en la subgr\'afica de fichas inducida por $H_i$. Como $V(H_i) \cap
-    V(H_j) = \varnothing$, para $i \neq j$, entonces la subgr\'afica de fichas
-    inducida por $H_i$ es isomorfa a $F_{s_i}(H_i)$. Al tener el resto de las
-    fichas est\'aticas, tenemos que $BC \in E(F_{s_1}(H_1) \square \cdots
-    \square F_{s_m}(H_m))$.
+    V(H_j) = \varnothing$, con $i \neq j$, por lo que $b, c \in V(H_i)$ y $bc
+    \in E(H_i)$, para alg\'un $i \in \{1, \dots, m\}$. Sean $B_r = B \cap
+    V(H_r)$ y $C_r=C \cap V(H_r)$, con $r \in \{1, \dots, m\}$. Al ser $B$ y $C$
+    v\'ertices de $V(F_k(G,L))$, tenemos que $|B_r|=s_r = |C_r|$, entonces $B_r,
+    C_r \in V(F_{s_r}(H_r))$, para todo $r \in \{1, \dots, m\}$. Notamos que las
+    fichas en $H_j$ est\'an est\'aticas, para todo $j \in \{1, \dots, m\}
+    \setminus \{i\}$, en otras palabras, $B_j = C_j$. Adicionalmente, notamos
+    que $b \in B_i$ y $c \in C_i$, entonces tenemo que $B_i \triangle C_i
+    =\{b,c\}$ y $bc \in E(H_i)$, por lo que $B_i C_i \in E(F_{s_i}(H_i))$. Por
+    lo tanto, tenemos que $B_i C_i \in E(F_{s_i}(H_i))$ y $B_j = C_j$, con $B_j,
+    C_j \in V(F_{s_j}(H_j))$ y para todo $j \in \{1, \dots, m\} \setminus \{i\}$,
+    lo cual pasa si y s\'olo si $(B_1, \dots, B_m)(C_1, \dots, C_m)\in
+    E(F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m))$.
 
     Por tanto, tenemos un isomorfismo entre $F_{s_1}(H_1) \square \cdots
     \square F_{s_m}(H_m)$ y $F_k(G,L)$, una subgr\'afica inducida de $F_k(G)$.
     Por ende, $F_{s_1}(H_1) \square \cdots \square F_{s_m}(H_m)$ es una
     subgr\'afica inducida de $F_k(G)$.
 \end{proof}
-
-\Cref{fig:ex-cart}, exhibida a continuaci\'on, es un ejemplo sencillo
-d\cref{teo:PCartes}. Del lado izquierdo de la figura tenemos una gr\'afica $G$,
-resaltando dos subgr\'aficas inducidas ${\color{baige}\boldsymbol {H_1}}$ y
-${\color{azulMetal}\boldsymbol {H_2}}$. El conjunto de v\'ertices de
-${\color{azulMetal}\boldsymbol {H_2}}$ es $\{1,2,4,6\}$, mientras que el de
-${\color{baige}\boldsymbol {H_1}}$ es $\{3\}$. Por un lado tenemos que $1\leq
-s_1 \leq |V(H_1)|$, por lo que $s_1 =1$. Por otro lado, $1\leq s_2 \leq |V(H_2)|
-= 4$ y, adem\'as, $s_1+s_2 = k =3$, por lo que $s_2 =2$. Del lado derecho de
-\cref{fig:ex-cart} se muestra la gr\'afica $F_3(G)$, resaltando de
-$\color{fushia} \bf rosa$ el producto cartesiano $F_1(H_1) \square F_2(H_2)$.
-Observamos que dicha gr\'afica es, en efecto, una subgr\'afica inducida de
-$F_3(G)$.
 
 \begin{figure}[ht!]
     \centering
@@ -900,3 +901,16 @@ $F_3(G)$.
     F_2(H_2)}}$.}
     \label{fig:ex-cart}
     \end{figure}
+
+\Cref{fig:ex-cart}, arriba exhibida, es un ejemplo sencillo d\cref{teo:PCartes}.
+Del lado izquierdo de la figura tenemos una gr\'afica $G$, resaltando dos
+subgr\'aficas inducidas ${\color{baige}\boldsymbol {H_1}}$ y
+${\color{azulMetal}\boldsymbol {H_2}}$. El conjunto de v\'ertices de
+${\color{azulMetal}\boldsymbol {H_2}}$ es $\{1,2,4,6\}$, mientras que el de
+${\color{baige}\boldsymbol {H_1}}$ es $\{3\}$. Por un lado tenemos que $1\leq
+s_1 \leq |V(H_1)|$, por lo que $s_1 =1$. Por otro lado, $1\leq s_2 \leq |V(H_2)|
+= 4$ y, adem\'as, $s_1+s_2 = k =3$, por lo que $s_2 =2$. Del lado derecho de
+\cref{fig:ex-cart} se muestra la gr\'afica $F_3(G)$, resaltando de
+$\color{fushia} \bf rosa$ el producto cartesiano $F_1(H_1) \square F_2(H_2)$.
+Observamos que dicha gr\'afica es, en efecto, una subgr\'afica inducida de
+$F_3(G)$.
