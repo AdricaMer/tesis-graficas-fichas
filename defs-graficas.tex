@@ -678,9 +678,11 @@ pueden existir cortes por v\'ertices entre dos conjuntos de v\'ertices. Sean
 $X,Y \subseteq V(G)$, $S$ es un $XY$\textbf{-corte por v\'ertices}\index{corte
 por v\'ertices!X @$XY$-corte}\index{v\'ertices!X @$XY$-corte} si $G-S$ es una
 gr\'afica inconexa donde $X$ y $Y$ se encuentran en distintas componentes
-conexas. Vale la pena notar que $X$ y $Y$ pueden compartir v\'ertices, en este
+conexas. Vale la pena notar que $X$ y $Y$ pueden compartir v\'ertices. En este
 caso, para separar a los conjuntos, $S$ debe contener a los elementos de la
-intersecci\'on, por lo que el $XY$-corte por v\'ertices $S$ deja a $X\setminus
+intersecci\'on, por lo que el 
+\linebreak
+$XY$-corte por v\'ertices $S$ deja a $X\setminus
 S$ y $Y \setminus S$ en dos componentes conexas en $G-S$. Cabe notar que no
 todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber, las
 gr\'aficas en las que cualesquiera dos v\'ertices son adyacentes no tienen
@@ -798,19 +800,25 @@ global de \'este.
 \end{teorema}
 
 \begin{proof}
-    Primero, consideramos el caso en el que un conjunto de v\'ertices est\'a
-    contenido en el otro, sin p\'erdida de generalidad, consideramos $X
-    \subseteq Y$. Por un lado, cada v\'ertice de $X$ es una $XY$-trayectoria
-    tivial, por lo que el n\'umero de $XY$-trayectorias internamente ajenas es
-    $|X|$. Por otro lado, cualquier conjunto de v\'ertices que separe a $X$ de
-    $Y$ debe contener a los v\'ertices de $X$, por lo tanto, el m\'inimo
-    n\'umero de v\'ertices que separan a $X$ de $Y$ es $|X|$.
+    Sea $G$ una gr\'afica y sean $X,Y \subseteq V(G)$. Primero, consideramos
+    el caso en el que un conjunto de v\'ertices est\'a contenido en el otro, sin
+    p\'erdida de generalidad, consideramos $X \subseteq Y$. Por un lado, cada
+    v\'ertice de $X$ es una $XY$-trayectoria tivial, por lo que el n\'umero de
+    $XY$-trayectorias internamente ajenas es $|X|$. Por otro lado, cualquier
+    conjunto de v\'ertices que separe a $X$ de $Y$ debe contener a los
+    v\'ertices de $X$, por lo tanto, el m\'inimo n\'umero de v\'ertices que
+    separan a $X$ de $Y$ es $|X|$.
 
     En segunda instancia, consideramos el caso en el que $X$ y $Y$ sean
     completamente adyacentes, i.~e., todo elemento de $X$ tiene, al menos, un
     vecino en $Y$ y todo elemento de $Y$ tiene, al menos, un vecino en $X$. Sin
-    p\'erdida de generalidad, consideramos $|X| \leq |Y|$. 
+    p\'erdida de generalidad, consideramos $|X| \leq |Y|$. Al ser completamente
+    adyacentes, el m\'inimo n\'umero de $XY$-trayectorias internamente ajenas es
+    $|X|$. Por otro lado, al tener que todos los elementos de $X$ tienen vecinos
+    en $Y$, el m\'inimo n\'umero de v\'ertices que separan a $X$ de $Y$
+    tambi\'en es $|X|$.
 
+    Ahora, sean $X, Y \subseteq V(G)$ tales que no cumplan los casos anteriores.
     Denotamos por $k$ al m\'inimo n\'umero de v\'ertices que separan a $X$ de
     $Y$ en $G$. Observamos que, dada una familia de $XY$-trayectorias
     internamente ajenas, cada trayectoria contiene al menos un v\'ertice del
@@ -1216,8 +1224,6 @@ lado izquierdo y un abanico generalizado del lado derecho.
 \label{fig:ex-abanico}
 \end{figure}
 
-\newpage
-
 La \'ultima familia de gr\'aficas que definimos en esta secci\'on es la familia
 de gr\'aficas hamiltonianas. Para definir esta familia, es preciso definir
 algunos conceptos necesarios. El primer concepto es el de trayectoria
@@ -1278,6 +1284,8 @@ izquierdo y de una gr\'afica hamiltoniana del lado izquierdo, respectivamente.
     (derecha).}
     \label{fig:ex-hamilt}
 \end{figure}
+
+\newpage
 
 Una proposici\'on que nos servir\'a m\'as adelante es \cref{prop:hamilt},
 demostrada a continuaci\'on.
