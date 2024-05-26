@@ -53,13 +53,7 @@ en los ejemplos de este trabajo consideraremos a los v\'ertices de $G$ como $i
 \in \{1,2, \dots, n\}$, en lugar de $v_i$. Adem\'as, a los v\'ertices de
 $F_k(G)$ los denotaremos por $a_1 a_2 \dots a_k$, en lugar de $\{a_1, a_2,
 \dots, a_k\}$, con $a_i \in \{1, \dots, n\}$, para toda $i \in \{1, \dots, k\}$.
-Se adopta esta notaci\'on para facilitar la lectura de las figuras que
-acompa\~{n}an a los ejemplos. En \cref{fig:ex-tok-graph} se muestra un ejemplo
-de una gr\'afica $G$ y su gr\'afica de $2$-fichas. Dentro de cada v\'ertice de
-la gr\'afica de $2$-fichas se muestra una copia a escala de $G$, resaltando en
-${\color{rosa}\bf rosa}$ los v\'ertices de $G$ donde se encuentran las fichas,
-esto para facilitar el entendimiento de la relacion entre $G$ y sus gr\'aficas
-de fichas.
+Se adopta esta notaci\'on para facilitar la lectura de las figuras. 
 
 \begin{figure}[ht!]
     \centering
@@ -196,6 +190,19 @@ de fichas.
     \label{fig:ex-tok-graph}
 \end{figure}
 
+En \cref{fig:ex-tok-graph} se muestra un ejemplo de una gr\'afica $G$ y su
+gr\'afica de $2$-fichas. Dentro de cada v\'ertice de la gr\'afica de $2$-fichas
+se muestra una copia a escala de $G$, resaltando en ${\color{rosa}\bf rosa}$ los
+v\'ertices de $G$ donde se encuentran las fichas, esto con la idea de facilitar
+el entendimiento de la relacion entre $G$ y sus gr\'aficas de fichas. Es
+necesario mencionar que la representaci\'on de la gr\'afica de $2$-fichas de
+\cref{fig:ex-tok-graph} no es una representaci\'on completamente cierta, pues
+los v\'ertices de las gr\'aficas de fichas son conjuntos de v\'ertices, no
+tienen la estructura completa de la gr\'afica original. La intenci\'on de la
+figura es ayudar al lector a entender el comportamiento de las gr\'aficas de
+fichas.
+
+
 Como muchas veces en matem\'aticas, hay ciertas gr\'aficas de fichas que han
 sido estudiadas con otro enfoque y bajo otros nombres. Hay un caso que vale la
 pena resaltar, el de las gr\'aficas de Johnson. Para un entero $1 \leq k \leq
@@ -234,14 +241,7 @@ longitud que $P$. Esta trayectoria en $F_k(G)$ la denotamos
 \indiceSub{fichas}{$A \xrightarrow[P]{} A'$}. A continuaci\'on, se encuentra un
 ejemplo de este tipo de trayectoria en una gr\'afica de $3$-fichas, mostrada en
 \cref{fig:ex-tok-Path}. Tomamos a \cref{fig:ex-tok-aux} como figura auxiliar
-para entender mejor el movimiento de las fichas a trav\'es de la trayectoria. La
-gr\'afica $G$ se muestra del lado izquierdo en ambas figuras, adem\'as, en
-\cref{fig:ex-tok-Path} se muestra $F_3(G)$ del lado derecho. Definamos
-$A=\{2,3,4\}$ en $F_3(G)$ y nuestra trayectoria en $G$ como
-${\color{vino}\boldsymbol {P= (3,1,4,5)}}$, resaltada en ambas figuras. De ah\'i
-se sigue que $A'=\{2,4,5\}$. Adem\'as, del lado derecho de \cref{fig:ex-tok-aux}
-se muestra el movimiento de las fichas que empiezan en $A \cap P =\{3,4\}$,
-considerando de arriba a abajo como se van moviendo las fichas.
+para entender mejor el movimiento de las fichas a trav\'es de la trayectoria. 
 
 \begin{figure}[ht!]
     \centering
@@ -303,17 +303,13 @@ considerando de arriba a abajo como se van moviendo las fichas.
     \label{fig:ex-tok-aux}
 \end{figure}
     
-M\'as adelante, en \cref{fig:ex-tok-Path}, se muestra la trayectoria
-${\color{vino}\boldsymbol {\{2,3,4\}\xrightarrow[P]{}\{2,4,5\}}}$ en $F_3(G)$.
-En cada v\'ertice de esta trayectoria se resaltan los n\'umeros del color de la
-ficha que se usa en \cref{fig:ex-tok-aux}, para resaltar la relaci\'on entre la
-trayectoria de $G$ y la de $F_3(G)$. Observamos que $2$ no est\'a en $A \cap P
-=\{3,4\}$, por lo que no se ve en \cref{fig:ex-tok-aux}. Esto significa que la
-ficha en el v\'ertice $2$ se queda fija a trav\'es de la trayectoria en la
-gr\'afica de fichas. Al estar fija, todos los v\'ertices de la nueva trayectoria
-en $F_3(G)$ contienen a $2$. Ese hecho se puede ver en \cref{fig:ex-tok-Path} al
-fijarnos que el $2$ est\'a en todos los v\'ertices de la trayectoria, resaltado
-en gris.
+En \cref{fig:ex-tok-Path} y en \cref{fig:ex-tok-aux} se muestra la gr\'afica $G$
+del lado izquierdo. Adem\'as, en \cref{fig:ex-tok-Path} se muestra $F_3(G)$ del
+lado derecho. Definamos $A=\{2,3,4\}$ en $F_3(G)$ y nuestra trayectoria en $G$
+como ${\color{vino}\boldsymbol {P= (3,1,4,5)}}$, resaltada en ambas figuras. De
+ah\'i se sigue que $A'=\{2,4,5\}$. Adem\'as, del lado derecho de
+\cref{fig:ex-tok-aux}, de arriba hacia abajo, se muestra el movimiento de las
+fichas en $A \cap P =\{3,4\}$.
 
 \begin{figure}[ht!]
     \centering
@@ -355,6 +351,18 @@ en gris.
     \label{fig:ex-tok-Path}
 \end{figure}
 
+
+En \cref{fig:ex-tok-Path}, mostrada arriba, se muestra la trayectoria
+${\color{vino}\boldsymbol {\{2,3,4\}\xrightarrow[P]{}\{2,4,5\}}}$ en $F_3(G)$.
+En cada v\'ertice de esta trayectoria se resaltan los n\'umeros del color de la
+ficha que se usa en \cref{fig:ex-tok-aux}, para resaltar la relaci\'on entre la
+trayectoria de $G$ y la de $F_3(G)$. Observamos que $2$ no est\'a en $A \cap P
+=\{3,4\}$, por lo que no se ve en \cref{fig:ex-tok-aux}. Esto significa que la
+ficha en el v\'ertice $2$ se queda fija a trav\'es de la trayectoria en la
+gr\'afica de fichas. Al estar fija, todos los v\'ertices de la nueva trayectoria
+en $F_3(G)$ contienen a $2$. Ese hecho se puede ver en \cref{fig:ex-tok-Path} al
+fijarnos que el $2$ est\'a en todos los v\'ertices de la trayectoria, resaltado
+en gris.
 
 Del ejemplo anterior, podemos concluir que tener una ficha fija resulta
 interesante al considerar una trayectoria en la gr\'afica de fichas. Vale la
@@ -482,10 +490,8 @@ El resultado anterior resulta de mucha utilidad al momento de estudiar las
 gr\'aficas de fichas, pues nos dice que basta en enfocarnos en las gr\'aficas de
 $k$-fichas, para $k \leq \frac{n}{2}$.
 
-Teniendo estos isomorfismos en mente, pasamos a desarrollar las propiedades de
-las gr\'aficas de fichas mencionadas en los art\'iculos \textit{Token Graphs}
-\cite{fabilaToken} y \textit{Hamiltonicity of Token Graphs of Some Join Graphs}
-\cite{adameHamilt}.
+Pasamos a desarrollar algunas propiedades del art\'iculo
+\textit{Token Graphs} \cite{fabilaToken}.
 
 
 \section{Di\'ametro y producto cartesiano}%
