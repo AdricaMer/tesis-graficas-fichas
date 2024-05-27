@@ -680,11 +680,9 @@ por v\'ertices!X @$XY$-corte}\index{v\'ertices!X @$XY$-corte} si $G-S$ es una
 gr\'afica inconexa donde $X$ y $Y$ se encuentran en distintas componentes
 conexas. Vale la pena notar que $X$ y $Y$ pueden compartir v\'ertices. En este
 caso, para separar a los conjuntos, $S$ debe contener a los elementos de la
-intersecci\'on, por lo que el 
-\linebreak
-$XY$-corte por v\'ertices $S$ deja a $X\setminus
-S$ y $Y \setminus S$ en dos componentes conexas en $G-S$. Cabe notar que no
-todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber, las
+intersecci\'on, por lo que el $XY$-corte por v\'ertices $S$ deja a $X\setminus
+S$ y $Y \setminus S$ en componentes conexas distintas en $G-S$. Cabe notar que
+no todas las gr\'aficas tienen alg\'un corte por v\'ertices, a saber, las
 gr\'aficas en las que cualesquiera dos v\'ertices son adyacentes no tienen
 cortes por v\'ertices, y son las \'unicas con esta propiedad. Ahora, usando el
 concepto de corte por v\'ertices, definimos la conexidad de una gr\'afica. El
@@ -800,8 +798,8 @@ global de \'este.
 \end{teorema}
 
 \begin{proof}
-    Sea $G$ una gr\'afica y sean $X,Y \subseteq V(G)$. Primero, consideramos
-    el caso en el que un conjunto de v\'ertices est\'a contenido en el otro, sin
+    Sea $G$ una gr\'afica y sean $X,Y \subseteq V(G)$. Primero, consideramos el
+    caso en el que un conjunto de v\'ertices est\'a contenido en el otro, sin
     p\'erdida de generalidad, consideramos $X \subseteq Y$. Por un lado, cada
     v\'ertice de $X$ es una $XY$-trayectoria tivial, por lo que el n\'umero de
     $XY$-trayectorias internamente ajenas es $|X|$. Por otro lado, cualquier
